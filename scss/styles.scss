@@ -809,15 +809,16 @@ $mix-blend-mode: none;
 .thinking-row {
   &:nth-child(even) {
     .thinking-item {
+      
       &:nth-child(even) {
         .thinking-thumb {
-          background: linear-gradient(tint-color($second, 52%), tint-color($second, 94%));
+          // background: linear-gradient(tint-color($second, 90%), tint-color($second, 100%));
         }
       }
 
       &:nth-child(odd) {
         .thinking-thumb {
-          background: linear-gradient(tint-color($second, 94%), tint-color($second, 52%));
+          // background: linear-gradient(tint-color($second, 100%), tint-color($second, 90%));
         }
       }
     }
@@ -827,13 +828,13 @@ $mix-blend-mode: none;
     .thinking-item {
       &:nth-child(odd) {
         .thinking-thumb {
-          background: linear-gradient(tint-color($second, 52%), tint-color($second, 94%));
+          // background: linear-gradient(tint-color($second, 52%), tint-color($second, 94%));
         }
       }
 
       &:nth-child(even) {
         .thinking-thumb {
-          background: linear-gradient(tint-color($second, 94%), tint-color($second, 52%));
+          // background: linear-gradient(tint-color($second, 94%), tint-color($second, 52%));
         }
       }
     }
@@ -849,8 +850,9 @@ $mix-blend-mode: none;
     margin       : 0 0 20px 0;
     color        : shade-color($second, 50%);
     border       : none;
-    transition   : transform .2s ease-in-out;
-    box-shadow   : inset 0 0rem 1rem rgba($second, .1), 0 1rem 3rem rgba($black, .20);
+    transition   : all .2s ease-in-out;
+    box-shadow   : 0 0rem 1.5rem rgba($black, .10);
+    background: $white;
 
     /* Animation */
     .thinking-title {
@@ -869,6 +871,8 @@ $mix-blend-mode: none;
 
     &:hover {
       transform: scale(1.02);
+      background: $secondary;
+      color: $white;
     }
   }
 }

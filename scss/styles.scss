@@ -11,35 +11,36 @@ $link-decoration: none;
 
 // Color system
 
-$color-shift: 30%;
+$color-shift-shade: 30%;
+$color-shift-tint: 50%;
 
 $english-violet      : #644672;
-$english-violet-light: tint-color($english-violet, $color-shift);
-$english-violet-dark : shade-color($english-violet, $color-shift);
+$english-violet-light: tint-color($english-violet, $color-shift-tint);
+$english-violet-dark : shade-color($english-violet, $color-shift-shade);
 
 $faded-glory      : #8391a3;
-$faded-glory-light: tint-color($faded-glory, $color-shift);
-$faded-glory-dark : shade-color($faded-glory, $color-shift);
+$faded-glory-light: tint-color($faded-glory, $color-shift-tint);
+$faded-glory-dark : shade-color($faded-glory, $color-shift-shade);
 
 $monarch      : #e3b211;
-$monarch-light: tint-color($monarch, $color-shift);
-$monarch-dark : shade-color($monarch, $color-shift);
+$monarch-light: tint-color($monarch, $color-shift-tint);
+$monarch-dark : shade-color($monarch, $color-shift-shade);
 
 $irish-stone      : #5E915D;
-$irish-stone-light: tint-color($irish-stone, $color-shift);
-$irish-stone-dark : shade-color($irish-stone, $color-shift);
+$irish-stone-light: tint-color($irish-stone, $color-shift-tint);
+$irish-stone-dark : shade-color($irish-stone, $color-shift-shade);
 
 $red-falling      : #7e3232;
-$red-falling-light: tint-color($red-falling, $color-shift);
-$red-falling-dark : shade-color($red-falling, $color-shift);
+$red-falling-light: tint-color($red-falling, $color-shift-tint);
+$red-falling-dark : shade-color($red-falling, $color-shift-shade);
 
 $silver-chalice      : #ACAEA9;
-$silver-chalice-light: tint-color($silver-chalice, $color-shift);
-$silver-chalice-dark : shade-color($silver-chalice, $color-shift);
+$silver-chalice-light: tint-color($silver-chalice, $color-shift-tint);
+$silver-chalice-dark : shade-color($silver-chalice, $color-shift-shade);
 
 $charcoal      : #454336;
-$charcoal-light: tint-color($charcoal, $color-shift);
-$charcoal-dark : shade-color($charcoal, $color-shift);
+$charcoal-light: tint-color($charcoal, $color-shift-tint);
+$charcoal-dark : shade-color($charcoal, $color-shift-shade);
 
 $pop      : $monarch;
 $pop-light: $monarch-light;
@@ -432,7 +433,7 @@ $menu-width-dt: 6rem;
         }
       }
 
-      &.contact {
+      &.education {
         border-color: $fourth-light;
         color       : $fourth-dark;
 

@@ -1,8 +1,19 @@
 {
 	"folders": [
-		{
-			"path": "."
-		}
+	  {
+		"path": "."
+	  }
 	],
-	"settings": {}
-}
+	"settings": {
+	  "css.customData": [
+		"css"
+	  ],
+	  "html-css-class-completion.CSSLanguages": [
+		"css",
+		"sass",
+		"scss"
+	  ],
+	  "html-css-class-completion.includeGlobPattern": "**/*.{css,scss,sass}"
+	}
+  }
+  

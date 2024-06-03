@@ -454,7 +454,7 @@ $menu-width-dt: 6rem;
 }
 
 
-.h-hello {
+.h-hello, .text-gradiant-primary {
   background             : -webkit-linear-gradient($prime-dark, $prime-light);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

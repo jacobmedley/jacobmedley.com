@@ -14,60 +14,61 @@ $link-decoration: none;
 $color-shift-shade: 30%;
 $color-shift-tint: 50%;
 
-$english-violet      : #644672;
+$english-violet : #644672;
 $english-violet-light: tint-color($english-violet, $color-shift-tint);
 $english-violet-dark : shade-color($english-violet, $color-shift-shade);
 
-$faded-glory      : #8391a3;
+$faded-glory : #8391a3;
 $faded-glory-light: tint-color($faded-glory, $color-shift-tint);
 $faded-glory-dark : shade-color($faded-glory, $color-shift-shade);
 
-$monarch      : #e3b211;
+$monarch : #e3b211;
 $monarch-light: tint-color($monarch, $color-shift-tint);
 $monarch-dark : shade-color($monarch, $color-shift-shade);
 
-$irish-stone      : #5E915D;
+$irish-stone : #5E915D;
 $irish-stone-light: tint-color($irish-stone, $color-shift-tint);
 $irish-stone-dark : shade-color($irish-stone, $color-shift-shade);
 
-$red-falling      : #7e3232;
+$red-falling : #7e3232;
 $red-falling-light: tint-color($red-falling, $color-shift-tint);
 $red-falling-dark : shade-color($red-falling, $color-shift-shade);
 
-$silver-chalice      : #ACAEA9;
+$silver-chalice : #ACAEA9;
 $silver-chalice-light: tint-color($silver-chalice, $color-shift-tint);
 $silver-chalice-dark : shade-color($silver-chalice, $color-shift-shade);
 
-$charcoal      : #454336;
+$charcoal : #454336;
 $charcoal-light: tint-color($charcoal, $color-shift-tint);
 $charcoal-dark : shade-color($charcoal, $color-shift-shade);
 
-$pop      : $monarch;
+$pop : $monarch;
 $pop-light: $monarch-light;
 $pop-dark : $monarch-dark;
 
-$prime      : $english-violet;
+$prime : $english-violet;
 $prime-light: $english-violet-light;
 $prime-dark : $english-violet-dark;
 
 
-$second      : $faded-glory;
+$second : $faded-glory;
 $second-light: $faded-glory-light;
 $second-dark : $faded-glory-dark;
 
-$third      : $irish-stone;
+$third : $irish-stone;
 $third-light: $irish-stone-light;
 $third-dark : $irish-stone-dark;
 
-$fourth      : $red-falling;
+$fourth : $red-falling;
 $fourth-light: $red-falling-light;
 $fourth-dark : $red-falling-dark;
 
-$fifth      : $charcoal;
+$fifth : $charcoal;
 $fifth-light: $charcoal-light;
 $fifth-dark : $charcoal-dark;
 
-$theme-colors: ("pop": $pop,
+$theme-colors: (
+  "pop": $pop,
   "pop-light": $pop-light,
   "pop-dark": $pop-dark,
   "prime": $prime,
@@ -84,9 +85,11 @@ $theme-colors: ("pop": $pop,
   "fourth-dark": $fourth-dark,
   "fifth": $fifth,
   "fifth-light": $fifth-light,
-  "fifth-dark": $fifth-dark);
+  "fifth-dark": $fifth-dark
+);
 
-$display-font-sizes: (01: 1.5rem,
+$display-font-sizes: (
+  01: 1.5rem,
   02: 2rem,
   03: 3rem,
   04: 4rem,
@@ -105,13 +108,14 @@ $display-font-sizes: (01: 1.5rem,
   17: 17rem,
   18: 18rem,
   19: 19rem,
-  20: 20rem);
+  20: 20rem
+);
 
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns     : 24;
+$grid-columns : 24;
 $grid-gutter-width: 1.2rem;
 $grid-row-columns : 12;
 
@@ -130,14 +134,14 @@ $grid-row-columns : 12;
 // $z10: 	1000;
 
 $font-family-sans-serif: urw-form,
-'Manrope',
-sans-serif;
+  'Manrope',
+  sans-serif;
 $headings-font-family: urw-form,
-sans-serif;
+  sans-serif;
 
 // Carousel
 
-$carousel-control-color      : $second-dark;
+$carousel-control-color : $second-dark;
 $carousel-indicator-active-bg: $second-dark;
 
 $enable-negative-margins: true;
@@ -199,7 +203,7 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 
 // 8. Add additional custom code here
 
-$menu-width-dt: 6rem;
+$menu-width-dt: 8rem;
 // blends
 
 /* Keyword values */
@@ -270,7 +274,7 @@ $menu-width-dt: 6rem;
 
 .logo-icon {
 
-  width : 82px;
+  width: 82px;
   height: auto;
 
   @include media-breakpoint-up(md) {
@@ -283,30 +287,30 @@ $menu-width-dt: 6rem;
 
 
 .badge-work {
-  display      : inline-block;
-  margin-right : 1rem;
+  display: inline-block;
+  margin-right: 1rem;
   margin-bottom: 1rem;
-  white-space  : nowrap;
+  white-space: nowrap;
 }
 
 #the-menu {
-  position        : fixed;
-  z-index         : 950;
+  position: fixed;
+  z-index: 950;
   background-color: $white;
-  text-align      : center;
-  height          : auto;
-  top             : auto;
-  bottom          : 0;
-  left            : auto;
-  width           : 100%;
+  text-align: center;
+  height: auto;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  width: 100%;
 
 
   @include media-breakpoint-up(md) {
-    top          : 0;
-    left         : 0;
-    width        : $menu-width-dt;
-    height       : fit-content;
-    margin-top   : auto;
+    top: 0;
+    left: 0;
+    width: $menu-width-dt;
+    height: fit-content;
+    margin-top: auto;
     margin-bottom: auto;
   }
 
@@ -323,31 +327,32 @@ $menu-width-dt: 6rem;
     .btn {
       transition: background-color 0.3s ease-in-out, border-left-width 0.1s ease-in-out;
 
-      border-radius      : 0;
-      padding            : 10px 0 10px 0;
-      margin             : 0;
-      width              : 20%;
-      font-size          : .8rem;
-      border             : none;
+      border-radius: 0;
+      padding: 10px 0 10px 0;
+      margin: 0;
+      font-size: .8rem;
+      border: none;
       border-bottom-width: 6px;
       border-bottom-style: solid;
-      background-color   : $white;
-      color              : $black;
+      background-color: $white;
+      color: $black;
 
+      width: 25%;
 
       @include media-breakpoint-up(sm) {
+        width: 20%;
         padding: 10px 0;
       }
 
       @include media-breakpoint-up(md) {
-        border           : none;
+        border: none;
         border-left-width: 8px;
         border-left-style: solid;
-        font-size        : 1.2rem;
+        font-size: 1rem;
 
         padding: 20px 0;
         display: block;
-        width  : 100%;
+        width: 100%;
 
 
         &:hover {
@@ -367,86 +372,86 @@ $menu-width-dt: 6rem;
 
       &.hi {
         border-color: $prime-light;
-        color       : $prime-dark;
+        color: $prime-dark;
 
         &:hover {
           border-color: $prime;
-          background  : tint-color($prime, 88%);
-          color       : shade-color($prime, 88%);
+          background: tint-color($prime, 88%);
+          color: shade-color($prime, 88%);
         }
 
         &.active {
           border-color: $prime-dark;
-          color       : tint-color($prime, 80%);
-          background  : shade-color($prime, 0%);
+          color: tint-color($prime, 80%);
+          background: shade-color($prime, 0%);
         }
       }
 
       &.work {
         border-color: $second-light;
-        color       : $second-dark;
+        color: $second-dark;
 
         &:hover {
           border-color: $second;
-          background  : tint-color($second, 88%);
-          color       : shade-color($second, 88%);
+          background: tint-color($second, 88%);
+          color: shade-color($second, 88%);
         }
 
         &.active {
           border-color: shade-color($second, 44%);
-          color       : tint-color($second, 100%);
-          background  : shade-color($second, 22%);
+          color: tint-color($second, 100%);
+          background: shade-color($second, 22%);
         }
       }
 
       &.results {
         border-color: $pop-light;
-        color       : shade-color($pop, 44%);
+        color: shade-color($pop, 44%);
 
         &:hover {
           border-color: $pop;
-          background  : tint-color($pop, 88%);
-          color       : shade-color($pop, 88%);
+          background: tint-color($pop, 88%);
+          color: shade-color($pop, 88%);
         }
 
         &.active {
           border-color: $pop-dark;
-          color       : tint-color($pop, 100%);
-          background  : shade-color($pop, 0%);
+          color: tint-color($pop, 100%);
+          background: shade-color($pop, 0%);
         }
       }
 
       &.resume {
         border-color: $third-light;
-        color       : $third-dark;
+        color: $third-dark;
 
         &:hover {
           border-color: $third;
-          background  : tint-color($third, 100%);
-          color       : shade-color($third, 88%);
+          background: tint-color($third, 100%);
+          color: shade-color($third, 88%);
         }
 
         &.active {
           border-color: $third-dark;
-          color       : tint-color($third, 100%);
-          background  : shade-color($third, 0%);
+          color: tint-color($third, 100%);
+          background: shade-color($third, 0%);
         }
       }
 
       &.education {
         border-color: $fourth-light;
-        color       : $fourth-dark;
+        color: $fourth-dark;
 
         &:hover {
           border-color: $fourth;
-          background  : tint-color($fourth, 88%);
-          color       : shade-color($fourth, 88%);
+          background: tint-color($fourth, 88%);
+          color: shade-color($fourth, 88%);
         }
 
         &.active {
           border-color: $fourth-dark;
-          color       : tint-color($fourth, 80%);
-          background  : shade-color($fourth, 0%);
+          color: tint-color($fourth, 80%);
+          background: shade-color($fourth, 0%);
         }
       }
     }
@@ -454,8 +459,9 @@ $menu-width-dt: 6rem;
 }
 
 
-.h-hello, .text-gradiant-primary {
-  background             : -webkit-linear-gradient($prime-dark, $prime-light);
+.h-hello,
+.text-gradiant-primary {
+  background: -webkit-linear-gradient($prime-dark, $prime-light);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -476,8 +482,8 @@ hr {
 
 section {
   .content {
-    position    : relative;
-    z-index     : 10;
+    position: relative;
+    z-index: 10;
     padding-left: 0;
 
     @include media-breakpoint-up(md) {
@@ -487,12 +493,12 @@ section {
 
   &#quote {
 
-    color              : darken(rgb(146, 136, 137), 38%);
+    color: darken(rgb(146, 136, 137), 38%);
     // background-image: linear-gradient(180deg, rgb(145 136 137), rgba(152, 143, 146, 1)),
     //   linear-gradient(0deg, rgb(146, 136, 137), rgba(146, 136, 137, 1));
-    background-color   : $prime-light;
-    position           : relative;
-    z-index            : 10;
+    background-color: $prime-light;
+    position: relative;
+    z-index: 10;
 
 
     .carousel {
@@ -522,7 +528,7 @@ section {
       font-size: calc(2rem + 28vw);
 
       @include media-breakpoint-up(sm) {
-        font-size : calc(2rem + 22vw);
+        font-size: calc(2rem + 22vw);
         margin-top: -8rem;
       }
 
@@ -672,8 +678,8 @@ $wave-height-dt: 22vh;
 // waves
 .waves-wrapper {
   position: relative;
-  z-index : 5;
-  bottom  : $wave-height-mb;
+  z-index: 5;
+  bottom: $wave-height-mb;
 
   @include media-breakpoint-up(md) {
     bottom: $wave-height-dt;
@@ -681,14 +687,14 @@ $wave-height-dt: 22vh;
 
   &.top {
     transform: rotate(180deg);
-    top      : 0px;
+    top: 0px;
   }
 
 }
 
 .waves {
-  width        : 100%;
-  height       : $wave-height-mb;
+  width: 100%;
+  height: $wave-height-mb;
   margin-bottom: 0px;
   /*Fix for safari gap*/
 
@@ -700,72 +706,72 @@ $wave-height-dt: 22vh;
 $mix-blend-mode: none;
 
 .wave-one {
-  fill          : rgba($prime-light, 100%);
+  fill: rgba($prime-light, 100%);
   mix-blend-mode: $mix-blend-mode;
 }
 
 .wave-two {
-  fill          : rgba($second, 25%);
+  fill: rgba($second, 25%);
   mix-blend-mode: $mix-blend-mode;
 }
 
 .wave-three {
-  fill          : rgba($third, 25%);
+  fill: rgba($third, 25%);
   mix-blend-mode: $mix-blend-mode;
 }
 
 .wave-four {
-  fill          : rgba($pop, 25%);
+  fill: rgba($pop, 25%);
   mix-blend-mode: $mix-blend-mode;
 }
 
 #results {
   .wave-one {
-    fill          : rgba($white, 100%);
+    fill: rgba($white, 100%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .wave-two {
-    fill          : rgba($white, 25%);
+    fill: rgba($white, 25%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .wave-three {
-    fill          : rgba($white, 25%);
+    fill: rgba($white, 25%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .wave-four {
-    fill          : rgba($white, 25%);
+    fill: rgba($white, 25%);
     mix-blend-mode: $mix-blend-mode;
   }
 }
 
 #resume {
   .wave-one {
-    fill          : rgba($pop-light, 100%);
+    fill: rgba($pop-light, 100%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .bottom {
     .wave-one {
-      fill          : #704343;
+      fill: #704343;
       mix-blend-mode: $mix-blend-mode;
     }
   }
 
   .wave-two {
-    fill          : rgba($third-dark, 12%);
+    fill: rgba($third-dark, 12%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .wave-three {
-    fill          : rgba($third, 12%);
+    fill: rgba($third, 12%);
     mix-blend-mode: $mix-blend-mode;
   }
 
   .wave-four {
-    fill          : rgba($third-dark, 12%);
+    fill: rgba($third-dark, 12%);
     mix-blend-mode: $mix-blend-mode;
   }
 }
@@ -778,22 +784,22 @@ $mix-blend-mode: none;
 }
 
 .parallax>use:nth-child(1) {
-  animation-delay   : -2s;
+  animation-delay: -2s;
   animation-duration: 7s;
 }
 
 .parallax>use:nth-child(2) {
-  animation-delay   : -3s;
+  animation-delay: -3s;
   animation-duration: 10s;
 }
 
 .parallax>use:nth-child(3) {
-  animation-delay   : -4s;
+  animation-delay: -4s;
   animation-duration: 13s;
 }
 
 .parallax>use:nth-child(4) {
-  animation-delay   : -5s;
+  animation-delay: -5s;
   animation-duration: 20s;
 }
 
@@ -810,7 +816,7 @@ $mix-blend-mode: none;
 .thinking-row {
   &:nth-child(even) {
     .thinking-item {
-      
+
       &:nth-child(even) {
         .thinking-thumb {
           // background: linear-gradient(tint-color($second, 90%), tint-color($second, 100%));
@@ -845,14 +851,14 @@ $mix-blend-mode: none;
 .thinking-item {
 
   .thinking-thumb {
-    width        : 100%;
-    height       : 180px;
+    width: 100%;
+    height: 180px;
     border-radius: 2rem;
-    margin       : 0 0 20px 0;
-    color        : shade-color($second, 50%);
-    border       : none;
-    transition   : all .2s ease-in-out;
-    box-shadow   : 0 0rem 1.5rem rgba($black, .10);
+    margin: 0 0 20px 0;
+    color: shade-color($second, 50%);
+    border: none;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0rem 1.5rem rgba($black, .10);
     background: $white;
 
     /* Animation */
@@ -862,7 +868,7 @@ $mix-blend-mode: none;
     }
 
     .thinking-view {
-      margin-top   : 12px;
+      margin-top: 12px;
       margin-bottom: 0;
     }
 

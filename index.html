@@ -85,7 +85,7 @@
     <nav id="the-menu"
         class="the-menu d-flex align-content-center flex-wrap shadow-lg text-center rounded-5 rounded-end"
         role="navigation" aria-label="Main">
-        <a class="btn nav-link hi active" href="#hi">
+        <a class="btn nav-link hi active d-none d-sm-block" href="#hi">
             <i class="fak fa-jm-icon-cropped"></i>
             <div class="text-capitalize">Hello</div>
         </a>
@@ -94,7 +94,7 @@
             <div class="text-capitalize">Case Studies</div>
         </a>
         <a class="btn nav-link results" href="#results">
-            <i class="fa-thin fa-fw fa-analytics" role="img"></i>
+            <i class="fa-thin fa-fw fa-paintbrush-pencil" role="img"></i>
             <div class="text-capitalize">Visual Design</div>
         </a>
         <a class="btn nav-link resume" href="#resume">
@@ -107,9 +107,10 @@
         </a>
     </nav>
 
-    <section id="hi" class="row-content" include-jml="components/section-hi.html"></section>
-    <div id="work" include-jml="components/section-work.html"></div>
-    <div id="results" include-jml="components/section-results.html"></div>
+    <section id="hi" class="row-content" include-jml="components/section-pow-hi.html"></section>
+
+    <div id="work" include-jml="components/section-work-v2.html"></div>
+    <div id="results" include-jml="components/section-visual-design.html"></div>
     <div id="resume" include-jml="components/section-resume.html"></div>
     <div id="education" include-jml="components/section-education.html"></div>
 
@@ -119,13 +120,19 @@
     <div include-jml="components/modal-opfred.html"></div>
     <div include-jml="components/modal-bee.html"></div>
     <div include-jml="components/modal-webmd.html"></div>
-    <div include-jml="components/modal-viva.html"></div>
+
+    <!-- Modal Design is everything -->
     <div include-jml="components/modal-split-test.html"></div>
     <div include-jml="components/modal-call-center-ux.html"></div>
     <div include-jml="components/modal-marketing-auto.html"></div>
     <div include-jml="components/modal-workshops.html"></div>
+    <div include-jml="components/modal-personas.html"></div>
     <div include-jml="components/modal-roadmap.html"></div>
+
+    <!-- Modal Visual Design -->
     <div include-jml="components/modal-reveal.html"></div>
+    <div include-jml="components/modal-viva.html"></div>
+    <div include-jml="components/modal-wrong.html"></div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>

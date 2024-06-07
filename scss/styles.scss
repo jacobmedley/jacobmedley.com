@@ -881,6 +881,21 @@ $mix-blend-mode: none;
       background: $secondary;
       color: $white;
     }
+
+    &.btn-reveal {
+      background: url(/images/work/kitchen-sink/btn-reveal.png);
+      background-size: cover;
+    }
+
+    &.btn-viva {
+      background: url(/images/work/kitchen-sink/btn-viva.png);
+      background-size: cover;
+    }
+
+    &.btn-wrong {
+      background: url(/images/work/kitchen-sink/btn-wrong.png);
+      background-size: cover;
+    }
   }
 }
 

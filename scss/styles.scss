@@ -703,7 +703,7 @@ $wave-height-dt: 22vh;
   }
 }
 
-$mix-blend-mode: none;
+$mix-blend-mode: normal;
 
 .wave-one {
   fill: rgba($prime-light, 100%);
@@ -725,7 +725,7 @@ $mix-blend-mode: none;
   mix-blend-mode: $mix-blend-mode;
 }
 
-#results {
+#visual-design {
   .wave-one {
     fill: rgba($white, 100%);
     mix-blend-mode: $mix-blend-mode;

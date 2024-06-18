@@ -57,8 +57,8 @@
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/644e13edf7.js" crossorigin="anonymous"></script>
 
-    <!-- include template -->
-    <script src="js/include.js"></script>
+    <!-- include template 
+    <script src="js/include.js"></script>-->
 
     <!-- Google Tag Manager -->
     <script>
@@ -141,6 +141,22 @@
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        async function includeJML() {
+            document.querySelectorAll('[data-jm-include]').forEach(async (elem) => {
+                const file = elem.getAttribute('data-jm-include');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        const content = await response.text();
+                        elem.innerHTML = content;
+                    } else {
+                        console.error('Failed to load include file:', file);
+                    }
+                } catch (error) {
+                    console.error('Error fetching include file:', file, error);
+                }
+            });
+        }
         includeJML();
     </script>
 </body>

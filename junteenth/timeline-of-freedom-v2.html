@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .main-timeline {
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .main-timeline:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .timeline {
+            width: calc(50% + 70px);
+            margin: 0 5px 0 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            float: left;
+            background: #fff;
+        }
+
+        .timeline:nth-child(even) {
+            float: right;
+            margin: 0 0 0 5px;
+        }
+
+        .timeline-content {
+            padding: 30px 150px 30px 30px;
+            position: relative;
+        }
+
+        .timeline:nth-child(even) .timeline-content {
+            padding: 30px 30px 30px 150px;
+        }
+
+        .timeline-content:before {
+            content: "";
+            background-color: #00C6DA;
+            height: 100%;
+            width: 70px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .timeline:nth-child(even) .timeline-content:before {
+            right: auto;
+            left: 0;
+        }
+
+        .timeline-icon {
+            color: #fff;
+            font-size: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+        }
+
+        .timeline:nth-child(even) .timeline-icon {
+            right: auto;
+            left: 10px;
+        }
+
+        .timeline-year {
+            color: #333;
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            right: 60px;
+            transform: rotate(90deg);
+        }
+
+        .timeline:nth-child(even) .timeline-year {
+            right: auto;
+            left: 60px;
+        }
+
+        .title {
+            color: #00C6DA;
+            font-size: 23px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .timeline,
+            .timeline:nth-child(even) {
+                width: 100%;
+                margin: 0 0 30px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+
+            .timeline-content,
+            .timeline:nth-child(even) .timeline-content {
+                text-align: center;
+                padding: 130px 25px 25px;
+            }
+
+            .timeline-content:before,
+            .timeline:nth-child(even) .timeline-content:before {
+                height: 70px;
+                width: 100%;
+            }
+
+            .timeline-icon,
+            .timeline:nth-child(even) .timeline-icon {
+                top: 16px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-year,
+            .timeline:nth-child(even) .timeline-year {
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-timeline">
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1619</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">First enslaved Africans brought to Jamestown</h3>
+                <p class="description">The first enslaved Africans arrived in Jamestown, Virginia, marking the beginning
+                    of slavery in what would become the United States.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1863</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Emancipation Proclamation</h3>
+                <p class="description">President Abraham Lincoln issued the Emancipation Proclamation, which declared
+                    that all enslaved people in Confederate-held territory were free.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1865</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">13th Amendment ratified</h3>
+                <p class="description">The 13th Amendment to the United States Constitution was ratified, abolishing
+                    slavery throughout the country.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1868</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">14th Amendment ratified</h3>
+                <p class="description">The 14th Amendment was ratified, granting citizenship to all persons born or
+                    naturalized in the United States, including former enslaved people.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1870</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">15th Amendment ratified</h3>
+                <p class="description">The 15th Amendment was ratified, prohibiting the denial of the right to vote
+                    based on race, color, or previous condition of servitude.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1896</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Plessy v. Ferguson decision</h3>
+                <p class="description">The Supreme Court's decision in Plessy v. Ferguson upheld the constitutionality
+                    of racial segregation under the "separate but equal" doctrine.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1954</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Brown v. Board of Education decision</h3>
+                <p class="description">The Supreme Court's decision in Brown v. Board of Education declared that racial
+                    segregation in public schools was unconstitutional.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1955.5</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Montgomery Bus Boycott</h3>
+                <p class="description">The Montgomery Bus Boycott began after Rosa Parks was arrested for refusing to
+                    give up her seat to a white person, leading to a Supreme Court ruling that segregation on public
+                    buses was unconstitutional.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1963</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">March on Washington</h3>
+                <p class="description">The March on Washington for Jobs and Freedom took place, where Martin Luther King
+                    Jr. delivered his iconic "I Have a Dream" speech.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1964</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Civil Rights Act passed</h3>
+                <p class="description">The Civil Rights Act of 1964 was passed, outlawing discrimination based on race,
+                    color, religion, sex, or national origin.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1965</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Voting Rights Act passed</h3>
+                <p class="description">The Voting Rights Act of 1965 was passed,Continuing from where we left off:
+                <p class="description">The Voting Rights Act of 1965 was passed, aiming to overcome legal barriers at
+                    the state and local levels that prevented African Americans from exercising their right to vote.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1967</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Loving v. Virginia decision</h3>
+                <p class="description">The Supreme Court's decision in Loving v. Virginia struck down laws banning
+                    interracial marriage as unconstitutional.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1968</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Fair Housing Act passed</h3>
+                <p class="description">The Fair Housing Act was passed, prohibiting discrimination in the sale, rental,
+                    and financing of housing based on race, religion, national origin, and sex.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">1988</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Civil Rights Restoration Act</h3>
+                <p class="description">The Civil Rights Restoration Act was passed, which expanded the scope of civil
+                    rights protections in numerous areas, including education and employment.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">2008</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">Barack Obama elected President</h3>
+                <p class="description">Barack Obama was elected as the first African American President of the United
+                    States.</p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-content">
+                <h2 class="timeline-year">2020</h2>
+                <div class="timeline-icon"><i class="fa fa-globe"></i></div>
+                <h3 class="title">George Floyd protests</h3>
+                <p class="description">Protests erupted worldwide following the death of George Floyd, sparking a
+                    renewed focus on racial justice and police reform.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

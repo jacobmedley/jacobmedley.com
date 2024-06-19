@@ -1,0 +1,159 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// Links
+//
+// Style anchor elements.
+
+$link-decoration: none;
+
+// Color system
+
+$prime : #bb382c;
+$prime-light: lighten($prime, 10%);
+$prime-dark : darken($prime, 10%);
+
+
+$second : #dcba1d;
+$second-light: lighten($second, 10%);
+$second-dark : darken($second, 10%);
+
+$third : #256e35;
+$third-light: lighten($third, 10%);
+$third-dark : darken($third, 10%);
+
+$fourth : #242424;
+$fourth-light: lighten($fourth, 10%);
+$fourth-dark : darken($fourth, 10%);
+
+$theme-colors: (
+    "prime": $prime,
+    "prime-light": $prime-light,
+    "prime-dark": $prime-dark,
+    "second": $second,
+    "second-light": $second-light,
+    "second-dark": $second-dark,
+    "third": $third,
+    "third-light": $third-light,
+    "third-dark": $third-dark,
+    "fourth": $fourth,
+    "fourth-light": $fourth-light,
+    "fourth-dark": $fourth-dark
+);
+
+$display-font-sizes: (
+    01: 1.5rem,
+    02: 2rem,
+    03: 3rem,
+    04: 4rem,
+    05: 5rem,
+    06: 6rem,
+    07: 7rem,
+    08: 8rem,
+    09: 9rem,
+    10: 10rem,
+    11: 11rem,
+    12: 12rem,
+    13: 13rem,
+    14: 14rem,
+    15: 15rem,
+    16: 16rem,
+    17: 17rem,
+    18: 18rem,
+    19: 19rem,
+    20: 20rem
+);
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns : 12;
+$grid-gutter-width: 1.2rem;
+$grid-row-columns : 12;
+
+
+// z-indexing
+
+// $z1: 	111;
+// $z2: 	222;
+// $z3: 	333;
+// $z4: 	444;
+// $z5: 	555;
+// $z6: 	666;
+// $z7: 	777;
+// $z8: 	888;
+// $z9: 	999;
+// $z10: 	1000;
+
+$font-family-sans-serif: urw-form,
+    'Manrope',
+    sans-serif;
+$headings-font-family: urw-form,
+    sans-serif;
+
+// Carousel
+
+$carousel-control-color : $second-dark;
+$carousel-indicator-active-bg: $second-dark;
+
+$enable-negative-margins: true;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+// $theme-colors: map-merge($theme-colors, $colors);
+$theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "red", "orange", "yellow", "green", "teal", "cyan");
+
+
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+
+// 6. Optionally include any other parts as needed
+
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/tables";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/transitions";
+@import "../node_modules/bootstrap/scss/dropdown";
+@import "../node_modules/bootstrap/scss/button-group";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/accordion";
+@import "../node_modules/bootstrap/scss/breadcrumb";
+@import "../node_modules/bootstrap/scss/pagination";
+@import "../node_modules/bootstrap/scss/badge";
+@import "../node_modules/bootstrap/scss/alert";
+@import "../node_modules/bootstrap/scss/progress";
+@import "../node_modules/bootstrap/scss/list-group";
+@import "../node_modules/bootstrap/scss/close";
+@import "../node_modules/bootstrap/scss/toasts";
+@import "../node_modules/bootstrap/scss/modal";
+@import "../node_modules/bootstrap/scss/tooltip";
+@import "../node_modules/bootstrap/scss/popover";
+@import "../node_modules/bootstrap/scss/carousel";
+@import "../node_modules/bootstrap/scss/spinners";
+@import "../node_modules/bootstrap/scss/offcanvas";
+@import "../node_modules/bootstrap/scss/placeholders";
+
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here

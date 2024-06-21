@@ -11,22 +11,43 @@ $link-decoration: none;
 
 // Color system
 
+
+/// Slightly lighten a color
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+
+
 $prime : #bb382c;
-$prime-light: lighten($prime, 10%);
-$prime-dark : darken($prime, 10%);
+$prime-light: tint($prime, 78%);
+$prime-dark : shade($prime, 78%);
 
 
 $second : #dcba1d;
-$second-light: lighten($second, 10%);
-$second-dark : darken($second, 10%);
+$second-light: tint($second, 78%);
+$second-dark : shade($second, 78%);
 
 $third : #256e35;
-$third-light: lighten($third, 10%);
-$third-dark : darken($third, 10%);
+$third-light: tint($third, 78%);
+$third-dark : shade($third, 78%);
 
 $fourth : #242424;
-$fourth-light: lighten($fourth, 10%);
-$fourth-dark : darken($fourth, 10%);
+$fourth-light: tint($fourth, 78%);
+$fourth-dark : shade($fourth, 78%);
+
+$fifth : #490e6f;
+$fifth-light: tint($fifth, 78%);
+$fifth-dark : shade($fifth, 78%);
+
+
+
+
 
 $theme-colors: (
     "prime": $prime,
@@ -40,7 +61,10 @@ $theme-colors: (
     "third-dark": $third-dark,
     "fourth": $fourth,
     "fourth-light": $fourth-light,
-    "fourth-dark": $fourth-dark
+    "fourth-dark": $fourth-dark,
+    "fifth": $fifth,
+    "fifth-light": $fifth-light,
+    "fifth-dark": $fifth-dark
 );
 
 $display-font-sizes: (
@@ -70,9 +94,9 @@ $display-font-sizes: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns : 12;
+$grid-columns : 24;
 $grid-gutter-width: 1.2rem;
-$grid-row-columns : 12;
+$grid-row-columns : 24;
 
 
 // z-indexing
@@ -157,3 +181,57 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+
+
+.row-content {
+    min-height: 100vh;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.time-line {
+    height: 28px;
+
+    .progress {
+        height: 28px;
+    }
+}
+
+
+.progress-stacked {
+    position: relative;
+}
+
+.progress-indicator {
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: #ff5733;
+    /* Change color as needed */
+    top: 0;
+    left: 0;
+    transition: left 0.2s ease-in-out;
+    z-index: 10;
+    /* Ensure it is on top of other elements */
+}
+
+section {
+    &.content-section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        /* Centers the content horizontally */
+        align-items: center;
+        /* Centers the content vertically */
+        flex-direction: column;
+
+        .content {
+            padding: 0 2rem;
+            max-width: 920px;
+
+            &.title {
+                text-align: center;
+            }
+        }
+    }
+}

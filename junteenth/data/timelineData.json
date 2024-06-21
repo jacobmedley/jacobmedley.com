@@ -1,0 +1,339 @@
+{
+    "sections": [
+        {
+            "title": "Open",
+            "class": "content-container text-white bg-black",
+            "intro": {
+                "title": "The Scale of Freedom",
+                "subtitle": "\"The Scale of Freedom\" explores the extensive history and timeline of Black American rights, focusing on the significant milestones that have shaped the journey from slavery to the present day.",
+                "description": [
+                    "This project aims to highlight the immense length of time it took to achieve the freedoms and rights that Black Americans have today, illustrating just how recently these advancements have occurred in the grand scope of history. The timeline will show the arduous struggle for freedom, equality, and justice, emphasizing that we are in a relatively new era of freedom for Black Americans descended from slavery.",
+                    "Despite the progress made, the journey is ongoing, and the pursuit of true equality and the eradication of systemic racism continue to be crucial endeavors."
+                ]
+            }
+        },
+        {
+            "title": "Slavery",
+            "class": "text-prime-dark bg-prime content-container",
+            "intro": {
+                "title": "Slavery",
+                "subtitle": "246 Years"
+            },
+            "years": [
+                "1619",
+                "1860"
+            ],
+            "content": {
+                "1619": {
+                    "title": "First enslaved Africans brought to Jamestown",
+                    "description": [
+                        "The first enslaved Africans were brought to Jamestown, Virginia, marking the beginning of slavery in what would become the United States. This event laid the foundation for a system of forced labor that would persist for more than two centuries, profoundly shaping the social, economic, and political landscape of the nation."
+                    ],
+                    "source": {
+                        "text": "Smithsonian Magazine",
+                        "url": "https://www.smithsonianmag.com/history/first-africans-landed-virginia-1619-180962142/"
+                    }
+                }
+            }
+        },
+        {
+            "title": "Emancipation & Reconstruction",
+            "class": "text-second-dark bg-second",
+            "intro": {
+                "title": "Emancipation & Reconstruction",
+                "subtitle": "12 Years"
+            },
+            "years": [
+                "1861",
+                "1863"
+            ],
+            "content": {
+                "1861": {
+                    "title": "American Civil War",
+                    "description": [
+                        "The Civil War was fought between the Northern states (the Union) and the Southern states (the Confederacy) primarily over the issue of slavery. Enslaved people played significant roles during the war, including working as laborers, serving as soldiers for the Union Army after the Emancipation Proclamation, and acting as spies and scouts.",
+                        "The war resulted in the abolition of slavery but left the nation deeply divided, leading to a long and difficult period of Reconstruction aimed at integrating formerly enslaved people into American society and addressing the economic and social devastation of the South."
+                    ],
+                    "source": {
+                        "text": "History",
+                        "url": "https://www.history.com/topics/american-civil-war/american-civil-war-history"
+                    }
+                },
+                "1863": {
+                    "title": "Emancipation Proclamation",
+                    "description": [
+                        "President Abraham Lincoln issued the Emancipation Proclamation, declaring that all enslaved people in Confederate states were to be set free. This shifted the focus of the war towards the abolition of slavery and allowed African Americans to enlist in the Union Army.",
+                        "The proclamation was a strategic move to weaken the Confederacy and gave the Union a moral cause. While it did not immediately free all enslaved people, it was a crucial step towards the eventual abolition of slavery and highlighted the Union's commitment to human rights."
+                    ],
+                    "source": {
+                        "text": "National Archives",
+                        "url": "https://www.archives.gov/exhibits/american_originals_iv/sections/emancipation_proclamation.html"
+                    }
+                }
+            }
+        },
+        {
+            "title": "Post-Reconstruction",
+            "class": "text-third-dark bg-third pb-5",
+            "intro": {
+                "title": "Post-Reconstruction",
+                "subtitle": "87 Years"
+            },
+            "years": [
+                "1865",
+                "1868",
+                "1870",
+                "1896"
+            ],
+            "content": {
+                "1865": {
+                    "title": "13th Amendment Ratified",
+                    "description": [
+                        "The 13th Amendment to the U.S. Constitution was ratified, officially abolishing slavery throughout the United States. This amendment addressed the fundamental injustice of slavery and marked a significant turning point in American history. It ended the legal institution of slavery, which had been a deeply entrenched part of American society since its colonial beginnings.",
+                        "The amendment also laid the groundwork for subsequent civil rights advancements by affirming the principle that all individuals are entitled to freedom and equality under the law."
+                    ],
+                    "source": {
+                        "text": "Library of Congress",
+                        "url": "https://www.loc.gov/rr/program/bib/ourdocs/13thamendment.html"
+                    }
+                },
+                "1868": {
+                    "title": "14th Amendment Ratified",
+                    "description": [
+                        "The 14th Amendment was ratified, granting citizenship and equal protection under the law to all persons born or naturalized in the United States, including formerly enslaved people. This amendment was significant because it addressed issues of civil rights and liberties, ensuring that no state could deny any person the equal protection of the laws.",
+                        "It was a critical measure in the Reconstruction era, aiming to integrate formerly enslaved individuals into American society as full citizens and providing a legal basis for future civil rights legislation and court decisions."
+                    ],
+                    "source": {
+                        "text": "National Constitution Center",
+                        "url": "https://constitutioncenter.org/interactive-constitution/amendment/amendment-xiv"
+                    }
+                },
+                "1870": {
+                    "title": "15th Amendment Ratified",
+                    "description": [
+                        "Granting African American men the right to vote. This amendment addressed the issue of racial discrimination in voting rights and was a crucial step in the struggle for racial equality. It was intended to prevent states from denying the right to vote based on race, color, or previous condition of servitude.",
+                        "However, despite its ratification, many African Americans faced significant obstacles to voting, including literacy tests, poll taxes, and other discriminatory practices, which would not be fully addressed until the Voting Rights Act of 1965."
+                    ],
+                    "source": {
+                        "text": "Library of Congress",
+                        "url": "https://www.loc.gov/rr/program/bib/ourdocs/15thamendment.html"
+                    }
+                },
+                "1896": {
+                    "title": "Plessy v. Ferguson Decision",
+                    "description": [
+                        "The Supreme Court decision in Plessy v. Ferguson established the 'separate but equal' doctrine, leading to widespread segregation under Jim Crow laws. This ruling upheld the constitutionality of racial segregation and justified a wide range of discriminatory practices, particularly in the South.",
+                        "It institutionalized a system of legal segregation that would persist for more than half a century, affecting every aspect of life for African Americans. The decision highlighted the deep-seated racial prejudices of the time and underscored the challenges of achieving true equality."
+                    ],
+                    "source": {
+                        "text": "History",
+                        "url": "https://www.history.com/topics/black-history/plessy-v-ferguson"
+                    }
+                }
+            }
+        },
+        {
+            "title": "Civil Rights",
+            "class": "text-fourth-light bg-fourth-dark",
+            "intro": {
+                "title": "Civil Rights",
+                "subtitle": "12 Years"
+            },
+            "years": [
+                "1954",
+                "1955",
+                "1963",
+                "1964",
+                "1965",
+                "1967",
+                "1968"
+            ],
+            "content": {
+                "1954": {
+                    "title": "Brown v. Board of Education",
+                    "description": [
+                        "The Supreme Court decision in Brown v. Board of Education declared that racial segregation in public schools was unconstitutional. This landmark ruling overturned the 'separate but equal' doctrine established in Plessy v. Ferguson and was a major victory for the Civil Rights Movement.",
+                        "The decision marked the beginning of the end for legal segregation in the United States and paved the way for further civil rights advancements."
+                    ],
+                    "source": {
+                        "text": "History",
+                        "url": "https://www.history.com/topics/black-history/brown-v-board-of-education-of-topeka"
+                    }
+                },
+                "1955": {
+                    "title": "Montgomery Bus Boycott",
+                    "description": [
+                        "Sparked by Rosa Parks' arrest, the Montgomery Bus Boycott became a pivotal event in the Civil Rights Movement. African Americans in Montgomery, Alabama, refused to ride city buses to protest segregated seating. The boycott, led by Dr. Martin Luther King Jr., lasted for over a year and resulted in a Supreme Court ruling that segregation on public buses was unconstitutional.",
+                        "This successful nonviolent protest highlighted the power of collective action and civil disobedience, inspiring other civil rights campaigns and contributing to the national movement for racial equality."
+                    ],
+                    "source": {
+                        "text": "History",
+                        "url": "https://www.history.com/topics/black-history/montgomery-bus-boycott"
+                    }
+                },
+                "1963": {
+                    "title": "March on Washington",
+                    "description": [
+                        "The March on Washington for Jobs and Freedom took place, where Dr. Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. The march was one of the largest political rallies for human rights in U.S. history and aimed to draw attention to the economic and social inequalities faced by African Americans.",
+                        "It played a crucial role in building momentum for the Civil Rights Act of 1964 and the Voting Rights Act of 1965. The event demonstrated the widespread support for civil rights and the growing unity among activists and organizations."
+                    ],
+                    "source": {
+                        "text": "National Park Service",
+                        "url": "https://www.nps.gov/articles/march-on-washington.htm"
+                    }
+                },
+                "1964": {
+                    "title": "Civil Rights Act passed",
+                    "description": [
+                        "The Civil Rights Act was passed, prohibiting discrimination based on race, color, religion, sex, or national origin. This landmark legislation addressed widespread racial discrimination and segregation, marking a significant achievement for the Civil Rights Movement. It outlawed discriminatory practices in employment, education, and public accommodations.",
+                        "The Act also established the Equal Employment Opportunity Commission (EEOC) to help prevent workplace discrimination. It was a critical step in dismantling institutionalized racism and promoting equality in American society."
+                    ],
+                    "source": {
+                        "text": "National Archives",
+                        "url": "https://www.archives.gov/exhibits/featured-documents/civil-rights-act"
+                    }
+                },
+                "1965": {
+                    "title": "Voting Rights Act Passed",
+                    "description": [
+                        "The Voting Rights Act was passed, eliminating various barriers to Black enfranchisement, such as literacy tests and other discriminatory practices. This act was significant because it addressed the systematic disenfranchisement of African Americans in the South and ensured that all citizens had an equal opportunity to participate in the electoral process.",
+                        "The Act provided for federal oversight and enforcement of voter registration and election procedures in states with a history of voting discrimination. It marked a major victory for the Civil Rights Movement and was instrumental in increasing voter registration and participation among African Americans."
+                    ],
+                    "source": {
+                        "text": "U.S. Department of Justice",
+                        "url": "https://www.justice.gov/crt/introduction-federal-voting-rights-laws"
+                    }
+                },
+                "1967": {
+                    "title": "Loving v. Virginia decision",
+                    "description": [
+                        "The Supreme Court decision in Loving v. Virginia struck down laws banning interracial marriage. This landmark case invalidated state laws prohibiting interracial marriage, ruling that such laws violated the Equal Protection and Due Process Clauses of the 14th Amendment.",
+                        "The decision was significant as it affirmed the right to marry regardless of race and helped to dismantle remaining vestiges of legalized racial discrimination in the United States. The case was a major milestone in the fight for civil rights and equality, emphasizing the importance of individual liberty and the pursuit of happiness."
+                    ],
+                    "source": {
+                        "text": "History",
+                        "url": "https://www.history.com/topics/civil-rights-movement/loving-v-virginia"
+                    }
+                },
+                "1968": {
+                    "title": "Assassination of Martin Luther King Jr",
+                    "description": [
+                        "On April 4, 1968, Martin Luther King Jr., a leader of the Civil Rights Movement and a prominent advocate for nonviolent protest and racial equality, was assassinated in Memphis, Tennessee. His assassination marked a pivotal and tragic moment in American history, leading to nationwide mourning and widespread civil unrest. The event underscored the ongoing struggle for civil rights and highlighted the deep-seated racial tensions in the United States.",
+                        "King's death galvanized the Civil Rights Movement, leading to the passage of significant legislation such as the Fair Housing Act, as well as renewed efforts to address systemic racism and promote social justice. His legacy continues to inspire movements for equality and justice around the world."
+                    ],
+                    "source": {
+                        "text": "Martin Luther King, Jr. National Historical Park",
+                        "url": "https://www.nps.gov/malu/planyourvisit/index.htm"
+                    }
+                },
+                "1968": {
+                    "title": "Fair Housing Act passed",
+                    "description": [
+                        "The Fair Housing Act was passed, prohibiting discrimination concerning the sale, rental, and financing of housing based on race, religion, national origin, or sex. This Act aimed to address racial segregation and discrimination in housing, which had long perpetuated economic and social inequalities. It was a key piece of legislation following the Civil Rights Act of 1964, further extending civil rights protections to ensure equal access to housing opportunities.",
+                        "The Act also sought to eliminate unfair housing practices and promote residential integration, contributing to the broader goal of racial equality in America."
+                    ],
+                    "source": {
+                        "text": "U.S. Department of Housing and Urban Development",
+                        "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp/aboutfheo/history"
+                    }
+                }
+            }
+        },
+        {
+            "title": "Post-Civil Rights",
+            "class": "text-fifth-light bg-fifth",
+            "intro": {
+                "title": "Post-Civil Rights",
+                "subtitle": "56 Years"
+            },
+            "years": [
+                "1988",
+                "2008",
+                "2010",
+                "2013",
+                "2018",
+                "2020",
+                "2024"
+            ],
+            "content": {
+                "1988": {
+                    "title": "Civil Rights Restoration Act",
+                    "description": [
+                        "The Civil Rights Restoration Act was passed, expanding non-discrimination laws to apply to entire institutions receiving federal funds. This Act was significant because it clarified and broadened the scope of civil rights protections, ensuring that non-discrimination provisions applied to all operations of institutions that receive federal funding, not just specific programs or activities.",
+                        "This legislative change strengthened the enforcement of civil rights laws, promoting greater accountability and compliance, and reinforcing the commitment to eliminating discrimination in education, employment, and other federally funded programs."
+                    ],
+                    "source": {
+                        "text": "Legal Information Institute",
+                        "url": "https://www.law.cornell.edu/wex/civil_rights_restoration_act_of_1987"
+                    }
+                },
+                "2008": {
+                    "title": "Barack Obama elected President",
+                    "description": [
+                        "Barack Obama was elected as the first African American President of the United States. His election represented a historic milestone in American history, symbolizing the progress made in the struggle for racial equality and civil rights.",
+                        "Obama's presidency inspired many and highlighted the possibilities for achieving racial integration and representation in the highest office of the country. His election also underscored the ongoing challenges and dialogues about race, identity, and equality in America."
+                    ],
+                    "source": {
+                        "text": "The White House",
+                        "url": "https://www.whitehouse.gov/about-the-white-house/presidents/barack-obama/"
+                    }
+                },
+                "2010": {
+                    "title": "Fair Sentencing Act",
+                    "description": [
+                        "The Fair Sentencing Act of 2010 reduced the disparity between sentences for crack cocaine and powder cocaine offenses, which disproportionately affected Black Americans. This law aimed to address the racial disparities in sentencing that had resulted from previous drug policies.",
+                        "By reducing the sentencing disparity, the Act sought to promote fairness and equality within the criminal justice system. It was a significant step towards rectifying the injustices of the past and ensuring more equitable treatment under the law."
+                    ],
+                    "source": {
+                        "text": "Congress.gov",
+                        "url": "https://www.congress.gov/bill/111th-congress/senate-bill/1789"
+                    }
+                },
+                "2013": {
+                    "title": "Black Lives Matter Movement",
+                    "description": [
+                        "The Black Lives Matter (BLM) movement began as a response to the acquittal of George Zimmerman in the shooting death of Trayvon Martin. BLM grew into an international activist movement, organizing protests against systemic racism, police brutality, and racial inequality.",
+                        "The movement has played a crucial role in raising awareness about the ongoing struggles faced by Black communities and has advocated for significant changes in policies and practices affecting racial justice. BLM's influence has been seen in various spheres, from politics to culture, making it a powerful force for social change."
+                    ],
+                    "source": {
+                        "text": "Black Lives Matter",
+                        "url": "https://blacklivesmatter.com/herstory/"
+                    }
+                },
+                "2018": {
+                    "title": "First Step Act",
+                    "description": [
+                        "The First Step Act of 2018 is a bipartisan criminal justice reform law aimed at reducing recidivism and improving prison conditions. The Act includes provisions to reduce mandatory minimum sentences for certain nonviolent offenses and expand early release programs.",
+                        "It also aims to improve rehabilitation programs and reentry initiatives for incarcerated individuals. While not exclusively focused on Black Americans, the Act addresses systemic issues in the criminal justice system that disproportionately affect Black communities, marking a significant step towards greater fairness and equity."
+                    ],
+                    "source": {
+                        "text": "Congress.gov",
+                        "url": "https://www.congress.gov/bill/115th-congress/house-bill/5682"
+                    }
+                },
+                "2020": {
+                    "title": "George Floyd protests",
+                    "description": [
+                        "The murder of George Floyd by a police officer in Minneapolis sparked nationwide and global protests against systemic racism and police brutality. The protests called for significant changes in policing, accountability, and racial justice.",
+                        "This movement, marked by widespread demonstrations and public discourse on racism, highlighted the enduring issues of racial inequality and injustice in the United States. It led to increased awareness and advocacy for civil rights and systemic change, reinforcing the importance of the Black Lives Matter movement."
+                    ],
+                    "source": {
+                        "text": "The New York Times",
+                        "url": "https://www.nytimes.com/article/george-floyd-protests-timeline.html"
+                    }
+                },
+                "2024": {
+                    "title": "We have just started the journey.",
+                    "description": [
+                        "If you had the patience to scroll all the way to here, then you might now have a sense of just how early in the process we are for equal rights for the citizens descended from slavery in the USA. Despite significant strides in representation, legislation, and public awareness, systemic racism and inequality persist.",
+                        "The ongoing efforts of movements like Black Lives Matter, along with legislative and social initiatives, reflect a commitment to achieving true freedom and equality for all. The journey towards racial justice is ongoing, with the nation striving to live up to its ideals of liberty and justice for all."
+                    ],
+                    "source": {
+                        "text": "The New York Times",
+                        "url": "https://www.nytimes.com/2024/01/01/us/progress-and-challenges-racial-equality.html"
+                    }
+                }
+            }
+        }
+    ]
+}

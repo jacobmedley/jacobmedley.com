@@ -41,7 +41,7 @@ $fourth : #242424;
 $fourth-light: tint($fourth, 78%);
 $fourth-dark : shade($fourth, 78%);
 
-$fifth : #490e6f;
+$fifth : #94549e;
 $fifth-light: tint($fifth, 78%);
 $fifth-dark : shade($fifth, 78%);
 
@@ -182,6 +182,79 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 
 // 8. Add additional custom code here
 
+@mixin gradient($start-color, $end-color) {
+    background: linear-gradient($start-color, $end-color);
+}
+
+
+#screen {
+    padding-left: 58px;
+}
+
+#main {
+    box-shadow:
+        // add box shadow to the left   of the screen 
+        -12px 0 32px rgba(0, 0, 0, 0.68);
+
+    position: relative;
+    z-index: 10;
+
+    border-left: 1px solid rgba($color: #000, $alpha: 0.7);
+}
+
+#scale-of-freedom-container {
+    position: relative;
+}
+
+
+#time-line-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 58px;
+    height: 100vh;
+    @include gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .8));
+    z-index: 5;
+
+    #indicator {
+        position: absolute;
+        width: 100%;
+        height: 56px;
+        background-color: rgba(#fff, 0.3);
+        color: #fff;
+        top: 0;
+        left: 0;
+        transition: top 0.2s ease-in-out;
+        z-index: 8;
+        text-align: center;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+
+        .indicator-year {
+            font-size: 1.6rem;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.68);
+            margin-bottom: -10px;
+        }
+
+        .indicator-label {
+            font-size: .8rem;
+        }
+    }
+}
+
+#scale-of-freedom-container {
+    section {
+        min-height: 100vh;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+}
+
 
 .row-content {
     min-height: 100vh;
@@ -200,17 +273,6 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 
 .progress-stacked {
     position: relative;
-}
-
-#indicator {
-    position: absolute;
-    top: 0;
-    left: 0%;
-    height: 58px;
-    width: 8px;
-    background-color: #88ff00;
-    transition: left 0.2s ease-in-out;
-    z-index: 99;
 }
 
 
@@ -264,6 +326,8 @@ section {
         }
     }
 
+
+
     .year-section {
         .year {
             text-align: center;
@@ -284,7 +348,17 @@ section {
     }
 }
 
+
+section {
+
+    position: relative;
+}
+
+
 #open {
+
+    background: url(../junteenth/images/SVG/bg-section-one-v1.svg) center center;
+
     .intro-title {
         text-align: left;
         font-size: 3.4rem;
@@ -294,13 +368,4 @@ section {
         text-align: left;
         font-size: 1.5rem;
     }
-
-}
-
-#intro-slavery {
-    background: url(../junteenth/images/open-bottom.png) repeat-x top center;
-}
-
-#intro-emancipation-reconstruction {
-    background: url(../junteenth/images/slavery-bottom.png) repeat-x top center;
 }

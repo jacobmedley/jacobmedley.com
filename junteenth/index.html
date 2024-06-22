@@ -84,6 +84,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#the-menu" data-bs-offset="100" tabindex="0">
+
    <!-- Google Tag Manager (noscript) -->
    <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC65Z8" height="0" width="0"
@@ -91,76 +92,79 @@
    </noscript>
    <!-- End Google Tag Manager (noscript) -->
 
-   <header class="bg-white sticky-top">
-      <div class="progress-stacked rounded-0 time-line">
-         <div id="pb-slavery" class="progress" role="progressbar" aria-label="Slavery" aria-valuenow="246"
-            aria-valuemin="0" aria-valuemax="405" style="width: 60.74%">
-            <div class="progress-bar bg-prime text-prime-light"><span class="d-none d-lg-block">246
-                  yrs</span></div>
+   <div id="screen">
+      <aside id="time-line-container">
+         <div id="indicator">
+            <div id="year-counter" class="indicator-year">0</div>
+            <div class="indicator-label">YEARS</div>
          </div>
-         <div id="pb-emancipation-reconstruction" class="progress" role="progressbar"
-            aria-label="Emancipation/Reconstruction" aria-valuenow="12" aria-valuemin="0" aria-valuemax="405"
-            style="width: 2.96%">
-            <div class="progress-bar bg-second text-second-dark"><span class="d-none d-lg-block">12 yrs</span></div>
-         </div>
-         <div id="pb-post-reconstruction" class="progress" role="progressbar"
-            aria-label="Post-Reconstruction to Civil Rights Era" aria-valuenow="87" aria-valuemin="0"
-            aria-valuemax="405" style="width: 21.48%">
-            <div class="progress-bar bg-third text-third-light"><span class="d-none d-lg-block">87 yrs</span></div>
-         </div>
-         <div id="pb-civil-rights" class="progress" role="progressbar" aria-label="Civil Rights Movement"
-            aria-valuenow="14" aria-valuemin="0" aria-valuemax="405" style="width: 3.46%">
-            <div class="progress-bar bg-fourth text-fourth-light"><span class="d-none d-lg-block">14 yrs</span>
-            </div>
-         </div>
-         <div id="pb-post-civil-rights" class="progress" role="progressbar"
-            aria-label="Post-Civil Rights Movement to Current Era" aria-valuenow="56" aria-valuemin="0"
-            aria-valuemax="405" style="width: 11.36%">
-            <div class="progress-bar bg-fifth text-fifth-light"><span class="d-none d-lg-block">56 yrs</span></div>
-         </div>
-         <div id="indicator"></div>
+      </aside>
+
+      <div id="main">
+         <header class="bg-white sticky-top">
+            <nav id="the-menu" class="navbar navbar-expand-lg navbar-light">
+               <div class="container-fluid">
+                  <a href="#" class="navbar-brand"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item">
+                           <a class="nav-link" href="#slavery">Slavery</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#emancipation-reconstruction">Emancipation &#38;
+                              Reconstruction</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#post-reconstruction">Post-Reconstruction</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#civil-rights">Civil Rights</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="#post-civil-rights">Post-Civil Rights</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+         </header>
+
+         <section id="open" class="content-container text-white bg-black">
+            <section id="intro-open" class="content-section intro-section">
+               <div class="content">
+                  <h2 class="intro-title fw-bold">The Scale of Freedom</h2>
+                  <p class="intro-subtitle">"The Scale of Freedom" explores the extensive history and timeline of Black
+                     American rights, focusing on the significant milestones that have shaped the journey from slavery
+                     to
+                     the
+                     present day.</p>
+                  <p>This project aims to highlight the immense length of time it took to achieve the freedoms and
+                     rights
+                     that
+                     Black Americans have today, illustrating just how recently these advancements have occurred in the
+                     grand
+                     scope of history. The timeline will show the arduous struggle for freedom, equality, and justice,
+                     emphasizing that we are in a relatively new era of freedom for Black Americans descended from
+                     slavery.
+                  </p>
+                  <p>Despite the progress made, the journey is ongoing, and the pursuit of true equality and the
+                     eradication
+                     of systemic racism continue to be crucial endeavors.</p>
+               </div>
+            </section>
+         </section>
+
+
+         <div id="scale-of-freedom-container"></div>
       </div>
-
-
-      <nav id="the-menu" class="navbar navbar-expand-lg navbar-light">
-         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav">
-                  <li class="nav-item">
-                     <a class="nav-link" href="#open">Intro</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#slavery">Slavery</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#emancipation-reconstruction">Emancipation &#38;
-                        Reconstruction</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#post-reconstruction">Post-Reconstruction</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#civil-rights">Civil Rights</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#post-civil-rights">Post-Civil Rights</a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </nav>
-   </header>
-
-   <div id="timeline-container"></div>
-
+   </div>
    <script>
-      async function fetchTimelineData() {
-         const response = await fetch('data/timelineData.json');
+      async function fetchScaleOfFreedomData() {
+         const response = await fetch('data/ScaleOfFreedomData.json');
          const data = await response.json();
          return data;
       }
@@ -264,123 +268,68 @@
          return mainSection;
       }
 
-      async function populateTimeline() {
-         const data = await fetchTimelineData();
-         const container = document.getElementById('timeline-container');
+      async function populateScaleOfFreedom() {
+         const data = await fetchScaleOfFreedomData();
+         const container = document.getElementById('scale-of-freedom-container');
 
          data.sections.forEach(section => {
             const mainSection = createMainSection(section.title, section.intro, section.years, section.content, section.class);
             container.appendChild(mainSection);
          });
+
+         // Call the function to count the year sections after populating content
+         countYearSections();
       }
 
-      populateTimeline();
+      function countYearSections() {
+         const yearSections = document.querySelectorAll('.year-section');
+         const totalYearSections = yearSections.length;
+         console.log(`Total number of year-section elements: ${totalYearSections}`);
+      }
 
-
+      populateScaleOfFreedom();
    </script>
 
-   <!-- <script>
-      document.addEventListener('DOMContentLoaded', function () {
-         console.log('DOM loaded');
-         const sections = document.querySelectorAll('section');
+
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
          const indicator = document.getElementById('indicator');
-         console.log(`Sections: ${sections}`);
-         console.log(`Indicator: ${indicator}`);
+         const yearCounter = document.getElementById('year-counter');
 
-         const sectionPositions = [
-            { id: 'slavery', start: 0, end: 60.74 },
-            { id: 'emancipation', start: 60.74, end: 63.70 },
-            { id: 'post-reconstruction', start: 63.70, end: 85.18 },
-            { id: 'civil-rights', start: 85.18, end: 88.64 },
-            { id: 'post-civil-rights', start: 88.64, end: 100 }
-         ];
-
-         function updateIndicator() {
-            console.log('updateIndicator() is called');
-
-            // 1. Calculate the Total Scrollable Height
-            let totalScrollableHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-            console.log(`Total Scrollable Height: ${totalScrollableHeight}`);
-
-            // 2. Adjust Scroll Position (%) Calculation
-            let scrollPosition = window.scrollY / totalScrollableHeight * 100;
-            console.log(`Adjusted Scroll Position: ${scrollPosition}`);
-
-            sectionPositions.forEach((section, index) => {
-               console.log(`Section: ${section.id}`);
-
-               let sectionTop = section.start;
-               let sectionBottom = section.end;
-               let sectionHeight = sectionBottom - sectionTop;
-               console.log(`sectionTop: ${sectionTop}`);
-               console.log(`sectionHeight: ${sectionHeight}`);
-               console.log(`sectionBottom: ${sectionBottom}`);
-
-               if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-                  let percentage = ((scrollPosition - sectionTop) / sectionHeight) * 99.6;
-                  console.log(`Percentage: ${percentage}`);
-                  // indicator.style.left = `calc(${percentage}% - 8px)`; 
-                  indicator.style.left = `${percentage}%`;
-               }
-            });
-         }
-         function updateIndicatorv1() {
-            // Assuming there's an indicator element with the ID 'indicator'
-            const indicator = document.getElementById('indicator');
-            if (!indicator) {
-               console.error('Indicator element not found');
-               return;
-            }
-
-            // Get the total height of the document
-            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-
-            // Get the current scroll position
+         window.addEventListener('scroll', () => {
+            const container = document.getElementById('scale-of-freedom-container');
+            const containerHeight = container.scrollHeight;
+            const viewportHeight = window.innerHeight;
             const scrollPosition = window.scrollY;
 
-            // Calculate the scroll percentage
-            const scrollPercentage = (scrollPosition / totalHeight) * 100;
+            const totalScrollableHeight = containerHeight - viewportHeight;
+            const scrollPercentage = scrollPosition / totalScrollableHeight;
 
-            // Update the indicator based on the scroll percentage
-            // This example assumes the indicator's progress is shown with a width percentage
-            // Adjust this logic based on how your indicator should reflect the scroll position
-            indicator.style.left = `${scrollPercentage}%`;
-         }
+            const indicatorHeight = indicator.offsetHeight;
+            const timeLineContainerHeight = document.getElementById('time-line-container').offsetHeight;
+            const maxIndicatorPosition = timeLineContainerHeight - indicatorHeight;
 
-         // Listen for scroll events on the window and update the indicator
-         window.addEventListener('scroll', updateIndicator);
+            indicator.style.top = `${scrollPercentage * maxIndicatorPosition}px`;
 
-         // Initialize the indicator position on page load
-         document.addEventListener('DOMContentLoaded', updateIndicator);
+            // Update sequential year counter based on scroll position
+            const yearSections = document.querySelectorAll('.year-section');
+            let currentCount = 0;
 
-         function updateIndicatorv0() {
-            console.log('updateIndicator() is called');
-
-            let scrollPosition = window.scrollY + window.innerHeight / 2;
-            sectionPositions.forEach((section, index) => {
-               console.log(`Section: ${section.id}`);
-               let rect = section.getBoundingClientRect();
-               let sectionTop = rect.top + window.scrollY;
-               let sectionHeight = rect.height;
-               let sectionBottom = sectionTop + sectionHeight;
-               console.log(`rect: ${rect}`);
-               console.log(`sectionTop: ${sectionTop}`);
-               console.log(`sectionHeight: ${sectionHeight}`);
-               console.log(`sectionBottom: ${sectionBottom}`);
-
-               if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-                  console.log(`if statement`);
-                  let percentage = ((scrollPosition - sectionTop) / sectionHeight) * (sectionPositions[index].end - sectionPositions[index].start) + sectionPositions[index].start;
-                  indicator.style.left = `${percentage}%`;
+            yearSections.forEach((section, index) => {
+               const rect = section.getBoundingClientRect();
+               if (rect.top < viewportHeight / 2) {
+                  currentCount = index;
                }
             });
-         }
 
-         window.addEventListener('scroll', updateIndicator);
-         window.addEventListener('resize', updateIndicator);
-         updateIndicator();
+            yearCounter.textContent = currentCount;
+         });
       });
-   </script> -->
+   </script>
+
+
+
+
 
    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 

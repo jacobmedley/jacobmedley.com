@@ -202,18 +202,17 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
     position: relative;
 }
 
-.progress-indicator {
+#indicator {
     position: absolute;
-    height: 100%;
-    width: 4px;
-    background-color: #ff5733;
-    /* Change color as needed */
     top: 0;
-    left: 0;
+    left: 0%;
+    height: 58px;
+    width: 8px;
+    background-color: #88ff00;
     transition: left 0.2s ease-in-out;
-    z-index: 10;
-    /* Ensure it is on top of other elements */
+    z-index: 99;
 }
+
 
 section {
     &.content-section {
@@ -229,9 +228,79 @@ section {
             padding: 0 2rem;
             max-width: 920px;
 
-            &.title {
+            .intro-title {
                 text-align: center;
+                font-size: calc(2.2rem + 1vw);
+
+                @include media-breakpoint-up(md) {
+                    font-size: calc(3.4rem + 1vw);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    font-size: calc(4.2rem + 1vw);
+                }
+
+                @include media-breakpoint-up(xl) {
+                    font-size: calc(5rem + 1vw);
+                }
+            }
+
+            .intro-subtitle {
+                text-align: center;
+                font-size: 1.5rem;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 1.8rem;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 2rem;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    font-size: 3rem;
+                }
             }
         }
     }
+
+    .year-section {
+        .year {
+            text-align: center;
+            font-size: calc(6rem + 1vw);
+
+            @include media-breakpoint-up(md) {
+                font-size: calc(10rem + 1vw);
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: calc(12rem + 1vw);
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: calc(14rem + 1vw);
+            }
+        }
+    }
+}
+
+#open {
+    .intro-title {
+        text-align: left;
+        font-size: 3.4rem;
+    }
+
+    .intro-subtitle {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+
+}
+
+#intro-slavery {
+    background: url(../junteenth/images/open-bottom.png) repeat-x top center;
+}
+
+#intro-emancipation-reconstruction {
+    background: url(../junteenth/images/slavery-bottom.png) repeat-x top center;
 }

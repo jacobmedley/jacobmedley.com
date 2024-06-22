@@ -16261,18 +16261,16 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.progress-indicator {
+#indicator {
   position: absolute;
-  height: 100%;
-  width: 4px;
-  background-color: #ff5733;
-  /* Change color as needed */
   top: 0;
-  left: 0;
+  left: 0%;
+  height: 58px;
+  width: 8px;
+  background-color: #88ff00;
   -webkit-transition: left 0.2s ease-in-out;
   transition: left 0.2s ease-in-out;
-  z-index: 10;
-  /* Ensure it is on top of other elements */
+  z-index: 99;
 }
 
 section.content-section {
@@ -16297,6 +16295,77 @@ section.content-section .content {
   padding: 0 2rem;
   max-width: 920px;
 }
-section.content-section .content.title {
+section.content-section .content .intro-title {
   text-align: center;
+  font-size: calc(2.2rem + 1vw);
+}
+@media (min-width: 768px) {
+  section.content-section .content .intro-title {
+    font-size: calc(3.4rem + 1vw);
+  }
+}
+@media (min-width: 992px) {
+  section.content-section .content .intro-title {
+    font-size: calc(4.2rem + 1vw);
+  }
+}
+@media (min-width: 1200px) {
+  section.content-section .content .intro-title {
+    font-size: calc(5rem + 1vw);
+  }
+}
+section.content-section .content .intro-subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  section.content-section .content .intro-subtitle {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 992px) {
+  section.content-section .content .intro-subtitle {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  section.content-section .content .intro-subtitle {
+    font-size: 3rem;
+  }
+}
+section .year-section .year {
+  text-align: center;
+  font-size: calc(6rem + 1vw);
+}
+@media (min-width: 768px) {
+  section .year-section .year {
+    font-size: calc(10rem + 1vw);
+  }
+}
+@media (min-width: 992px) {
+  section .year-section .year {
+    font-size: calc(12rem + 1vw);
+  }
+}
+@media (min-width: 1200px) {
+  section .year-section .year {
+    font-size: calc(14rem + 1vw);
+  }
+}
+
+#open .intro-title {
+  text-align: left;
+  font-size: 3.4rem;
+}
+#open .intro-subtitle {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+#intro-slavery {
+  background: url(../junteenth/images/open-bottom.png) repeat-x top center;
+}
+
+#intro-emancipation-reconstruction {
+  background: url(../junteenth/images/slavery-bottom.png) repeat-x top center;
 }

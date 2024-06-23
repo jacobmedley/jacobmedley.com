@@ -231,7 +231,7 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
         left: -16px;
         top: 27px;
         bottom: 0;
-        height: 24px;
+        height: 25px;
     }
 
     &.active {
@@ -369,11 +369,11 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 
 #open {
 
-    background: url(../junteenth/images/SVG/bg-section-one-v1.svg) center center;
+    background: url(../juneteenth/images/SVG/bg-section-one-v1.svg) center center;
 
     .intro-title {
         text-align: left;
-        font-size: calc(2.8rem + 1vw);
+        font-size: calc(2rem + 1vw);
         margin-bottom: 1rem;
 
         @include media-breakpoint-up(md) {
@@ -480,41 +480,42 @@ section {
 }
 
 #intro-slavery {
+    @include intro-background('../juneteenth/images/bg-slavery-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../junteenth/images/bg-slavery.png');
+        @include intro-background('../juneteenth/images/bg-slavery.png');
     }
 
 }
 
 #intro-emancipation-reconstruction {
-    @include intro-background('../junteenth/images/bg-emancipation-mb.png');
+    @include intro-background('../juneteenth/images/bg-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../junteenth/images/bg-emancipation.png');
+        @include intro-background('../juneteenth/images/bg-emancipation.png');
     }
 }
 
 #intro-civil-rights {
-    @include intro-background('../junteenth/images/bg-civil-rights-mb.png');
+    @include intro-background('../juneteenth/images/bg-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../junteenth/images/bg-civil-rights.png');
+        @include intro-background('../juneteenth/images/bg-civil-rights.png');
     }
 }
 
 #intro-post-civil-rights {
-    @include intro-background('../junteenth/images/bg-post-civil-rights-mb.png');
+    @include intro-background('../juneteenth/images/bg-post-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../junteenth/images/bg-post-civil-rights.png');
+        @include intro-background('../juneteenth/images/bg-post-civil-rights.png');
     }
 }
 
 #intro-post-reconstruction {
-    @include intro-background('../junteenth/images/bg-post-emancipation-mb.png');
+    @include intro-background('../juneteenth/images/bg-post-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../junteenth/images/bg-post-emancipation.png');
+        @include intro-background('../juneteenth/images/bg-post-emancipation.png');
     }
 }

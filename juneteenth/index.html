@@ -165,8 +165,8 @@
                <div class="container-fluid">
                   <a href="#" class="navbar-brand"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
                   <button class="btn btn-lg btn-outline-fourth" type="button" data-bs-toggle="offcanvas"
-                     data-bs-target="#theMenu" aria-controls="theMenu"><i class="fa-sharp fa-list-timeline"></i> Key
-                     Milestones </button>
+                     data-bs-target="#theMenu" aria-controls="theMenu">
+                     <i class="fa-sharp fa-list-timeline"></i> Key Milestones </button>
                </div>
             </nav>
          </header>
@@ -422,6 +422,21 @@
          }
 
          populateScaleOfFreedom();
+      });
+
+   </script>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         const navLinks = document.querySelectorAll('.nav-link');
+         const offcanvasMenu = document.getElementById('theMenu');
+         const bsOffcanvas = new bootstrap.Offcanvas(offcanvasMenu);
+
+         navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+               bsOffcanvas.hide();
+            });
+         });
       });
 
    </script>

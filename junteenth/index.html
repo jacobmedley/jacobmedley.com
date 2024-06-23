@@ -5,9 +5,11 @@
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="description"
-      content="Explore the extensive timeline of slavery in the United States from 1629 to 1861. This page offers a detailed year-by-year account of the period of slavery, providing historical context and insights.">
+      content="Explore the extensive timeline of Black American rights from slavery to the present day. This page offers a year-by-year eperience with significant events, providing historical context.">
    <meta name="keywords"
-      content="Slavery in America, Timeline of slavery, American history, 1629-1861, Slavery timeline, History of slavery, Year-by-year slavery timeline, Jacob Medley, UX/UI Designer, Digital Strategist">
+      content="Black American history, Timeline of freedom, American history, Slavery to present, Black rights timeline, History of Black Americans, Year-by-year timeline, Jacob Medley, UX/UI Designer, Digital Strategist">
+
+
    <meta name="author" content="Jacob Medley">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,43 +18,42 @@
    <meta property="og:image:width" content="1024">
    <meta property="og:image:height" content="1024">
 
-   <title>Timeline of Slavery (1629-1861)</title>
+   <title>Scale of Freedom</title>
    <!-- ICON STUFF -->
-   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
-   <link rel="manifest" href="/images/icons/site.webmanifest">
-   <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#644672">
-   <link rel="shortcut icon" href="/images/icons/favicon.ico">
-   <meta name="msapplication-TileColor" content="#644672">
-   <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
-   <meta name="theme-color" content="#644672">
+   <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+   <link rel="manifest" href="images/icons/site.webmanifest">
+   <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#bb382c">
+   <meta name="msapplication-TileColor" content="#bb382c">
+   <meta name="theme-color" content="#ffffff">
 
    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org/",
-            "@type": "WebPage",
-            "name": "Timeline of Slavery (1629-1861)",
-            "description": "Explore the extensive timeline of slavery in the United States from 1629 to 1861. This page offers a detailed year-by-year account of the period of slavery, providing historical context and insights.",
-            "url": "https://jacobmedley.com/timeline-of-slavery",
-            "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
-            "author": {
-                "@type": "Person",
-                "name": "Jacob Medley",
-                "url": "https://jacobmedley.com",
-                "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
-                "sameAs": [
-                    "https://jacobmedley.com",
-                    "https://www.linkedin.com/in/jacobmedley/"
-                ],
-                "jobTitle": "UX/UI Designer and Digital Strategist",
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "Mutual of America"
-                }
-            }
-        }
-    </script>
+      {
+          "@context": "https://schema.org/",
+          "@type": "WebPage",
+          "name": "Scale of Freedom",
+          "description": "Explore the extensive timeline of Black American rights from slavery to present day. This page offers a detailed year-by-year account of significant events, providing historical context and insights.",
+          "url": "https://jacobmedley.com/timeline-of-freedom",
+          "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
+          "author": {
+              "@type": "Person",
+              "name": "Jacob Medley",
+              "url": "https://jacobmedley.com",
+              "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
+              "sameAs": [
+                  "https://jacobmedley.com",
+                  "https://www.linkedin.com/in/jacobmedley/"
+              ],
+              "jobTitle": "UX/UI Designer and Digital Strategist",
+              "worksFor": {
+                  "@type": "Organization",
+                  "name": "Mutual of America"
+              }
+          }
+      }
+      </script>
+
 
    <!-- Fonts -->
    <link rel="stylesheet" href="https://use.typekit.net/zps8jqb.css">
@@ -83,7 +84,7 @@
    <!-- End Google Tag Manager -->
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#the-menu" data-bs-offset="100" tabindex="0">
+<body>
 
    <!-- Google Tag Manager (noscript) -->
    <noscript>
@@ -92,8 +93,66 @@
    </noscript>
    <!-- End Google Tag Manager (noscript) -->
 
+
+   <div id="loading-screen">
+      <div class="loading-message fa-fade fa-5x" style="--fa-animation-duration: 1s;">
+
+         <span class="fa-stack" style="vertical-align: top;">
+            <i class="fa-light fa-circle-notch fa-spin fa-stack-2x" style="--fa-animation-duration: 2s;"></i>
+            <i class="fa-sharp fa-solid fa-hand-fist fa-stack-1x"></i>
+         </span>
+
+      </div>
+   </div>
+
+   <div class="offcanvas offcanvas-end bg-fourth text-white" tabindex="-1" id="theMenu" aria-labelledby="theMenuLabel">
+      <div class="offcanvas-header border-1 border-bottom border-white">
+         <h5 class="offcanvas-title" id="theMenuLabel"><i class="fa-regular fa-list-timeline"></i> Choose a Milestone
+         </h5>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+         <ul class="navbar-nav fa-ul">
+            <li class="nav-item active active-open">
+               <a class="nav-link" href="#open"><span class="fa-li"><i class="fa-sharp fa-solid   fa-circle"></i></span>
+                  Introduction</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#slavery"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span> Slavery</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#emancipation-reconstruction"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span> Emancipation &#38;
+                  Reconstruction</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#post-reconstruction"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span> Post-Reconstruction</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#civil-rights"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span> Civil Rights</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#post-civil-rights"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span> Post-Civil Rights</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="#today"><span class="fa-li"><i
+                        class="fa-sharp fa-regular fa-circle"></i></span>Today</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+
    <div id="screen">
       <aside id="time-line-container">
+         <div class="timeline-section" id="timeline-slavery"></div>
+         <div class="timeline-section" id="timeline-emancipation-reconstruction"></div>
+         <div class="timeline-section" id="timeline-post-reconstruction"></div>
+         <div class="timeline-section" id="timeline-civil-rights"></div>
+         <div class="timeline-section" id="timeline-post-civil-rights"></div>
          <div id="indicator">
             <div id="year-counter" class="indicator-year">0</div>
             <div class="indicator-label">YEARS</div>
@@ -105,30 +164,9 @@
             <nav id="the-menu" class="navbar navbar-expand-lg navbar-light">
                <div class="container-fluid">
                   <a href="#" class="navbar-brand"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                           <a class="nav-link" href="#slavery">Slavery</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#emancipation-reconstruction">Emancipation &#38;
-                              Reconstruction</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#post-reconstruction">Post-Reconstruction</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#civil-rights">Civil Rights</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#post-civil-rights">Post-Civil Rights</a>
-                        </li>
-                     </ul>
-                  </div>
+                  <button class="btn btn-lg btn-outline-fourth" type="button" data-bs-toggle="offcanvas"
+                     data-bs-target="#theMenu" aria-controls="theMenu"><i class="fa-sharp fa-list-timeline"></i> Key
+                     Milestones </button>
                </div>
             </nav>
          </header>
@@ -137,7 +175,8 @@
             <section id="intro-open" class="content-section intro-section">
                <div class="content">
                   <h2 class="intro-title fw-bold">The Scale of Freedom</h2>
-                  <p class="intro-subtitle">"The Scale of Freedom" explores the extensive history and timeline of Black
+                  <p class="intro-subtitle d-none d-md-block">"The Scale of Freedom" explores the extensive history and
+                     timeline of Black
                      American rights, focusing on the significant milestones that have shaped the journey from slavery
                      to
                      the
@@ -147,11 +186,13 @@
                      that
                      Black Americans have today, illustrating just how recently these advancements have occurred in the
                      grand
-                     scope of history. The timeline will show the arduous struggle for freedom, equality, and justice,
-                     emphasizing that we are in a relatively new era of freedom for Black Americans descended from
-                     slavery.
+                     scope of history. <span class="d-none d-md-block">The timeline will show the arduous
+                        struggle for freedom, equality, and justice,
+                        emphasizing that we are in a relatively new era of freedom for Black Americans descended from
+                        slavery.</span>
                   </p>
-                  <p>Despite the progress made, the journey is ongoing, and the pursuit of true equality and the
+                  <p class="d-none d-md-block">Despite the progress made, the journey is ongoing, and the pursuit of
+                     true equality and the
                      eradication
                      of systemic racism continue to be crucial endeavors.</p>
                </div>
@@ -160,178 +201,240 @@
 
 
          <div id="scale-of-freedom-container"></div>
+
+
       </div>
    </div>
    <script>
-      async function fetchScaleOfFreedomData() {
-         const response = await fetch('data/ScaleOfFreedomData.json');
-         const data = await response.json();
-         return data;
-      }
-
-      function createYearSection(year, content = null, sectionClass = '') {
-         const section = document.createElement('section');
-         section.id = `year-${year}`;
-         section.classList.add('content-section', 'year-section');
-
-         const div = document.createElement('div');
-         div.classList.add('content');
-
-         const yearHeading = document.createElement('h2');
-         yearHeading.classList.add('year', 'fw-bold');
-         yearHeading.textContent = year;
-         div.appendChild(yearHeading);
-
-         if (content) {
-            const titleHeading = document.createElement('h3');
-            titleHeading.classList.add('title', 'fw-bold', 'mb-4', 'text-capitalize');
-            titleHeading.textContent = content.title;
-            div.appendChild(titleHeading);
-
-            content.description.forEach(paragraph => {
-               const p = document.createElement('p');
-               p.textContent = paragraph;
-               div.appendChild(p);
-            });
-
-            const hr = document.createElement('hr');
-            div.appendChild(hr);
-
-            const source = document.createElement('p');
-            const textClass = sectionClass.split(' ').find(cls => cls.startsWith('text-'));
-            source.innerHTML = `Source: <a class="${textClass}" href="${content.source.url}" target="_blank">${content.source.text} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>`;
-            div.appendChild(source);
-         }
-
-         section.appendChild(div);
-         return section;
-      }
-
-      function createMainSection(title, intro, years, content, sectionClass) {
-         const mainSection = document.createElement('section');
-         mainSection.id = title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-');
-
-         if (sectionClass) {
-            sectionClass.split(' ').forEach(cls => mainSection.classList.add(cls));
-         }
-
-         if (intro) {
-            const introSection = document.createElement('section');
-            introSection.id = `intro-${mainSection.id}`;
-            introSection.classList.add('content-section', 'intro-section');
-            const introDiv = document.createElement('div');
-            introDiv.classList.add('content');
-            const introHeading = document.createElement('h2');
-            introHeading.classList.add('intro-title', 'fw-bold');
-            introHeading.textContent = intro.title;
-            introDiv.appendChild(introHeading);
-            const introSubheading = document.createElement('p');
-            introSubheading.classList.add('intro-subtitle');
-            introSubheading.textContent = intro.subtitle;
-            introDiv.appendChild(introSubheading);
-
-            if (intro.description && intro.description.length > 0) {
-               intro.description.forEach(paragraph => {
-                  const p = document.createElement('p');
-                  p.textContent = paragraph;
-                  introDiv.appendChild(p);
-               });
-            }
-
-            introSection.appendChild(introDiv);
-            mainSection.appendChild(introSection);
-         }
-
-         if (years && content) {
-            let lastYear = parseInt(years[0]);
-            years.forEach((year) => {
-               const currentYear = parseInt(year);
-
-               for (let fillerYear = lastYear + 1; fillerYear < currentYear; fillerYear++) {
-                  const fillerSection = createYearSection(fillerYear, null, sectionClass);
-                  mainSection.appendChild(fillerSection);
-               }
-
-               const yearSection = createYearSection(currentYear, content[year], sectionClass);
-               mainSection.appendChild(yearSection);
-
-               lastYear = currentYear;
-            });
-
-            // Ensure all filler years up to 1860 are added
-            for (let fillerYear = lastYear + 1; fillerYear <= 1860; fillerYear++) {
-               const fillerSection = createYearSection(fillerYear, null, sectionClass);
-               mainSection.appendChild(fillerSection);
-            }
-         }
-
-         return mainSection;
-      }
-
-      async function populateScaleOfFreedom() {
-         const data = await fetchScaleOfFreedomData();
-         const container = document.getElementById('scale-of-freedom-container');
-
-         data.sections.forEach(section => {
-            const mainSection = createMainSection(section.title, section.intro, section.years, section.content, section.class);
-            container.appendChild(mainSection);
-         });
-
-         // Call the function to count the year sections after populating content
-         countYearSections();
-      }
-
-      function countYearSections() {
-         const yearSections = document.querySelectorAll('.year-section');
-         const totalYearSections = yearSections.length;
-         console.log(`Total number of year-section elements: ${totalYearSections}`);
-      }
-
-      populateScaleOfFreedom();
-   </script>
-
-
-   <script>
       document.addEventListener('DOMContentLoaded', () => {
+         const loadingScreen = document.getElementById('loading-screen');
          const indicator = document.getElementById('indicator');
          const yearCounter = document.getElementById('year-counter');
 
-         window.addEventListener('scroll', () => {
+         async function fetchScaleOfFreedomData() {
+            const response = await fetch('data/ScaleOfFreedomData.json');
+            const data = await response.json();
+            return data;
+         }
+
+         function createYearSection(year, content = null, sectionClass = '') {
+            const section = document.createElement('section');
+            section.id = `year-${year}`;
+            section.classList.add('content-section', 'year-section');
+
+            const div = document.createElement('div');
+            div.classList.add('content');
+
+            const yearHeading = document.createElement('h2');
+            yearHeading.classList.add('year', 'fw-bold');
+            yearHeading.textContent = year;
+            div.appendChild(yearHeading);
+
+            if (content) {
+               const titleHeading = document.createElement('h3');
+               titleHeading.classList.add('title', 'fw-bold', 'mb-4', 'text-capitalize');
+               titleHeading.textContent = content.title;
+               div.appendChild(titleHeading);
+
+               content.description.forEach(paragraph => {
+                  const p = document.createElement('p');
+                  p.textContent = paragraph;
+                  div.appendChild(p);
+               });
+
+               const hr = document.createElement('hr');
+               div.appendChild(hr);
+
+               const source = document.createElement('p');
+               const textClass = sectionClass.split(' ').find(cls => cls.startsWith('text-'));
+               source.innerHTML = `Source: <a class="${textClass}" href="${content.source.url}" target="_blank">${content.source.text} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>`;
+               div.appendChild(source);
+            }
+
+            section.appendChild(div);
+            return section;
+         }
+
+         function createMainSection(title, intro, years, content, sectionClass, lastYearOfPreviousEra = 0) {
+            const mainSection = document.createElement('section');
+            mainSection.id = title.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-');
+
+            if (sectionClass) {
+               sectionClass.split(' ').forEach(cls => mainSection.classList.add(cls));
+            }
+
+            if (intro) {
+               const introSection = document.createElement('section');
+               introSection.id = `intro-${mainSection.id}`;
+               introSection.classList.add('content-section', 'intro-section');
+               const introDiv = document.createElement('div');
+               introDiv.classList.add('content');
+               const introHeading = document.createElement('h2');
+               introHeading.classList.add('intro-title', 'fw-bold');
+               introHeading.textContent = intro.title;
+               introDiv.appendChild(introHeading);
+               const introSubheading = document.createElement('p');
+               introSubheading.classList.add('intro-subtitle');
+               introSubheading.textContent = intro.subtitle;
+               introDiv.appendChild(introSubheading);
+
+               if (intro.description && intro.description.length > 0) {
+                  intro.description.forEach(paragraph => {
+                     const p = document.createElement('p');
+                     p.textContent = paragraph;
+                     introDiv.appendChild(p);
+                  });
+               }
+
+               introSection.appendChild(introDiv);
+               mainSection.appendChild(introSection);
+            }
+
+            if (years && content) {
+               let lastYear = lastYearOfPreviousEra || parseInt(years[0]);
+               years.forEach((year) => {
+                  const currentYear = parseInt(year);
+
+                  for (let fillerYear = lastYear + 1; fillerYear < currentYear; fillerYear++) {
+                     const fillerSection = createYearSection(fillerYear, null, sectionClass);
+                     mainSection.appendChild(fillerSection);
+                  }
+
+                  const yearSection = createYearSection(currentYear, content[year], sectionClass);
+                  mainSection.appendChild(yearSection);
+
+                  lastYear = currentYear;
+               });
+            }
+
+            return mainSection;
+         }
+
+         async function populateScaleOfFreedom() {
+            const data = await fetchScaleOfFreedomData();
             const container = document.getElementById('scale-of-freedom-container');
-            const containerHeight = container.scrollHeight;
-            const viewportHeight = window.innerHeight;
-            const scrollPosition = window.scrollY;
+            let lastYearOfPreviousEra = 0;
 
-            const totalScrollableHeight = containerHeight - viewportHeight;
-            const scrollPercentage = scrollPosition / totalScrollableHeight;
-
-            const indicatorHeight = indicator.offsetHeight;
-            const timeLineContainerHeight = document.getElementById('time-line-container').offsetHeight;
-            const maxIndicatorPosition = timeLineContainerHeight - indicatorHeight;
-
-            indicator.style.top = `${scrollPercentage * maxIndicatorPosition}px`;
-
-            // Update sequential year counter based on scroll position
-            const yearSections = document.querySelectorAll('.year-section');
-            let currentCount = 0;
-
-            yearSections.forEach((section, index) => {
-               const rect = section.getBoundingClientRect();
-               if (rect.top < viewportHeight / 2) {
-                  currentCount = index;
+            data.sections.forEach(section => {
+               const mainSection = createMainSection(section.title, section.intro, section.years, section.content, section.class, lastYearOfPreviousEra);
+               container.appendChild(mainSection);
+               if (section.years && section.years.length > 0) {
+                  lastYearOfPreviousEra = parseInt(section.years[section.years.length - 1]);
                }
             });
 
-            yearCounter.textContent = currentCount;
-         });
-      });
-   </script>
+            countYearSections();
+            initializeScrollSpy();
+            setTimeout(() => {
+               loadingScreen.classList.add('fade-out');
+               setTimeout(() => {
+                  loadingScreen.style.display = 'none';
+               }, 1000);
+            }, 1000);
+         }
 
+         function countYearSections() {
+            const yearSections = document.querySelectorAll('.year-section');
+            const totalYearSections = yearSections.length;
+            console.log(`Total number of year-section elements: ${totalYearSections}`);
+         }
+
+         function initializeScrollSpy() {
+            console.log('Initializing scroll spy');
+
+            const sections = document.querySelectorAll('#main > section, #scale-of-freedom-container > section');
+            console.log(`Found ${sections.length} sections`);
+
+            const navItems = document.querySelectorAll('.nav-item');
+            console.log(`Found ${navItems.length} nav items`);
+
+            function activateNavItem(id) {
+               navItems.forEach(item => {
+                  item.classList.remove('active', 'active-open', 'active-introduction');
+                  const icon = item.querySelector('i');
+
+                  // Reset to default icon
+                  if (icon) {
+                     icon.classList.remove('fa-solid');
+                     icon.classList.add('fa-regular');
+                  }
+
+                  if (item.querySelector(`a[href="#${id}"]`)) {
+                     item.classList.add('active');
+                     item.classList.add(`active-${id}`);
+
+                     // Update to active icon
+                     if (icon) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                     }
+                  }
+               });
+            }
+
+
+            window.addEventListener('scroll', () => {
+               console.log('Scrolling...');
+               let currentSectionId = '';
+               sections.forEach(section => {
+                  const rect = section.getBoundingClientRect();
+                  console.log(`Section ${section.id} rect: top=${rect.top}, bottom=${rect.bottom}`);
+                  if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                     currentSectionId = section.id;
+                  }
+               });
+               if (currentSectionId) {
+                  console.log(`Currently in section: ${currentSectionId}`);
+                  activateNavItem(currentSectionId);
+               } else {
+                  console.log('No section in view');
+               }
+
+               const container = document.getElementById('scale-of-freedom-container');
+               const containerHeight = container.scrollHeight;
+               const viewportHeight = window.innerHeight;
+               const scrollPosition = window.scrollY;
+
+               const totalScrollableHeight = containerHeight - viewportHeight;
+               const scrollPercentage = scrollPosition / totalScrollableHeight;
+
+               const indicatorHeight = indicator.offsetHeight;
+               const timeLineContainerHeight = document.getElementById('time-line-container').offsetHeight;
+               const maxIndicatorPosition = timeLineContainerHeight - indicatorHeight;
+
+               indicator.style.top = `${scrollPercentage * maxIndicatorPosition}px`;
+
+               // Update sequential year counter based on scroll position
+               const yearSections = document.querySelectorAll('.year-section');
+               let currentCount = 0;
+
+               yearSections.forEach((section, index) => {
+                  const rect = section.getBoundingClientRect();
+                  if (rect.top < viewportHeight / 2) {
+                     currentCount = index;
+                  }
+               });
+
+               yearCounter.textContent = currentCount;
+               console.log(`Year counter updated to: ${currentCount}`);
+            });
+
+         }
+
+         populateScaleOfFreedom();
+      });
+
+   </script>
 
 
 
 
    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
 
 
 </body>

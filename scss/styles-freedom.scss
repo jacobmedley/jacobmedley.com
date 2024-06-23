@@ -125,6 +125,8 @@ $carousel-indicator-active-bg: $second-dark;
 
 $enable-negative-margins: true;
 
+
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -133,7 +135,12 @@ $enable-negative-margins: true;
 // $theme-colors: map-merge($theme-colors, $colors);
 $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "red", "orange", "yellow", "green", "teal", "cyan");
 
+$offcanvas-horizontal-width: 320px;
 
+
+$btn-close-color: $white;
+
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
 
 // 5. Include remainder of required parts
 @import "../node_modules/bootstrap/scss/maps";
@@ -187,8 +194,66 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 }
 
 
+
+#loading-screen {
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1.0);
+    z-index: 9999;
+    color: $white;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+}
+
+.loading-message {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.nav-item {
+    position: relative;
+
+    &:not(:last-child):before {
+        content: '';
+        border-left: 1px solid $white;
+        position: absolute;
+        left: -16px;
+        top: 27px;
+        bottom: 0;
+        height: 24px;
+    }
+
+    &.active {
+        .nav-link {
+            font-weight: bold;
+        }
+    }
+}
+
+
+
+.navbar-brand {
+    padding-left: 10px;
+    font-size: 2rem;
+}
+
 #screen {
-    padding-left: 58px;
+    padding-left: 38px;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 68px;
+    }
 }
 
 #main {
@@ -208,75 +273,135 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 
 
 #time-line-container {
+
+    width: 38px;
+
+    @include media-breakpoint-up(md) {
+        width: 68px;
+    }
+
     position: fixed;
     top: 0;
     left: 0;
-    width: 58px;
+
     height: 100vh;
-    @include gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .8));
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
     z-index: 5;
+
+
+    .timeline-section {
+        position: relative;
+        z-index: 6;
+    }
+
+    #timeline-slavery {
+        height: 57%;
+        background: linear-gradient($prime, $second);
+    }
+
+    #timeline-emancipation-reconstruction {
+        height: 4%;
+        background: linear-gradient($second, $third);
+    }
+
+    #timeline-post-reconstruction {
+        height: 19%;
+        background: linear-gradient($third, $fourth );
+
+    }
+
+    #timeline-civil-rights {
+        height: 4%;
+        background: linear-gradient($fourth, $fifth-dark );
+    }
+
+    #timeline-post-civil-rights {
+        height: 16%;
+        background: $fifth-dark;
+    }
+
 
     #indicator {
         position: absolute;
         width: 100%;
-        height: 56px;
-        background-color: rgba(#fff, 0.3);
+        border-top: 4px solid rgba($color: #fff, $alpha: .5);
         color: #fff;
         top: 0;
         left: 0;
         transition: top 0.2s ease-in-out;
         z-index: 8;
-        text-align: center;
-        font-weight: bold;
-
         display: flex;
         justify-content: center;
         align-items: center;
-
+        text-align: center;
+        font-weight: bold;
         flex-direction: column;
+    }
 
-        .indicator-year {
-            font-size: 1.6rem;
-            text-shadow: 0 0 8px rgba(0, 0, 0, 0.68);
-            margin-bottom: -10px;
+    .indicator-label {
+        font-size: 0.6rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1rem;
         }
 
-        .indicator-label {
-            font-size: .8rem;
+
+    }
+
+    .indicator-year {
+        font-size: 1.2rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.8rem;
+        }
+
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.68);
+        margin-top: 4px;
+        margin-bottom: -6px;
+    }
+
+
+
+}
+
+
+
+
+#open {
+
+    background: url(../junteenth/images/SVG/bg-section-one-v1.svg) center center;
+
+    .intro-title {
+        text-align: left;
+        font-size: calc(2.8rem + 1vw);
+        margin-bottom: 1rem;
+
+        @include media-breakpoint-up(md) {
+            font-size: calc(2.4rem + 1vw);
+            margin-bottom: 1.5rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: calc(2.8rem + 1vw);
+            margin-bottom: 2rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: calc(3rem + 1vw);
+
         }
     }
-}
 
-#scale-of-freedom-container {
-    section {
-        min-height: 100vh;
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+    .intro-subtitle {
+        text-align: left;
+        font-size: 1.25rem;
     }
 }
-
-
-.row-content {
-    min-height: 100vh;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.time-line {
-    height: 28px;
-
-    .progress {
-        height: 28px;
-    }
-}
-
-
-.progress-stacked {
-    position: relative;
-}
-
 
 section {
+
+    position: relative;
+
     &.content-section {
         min-height: 100vh;
         display: flex;
@@ -292,7 +417,7 @@ section {
 
             .intro-title {
                 text-align: center;
-                font-size: calc(2.2rem + 1vw);
+                font-size: calc(1.8rem + 1vw);
 
                 @include media-breakpoint-up(md) {
                     font-size: calc(3.4rem + 1vw);
@@ -326,8 +451,6 @@ section {
         }
     }
 
-
-
     .year-section {
         .year {
             text-align: center;
@@ -349,23 +472,49 @@ section {
 }
 
 
-section {
-
-    position: relative;
+@mixin intro-background($image-url) {
+    background: url($image-url) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0px -38px 48px 0px rgba(0, 0, 0, 0.3);
 }
 
+#intro-slavery {
 
-#open {
-
-    background: url(../junteenth/images/SVG/bg-section-one-v1.svg) center center;
-
-    .intro-title {
-        text-align: left;
-        font-size: 3.4rem;
+    @include media-breakpoint-up(md) {
+        @include intro-background('../junteenth/images/bg-slavery.png');
     }
 
-    .intro-subtitle {
-        text-align: left;
-        font-size: 1.5rem;
+}
+
+#intro-emancipation-reconstruction {
+    @include intro-background('../junteenth/images/bg-emancipation-mb.png');
+
+    @include media-breakpoint-up(md) {
+        @include intro-background('../junteenth/images/bg-emancipation.png');
+    }
+}
+
+#intro-civil-rights {
+    @include intro-background('../junteenth/images/bg-civil-rights-mb.png');
+
+    @include media-breakpoint-up(md) {
+        @include intro-background('../junteenth/images/bg-civil-rights.png');
+    }
+}
+
+#intro-post-civil-rights {
+    @include intro-background('../junteenth/images/bg-post-civil-rights-mb.png');
+
+    @include media-breakpoint-up(md) {
+        @include intro-background('../junteenth/images/bg-post-civil-rights.png');
+    }
+}
+
+#intro-post-reconstruction {
+    @include intro-background('../junteenth/images/bg-post-emancipation-mb.png');
+
+    @include media-breakpoint-up(md) {
+        @include intro-background('../junteenth/images/bg-post-emancipation.png');
     }
 }

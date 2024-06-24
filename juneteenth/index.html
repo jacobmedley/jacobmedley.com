@@ -245,9 +245,12 @@
                titleHeading.textContent = content.title;
                div.appendChild(titleHeading);
 
-               content.description.forEach(paragraph => {
+               content.description.forEach((paragraph, index) => {
                   const p = document.createElement('p');
                   p.textContent = paragraph;
+                  if (index > 0) {
+                     p.classList.add('d-none', 'd-md-block');
+                  }
                   div.appendChild(p);
                });
 
@@ -261,8 +264,8 @@
                div.appendChild(source);
 
                const keepGoingMessage = document.createElement('p');
-               keepGoingMessage.classList.add('text-center', 'mt-5');
-               keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
+               keepGoingMessage.classList.add('text-center', 'mt-3');
+               keepGoingMessage.innerHTML = `<i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
                div.appendChild(keepGoingMessage);
 
                section.classList.add('year-with-content');
@@ -306,8 +309,8 @@
                }
 
                const keepGoingMessage = document.createElement('p');
-               keepGoingMessage.classList.add('text-center', 'mt-5');
-               keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
+               keepGoingMessage.classList.add('text-center', 'mt-3');
+               keepGoingMessage.innerHTML = `<i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
                introDiv.appendChild(keepGoingMessage);
 
                introSection.appendChild(introDiv);
@@ -438,46 +441,6 @@
             });
          }
 
-
-         function handleStickySections(sections, menuHeight) {
-            let currentStickySection = null;
-
-            sections.forEach((section, index) => {
-               const rect = section.getBoundingClientRect();
-               const yearElement = section.querySelector('h2.year');
-               const yearRect = yearElement.getBoundingClientRect();
-               const nextSection = sections[index + 1];
-               const yearSource = section.querySelector('.year-source');
-               const yearSourceRect = yearSource.getBoundingClientRect();
-
-               // Detect if the year element is at the middle of the screen
-               if (yearRect.top <= window.innerHeight / 2 && yearRect.bottom >= menuHeight) {
-                  if (currentStickySection !== section) {
-                     if (currentStickySection) {
-                        currentStickySection.classList.remove('is-sticky');
-                     }
-                     currentStickySection = section;
-                     section.classList.add('is-sticky');
-                     section.style.top = `${menuHeight}px`;
-                     section.style.opacity = 1; // Ensure fully visible when sticky
-                  }
-               }
-
-               // Handle pushing the current section off when the next section comes in
-               if (nextSection) {
-                  const nextRect = nextSection.getBoundingClientRect();
-                  if (nextRect.top <= menuHeight + rect.height) {
-                     section.classList.remove('is-sticky');
-                     section.style.top = `${menuHeight - (nextRect.top - menuHeight)}px`;
-                     section.style.opacity = 0; // Ensure fully invisible when pushed off
-                  }
-               }
-            });
-         }
-
-
-
-
          populateScaleOfFreedom();
       });
 
@@ -488,7 +451,36 @@
    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         function closeOffCanvasMenu() {
+            const offCanvasMenu = document.getElementById('theMenu');
+            const bsOffcanvas = new bootstrap.Offcanvas(offCanvasMenu);
 
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+               link.addEventListener('click', (event) => {
+                  event.preventDefault(); // Prevent the default link behavior
+                  const targetId = link.getAttribute('href');
+                  bsOffcanvas.hide();
+
+                  // Wait for the offcanvas menu to hide before navigating
+                  offCanvasMenu.addEventListener('hidden.bs.offcanvas', () => {
+                     window.location.href = targetId;
+                  }, { once: true });
+               });
+            });
+         }
+
+         // Call the function to ensure the menu closes on navigation
+         closeOffCanvasMenu();
+      });
+
+
+      // Call the function to ensure the menu closes on navigation
+      closeOffCanvasMenu();
+   </script>
 
 
 

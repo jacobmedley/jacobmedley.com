@@ -502,10 +502,14 @@ section {
 }
 
 
-@mixin intro-background($image-url) {
+@mixin intro-background($image-url, $is-fixed: false) {
     background: url($image-url) no-repeat center top;
     background-size: cover;
-    background-attachment: fixed;
+
+    @if $is-fixed {
+        background-attachment: fixed;
+    }
+
     box-shadow: inset 0px -38px 48px 0px rgba(0, 0, 0, 0.3);
 }
 
@@ -513,16 +517,15 @@ section {
     @include intro-background('../juneteenth/images/bg-slavery-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-slavery.png');
+        @include intro-background('../juneteenth/images/bg-slavery.png', true);
     }
-
 }
 
 #intro-emancipation-reconstruction {
     @include intro-background('../juneteenth/images/bg-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-emancipation.png');
+        @include intro-background('../juneteenth/images/bg-emancipation.png', true);
     }
 }
 
@@ -530,7 +533,7 @@ section {
     @include intro-background('../juneteenth/images/bg-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-civil-rights.png');
+        @include intro-background('../juneteenth/images/bg-civil-rights.png', true);
     }
 }
 
@@ -538,7 +541,7 @@ section {
     @include intro-background('../juneteenth/images/bg-post-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-post-civil-rights.png');
+        @include intro-background('../juneteenth/images/bg-post-civil-rights.png', true);
     }
 }
 
@@ -546,14 +549,15 @@ section {
     @include intro-background('../juneteenth/images/bg-post-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-post-emancipation.png');
+        @include intro-background('../juneteenth/images/bg-post-emancipation.png', true);
     }
 }
 
 
+
 .year-with-content {
     position: sticky;
-    top: 74px;
+    top: 58px;
 }
 
 #slavery {
@@ -576,18 +580,18 @@ section {
 
 #civil-rights {
     .year-with-content {
-        background: $fourth;
+        background: $fourth-dark;
     }
 }
 
 #post-civil-rights {
     .year-with-content {
-        background: $fifth;
+        background: $fifth-dark;
     }
 }
 
 #today {
     .year-with-content {
-        background: $fifth;
+        background: $fifth-dark;
     }
 }

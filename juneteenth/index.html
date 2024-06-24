@@ -146,7 +146,7 @@
       </div>
    </div>
 
-   <div id="screen">
+   <div id="screen" class="position-relative">
       <aside id="time-line-container">
          <div class="timeline-section" id="timeline-slavery"></div>
          <div class="timeline-section" id="timeline-emancipation-reconstruction"></div>
@@ -209,6 +209,9 @@
 
 
       </div>
+
+      <button class="btn btn-default sticky-bottom text-white shadow float-end" data-bs-target="#infoModalToggle"
+         data-bs-toggle="modal"><i class="fa-solid fa-circle-info fa-2x"></i></button>
    </div>
 
    <script>
@@ -445,6 +448,27 @@
       });
 
    </script>
+
+
+
+   <div class="modal fade bg-black text-white" id="infoModalToggle" aria-hidden="true"
+      aria-labelledby="infoModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen bg-black">
+         <div class="modal-content bg-black">
+            <div class="modal-header">
+               <h1 class="modal-title fs-5" id="infoModalToggleLabel">How this was made.</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               Show a second modal and hide this one with the button below.
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-outline-second" data-bs-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
 
 
 

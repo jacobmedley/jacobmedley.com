@@ -13,7 +13,7 @@
    <meta name="author" content="Jacob Medley">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <meta property="og:image" content="https://jacobmedley.com/images/icons/cover-full-purple.png">
+   <meta property="og:image" content="https://jacobmedley.com/juneteenth/images/full-freedom.png">
    <meta property="og:image:type" content="image/png">
    <meta property="og:image:width" content="1024">
    <meta property="og:image:height" content="1024">
@@ -34,13 +34,13 @@
           "@type": "WebPage",
           "name": "Scale of Freedom",
           "description": "Explore the extensive timeline of Black American rights from slavery to present day. This page offers a detailed year-by-year account of significant events, providing historical context and insights.",
-          "url": "https://jacobmedley.com/timeline-of-freedom",
-          "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
+          "url": "https://jacobmedley.com/juneteenth/",
+          "image": "https://jacobmedley.com/juneteenth/images/full-freedom.png",
           "author": {
               "@type": "Person",
               "name": "Jacob Medley",
               "url": "https://jacobmedley.com",
-              "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
+              "image": "https://jacobmedley.com/juneteenth/images/full-freedom.png",
               "sameAs": [
                   "https://jacobmedley.com",
                   "https://www.linkedin.com/in/jacobmedley/"
@@ -195,6 +195,11 @@
                      true equality and the
                      eradication
                      of systemic racism continue to be crucial endeavors.</p>
+                  <p class="text-center mt-5">
+                     <span class="d-block fs-2 fw-bold">Journey to Freedom</span>
+                     <span class="d-block mb-3 fs-4">It's going to be awhile.</span>
+                     <i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>
+                  </p>
                </div>
             </section>
          </section>
@@ -205,11 +210,15 @@
 
       </div>
    </div>
+
    <script>
       document.addEventListener('DOMContentLoaded', () => {
          const loadingScreen = document.getElementById('loading-screen');
          const indicator = document.getElementById('indicator');
          const yearCounter = document.getElementById('year-counter');
+
+
+
 
          async function fetchScaleOfFreedomData() {
             const response = await fetch('data/ScaleOfFreedomData.json');
@@ -246,9 +255,19 @@
                div.appendChild(hr);
 
                const source = document.createElement('p');
+               source.classList.add('year-source');
                const textClass = sectionClass.split(' ').find(cls => cls.startsWith('text-'));
                source.innerHTML = `Source: <a class="${textClass}" href="${content.source.url}" target="_blank">${content.source.text} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>`;
                div.appendChild(source);
+
+               const keepGoingMessage = document.createElement('p');
+               keepGoingMessage.classList.add('text-center', 'mt-5');
+               keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
+               div.appendChild(keepGoingMessage);
+
+               section.classList.add('year-with-content');
+            } else {
+               section.classList.add('year-no-content');
             }
 
             section.appendChild(div);
@@ -285,6 +304,11 @@
                      introDiv.appendChild(p);
                   });
                }
+
+               const keepGoingMessage = document.createElement('p');
+               keepGoingMessage.classList.add('text-center', 'mt-5');
+               keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
+               introDiv.appendChild(keepGoingMessage);
 
                introSection.appendChild(introDiv);
                mainSection.appendChild(introSection);
@@ -325,6 +349,7 @@
 
             countYearSections();
             initializeScrollSpy();
+
             setTimeout(() => {
                loadingScreen.classList.add('fade-out');
                setTimeout(() => {
@@ -336,24 +361,19 @@
          function countYearSections() {
             const yearSections = document.querySelectorAll('.year-section');
             const totalYearSections = yearSections.length;
-            console.log(`Total number of year-section elements: ${totalYearSections}`);
          }
 
          function initializeScrollSpy() {
-            console.log('Initializing scroll spy');
 
             const sections = document.querySelectorAll('#main > section, #scale-of-freedom-container > section');
-            console.log(`Found ${sections.length} sections`);
 
             const navItems = document.querySelectorAll('.nav-item');
-            console.log(`Found ${navItems.length} nav items`);
 
             function activateNavItem(id) {
                navItems.forEach(item => {
                   item.classList.remove('active', 'active-open', 'active-introduction');
                   const icon = item.querySelector('i');
 
-                  // Reset to default icon
                   if (icon) {
                      icon.classList.remove('fa-solid');
                      icon.classList.add('fa-regular');
@@ -363,7 +383,6 @@
                      item.classList.add('active');
                      item.classList.add(`active-${id}`);
 
-                     // Update to active icon
                      if (icon) {
                         icon.classList.remove('fa-regular');
                         icon.classList.add('fa-solid');
@@ -372,22 +391,21 @@
                });
             }
 
-
             window.addEventListener('scroll', () => {
-               console.log('Scrolling...');
+
                let currentSectionId = '';
                sections.forEach(section => {
                   const rect = section.getBoundingClientRect();
-                  console.log(`Section ${section.id} rect: top=${rect.top}, bottom=${rect.bottom}`);
+
                   if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
                      currentSectionId = section.id;
                   }
                });
                if (currentSectionId) {
-                  console.log(`Currently in section: ${currentSectionId}`);
+
                   activateNavItem(currentSectionId);
                } else {
-                  console.log('No section in view');
+
                }
 
                const container = document.getElementById('scale-of-freedom-container');
@@ -416,31 +434,54 @@
                });
 
                yearCounter.textContent = currentCount;
-               console.log(`Year counter updated to: ${currentCount}`);
-            });
 
+            });
          }
+
+
+         function handleStickySections(sections, menuHeight) {
+            let currentStickySection = null;
+
+            sections.forEach((section, index) => {
+               const rect = section.getBoundingClientRect();
+               const yearElement = section.querySelector('h2.year');
+               const yearRect = yearElement.getBoundingClientRect();
+               const nextSection = sections[index + 1];
+               const yearSource = section.querySelector('.year-source');
+               const yearSourceRect = yearSource.getBoundingClientRect();
+
+               // Detect if the year element is at the middle of the screen
+               if (yearRect.top <= window.innerHeight / 2 && yearRect.bottom >= menuHeight) {
+                  if (currentStickySection !== section) {
+                     if (currentStickySection) {
+                        currentStickySection.classList.remove('is-sticky');
+                     }
+                     currentStickySection = section;
+                     section.classList.add('is-sticky');
+                     section.style.top = `${menuHeight}px`;
+                     section.style.opacity = 1; // Ensure fully visible when sticky
+                  }
+               }
+
+               // Handle pushing the current section off when the next section comes in
+               if (nextSection) {
+                  const nextRect = nextSection.getBoundingClientRect();
+                  if (nextRect.top <= menuHeight + rect.height) {
+                     section.classList.remove('is-sticky');
+                     section.style.top = `${menuHeight - (nextRect.top - menuHeight)}px`;
+                     section.style.opacity = 0; // Ensure fully invisible when pushed off
+                  }
+               }
+            });
+         }
+
+
+
 
          populateScaleOfFreedom();
       });
 
    </script>
-
-   <script>
-      document.addEventListener('DOMContentLoaded', () => {
-         const navLinks = document.querySelectorAll('.nav-link');
-         const offcanvasMenu = document.getElementById('theMenu');
-         const bsOffcanvas = new bootstrap.Offcanvas(offcanvasMenu);
-
-         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-               bsOffcanvas.hide();
-            });
-         });
-      });
-
-   </script>
-
 
 
 

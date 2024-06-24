@@ -622,6 +622,16 @@
             "1953"
          ],
          "content": {
+            "1878": {
+               "title": "Nadir of Race Relations",
+               "description": [
+                  "The period around 1878 marked the beginning of the Nadir of American Race Relations, characterized by increased racial discrimination, violence, and the establishment of Jim Crow laws in the Southern United States. This era saw the intensification of systemic racism and the rollback of Reconstruction efforts, leading to significant hardships for African Americans."
+               ],
+               "source": {
+                  "text": "Smithsonian Magazine",
+                  "url": "https://www.smithsonianmag.com/history/the-nadir-of-american-race-relations-when-racism-in-the-us-was-at-its-worst-14428326/"
+               }
+            },
             "1896": {
                "title": "Plessy v. Ferguson Decision",
                "description": [
@@ -855,6 +865,16 @@
             "2023"
          ],
          "content": {
+            "1969": {
+               "title": "First Black Woman Elected to Congress",
+               "description": [
+                  "In 1969, Shirley Chisholm made history as the first African American woman elected to the United States Congress. Representing New York's 12th congressional district, Chisholm was a trailblazer for women and minorities in American politics, advocating for civil rights, women's rights, and social justice throughout her career."
+               ],
+               "source": {
+                  "text": "History",
+                  "url": "https://www.history.com/this-day-in-history/shirley-chisholm-becomes-first-african-american-congresswoman"
+               }
+            },
             "1988": {
                "title": "Civil Rights Restoration Act",
                "description": [

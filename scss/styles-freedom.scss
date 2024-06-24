@@ -399,7 +399,6 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 }
 
 section {
-
     position: relative;
 
     &.content-section {
@@ -410,6 +409,56 @@ section {
         align-items: center;
         /* Centers the content vertically */
         flex-direction: column;
+
+        &.year-section {
+            &.year-no-content {
+                display: flex;
+                justify-content: center;
+                /* Centers the content horizontally */
+                align-items: center;
+                /* Centers the content vertically */
+                flex-direction: column;
+
+                overflow: hidden;
+
+                .content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+
+
+                    .year {
+                        opacity: 0.09;
+                        font-size: 50vw;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                    }
+                }
+            }
+
+
+            .year {
+                text-align: left;
+                font-size: calc(6rem + 1vw);
+
+                @include media-breakpoint-up(md) {
+                    font-size: calc(10rem + 1vw);
+                }
+
+                @include media-breakpoint-up(lg) {
+                    font-size: calc(12rem + 1vw);
+                }
+
+                @include media-breakpoint-up(xl) {
+                    font-size: calc(14rem + 1vw);
+                }
+            }
+        }
 
         .content {
             padding: 0 2rem;
@@ -447,25 +496,6 @@ section {
                 @include media-breakpoint-up(xl) {
                     font-size: 3rem;
                 }
-            }
-        }
-    }
-
-    .year-section {
-        .year {
-            text-align: center;
-            font-size: calc(6rem + 1vw);
-
-            @include media-breakpoint-up(md) {
-                font-size: calc(10rem + 1vw);
-            }
-
-            @include media-breakpoint-up(lg) {
-                font-size: calc(12rem + 1vw);
-            }
-
-            @include media-breakpoint-up(xl) {
-                font-size: calc(14rem + 1vw);
             }
         }
     }
@@ -517,5 +547,47 @@ section {
 
     @include media-breakpoint-up(md) {
         @include intro-background('../juneteenth/images/bg-post-emancipation.png');
+    }
+}
+
+
+.year-with-content {
+    position: sticky;
+    top: 74px;
+}
+
+#slavery {
+    .year-with-content {
+        background: $prime;
+    }
+}
+
+#emancipation-reconstruction {
+    .year-with-content {
+        background: $second;
+    }
+}
+
+#post-reconstruction {
+    .year-with-content {
+        background: $third;
+    }
+}
+
+#civil-rights {
+    .year-with-content {
+        background: $fourth;
+    }
+}
+
+#post-civil-rights {
+    .year-with-content {
+        background: $fifth;
+    }
+}
+
+#today {
+    .year-with-content {
+        background: $fifth;
     }
 }

@@ -64,7 +64,9 @@ $theme-colors: (
     "fourth-dark": $fourth-dark,
     "fifth": $fifth,
     "fifth-light": $fifth-light,
-    "fifth-dark": $fifth-dark
+    "fifth-dark": $fifth-dark,
+    "white": #fff,
+    "black": #000
 );
 
 $display-font-sizes: (
@@ -193,7 +195,38 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     background: linear-gradient($start-color, $end-color);
 }
 
+@mixin intro-background($image-url, $is-fixed: false) {
+    background: url($image-url) no-repeat center top;
+    background-size: cover;
 
+    @if $is-fixed {
+        background-attachment: fixed;
+    }
+
+    box-shadow: inset 0px -38px 48px 0px rgba(0, 0, 0, 0.3);
+}
+
+@mixin btn-section($bg-color, $text-color, $border-color) {
+    background: $bg-color;
+    color: $text-color;
+    border: $border-color 1px solid;
+
+    &:hover {
+        background: $text-color;
+        color: $bg-color;
+        border: $text-color 1px solid;
+    }
+}
+
+
+
+// .btn-outline-white {
+//     &:hover {
+//         i {
+//             color: $black;
+//         }
+//     }
+// }
 
 #loading-screen {
     transition: opacity 1s ease-in-out;
@@ -444,7 +477,7 @@ section {
 
             .year {
                 text-align: left;
-                font-size: calc(6rem + 1vw);
+                font-size: calc(4rem + 1vw);
 
                 @include media-breakpoint-up(md) {
                     font-size: calc(10rem + 1vw);
@@ -502,16 +535,7 @@ section {
 }
 
 
-@mixin intro-background($image-url, $is-fixed: false) {
-    background: url($image-url) no-repeat center top;
-    background-size: cover;
 
-    @if $is-fixed {
-        background-attachment: fixed;
-    }
-
-    box-shadow: inset 0px -38px 48px 0px rgba(0, 0, 0, 0.3);
-}
 
 #intro-slavery {
     @include intro-background('../juneteenth/images/bg-slavery-mb.png');
@@ -553,6 +577,11 @@ section {
     }
 }
 
+#today {
+    .fa-arrow-down-long {
+        display: none;
+    }
+}
 
 
 .year-with-content {
@@ -564,11 +593,21 @@ section {
     .year-with-content {
         background: $prime;
     }
+
+    .btn-section {
+        @include btn-section($prime-dark, $prime, $prime-dark);
+    }
+
+
 }
 
 #emancipation-reconstruction {
     .year-with-content {
         background: $second;
+    }
+
+    .btn-section {
+        @include btn-section($second-dark, $second, $second-dark);
     }
 }
 
@@ -576,22 +615,47 @@ section {
     .year-with-content {
         background: $third;
     }
+
+    .btn-section {
+        @include btn-section($third-dark, $third, $third-dark);
+    }
 }
 
 #civil-rights {
+
     .year-with-content {
         background: $fourth-dark;
     }
+
+    .btn-section {
+        @include btn-section($fourth-dark, $fourth-light, $fourth-light);
+    }
+
 }
 
 #post-civil-rights {
+
     .year-with-content {
+
         background: $fifth-dark;
+
     }
+
+    .btn-section {
+        @include btn-section($fifth-light, $fifth-dark, $fifth-light);
+    }
+
 }
 
 #today {
+
     .year-with-content {
+
         background: $fifth-dark;
+
+    }
+
+    .btn-section {
+        @include btn-section($fifth-dark, $fifth, $fifth-dark);
     }
 }

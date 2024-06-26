@@ -210,23 +210,14 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     background: $bg-color;
     color: $text-color;
     border: $border-color 1px solid;
+    z-index: 999;
 
     &:hover {
         background: $text-color;
         color: $bg-color;
-        border: $text-color 1px solid;
+        border: $bg-color 1px solid;
     }
 }
-
-
-
-// .btn-outline-white {
-//     &:hover {
-//         i {
-//             color: $black;
-//         }
-//     }
-// }
 
 #loading-screen {
     transition: opacity 1s ease-in-out;
@@ -279,6 +270,10 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 .navbar-brand {
     padding-left: 10px;
     font-size: 2rem;
+}
+
+.offcanvas-header {
+    height: 74px;
 }
 
 #screen {
@@ -431,6 +426,23 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     }
 }
 
+
+header {
+    background: rgba(255, 255, 255, 0.5); // Semi-transparent white
+    backdrop-filter: blur(10px); // Apply a blur effect
+    -webkit-backdrop-filter: blur(10px); // For Safari
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas {
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent white
+    backdrop-filter: blur(10px); // Apply a blur effect
+    -webkit-backdrop-filter: blur(10px); // For Safari
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
 section {
     position: relative;
 
@@ -445,6 +457,9 @@ section {
 
         &.year-section {
             &.year-no-content {
+                pointer-events: none; // Disable interactions for all elements inside the section
+                user-select: none; // Prevent text selection
+                z-index: 888;
                 display: flex;
                 justify-content: center;
                 /* Centers the content horizontally */
@@ -464,6 +479,8 @@ section {
 
 
                     .year {
+                        pointer-events: none; // Disable interactions for the year element
+                        user-select: none; // Prevent text selection
                         opacity: 0.09;
                         font-size: 50vw;
                         display: flex;
@@ -589,21 +606,28 @@ section {
     top: 58px;
 }
 
+
+
+#open {
+    .btn-section {
+        @include btn-section($black, $white, $white);
+    }
+}
+
+
 #slavery {
     .year-with-content {
-        background: $prime;
+        background: linear-gradient(180deg, rgba($prime, 0) 0%, $prime 20%);
     }
 
     .btn-section {
         @include btn-section($prime-dark, $prime, $prime-dark);
     }
-
-
 }
 
 #emancipation-reconstruction {
     .year-with-content {
-        background: $second;
+        background: linear-gradient(180deg, rgba($second, 0) 0%, $second 20%);
     }
 
     .btn-section {
@@ -613,7 +637,7 @@ section {
 
 #post-reconstruction {
     .year-with-content {
-        background: $third;
+        background: linear-gradient(180deg, rgba($third, 0) 0%, $third 20%);
     }
 
     .btn-section {
@@ -624,7 +648,7 @@ section {
 #civil-rights {
 
     .year-with-content {
-        background: $fourth-dark;
+        background: linear-gradient(180deg, rgba($fourth, 0) 0%, $fourth 20%);
     }
 
     .btn-section {
@@ -637,7 +661,7 @@ section {
 
     .year-with-content {
 
-        background: $fifth-dark;
+        background: linear-gradient(180deg, rgba($fifth-dark, 0) 0%, $fifth-dark 20%);
 
     }
 
@@ -648,14 +672,12 @@ section {
 }
 
 #today {
-
     .year-with-content {
-
-        background: $fifth-dark;
+        background: linear-gradient(180deg, rgba($fifth-dark, 0) 0%, $fifth-dark 20%);
 
     }
 
     .btn-section {
-        @include btn-section($fifth-dark, $fifth, $fifth-dark);
+        @include btn-section($fifth-light, $fifth-dark, $fifth-light);
     }
 }

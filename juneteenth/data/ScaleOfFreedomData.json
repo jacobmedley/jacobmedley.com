@@ -2,7 +2,7 @@
    "sections": [
       {
          "title": "Slavery",
-         "class": "text-prime-dark bg-prime content-container",
+         "class": "text-prime-dark bg-prime era",
          "intro": {
             "title": "Slavery",
             "subtitle": "Welcome to the New World."
@@ -387,7 +387,7 @@
       },
       {
          "title": "Emancipation & Reconstruction",
-         "class": "text-second-dark bg-second",
+         "class": "text-second-dark bg-second era",
          "intro": {
             "title": "Emancipation & Reconstruction",
             "subtitle": "Civil War, Chains Broken and a New Battle for Equality Begins."
@@ -539,7 +539,7 @@
       },
       {
          "title": "Post-Reconstruction",
-         "class": "text-third-dark bg-third pb-5",
+         "class": "text-third-dark bg-third era",
          "intro": {
             "title": "Post-Reconstruction",
             "subtitle": "Echoes of Freedom, Slavery Abolished but Discrimination Persists."
@@ -690,7 +690,7 @@
       },
       {
          "title": "Civil Rights",
-         "class": "text-fourth-light bg-fourth-dark",
+         "class": "text-fourth-light bg-fourth-dark era",
          "intro": {
             "title": "Civil Rights",
             "subtitle": "The Dream: Awakening a Nation"
@@ -805,7 +805,7 @@
       },
       {
          "title": "Post-Civil Rights",
-         "class": "text-fifth-light bg-fifth-dark",
+         "class": "text-fifth-light bg-fifth-dark era",
          "intro": {
             "title": "Post-Civil Rights",
             "subtitle": "Still Dreaming"
@@ -959,13 +959,17 @@
       },
       {
          "title": "Today",
-         "class": "text-fifth-light bg-fifth-dark",
+         "class": "text-fifth-light bg-fifth-dark era",
          "years": [
             "2024"
          ],
+         "intro": {
+            "title": "Welcom to Now",
+            "subtitle": "Keep on Keeping On."
+         },
          "content": {
             "2024": {
-               "title": "We have just started the journey.",
+               "title": "It seems like we have a long way to go.",
                "description": [
                   "If you had the patience to scroll all the way to here, then you might now have a sense of just how early in the process we are for equal rights for the citizens descended from slavery in the USA. Despite significant strides in representation, legislation, and public awareness, systemic racism and inequality persist.",
                   "The ongoing efforts of movements like Black Lives Matter, along with legislative and social initiatives, reflect a commitment to achieving true freedom and equality for all. The journey towards racial justice is ongoing, with the nation striving to live up to its ideals of liberty and justice for all."

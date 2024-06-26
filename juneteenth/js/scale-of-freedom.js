@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', async () => {
   const loadingScreen = document.getElementById('loading-screen');
   const indicator = document.getElementById('indicator');
   const yearCounter = document.getElementById('year-counter');
@@ -28,9 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
       titleHeading.textContent = content.title;
       div.appendChild(titleHeading);
 
-      content.description.forEach(paragraph => {
+      content.description.forEach((paragraph, index) => {
         const p = document.createElement('p');
         p.textContent = paragraph;
+        if (index > 0) {
+          p.classList.add('d-none', 'd-md-block');
+        }
         div.appendChild(p);
       });
 
@@ -43,11 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
       source.innerHTML = `Source: <a class="${textClass}" href="${content.source.url}" target="_blank">${content.source.text} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>`;
       div.appendChild(source);
 
-      const keepGoingMessage = document.createElement('p');
-      keepGoingMessage.classList.add('text-center', 'mt-5');
-      keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
-      div.appendChild(keepGoingMessage);
-
       section.classList.add('year-with-content');
     } else {
       section.classList.add('year-no-content');
@@ -55,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     section.appendChild(div);
     return section;
+  }
+
+  function countYearSections() {
+    const yearSections = document.querySelectorAll('.year-section');
+    const totalYearSections = yearSections.length;
   }
 
   function createMainSection(title, intro, years, content, sectionClass, lastYearOfPreviousEra = 0) {
@@ -88,11 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
-      const keepGoingMessage = document.createElement('p');
-      keepGoingMessage.classList.add('text-center', 'mt-5');
-      keepGoingMessage.innerHTML = `<span class="d-block mb-3 fs-4">Keep on keeping on.</span><i class="fa-regular fa-arrow-down-long fa-bounce fa-2x"></i>`;
-      introDiv.appendChild(keepGoingMessage);
-
       introSection.appendChild(introDiv);
       mainSection.appendChild(introSection);
     }
@@ -117,45 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return mainSection;
   }
 
-  async function populateScaleOfFreedom() {
-    const data = await fetchScaleOfFreedomData();
-    const container = document.getElementById('scale-of-freedom-container');
-    let lastYearOfPreviousEra = 0;
-
-    data.sections.forEach(section => {
-      const mainSection = createMainSection(section.title, section.intro, section.years, section.content, section.class, lastYearOfPreviousEra);
-      container.appendChild(mainSection);
-      if (section.years && section.years.length > 0) {
-        lastYearOfPreviousEra = parseInt(section.years[section.years.length - 1]);
-      }
-    });
-
-    countYearSections();
-    initializeScrollSpy();
-    handleStickySections();
-
-    setTimeout(() => {
-      loadingScreen.classList.add('fade-out');
-      setTimeout(() => {
-        loadingScreen.style.display = 'none';
-      }, 1000);
-    }, 1000);
-  }
-
-  function countYearSections() {
-    const yearSections = document.querySelectorAll('.year-section');
-    const totalYearSections = yearSections.length;
-    console.log(`Total number of year-section elements: ${totalYearSections}`);
-  }
-
   function initializeScrollSpy() {
-    console.log('Initializing scroll spy');
-
     const sections = document.querySelectorAll('#main > section, #scale-of-freedom-container > section');
-    console.log(`Found ${sections.length} sections`);
-
     const navItems = document.querySelectorAll('.nav-item');
-    console.log(`Found ${navItems.length} nav items`);
 
     function activateNavItem(id) {
       navItems.forEach(item => {
@@ -180,17 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', () => {
-      console.log('Scrolling...');
       let currentSectionId = '';
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        console.log(`Section ${section.id} rect: top=${rect.top}, bottom=${rect.bottom}`);
+
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
           currentSectionId = section.id;
         }
       });
+
       if (currentSectionId) {
-        console.log(`Currently in section: ${currentSectionId}`);
         activateNavItem(currentSectionId);
       } else {
         console.log('No section in view');
@@ -222,30 +184,108 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       yearCounter.textContent = currentCount;
-      console.log(`Year counter updated to: ${currentCount}`);
     });
   }
 
-  function handleStickySections() {
-    const yearSections = document.querySelectorAll('.year-with-content');
+  async function populateScaleOfFreedom() {
+    const data = await fetchScaleOfFreedomData();
+    const container = document.getElementById('scale-of-freedom-container');
+    let lastYearOfPreviousEra = 0;
 
-    window.addEventListener('scroll', () => {
-      let currentStickySection = null;
+    data.sections.forEach(section => {
+      const mainSection = createMainSection(section.title, section.intro, section.years, section.content, section.class, lastYearOfPreviousEra);
+      container.appendChild(mainSection);
+      if (section.years && section.years.length > 0) {
+        lastYearOfPreviousEra = parseInt(section.years[section.years.length - 1]);
+      }
+    });
 
-      yearSections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 0 && rect.bottom > 0) {
-          if (currentStickySection && currentStickySection !== section) {
-            currentStickySection.classList.remove('is-sticky');
-          }
-          section.classList.add('is-sticky');
-          currentStickySection = section;
-        } else {
-          section.classList.remove('is-sticky');
+    countYearSections();
+    initializeScrollSpy();
+
+    setTimeout(() => {
+      loadingScreen.classList.add('fade-out');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 1000);
+    }, 1000);
+  }
+
+  await populateScaleOfFreedom();
+
+  function initializeNavigationButtons() {
+    const introSections = Array.from(document.querySelectorAll('.era'));
+    const yearSections = Array.from(document.querySelectorAll('.year-with-content'));
+
+    let currentIntroIndex = -1;
+    let currentYearIndex = -1;
+
+    function updateCurrentIndices() {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      let newIntroIndex = -1;
+      let newYearIndex = -1;
+
+      introSections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          newIntroIndex = index;
         }
       });
-    });
+
+      yearSections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          newYearIndex = index;
+        }
+      });
+
+      if (newIntroIndex !== currentIntroIndex || newYearIndex !== currentYearIndex) {
+        currentIntroIndex = newIntroIndex;
+        currentYearIndex = newYearIndex;
+
+        const prevIntro = introSections[currentIntroIndex - 1];
+        const nextIntro = introSections[currentIntroIndex + 1];
+        const currentIntro = introSections[currentIntroIndex];
+
+        const prevYear = yearSections[currentYearIndex - 1];
+        const nextYear = yearSections[currentYearIndex + 1];
+        const currentYear = yearSections[currentYearIndex];
+
+        console.log("Scroll Position: ", scrollPosition);
+        console.log("Current Intro Index: ", currentIntroIndex);
+        console.log("Current Year Index: ", currentYearIndex);
+
+        console.log("Current Intro: ", currentIntro ? currentIntro.id : "None");
+        console.log("Previous Intro: ", prevIntro ? prevIntro.id : "None");
+        console.log("Next Intro: ", nextIntro ? nextIntro.id : "None");
+
+        console.log("Current Year: ", currentYear ? currentYear.id : "None");
+        console.log("Previous Year: ", prevYear ? prevYear.id : "None");
+        console.log("Next Year: ", nextYear ? nextYear.id : "None");
+
+        // Log positions
+        if (currentYear) {
+          console.log(`Current Year Section Position: Top=${currentYear.offsetTop}, Bottom=${currentYear.offsetTop + currentYear.offsetHeight}`);
+        }
+        if (prevYear) {
+          console.log(`Previous Year Section Position: Top=${prevYear.offsetTop}, Bottom=${prevYear.offsetTop + prevYear.offsetHeight}`);
+        }
+        if (nextYear) {
+          console.log(`Next Year Section Position: Top=${nextYear.offsetTop}, Bottom=${nextYear.offsetTop + nextYear.offsetHeight}`);
+        }
+      }
+    }
+
+    // Ensure initial state is correctly set
+    window.addEventListener('load', updateCurrentIndices);
+    window.addEventListener('scroll', updateCurrentIndices);
+
+    // Initial state update
+    updateCurrentIndices();
   }
 
-  populateScaleOfFreedom();
+  initializeNavigationButtons();
 });

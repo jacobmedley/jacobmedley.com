@@ -98,7 +98,6 @@
 
    <div id="loading-screen">
       <div class="loading-message fa-fade fa-5x" style="--fa-animation-duration: 1s;">
-
          <span class="fa-stack" style="vertical-align: top;">
             <i class="fa-light fa-circle-notch fa-spin fa-stack-2x" style="--fa-animation-duration: 2s;"></i>
             <i class="fa-sharp fa-solid fa-hand-fist fa-stack-1x"></i>
@@ -107,9 +106,13 @@
       </div>
    </div>
 
-   <div class="offcanvas offcanvas-end bg-fourth text-white" tabindex="-1" id="theMenu" aria-labelledby="theMenuLabel">
+
+
+
+   <div class="offcanvas offcanvas-end text-white" tabindex="-1" id="theMenu" aria-labelledby="theMenuLabel"
+      data-bs-scroll="true" data-bs-backdrop="false">
       <div class="offcanvas-header border-1 border-bottom border-white">
-         <h5 class="offcanvas-title" id="theMenuLabel"><i class="fa-regular fa-list-timeline"></i> Choose a Milestone
+         <h5 class="offcanvas-title" id="theMenuLabel"><i class="fa-sharp fa-list-timeline"></i> Milestones
          </h5>
          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -161,30 +164,29 @@
          </div>
       </aside>
 
-      <div id="main">
-         <header class="bg-white sticky-top">
-            <nav id="the-menu" class="navbar navbar-expand-lg navbar-light">
+      <div id="main" class="main-content">
+         <header class="sticky-top">
+            <nav id="navBar" class=" navbar navbar-expand-lg navbar-light">
                <div class="container-fluid">
                   <a href="#" class="navbar-brand"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
                   <button class="btn btn-lg btn-outline-fourth" type="button" data-bs-toggle="offcanvas"
                      data-bs-target="#theMenu" aria-controls="theMenu">
-                     <i class="fa-sharp fa-list-timeline"></i> Key Milestones </button>
+                     <i class="fa-sharp fa-list-timeline"></i> Milestones
+                  </button>
                </div>
             </nav>
          </header>
-         <section id="open" class="content-container text-white bg-black">
+         <section id="open" class="content-container text-white bg-black era">
             <section id="intro-open" class="content-section intro-section">
                <div class="content">
                   <h2 class="intro-title fw-bold">The Scale of Freedom</h2>
                   <p class="intro-subtitle d-none d-md-block">"The Scale of Freedom" explores the extensive history and
                      timeline of Black
                      American rights, focusing on the significant milestones that have shaped the journey from slavery
-                     to
-                     the
+                     to the
                      present day.</p>
                   <p>This project aims to highlight the immense length of time it took to achieve the freedoms and
-                     rights
-                     that
+                     rights that
                      Black Americans have today, illustrating just how recently these advancements have occurred in the
                      grand
                      scope of history. <span class="d-none d-md-block">The timeline will show the arduous
@@ -196,40 +198,50 @@
                      true equality and the
                      eradication
                      of systemic racism continue to be crucial endeavors.</p>
-                  <p class="text-center mt-5">
-                     <span class="d-block fs-2 fw-bold">Journey to Freedom</span>
-                     <span class="d-block mb-3 fs-4">It's going to be awhile.</span>
-                     <button class="btn btn-outline-white rounded-circle me-2 shadow" role="button"
-                        onclick="document.getElementById('slavery').scrollIntoView();">
-                        <i class="fa-regular fa-arrow-down-long fa-bounce"></i>
-                        <span class="visually-hidden">Next Section</span>
-                     </button>
 
-                  </p>
-
+                  <div id="screen-nav" class="screen-nav-container mt-5 text-center">
+                     <a href="#slavery" id="btnNext" class="btn btn-section rounded-circle next shadow ms-2">
+                        <i class="fa-regular fa-arrow-down-long fa-bounce"></i><span class="visually-hidden">Next
+                           Section</span>
+                     </a>
+                  </div>
 
                </div>
             </section>
          </section>
-
-
          <div id="scale-of-freedom-container"></div>
-
 
       </div>
 
-      <button class="btn btn-default sticky-bottom text-white shadow float-end d-none" data-bs-target="#infoModalToggle"
-         data-bs-toggle="modal"><i class="fa-solid fa-circle-info fa-2x"></i></button>
+      <div class="modal fade bg-black text-white" id="infoModalToggle" aria-hidden="true"
+         aria-labelledby="infoModalToggleLabel" tabindex="-1">
+         <div class="modal-dialog modal-fullscreen bg-black">
+            <div class="modal-content bg-black">
+               <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="infoModalToggleLabel">How this was made.</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  Show a second modal and hide this one with the button below.
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-second" data-bs-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 
+
+
+
+
+
    <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', async () => {
          const loadingScreen = document.getElementById('loading-screen');
          const indicator = document.getElementById('indicator');
          const yearCounter = document.getElementById('year-counter');
-
-
-
 
          async function fetchScaleOfFreedomData() {
             const response = await fetch('data/ScaleOfFreedomData.json');
@@ -274,18 +286,13 @@
                source.innerHTML = `Source: <a class="${textClass}" href="${content.source.url}" target="_blank">${content.source.text} <i class="fa-regular fa-arrow-up-right-from-square"></i></a>`;
                div.appendChild(source);
 
-               const keepGoingMessage = document.createElement('p');
-               keepGoingMessage.classList.add('text-center', 'mt-3');
-               keepGoingMessage.innerHTML = `
-               <button class="btn btn-section rounded-circle me-2 previous shadow" role="button">
-                  <i class="fa-regular fa-arrow-up-long"></i><span class="visually-hidden">Previous Section</span>
-               </button>
-               <button class="btn btn-section rounded-circle ms-2 next shadow" role="button">
-                  <i class="fa-regular fa-arrow-down-long"></i><span class="visually-hidden">Next Section</span>
-               </button>
-               `;
-
-               div.appendChild(keepGoingMessage);
+               // Add navigation button
+               const navButton = document.createElement('div');
+               navButton.classList.add('screen-nav-container', 'mt-5', 'text-center');
+               navButton.innerHTML = `<a href="#" class="btn btn-section rounded-circle shadow next">
+                                  <i class="fa-regular fa-arrow-down fa-bounce"></i><span class="visually-hidden">Next Section</span>
+                                </a>`;
+               div.appendChild(navButton);
 
                section.classList.add('year-with-content');
             } else {
@@ -327,19 +334,13 @@
                   });
                }
 
-               const keepGoingMessage = document.createElement('p');
-               keepGoingMessage.classList.add('text-center', 'mt-3');
-               keepGoingMessage.innerHTML = `
-  <button class="btn btn-section rounded-circle me-2 previous shadow" role="button">
-    <i class="fa-regular fa-arrow-up-long"></i><span class="visually-hidden">Previous Section</span>
-  </button>
-  <button class="btn btn-section rounded-circle ms-2 next shadow" role="button">
-    <i class="fa-regular fa-arrow-down-long"></i><span class="visually-hidden">Next Section</span>
-  </button>
-`;
-               introDiv.appendChild(keepGoingMessage);
-
-
+               // Add navigation button
+               const navButton = document.createElement('div');
+               navButton.classList.add('screen-nav-container', 'mt-5', 'text-center');
+               navButton.innerHTML = `<a href="#" class="btn btn-section rounded-circle shadow next">
+                                  <i class="fa-regular fa-arrow-down fa-bounce"></i><span class="visually-hidden">Next Section</span>
+                                </a>`;
+               introDiv.appendChild(navButton);
 
                introSection.appendChild(introDiv);
                mainSection.appendChild(introSection);
@@ -347,6 +348,7 @@
 
             if (years && content) {
                let lastYear = lastYearOfPreviousEra || parseInt(years[0]);
+
                years.forEach((year) => {
                   const currentYear = parseInt(year);
 
@@ -378,7 +380,7 @@
                }
             });
 
-            countYearSections();
+            updateNavigationLinks();
             initializeScrollSpy();
 
             setTimeout(() => {
@@ -389,20 +391,28 @@
             }, 1000);
          }
 
-         function countYearSections() {
-            const yearSections = document.querySelectorAll('.year-section');
-            const totalYearSections = yearSections.length;
+         function updateNavigationLinks() {
+            const sections = Array.from(document.querySelectorAll('#open, #scale-of-freedom-container .intro-section, #scale-of-freedom-container .year-with-content'));
+            sections.forEach((section, index) => {
+               const nextButton = section.querySelector('.btn-section.next');
+               if (nextButton) {
+                  const nextSection = sections[index + 1];
+                  if (nextSection) {
+                     nextButton.setAttribute('href', `#${nextSection.id}`);
+                  } else {
+                     nextButton.remove();
+                  }
+               }
+            });
          }
 
          function initializeScrollSpy() {
-
-            const sections = document.querySelectorAll('#main > section, #scale-of-freedom-container > section');
-
+            const sections = document.querySelectorAll('#open, #scale-of-freedom-container > section');
             const navItems = document.querySelectorAll('.nav-item');
 
             function activateNavItem(id) {
                navItems.forEach(item => {
-                  item.classList.remove('active', 'active-open', 'active-introduction');
+                  item.classList.remove('active');
                   const icon = item.querySelector('i');
 
                   if (icon) {
@@ -412,7 +422,6 @@
 
                   if (item.querySelector(`a[href="#${id}"]`)) {
                      item.classList.add('active');
-                     item.classList.add(`active-${id}`);
 
                      if (icon) {
                         icon.classList.remove('fa-regular');
@@ -423,20 +432,15 @@
             }
 
             window.addEventListener('scroll', () => {
-
                let currentSectionId = '';
                sections.forEach(section => {
                   const rect = section.getBoundingClientRect();
-
                   if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
                      currentSectionId = section.id;
                   }
                });
                if (currentSectionId) {
-
                   activateNavItem(currentSectionId);
-               } else {
-
                }
 
                const container = document.getElementById('scale-of-freedom-container');
@@ -453,7 +457,6 @@
 
                indicator.style.top = `${scrollPercentage * maxIndicatorPosition}px`;
 
-               // Update sequential year counter based on scroll position
                const yearSections = document.querySelectorAll('.year-section');
                let currentCount = 0;
 
@@ -465,71 +468,43 @@
                });
 
                yearCounter.textContent = currentCount;
-
             });
          }
 
-         populateScaleOfFreedom();
+         await populateScaleOfFreedom();
       });
 
    </script>
-
-
-
-   <div class="modal fade bg-black text-white" id="infoModalToggle" aria-hidden="true"
-      aria-labelledby="infoModalToggleLabel" tabindex="-1">
-      <div class="modal-dialog modal-fullscreen bg-black">
-         <div class="modal-content bg-black">
-            <div class="modal-header">
-               <h1 class="modal-title fs-5" id="infoModalToggleLabel">How this was made.</h1>
-               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               Show a second modal and hide this one with the button below.
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-outline-second" data-bs-dismiss="modal">Close</button>
-            </div>
-         </div>
-      </div>
-   </div>
-
-
-
 
    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-
    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-         function closeOffCanvasMenu() {
-            const offCanvasMenu = document.getElementById('theMenu');
-            const bsOffcanvas = new bootstrap.Offcanvas(offCanvasMenu);
+      function closeOffCanvasMenu() {
+         const offCanvasMenu = document.getElementById('theMenu');
+         const bsOffcanvas = new bootstrap.Offcanvas(offCanvasMenu);
 
-            const navLinks = document.querySelectorAll('.nav-link');
+         const navLinks = document.querySelectorAll('.nav-link');
 
-            navLinks.forEach(link => {
-               link.addEventListener('click', (event) => {
-                  event.preventDefault(); // Prevent the default link behavior
-                  const targetId = link.getAttribute('href');
-                  bsOffcanvas.hide();
+         navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+               event.preventDefault(); // Prevent the default link behavior
+               const targetId = link.getAttribute('href');
+               bsOffcanvas.hide();
 
-                  // Wait for the offcanvas menu to hide before navigating
-                  offCanvasMenu.addEventListener('hidden.bs.offcanvas', () => {
-                     window.location.href = targetId;
-                  }, { once: true });
-               });
+               // Wait for the offcanvas menu to hide before navigating
+               offCanvasMenu.addEventListener('hidden.bs.offcanvas', () => {
+                  window.location.href = targetId;
+               }, { once: true });
             });
-         }
+         });
+      }
 
+      document.addEventListener('DOMContentLoaded', () => {
          // Call the function to ensure the menu closes on navigation
          closeOffCanvasMenu();
       });
-
-
-      // Call the function to ensure the menu closes on navigation
-      closeOffCanvasMenu();
    </script>
+
 
 
 

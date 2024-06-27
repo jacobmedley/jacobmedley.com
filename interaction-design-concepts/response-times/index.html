@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction Design: Response Times</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <style>
+            .loading::after {
+                content: '...';
+                position: absolute;
+                right: 10px;
+                animation: loading 1s linear infinite;
+            }
+            @keyframes loading {
+                0% {
+                    content: '...';
+                }
+                33% {
+                    content: '.  .';
+                }
+                66% {
+                    content: '.    .';
+                }
+            }
+        </style> -->
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <h1 class="mb-1 mt-5 text-left">Interaction Design: Response Times</h1>
+        <h2 class="mb-4 text-left">Examples of various response times to demonstrate the effect on a user experience.
+        </h2>
+        <div class="row my-4">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">No feedback</h4>
+                        <div class="btn-group-vertical w-100">
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 100)">100ms</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 300)">300ms</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 500)">500ms</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 1000)">1 sec</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 3000)">3 sec</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 5000)">5 sec</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 10000)">10 sec</button>
+                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 15000)">15 sec</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">With feedback</h4>
+                        <div class="btn-group-vertical w-100">
+                            <button class="btn btn-success my-1"
+                                onclick="simulateInstantLoading(this, 100)">100ms</button>
+                            <button class="btn btn-success my-1"
+                                onclick="simulateInstantLoading(this, 300)">300ms</button>
+                            <button class="btn btn-success my-1"
+                                onclick="simulateInstantLoading(this, 500)">500ms</button>
+                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 1000)">1
+                                sec</button>
+                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 3000)">3
+                                sec</button>
+                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 5000)">5
+                                sec</button>
+                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 10000)">10
+                                sec</button>
+                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 15000)">15
+                                sec</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center mb-5">
+            <div class="col">
+                <button class="btn btn-secondary" onClick="window.location.href=window.location.href">Reset
+                    Buttons</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-info" role="alert">
+                    <p><strong>Explanation:</strong> From Jakob Nielsen's "Usability Engineering" (1993):</p>
+                    <ul>
+                        <li><strong>0.1 second:</strong> The limit for users feeling that the system is reacting
+                            instantaneously.</li>
+                        <li><strong>1 second:</strong> The limit for users' flow of thought to stay uninterrupted, even
+                            though
+                            they notice the delay.</li>
+                        <li><strong>10 seconds:</strong> The limit for keeping users' attention focused on the dialogue.
+                            For
+                            longer delays, users will want to perform other tasks while waiting for the computer to
+                            complete the
+                            task.</li>
+                    </ul>
+                    <p><strong>Articles:</strong></p>
+                    <ul>
+                        <li>
+                            <a href="https://www.nngroup.com/articles/response-times-3-important-limits/"
+                                target="_blank">Response Times: The 3 Important Limits <span>&#8594;</span></a>
+                        </li>
+                        <li>
+                            <a href="https://lawsofux.com/doherty-threshold/" target="_blank">Doherty Threshold
+                                <span>&#8594;</span></a>
+                        </li>
+                        <li>
+                            <a href="https://lawsofux.com/jakobs-law/" target="_blank">Jakob's Law
+                                <span>&#8594;</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function simulateLoading(button, delay) {
+            button.classList.add('loading');
+            setTimeout(() => {
+                button.classList.remove('loading');
+                button.innerHTML = `Completed in ${delay}ms`;
+                button.disabled = true;
+            }, delay);
+        }
+
+        function simulateInstantLoading(button, delay) {
+            button.disabled = true;
+            button.innerHTML = 'Loading...';
+            setTimeout(() => {
+                button.innerHTML = `Completed in ${delay}ms`;
+                button.disabled = false;
+            }, delay);
+        }
+
+        function resetButtons() {
+            const buttons = document.querySelectorAll('.btn-primary, .btn-success');
+            buttons.forEach(button => {
+                button.disabled = false;
+                button.classList.remove('loading');
+                button.innerHTML = button.onclick.toString().match(/simulate\w+Loading\(this, (\d+)\)/)[1] + 'ms';
+            });
+        }
+    </script>
+</body>
+
+</html>

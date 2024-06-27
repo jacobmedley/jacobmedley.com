@@ -213,19 +213,28 @@
 
       </div>
 
-      <div class="modal fade bg-black text-white" id="infoModalToggle" aria-hidden="true"
-         aria-labelledby="infoModalToggleLabel" tabindex="-1">
-         <div class="modal-dialog modal-fullscreen bg-black">
-            <div class="modal-content bg-black">
+
+      <button id="infoButton" type="button" class="btn btn-white rounded-circle" data-bs-toggle="modal"
+         data-bs-target="#infoModalToggle">
+         <i class="fa-solid fa-circle-info"></i>
+      </button>
+
+      <div class="modal fade" id="infoModalToggle" aria-hidden="true" aria-labelledby="infoModalToggleLabel"
+         tabindex="-1">
+         <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
                <div class="modal-header">
                   <h1 class="modal-title fs-5" id="infoModalToggleLabel">How this was made.</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                     <i class="fa-thin fa-circle-xmark"></i></button>
                </div>
                <div class="modal-body">
                   Show a second modal and hide this one with the button below.
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-second" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+                     Close
+                  </button>
                </div>
             </div>
          </div>

@@ -442,13 +442,20 @@ header {
 }
 
 
+#infoButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
 
 section {
     position: relative;
 
     &.content-section {
-        min-height: 100vh;
         display: flex;
+        min-height: 100vh;
         justify-content: center;
         /* Centers the content horizontally */
         align-items: center;
@@ -617,7 +624,7 @@ section {
 
 #slavery {
     .year-with-content {
-        background: linear-gradient(180deg, rgba($prime, 0) 0%, $prime 20%);
+        background: $prime
     }
 
     .btn-section {
@@ -627,7 +634,7 @@ section {
 
 #emancipation-reconstruction {
     .year-with-content {
-        background: linear-gradient(180deg, rgba($second, 0) 0%, $second 20%);
+        background: $second
     }
 
     .btn-section {
@@ -637,7 +644,7 @@ section {
 
 #post-reconstruction {
     .year-with-content {
-        background: linear-gradient(180deg, rgba($third, 0) 0%, $third 20%);
+        background: $third;
     }
 
     .btn-section {
@@ -648,7 +655,7 @@ section {
 #civil-rights {
 
     .year-with-content {
-        background: linear-gradient(180deg, rgba($fourth, 0) 0%, $fourth 20%);
+        background: $fourth;
     }
 
     .btn-section {
@@ -661,8 +668,7 @@ section {
 
     .year-with-content {
 
-        background: linear-gradient(180deg, rgba($fifth-dark, 0) 0%, $fifth-dark 20%);
-
+        background: $fifth;
     }
 
     .btn-section {
@@ -673,7 +679,7 @@ section {
 
 #today {
     .year-with-content {
-        background: linear-gradient(180deg, rgba($fifth-dark, 0) 0%, $fifth-dark 20%);
+        background: $fifth-dark;
 
     }
 

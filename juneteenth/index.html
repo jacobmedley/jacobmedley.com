@@ -114,7 +114,8 @@
       <div class="offcanvas-header border-1 border-bottom border-white">
          <h5 class="offcanvas-title" id="theMenuLabel"><i class="fa-sharp fa-list-timeline"></i> Milestones
          </h5>
-         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         <button type="button" class="btn btn-close-menu white" data-bs-dismiss="offcanvas" aria-label="Close"><i
+               class="fa-sharp fa-light fa-xmark-large"></i></button>
       </div>
       <div class="offcanvas-body">
          <ul class="navbar-nav fa-ul">
@@ -214,31 +215,71 @@
       </div>
 
 
-      <button id="infoButton" type="button" class="btn btn-white rounded-circle" data-bs-toggle="modal"
+      <button id="infoButton" type="button" class="btn btn-white btn-about" data-bs-toggle="modal"
          data-bs-target="#infoModalToggle">
-         <i class="fa-solid fa-circle-info"></i>
+         <i class="fa-solid fa-info"></i>
       </button>
 
-      <div class="modal fade" id="infoModalToggle" aria-hidden="true" aria-labelledby="infoModalToggleLabel"
-         tabindex="-1">
-         <div class="modal-dialog modal-fullscreen">
+      <!-- Modal -->
+      <div class="modal fade" id="infoModalToggle" tabindex="-1" aria-labelledby="infoModalToggleLabel"
+         aria-hidden="true">
+         <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
             <div class="modal-content">
                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="infoModalToggleLabel">How this was made.</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                     <i class="fa-thin fa-circle-xmark"></i></button>
+                  <h5 class="modal-title" id="infoModalToggleLabel">How This Project Started</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                  Show a second modal and hide this one with the button below.
+                  <h2 class="fs-5 mt-2">Introduction</h2>
+                  <p>
+                     My wife, Norma, is a Black American born in 1968, just one year after interracial marriage was
+                     legalized in the United States. During our 23-year marriage, we have had numerous conversations
+                     about the struggles and challenges faced by descendants of slaves in the USA. It is a shocking
+                     realization that the majority of "freedoms" and "rights," including our marriage, happened within
+                     her lifetime. We aren't that old!
+                  </p>
+                  <p>
+                     On Juneteenth 2024, the company I work for provided the day off. I dedicated the day to attempting
+                     to illustrate that since Black Americans arrived in the Americas, they have been in slavery for the
+                     majority of the time.
+                  </p>
+
+                  <h2 class="fs-5 mt-4">The Timeline</h2>
+                  <p>
+                     Below is the breakdown of each era, the percentage it represents in the timeline:
+                  </p>
+                  <ul>
+                     <li><strong>Slavery (1619-1865):</strong> 60.74%</li>
+                     <li><strong>Emancipation and Reconstruction (1865-1877):</strong> 2.96%</li>
+                     <li><strong>Post-Reconstruction (1877-1954):</strong> 19.01%</li>
+                     <li><strong>Civil Rights Era (1954-1968):</strong> 3.46%</li>
+                     <li><strong>Post-Civil Rights Era (1968-present):</strong> 13.83%</li>
+                  </ul>
+
+                  <h2 class="fs-5 mt-4">Technological Involvement</h2>
+                  <p>
+                     This project was built using a combination of Bootstrap, Sass, and dynamic JavaScript to ensure a
+                     smooth, responsive, and interactive experience.
+                  </p>
+                  <h3 class="fs-5 mt-4">ChatGPT's Role</h3>
+                  <p>
+                     As part of the development process, ChatGPT was used as a tool to assist with content creation,
+                     coding solutions, and historical context. It is important to verify any historical data and
+                     consider potential biases in AI-generated content.
+                  </p>
+                  <p>
+                     <strong>Disclaimer:</strong> While I am a UX/UI designer and developer, I am not a statistician or
+                     historian. If you notice any factual errors or have suggestions for improvement, please let me
+                     know.
+                  </p>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-bs-dismiss="modal">
-                     Close
-                  </button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                </div>
             </div>
          </div>
       </div>
+
    </div>
 
 
@@ -512,6 +553,34 @@
          // Call the function to ensure the menu closes on navigation
          closeOffCanvasMenu();
       });
+
+      document.addEventListener('DOMContentLoaded', () => {
+         const modalElement = document.getElementById('infoModalToggle');
+
+         const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+               if (mutation.type === 'childList') {
+                  const backdrop = document.querySelector('.modal-backdrop');
+                  if (backdrop) {
+                     backdrop.classList.add('blur-backdrop');
+                     observer.disconnect();  // Stop observing after adding the class
+                  }
+               }
+            }
+         });
+
+         modalElement.addEventListener('show.bs.modal', () => {
+            observer.observe(document.body, { childList: true, subtree: true });
+         });
+
+         modalElement.addEventListener('hidden.bs.modal', () => {
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+               backdrop.classList.remove('blur-backdrop');
+            }
+         });
+      });
+
    </script>
 
 

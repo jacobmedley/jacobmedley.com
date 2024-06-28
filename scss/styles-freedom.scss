@@ -140,7 +140,7 @@ $theme-colors: map-remove($theme-colors, "blue", "indigo", "purple", "pink", "re
 $offcanvas-horizontal-width: 320px;
 
 
-$btn-close-color: $white;
+$btn-close-color: $black;
 
 $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
 
@@ -266,6 +266,18 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 }
 
 
+.offcanvas-header .btn-close-menu {
+    padding: calc(var(--bs-offcanvas-padding-y)* 0.5) calc(var(--bs-offcanvas-padding-x)* 0.5);
+    margin: calc(-0.5* var(--bs-offcanvas-padding-y)) calc(-0.5* var(--bs-offcanvas-padding-x)) calc(-0.5* var(--bs-offcanvas-padding-y)) auto;
+
+    &.white {
+        color: $white;
+    }
+
+    &.black {
+        color: $black;
+    }
+}
 
 .navbar-brand {
     padding-left: 10px;
@@ -426,6 +438,31 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     }
 }
 
+.btn-about {
+    border-radius: 100%;
+    border: transparent;
+    height: 38px;
+    width: 38px;
+    background: rgba(255, 255, 255, 0.5); // Semi-transparent white
+    backdrop-filter: blur(10px); // Apply a blur effect
+    -webkit-backdrop-filter: blur(10px); // For Safari
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Blur effect for the backdrop */
+.modal-backdrop.blur-backdrop {
+    backdrop-filter: blur(5px);
+}
+
+/* Ensuring the blur effect applies when the modal is shown */
+.modal.show .modal-backdrop.blur-backdrop {
+    display: block;
+}
+
+/* Optional: Smooth transition effect for the blur */
+.modal-backdrop.blur-backdrop {
+    transition: backdrop-filter 0.3s ease-in-out;
+}
 
 header {
     background: rgba(255, 255, 255, 0.5); // Semi-transparent white
@@ -501,7 +538,7 @@ section {
 
             .year {
                 text-align: left;
-                font-size: calc(4rem + 1vw);
+                font-size: calc(3rem + 1vw);
 
                 @include media-breakpoint-up(md) {
                     font-size: calc(10rem + 1vw);
@@ -668,7 +705,7 @@ section {
 
     .year-with-content {
 
-        background: $fifth;
+        background: $fifth-dark;
     }
 
     .btn-section {

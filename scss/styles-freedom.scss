@@ -439,14 +439,8 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 }
 
 .btn-about {
-    border-radius: 100%;
-    border: transparent;
-    height: 38px;
-    width: 38px;
-    background: rgba(255, 255, 255, 0.5); // Semi-transparent white
-    backdrop-filter: blur(10px); // Apply a blur effect
-    -webkit-backdrop-filter: blur(10px); // For Safari
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 48px;
+    width: 48px;
 }
 
 /* Blur effect for the backdrop */
@@ -476,14 +470,6 @@ header {
     backdrop-filter: blur(10px); // Apply a blur effect
     -webkit-backdrop-filter: blur(10px); // For Safari
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-#infoButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
 }
 
 

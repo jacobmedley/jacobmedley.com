@@ -170,10 +170,15 @@
             <nav id="navBar" class=" navbar navbar-expand-lg navbar-light">
                <div class="container-fluid">
                   <a href="#" class="navbar-brand"><i class="fa-sharp fa-solid fa-hand-fist"></i></a>
-                  <button class="btn btn-lg btn-outline-fourth" type="button" data-bs-toggle="offcanvas"
-                     data-bs-target="#theMenu" aria-controls="theMenu">
-                     <i class="fa-sharp fa-list-timeline"></i> Milestones
-                  </button>
+                  <div> <button class="btn btn-lg btn-outline-fourth" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#theMenu" aria-controls="theMenu">
+                        <i class="fa-sharp fa-list-timeline"></i> Milestones
+                     </button>
+                     <button id="infoButton" type="button" class="btn btn-lg btn-outline-fourth btn-about ms-2"
+                        data-bs-toggle="modal" data-bs-target="#infoModalToggle">
+                        <i class="fa-solid fa-info"></i>
+                     </button>
+                  </div>
                </div>
             </nav>
          </header>
@@ -214,64 +219,67 @@
 
       </div>
 
-
-      <button id="infoButton" type="button" class="btn btn-white btn-about" data-bs-toggle="modal"
-         data-bs-target="#infoModalToggle">
-         <i class="fa-solid fa-info"></i>
-      </button>
-
       <!-- Modal -->
       <div class="modal fade" id="infoModalToggle" tabindex="-1" aria-labelledby="infoModalToggleLabel"
          aria-hidden="true">
          <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
             <div class="modal-content">
                <div class="modal-header">
-                  <h5 class="modal-title" id="infoModalToggleLabel">How This Project Started</h5>
+                  <h5 class="modal-title" id="infoModalToggleLabel">The Scale of Freedom Project</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                  <h2 class="fs-5 mt-2">Introduction</h2>
+                  <h2 class="fs-5 mt-2">Purpose</h2>
                   <p>
-                     My wife, Norma, is a Black American born in 1968, just one year after interracial marriage was
-                     legalized in the United States. During our 23-year marriage, we have had numerous conversations
-                     about the struggles and challenges faced by descendants of slaves in the USA. It is a shocking
-                     realization that the majority of "freedoms" and "rights," including our marriage, happened within
-                     her lifetime. We aren't that old!
+                     "The Scale of Freedom" explores the extensive history and timeline of Black American rights in the
+                     Americas, focusing on the staggering length and struggle for freedom, equality, and justice. It
+                     highlights the recent generation of people who have reached a point where Black Americans have
+                     rights and freedoms approaching those of their white counterparts.
                   </p>
+                  <h2 class="fs-5 mt-2">Methods</h2>
                   <p>
-                     On Juneteenth 2024, the company I work for provided the day off. I dedicated the day to attempting
-                     to illustrate that since Black Americans arrived in the Americas, they have been in slavery for the
-                     majority of the time.
+                     The experience was deliberately designed to be cumbersome and long to show the length of time it
+                     took to achieve the freedoms and rights that Black Americans have today. We purposefully made it
+                     difficult to go through the timeline so that the user can feel the scale of time it took to get to
+                     this point.
                   </p>
-
-                  <h2 class="fs-5 mt-4">The Timeline</h2>
+                  <p>Key events and milestones are used to educate about the progress and regression that have been
+                     battled since before America was even a country.</p>
+                  <h2 class="fs-5 mt-4">The Horrible Truth</h2>
                   <p>
-                     Below is the breakdown of each era, the percentage it represents in the timeline:
+                     From 1919 to today, the United States has seen a total of 4,742 lynchings. The majority of these
+                     lynchings were of Black Americans. The Equal Justice Initiative has documented 4,084 lynchings of
+                     Black Americans between 1877 and 1950. This is a dark part of American history that is often
+                     overlooked or ignored. It is important to remember and acknowledge these atrocities to ensure they
+                     are never repeated.
                   </p>
+                  <h2 class="fs-5 mt-4">Timeline Breakdown</h2>
                   <ul>
                      <li><strong>Slavery (1619-1865):</strong> 60.74%</li>
                      <li><strong>Emancipation and Reconstruction (1865-1877):</strong> 2.96%</li>
                      <li><strong>Post-Reconstruction (1877-1954):</strong> 19.01%</li>
                      <li><strong>Civil Rights Era (1954-1968):</strong> 3.46%</li>
-                     <li><strong>Post-Civil Rights Era (1968-present):</strong> 13.83%</li>
+                     <li><strong>Post-Civil Rights Era (1969-present):</strong> 13.83%</li>
                   </ul>
-
                   <h2 class="fs-5 mt-4">Technological Involvement</h2>
                   <p>
-                     This project was built using a combination of Bootstrap, Sass, and dynamic JavaScript to ensure a
-                     smooth, responsive, and interactive experience.
+                     The timeline was created using HTML, CSS, and JavaScript. The data was sourced from various
+                     historical records and resources. The timeline is designed to be interactive and informative,
+                     providing a detailed account of significant events in Black American history.
                   </p>
                   <h3 class="fs-5 mt-4">ChatGPT's Role</h3>
                   <p>
                      As part of the development process, ChatGPT was used as a tool to assist with content creation,
-                     coding solutions, and historical context. It is important to verify any historical data and
-                     consider potential biases in AI-generated content.
+                     experimental coding solutions, and historical context. It is important to verify any historical
+                     data and consider potential biases in AI-generated content.
                   </p>
                   <p>
                      <strong>Disclaimer:</strong> While I am a UX/UI designer and developer, I am not a statistician or
                      historian. If you notice any factual errors or have suggestions for improvement, please let me
                      know.
                   </p>
+                  <p>Thank you,</p>
+                  <p>Jacob Medley, Human</p>
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -279,6 +287,7 @@
             </div>
          </div>
       </div>
+
 
    </div>
 

@@ -317,7 +317,7 @@
             div.classList.add('content');
 
             const yearHeading = document.createElement('h2');
-            yearHeading.classList.add('year', 'fw-bold');
+            yearHeading.classList.add('year');
             yearHeading.textContent = year;
             div.appendChild(yearHeading);
 
@@ -527,6 +527,13 @@
                });
 
                yearCounter.textContent = currentCount;
+
+               // Fade in/out logic for indicator
+               if (currentCount > 0) {
+                  indicator.classList.add('visible');
+               } else {
+                  indicator.classList.remove('visible');
+               }
             });
          }
 

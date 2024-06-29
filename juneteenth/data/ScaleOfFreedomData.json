@@ -354,9 +354,9 @@
                }
             },
             "1852": {
-               "title": "Publication of \"Uncle Tom's Cabin\"",
+               "title": "Publication of 'Uncle Tom's Cabin'",
                "description": [
-                  "Harriet Beecher Stowe's novel \"Uncle Tom's Cabin\" is published, galvanizing anti-slavery sentiment in the North and contributing to the abolitionist movement."
+                  "Harriet Beecher Stowe's novel 'Uncle Tom's Cabin' is published, galvanizing anti-slavery sentiment in the North and contributing to the abolitionist movement."
                ],
                "source": {
                   "text": "Library of Congress",
@@ -623,126 +623,70 @@
             "1953"
          ],
          "content": {
-            "1861": {
-               "title": "American Civil War",
+            "1878": {
+               "title": "Posse Comitatus Act",
                "description": [
-                  "The Civil War was fought between the Northern states (the Union) and the Southern states (the Confederacy) primarily over the issue of slavery. Enslaved people played significant roles during the war, including working as laborers, serving as soldiers for the Union Army after the Emancipation Proclamation, and acting as spies and scouts.",
-                  "The war resulted in the abolition of slavery but left the nation deeply divided, leading to a long and difficult period of Reconstruction aimed at integrating formerly enslaved people into American society and addressing the economic and social devastation of the South."
-               ],
-               "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/american-civil-war/american-civil-war-history"
-               }
-            },
-            "1862": {
-               "title": "Homestead Act",
-               "description": [
-                  "The Homestead Act is signed into law, providing land to settlers and encouraging Western migration, impacting freed slaves who sought new opportunities."
-               ],
-               "source": {
-                  "text": "National Archives",
-                  "url": "https://www.archives.gov/milestone-documents/homestead-act"
-               }
-            },
-            "1863": {
-               "title": "Emancipation Proclamation",
-               "description": [
-                  "President Abraham Lincoln issued the Emancipation Proclamation, declaring that all enslaved people in Confederate states were to be set free. This shifted the focus of the war towards the abolition of slavery and allowed African Americans to enlist in the Union Army.",
-                  "The proclamation was a strategic move to weaken the Confederacy and gave the Union a moral cause. While it did not immediately free all enslaved people, it was a crucial step towards the eventual abolition of slavery and highlighted the Union's commitment to human rights."
-               ],
-               "source": {
-                  "text": "National Archives",
-                  "url": "https://www.archives.gov/exhibits/american_originals_iv/sections/emancipation_proclamation.html"
-               }
-            },
-            "1865a": {
-               "title": "Freedmen's Bureau Established",
-               "description": [
-                  "The Freedmen's Bureau is created to aid formerly enslaved people and impoverished Southerners by providing food, housing, education, and medical care."
-               ],
-               "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/black-history/freedmens-bureau"
-               }
-            },
-            "1865b": {
-               "title": "Lincoln Assassinated",
-               "description": [
-                  "President Abraham Lincoln is assassinated, creating uncertainty and upheaval during the early days of Reconstruction."
-               ],
-               "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/black-history/freedmens-bureau"
-               }
-            },
-            "1866": {
-               "title": "Civil Rights Act of 1866",
-               "description": [
-                  "The Civil Rights Act of 1866 is passed, granting citizenship and equal protection under the law to African Americans."
+                  "The Posse Comitatus Act of 1878 limited the use of federal troops in domestic law enforcement.",
+                  "This marked the end of federal intervention in the South."
                ],
                "source": {
                   "text": "Library of Congress",
-                  "url": "https://www.loc.gov/item/today-in-history/april-09/"
+                  "url": "https://www.loc.gov/rr/program/bib/ourdocs/PosseComitatus.html"
                }
             },
-            "1868": {
-               "title": "Fourteenth Amendment",
+            "1896": {
+               "title": "Plessy v. Ferguson",
                "description": [
-                  "The Fourteenth Amendment is ratified, ensuring citizenship and equal protection under the law for all persons born or naturalized in the United States."
+                  "The Supreme Court's Plessy v. Ferguson decision in 1896 upheld the constitutionality of racial segregation.",
+                  "It established the doctrine of 'separate but equal.'"
                ],
                "source": {
-                  "text": "National Constitution Center",
-                  "url": "https://constitutioncenter.org/interactive-constitution/amendment/amendment-xiv"
+                  "text": "Oyez",
+                  "url": "https://www.oyez.org/cases/1850-1900/163us537"
                }
             },
-            "1870": {
-               "title": "Fifteenth Amendment",
+            "1909": {
+               "title": "Founding of the NAACP",
                "description": [
-                  "The Fifteenth Amendment is ratified, granting African American men the right to vote and aiming to prevent racial discrimination in voting rights."
+                  "The NAACP was founded in 1909 to fight for civil rights and combat racial discrimination.",
+                  "It became a leading organization in the civil rights movement."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/rr/program/bib/ourdocs/15thamendment.html"
+                  "text": "NAACP",
+                  "url": "https://www.naacp.org/about-us/"
                }
             },
-            "1871": {
-               "title": "Ku Klux Klan Act",
+            "1920": {
+               "title": "19th Amendment Ratified",
                "description": [
-                  "Congress passes the Ku Klux Klan Act, authorizing federal action against the KKK and other white supremacist groups that terrorize African Americans."
-               ],
-               "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/this-day-in-history/ku-klux-klan-act-passed-by-congress"
-               }
-            },
-            "1873": {
-               "title": "Colfax Massacre",
-               "description": [
-                  "The Colfax Massacre occurs in Louisiana, where white supremacists attack and kill dozens of African Americans defending a courthouse, illustrating the violent resistance to Reconstruction."
-               ],
-               "source": {
-                  "text": "Smithsonian Magazine",
-                  "url": "https://www.smithsonianmag.com/history/the-colfax-massacre-when-racists-murdered-dozens-of-black-americans-in-louisiana-180970420/"
-               }
-            },
-            "1875": {
-               "title": "Civil Rights Act of 1875",
-               "description": [
-                  "The Civil Rights Act of 1875 is passed, prohibiting racial discrimination in public accommodations, though it is poorly enforced."
+                  "The 19th Amendment, granting women the right to vote, was ratified in 1920.",
+                  "This was a significant milestone for women's rights, including African American women."
                ],
                "source": {
                   "text": "National Archives",
-                  "url": "https://www.archives.gov/milestone-documents/civil-rights-act"
+                  "url": "https://www.archives.gov/milestone-documents/19th-amendment"
                }
             },
-            "1877": {
-               "title": "Compromise of 1877",
+            "1948": {
+               "title": "Executive Order 9981",
                "description": [
-                  "The Compromise of 1877 ends Reconstruction, withdrawing federal troops from the South and leading to the disenfranchisement and segregation of African Americans."
+                  "President Truman's Executive Order 9981 in 1948 desegregated the armed forces.",
+                  "This was a major step towards racial equality in the military."
                ],
                "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/us-presidents/compromise-of-1877"
+                  "text": "National Archives",
+                  "url": "https://www.archives.gov/milestone-documents/executive-order-9981"
+               }
+            },
+            "1950": {
+               "title": "Sweatt v. Painter",
+               "description": [
+                  "The Supreme Court ruled in Sweatt v. Painter (1950) that separate but equal facilities are inherently unequal.",
+                  "This case challenged the doctrine of 'separate but equal.'"
+               ],
+               "source": {
+                  "text": "Oyez",
+                  "url": "https://www.oyez.org/cases/1940-1955/339us629"
                }
             }
          }
@@ -1023,7 +967,7 @@
             "2024"
          ],
          "intro": {
-            "title": "Welcom to Now",
+            "title": "Welcome to Now",
             "subtitle": "Keep on Keeping On."
          },
          "content": {

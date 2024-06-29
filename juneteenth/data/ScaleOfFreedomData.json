@@ -389,7 +389,7 @@
          "title": "Emancipation & Reconstruction",
          "class": "text-second-dark bg-second era",
          "intro": {
-            "title": "Emancipation & Reconstruction",
+            "title": "Emancipation / Reconstruction",
             "subtitle": "Civil War, Chains Broken and a New Battle for Equality Begins."
          },
          "years": [
@@ -397,8 +397,7 @@
             "1862",
             "1863",
             "1864",
-            "1865a",
-            "1865b",
+            "1865",
             "1866",
             "1867",
             "1868",
@@ -445,17 +444,7 @@
                   "url": "https://www.archives.gov/exhibits/american_originals_iv/sections/emancipation_proclamation.html"
                }
             },
-            "1865a": {
-               "title": "Freedmen's Bureau Established",
-               "description": [
-                  "The Freedmen's Bureau is created to aid formerly enslaved people and impoverished Southerners by providing food, housing, education, and medical care."
-               ],
-               "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/black-history/freedmens-bureau"
-               }
-            },
-            "1865b": {
+            "1865": {
                "title": "Lincoln Assassinated",
                "description": [
                   "President Abraham Lincoln is assassinated, creating uncertainty and upheaval during the early days of Reconstruction."
@@ -741,8 +730,7 @@
             "1963": {
                "title": "March on Washington",
                "description": [
-                  "The March on Washington for Jobs and Freedom took place, where Dr. Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. The march was one of the largest political rallies for human rights in U.S. history.",
-                  "It aimed to draw attention to the economic and social inequalities faced by African Americans and played a crucial role in building momentum for the Civil Rights Act of 1964 and the Voting Rights Act of 1965."
+                  "The March on Washington for Jobs and Freedom took place, where Dr. Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. The march was one of the largest political rallies for human rights in U.S. history. It aimed to draw attention to the economic and social inequalities faced by African Americans and played a crucial role in building momentum for the Civil Rights Act of 1964 and the Voting Rights Act of 1965."
                ],
                "source": {
                   "text": "National Park Service",
@@ -752,8 +740,7 @@
             "1964": {
                "title": "Civil Rights Act passed",
                "description": [
-                  "The Civil Rights Act was passed, prohibiting discrimination based on race, color, religion, sex, or national origin. This landmark legislation addressed widespread racial discrimination and segregation.",
-                  "The Act also established the Equal Employment Opportunity Commission (EEOC) to help prevent workplace discrimination. It was a critical step in dismantling institutionalized racism."
+                  "The Civil Rights Act was passed, prohibiting discrimination based on race, color, religion, sex, or national origin. This landmark legislation addressed widespread racial discrimination and segregation."
                ],
                "source": {
                   "text": "National Archives",
@@ -763,8 +750,7 @@
             "1965": {
                "title": "Voting Rights Act Passed",
                "description": [
-                  "The Voting Rights Act was passed, eliminating various barriers to Black enfranchisement, such as literacy tests and other discriminatory practices. This act was significant in ensuring equal opportunity to vote.",
-                  "The Act provided for federal oversight and enforcement of voter registration and election procedures in states with a history of voting discrimination. It marked a major victory for the Civil Rights Movement."
+                  "The Voting Rights Act was passed, eliminating various barriers to Black enfranchisement, such as literacy tests and other discriminatory practices. This act was significant in ensuring equal opportunity to vote."
                ],
                "source": {
                   "text": "U.S. Department of Justice",
@@ -782,26 +768,14 @@
                   "url": "https://www.history.com/topics/civil-rights-movement/loving-v-virginia"
                }
             },
-            "1968a": {
+            "1968": {
                "title": "Assassination of Martin Luther King Jr",
                "description": [
-                  "On April 4, 1968, Martin Luther King Jr., a leader of the Civil Rights Movement and a prominent advocate for nonviolent protest and racial equality, was assassinated in Memphis, Tennessee. His assassination marked a pivotal moment in American history.",
-                  "King's death galvanized the Civil Rights Movement, leading to the passage of significant legislation such as the Fair Housing Act, and renewed efforts to address systemic racism and promote social justice."
+                  "On April 4, 1968, Martin Luther King Jr., leader of the Civil Rights Movement and advocate for nonviolent protest and racial equality, was assassinated in Memphis, Tennessee. His death marked a pivotal moment in American history, galvanizing the Civil Rights Movement, leading to the Fair Housing Act, and renewing efforts to address systemic racism and promote social justice."
                ],
                "source": {
                   "text": "Martin Luther King, Jr. National Historical Park",
                   "url": "https://www.nps.gov/malu/planyourvisit/index.htm"
-               }
-            },
-            "1968b": {
-               "title": "Fair Housing Act passed",
-               "description": [
-                  "The Fair Housing Act was passed, prohibiting discrimination concerning the sale, rental, and financing of housing based on race, religion, national origin, or sex. This Act aimed to address racial segregation and discrimination in housing.",
-                  "It was a key piece of legislation following the Civil Rights Act of 1964, further extending civil rights protections to ensure equal access to housing opportunities."
-               ],
-               "source": {
-                  "text": "U.S. Department of Housing and Urban Development",
-                  "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp/aboutfheo/history"
                }
             }
          }

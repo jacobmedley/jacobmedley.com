@@ -186,25 +186,13 @@
          <section id="open" class="content-container text-white bg-black era">
             <section id="intro-open" class="content-section intro-section">
                <div class="content">
-                  <h2 class="intro-title fw-bold">The Scale of Freedom</h2>
-                  <p class="intro-subtitle d-none d-md-block">"The Scale of Freedom" explores the extensive history and
-                     timeline of Black
-                     American rights, focusing on the significant milestones that have shaped the journey from slavery
-                     to the
-                     present day.</p>
-                  <p>This project aims to highlight the immense length of time it took to achieve the freedoms and
+                  <h2 class="intro-title">The Scale <br class="d-block d-sm-none"> of Freedom</h2>
+                  <p class="intro-subtitle">This project aims to highlight the immense length of time
+                     it took to achieve the freedoms and
                      rights that
                      Black Americans have today, illustrating just how recently these advancements have occurred in the
                      grand
-                     scope of history. <span class="d-none d-md-block">The timeline will show the arduous
-                        struggle for freedom, equality, and justice,
-                        emphasizing that we are in a relatively new era of freedom for Black Americans descended from
-                        slavery.</span>
-                  </p>
-                  <p class="d-none d-md-block">Despite the progress made, the journey is ongoing, and the pursuit of
-                     true equality and the
-                     eradication
-                     of systemic racism continue to be crucial endeavors.</p>
+                     scope of history.</p>
 
                   <div id="screen-nav" class="screen-nav-container mt-5 text-center">
                      <a href="#slavery" id="btnNext" class="btn btn-section rounded-circle next shadow ms-2">
@@ -221,8 +209,8 @@
       </div>
 
       <!-- Modal -->
-      <div class="modal fade" id="infoModalToggle" tabindex="-1" aria-labelledby="infoModalToggleLabel"
-         aria-hidden="true">
+      <div class="modal fade modal-fullscreen-md-down" id="infoModalToggle" tabindex="-1"
+         aria-labelledby="infoModalToggleLabel" aria-hidden="true">
          <div class="modal-dialog modal-dialog-scrollable modal-fullscreen-md-down">
             <div class="modal-content">
                <div class="modal-header">
@@ -324,7 +312,7 @@
 
             if (content) {
                const titleHeading = document.createElement('h3');
-               titleHeading.classList.add('title', 'fw-bold', 'mb-4', 'text-capitalize');
+               titleHeading.classList.add('title', 'text-capitalize');
                titleHeading.textContent = content.title;
                div.appendChild(titleHeading);
 
@@ -332,7 +320,7 @@
                   const p = document.createElement('p');
                   p.textContent = paragraph;
                   if (index > 0) {
-                     p.classList.add('d-none', 'd-md-block');
+                     p.classList.add('d-none', 'd-xl-block');
                   }
                   div.appendChild(p);
                });
@@ -378,7 +366,7 @@
                const introDiv = document.createElement('div');
                introDiv.classList.add('content');
                const introHeading = document.createElement('h2');
-               introHeading.classList.add('intro-title', 'fw-bold');
+               introHeading.classList.add('intro-title');
                introHeading.textContent = intro.title;
                introDiv.appendChild(introHeading);
                const introSubheading = document.createElement('p');

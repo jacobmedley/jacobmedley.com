@@ -92,6 +92,18 @@ $display-font-sizes: (
     20: 20rem
 );
 
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1800px
+);
+
+
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
@@ -421,36 +433,17 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 
     background: url(../juneteenth/images/SVG/bg-section-one-v1.svg) center center;
 
-    .intro-title {
-        text-align: left;
-        font-size: calc(2rem + 1vw);
-        margin-bottom: 1rem;
-
-        @include media-breakpoint-up(md) {
-            font-size: calc(2.4rem + 1vw);
-            margin-bottom: 1.5rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-            font-size: calc(2.8rem + 1vw);
-            margin-bottom: 2rem;
-        }
-
-        @include media-breakpoint-up(xl) {
-            font-size: calc(3rem + 1vw);
-
-        }
-    }
-
-    .intro-subtitle {
-        text-align: left;
-        font-size: 1.25rem;
-    }
 }
 
 .btn-about {
     height: 48px;
     width: 48px;
+
+    i {
+        position: relative;
+        top: -3px;
+    }
+
 }
 
 header {
@@ -470,6 +463,211 @@ header {
 
 section {
     position: relative;
+
+    &#open {
+
+        .content {
+            @include media-breakpoint-up(md) {
+                max-width: 88%;
+                max-width: 640px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 740px;
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 80%;
+                max-width: 960px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                max-width: 1400px;
+                width: 80%;
+            }
+        }
+
+        .intro-title {
+            font-weight: 900;
+            text-align: left;
+            font-size: clamp(2.4rem, 4vw, 10rem);
+            margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+            @include media-breakpoint-up(md) {
+                font-size: clamp(3rem, 4vw, 10rem);
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: clamp(4rem, 4vw, 10rem);
+            }
+
+            @include media-breakpoint-up(xl) {
+                font-size: clamp(5rem, 4vw, 10rem);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                font-size: clamp(6rem, 4vw, 10rem);
+            }
+        }
+
+        .intro-subtitle {
+            font-weight: 500;
+            font-size: clamp(1rem, 4vw, 2rem);
+            text-align: left;
+            margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+            line-height: clamp(1.4rem, 4vw, 3rem);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
+    }
+
+
+    &.content-section.intro-section .content {
+        padding: 0 2rem;
+        max-width: 100%;
+
+        .intro-title {
+            font-weight: 900;
+            margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+            font-size: clamp(2rem, 4vw, 10rem);
+        }
+
+        .intro-subtitle {
+            font-weight: 700;
+            text-align: center;
+            line-height: clamp(1.2rem, 4vw, 4.2rem);
+
+            font-size: clamp(1rem, 4vw, 3rem);
+        }
+
+
+    }
+
+    .year-with-content {
+
+        .intro-title {
+            text-align: center;
+        }
+
+        .intro-subtitle {
+            text-align: center;
+        }
+
+
+        .title {
+
+            margin-bottom: clamp(.5rem, 4vw, 1rem);
+            margin-top: clamp(1rem, 4vw, 1rem);
+
+            font-size: clamp(1.4rem, 4vw, 3rem);
+
+
+            @include media-breakpoint-up(xl) {
+                font-size: clamp(1.2rem, 4vw, 2.8rem);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                font-size: clamp(1.5rem, 4vw, 3rem);
+            }
+
+            @include media-breakpoint-up(xxxl) {
+                font-size: clamp(2rem, 4vw, 4rem);
+            }
+        }
+
+        .year {
+            text-align: left;
+            font-weight: 900;
+
+            font-size: clamp(6rem, 20vw, 18rem);
+
+            @include media-breakpoint-up(xl) {
+                font-size: clamp(4rem, 20vw, 10rem);
+            }
+
+            @include media-breakpoint-up(xxl) {
+                font-size: clamp(6rem, 20vw, 16rem);
+            }
+
+            @include media-breakpoint-up(xxxl) {
+                font-size: clamp(8rem, 20vw, 20rem);
+            }
+
+        }
+
+        .year-source {
+
+            margin-bottom: clamp(.5rem, 4vw, 1rem);
+
+            font-size: clamp(.8rem, 2vw, 1rem);
+        }
+
+        .content {
+            padding: 0 2rem;
+            max-width: 100%;
+
+            @include media-breakpoint-up(md) {
+                max-width: 88%;
+                max-width: 640px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 740px;
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 80%;
+                max-width: 960px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                max-width: 1400px;
+                width: 60%;
+            }
+        }
+    }
+
+    .intro-title {
+        font-weight: 900;
+        text-align: left;
+        font-size: clamp(2.4rem, 4vw, 10rem);
+        margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+        @include media-breakpoint-up(md) {
+            font-size: clamp(3rem, 4vw, 10rem);
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: clamp(4rem, 4vw, 10rem);
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: clamp(5rem, 4vw, 10rem);
+        }
+
+        @include media-breakpoint-up(xxl) {
+            font-size: clamp(6rem, 4vw, 10rem);
+        }
+    }
+
+    .intro-subtitle {
+        font-weight: 800;
+        font-size: clamp(1rem, 4vw, 2rem);
+        text-align: left;
+        margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+        line-height: clamp(1.4rem, 4vw, 3rem);
+    }
+
+    p {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
 
     &.content-section {
         display: flex;
@@ -506,7 +704,7 @@ section {
 
                     .year {
                         font-weight: 900;
-                        letter-spacing: .5rem;
+                        letter-spacing: .1rem;
                         pointer-events: none; // Disable interactions for the year element
                         user-select: none; // Prevent text selection
                         opacity: 0.09;
@@ -519,69 +717,39 @@ section {
                 }
             }
 
-            .year-with-content {
-                .year {
-                    margin-bottom: -20px;
-                }
-            }
 
-            .year {
-                text-align: left;
-                font-size: calc(3rem + 1vw);
-                font-weight: 900;
-
-                font-family: museomoderno, sans-serif;
-
-                @include media-breakpoint-up(md) {
-                    font-size: calc(10rem + 1vw);
-                }
-
-                @include media-breakpoint-up(lg) {
-                    font-size: calc(12rem + 1vw);
-                }
-
-                @include media-breakpoint-up(xl) {
-                    font-size: calc(14rem + 1vw);
-                }
-            }
         }
 
         .content {
             padding: 0 2rem;
-            max-width: 920px;
+            max-width: 100%;
+
+            @include media-breakpoint-up(md) {
+                max-width: 88%;
+                max-width: 640px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                max-width: 740px;
+                max-width: 80%;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 80%;
+                max-width: 960px;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                max-width: 1400px;
+                width: 80%;
+            }
 
             .intro-title {
                 text-align: center;
-                font-size: calc(1.8rem + 1vw);
-
-                @include media-breakpoint-up(md) {
-                    font-size: calc(3.4rem + 1vw);
-                }
-
-                @include media-breakpoint-up(lg) {
-                    font-size: calc(4.2rem + 1vw);
-                }
-
-                @include media-breakpoint-up(xl) {
-                    font-size: calc(5rem + 1vw);
-                }
             }
 
             .intro-subtitle {
                 text-align: center;
-                font-size: 1.5rem;
-
-                @include media-breakpoint-up(md) {
-                    font-size: 1.8rem;
-                }
-
-                @include media-breakpoint-up(lg) {
-                    font-size: 2rem;
-                }
-
-                @include media-breakpoint-up(xl) {
-                    font-size: 3rem;
-                }
             }
         }
     }

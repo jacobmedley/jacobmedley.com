@@ -228,6 +228,15 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     }
 }
 
+
+.btn-disclaimer {
+    cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 #loading-screen {
     transition: opacity 1s ease-in-out;
     opacity: 1;
@@ -404,7 +413,7 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
             font-size: 0.6rem;
 
             @include media-breakpoint-up(md) {
-                font-size: 1rem;
+                font-size: .8rem;
             }
 
 
@@ -420,6 +429,7 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
             // text-shadow: 0 0 8px rgba(0, 0, 0, 0.68);
             // margin-top: 2px;
             margin-bottom: -8px;
+            margin-top: -10px;
         }
 
     }
@@ -431,7 +441,7 @@ $btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
 
 #open {
 
-    background: url(../juneteenth/images/SVG/bg-section-one-v1.svg) center center;
+    background: url(../the-scale-of-freedom/images/SVG/bg-section-one-v1.svg) center center;
 
 }
 
@@ -591,11 +601,11 @@ section {
             }
 
             @include media-breakpoint-up(xxl) {
-                font-size: clamp(6rem, 20vw, 16rem);
+                font-size: clamp(6rem, 20vw, 14rem);
             }
 
             @include media-breakpoint-up(xxxl) {
-                font-size: clamp(8rem, 20vw, 20rem);
+                font-size: clamp(8rem, 20vw, 16rem);
             }
 
         }
@@ -759,42 +769,50 @@ section {
 
 
 #intro-slavery {
-    @include intro-background('../juneteenth/images/bg-slavery-mb.png');
+    @include intro-background('../the-scale-of-freedom/images/bg-slavery-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-slavery.png', true);
+        @include intro-background('../the-scale-of-freedom/images/bg-slavery.png', true);
     }
 }
 
 #intro-emancipation-reconstruction {
-    @include intro-background('../juneteenth/images/bg-emancipation-mb.png');
+    @include intro-background('../the-scale-of-freedom/images/bg-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-emancipation.png', true);
+        @include intro-background('../the-scale-of-freedom/images/bg-emancipation.png', true);
     }
 }
 
 #intro-civil-rights {
-    @include intro-background('../juneteenth/images/bg-civil-rights-mb.png');
+    @include intro-background('../the-scale-of-freedom/images/bg-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-civil-rights.png', true);
+        @include intro-background('../the-scale-of-freedom/images/bg-civil-rights.png', true);
     }
 }
 
 #intro-post-civil-rights {
-    @include intro-background('../juneteenth/images/bg-post-civil-rights-mb.png');
+    @include intro-background('../the-scale-of-freedom/images/bg-post-civil-rights-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-post-civil-rights.png', true);
+        @include intro-background('../the-scale-of-freedom/images/bg-post-civil-rights.png', true);
     }
 }
 
 #intro-post-reconstruction {
-    @include intro-background('../juneteenth/images/bg-post-emancipation-mb.png');
+    @include intro-background('../the-scale-of-freedom/images/bg-post-emancipation-mb.png');
 
     @include media-breakpoint-up(md) {
-        @include intro-background('../juneteenth/images/bg-post-emancipation.png', true);
+        @include intro-background('../the-scale-of-freedom/images/bg-post-emancipation.png', true);
+    }
+}
+
+#intro-today {
+    @include intro-background('../the-scale-of-freedom/images/bg-today-mb.png');
+
+    @include media-breakpoint-up(md) {
+        @include intro-background('../the-scale-of-freedom/images/bg-today.png', true);
     }
 }
 

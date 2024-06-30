@@ -260,7 +260,7 @@
                ],
                "source": {
                   "text": "Smithsonian Magazine",
-                  "url": "https://www.smithsonianmag.com/history/first-africans-landed-virginia-1619-180962142/"
+                  "url": "https://www.history.com/this-day-in-history/first-african-slave-ship-arrives-jamestown-colony"
                }
             },
             "1641": {
@@ -269,8 +269,8 @@
                   "Massachusetts becomes the first colony to legally recognize slavery through its Body of Liberties, setting a precedent for other colonies."
                ],
                "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/topics/black-history/slavery"
+                  "text": "nps.gov",
+                  "url": "https://www.nps.gov/articles/000/slavery-and-law-in-early-ma.htm"
                }
             },
             "1662": {
@@ -279,8 +279,8 @@
                   "Virginia enacts a law stating that children born to enslaved mothers inherit their status, establishing hereditary slavery in the colonies."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/resource/rbpe.1780010a/"
+                  "text": "nps.gov",
+                  "url": "https://www.nps.gov/articles/000/slavery-and-law-in-early-ma.htm"
                }
             },
             "1705": {
@@ -289,8 +289,8 @@
                   "Virginia passes comprehensive slave codes defining the status of enslaved people and the rights of their owners, solidifying the institution of slavery."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/collections/early-virginia-law/"
+                  "text": "National Humanities Center",
+                  "url": "https://nationalhumanitiescenter.org/pds/amerbegin/power/text8/BeverlyServSlaves.pdf"
                }
             },
             "1739": {
@@ -313,14 +313,36 @@
                   "url": "https://www.archives.gov/founding-docs/declaration-transcript"
                }
             },
+            "1793": {
+               "title": "Fugitive Slave Act Passed",
+               "description": [
+                  "The Fugitive Slave Act of 1793 was enacted to provide for the return of enslaved people who escaped from one state into another state or territory. It allowed owners to capture and reclaim enslaved people who had fled to free states.",
+                  "This law heightened tensions between North and South, as it required citizens and officials in free states to assist in the capture and return of escaped enslaved people."
+               ],
+               "source": {
+                  "text": "History",
+                  "url": "https://www.history.com/topics/black-history/fugitive-slave-acts"
+               }
+            },
             "1808": {
                "title": "U.S. Bans the Transatlantic Slave Trade",
                "description": [
                   "The United States officially bans the importation of enslaved Africans, although illegal smuggling continues, marking a significant step in the abolitionist movement."
                ],
                "source": {
-                  "text": "Smithsonian Magazine",
-                  "url": "https://www.smithsonianmag.com/history/federal-law-banned-importing-enslaved-people-took-effect-180961391/"
+                  "text": "National Archives",
+                  "url": "https://www.archives.gov/education/lessons/slave-trade.html"
+               }
+            },
+            "1830": {
+               "title": "Underground Railroad",
+               "description": [
+                  "From 1830 to 1865, the Underground Railroad was a network of secret routes and safe houses established in the United States during the early to mid-19th century. It was used by enslaved African Americans to escape into free states and Canada with the aid of abolitionists and allies who were sympathetic to their cause.",
+                  "This covert system was instrumental in helping thousands of enslaved people gain their freedom and highlighted the widespread resistance to slavery in the United States."
+               ],
+               "source": {
+                  "text": "History",
+                  "url": "https://www.history.com/topics/black-history/underground-railroad"
                }
             },
             "1820": {
@@ -339,8 +361,8 @@
                   "Nat Turner leads a significant slave rebellion in Virginia, resulting in stricter slave laws and increased tensions between North and South, highlighting the deep-seated resistance to slavery."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/item/93847294/"
+                  "text": "Britannica",
+                  "url": "https://www.britannica.com/biography/Nat-Turner"
                }
             },
             "1850": {
@@ -359,8 +381,8 @@
                   "Harriet Beecher Stowe's novel 'Uncle Tom's Cabin' is published, galvanizing anti-slavery sentiment in the North and contributing to the abolitionist movement."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/item/93847294/"
+                  "text": "Britannica",
+                  "url": "https://www.britannica.com/topic/Uncle-Toms-Cabin"
                }
             },
             "1857": {
@@ -451,7 +473,7 @@
                ],
                "source": {
                   "text": "History",
-                  "url": "https://www.history.com/topics/black-history/freedmens-bureau"
+                  "url": "https://www.history.com/this-day-in-history/john-wilkes-booth-shoots-abraham-lincoln"
                }
             },
             "1866": {
@@ -460,8 +482,8 @@
                   "The Civil Rights Act of 1866 is passed, granting citizenship and equal protection under the law to African Americans."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/item/today-in-history/april-09/"
+                  "text": "history.house.gov",
+                  "url": "https://history.house.gov/Historical-Highlights/1851-1900/The-Civil-Rights-Bill-of-1866/"
                }
             },
             "1868": {
@@ -470,8 +492,8 @@
                   "The Fourteenth Amendment is ratified, ensuring citizenship and equal protection under the law for all persons born or naturalized in the United States."
                ],
                "source": {
-                  "text": "National Constitution Center",
-                  "url": "https://constitutioncenter.org/interactive-constitution/amendment/amendment-xiv"
+                  "text": "Library of Congress",
+                  "url": "https://guides.loc.gov/14th-amendment"
                }
             },
             "1870": {
@@ -481,7 +503,7 @@
                ],
                "source": {
                   "text": "Library of Congress",
-                  "url": "https://www.loc.gov/rr/program/bib/ourdocs/15thamendment.html"
+                  "url": "https://guides.loc.gov/15th-amendment"
                }
             },
             "1871": {
@@ -490,8 +512,8 @@
                   "Congress passes the Ku Klux Klan Act, authorizing federal action against the KKK and other white supremacist groups that terrorize African Americans."
                ],
                "source": {
-                  "text": "History",
-                  "url": "https://www.history.com/this-day-in-history/ku-klux-klan-act-passed-by-congress"
+                  "text": "senate.gov",
+                  "url": "https://www.senate.gov/artandhistory/history/common/generic/EnforcementActs.htm"
                }
             },
             "1873": {
@@ -502,16 +524,6 @@
                "source": {
                   "text": "Smithsonian Magazine",
                   "url": "https://www.smithsonianmag.com/history/the-colfax-massacre-when-racists-murdered-dozens-of-black-americans-in-louisiana-180970420/"
-               }
-            },
-            "1875": {
-               "title": "Civil Rights Act of 1875",
-               "description": [
-                  "The Civil Rights Act of 1875 is passed, prohibiting racial discrimination in public accommodations, though it is poorly enforced."
-               ],
-               "source": {
-                  "text": "National Archives",
-                  "url": "https://www.archives.gov/milestone-documents/civil-rights-act"
                }
             },
             "1877": {
@@ -615,19 +627,17 @@
             "1878": {
                "title": "Posse Comitatus Act",
                "description": [
-                  "The Posse Comitatus Act of 1878 limited the use of federal troops in domestic law enforcement.",
-                  "This marked the end of federal intervention in the South."
+                  "The Posse Comitatus Act of 1878 limited the use of federal troops in domestic law enforcement. This marked the end of federal intervention in the South."
                ],
                "source": {
-                  "text": "Library of Congress",
-                  "url": "https://www.loc.gov/rr/program/bib/ourdocs/PosseComitatus.html"
+                  "text": "U.S. Department of Defense",
+                  "url": "https://policy.defense.gov/portals/11/Documents/hdasa/references/6_USC_466.pdf"
                }
             },
             "1896": {
                "title": "Plessy v. Ferguson",
                "description": [
-                  "The Supreme Court's Plessy v. Ferguson decision in 1896 upheld the constitutionality of racial segregation.",
-                  "It established the doctrine of 'separate but equal.'"
+                  "The Supreme Court's Plessy v. Ferguson decision in 1896 upheld the constitutionality of racial segregation. It established the doctrine of 'separate but equal.'"
                ],
                "source": {
                   "text": "Oyez",
@@ -637,8 +647,7 @@
             "1909": {
                "title": "Founding of the NAACP",
                "description": [
-                  "The NAACP was founded in 1909 to fight for civil rights and combat racial discrimination.",
-                  "It became a leading organization in the civil rights movement."
+                  "The NAACP was founded in 1909 to fight for civil rights and combat racial discrimination. It became a leading organization in the civil rights movement."
                ],
                "source": {
                   "text": "NAACP",
@@ -648,19 +657,27 @@
             "1920": {
                "title": "19th Amendment Ratified",
                "description": [
-                  "The 19th Amendment, granting women the right to vote, was ratified in 1920.",
-                  "This was a significant milestone for women's rights, including African American women."
+                  "The 19th Amendment highlighted the intersection of gender and race in the fight for equality. Black women faced unique challenges, battling both sexism and racism."
                ],
                "source": {
                   "text": "National Archives",
                   "url": "https://www.archives.gov/milestone-documents/19th-amendment"
                }
             },
+            "1921": {
+               "title": "Tulsa Race Massacre",
+               "description": [
+                  "The Tulsa Race Massacre occurred in 1921, where a white mob attacked the prosperous Black neighborhood of Greenwood in Tulsa, Oklahoma. The massacre resulted in the deaths of hundreds of Black residents and the destruction of what was known as 'Black Wall Street.'"
+               ],
+               "source": {
+                  "text": "The New York Times",
+                  "url": "https://www.nytimes.com/interactive/2021/05/24/us/tulsa-race-massacre.html"
+               }
+            },
             "1948": {
                "title": "Executive Order 9981",
                "description": [
-                  "President Truman's Executive Order 9981 in 1948 desegregated the armed forces.",
-                  "This was a major step towards racial equality in the military."
+                  "President Truman's Executive Order 9981 in 1948 desegregated the armed forces.This was a major step towards racial equality in the military."
                ],
                "source": {
                   "text": "National Archives",
@@ -670,8 +687,7 @@
             "1950": {
                "title": "Sweatt v. Painter",
                "description": [
-                  "The Supreme Court ruled in Sweatt v. Painter (1950) that separate but equal facilities are inherently unequal.",
-                  "This case challenged the doctrine of 'separate but equal.'"
+                  "The Supreme Court ruled in Sweatt v. Painter (1950) that separate but equal facilities are inherently unequal. This case challenged the doctrine of 'separate but equal.'"
                ],
                "source": {
                   "text": "Oyez",
@@ -730,7 +746,7 @@
             "1963": {
                "title": "March on Washington",
                "description": [
-                  "The March on Washington for Jobs and Freedom took place, where Dr. Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. The march was one of the largest political rallies for human rights in U.S. history. It aimed to draw attention to the economic and social inequalities faced by African Americans and played a crucial role in building momentum for the Civil Rights Act of 1964 and the Voting Rights Act of 1965."
+                  "The March on Washington for Jobs and Freedom took place, where Dr. Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. The march was one of the largest political rallies for human rights in U.S. history. It played a crucial role in building momentum for the Civil Rights Act of 1964 and the Voting Rights Act of 1965."
                ],
                "source": {
                   "text": "National Park Service",
@@ -743,8 +759,8 @@
                   "The Civil Rights Act was passed, prohibiting discrimination based on race, color, religion, sex, or national origin. This landmark legislation addressed widespread racial discrimination and segregation."
                ],
                "source": {
-                  "text": "National Archives",
-                  "url": "https://www.archives.gov/exhibits/featured-documents/civil-rights-act"
+                  "text": "Senate.gov",
+                  "url": "https://www.senate.gov/artandhistory/history/common/generic/CivilRightsAct1964.htm"
                }
             },
             "1965": {
@@ -753,7 +769,7 @@
                   "The Voting Rights Act was passed, eliminating various barriers to Black enfranchisement, such as literacy tests and other discriminatory practices. This act was significant in ensuring equal opportunity to vote."
                ],
                "source": {
-                  "text": "U.S. Department of Justice",
+                  "text": "Justice.gov",
                   "url": "https://www.justice.gov/crt/introduction-federal-voting-rights-laws"
                }
             },
@@ -774,8 +790,8 @@
                   "On April 4, 1968, Martin Luther King Jr., leader of the Civil Rights Movement and advocate for nonviolent protest and racial equality, was assassinated in Memphis, Tennessee. His death marked a pivotal moment in American history, galvanizing the Civil Rights Movement, leading to the Fair Housing Act, and renewing efforts to address systemic racism and promote social justice."
                ],
                "source": {
-                  "text": "Martin Luther King, Jr. National Historical Park",
-                  "url": "https://www.nps.gov/malu/planyourvisit/index.htm"
+                  "text": "Stanford University",
+                  "url": "https://kinginstitute.stanford.edu/assassination-martin-luther-king-jr"
                }
             }
          }
@@ -860,7 +876,7 @@
                "title": "Civil Rights Restoration Act",
                "description": [
                   "The Civil Rights Restoration Act was passed, expanding non-discrimination laws to apply to entire institutions receiving federal funds, ensuring broader civil rights protections.",
-                  "This legislative change promoted greater accountability and compliance, reinforcing the commitment to eliminating discrimination in education, employment, and other federally funded programs."
+                  "This legislative change promoted greater accountability and compliance."
                ],
                "source": {
                   "text": "Legal Information Institute",
@@ -942,18 +958,17 @@
          ],
          "intro": {
             "title": "Welcome to Now",
-            "subtitle": "Keep on Keeping On."
+            "subtitle": "You Made It!"
          },
          "content": {
             "2024": {
-               "title": "It seems like we have a long way to go.",
+               "title": "Are we there yet?",
                "description": [
-                  "If you had the patience to scroll all the way to here, then you might now have a sense of just how early in the process we are for equal rights for the citizens descended from slavery in the USA. Despite significant strides in representation, legislation, and public awareness, systemic racism and inequality persist.",
-                  "The ongoing efforts of movements like Black Lives Matter, along with legislative and social initiatives, reflect a commitment to achieving true freedom and equality for all. The journey towards racial justice is ongoing, with the nation striving to live up to its ideals of liberty and justice for all."
+                  "If you had the patience to scroll all the way to here, then you might have a sense of just how early in the process we are for equal rights for the citizens descended from slavery in the USA. Despite significant strides in representation, legislation, and public awareness, systemic racism and inequality persist. The journey towards true equality continues, and each of us has a role to play in shaping a more just and inclusive society."
                ],
                "source": {
-                  "text": "The New York Times",
-                  "url": "https://www.nytimes.com/2024/01/01/us/progress-and-challenges-racial-equality.html"
+                  "text": "Pew Research Center",
+                  "url": "https://www.pewresearch.org/social-trends/2023/08/10/views-of-the-countrys-progress-on-racial-equality/"
                }
             }
          }

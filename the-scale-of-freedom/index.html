@@ -59,7 +59,7 @@
    <link rel="stylesheet" href="https://use.typekit.net/fog1rtz.css">
 
    <!-- The Style -->
-   <link rel="stylesheet" href="../css/styles-freedom.css">
+   <link rel="stylesheet" href="../css/styles-freedom-v2.css">
 
    <!-- Icons -->
    <script src="https://kit.fontawesome.com/644e13edf7.js" crossorigin="anonymous"></script>
@@ -228,12 +228,12 @@
                   </p>
                   <h3 class="fs-5 mt-4"><i class="fa-sharp fa-solid fa-triangle-exclamation"></i> Disclaimer:</h3>
                   <p>
-                     This project utilized ChatGPT to assist in identifying important events and milestones in Black
-                     history. During our review process, we found several errors when verifying the sources.
+                     ChatGPT was utilized to assist in identifying significant events and milestones in Black history
+                     and in writing snippets about these events. During the review process, several errors were found
+                     when verifying the sources.
                   </p>
-                  <p>We made
-                     every effort to verify each historical event, but some inaccuracies may have been missed. Please
-                     let us know if you notice any discrepancies or have suggestions for improvement.
+                  <p>Efforts were made to verify each historical event, but some inaccuracies may have been missed.
+                     Please report any discrepancies or suggestions for improvement.
                   </p>
                   <p>Email: <a
                         href="mailto:hi@jacobmedley.com?subject=The%20Scale%20of%20Freedom%20Project%20-%20Error">Report
@@ -250,10 +250,10 @@
                      battled since before America was even a country.</p>
                   <h2 class="fs-5 mt-4">The Horrible Truth</h2>
                   <p>
-                     If we look at the timeline, we can see that since 1619 to today, the most active period for the
-                     advancement of freedoms for Black Americans was during the Civil Rights Era (1954-1968). During
-                     this time frame, significant legislative changes were made to dismantle segregation and
-                     institutionalized racism, leading to greater civil liberties and opportunities for Black Americans.
+                     The timeline shows that from 1619 to today, the most active period for advancing freedoms for Black
+                     Americans was during the Civil Rights Era (1954-1968). During this time, significant legislative
+                     changes dismantled segregation and institutionalized racism, leading to greater civil liberties and
+                     opportunities for Black Americans.
                   </p>
                   <h2 class="fs-5 mt-4">Timeline Breakdown</h2>
                   <ul>
@@ -289,7 +289,7 @@
          const yearCounter = document.getElementById('year-counter');
 
          async function fetchScaleOfFreedomData() {
-            const response = await fetch('data/ScaleOfFreedomData.json');
+            const response = await fetch('data/ScaleOfFreedomData-v2.json');
             const data = await response.json();
             return data;
          }

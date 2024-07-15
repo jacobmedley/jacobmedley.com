@@ -1,155 +1,354 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaction Design: Response Times</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body class="bg-light">
-    <div class="container">
-        <h1 class="mb-1 mt-5 text-left">Interaction Design: Response Times</h1>
-        <h2 class="mb-4 text-left">Examples of various response times to demonstrate the effect on the user experience.
-        </h2>
-        <div class="row my-4">
-            <div class="col">
-                <hr>
-            </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-0">System Feedback:</h4>
-                        <p>Delay between user action and system responce.</p>
-                        <div class="btn-group-vertical w-100">
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 100)">100ms
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 300)">300ms
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 500)">500ms
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 1000)">1 sec
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 3000)">3 sec
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 5000)">5 sec
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 10000)">10 sec
-                                Delay</button>
-                            <button class="btn btn-primary my-1" onclick="simulateLoading(this, 15000)">15 sec
-                                Delay</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-0">System Completion:</h4>
-                        <p>Delay between user action and system completion.</p>
-                        <div class="btn-group-vertical w-100">
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 100)">100ms
-                                Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 300)">300ms
-                                Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 500)">500ms
-                                Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 1000)">1
-                                sec Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 3000)">3
-                                sec Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 5000)">5
-                                sec Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 10000)">10
-                                sec Delay</button>
-                            <button class="btn btn-success my-1" onclick="simulateInstantLoading(this, 15000)">15
-                                sec Delay</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row text-center mb-5">
-            <div class="col">
-                <button class="btn btn-secondary" onClick="window.location.href=window.location.href">Reset
-                    Buttons</button>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="alert alert-info" role="alert">
-                    <p><strong>Explanation:</strong> From Jakob Nielsen's "Usability Engineering" (1993):</p>
-                    <ul>
-                        <li><strong>0.1 second:</strong> The limit for users feeling that the system is reacting
-                            instantaneously.</li>
-                        <li><strong>1 second:</strong> The limit for users' flow of thought to stay uninterrupted, even
-                            though
-                            they notice the delay.</li>
-                        <li><strong>10 seconds:</strong> The limit for keeping users' attention focused on the dialogue.
-                            For
-                            longer delays, users will want to perform other tasks while waiting for the computer to
-                            complete the
-                            task.</li>
-                    </ul>
-                    <p><strong>Articles:</strong></p>
-                    <ul>
-                        <li>
-                            <a href="https://www.nngroup.com/articles/response-times-3-important-limits/"
-                                target="_blank">Response Times: The 3 Important Limits <span>&#8594;</span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.nngroup.com/articles/microinteractions/"
-                                target="_blank">Microinteractions in User Experience
-                                <span>&#8594;</span></a>
-                        </li>
-
-                        <li>
-                            <a href="https://lawsofux.com/doherty-threshold/" target="_blank">Doherty Threshold
-                                <span>&#8594;</span></a>
-                        </li>
-                        <li>
-                            <a href="https://lawsofux.com/jakobs-law/" target="_blank">Jakob's Law
-                                <span>&#8594;</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        function simulateLoading(button, delay) {
-            button.classList.add('loading');
-            setTimeout(() => {
-                button.classList.remove('loading');
-                button.innerHTML = `Completed in ${delay}ms`;
-                button.disabled = true;
-            }, delay);
-        }
-
-
-        function simulateInstantLoading(button, delay) {
-            button.disabled = true;
-            button.innerHTML = 'Loading...';
-            setTimeout(() => {
-                button.innerHTML = `Completed in ${delay}ms`;
-                button.disabled = false;
-            }, delay);
-        }
-    </script>
-</body>
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Explore the importance of response times in user experience design with insights from Jakob Nielsen.">
+    <meta name="keywords"
+        content="UX design, UI design, user testing, response times, Jakob Nielsen, usability, interaction design, digital strategy">
+
+    <meta name="author" content="Jacob Medley">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:image" content="https://jacobmedley.com/images/icons/cover-full-purple.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <title>Response Times in UX Design | Jacob Medley</title>
+    <!-- ICON STUFF -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/images/icons/site.webmanifest">
+    <link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#644672">
+    <link rel="shortcut icon" href="/images/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#644672">
+    <meta name="msapplication-config" content="/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#644672">
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org/",
+                "@type": "Person",
+                "name": "Jacob Medley",
+                "url": "https://jacobmedley.com",
+                "image": "https://jacobmedley.com/images/icons/cover-full-purple.png",
+                "sameAs": [
+                    "https://jacobmedley.com",
+                    "https://www.linkedin.com/in/jacobmedley/"
+                ],
+                "jobTitle": "UX/UI Designer and Digital Strategist",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Mutual of America"
+                }
+            }
+        </script>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://use.typekit.net/zps8jqb.css">
+    <!-- The Style -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/644e13edf7.js" crossorigin="anonymous"></script>
+    <!-- include template 
+        <script src="js/include.js"></script>-->
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PC65Z8');
+    </script>
+    <!-- End Google Tag Manager -->
+
+</head>
+
+<body class="bg-light">
+    <nav class="navbar bg-white shadow-lg">
+        <div class="container-fluid container-xxl">
+            <a class="navbar-brand d-flex align-items-center" href="https://jacobmedley.com/">
+                <i class="fak fa-jm-icon-full fw-normal fa-3x text-prime" aria-hidden="true"></i>
+                <span class="ms-2">Jacob Medley</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mb-1 mt-5 text-left display-3">Interaction Design:</h1>
+                <h2 class="mb-4 text-left fs-4">Examples of various time delays between system providing feedback to the
+                    users initial interaction.
+                </h2>
+                <p>The goal is to highlight the significance of response times in user experience design. The first set
+                    of buttons provides no feedback, while the second set offers feedback to users. The response times
+                    start at 100 milliseconds (ms) and increase up to 15 seconds (s). This demonstration shows when
+                    feedback is essential and when delays begin to cause user frustration.</p>
+                <div class="d-none d-md-block">
+                    <hr class="solid-center">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="https://jacobmedley.com/" class="text-prime">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Interaction Design Concepts -
+                                Response-Times</li>
+                        </ol>
+                    </nav>
+                    <hr class="solid-center">
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5 justify-content-center">
+            <div class="col-24 col-offset-0 col-lg-18 col-lg-offset-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="simulateDelayCard" class="card shadow p-3 h-100">
+                            <div class="card-header bg-transparent border-0 mb-n4">
+                                <h4 class="card-title mb-0"><strong>No Feedback</strong></h4>
+                                <p>Delay between user action and system response.</p>
+                                <hr class="solid-center">
+                                <p class="text-end"><strong>ms:</strong> milliseconds <strong class="ms-3">s:</strong>
+                                    seconds</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="btn-group-vertical w-100">
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 100)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 300)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 500)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 1000)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 3000)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 5000)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 10000)">Start Process</button>
+                                    <button class="btn btn-prime btn-lg my-1 rounded-pill"
+                                        onclick="simulateDelay(this, 15000)">Start Process</button>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center bg-transparent border-0">
+                                <button id="refeshResponce" class="btn btn-lg btn-outline-prime-dark rounded-pill"><i
+                                        class="fa-light fa-arrows-rotate"></i> Reset Buttons</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div id="refeshCompleteCard" class="card shadow p-3 mt-4 mt-lg-0 h-100">
+                            <div class="card-header bg-transparent border-0 mb-n4">
+                                <h4 class="card-title mb-0"><strong>With Feedback</strong></h4>
+                                <p class="m-0">No delay between user action and system response.</p>
+                                <hr class="solid-center">
+                                <p class="text-end"><strong>ms:</strong> milliseconds <strong class="ms-3">s:</strong>
+                                    seconds</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="btn-group-vertical w-100">
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 100)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 300)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 500)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 1000)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 3000)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 5000)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 10000)">Start Process</button>
+                                    <button class="btn btn-lg btn-fourth my-1 rounded-pill"
+                                        onclick="simulateInstantFeedback(this, 15000)">Start Process</button>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center bg-transparent border-0">
+                                <button id="refeshComplete" class="btn btn-lg btn-outline-prime-dark rounded-pill"><i
+                                        class="fa-light fa-arrows-rotate"></i> Reset Buttons</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-5 justify-content-center">
+            <div class="col-24 col-offset-0 col-lg-18 col-lg-offset-3">
+                <div class="row mb-5">
+                    <div class="col">
+                        <div class="border-1 border p-5 shadow">
+                            <p><strong>Explanation:</strong> From Jakob Nielsen's "Usability Engineering" (1993):</p>
+                            <ul>
+                                <li><strong>0.1 :</strong> The limit for users feeling that the system is reacting
+                                    instantaneously.</li>
+                                <li><strong>1 seconds:</strong> The limit for users' flow of thought to stay
+                                    uninterrupted, even
+                                    though
+                                    they notice the delay.</li>
+                                <li><strong>10 seconds:</strong> The limit for keeping users' attention focused on the
+                                    dialogue.
+                                    For
+                                    longer delays, users will want to perform other tasks while waiting for the computer
+                                    to
+                                    complete the
+                                    task.</li>
+                            </ul>
+
+                            <hr class="my-5 solid-center">
+
+                            <p><strong>Articles:</strong></p>
+                            <ul>
+                                <li>
+                                    <a href="https://www.nngroup.com/articles/response-times-3-important-limits/"
+                                        target="_blank">Response Times: The 3 Important Limits <span>&#8594;</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.nngroup.com/articles/microinteractions/"
+                                        target="_blank">Microinteractions in User Experience
+                                        <span>&#8594;</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://lawsofux.com/doherty-threshold/" target="_blank">Doherty Threshold
+                                        <span>&#8594;</span></a>
+                                </li>
+                                <li>
+                                    <a href="https://lawsofux.com/jakobs-law/" target="_blank">Jakob's Law
+                                        <span>&#8594;</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .btn-position-relative {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-position-relative::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: rgba(37, 5, 5, 0.5);
+            width: var(--progress-width, 0%);
+            transition: width 0.1s linear;
+            z-index: 1;
+            /* Ensure the progress bar is below the button text */
+        }
+
+        .btn-position-relative span {
+            position: relative;
+            z-index: 2;
+            /* Ensure the button text is above the progress bar */
+        }
+    </style>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+    <script>
+        function formatDelay(delay) {
+            if (delay >= 1000) {
+                return `${delay / 1000}s`;
+            } else {
+                return `${delay}ms`;
+            }
+        }
+
+        function simulateDelay(button, delay) {
+            button.classList.add('loading');
+            setTimeout(() => {
+                button.classList.remove('loading');
+                button.innerHTML = `<i class="fa-regular fa-party-horn"></i> Complete! (${formatDelay(delay)})`;
+                button.disabled = true;
+            }, delay);
+        }
+
+        // Store animation frame IDs to cancel them if needed
+        let animationFrameIds = new Map();
+
+        function simulateInstantFeedback(button, delay) {
+            button.disabled = true;
+            button.innerHTML = '<span>Working</span>';
+            button.classList.add('btn-position-relative');
+
+            let startTime = Date.now();
+
+            function updateProgress() {
+                let elapsed = Date.now() - startTime;
+                let percentage = Math.min((elapsed / delay) * 100, 100);
+                button.style.setProperty('--progress-width', percentage + '%');
+                button.querySelector('span').innerHTML = `Working ${Math.round(percentage)}%`;
+
+                if (elapsed < delay) {
+                    const animationFrameId = requestAnimationFrame(updateProgress);
+                    animationFrameIds.set(button, animationFrameId); // Store the animation frame ID
+                } else {
+                    button.innerHTML = `<span><i class="fa-regular fa-party-horn"></i> Complete! (${formatDelay(delay)})</span>`;
+                    button.disabled = false;
+                    button.classList.remove('btn-position-relative');
+                    button.style.setProperty('--progress-width', '0%');
+                    animationFrameIds.delete(button); // Remove the animation frame ID after completion
+                }
+            }
+
+            updateProgress();
+        }
+
+        document.getElementById('refeshResponce').addEventListener('click', function () {
+            const buttons = document.querySelectorAll('.btn-prime');
+            buttons.forEach(button => {
+                button.innerHTML = '<span>Start Process</span>';
+                button.disabled = false;
+                button.classList.remove('loading', 'btn-position-relative');
+                button.style.setProperty('--progress-width', '0%');
+
+                if (animationFrameIds.has(button)) {
+                    cancelAnimationFrame(animationFrameIds.get(button)); // Cancel the ongoing animation
+                    animationFrameIds.delete(button); // Remove the stored animation frame ID
+                }
+            });
+            document.getElementById('simulateDelayCard').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('refeshComplete').addEventListener('click', function () {
+            const buttons = document.querySelectorAll('.btn-fourth');
+            buttons.forEach(button => {
+                button.innerHTML = '<span>Start Process</span>';
+                button.disabled = false;
+                button.classList.remove('btn-position-relative');
+                button.style.setProperty('--progress-width', '0%');
+
+                if (animationFrameIds.has(button)) {
+                    cancelAnimationFrame(animationFrameIds.get(button)); // Cancel the ongoing animation
+                    animationFrameIds.delete(button); // Remove the stored animation frame ID
+                }
+            });
+            document.getElementById('refeshCompleteCard').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+    </script>
+</body>
+
 </html>

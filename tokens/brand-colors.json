@@ -1,0 +1,76 @@
+{
+  "brand": {
+    "color-monarch": {
+      "value": "#e3b211",
+      "type": "color"
+    },
+    "color-monarch-light": {
+      "value": "#f1d988",
+      "type": "color"
+    },
+    "color-monarch-dark": {
+      "value": "#9f7d0c",
+      "type": "color"
+    },
+    "color-english-violet": {
+      "value": "#644672",
+      "type": "color"
+    },
+    "color-english-violet-light": {
+      "value": "#b2a3b9",
+      "type": "color"
+    },
+    "color-english-violet-dark": {
+      "value": "#463150",
+      "type": "color"
+    },
+    "color-faded-glory": {
+      "value": "#8391a3",
+      "type": "color"
+    },
+    "color-faded-glory-light": {
+      "value": "#c1c8d1",
+      "type": "color"
+    },
+    "color-faded-glory-dark": {
+      "value": "#5c6672",
+      "type": "color"
+    },
+    "color-irish-stone": {
+      "value": "#5E915D",
+      "type": "color"
+    },
+    "color-irish-stone-light": {
+      "value": "#afc8ae",
+      "type": "color"
+    },
+    "color-irish-stone-dark": {
+      "value": "#426641",
+      "type": "color"
+    },
+    "color-red-falling": {
+      "value": "#7e3232",
+      "type": "color"
+    },
+    "color-red-falling-light": {
+      "value": "#bf9999",
+      "type": "color"
+    },
+    "color-red-falling-dark": {
+      "value": "#582323",
+      "type": "color"
+    },
+    "color-charcoal-light": {
+      "value": "#454336",
+      "type": "color"
+    },
+    "color-charcoal-light-light": {
+      "value": "#a2a19b",
+      "type": "color"
+    },
+    "color-charcoal-light-dark": {
+      "value": "#302f26",
+      "type": "color"
+    }
+  }
+}

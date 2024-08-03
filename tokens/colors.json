@@ -1,0 +1,196 @@
+{
+  "feeral": {
+    "color-monarch": {
+      "value": "#e3b211",
+      "type": "color"
+    },
+    "color-monarch-light": {
+      "value": "#f1d988",
+      "type": "color"
+    },
+    "color-monarch-dark": {
+      "value": "#9f7d0c",
+      "type": "color"
+    },
+    "color-english-violet": {
+      "value": "#644672",
+      "type": "color"
+    },
+    "color-english-violet-light": {
+      "value": "#b2a3b9",
+      "type": "color"
+    },
+    "color-english-violet-dark": {
+      "value": "#463150",
+      "type": "color"
+    },
+    "color-faded-glory": {
+      "value": "#8391a3",
+      "type": "color"
+    },
+    "color-faded-glory-light": {
+      "value": "#c1c8d1",
+      "type": "color"
+    },
+    "color-faded-glory-dark": {
+      "value": "#5c6672",
+      "type": "color"
+    },
+    "color-irish-stone": {
+      "value": "#5E915D",
+      "type": "color"
+    },
+    "color-irish-stone-light": {
+      "value": "#afc8ae",
+      "type": "color"
+    },
+    "color-irish-stone-dark": {
+      "value": "#426641",
+      "type": "color"
+    },
+    "color-red-falling": {
+      "value": "#7e3232",
+      "type": "color"
+    },
+    "color-red-falling-light": {
+      "value": "#bf9999",
+      "type": "color"
+    },
+    "color-red-falling-dark": {
+      "value": "#582323",
+      "type": "color"
+    },
+    "color-charcoal-light": {
+      "value": "#454336",
+      "type": "color"
+    },
+    "color-charcoal-light-light": {
+      "value": "#a2a19b",
+      "type": "color"
+    },
+    "color-charcoal-light-dark": {
+      "value": "#302f26",
+      "type": "color"
+    },
+    "color-pop": {
+      "value": "#e3b211",
+      "type": "color"
+    },
+    "color-pop-light": {
+      "value": "#f1d988",
+      "type": "color"
+    },
+    "color-pop-dark": {
+      "value": "#9f7d0c",
+      "type": "color"
+    },
+    "color-prime-violet": {
+      "value": "#644672",
+      "type": "color"
+    },
+    "color-prime-violet-light": {
+      "value": "#b2a3b9",
+      "type": "color"
+    },
+    "color-prime-violet-dark": {
+      "value": "#463150",
+      "type": "color"
+    },
+    "color-second": {
+      "value": "#8391a3",
+      "type": "color"
+    },
+    "color-second-light": {
+      "value": "#c1c8d1",
+      "type": "color"
+    },
+    "color-second-dark": {
+      "value": "#5c6672",
+      "type": "color"
+    },
+    "color-third": {
+      "value": "#5E915D",
+      "type": "color"
+    },
+    "color-third-light": {
+      "value": "#afc8ae",
+      "type": "color"
+    },
+    "color-third-dark": {
+      "value": "#426641",
+      "type": "color"
+    },
+    "color-fourth": {
+      "value": "#7e3232",
+      "type": "color"
+    },
+    "color-fourth-light": {
+      "value": "#bf9999",
+      "type": "color"
+    },
+    "color-fourth-dark": {
+      "value": "#582323",
+      "type": "color"
+    },
+    "color-fifth": {
+      "value": "#454336",
+      "type": "color"
+    },
+    "color-fifth-light": {
+      "value": "#a2a19b",
+      "type": "color"
+    },
+    "color-fifth-dark": {
+      "value": "#302f26",
+      "type": "color"
+    },
+    "color-warning": {
+      "value": "#e3b211",
+      "type": "color"
+    },
+    "color-warning-light": {
+      "value": "#f1d988",
+      "type": "color"
+    },
+    "color-warning-dark": {
+      "value": "#9f7d0c",
+      "type": "color"
+    },
+    "color-info": {
+      "value": "#8391a3",
+      "type": "color"
+    },
+    "color-info-light": {
+      "value": "#c1c8d1",
+      "type": "color"
+    },
+    "color-info-dark": {
+      "value": "#5c6672",
+      "type": "color"
+    },
+    "color-success": {
+      "value": "#5E915D",
+      "type": "color"
+    },
+    "color-success-light": {
+      "value": "#afc8ae",
+      "type": "color"
+    },
+    "color-success-dark": {
+      "value": "#426641",
+      "type": "color"
+    },
+    "color-danger": {
+      "value": "#7e3232",
+      "type": "color"
+    },
+    "color-danger-light": {
+      "value": "#bf9999",
+      "type": "color"
+    },
+    "color-danger-dark": {
+      "value": "#582323",
+      "type": "color"
+    }
+  }
+}

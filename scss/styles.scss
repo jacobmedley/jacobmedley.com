@@ -907,3 +907,28 @@ $mix-blend-mode: normal;
     transform: scale(1.06);
   }
 }
+
+
+.modal {
+  backdrop-filter: blur(10px) saturate(150%);
+}
+
+.modal-header {
+  .btn-close-modal {
+    border-radius: 500rem;
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+}
+
+.modal-footer {
+  justify-content: center;
+
+  .btn-close-modal {
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 180px;
+    }
+  }
+}

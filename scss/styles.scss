@@ -312,7 +312,39 @@ $menu-width-dt: 8rem;
     height: fit-content;
     margin-top: auto;
     margin-bottom: auto;
+
+    border-radius: 0 1rem 1rem 0;
+    border-right: 2px solid #ffffff;
+    overflow: hidden;
   }
+
+  @media (min-width: 1600px) {
+    left: 4%;
+  }
+  
+  @media (min-width: 1800px) {
+    left: 8%;
+  }
+  @media (min-width: 1900px) {
+    left: 10%;
+  }
+  @media (min-width: 1999px) {
+    left: 12%;
+  }
+
+  @media (min-width: 2199px) {
+    left: 14%;
+  }
+   @media (min-width: 2299px) {
+    left: 16%;
+  }
+  @media (min-width: 2399px) {
+    left: 18%;
+  }
+  @media (min-width: 2499px) {
+    left: 20%;
+  }
+
 
   &.the-menu {
     i {
@@ -487,7 +519,7 @@ section {
     padding-left: 0;
 
     @include media-breakpoint-up(md) {
-      padding-left: $menu-width-dt;
+      padding-left: 9rem;
     }
   }
 

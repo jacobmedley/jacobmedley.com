@@ -88,7 +88,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <nav id="the-menu"
-        class="the-menu d-flex align-content-center flex-wrap shadow-lg text-center rounded-5 rounded-end"
+        class="the-menu d-flex align-content-center flex-wrap shadow-lg text-center"
         role="navigation" aria-label="Main">
         <a class="btn nav-link hi active d-none d-sm-block" href="#hi">
             <i class="fak fa-jm-icon-cropped"></i>
@@ -149,6 +149,9 @@
                     if (response.ok) {
                         const content = await response.text();
                         elem.innerHTML = content;
+    
+                        // After the content is loaded, update the current year if necessary
+                        updateCopyrightYear();
                     } else {
                         console.error('Failed to load include file:', file);
                     }
@@ -157,8 +160,17 @@
                 }
             });
         }
+    
+        function updateCopyrightYear() {
+            const yearElem = document.getElementById("current-year");
+            if (yearElem) {
+                yearElem.textContent = new Date().getFullYear();
+            }
+        }
+    
         includeJML();
     </script>
+    
 </body>
 
 </html>

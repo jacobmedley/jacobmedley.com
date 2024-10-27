@@ -16738,3 +16738,30 @@ section#contact hr.solid-center {
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
 }
+
+.modal {
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(150%);
+}
+
+.modal-header .btn-close-modal {
+  border-radius: 500rem;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+.modal-footer {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal-footer .btn-close-modal {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .modal-footer .btn-close-modal {
+    width: 180px;
+  }
+}

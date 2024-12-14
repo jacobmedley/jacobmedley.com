@@ -500,15 +500,31 @@ $menu-width-dt: 8rem;
 
 hr {
   &.solid-left {
-    border-image: linear-gradient(to right, $black, transparent) 1;
+
+
+      border-image: linear-gradient(to right, $black, transparent) 1;
+  
+    &.light {
+      border-image: linear-gradient(to right, $white, transparent) 1;
+    }
+    
   }
 
   &.solid-right {
-    border-image: linear-gradient(to left, $black, transparent) 1;
+ 
+      border-image: linear-gradient(to left, $black, transparent) 1;
+   
+    &.light {
+      border-image: linear-gradient(to left, $white, transparent) 1;
+    }
+    
   }
 
   &.solid-center {
     border-image: linear-gradient(to left, transparent, $black, transparent) 1;
+    &.light {
+      border-image: linear-gradient(to left, transparent, $white, transparent) 1;
+    }
   }
 }
 

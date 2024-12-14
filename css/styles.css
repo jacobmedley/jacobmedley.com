@@ -16361,15 +16361,30 @@ hr.solid-left {
      border-image: -webkit-gradient(linear, left top, right top, from(#000), to(transparent)) 1;
      border-image: linear-gradient(to right, #000, transparent) 1;
 }
+hr.solid-left.light {
+  -o-border-image: linear-gradient(to right, #fff, transparent) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#fff), to(transparent)) 1;
+     border-image: linear-gradient(to right, #fff, transparent) 1;
+}
 hr.solid-right {
   -o-border-image: linear-gradient(to left, #000, transparent) 1;
      border-image: -webkit-gradient(linear, right top, left top, from(#000), to(transparent)) 1;
      border-image: linear-gradient(to left, #000, transparent) 1;
 }
+hr.solid-right.light {
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1;
+     border-image: -webkit-gradient(linear, right top, left top, from(#fff), to(transparent)) 1;
+     border-image: linear-gradient(to left, #fff, transparent) 1;
+}
 hr.solid-center {
   -o-border-image: linear-gradient(to left, transparent, #000, transparent) 1;
      border-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(#000), to(transparent)) 1;
      border-image: linear-gradient(to left, transparent, #000, transparent) 1;
+}
+hr.solid-center.light {
+  -o-border-image: linear-gradient(to left, transparent, #fff, transparent) 1;
+     border-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(#fff), to(transparent)) 1;
+     border-image: linear-gradient(to left, transparent, #fff, transparent) 1;
 }
 
 section .content {

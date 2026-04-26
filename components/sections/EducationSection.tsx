@@ -1,3 +1,5 @@
+import SectionHeader from '@/components/ui/SectionHeader'
+
 const educationItems = [
   {
     icon: 'fa-light fa-graduation-cap',
@@ -65,34 +67,31 @@ export default function EducationSection() {
   const year = new Date().getFullYear()
 
   return (
-    <section className="bg-[#faf9fb] py-24 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-5xl text-fourth" aria-hidden="true">
-            <i className="fa-light fa-brain-circuit" />
-          </p>
-          <h3 className="-mt-4 text-5xl font-bold text-fourth">Education</h3>
-          <div className="mx-auto mt-6 w-1/4">
-            <hr className="border-fourth/40" />
-          </div>
-        </div>
+    <section className="bg-[#faf9fb] py-24 px-6 md:px-10">
+      <div className="max-w-[var(--container-max)] mx-auto">
+        <SectionHeader
+          sectionId="education"
+          title="Education"
+          icon="fa-light fa-brain-circuit"
+          align="center"
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12">
           {educationItems.map((item) => (
             <a
               key={item.title}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col rounded-3xl shadow-xl bg-white text-fourth-dark hover:shadow-2xl hover:-translate-y-0.5 transition-all min-h-[220px] group"
+              className="flex flex-col rounded-3xl shadow-xl bg-white text-fifth-dark hover:shadow-2xl hover:-translate-y-0.5 transition-all min-h-[220px] group"
             >
               <div className="flex-1 p-6 text-center flex flex-col items-center">
-                <i className={`${item.icon} text-3xl mt-3 mb-4`} aria-hidden="true" />
+                <i className={`${item.icon} text-3xl mt-3 mb-4 text-fifth`} aria-hidden="true" />
                 <h5 className="font-bold text-sm mb-2 leading-snug">{item.title}</h5>
                 <p className="text-xs text-gray-500">{item.source}</p>
               </div>
               <div className="p-4 pt-0 text-center">
-                <span className="text-fourth-dark text-xs flex items-center justify-center gap-1 group-hover:text-fourth-dark/70">
+                <span className="text-fifth-dark text-xs flex items-center justify-center gap-1 group-hover:text-fifth-dark/70">
                   <i className="fa-regular fa-eye" aria-hidden="true" /> View
                 </span>
               </div>
@@ -101,22 +100,22 @@ export default function EducationSection() {
         </div>
 
         <div className="text-center mt-16">
-          <hr className="border-fourth/20 mb-10" />
+          <hr className="border-fifth/20 mb-10" />
           <a
             href="mailto:hi@jacobmedley.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-fourth text-fourth hover:bg-fourth hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-fifth text-fifth hover:bg-fifth hover:text-white transition-colors"
           >
             <i className="fa-light fa-envelope" aria-hidden="true" />
             hi@jacobmedley.com
             <i className="fa-thin fa-arrow-right" aria-hidden="true" />
           </a>
           <div className="mt-12 py-8">
-            <p className="text-5xl mb-2 text-fourth" aria-hidden="true">
+            <p className="text-5xl mb-2 text-fifth" aria-hidden="true">
               <i className="fa-kit fa-jm-icon-full" />
             </p>
-            <p className="text-sm text-fourth/60">© {year} by Jacob Medley</p>
+            <p className="text-sm text-fifth/60">© {year} by Jacob Medley</p>
           </div>
         </div>
       </div>

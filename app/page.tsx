@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <NavMain />
-      <main className="md:pl-[200px]">
+      <main className="lg:pl-[220px] pb-16 lg:pb-0">
         <section id="hi" className="bg-[#faf9fb]">
           <HeroSection />
         </section>
@@ -29,10 +29,6 @@ export default function Home() {
         <section id="education">
           <EducationSection />
         </section>
-
-        <footer className="bg-prime text-white py-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Jacob Medley. All rights reserved.</p>
-        </footer>
       </main>
     </>
   )

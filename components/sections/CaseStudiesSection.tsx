@@ -10,25 +10,28 @@ const caseStudies = projects.filter((p) => p.type === 'case-study')
 const designModules = projects.filter((p) => p.type === 'design-module')
 
 export default function CaseStudiesSection() {
-  const [activeProject, setActiveProject] = useState<string | null>(null)
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const activeProject = activeId ? projects.find((p) => p.id === activeId) ?? null : null
 
   return (
-    <div className="py-24 px-4">
-      <div className="container mx-auto">
+    <div className="py-24 px-6 md:px-10">
+      <div className="max-w-[var(--container-max)] mx-auto">
         <SectionHeader
+          sectionId="work"
           title="Case Studies"
           icon="fa-light fa-briefcase"
-          className="text-second-dark mb-12"
         />
 
-        {caseStudies.map((project, i) => (
-          <WorkCard
-            key={project.id}
-            project={project}
-            onOpen={setActiveProject}
-            reverse={i % 2 !== 0}
-          />
-        ))}
+        <div className="flex flex-col gap-16 md:gap-28 mt-12">
+          {caseStudies.map((project, i) => (
+            <WorkCard
+              key={project.id}
+              project={project}
+              reverse={i % 2 === 1}
+              onOpen={setActiveId}
+            />
+          ))}
+        </div>
 
         <div className="my-16 text-center">
           <hr className="border-current opacity-20 mb-10" />
@@ -48,7 +51,7 @@ export default function CaseStudiesSection() {
             <button
               key={module.id}
               type="button"
-              onClick={() => setActiveProject(module.id)}
+              onClick={() => setActiveId(module.id)}
               className="flex flex-col items-center justify-center gap-3 p-8 rounded-2xl border-2 border-second/30 hover:border-second hover:bg-second/5 transition-all text-center cursor-pointer"
             >
               <i
@@ -64,7 +67,11 @@ export default function CaseStudiesSection() {
         </div>
       </div>
 
-      <CaseStudyModal projectId={activeProject} onClose={() => setActiveProject(null)} />
+      <CaseStudyModal
+        project={activeProject}
+        open={!!activeId}
+        onOpenChange={(open) => { if (!open) setActiveId(null) }}
+      />
     </div>
   )
 }

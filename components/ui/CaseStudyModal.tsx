@@ -2,12 +2,12 @@
 
 import * as Dialog from '@radix-ui/react-dialog'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { projects, type Project } from '@/lib/data/projects'
+import { type Project } from '@/lib/data/projects'
 
 interface CaseStudyModalProps {
-  projectId: string | null
-  onClose: () => void
+  project: Project | null
+  open: boolean
+  onOpenChange: (open: boolean) => void
 }
 
 const typeLabels: Record<string, string> = {
@@ -16,24 +16,21 @@ const typeLabels: Record<string, string> = {
   'visual-design': 'Visual Design',
 }
 
-export default function CaseStudyModal({ projectId, onClose }: CaseStudyModalProps) {
-  const project = projectId ? projects.find((p) => p.id === projectId) ?? null : null
-
+export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   return (
-    <Dialog.Root open={!!project} onOpenChange={(open) => !open && onClose()}>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50" />
+    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+      <Dialog.Portal forceMount>
+        <Dialog.Overlay
+          forceMount
+          className="fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-[fadeIn_200ms_ease-out] data-[state=closed]:animate-[fadeOut_200ms_ease-in]"
+        />
         <Dialog.Content
-          className={cn(
-            'modal-panel',
-            'fixed top-0 right-0 z-50',
-            'h-screen w-full max-w-2xl',
-            'bg-white overflow-y-auto',
-            'shadow-2xl focus:outline-none'
-          )}
+          forceMount
+          aria-describedby={undefined}
+          className="fixed right-0 top-0 z-50 h-screen w-full md:w-[min(640px,90vw)] bg-white shadow-2xl outline-none overflow-y-auto data-[state=open]:animate-[slideInRight_300ms_ease-out] data-[state=closed]:animate-[slideOutRight_250ms_ease-in]"
         >
           <Dialog.Close
-            className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-white/80 hover:bg-prime hover:text-white transition-colors cursor-pointer"
+            className="absolute top-4 right-4 z-10 inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-second-light/40 focus-visible:ring-2 focus-visible:ring-prime outline-none cursor-pointer"
             aria-label="Close"
           >
             <i className="fa-light fa-xmark text-xl" aria-hidden="true" />
@@ -57,7 +54,6 @@ function ModalContent({ project }: { project: Project }) {
             fill
             sizes="(max-width: 768px) 100vw, 672px"
             className="object-cover"
-            loading="lazy"
           />
         </div>
       )}
@@ -69,9 +65,7 @@ function ModalContent({ project }: { project: Project }) {
         <Dialog.Title className="text-3xl font-bold mb-1 pr-8">
           {project.title}
         </Dialog.Title>
-        <Dialog.Description className="text-lg text-second mb-8">
-          {project.subtitle}
-        </Dialog.Description>
+        <p className="text-lg text-second mb-8">{project.subtitle}</p>
 
         <div className="mb-8">
           <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
@@ -119,7 +113,7 @@ function ModalContent({ project }: { project: Project }) {
             <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
               Contributions
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 text-second">
               {project.contributions.map((c) => (
                 <span key={c} className="badge-work">{c}</span>
               ))}

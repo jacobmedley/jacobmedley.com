@@ -74,7 +74,7 @@ const experience = [
     period: '2015 to 2021',
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel e-commerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
-      'Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. These strategic initiatives resulted in over 47% of new revenue, 27% of total lead generation, and contributed to 20% of the company\'s overall revenue, highlighting the essential role of strategic product design and development in business expansion and profitability.',
+      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. These strategic initiatives resulted in over 47% of new revenue, 27% of total lead generation, and contributed to 20% of the company's overall revenue, highlighting the essential role of strategic product design and development in business expansion and profitability.",
     ],
   },
   {
@@ -110,16 +110,16 @@ const tools = [
 export default function ResumeSection() {
   return (
     <section className="bg-white">
-      <div className="py-24 px-4">
-        <div className="container mx-auto">
-          <SectionHeader title="Resume" icon="fa-light fa-list-timeline" className="mb-12" />
+      <div className="py-24 px-6 md:px-10">
+        <div className="max-w-[var(--container-max)] mx-auto">
+          <SectionHeader sectionId="resume" title="Resume" icon="fa-light fa-list-timeline" />
 
-          <h3 className="text-2xl font-bold mb-6">Design Leadership</h3>
+          <h3 className="text-2xl font-bold mb-6 mt-12">Design Leadership</h3>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <ul className="space-y-4">
               {leadershipLeft.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-third" aria-hidden="true" />
+                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-fourth" aria-hidden="true" />
                   <span><strong>{item.title}:</strong> {item.body}</span>
                 </li>
               ))}
@@ -127,7 +127,7 @@ export default function ResumeSection() {
             <ul className="space-y-4">
               {leadershipRight.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-third" aria-hidden="true" />
+                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-fourth" aria-hidden="true" />
                   <span><strong>{item.title}:</strong> {item.body}</span>
                 </li>
               ))}
@@ -171,7 +171,7 @@ export default function ResumeSection() {
               <ul className="space-y-1 mb-8">
                 {expertise.map((skill) => (
                   <li key={skill} className="flex items-center gap-2 text-sm">
-                    <i className="fa-regular fa-angle-right text-third shrink-0" aria-hidden="true" />
+                    <i className="fa-regular fa-angle-right text-fourth shrink-0" aria-hidden="true" />
                     {skill}
                   </li>
                 ))}
@@ -183,7 +183,7 @@ export default function ResumeSection() {
               <ul className="space-y-1">
                 {tools.map((tool) => (
                   <li key={tool} className="flex items-center gap-2 text-sm">
-                    <i className="fa-regular fa-angle-right text-third shrink-0" aria-hidden="true" />
+                    <i className="fa-regular fa-angle-right text-fourth shrink-0" aria-hidden="true" />
                     {tool}
                   </li>
                 ))}
@@ -193,7 +193,7 @@ export default function ResumeSection() {
         </div>
       </div>
 
-      <WaveSeparator className="text-fourth-dark" />
+      <WaveSeparator className="text-fifth-dark" />
     </section>
   )
 }

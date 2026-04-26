@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
@@ -8,49 +9,52 @@ import CaseStudyModal from '@/components/ui/CaseStudyModal'
 const visualProjects = projects.filter((p) => p.type === 'visual-design')
 
 export default function VisualDesignSection() {
-  const [activeProject, setActiveProject] = useState<string | null>(null)
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const activeProject = activeId ? projects.find((p) => p.id === activeId) ?? null : null
 
   return (
-    <div className="py-24 px-4">
-      <div className="container mx-auto">
+    <div className="py-24 px-6 md:px-10">
+      <div className="max-w-[var(--container-max)] mx-auto">
         <SectionHeader
+          sectionId="visual-design"
           title="Visual Design"
           icon="fa-light fa-paintbrush-pencil"
-          className="text-pop"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
           {visualProjects.map((project) => {
-            const bg = project.thumbnail ?? project.image
+            const src = project.thumbnail ?? project.image
             return (
-              <button
-                key={project.id}
-                type="button"
-                onClick={() => setActiveProject(project.id)}
-                className="group relative overflow-hidden rounded-2xl h-64 flex flex-col justify-end text-left cursor-pointer bg-fifth bg-cover bg-center"
-                style={bg ? { backgroundImage: `url(${bg})` } : undefined}
-              >
-                {/* Dark base overlay — lightens on hover */}
-                <div
-                  className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-20"
-                  aria-hidden="true"
-                />
-                {/* Gold accent overlay — fades in on hover */}
-                <div
-                  className="absolute inset-0 bg-pop/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  aria-hidden="true"
-                />
-                <div className="relative z-10 p-5">
-                  <h6 className="text-xl font-bold text-white">{project.title}</h6>
-                  <p className="text-sm text-white/70 mt-1">{project.subtitle}</p>
-                </div>
-              </button>
+              <li key={project.id}>
+                <button
+                  type="button"
+                  onClick={() => setActiveId(project.id)}
+                  className="group relative block w-full overflow-hidden rounded-lg aspect-[4/3] bg-second-light/30 focus-visible:ring-2 focus-visible:ring-third focus-visible:ring-offset-2 outline-none cursor-pointer"
+                >
+                  {src && (
+                    <Image
+                      src={src}
+                      alt={project.title}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  )}
+                  <span className="absolute inset-0 flex items-end p-4 bg-prime/0 group-hover:bg-prime/80 transition-colors duration-200 text-white font-semibold opacity-0 group-hover:opacity-100 z-10">
+                    {project.title}
+                  </span>
+                </button>
+              </li>
             )
           })}
-        </div>
+        </ul>
       </div>
 
-      <CaseStudyModal projectId={activeProject} onClose={() => setActiveProject(null)} />
+      <CaseStudyModal
+        project={activeProject}
+        open={!!activeId}
+        onOpenChange={(open) => { if (!open) setActiveId(null) }}
+      />
     </div>
   )
 }

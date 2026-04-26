@@ -1,53 +1,30 @@
 @import "tailwindcss";
 
-@keyframes wave-drift {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(-25px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes slide-in-right {
+/* ── Keyframes ──────────────────────────────────────────────────── */
+@keyframes slideInRight {
   from { transform: translateX(100%); }
   to   { transform: translateX(0); }
 }
-
-@keyframes slide-out-right {
+@keyframes slideOutRight {
   from { transform: translateX(0); }
   to   { transform: translateX(100%); }
 }
-
-.wave-animate {
-  animation: wave-drift 8s ease-in-out infinite;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes wave-shift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-24px); }
 }
 
-.text-gradient-prime {
-  background: linear-gradient(135deg, var(--color-prime-dark), var(--color-prime-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.badge-work {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  background-color: color-mix(in srgb, var(--color-prime) 10%, transparent);
-  color: var(--color-prime-dark);
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.modal-panel[data-state="open"] {
-  animation: slide-in-right 0.3s ease-out;
-}
-
-.modal-panel[data-state="closed"] {
-  animation: slide-out-right 0.2s ease-in;
-}
-
+/* ── Theme tokens ───────────────────────────────────────────────── */
 @theme {
+  /* Brand colors */
   --color-prime: #644672;
   --color-prime-light: #b2a2ba;
   --color-prime-dark: #452f50;
@@ -72,24 +49,82 @@
   --color-pop-light: #f1d888;
   --color-pop-dark: #a07e0b;
 
-  --font-family-base: 'urw-form', 'Manrope', sans-serif;
+  /* Typography — v4 namespace */
+  --font-sans: 'urw-form', 'Manrope', sans-serif;
+  --font-display: 'urw-form', 'Manrope', sans-serif;
+
+  /* Fluid type scale (clamp: min @ 375px → max @ 1280px) */
+  --text-display: clamp(2.5rem, 1.5rem + 4.4vw, 5rem);
+  --text-h1: clamp(2rem, 1.3rem + 3vw, 3.5rem);
+  --text-h2: clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 1rem + 1.1vw, 1.75rem);
+  --text-metric: clamp(2.5rem, 1.8rem + 3.4vw, 4.5rem);
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --text-eyebrow: 0.875rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --sidebar-w: 220px;
+  --mobilebar-h: 64px;
+  --section-py-mobile: 4rem;
+  --section-py-desktop: 6rem;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ── Custom utilities ───────────────────────────────────────────── */
+@utility text-gradient-prime {
+  background: linear-gradient(135deg, var(--color-prime) 0%, var(--color-prime-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-family-base);
+@utility wave-animate {
+  animation: wave-shift 8s ease-in-out infinite alternate;
 }
 
-body {
-  font-family: var(--font-family-base);
+@utility badge-work {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  color: currentColor;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-base);
+/* ── 24-column grid utilities ───────────────────────────────────── */
+@utility grid-cols-24 {
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+}
+
+@utility col-span-10 {
+  grid-column: span 10 / span 10;
+}
+
+@utility col-span-14 {
+  grid-column: span 14 / span 14;
+}
+
+/* ── Base layer ─────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: #1f1f1f;
+    background: #ffffff;
+  }
+
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; font-weight: 700; }
+  h4, h5, h6 { font-family: var(--font-sans); }
 }

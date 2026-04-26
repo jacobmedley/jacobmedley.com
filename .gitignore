@@ -1,14 +1,5 @@
 
 /node_modules
 package-lock.json
+package.json
 prepros.config
-
-# Next.js build artifacts
-/.next
-/out
-tsconfig.tsbuildinfo
-
-# public/images is a local junction/symlink → ../images/ (machine-specific, not committed)
-# On Windows: cmd /c mklink /J public\images images
-# On macOS/Linux: ln -s ../images public/images
-/public/images

@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
-import { cn } from '@/lib/utils'
 
 const visualProjects = projects.filter((p) => p.type === 'visual-design')
 
@@ -21,25 +20,24 @@ export default function VisualDesignSection() {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {visualProjects.map((project) => (
-            <button
-              key={project.id}
-              type="button"
-              onClick={() => setActiveProject(project.id)}
-              className={cn(
-                'relative overflow-hidden rounded-2xl shadow-xl aspect-video',
-                'flex flex-col items-center justify-center text-white',
-                'bg-fifth bg-cover bg-center cursor-pointer',
-                `bg-[url(/images/work/${project.id}-bg.jpg)]`
-              )}
-            >
-              <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-              <h6 className="relative z-10 text-3xl font-bold">{project.title}</h6>
-              <span className="relative z-10 flex items-center gap-1 text-sm mt-2 opacity-80">
-                <i className="fa-regular fa-eye" aria-hidden="true" /> View
-              </span>
-            </button>
-          ))}
+          {visualProjects.map((project) => {
+            const bg = project.thumbnail ?? project.image
+            return (
+              <button
+                key={project.id}
+                type="button"
+                onClick={() => setActiveProject(project.id)}
+                className="relative overflow-hidden rounded-2xl shadow-xl aspect-video flex flex-col items-center justify-center text-white bg-fifth bg-cover bg-center cursor-pointer"
+                style={bg ? { backgroundImage: `url(${bg})` } : undefined}
+              >
+                <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+                <h6 className="relative z-10 text-3xl font-bold">{project.title}</h6>
+                <span className="relative z-10 flex items-center gap-1 text-sm mt-2 opacity-80">
+                  <i className="fa-regular fa-eye" aria-hidden="true" /> View
+                </span>
+              </button>
+            )
+          })}
         </div>
       </div>
 

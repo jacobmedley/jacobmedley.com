@@ -5,7 +5,8 @@ export interface Project {
   title: string
   subtitle: string
   type: ProjectType
-  image?: string
+  image?: string      // modal hero image
+  thumbnail?: string  // card/button background (visual-design cards; falls back to image)
   icon?: string
   summary: string
   contributions: string[]
@@ -126,6 +127,7 @@ export const projects: Project[] = [
     title: 'A/B Testing',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/split01-modal/thumb.jpg',
     icon: 'fa-light fa-vial',
     summary:
       'A look at how I approach A/B testing as a design discipline — from hypothesis formation to test design and results analysis.',
@@ -137,6 +139,7 @@ export const projects: Project[] = [
     title: 'Call Center XD',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/ccux-modal/home-control.png',
     icon: 'fa-light fa-headset',
     summary:
       'Designing for call center agents and customer service teams — optimizing complex workflows for high-stress, high-volume environments.',
@@ -148,6 +151,7 @@ export const projects: Project[] = [
     title: 'Data Driven Personalisation',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/ma-modal/automation.png',
     icon: 'fa-light fa-bullseye-arrow',
     summary:
       'How I design for personalization and marketing automation — creating experiences that adapt to user behavior and segment data.',
@@ -159,6 +163,7 @@ export const projects: Project[] = [
     title: 'Team Workshops',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/workshop/cover.jpg',
     icon: 'fa-light fa-screen-users',
     summary:
       'Facilitation methods and workshop formats I use to align cross-functional teams, generate ideas, and solve design problems collaboratively.',
@@ -170,6 +175,7 @@ export const projects: Project[] = [
     title: 'UX Roadmaps',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/roadmap/rm.jpg',
     icon: 'fa-light fa-mouse-field',
     summary:
       'How I build and communicate UX roadmaps — translating user needs and business goals into prioritized, actionable design plans.',
@@ -181,6 +187,7 @@ export const projects: Project[] = [
     title: 'Personas',
     subtitle: 'Design Module',
     type: 'design-module',
+    image: '/images/work/kitchen-sink/Persona-Cards.png',
     icon: 'fa-light fa-masks-theater',
     summary:
       'My approach to building user personas from qualitative and quantitative research — creating shared understanding across teams.',
@@ -194,6 +201,8 @@ export const projects: Project[] = [
     title: 'Reveal',
     subtitle: 'Visual Design',
     type: 'visual-design',
+    image: '/images/work/kitchen-sink/reveal-cover.jpg',
+    thumbnail: '/images/work/kitchen-sink/btn-reveal.png',
     summary: 'A visual design exploration showcasing brand, typography, and composition work.',
     contributions: ['Visual Design', 'Brand Design', 'Typography'],
     technologies: ['Adobe Creative Suite', 'Figma'],
@@ -203,6 +212,8 @@ export const projects: Project[] = [
     title: 'Viva',
     subtitle: 'Visual Design',
     type: 'visual-design',
+    image: '/images/work/Viva-HM.png',
+    thumbnail: '/images/work/kitchen-sink/btn-viva.png',
     summary: 'A vibrant visual design project exploring color, identity, and expressive design.',
     contributions: ['Visual Design', 'Brand Design', 'Color Theory'],
     technologies: ['Adobe Creative Suite', 'Figma'],
@@ -212,6 +223,8 @@ export const projects: Project[] = [
     title: 'Wrong',
     subtitle: 'Visual Design',
     type: 'visual-design',
+    image: '/images/work/kitchen-sink/wrong-cover.jpg',
+    thumbnail: '/images/work/kitchen-sink/btn-wrong.png',
     summary:
       'A visual design study that explores intentional rule-breaking and unconventional design choices.',
     contributions: ['Visual Design', 'Experimental Design', 'Typography'],

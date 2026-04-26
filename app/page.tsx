@@ -1,6 +1,5 @@
 import NavMain from '@/components/nav/NavMain'
 import HeroSection from '@/components/sections/HeroSection'
-import ResultsBanner from '@/components/sections/ResultsBanner'
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
 import VisualDesignSection from '@/components/sections/VisualDesignSection'
 import ResumeSection from '@/components/sections/ResumeSection'
@@ -10,18 +9,16 @@ export default function Home() {
   return (
     <>
       <NavMain />
-      <main className="md:pl-28">
-        <section id="hi">
+      <main className="md:pl-[200px]">
+        <section id="hi" className="bg-[#faf9fb]">
           <HeroSection />
         </section>
 
-        <ResultsBanner />
-
-        <section id="work">
+        <section id="work" className="bg-white">
           <CaseStudiesSection />
         </section>
 
-        <section id="visual-design">
+        <section id="visual-design" className="bg-[#faf9fb]">
           <VisualDesignSection />
         </section>
 
@@ -32,6 +29,10 @@ export default function Home() {
         <section id="education">
           <EducationSection />
         </section>
+
+        <footer className="bg-prime text-white py-8 text-center text-sm">
+          <p>&copy; {new Date().getFullYear()} Jacob Medley. All rights reserved.</p>
+        </footer>
       </main>
     </>
   )

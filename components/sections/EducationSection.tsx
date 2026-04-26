@@ -65,15 +65,15 @@ export default function EducationSection() {
   const year = new Date().getFullYear()
 
   return (
-    <section className="bg-fourth-dark text-white py-16 px-4">
+    <section className="bg-[#faf9fb] py-24 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <p className="text-5xl text-fourth-light" aria-hidden="true">
+          <p className="text-5xl text-fourth" aria-hidden="true">
             <i className="fa-light fa-brain-circuit" />
           </p>
-          <h3 className="-mt-4 text-5xl font-bold text-fourth-light">Education</h3>
+          <h3 className="-mt-4 text-5xl font-bold text-fourth">Education</h3>
           <div className="mx-auto mt-6 w-1/4">
-            <hr className="border-fourth-light/40" />
+            <hr className="border-fourth/40" />
           </div>
         </div>
 
@@ -101,22 +101,22 @@ export default function EducationSection() {
         </div>
 
         <div className="text-center mt-16">
-          <hr className="border-fourth-light/20 mb-10" />
+          <hr className="border-fourth/20 mb-10" />
           <a
             href="mailto:hi@jacobmedley.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-fourth-light text-fourth-light hover:bg-fourth-light hover:text-fourth-dark transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-2 border-fourth text-fourth hover:bg-fourth hover:text-white transition-colors"
           >
             <i className="fa-light fa-envelope" aria-hidden="true" />
             hi@jacobmedley.com
             <i className="fa-thin fa-arrow-right" aria-hidden="true" />
           </a>
           <div className="mt-12 py-8">
-            <p className="text-5xl mb-2" aria-hidden="true">
+            <p className="text-5xl mb-2 text-fourth" aria-hidden="true">
               <i className="fa-kit fa-jm-icon-full" />
             </p>
-            <p className="text-sm opacity-60">© {year} by Jacob Medley</p>
+            <p className="text-sm text-fourth/60">© {year} by Jacob Medley</p>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function CaseStudiesSection() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
 
   return (
-    <div className="py-16 px-4">
+    <div className="py-24 px-4">
       <div className="container mx-auto">
         <SectionHeader
           title="Case Studies"

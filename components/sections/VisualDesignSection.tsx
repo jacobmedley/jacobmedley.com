@@ -11,12 +11,12 @@ export default function VisualDesignSection() {
   const [activeProject, setActiveProject] = useState<string | null>(null)
 
   return (
-    <div className="py-16 px-4 bg-pop-light/30">
+    <div className="py-24 px-4">
       <div className="container mx-auto">
         <SectionHeader
           title="Visual Design"
           icon="fa-light fa-paintbrush-pencil"
-          className="mb-12"
+          className="text-pop"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -27,14 +27,23 @@ export default function VisualDesignSection() {
                 key={project.id}
                 type="button"
                 onClick={() => setActiveProject(project.id)}
-                className="relative overflow-hidden rounded-2xl shadow-xl aspect-video flex flex-col items-center justify-center text-white bg-fifth bg-cover bg-center cursor-pointer"
+                className="group relative overflow-hidden rounded-2xl h-64 flex flex-col justify-end text-left cursor-pointer bg-fifth bg-cover bg-center"
                 style={bg ? { backgroundImage: `url(${bg})` } : undefined}
               >
-                <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-                <h6 className="relative z-10 text-3xl font-bold">{project.title}</h6>
-                <span className="relative z-10 flex items-center gap-1 text-sm mt-2 opacity-80">
-                  <i className="fa-regular fa-eye" aria-hidden="true" /> View
-                </span>
+                {/* Dark base overlay — lightens on hover */}
+                <div
+                  className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:opacity-20"
+                  aria-hidden="true"
+                />
+                {/* Gold accent overlay — fades in on hover */}
+                <div
+                  className="absolute inset-0 bg-pop/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <div className="relative z-10 p-5">
+                  <h6 className="text-xl font-bold text-white">{project.title}</h6>
+                  <p className="text-sm text-white/70 mt-1">{project.subtitle}</p>
+                </div>
               </button>
             )
           })}

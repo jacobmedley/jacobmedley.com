@@ -109,10 +109,8 @@ const tools = [
 
 export default function ResumeSection() {
   return (
-    <section className="bg-third-light/20">
-      <WaveSeparator className="text-white" />
-
-      <div className="py-16 px-4">
+    <section className="bg-white">
+      <div className="py-24 px-4">
         <div className="container mx-auto">
           <SectionHeader title="Resume" icon="fa-light fa-list-timeline" className="mb-12" />
 

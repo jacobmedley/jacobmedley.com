@@ -10,50 +10,61 @@ interface WorkCardProps {
 
 export default function WorkCard({ project, onOpen, reverse = false }: WorkCardProps) {
   return (
-    <div
-      className={cn(
-        'py-8 flex flex-col gap-8',
-        reverse ? 'md:flex-row-reverse' : 'md:flex-row',
-        'md:items-start xl:items-center'
-      )}
-    >
-      <div className="w-full md:w-1/2">
-        {project.image && (
-          <button
-            type="button"
-            onClick={() => onOpen(project.id)}
-            className="block w-full p-0 border-0 bg-transparent cursor-pointer"
-            aria-label={`View ${project.title} case study`}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={500}
-              className="w-full rounded-2xl shadow-xl"
-              loading="lazy"
-            />
-          </button>
+    <div className="mb-4 pb-12">
+      <div
+        className={cn(
+          'flex flex-col gap-8',
+          reverse ? 'md:flex-row-reverse' : 'md:flex-row',
+          'md:items-center'
         )}
-      </div>
+      >
+        <div className="w-full md:w-1/2">
+          {project.image && (
+            <button
+              type="button"
+              onClick={() => onOpen(project.id)}
+              className="group block w-full p-0 border-0 bg-transparent cursor-pointer"
+              aria-label={`View ${project.title} case study`}
+            >
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </button>
+          )}
+        </div>
 
-      <div className="w-full md:w-1/2">
-        <h4 className="text-3xl font-bold">{project.title}</h4>
-        <p className="text-xl mt-1 opacity-70">{project.subtitle}</p>
-        <hr className="my-4 border-current opacity-20" />
-        <p className="font-bold text-lg mb-1">Summary:</p>
-        <p className="leading-relaxed">{project.summary}</p>
-        <div className="mt-6">
+        <div className="w-full md:w-1/2 md:px-8">
+          <h4 className="text-[2rem] font-bold leading-tight mb-1">{project.title}</h4>
+          <p className="text-lg opacity-60 mb-4">{project.subtitle}</p>
+          <p className="leading-relaxed text-gray-600 mb-6">{project.summary}</p>
+
+          {project.contributions.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.contributions.map((c) => (
+                <span key={c} className="badge-work">{c}</span>
+              ))}
+            </div>
+          )}
+
           <button
             type="button"
             onClick={() => onOpen(project.id)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-second text-white hover:bg-second-dark transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-second text-white hover:bg-second-dark transition-colors cursor-pointer"
           >
-            Case Study
+            View Case Study
+            <i className="fa-regular fa-arrow-right" aria-hidden="true" />
           </button>
         </div>
-        <hr className="mt-6 border-current opacity-20" />
       </div>
+
+      <hr className="mt-12 border-gray-100" />
     </div>
   )
 }

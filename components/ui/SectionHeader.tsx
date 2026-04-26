@@ -8,13 +8,13 @@ interface SectionHeaderProps {
 
 export default function SectionHeader({ title, icon, className }: SectionHeaderProps) {
   return (
-    <div className={cn('text-center', className)}>
-      <p className="text-5xl" aria-hidden="true">
+    <div className={cn('mb-12', className)}>
+      <p className="text-[2rem] mb-2" aria-hidden="true">
         <i className={icon} />
       </p>
-      <h3 className="-mt-4 text-5xl font-bold">{title}</h3>
-      <div className="mx-auto mt-6 w-1/4">
-        <hr className="border-current opacity-30" />
+      <h3 className="text-[1.75rem] font-bold leading-tight">{title}</h3>
+      <div className="mt-3 w-12">
+        <hr className="border-2 border-current opacity-60" />
       </div>
     </div>
   )

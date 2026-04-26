@@ -6,4 +6,9 @@ prepros.config
 # Next.js build artifacts
 /.next
 /out
-next-env.d.ts
+tsconfig.tsbuildinfo
+
+# public/images is a local junction/symlink → ../images/ (machine-specific, not committed)
+# On Windows: cmd /c mklink /J public\images images
+# On macOS/Linux: ln -s ../images public/images
+/public/images

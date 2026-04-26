@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@keyframes wave-drift {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-25px); }
+  100% { transform: translateX(0); }
+}
+
+.wave-animate {
+  animation: wave-drift 8s ease-in-out infinite;
+}
+
 @theme {
   --color-prime: #644672;
   --color-prime-light: #b2a2ba;

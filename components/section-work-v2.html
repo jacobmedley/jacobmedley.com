@@ -1,15 +1,15 @@
-<section class="my-work">
-    <div class="waves-wrapper top">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<section class="my-work" aria-labelledby="case-studies-heading">
+    <div class="waves-wrapper top" aria-hidden="true">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" class="wave-four" x="48" y="0" />
-                <use xlink:href="#gentle-wave" class="wave-three" x="48" y="3" />
-                <use xlink:href="#gentle-wave" class="wave-two" x="48" y="5" />
-                <use xlink:href="#gentle-wave" class="wave-one" x="48" y="7" />
+                <use href="#gentle-wave" class="wave-four" x="48" y="0" />
+                <use href="#gentle-wave" class="wave-three" x="48" y="3" />
+                <use href="#gentle-wave" class="wave-two" x="48" y="5" />
+                <use href="#gentle-wave" class="wave-one" x="48" y="7" />
             </g>
         </svg>
     </div>
@@ -17,9 +17,8 @@
         <div class="container">
             <div class="row text-center justify-content-center text-second-dark">
                 <div class="col-24 align-self-center">
-                    <p class="display-4"><i class="fa-light fa-briefcase"></i></p>
-                    <h3 class="display-4 fw-bold mt-n4 mb-0">Case Studies</h3>
-
+                    <p class="display-4" aria-hidden="true"><i class="fa-light fa-briefcase"></i></p>
+                    <h2 id="case-studies-heading" class="display-4 fw-bold mt-n4 mb-0">Case Studies</h2>
                 </div>
                 <div class="row text-center justify-content-center">
                     <div class="col-24 col-xl-16 col-xxl-14 py-5">
@@ -28,312 +27,28 @@
                 </div>
             </div>
 
+            <!-- Case study cards injected here from data/case-studies.json -->
+            <div id="case-studies-list"></div>
 
-
-            <!-- webMD -->
-            <div class="webmd work-item py-2 py-lg-4 py-xxl-5">
-
-                <div class="row align-items-start align-items-xxl-center ">
-                    <div class="col-24 col-lg-12 mb-5 mb-lg-0">
-                        <button type="button" class="btn p-0 m-0" data-bs-toggle="modal" data-bs-target="#webmd">
-                            <img loading="lazy" src="images/work/WebMD-HM.png"
-                                class="img-fluid rounded-4 shadow-lg btn-art" alt="Hydra">
-                        </button>
-                    </div>
-                    <div class="col-24 col-lg-12">
-                        <h4 class="h2">WebMD</h4>
-                        <p class="h5">eCommerce Website</p>
-                        <hr class="solid-center">
-                        <p class="mb-1 h4">Summary:</p>
-                        <p>Internet Brands wanted to open up new opportunities for growth across their portfolio.
-                            One of these efforts was
-                            combining the strength of WebMD's brand and DentalPlans product.</p>
-
-                        <div class="row text-center text-md-start">
-                            <div class="col-24">
-                                <button type="button" class="btn btn-lg btn-second-dark rounded-pill"
-                                    data-bs-toggle="modal" data-bs-target="#webmd">
-                                    <img loading="lazy" src="images/the-eye-third-reverse.gif" alt="icon-eye"
-                                        width="36px" class="mix-blend-screen mt-n2" role="presentation"
-                                        aria-hidden="true">
-                                    Case Study
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <hr class="solid-center">
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- dp -->
-            <div class="dp work-item py-2 py-lg-4 py-xxl-5">
-                <div class="row align-items-start align-items-xxl-center flex-row-reverse">
-                    <div class="col-24 col-lg-12 mb-5 mb-lg-0">
-                        <button type="button" class="btn p-0 m-0" data-bs-toggle="modal" data-bs-target="#dpprod">
-                            <img loading="lazy" src="/images/work/dpprod-modal/dpprod-hm.png"
-                                class="img-fluid rounded-4 shadow-lg btn-art" alt="Hydra">
-                        </button>
-                    </div>
-                    <div class="col-24 col-lg-12">
-                        <h4 class="h2">Dentalplans.com</h4>
-                        <p class="h5">Product Framework and Design System</p>
-                        <hr class="solid-center">
-                        <p class="h4">Summary:</p>
-                        <p>I led the design and front-end development of product-focused sites for DentalPlans.com. Over
-                            the course of a year, what started as a tiny product site initiative evolved into a core
-                            component of DentalPlans' business. This initiative developed into a framework for rapidly
-                            designing and launching product ecommerce websites for notable brands such as Cigna, Aetna,
-                            and WebMD. </p>
-
-                        <div class="row text-center text-md-start">
-                            <div class="col-24">
-                                <button type="button" class="btn btn-lg btn-second-dark rounded-pill"
-                                    data-bs-toggle="modal" data-bs-target="#dpprod">
-                                    <img loading="lazy" src="images/the-eye-third-reverse.gif" alt="icon-eye"
-                                        width="36px" class="mix-blend-screen mt-n2" role="presentation"
-                                        aria-hidden="true">
-                                    Case
-                                    Study
-                                </button>
-                            </div>
-                        </div>
-                        <hr class="solid-center">
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- the bee -->
-            <div class="bee work-item py-2 py-lg-4 py-xxl-5">
-
-                <div class="row align-items-start align-items-xxl-center">
-                    <div class="col-24 col-lg-12 mb-5 mb-lg-0">
-                        <button type="button" class="btn p-0 m-0" data-bs-toggle="modal" data-bs-target="#bee">
-                            <img loading="lazy" src="images/work/BMD-HM.png"
-                                class="img-fluid rounded-4 shadow-lg btn-art" alt="Hydra">
-                        </button>
-                    </div>
-                    <div class="col-24 col-lg-12">
-                        <h4 class="h2">BumblebeeMD</h4>
-                        <p class="h5">Brand and Product Development</p>
-                        <hr class="solid-center">
-                        <p class="mb-1 h4">Summary:</p>
-                        <p>I had the privilege to partner with a brilliant brand manager Tiffany Tibbets on this
-                            project. We worked with executive
-                            stake holders to bring this brand to life. Our goal was to invent a fun and family
-                            focused brand.</p>
-
-                        <div class="row text-center text-md-start">
-                            <div class="col-24">
-                                <button type="button" class="btn btn-lg btn-second-dark rounded-pill"
-                                    data-bs-toggle="modal" data-bs-target="#bee">
-                                    <img loading="lazy" src="images/the-eye-third-reverse.gif" alt="icon-eye"
-                                        width="36px" class="mix-blend-screen mt-n2" role="presentation"
-                                        aria-hidden="true">
-                                    Case Study
-                                </button>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <hr class="solid-center">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-            <!-- hydra -->
-            <div class="hydra work-item py-2 py-lg-4 py-xxl-5">
-                <div class="row align-items-start align-items-xxl-center flex-row-reverse">
-                    <div class="col-24 col-lg-12 mb-5 mb-lg-0">
-                        <button type="button" class="btn p-0 m-0" data-bs-toggle="modal" data-bs-target="#hydra">
-                            <img loading="lazy" src="images/work/hydra/hydra-hm.png"
-                                class="img-fluid rounded-4 shadow-lg btn-art" alt="Hydra">
-                        </button>
-                    </div>
-                    <div class="col-24 col-lg-12">
-                        <h4 class="h2">Hydra</h4>
-                        <p class="h5">The making of a design system.</p>
-                        <hr class="solid-center">
-                        <p class="h4">Summary:</p>
-                        <p>I championed and implemented the HYDRA design system. A large-scale project that
-                            unified the
-                            customer experience across the company's products and streamlined the design and
-                            engineering
-                            processes. </p>
-
-                        <div class="row text-center text-md-start">
-                            <div class="col-24">
-                                <button type="button" class="btn btn-lg btn-second-dark rounded-pill"
-                                    data-bs-toggle="modal" data-bs-target="#hydra">
-                                    <img loading="lazy" src="images/the-eye-third-reverse.gif" alt="icon-eye"
-                                        width="36px" class="mix-blend-screen mt-n2" role="presentation"
-                                        aria-hidden="true">
-                                    Case
-                                    Study
-                                </button>
-                            </div>
-                        </div>
-                        <hr class="solid-center">
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <!-- opf-red -->
-            <div class="opf-red work-item py-2 py-lg-4 py-xxl-5">
-                <div class="row align-items-start align-items-xxl-center">
-                    <div class="col-24 col-lg-12 mb-5 mb-lg-0">
-                        <button type="button" class="btn p-0 m-0" data-bs-toggle="modal" data-bs-target="#opfred">
-                            <img loading="lazy" src="images/work/opf-modal/brief.png"
-                                class="img-fluid rounded-4 shadow-lg btn-art" alt="Hydra">
-                        </button>
-                    </div>
-                    <div class="col-24 col-lg-12">
-                        <h4 class="h2">One Park Financial</h4>
-                        <p class="h5">Redesign Corporate Website</p>
-                        <hr class="solid-center">
-                        <p class="h4">Summary:</p>
-                        <p>I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its
-                            corporate website
-                            and
-                            lead flow. </p>
-
-                        <div class="row text-center text-md-start">
-                            <div class="col-24">
-                                <button type="button" class="btn btn-lg btn-second-dark rounded-pill"
-                                    data-bs-toggle="modal" data-bs-target="#opfred">
-                                    <img loading="lazy" src="images/the-eye-third-reverse.gif" alt="icon-eye"
-                                        width="36px" class="mix-blend-screen mt-n2" role="presentation"
-                                        aria-hidden="true">
-                                    Case
-                                    Study
-                                </button>
-                            </div>
-                        </div>
-                        <hr class="solid-center">
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- tools of the trade -->
+            <!-- Full-Stack Designer toolkit section -->
             <div class="row justify-content-center">
-
                 <div class="row justify-content-center">
                     <div class="col-24 py-2 py-lg-3 py-xxl-4">
                         <hr class="solid-center">
                     </div>
                     <div class="col-24 col-lg-16 col-xxl-16 text-center">
-                        <p class="display-4"><i class="fa-thin fa-toolbox"></i></p>
-                        <p class="display-3">Full-Stack Designer</p>
+                        <p class="display-4" aria-hidden="true"><i class="fa-thin fa-toolbox"></i></p>
+                        <h2 class="display-3">Full-Stack Designer</h2>
                         <p class="display-1">Here are some examples showcasing the diverse skill sets and methods I've used to create better user experiences and business outcomes.</p>
                     </div>
                     <div class="col-24 py-2 py-lg-3 py-xxl-4">
                         <hr class="solid-center">
                     </div>
                 </div>
-                <div class="row align-items-center mt-3 justify-content-center thinking-row">
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-                        <button class="btn btn-outline-second-light border-5 thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#split01">
-                            <i class="fal fa-vial thinking-icon"></i>
-                            <h6 class="thinking-title">A/B Testing</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-                        <button class="btn btn-outline-second-light thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#cce">
-                            <i class="fal fa-headset thinking-icon"></i>
-                            <h6 class="thinking-title">Call Center XD</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-
-
-                        <button class="btn btn-outline-second-light thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#ma">
-                            <i class="fal fa-bullseye-arrow thinking-icon"></i>
-                            <h6 class="thinking-title">Data Driven Personalisation</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="row align-items-center mt-0 mt-sm-3 justify-content-center thinking-row">
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-                        <button class="btn btn-outline-second-light thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#wb">
-                            <i class="fa-light fa-screen-users thinking-icon"></i>
-                            <h6 class="thinking-title">Team Workshops</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-                        <button class="btn btn-outline-second-light thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#wb2">
-                            <i class="fa-light fa-mouse-field  thinking-icon"></i>
-                            <h6 class="thinking-title">UX Roadmaps</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                    <!-- design thinking item -->
-                    <div class="col-24 col-sm-8 col-xxl-6 thinking-item">
-                        <button class="btn btn-outline-second-light thinking-thumb" data-bs-toggle="modal"
-                            data-bs-target="#personas">
-                            <i class="fa-light fa-masks-theater  thinking-icon"></i>
-                            <h6 class="thinking-title">Personas</h6>
-                            <div class="thinking-view">
-                                <i class="fa-regular fa-eye"></i>
-                                View
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <!-- <div class="col-24 py-2 py-lg-3 py-xxl-4">
-                    <hr class="solid-center">
-                </div>
-                <div class="col-24 col-xxl-16 text-center">
-                    <p class="display-3">Good Design is Good Business.</p>
-                    <p class="display-1 mb-5"><strong>Thomas John Watson Jr.</strong> <br />former CEO and Chairman
-                        of IBM</p>
-                </div> -->
-                <!-- <div class="col-24 py-2 py-lg-3 py-xxl-4">
-                        <hr class="solid-center">
-                    </div> -->
+                <!-- Toolkit items injected here from data/toolkit.json -->
+                <div id="toolkit-list" class="row align-items-center justify-content-center g-3 thinking-row"></div>
             </div>
+
         </div>
     </div>
-
 </section>

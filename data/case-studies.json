@@ -1,0 +1,57 @@
+[
+  {
+    "id": "webmd",
+    "modalTarget": "webmd",
+    "cssClass": "webmd",
+    "layout": "default",
+    "heroImage": "images/work/WebMD-HM.png",
+    "heroImageAlt": "WebMD Dental Plans eCommerce website homepage — designed by Jacob Medley",
+    "title": "WebMD",
+    "subtitle": "eCommerce Website",
+    "summary": "Internet Brands wanted to open up new opportunities for growth across their portfolio. One of these efforts was combining the strength of WebMD's brand and DentalPlans product."
+  },
+  {
+    "id": "dpprod",
+    "modalTarget": "dpprod",
+    "cssClass": "dp",
+    "layout": "reverse",
+    "heroImage": "/images/work/dpprod-modal/dpprod-hm.png",
+    "heroImageAlt": "DentalPlans.com product partner site framework — designed by Jacob Medley",
+    "title": "Dentalplans.com",
+    "subtitle": "Product Framework and Design System",
+    "summary": "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans’ business—a framework for rapidly designing and launching ecommerce sites for Cigna, Aetna, and WebMD."
+  },
+  {
+    "id": "bee",
+    "modalTarget": "bee",
+    "cssClass": "bee",
+    "layout": "default",
+    "heroImage": "images/work/BMD-HM.png",
+    "heroImageAlt": "BumblebeeMD brand and product website — designed by Jacob Medley",
+    "title": "BumblebeeMD",
+    "subtitle": "Brand and Product Development",
+    "summary": "I had the privilege to partner with a brilliant brand manager, Tiffany Tibbets, on this project. We worked with executive stakeholders to bring this brand to life with a fun and family-focused identity."
+  },
+  {
+    "id": "hydra",
+    "modalTarget": "hydra",
+    "cssClass": "hydra",
+    "layout": "reverse",
+    "heroImage": "images/work/hydra/hydra-hm.png",
+    "heroImageAlt": "Hydra design system UI component library — designed by Jacob Medley",
+    "title": "Hydra",
+    "subtitle": "The making of a design system.",
+    "summary": "I championed and implemented the HYDRA design system. A large-scale project that unified the customer experience across the company’s products and streamlined the design and engineering processes."
+  },
+  {
+    "id": "opfred",
+    "modalTarget": "opfred",
+    "cssClass": "opf-red",
+    "layout": "default",
+    "heroImage": "images/work/opf-modal/brief.png",
+    "heroImageAlt": "One Park Financial corporate website redesign — designed by Jacob Medley",
+    "title": "One Park Financial",
+    "subtitle": "Redesign Corporate Website",
+    "summary": "I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow."
+  }
+]

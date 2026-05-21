@@ -70,6 +70,13 @@ async function init() {
   renderVisualDesignItems(visualDesign, document.getElementById('visual-design-list'));
 
   // ── Phase 4: Housekeeping ─────────────────────────────────────────────────
+  // Re-run FA icon processing on all dynamically injected content
+  if (window.FontAwesome) FontAwesome.dom.i2svg();
+
+  // Bootstrap can't auto-init components injected after DOMContentLoaded
+  const carouselEl = document.getElementById('carouselQuote');
+  if (carouselEl) new bootstrap.Carousel(carouselEl, { ride: 'carousel' });
+
   const yearEl = document.getElementById('current-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 

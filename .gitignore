@@ -3,3 +3,10 @@
 package-lock.json
 package.json
 prepros.config
+
+# Auth tokens — never commit
+.npmrc
+**/.npmrc
+.env
+.env.*
+.aider*

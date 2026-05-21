@@ -1,80 +1,33 @@
-<section class="show-me-the-money bg-pop-light bg-gradient">
-    <!--Waves Container-->
-    <div class="waves-wrapper top">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<section class="show-me-the-money bg-pop-light bg-gradient" aria-labelledby="visual-design-heading">
+    <div class="waves-wrapper top" aria-hidden="true">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
                 <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
             </defs>
             <g class="parallax">
-                <use xlink:href="#gentle-wave" class="wave-four" x="48" y="0" />
-                <use xlink:href="#gentle-wave" class="wave-three" x="48" y="3" />
-                <use xlink:href="#gentle-wave" class="wave-two" x="48" y="5" />
-                <use xlink:href="#gentle-wave" class="wave-one" x="48" y="7" />
+                <use href="#gentle-wave" class="wave-four" x="48" y="0" />
+                <use href="#gentle-wave" class="wave-three" x="48" y="3" />
+                <use href="#gentle-wave" class="wave-two" x="48" y="5" />
+                <use href="#gentle-wave" class="wave-one" x="48" y="7" />
             </g>
         </svg>
     </div>
-    <!--Waves end-->
     <div class="content">
         <div class="container">
             <div class="row text-center justify-content-center">
                 <div class="col-24 align-self-center">
-                    <p class="display-4"><i class="fa-light fa-fw fa-paintbrush-pencil"></i></p>
-                    <h3 class="display-4 fw-bold mt-n4">Visual Design</h3>
+                    <p class="display-4" aria-hidden="true"><i class="fa-light fa-fw fa-paintbrush-pencil"></i></p>
+                    <h2 id="visual-design-heading" class="display-4 fw-bold mt-n4">Visual Design</h2>
                 </div>
                 <div class="col-24 col-xl-16 col-xxl-14 py-5">
                     <hr class="solid-center">
                 </div>
             </div>
-
-            <div
-                class="row align-items-center mt-0 mt-sm-3 justify-content-center thinking-row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                <!-- visual design item -->
-                <div class="col thinking-item">
-                    <button
-                        class="btn btn-outline-second-light thinking-thumb btn-reveal text-white position-relative overflow-hidden shadow-lg"
-                        data-bs-toggle="modal" data-bs-target="#reveal">
-
-                        <h6 class="thinking-title fw-bold fs-1 z-2 position-relative">Reveal</h6>
-                        <div class="thinking-view z-2 position-relative">
-                            <i class="fa-regular fa-eye"></i>
-                            View
-                        </div>
-                        <div class="screen position-absolute top-0 start-0 h-100 w-100 bg-black opacity-50 z-1"></div>
-                    </button>
-                </div>
-
-                <!-- visual design item -->
-                <div class="col thinking-item">
-                    <button
-                        class="btn btn-outline-second-light thinking-thumb btn-viva text-white position-relative overflow-hidden shadow-lg"
-                        data-bs-toggle="modal" data-bs-target="#viva">
-
-                        <h6 class="thinking-title fw-bold fs-1 z-2 position-relative">Viva</h6>
-                        <div class="thinking-view z-2 position-relative">
-                            <i class="fa-regular fa-eye"></i>
-                            View
-                        </div>
-                        <div class="screen position-absolute top-0 start-0 h-100 w-100 bg-black opacity-50 z-1"></div>
-                    </button>
-                </div>
-
-                <!-- visual design item -->
-                <div class="col thinking-item">
-                    <button
-                        class="btn btn-outline-second-light thinking-thumb btn-wrong text-white position-relative overflow-hidden shadow-lg"
-                        data-bs-toggle="modal" data-bs-target="#wrong">
-
-                        <h6 class="thinking-title fw-bold fs-1 z-2 position-relative">Wrong</h6>
-                        <div class="thinking-view z-2 position-relative">
-                            <i class="fa-regular fa-eye"></i>
-                            View
-                        </div>
-                        <div class="screen position-absolute top-0 start-0 h-100 w-100 bg-black opacity-50 z-1"></div>
-                    </button>
-                </div>
+            <!-- Visual design items injected here from data/visual-design.json -->
+            <div id="visual-design-list"
+                 class="row align-items-center mt-0 mt-sm-3 justify-content-center thinking-row row-cols-1 row-cols-sm-2 row-cols-md-3">
             </div>
         </div>
     </div>
-
 </section>

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "split01",
+    "modalTarget": "split01",
+    "icon": "fal fa-vial",
+    "title": "A/B Testing"
+  },
+  {
+    "id": "cce",
+    "modalTarget": "cce",
+    "icon": "fal fa-headset",
+    "title": "Call Center XD"
+  },
+  {
+    "id": "ma",
+    "modalTarget": "ma",
+    "icon": "fal fa-bullseye-arrow",
+    "title": "Data Driven Personalisation"
+  },
+  {
+    "id": "wb",
+    "modalTarget": "wb",
+    "icon": "fa-light fa-screen-users",
+    "title": "Team Workshops"
+  },
+  {
+    "id": "wb2",
+    "modalTarget": "wb2",
+    "icon": "fa-light fa-mouse-field",
+    "title": "UX Roadmaps"
+  },
+  {
+    "id": "personas",
+    "modalTarget": "personas",
+    "icon": "fa-light fa-masks-theater",
+    "title": "Personas"
+  }
+]

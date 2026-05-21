@@ -1,0 +1,20 @@
+[
+  {
+    "id": "reveal",
+    "modalTarget": "reveal",
+    "bgClass": "btn-reveal",
+    "title": "Reveal Aligners"
+  },
+  {
+    "id": "viva",
+    "modalTarget": "viva",
+    "bgClass": "btn-viva",
+    "title": "Viva Medicare"
+  },
+  {
+    "id": "wrong",
+    "modalTarget": "wrong",
+    "bgClass": "btn-wrong",
+    "title": "The Wrong Campaign"
+  }
+]

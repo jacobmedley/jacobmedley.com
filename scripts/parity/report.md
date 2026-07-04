@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-04 16:17 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-04 16:22 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|

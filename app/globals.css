@@ -531,24 +531,112 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-view { margin-top: 12px; margin-bottom: 0; }
 .thinking-icon { font-size: 48px; }
 
-/* ── Modal ──────────────────────────────────────────────────────── */
-.modal-blur {
+/* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  /* legacy custom: blur the page behind the whole modal viewport */
   -webkit-backdrop-filter: blur(10px) saturate(150%);
   backdrop-filter: blur(10px) saturate(150%);
 }
+.modal[data-state='open'] { animation: modal-fade-in 0.15s linear; }
+.modal[data-state='closed'] { animation: modal-fade-out 0.15s linear forwards; }
 
-.btn-close-modal {
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0;
+  pointer-events: none;
+}
+/* Bootstrap entrance: dialog slides from translateY(-50px), .3s ease-out */
+.modal[data-state='open'] .modal-dialog { animation: modal-dialog-in 0.3s ease-out; }
+.modal[data-state='closed'] .modal-dialog { animation: modal-dialog-out 0.3s ease-out forwards; }
+
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  color: #212529;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  outline: 0;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* legacy override (Bootstrap default is flex-end) */
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+}
+.modal-footer > * { margin: 0.25rem; }
+
+.modal-header .btn-close-modal {
   border-radius: 500rem;
   height: 2.8rem;
   width: 2.8rem;
+  padding: 0;
 }
-
-.modal-footer-btn { width: 100%; }
+.modal-footer .btn-close-modal { width: 100%; }
 @media (min-width: 576px) {
-  .modal-footer-btn { width: 180px; }
+  .modal-footer .btn-close-modal { width: 180px; }
 }
 
-/* Bootstrap modal entrance: fade .15s linear + translateY(-50px → 0) .3s ease-out */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background-color: #000;
+  opacity: 0.5;
+}
+.modal-backdrop[data-state='open'] { animation: backdrop-fade-in 0.15s linear; }
+.modal-backdrop[data-state='closed'] { animation: backdrop-fade-out 0.15s linear forwards; }
+
 @keyframes modal-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -564,6 +652,14 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 @keyframes modal-dialog-out {
   from { transform: none; }
   to   { transform: translate(0, -50px); }
+}
+@keyframes backdrop-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 0.5; }
+}
+@keyframes backdrop-fade-out {
+  from { opacity: 0.5; }
+  to   { opacity: 0; }
 }
 
 /* Blend utilities used by legacy markup */

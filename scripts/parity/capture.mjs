@@ -4,8 +4,12 @@
  * Screenshots each section of the legacy site (:4000) and the new Next.js
  * site (:3000) at four breakpoints. Both servers must already be running:
  *
- *   legacy: npx serve . -p 4000   (repo root)
- *   new:    npm run dev           (next dev on :3000)
+ *   legacy: npx serve _archive -p 4000   (archived static site; needs an
+ *           _archive/images junction to ../images for assets to resolve)
+ *   new:    npm run dev                  (next dev on :3000)
+ *
+ * NOTE: the legacy site was moved to _archive/ during the react-migration
+ * cleanup. This harness is retained for reference; the parity phase is done.
  *
  * Output: scripts/parity/shots/{legacy,new}/<section>-<bp>.png
  */

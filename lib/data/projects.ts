@@ -45,7 +45,7 @@ export const projects: Project[] = [
     type: 'case-study',
     image: '/images/work/dpprod-modal/dpprod-hm.png',
     summary:
-      "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business — a framework for rapidly designing and launching ecommerce websites for brands such as Cigna, Aetna, and WebMD.",
+      "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product ecommerce websites for notable brands such as Cigna, Aetna, and WebMD.",
     contributions: ['Product Design', 'Design System', 'Front-end Development', 'Strategy'],
     technologies: ['Bootstrap', 'HTML', 'CSS/LESS', 'PHP', 'DevOps', 'Git'],
     problem:

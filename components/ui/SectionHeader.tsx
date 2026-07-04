@@ -1,36 +1,45 @@
 import { cn } from '@/lib/utils'
 
-const sectionStyles = {
-  hi:               { color: 'text-prime',  bg: 'bg-prime'  },
-  work:             { color: 'text-second', bg: 'bg-second' },
-  'visual-design':  { color: 'text-third',  bg: 'bg-third'  },
-  resume:           { color: 'text-fourth', bg: 'bg-fourth' },
-  education:        { color: 'text-fifth',  bg: 'bg-fifth'  },
-} as const
-
 interface SectionHeaderProps {
-  sectionId: keyof typeof sectionStyles
   title: string
-  icon?: string
-  align?: 'left' | 'center'
+  icon: string
+  /** Color utilities for the header row (e.g. legacy text-second-dark) */
+  className?: string
+  /** Extra classes for the h3 (legacy work adds mb-0, education adds text-fourth-light) */
+  titleClassName?: string
+  /** Extra classes for the icon (education uses text-fourth-light) */
+  iconClassName?: string
+  /** White hr gradient for dark sections (legacy .light) */
+  light?: boolean
 }
 
-export default function SectionHeader({ sectionId, title, icon, align = 'left' }: SectionHeaderProps) {
-  const s = sectionStyles[sectionId]
-  const alignment = align === 'center' ? 'items-center text-center' : 'items-start text-left'
-
+/**
+ * Legacy section header: display-4 icon over display-4 bold title pulled
+ * up with mt-n4, followed by a solid-center hr in a narrower column.
+ */
+export default function SectionHeader({
+  title,
+  icon,
+  className,
+  titleClassName,
+  iconClassName,
+  light = false,
+}: SectionHeaderProps) {
   return (
-    <header className={cn('flex flex-col gap-4', alignment)}>
-      {icon ? (
-        <i className={cn(icon, 'text-4xl md:text-5xl', s.color)} aria-hidden="true" />
-      ) : null}
-      <h2
-        className="font-bold leading-tight"
-        style={{ fontSize: 'var(--text-h2)' }}
-      >
-        {title}
-      </h2>
-      <hr className={cn('border-0 h-1 w-16 rounded-full', s.bg)} />
-    </header>
+    <>
+      <div className={cn('row text-center justify-center', className)}>
+        <div className="col-24 self-center">
+          <p className="display-4">
+            <i className={cn(icon, iconClassName)} aria-hidden="true" />
+          </p>
+          <h3 className={cn('display-4 font-bold -mt-6', titleClassName)}>{title}</h3>
+        </div>
+      </div>
+      <div className="row text-center justify-center">
+        <div className="col-24 col-xl-16 col-xxl-14 py-12">
+          <hr className={cn('solid-center', light && 'light')} />
+        </div>
+      </div>
+    </>
   )
 }

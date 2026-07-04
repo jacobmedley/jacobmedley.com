@@ -1,67 +1,76 @@
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { type Project } from '@/lib/data/projects'
 
 interface WorkCardProps {
   project: Project
   reverse?: boolean
+  /** Legacy wraps the closing hr in a .mt-4 div on some cards (webmd, bee) */
+  closingHrSpacer?: boolean
   onOpen?: (id: string) => void
 }
 
-export default function WorkCard({ project, reverse = false, onOpen }: WorkCardProps) {
+/**
+ * Legacy .work-item editorial row (components/section-work-v2.html):
+ * full-width image button + title/summary column, alternating via
+ * flex-row-reverse.
+ */
+export default function WorkCard({
+  project,
+  reverse = false,
+  closingHrSpacer = false,
+  onOpen,
+}: WorkCardProps) {
+  const open = () => onOpen?.(project.id)
+
   return (
-    <article className="grid grid-cols-1 md:grid-cols-24 gap-8 md:gap-12 items-center">
-      <div
-        className={cn(
-          'md:col-span-14 relative aspect-[16/10] overflow-hidden rounded-lg bg-second-light/30',
-          reverse ? 'md:order-2' : 'md:order-1',
-        )}
-      >
-        {project.image && (
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(min-width: 768px) 58vw, 100vw"
-            className="object-cover transition-transform duration-300 hover:scale-105"
-          />
-        )}
-      </div>
+    <div className="work-item py-2 lg:py-6 2xl:py-12">
+      <div className={cn('row items-start 2xl:items-center', reverse && 'flex-row-reverse')}>
+        <div className="col-24 col-lg-12 mb-12 lg:mb-0">
+          <button type="button" className="btn p-0 m-0" onClick={open}>
+            {project.image && (
+              // eslint-disable-next-line @next/next/no-img-element -- legacy parity: native img, natural aspect
+              <img
+                loading="lazy"
+                src={project.image}
+                alt={project.title}
+                className="img-fluid rounded-2xl shadow-[var(--shadow-bs-lg)] btn-art"
+              />
+            )}
+          </button>
+        </div>
 
-      <div
-        className={cn(
-          'md:col-span-10 flex flex-col gap-4',
-          reverse ? 'md:order-1' : 'md:order-2',
-        )}
-      >
-        {project.contributions.length > 0 && (
-          <div className="flex flex-wrap gap-2 text-second">
-            {project.contributions.map((c) => (
-              <span key={c} className="badge-work">{c}</span>
-            ))}
+        <div className="col-24 col-lg-12">
+          <h4 className="h2">{project.title}</h4>
+          <p className="h5">{project.subtitle}</p>
+          <hr className="solid-center" />
+          <p className="h4">Summary:</p>
+          <p>{project.summary}</p>
+
+          <div className="row text-center md:text-left">
+            <div className="col-24">
+              <button
+                type="button"
+                className="btn btn-lg btn-second-dark rounded-full"
+                onClick={open}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- animated gif, legacy asset */}
+                <img
+                  loading="lazy"
+                  src="/images/the-eye-third-reverse.gif"
+                  alt=""
+                  width={36}
+                  className="mix-blend-screen -mt-2 inline-block"
+                  role="presentation"
+                  aria-hidden="true"
+                />{' '}
+                Case Study
+              </button>
+            </div>
           </div>
-        )}
-
-        <h3
-          className="font-bold leading-tight"
-          style={{ fontSize: 'var(--text-h2)' }}
-        >
-          {project.title}
-        </h3>
-
-        <p className="text-base md:text-lg text-second-dark leading-relaxed">
-          {project.summary}
-        </p>
-
-        <button
-          type="button"
-          onClick={() => onOpen?.(project.id)}
-          className="self-start mt-2 inline-flex items-center gap-2 px-5 py-3 rounded-md bg-second text-white font-semibold hover:bg-second-dark focus-visible:ring-2 focus-visible:ring-second focus-visible:ring-offset-2 outline-none transition-colors cursor-pointer"
-        >
-          View Case Study
-          <i className="fa-regular fa-arrow-right" aria-hidden="true" />
-        </button>
+          {/* legacy wraps some closing hrs in a .mt-4 div; net effect is +4px */}
+          <hr className={closingHrSpacer ? 'solid-center mt-5' : 'solid-center'} />
+        </div>
       </div>
-    </article>
+    </div>
   )
 }

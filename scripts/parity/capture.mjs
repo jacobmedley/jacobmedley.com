@@ -96,6 +96,14 @@ async function captureSite(browser, site) {
     mkdirSync(dir, { recursive: true })
 
     for (const section of SECTIONS) {
+      // The fixed menu lands at arbitrary y inside scrolled element
+      // captures — hide it except when it is the capture target.
+      await page.addStyleTag({
+        content:
+          section.name === 'nav'
+            ? '#the-menu { visibility: visible !important; }'
+            : '#the-menu { visibility: hidden !important; }',
+      })
       const locator = page.locator(section.selector).first()
       const file = join(dir, `${section.name}-${bp}.png`)
       try {

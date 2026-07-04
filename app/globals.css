@@ -103,10 +103,36 @@
   strong { font-weight: bolder; }
   small { font-size: 0.875em; }
 
+  /* Legacy (Bootstrap reboot) image behavior: inline, baseline-aligned —
+     Tailwind preflight's display:block breaks centering and button
+     baseline gaps that the legacy layout depends on. */
+  img {
+    display: inline;
+    vertical-align: middle;
+  }
+
   a { color: inherit; text-decoration: none; }
 
   i { font-style: normal; }
 }
+
+/*
+ * Bootstrap container widths. Deliberately OUTSIDE the cascade layers:
+ * Tailwind v4 ships its own `.container` utility (max-width = active
+ * breakpoint), and layered utilities would override these legacy widths.
+ */
+.container {
+  width: 100%;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; } }
+@media (min-width: 992px)  { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
 
 /*
  * All legacy-port classes live in the components layer so Tailwind
@@ -145,18 +171,6 @@
 }
 
 /* ── Grid (24-column Bootstrap flex grid, gutter 1.2rem) ────────── */
-.container {
-  width: 100%;
-  padding-right: 0.6rem;
-  padding-left: 0.6rem;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 576px)  { .container { max-width: 540px; } }
-@media (min-width: 768px)  { .container { max-width: 720px; } }
-@media (min-width: 992px)  { .container { max-width: 960px; } }
-@media (min-width: 1200px) { .container { max-width: 1140px; } }
-@media (min-width: 1400px) { .container { max-width: 1320px; } }
 
 .row {
   --gutter-x: 1.2rem;

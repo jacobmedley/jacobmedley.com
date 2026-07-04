@@ -5,73 +5,99 @@ import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import WorkCard from '@/components/ui/WorkCard'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
+import WaveSeparator from '@/components/ui/WaveSeparator'
 
 const caseStudies = projects.filter((p) => p.type === 'case-study')
 const designModules = projects.filter((p) => p.type === 'design-module')
+
+// Legacy renders the design-thinking thumbs as two rows of three.
+const moduleRows = [designModules.slice(0, 3), designModules.slice(3, 6)]
 
 export default function CaseStudiesSection() {
   const [activeId, setActiveId] = useState<string | null>(null)
   const activeProject = activeId ? projects.find((p) => p.id === activeId) ?? null : null
 
   return (
-    <div className="py-24 px-6 md:px-10">
-      <div className="max-w-[var(--container-max)] mx-auto">
-        <SectionHeader
-          sectionId="work"
-          title="Case Studies"
-          icon="fa-light fa-briefcase"
-        />
+    <section className="my-work">
+      <WaveSeparator position="top" waveId="wave-work" />
 
-        <div className="flex flex-col gap-16 md:gap-28 mt-12">
+      <div className="content">
+        <div className="container">
+          <SectionHeader
+            title="Case Studies"
+            icon="fa-light fa-briefcase"
+            className="text-second-dark"
+            titleClassName="mb-0"
+          />
+
           {caseStudies.map((project, i) => (
             <WorkCard
               key={project.id}
               project={project}
               reverse={i % 2 === 1}
+              closingHrSpacer={i % 2 === 0 && i !== caseStudies.length - 1}
               onOpen={setActiveId}
             />
           ))}
-        </div>
 
-        <div className="my-16 text-center">
-          <hr className="border-current opacity-20 mb-10" />
-          <p className="text-5xl mb-4" aria-hidden="true">
-            <i className="fa-thin fa-toolbox" />
-          </p>
-          <p className="text-4xl mb-4">Full-Stack Designer</p>
-          <p className="text-xl max-w-2xl mx-auto leading-relaxed">
-            Here are some examples showcasing the diverse skill sets and methods I&rsquo;ve used
-            to create better user experiences and business outcomes.
-          </p>
-          <hr className="border-current opacity-20 mt-10" />
-        </div>
+          {/* Full-Stack Designer interstitial + design-thinking thumbs
+              (legacy nests these rows inside one outer centered row) */}
+          <div className="row justify-center">
+            <div className="row justify-center">
+              <div className="col-24 py-2 lg:py-4 2xl:py-6">
+                <hr className="solid-center" />
+              </div>
+              <div className="col-24 col-lg-16 text-center">
+                <p className="display-4">
+                  <i className="fa-thin fa-toolbox" aria-hidden="true" />
+                </p>
+                <p className="display-3">Full-Stack Designer</p>
+                <p className="display-1">
+                  Here are some examples showcasing the diverse skill sets and methods I&rsquo;ve
+                  used to create better user experiences and business outcomes.
+                </p>
+              </div>
+              <div className="col-24 py-2 lg:py-4 2xl:py-6">
+                <hr className="solid-center" />
+              </div>
+            </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {designModules.map((module) => (
-            <button
-              key={module.id}
-              type="button"
-              onClick={() => setActiveId(module.id)}
-              className="flex flex-col items-center justify-center gap-3 p-8 rounded-2xl border-2 border-second/30 hover:border-second hover:bg-second/5 transition-all text-center cursor-pointer"
-            >
-              <i
-                className={`${module.icon ?? 'fa-light fa-star'} text-4xl text-second`}
-                aria-hidden="true"
-              />
-              <span className="font-semibold text-lg">{module.title}</span>
-              <span className="text-sm text-second flex items-center gap-1">
-                <i className="fa-regular fa-eye" aria-hidden="true" /> View
-              </span>
-            </button>
-          ))}
+            {moduleRows.map((row, rowIndex) => (
+              <div key={rowIndex} className={cnRow(rowIndex)}>
+                {row.map((module) => (
+                  <div key={module.id} className="col-24 col-sm-8 col-xxl-6 thinking-item">
+                    <button
+                      type="button"
+                      className="btn thinking-thumb"
+                      onClick={() => setActiveId(module.id)}
+                    >
+                      <i className={`${module.icon ?? 'fa-light fa-star'} thinking-icon`} aria-hidden="true" />
+                      <h6 className="thinking-title">{module.title}</h6>
+                      <div className="thinking-view">
+                        <i className="fa-regular fa-eye" aria-hidden="true" /> View
+                      </div>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       <CaseStudyModal
         project={activeProject}
         open={!!activeId}
-        onOpenChange={(open) => { if (!open) setActiveId(null) }}
+        onOpenChange={(open) => {
+          if (!open) setActiveId(null)
+        }}
       />
-    </div>
+    </section>
   )
+}
+
+function cnRow(rowIndex: number) {
+  return rowIndex === 0
+    ? 'row items-center mt-4 justify-center thinking-row'
+    : 'row items-center mt-0 sm:mt-4 justify-center thinking-row'
 }

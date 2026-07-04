@@ -6,7 +6,9 @@ import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
 
-const visualProjects = projects.filter((p) => p.type === 'visual-design')
+const visualProjects = projects
+  .filter((p) => p.visible && p.section === 'visual-design')
+  .sort((a, b) => a.order - b.order)
 
 /**
  * Legacy section-visual-design.html: pop-light gradient section with
@@ -30,12 +32,15 @@ export default function VisualDesignSection() {
               <div key={project.id} className="col thinking-item">
                 <button
                   type="button"
-                  className={`btn thinking-thumb btn-${project.id} text-white relative overflow-hidden shadow-[var(--shadow-bs-lg)]`}
+                  className="btn thinking-thumb text-white relative overflow-hidden shadow-[var(--shadow-bs-lg)]"
+                  style={
+                    project.thumb
+                      ? { background: `url(${project.thumb.src})`, backgroundSize: 'cover' }
+                      : undefined
+                  }
                   onClick={() => setActiveId(project.id)}
                 >
-                  <h6 className="thinking-title font-bold fs-1 z-2 relative">
-                    {project.id.charAt(0).toUpperCase() + project.id.slice(1)}
-                  </h6>
+                  <h6 className="thinking-title font-bold fs-1 z-2 relative">{project.title}</h6>
                   <div className="thinking-view z-2 relative">
                     <i className="fa-regular fa-eye" aria-hidden="true" /> View
                   </div>

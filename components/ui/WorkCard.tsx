@@ -27,12 +27,12 @@ export default function WorkCard({
       <div className={cn('row items-start 2xl:items-center', reverse && 'flex-row-reverse')}>
         <div className="col-24 col-lg-12 mb-12 lg:mb-0">
           <button type="button" className="btn p-0 m-0" onClick={open}>
-            {project.image && (
+            {project.cardImage && (
               // eslint-disable-next-line @next/next/no-img-element -- legacy parity: native img, natural aspect
               <img
                 loading="lazy"
-                src={project.image}
-                alt={project.title}
+                src={project.cardImage.src}
+                alt={project.cardImage.alt}
                 className="img-fluid rounded-2xl shadow-[var(--shadow-bs-lg)] btn-art"
               />
             )}

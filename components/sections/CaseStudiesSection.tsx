@@ -7,11 +7,20 @@ import WorkCard from '@/components/ui/WorkCard'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
 
-const caseStudies = projects.filter((p) => p.type === 'case-study')
-const designModules = projects.filter((p) => p.type === 'design-module')
+const byOrder = (a: { order: number }, b: { order: number }) => a.order - b.order
 
-// Legacy renders the design-thinking thumbs as two rows of three.
-const moduleRows = [designModules.slice(0, 3), designModules.slice(3, 6)]
+const caseStudies = projects
+  .filter((p) => p.visible && p.section === 'work' && p.display === 'feature')
+  .sort(byOrder)
+const designModules = projects
+  .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
+  .sort(byOrder)
+
+// Legacy renders the design-thinking thumbs as rows of three.
+const moduleRows: (typeof designModules)[] = []
+for (let i = 0; i < designModules.length; i += 3) {
+  moduleRows.push(designModules.slice(i, i + 3))
+}
 
 export default function CaseStudiesSection() {
   const [activeId, setActiveId] = useState<string | null>(null)

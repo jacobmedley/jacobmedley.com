@@ -1,7 +1,7 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { type Project } from '@/lib/data/projects'
+import { type Project, type ProjectMedia, type ProjectBadge } from '@/lib/data/projects'
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -10,10 +10,11 @@ interface CaseStudyModalProps {
 }
 
 /**
- * Legacy Bootstrap modal chrome (components/modal-*.html): fullscreen
- * dialog with container-width content, blur behind the modal viewport,
- * fade + translateY(-50px) entrance, circular header close button and
- * a centered footer Close button. Styles in globals.css (.modal…).
+ * Legacy Bootstrap modal (components/modal-*.html): fullscreen dialog
+ * with container-width content, blur behind the modal viewport, fade +
+ * translateY(-50px) entrance, circular header close button and centered
+ * footer Close button. Body renders the project's typed media blocks in
+ * the original legacy section order. Styles in globals.css (.modal…).
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   return (
@@ -24,7 +25,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           aria-describedby={undefined}
           className="modal"
           onClick={(e) => {
-            // Bootstrap closes when the area outside .modal-dialog's content is clicked
+            // Bootstrap closes when the area outside the dialog content is clicked
             if (!(e.target as HTMLElement).closest('.modal-content')) onOpenChange(false)
           }}
         >
@@ -41,11 +42,15 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                       height={58}
                       width={58}
                     />{' '}
-                    {project?.title}
+                    {project?.modalTitle ?? project?.title}
                   </h2>
                 </Dialog.Title>
                 <Dialog.Close asChild>
-                  <button type="button" className="btn btn-prime rounded-full btn-close-modal" aria-label="Close">
+                  <button
+                    type="button"
+                    className="btn btn-prime rounded-full btn-close-modal"
+                    aria-label="Close"
+                  >
                     <i className="fa-sharp fa-regular fa-xmark-large" aria-hidden="true" />
                   </button>
                 </Dialog.Close>
@@ -70,40 +75,144 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
   )
 }
 
+function BadgeList({ badges }: { badges: ProjectBadge[] }) {
+  return (
+    <>
+      {badges.map((b) => (
+        <span key={b.label} className="badge-work">
+          <i className={`${b.icon} text-second`} aria-hidden="true" /> {b.label}
+        </span>
+      ))}
+    </>
+  )
+}
+
+/* eslint-disable @next/next/no-img-element -- legacy parity: native imgs */
+function MediaBlock({ block }: { block: ProjectMedia }) {
+  switch (block.type) {
+    case 'heading':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <h5>{block.text}</h5>
+            <hr className="solid-center" />
+          </div>
+        </div>
+      )
+    case 'text':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <p>{block.text}</p>
+          </div>
+        </div>
+      )
+    case 'list':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <ul className="fa-ul">
+              {block.items.map((item) => (
+                <li key={item} className="mb-2">
+                  <span className="fa-li">
+                    <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+    case 'image':
+      return (
+        <div className="row mb-6 justify-center">
+          <div className={block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
+            <p>
+              <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={block.src} alt={block.alt} />
+            </p>
+          </div>
+        </div>
+      )
+    case 'image-pair':
+      return (
+        <div className="row mb-6">
+          <div className="col-24 col-lg-18">
+            <p className="lg:text-left">
+              <i className="fa-regular fa-desktop fa-2x" aria-hidden="true" />
+            </p>
+            <p>
+              <img
+                loading="lazy"
+                className="img-fluid shadow-[var(--shadow-bs-lg)]"
+                src={block.desktop.src}
+                alt={block.desktop.alt}
+              />
+            </p>
+          </div>
+          <div className="col-24 col-lg-6">
+            <p className="lg:text-left">
+              <i className="fa-regular fa-mobile fa-2x" aria-hidden="true" />
+            </p>
+            <p className="text-center">
+              <img
+                loading="lazy"
+                className="img-fluid shadow-[var(--shadow-bs-lg)]"
+                src={block.mobile.src}
+                alt={block.mobile.alt}
+              />
+            </p>
+          </div>
+        </div>
+      )
+    case 'image-row':
+      return (
+        <div className="row mb-6 justify-center">
+          {block.images.map((img, i) => (
+            <div key={img.src} className={`col-24 col-lg-${block.cols[i] ?? 12}`}>
+              <p>
+                <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
+              </p>
+            </div>
+          ))}
+        </div>
+      )
+  }
+}
+
 function ModalContent({ project }: { project: Project }) {
   return (
     <>
-      <div className="row">
-        {project.image && (
-          <div className="col-24 col-lg-12 col-xl-10 self-center">
+      {/* Intro row: circular brief image + Project Brief / Contributions / Technology */}
+      <div className="row mb-6">
+        {project.brief.image && (
+          <div className="col-24 col-lg-12 col-xl-10 self-center text-center">
             <p>
-              {/* eslint-disable-next-line @next/next/no-img-element -- legacy parity */}
               <img
                 loading="lazy"
                 className="img-fluid shadow-[var(--shadow-bs-lg)] border border-white rounded-full"
-                src={project.image}
-                alt=""
+                src={project.brief.image.src}
+                alt={project.brief.image.alt}
               />
             </p>
           </div>
         )}
         <div className="col-24 col-lg-12 col-xl-14 self-center">
-          <h3>Project Brief:</h3>
-          <hr className="solid-center" />
-          <p>{project.summary}</p>
-
-          {project.problem && <p>{project.problem}</p>}
-          {project.solution && <p>{project.solution}</p>}
+          {project.brief.paragraphs.length > 0 && (
+            <>
+              <h3>Project Brief:</h3>
+              <hr className="solid-center" />
+              {project.brief.paragraphs.map((p) => (
+                <p key={p.slice(0, 40)}>{p}</p>
+              ))}
+            </>
+          )}
 
           {project.contributions.length > 0 && (
             <>
               <h4>Contributions:</h4>
               <hr className="solid-center" />
-              {project.contributions.map((c) => (
-                <span key={c} className="badge-work">
-                  <i className="fa-regular fa-circle-check text-second" aria-hidden="true" /> {c}
-                </span>
-              ))}
+              <BadgeList badges={project.contributions} />
             </>
           )}
 
@@ -111,34 +220,15 @@ function ModalContent({ project }: { project: Project }) {
             <>
               <h4 className="mt-6">Technology:</h4>
               <hr className="solid-center" />
-              {project.technologies.map((t) => (
-                <span key={t} className="badge-work">
-                  <i className="fa-regular fa-gear text-second" aria-hidden="true" /> {t}
-                </span>
-              ))}
+              <BadgeList badges={project.technologies} />
             </>
           )}
         </div>
       </div>
 
-      {project.results && project.results.length > 0 && (
-        <div className="row mb-6">
-          <div className="col-24">
-            <h5>Results</h5>
-            <hr className="solid-center" />
-            <ul className="fa-ul ml-8">
-              {project.results.map((r) => (
-                <li key={r} className="mb-2">
-                  <span className="fa-li">
-                    <i className="fa-regular fa-angle-right" aria-hidden="true" />
-                  </span>
-                  {r}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
+      {project.media.map((block, i) => (
+        <MediaBlock key={i} block={block} />
+      ))}
     </>
   )
 }

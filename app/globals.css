@@ -217,6 +217,10 @@
 @media (min-width: 992px) {
   .col-lg-6  { flex: 0 0 auto; width: 25%; }
   .col-lg-8  { flex: 0 0 auto; width: 33.3333%; }
+  .col-lg-9  { flex: 0 0 auto; width: 37.5%; }
+  .col-lg-10 { flex: 0 0 auto; width: 41.6667%; }
+  .col-lg-15 { flex: 0 0 auto; width: 62.5%; }
+  .col-lg-20 { flex: 0 0 auto; width: 83.3333%; }
   .col-lg-12 { flex: 0 0 auto; width: 50%; }
   .col-lg-14 { flex: 0 0 auto; width: 58.3333%; }
   .col-lg-16 { flex: 0 0 auto; width: 66.6667%; }
@@ -531,9 +535,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   background: #6c757d;
   color: #fff;
 }
-.thinking-thumb.btn-reveal { background: url(/images/work/kitchen-sink/btn-reveal.png); background-size: cover; }
-.thinking-thumb.btn-viva   { background: url(/images/work/kitchen-sink/btn-viva.png); background-size: cover; }
-.thinking-thumb.btn-wrong  { background: url(/images/work/kitchen-sink/btn-wrong.png); background-size: cover; }
+/* image-variant thumb backgrounds are data-driven (Project.thumb → inline style) */
 
 .thinking-title { margin: 15px 0 0 0; }
 .thinking-view { margin-top: 12px; margin-bottom: 0; }

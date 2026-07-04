@@ -7,7 +7,10 @@
     "dev": "npm run setup && next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "parity:capture": "node scripts/parity/capture.mjs",
+    "parity:diff": "node scripts/parity/diff.mjs",
+    "parity": "npm run parity:capture && npm run parity:diff"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
@@ -27,7 +30,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9.39.4",
     "eslint-config-next": "^15.5.15",
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.61.1",
+    "pngjs": "^7.0.0",
     "postcss": "^8.5.3",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }

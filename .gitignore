@@ -12,3 +12,6 @@ tsconfig.tsbuildinfo
 # On Windows: cmd /c mklink /J public\images images
 # On macOS/Linux: ln -s ../images public/images
 /public/images
+
+# Parity harness screenshots
+/scripts/parity/shots

@@ -108,6 +108,12 @@
   i { font-style: normal; }
 }
 
+/*
+ * All legacy-port classes live in the components layer so Tailwind
+ * utilities can override them (matching Bootstrap's utility semantics).
+ */
+@layer components {
+
 /* Heading utility classes (legacy h4.h2, p.h4, p.h5 patterns) */
 .h1 { font-size: calc(1.375rem + 1.5vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
 .h2 { font-size: calc(1.325rem + 0.9vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
@@ -551,6 +557,8 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 @media (min-width: 768px) {
   .logo-icon { width: 98px; }
 }
+
+} /* end @layer components */
 
 /* ── Temporary scaffold-compat (removed as Phase 2 passes land) ── */
 :root {

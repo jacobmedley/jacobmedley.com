@@ -43,6 +43,8 @@ const FREEZE_CSS = `
     caret-color: transparent !important;
     scroll-behavior: auto !important;
   }
+  /* Next.js dev-tools overlay — harness noise, not site content */
+  nextjs-portal { display: none !important; }
 `
 
 async function assertReachable({ name, url }) {

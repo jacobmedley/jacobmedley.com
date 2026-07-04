@@ -19,13 +19,11 @@ const typeLabels: Record<string, string> = {
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
-      <Dialog.Portal forceMount>
+      <Dialog.Portal>
         <Dialog.Overlay
-          forceMount
           className="fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-[fadeIn_200ms_ease-out] data-[state=closed]:animate-[fadeOut_200ms_ease-in]"
         />
         <Dialog.Content
-          forceMount
           aria-describedby={undefined}
           className="fixed right-0 top-0 z-50 h-screen w-full md:w-[min(640px,90vw)] bg-white shadow-2xl outline-none overflow-y-auto data-[state=open]:animate-[slideInRight_300ms_ease-out] data-[state=closed]:animate-[slideOutRight_250ms_ease-in]"
         >

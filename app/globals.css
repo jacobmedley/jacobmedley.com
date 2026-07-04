@@ -227,13 +227,15 @@ section .content,
 }
 
 /* Hero row height */
+#hi.row-content,
 #hi .row-content { height: 90vh; }
 @media (min-width: 768px) {
+  #hi.row-content,
   #hi .row-content { height: 100vh; }
 }
 
 /* Hero layered radial gradient background */
-.hero-bg {
+#hi {
   background-color: #fff;
   background-image:
     radial-gradient(ellipse at center center, #fff, transparent),

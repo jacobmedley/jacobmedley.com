@@ -5,31 +5,33 @@ import VisualDesignSection from '@/components/sections/VisualDesignSection'
 import ResumeSection from '@/components/sections/ResumeSection'
 import EducationSection from '@/components/sections/EducationSection'
 
+// Mirrors legacy index.html: #hi is a section.row-content; the other
+// anchors are div wrappers whose inner <section> (with its background)
+// comes from the component.
 export default function Home() {
   return (
     <>
       <NavMain />
-      <main className="lg:pl-[220px] pb-16 lg:pb-0">
-        <section id="hi" className="bg-[#faf9fb]">
-          <HeroSection />
-        </section>
 
-        <section id="work" className="bg-white">
-          <CaseStudiesSection />
-        </section>
+      <section id="hi" className="row-content">
+        <HeroSection />
+      </section>
 
-        <section id="visual-design" className="bg-[#faf9fb]">
-          <VisualDesignSection />
-        </section>
+      <div id="work">
+        <CaseStudiesSection />
+      </div>
 
-        <section id="resume">
-          <ResumeSection />
-        </section>
+      <div id="visual-design">
+        <VisualDesignSection />
+      </div>
 
-        <section id="education">
-          <EducationSection />
-        </section>
-      </main>
+      <div id="resume">
+        <ResumeSection />
+      </div>
+
+      <div id="education">
+        <EducationSection />
+      </div>
     </>
   )
 }

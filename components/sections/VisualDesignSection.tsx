@@ -1,60 +1,59 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
+import WaveSeparator from '@/components/ui/WaveSeparator'
 
 const visualProjects = projects.filter((p) => p.type === 'visual-design')
 
+/**
+ * Legacy section-visual-design.html: pop-light gradient section with
+ * image-variant thinking-thumbs (btn-reveal / btn-viva / btn-wrong
+ * backgrounds defined in globals.css).
+ */
 export default function VisualDesignSection() {
   const [activeId, setActiveId] = useState<string | null>(null)
   const activeProject = activeId ? projects.find((p) => p.id === activeId) ?? null : null
 
   return (
-    <div className="py-24 px-6 md:px-10">
-      <div className="max-w-[var(--container-max)] mx-auto">
-        <SectionHeader
-          sectionId="visual-design"
-          title="Visual Design"
-          icon="fa-light fa-paintbrush-pencil"
-        />
+    <section className="show-me-the-money bg-pop-light bg-gradient-bs">
+      <WaveSeparator position="top" waveId="wave-vd" />
 
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12">
-          {visualProjects.map((project) => {
-            const src = project.thumbnail ?? project.image
-            return (
-              <li key={project.id}>
+      <div className="content">
+        <div className="container">
+          <SectionHeader title="Visual Design" icon="fa-light fa-fw fa-paintbrush-pencil" />
+
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 items-center mt-0 sm:mt-4 justify-center thinking-row">
+            {visualProjects.map((project) => (
+              <div key={project.id} className="col thinking-item">
                 <button
                   type="button"
+                  className={`btn thinking-thumb btn-${project.id} text-white relative overflow-hidden shadow-[var(--shadow-bs-lg)]`}
                   onClick={() => setActiveId(project.id)}
-                  className="group relative block w-full overflow-hidden rounded-lg aspect-[4/3] bg-second-light/30 focus-visible:ring-2 focus-visible:ring-third focus-visible:ring-offset-2 outline-none cursor-pointer"
                 >
-                  {src && (
-                    <Image
-                      src={src}
-                      alt={project.title}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  )}
-                  <span className="absolute inset-0 flex items-end p-4 bg-prime/0 group-hover:bg-prime/80 transition-colors duration-200 text-white font-semibold opacity-0 group-hover:opacity-100 z-10">
-                    {project.title}
-                  </span>
+                  <h6 className="thinking-title font-bold fs-1 z-2 relative">
+                    {project.id.charAt(0).toUpperCase() + project.id.slice(1)}
+                  </h6>
+                  <div className="thinking-view z-2 relative">
+                    <i className="fa-regular fa-eye" aria-hidden="true" /> View
+                  </div>
+                  <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />
                 </button>
-              </li>
-            )
-          })}
-        </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <CaseStudyModal
         project={activeProject}
         open={!!activeId}
-        onOpenChange={(open) => { if (!open) setActiveId(null) }}
+        onOpenChange={(open) => {
+          if (!open) setActiveId(null)
+        }}
       />
-    </div>
+    </section>
   )
 }

@@ -155,6 +155,12 @@
   .h4 { font-size: 1.5rem; }
 }
 
+/* Bootstrap responsive font-size utility used by legacy markup */
+.fs-1 { font-size: calc(1.375rem + 1.5vw); }
+@media (min-width: 1200px) {
+  .fs-1 { font-size: 2.5rem; }
+}
+
 /* Display scale (custom legacy map: display-N → N rem, weight 300) */
 .display-1 { font-size: calc(1.275rem + 0.3vw); font-weight: 300; line-height: 1.2; }
 .display-2 { font-size: calc(1.325rem + 0.9vw); font-weight: 300; line-height: 1.2; }

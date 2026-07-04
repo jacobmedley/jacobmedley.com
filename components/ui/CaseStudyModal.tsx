@@ -1,7 +1,7 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { type Project, type ProjectMedia, type ProjectBadge } from '@/lib/data/projects'
+import { type Project, type ProjectMedia, type ProjectBadge, type ProjectMetric } from '@/lib/data/projects'
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -177,7 +177,53 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
           ))}
         </div>
       )
+    case 'metric-grid':
+      return (
+        <div className="row">
+          <div className="col-24 mt-5">
+            <h4>{block.heading}</h4>
+            <hr className="solid-center my-5" />
+          </div>
+          <div className="col-24 col-lg-16 self-center">
+            <div className="row row-cols-2 text-center justify-center g-3">
+              {block.metrics.map((metric) => (
+                <MetricStat key={metric.label} metric={metric} />
+              ))}
+            </div>
+          </div>
+          <div className="col-24 col-lg-8 self-center">
+            <h5 className="mb-3">{block.valueCreated.heading}</h5>
+            <ul className="fa-ul">
+              {block.valueCreated.items.map((item) => (
+                <li key={item} className="mb-4">
+                  <span className="fa-li">
+                    <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
   }
+}
+
+function MetricStat({ metric }: { metric: ProjectMetric }) {
+  return (
+    <div className="col">
+      <h4 className="result mb-0 display-5 fw-bolder">
+        {metric.value}
+        <small>
+          <i
+            className={`display-3 text-third fa-regular fa-long-arrow-${metric.direction}`}
+            aria-hidden="true"
+          />
+        </small>
+      </h4>
+      <p className="result-label mt-0">{metric.label}</p>
+    </div>
+  )
 }
 
 function ModalContent({ project }: { project: Project }) {

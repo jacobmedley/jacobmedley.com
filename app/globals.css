@@ -166,6 +166,7 @@
 .display-2 { font-size: calc(1.325rem + 0.9vw); font-weight: 300; line-height: 1.2; }
 .display-3 { font-size: calc(1.425rem + 2.1vw); font-weight: 300; line-height: 1.2; }
 .display-4 { font-size: calc(1.525rem + 3.3vw); font-weight: 300; line-height: 1.2; }
+.display-5 { font-size: calc(1.625rem + 4.5vw); font-weight: 300; line-height: 1.2; }
 .display-12 { font-size: calc(2.325rem + 12.9vw); font-weight: 300; line-height: 1.2; }
 
 @media (min-width: 1200px) {
@@ -173,8 +174,11 @@
   .display-2 { font-size: 2rem; }
   .display-3 { font-size: 3rem; }
   .display-4 { font-size: 4rem; }
+  .display-5 { font-size: 5rem; }
   .display-12 { font-size: 12rem; }
 }
+
+.fw-bolder { font-weight: bolder; }
 
 /* ── Grid (24-column Bootstrap flex grid, gutter 1.2rem) ────────── */
 

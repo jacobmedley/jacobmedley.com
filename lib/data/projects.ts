@@ -7,6 +7,12 @@ export interface ProjectImage {
   alt: string
 }
 
+export interface ProjectMetric {
+  value: string
+  direction: 'up' | 'down'
+  label: string
+}
+
 export type ProjectMedia =
   | { type: 'heading'; text: string }
   | { type: 'text'; text: string }
@@ -14,6 +20,12 @@ export type ProjectMedia =
   | { type: 'image'; src: string; alt: string; span?: number }
   | { type: 'image-pair'; desktop: ProjectImage; mobile: ProjectImage }
   | { type: 'image-row'; images: ProjectImage[]; cols: number[] }
+  | {
+      type: 'metric-grid'
+      heading: string
+      metrics: ProjectMetric[]
+      valueCreated: { heading: string; items: string[] }
+    }
 
 export interface ProjectBadge {
   icon: string // FA Pro icon classes
@@ -200,24 +212,24 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-webhook', label: 'APIs' }
     ],
     media: [
-      { type: 'heading', text: 'Business Results' },
-      { type: 'heading', text: '47%' },
-      { type: 'text', text: 'New Sales' },
-      { type: 'heading', text: '20%' },
-      { type: 'text', text: 'Company Revenue' },
-      { type: 'heading', text: '27%' },
-      { type: 'text', text: 'Lead Generation' },
-      { type: 'heading', text: '66%' },
-      { type: 'text', text: 'Reduction Project Timeline' },
-      { type: 'heading', text: 'Value Created' },
       {
-        type: 'list',
-        items: [
-          'Large scale efforts by a small lean team',
-          'Scalable Product Features',
-          'Rapid launch and learn efforts and conversion rate optimization',
-          'Proprietary platform and systems owned by the company'
-        ]
+        type: 'metric-grid',
+        heading: 'Business Results',
+        metrics: [
+          { value: '47%', direction: 'up', label: 'New Sales' },
+          { value: '20%', direction: 'up', label: 'Company Revenue' },
+          { value: '27%', direction: 'up', label: 'Lead Generation' },
+          { value: '66%', direction: 'down', label: 'Reduction Project Timeline' }
+        ],
+        valueCreated: {
+          heading: 'Value Created',
+          items: [
+            'Large scale efforts by a small lean team',
+            'Scalable Product Features',
+            'Rapid launch and learn efforts and conversion rate optimization',
+            'Proprietary platform and systems owned by the company'
+          ]
+        }
       },
       { type: 'heading', text: 'The System Framework' },
       { type: 'heading', text: 'Individual Product Sites' },

@@ -8,7 +8,7 @@ const leadershipLeft = [
   },
   {
     title: 'Strategic Vision',
-    body: "Aligned product and brand design with user needs and business objectives through comprehensive UX roadmaps and prioritized initiatives.",
+    body: 'Aligned product and brand design with user needs and business objectives through comprehensive UX roadmaps and prioritized initiatives.',
   },
   {
     title: 'Inclusive Design Culture',
@@ -47,11 +47,11 @@ const leadershipRight = [
   },
 ]
 
+// Text ported verbatim from components/section-resume.html
 const experience = [
   {
     title: 'Sr. UX Designer',
-    company: 'Mutual of America Financial Group',
-    location: 'Boca Raton, FL',
+    company: 'Mutual of America Financial Group, Boca Raton, FL',
     period: '2023 to current',
     paragraphs: [
       'At Mutual of America, I collaborate with stakeholders and cross-functional teams to identify and resolve key user experience challenges. I lead strategic planning sessions and facilitate workshops to align design objectives and strategies. By defining user-centric epics and crafting detailed user stories and acceptance criteria for the main website, I ensure that our digital products meet and exceed user needs. I established best practices for A/B testing to inform design decisions and optimize usability. Additionally, I contributed to the design and development of a GPT/LLM conversational search application within Salesforce and the public websites.',
@@ -59,8 +59,7 @@ const experience = [
   },
   {
     title: 'Director UX/UI & Product Design',
-    company: 'One Park Financial',
-    location: 'Coconut Grove, FL',
+    company: 'One Park Financial, Coconut Grove, FL',
     period: '2021 to 2022',
     paragraphs: [
       'At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.',
@@ -69,8 +68,7 @@ const experience = [
   },
   {
     title: 'Sr. Manager UX/UI Designer',
-    company: 'DentalPlans.com',
-    location: 'Plantation, FL',
+    company: 'DentalPlans.com, Plantation, FL',
     period: '2015 to 2021',
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel e-commerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
@@ -79,12 +77,11 @@ const experience = [
   },
   {
     title: 'Sr. Digital Designer',
-    company: 'Bluegreen Corp.',
-    location: 'Boca Raton, FL',
+    company: 'Bluegreen Corp., Boca Raton, FL',
     period: '2011 to 2015',
     paragraphs: [
       'As the design lead, I contributed to the company-wide transition to a data-driven omnichannel marketing platform, incorporating digital signage across 48 resort locations and interactive kiosk interfaces. This role involved crafting engaging user experiences across various marketing platforms and channels, ensuring a seamless integration of digital and physical touchpoints.',
-      'In collaboration with stakeholders, cross-functional teams, and external consultants, I played a key role in implementing and integrating a comprehensive marketing experience strategy focused on unifying messaging and branding across all channels.',
+      "In collaboration with stakeholders, cross-functional teams, and external consultants, I played a key role in implementing and integrating a comprehensive marketing experience strategy. This strategy was focused on unifying our messaging and branding across all channels, including the innovative use of digital signage and interactive kiosks, to create a cohesive and dynamic customer journey. My leadership in this area was pivotal in enhancing customer engagement and reinforcing the company's presence in the competitive resort industry.",
     ],
   },
 ]
@@ -107,93 +104,113 @@ const tools = [
   'ChatGPT', 'VS Code', 'Sublime Text', 'Jira', 'Asana', 'Bitbucket', 'GitHub', 'GitKraken',
 ]
 
+function SkillList({ items }: { items: string[] }) {
+  return (
+    <ul className="fa-ul">
+      {items.map((skill) => (
+        <li key={skill}>
+          <span className="fa-li">
+            <i className="fa-regular fa-angle-right" aria-hidden="true" />
+          </span>
+          {skill}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 export default function ResumeSection() {
   return (
-    <section className="bg-white">
-      <div className="py-24 px-6 md:px-10">
-        <div className="max-w-[var(--container-max)] mx-auto">
-          <SectionHeader sectionId="resume" title="Resume" icon="fa-light fa-list-timeline" />
+    <section className="bg-third-light bg-gradient-bs">
+      <WaveSeparator position="top" waveId="wave-resume-top" />
 
-          <h3 className="text-2xl font-bold mb-6 mt-12">Design Leadership</h3>
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <ul className="space-y-4">
-              {leadershipLeft.map((item) => (
-                <li key={item.title} className="flex gap-3">
-                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-fourth" aria-hidden="true" />
-                  <span><strong>{item.title}:</strong> {item.body}</span>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-4">
-              {leadershipRight.map((item) => (
-                <li key={item.title} className="flex gap-3">
-                  <i className="fa-regular fa-angle-right mt-1 shrink-0 text-fourth" aria-hidden="true" />
-                  <span><strong>{item.title}:</strong> {item.body}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="content">
+        <div className="container">
+          <SectionHeader title="Resume" icon="fa-light fa-fw fa-list-timeline" />
 
-          <div className="text-center my-12">
-            <hr className="w-1/4 mx-auto border-current opacity-20 mb-6" />
-            <h2 className="text-3xl py-3">
-              &ldquo;With the right team anything, is possible. Anything!&rdquo;
-            </h2>
-            <hr className="w-1/4 mx-auto border-current opacity-20 mt-6" />
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2">
-              <h3 className="text-2xl font-bold mb-6">Experience</h3>
-              <div className="space-y-8">
-                {experience.map((job, i) => (
-                  <div key={job.title}>
-                    <p className="mb-3">
-                      <strong>{job.title}</strong>
-                      <br />
-                      {job.company}, {job.location}
-                      <br />
-                      <em>{job.period}</em>
-                    </p>
-                    {job.paragraphs.map((p, j) => (
-                      <p key={j} className="leading-relaxed mb-3">{p}</p>
-                    ))}
-                    {i < experience.length - 1 && (
-                      <hr className="mt-8 border-current opacity-20" />
-                    )}
+          <div className="row">
+            <div className="col-24">
+              <h3 className="mb-6">Design Leadership</h3>
+              <div className="row">
+                {[leadershipLeft, leadershipRight].map((column, i) => (
+                  <div key={i} className="col-md-12">
+                    <ul className="fa-ul">
+                      {column.map((item) => (
+                        <li key={item.title} className="mb-4">
+                          <span className="fa-li">
+                            <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                          </span>
+                          <strong>{item.title}:</strong> {item.body}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
+
+              <div className="mt-12 mb-12">
+                <div className="row text-center">
+                  <div className="col-24">
+                    <hr className="solid-center w-1/4 mx-auto" />
+                    <h2 className="py-4">
+                      &ldquo;With the right team anything,
+                      <br className="hidden md:block" /> is possible. Anything!&rdquo;
+                    </h2>
+                    <hr className="solid-center w-1/4 mx-auto" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-16">
+              <h3 className="mb-6">Experience</h3>
+              <div className="row">
+                <div className="col-24">
+                  {experience.map((job, i) => (
+                    <div key={job.title}>
+                      <p>
+                        <strong>{job.title}</strong>
+                        <br />
+                        {job.company}
+                        <br />
+                        <em>{job.period}</em>
+                      </p>
+                      {job.paragraphs.map((p, j) => (
+                        <p key={j}>{p}</p>
+                      ))}
+                      {i < experience.length - 1 && <hr className="solid-center my-12" />}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Expertise</h3>
-              <ul className="space-y-1 mb-8">
-                {expertise.map((skill) => (
-                  <li key={skill} className="flex items-center gap-2 text-sm">
-                    <i className="fa-regular fa-angle-right text-fourth shrink-0" aria-hidden="true" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-
-              <hr className="my-8 border-current opacity-20" />
-
-              <h3 className="text-2xl font-bold mb-6">Apps &amp; Tools</h3>
-              <ul className="space-y-1">
-                {tools.map((tool) => (
-                  <li key={tool} className="flex items-center gap-2 text-sm">
-                    <i className="fa-regular fa-angle-right text-fourth shrink-0" aria-hidden="true" />
-                    {tool}
-                  </li>
-                ))}
-              </ul>
+            <div className="col-lg-8">
+              <div className="row">
+                <div className="col-24">
+                  <h3 className="mb-6">Expertise</h3>
+                </div>
+                <div className="col-24">
+                  <SkillList items={expertise} />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-24">
+                  <hr className="solid-center my-12" />
+                  <h3 className="mb-6">Apps &amp; Tools</h3>
+                </div>
+                <div className="col-24">
+                  <SkillList items={tools} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <WaveSeparator className="text-fifth-dark" />
+      <WaveSeparator waveId="wave-resume-bottom" className="bottom bottom-0" />
     </section>
   )
 }

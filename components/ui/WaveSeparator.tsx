@@ -5,6 +5,8 @@ interface WaveSeparatorProps {
   position?: 'top' | 'bottom'
   /** Unique per instance to avoid duplicate SVG defs ids */
   waveId?: string
+  /** Extra wrapper classes (e.g. legacy resume bottom wave: "bottom bottom-0") */
+  className?: string
 }
 
 /**
@@ -12,9 +14,13 @@ interface WaveSeparatorProps {
  * come from globals.css (.wave-one … .wave-four, with per-section
  * overrides under #visual-design and #resume).
  */
-export default function WaveSeparator({ position = 'bottom', waveId = 'gentle-wave' }: WaveSeparatorProps) {
+export default function WaveSeparator({
+  position = 'bottom',
+  waveId = 'gentle-wave',
+  className,
+}: WaveSeparatorProps) {
   return (
-    <div className={cn('waves-wrapper', position === 'top' && 'top')} aria-hidden="true">
+    <div className={cn('waves-wrapper', position === 'top' && 'top', className)} aria-hidden="true">
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"

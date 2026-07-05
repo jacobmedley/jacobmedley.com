@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-05 01:13 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-05 01:39 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|
@@ -24,11 +24,11 @@ Generated: 2026-07-05 01:13 UTC · pass threshold: < 2% pixel diff
 | `call-center-ux` | 18.49% ❌ | 21.59% ❌ |
 | `marketing-auto` | 15.21% ❌ | 46.92% ❌ |
 | `workshops` | 23.25% ❌ | 45.04% ❌ |
-| `roadmap` | 18.32% ❌ | 9.53% ❌ |
+| `roadmap` | 13.22% ❌ | 8.80% ❌ |
 | `personas` | 21.53% ❌ | 20.49% ❌ |
-| `reveal` | 38.75% ❌ | 42.42% ❌ |
+| `reveal` | 41.13% ❌ | 41.72% ❌ |
 | `viva` | 26.76% ❌ | 28.58% ❌ |
-| `wrong` | 39.92% ❌ | 58.79% ❌ |
+| `wrong` | 40.72% ❌ | 59.43% ❌ |
 
 ## Size mismatches (legacy vs new)
 
@@ -55,15 +55,15 @@ Generated: 2026-07-05 01:13 UTC · pass threshold: < 2% pixel diff
 - `modal-marketing-auto` @ 1280px: 1140×1354 vs 1140×2191
 - `modal-workshops` @ 375px: 375×2576 vs 375×2666
 - `modal-workshops` @ 1280px: 1140×1238 vs 1140×2019
-- `modal-roadmap` @ 375px: 375×2763 vs 375×2494
-- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2174
+- `modal-roadmap` @ 375px: 375×2763 vs 375×2681
+- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2069
 - `modal-personas` @ 375px: 375×1405 vs 375×1378
 - `modal-personas` @ 1280px: 1140×1570 vs 1140×1613
-- `modal-reveal` @ 375px: 375×3820 vs 375×3383
-- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2431
+- `modal-reveal` @ 375px: 375×3820 vs 375×3303
+- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2439
 - `modal-viva` @ 375px: 375×3220 vs 375×3445
 - `modal-viva` @ 1280px: 1140×4694 vs 1140×4895
-- `modal-wrong` @ 375px: 375×5043 vs 375×4274
-- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7177
+- `modal-wrong` @ 375px: 375×5043 vs 375×4226
+- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7153
 
 **20/52 passing** (0 missing)

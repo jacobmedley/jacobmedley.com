@@ -13,6 +13,31 @@ export interface ProjectMetric {
   label: string
 }
 
+// Mirrors the six --color-* brand tokens in app/globals.css (prime/second/
+// third/fourth/fifth/pop), each with a -light/-dark variant.
+export type BrandToken = 'prime' | 'second' | 'third' | 'fourth' | 'fifth' | 'pop'
+
+export interface StyledListItem {
+  label?: string
+  body?: string
+  bg?: BrandToken // per-item tint at 25% opacity; omit for a plain item
+  subItems?: string[]
+}
+
+export interface StyledListBlock {
+  type: 'styled-list'
+  numbered?: boolean // list-group-numbered (roadmap) vs plain <ul> (reveal/wrong)
+  shadow?: boolean // shadow-lg
+  items: StyledListItem[]
+}
+
+export interface CardBlock {
+  type: 'card'
+  shadow?: boolean // shadow-lg
+  header: string // card-header text
+  rows: { label: string; body: string }[] // card-body label/text pairs
+}
+
 export type ProjectMedia =
   | { type: 'heading'; text: string }
   | { type: 'text'; text: string }
@@ -26,6 +51,8 @@ export type ProjectMedia =
       metrics: ProjectMetric[]
       valueCreated: { heading: string; items: string[] }
     }
+  | StyledListBlock
+  | CardBlock
 
 export interface ProjectBadge {
   icon: string // FA Pro icon classes
@@ -916,31 +943,61 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Example UX Roadmap Obfuscated for client protection.' },
       { type: 'text', text: 'Structure and Components' },
       {
-        type: 'list',
+        type: 'styled-list',
+        numbered: true,
+        shadow: true,
         items: [
-          'Roadmap Title: A name that is memorable and resonates with the top-level goals if possible.',
-          'Roadmap Owner: Set accountability and identify a point person for questions about the roadmap.',
-          'High Level Goals/Vision: Larger company strategy, vision, or specific goals that the roadmap aligns to.',
-          'Timeline Now Next Later note: these are not specific dates, but what should be tackled first.',
-          'Specific Projects or Initiatives Project Title / Number Beneficiary Need Business Objectives Team Dependencies',
-          'Project Title / Number',
-          'Beneficiary',
-          'Need',
-          'Business Objectives',
-          'Team Dependencies'
+          {
+            label: 'Roadmap Title:',
+            body: 'A name that is memorable and resonates with the top-level goals if possible.',
+            bg: 'prime'
+          },
+          {
+            label: 'Roadmap Owner:',
+            body: 'Set accountability and identify a point person for questions about the roadmap.',
+            bg: 'second'
+          },
+          {
+            label: 'High Level Goals/Vision:',
+            body: 'Larger company strategy, vision, or specific goals that the roadmap aligns to.',
+            bg: 'third'
+          },
+          {
+            label: 'Timeline',
+            body: 'Now → Next → Later (note: these are not specific dates, but what should be tackled first.)',
+            bg: 'fourth'
+          },
+          {
+            label: 'Specific Projects or Initiatives',
+            bg: 'pop',
+            subItems: [
+              'Project Title / Number',
+              'Beneficiary',
+              'Need',
+              'Business Objectives',
+              'Team Dependencies'
+            ]
+          }
         ]
       },
       { type: 'text', text: 'Project Card:' },
-      { type: 'text', text: 'Beneficiary:' },
       {
-        type: 'text',
-        text: 'The prioritized recipient(s) of the work (e.g., Merchants, Agents, Internal Stakeholders)'
+        type: 'card',
+        shadow: true,
+        header: 'Project Title',
+        rows: [
+          {
+            label: 'Beneficiary:',
+            body: 'The prioritized recipient(s) of the work (e.g., Merchants, Agents, Internal Stakeholders)'
+          },
+          { label: 'Need:', body: 'The problem that will be solved or the purpose.' },
+          {
+            label: 'Business objective(s):',
+            body: 'Objectives and potential outcomes that will be achieved upon completion. Success metrics for the work.'
+          },
+          { label: 'Team:', body: 'Who is involved.' }
+        ]
       },
-      { type: 'text', text: 'Need:' },
-      { type: 'text', text: 'The problem that will be solved or the purpose.' },
-      { type: 'text', text: 'Business objective(s):' },
-      { type: 'text', text: 'Team:' },
-      { type: 'text', text: 'Who is involved.' },
       { type: 'text', text: 'Obfuscated Lucid Chart' },
       { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart' }
     ]
@@ -990,8 +1047,7 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/kitchen-sink/reveal-cover.jpg', alt: '' },
       paragraphs: [
-        'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight the superiority and clarity of our product over the competition. I adopted a fun and edgy tone for both the copy and visuals to ensure the campaign stood out for my creatives.',
-        'Conceptual and Visual Contributions:'
+        'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight the superiority and clarity of our product over the competition. I adopted a fun and edgy tone for both the copy and visuals to ensure the campaign stood out for my creatives.'
       ]
     },
     contributions: [
@@ -1001,19 +1057,32 @@ export const projects: Project[] = [
     ],
     technologies: [],
     media: [
+      { type: 'text', text: 'Conceptual and Visual Contributions:' },
       {
-        type: 'list',
+        type: 'styled-list',
         items: [
-          "Yup, It's That Clear: This concept emphasized the transparency and subtlety of the aligners.",
-          "So Clear, Like It's Not Even There: Aimed to convey the near-invisibility of the product, making it blend seamlessly."
+          {
+            label: "Yup, It's That Clear:",
+            body: 'This concept emphasized the transparency and subtlety of the aligners.'
+          },
+          {
+            label: "So Clear, Like It's Not Even There:",
+            body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
+          }
         ]
       },
       { type: 'text', text: 'Visual Contributions:' },
       {
-        type: 'list',
+        type: 'styled-list',
         items: [
-          'The Difference Is Clear: This concept, developed by Rick Hoyle, provided a strong comparative angle, further driving home our message of clarity.',
-          'OMG, Your Aligner Is Showing: Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
+          {
+            label: 'The Difference Is Clear:',
+            body: 'This concept, developed by Rick Hoyle, provided a strong comparative angle, further driving home our message of clarity.'
+          },
+          {
+            label: 'OMG, Your Aligner Is Showing:',
+            body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
+          }
         ]
       },
       {
@@ -1162,8 +1231,7 @@ export const projects: Project[] = [
       paragraphs: [
         'The "WRONG" marketing campaign aimed to promote dental savings plans to individuals seeking crowns, fillings, and root canals—terms with the highest search volume and traffic. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
         'Campaign Concept:',
-        'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.',
-        'Visual and Messaging Strategy:'
+        'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
       ]
     },
     contributions: [
@@ -1173,12 +1241,22 @@ export const projects: Project[] = [
     ],
     technologies: [],
     media: [
+      { type: 'text', text: 'Visual and Messaging Strategy:' },
       {
-        type: 'list',
+        type: 'styled-list',
         items: [
-          'Visual Approach: We aimed for a visually striking look, using bold and aggressive headlines.',
-          'Inclusivity: Ensured the campaign was diverse and inclusive, representing various age groups and ethnic backgrounds.',
-          'Execution: Below is the final landing page and hero variants used for conversion rate optimization.'
+          {
+            label: 'Visual Approach:',
+            body: 'We aimed for a visually striking look, using bold and aggressive headlines.'
+          },
+          {
+            label: 'Inclusivity:',
+            body: 'Ensured the campaign was diverse and inclusive, representing various age groups and ethnic backgrounds.'
+          },
+          {
+            label: 'Execution:',
+            body: 'Below is the final landing page and hero variants used for conversion rate optimization.'
+          }
         ]
       },
       { type: 'heading', text: 'Hero Variants for Testing' },

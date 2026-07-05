@@ -1,7 +1,27 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
-import { type Project, type ProjectMedia, type ProjectBadge, type ProjectMetric } from '@/lib/data/projects'
+import { cn } from '@/lib/utils'
+import {
+  type Project,
+  type ProjectMedia,
+  type ProjectBadge,
+  type ProjectMetric,
+  type BrandToken,
+  type StyledListBlock,
+  type CardBlock
+} from '@/lib/data/projects'
+
+// Tailwind's scanner needs literal class strings, not `bg-${token}-light/25`.
+const BG_LIGHT_25: Record<BrandToken, string> = {
+  prime: 'bg-prime-light/25',
+  second: 'bg-second-light/25',
+  third: 'bg-third-light/25',
+  fourth: 'bg-fourth-light/25',
+  fifth: 'bg-fifth-light/25',
+  pop: 'bg-pop-light/25'
+}
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -206,7 +226,96 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
           </div>
         </div>
       )
+    case 'styled-list':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <StyledListContent block={block} />
+          </div>
+        </div>
+      )
+    case 'card':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <CardContent block={block} />
+          </div>
+        </div>
+      )
   }
+}
+
+/**
+ * roadmap's list-group-numbered (`.list-group-item` + per-item `bg-*-light/25`)
+ * vs reveal/wrong's plain `<ul>` bullets — same StyledListBlock shape, chosen
+ * by whether the data asks for numbering/shadow/a per-item bg at all.
+ */
+function StyledListContent({ block }: { block: StyledListBlock }) {
+  const rich = block.numbered || block.shadow || block.items.some((item) => item.bg)
+
+  if (!rich) {
+    return (
+      <ul>
+        {block.items.map((item, i) => (
+          <li key={i}>
+            {item.label && <strong>{item.label} </strong>}
+            {item.body}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  const ListTag = block.numbered ? 'ol' : 'ul'
+  return (
+    <ListTag
+      className={cn(
+        'list-group',
+        block.numbered && 'list-group-numbered',
+        block.shadow && 'shadow-[var(--shadow-bs-lg)]'
+      )}
+    >
+      {block.items.map((item, i) => (
+        <li
+          key={i}
+          className={cn(
+            'list-group-item flex justify-between items-start',
+            item.bg && BG_LIGHT_25[item.bg]
+          )}
+        >
+          <div className="ms-2 me-auto">
+            {item.label && <div className="font-bold">{item.label}</div>}
+            {item.body}
+            {item.subItems && (
+              <ul>
+                {item.subItems.map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </li>
+      ))}
+    </ListTag>
+  )
+}
+
+function CardContent({ block }: { block: CardBlock }) {
+  return (
+    <div className={cn('card', block.shadow && 'shadow-[var(--shadow-bs-lg)]')}>
+      <div className="card-header">{block.header}</div>
+      <div className="card-body">
+        {block.rows.map((row) => (
+          <div key={row.label}>
+            <p className="mb-0">
+              <strong>{row.label}</strong>
+            </p>
+            <p>{row.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 function MetricStat({ metric }: { metric: ProjectMetric }) {
@@ -272,9 +381,41 @@ function ModalContent({ project }: { project: Project }) {
         </div>
       </div>
 
-      {project.media.map((block, i) => (
-        <MediaBlock key={i} block={block} />
-      ))}
+      {renderMedia(project.media)}
     </>
   )
+}
+
+/**
+ * Legacy pairs a styled-list and a card side by side in col-md-12 columns
+ * (roadmap: "Structure and Components" list beside a "Project Card:"
+ * example) — each preceded by its own label. Detect that specific
+ * text/styled-list/text/card run and render it as one two-column row;
+ * everything else renders as its own full-width MediaBlock, unchanged.
+ */
+function renderMedia(media: ProjectMedia[]) {
+  const nodes: ReactNode[] = []
+  for (let i = 0; i < media.length; i++) {
+    const [b0, b1, b2, b3] = [media[i], media[i + 1], media[i + 2], media[i + 3]]
+    if (b0.type === 'text' && b1?.type === 'styled-list' && b2?.type === 'text' && b3?.type === 'card') {
+      nodes.push(
+        <div className="row" key={i}>
+          <div className="col-24 col-md-12">
+            <p>{b0.text}</p>
+            <hr className="solid-center" />
+            <StyledListContent block={b1} />
+          </div>
+          <div className="col-24 col-md-12">
+            <p>{b2.text}</p>
+            <hr className="solid-center" />
+            <CardContent block={b3} />
+          </div>
+        </div>
+      )
+      i += 3
+      continue
+    }
+    nodes.push(<MediaBlock key={i} block={b0} />)
+  }
+  return nodes
 }

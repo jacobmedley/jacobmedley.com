@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-05 01:39 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-05 02:14 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|
@@ -16,9 +16,9 @@ Generated: 2026-07-05 01:39 UTC · pass threshold: < 2% pixel diff
 | Project | 375px | 1280px |
 |---|---|---|
 | `webmd` | 16.38% ❌ | 14.97% ❌ |
-| `dentalplans` | 37.77% ❌ | 38.38% ❌ |
+| `dentalplans` | 32.14% ❌ | 41.64% ❌ |
 | `bumblebeemd` | 22.67% ❌ | 34.71% ❌ |
-| `hydra` | 30.88% ❌ | 27.01% ❌ |
+| `hydra` | 26.41% ❌ | 39.81% ❌ |
 | `opfred` | 17.53% ❌ | 48.45% ❌ |
 | `split-test` | 23.19% ❌ | 46.37% ❌ |
 | `call-center-ux` | 18.49% ❌ | 21.59% ❌ |
@@ -39,12 +39,12 @@ Generated: 2026-07-05 01:39 UTC · pass threshold: < 2% pixel diff
 - `education` @ 1280px: 1280×1749 vs 1280×1750
 - `modal-webmd` @ 375px: 375×11102 vs 375×11126
 - `modal-webmd` @ 1280px: 1140×7798 vs 1140×7822
-- `modal-dentalplans` @ 375px: 375×9717 vs 375×7314
-- `modal-dentalplans` @ 1280px: 1140×5249 vs 1140×5982
+- `modal-dentalplans` @ 375px: 375×9717 vs 375×9126
+- `modal-dentalplans` @ 1280px: 1140×5249 vs 1140×6489
 - `modal-bumblebeemd` @ 375px: 375×12431 vs 375×12632
 - `modal-bumblebeemd` @ 1280px: 1140×8779 vs 1140×12550
-- `modal-hydra` @ 375px: 375×5359 vs 375×4578
-- `modal-hydra` @ 1280px: 1140×3688 vs 1140×4217
+- `modal-hydra` @ 375px: 375×5359 vs 375×5126
+- `modal-hydra` @ 1280px: 1140×3688 vs 1140×4768
 - `modal-opfred` @ 375px: 375×10915 vs 375×10963
 - `modal-opfred` @ 1280px: 1140×7409 vs 1140×10004
 - `modal-split-test` @ 375px: 375×4251 vs 375×4308

@@ -204,6 +204,9 @@
 .g-4 { --gutter-x: 1.5rem; --gutter-y: 1.5rem; }
 
 .col { flex: 1 0 0%; }
+.col-6  { flex: 0 0 auto; width: 25%; }
+.col-12 { flex: 0 0 auto; width: 50%; }
+.col-18 { flex: 0 0 auto; width: 75%; }
 .col-24 { flex: 0 0 auto; width: 100%; }
 
 .row-cols-1 > * { flex: 0 0 auto; width: 100%; }
@@ -231,6 +234,7 @@
   .col-lg-18 { flex: 0 0 auto; width: 75%; }
   .row-cols-lg-3 > * { flex: 0 0 auto; width: 33.3333%; }
   .row-cols-lg-4 > * { flex: 0 0 auto; width: 25%; }
+  .row-cols-lg-5 > * { flex: 0 0 auto; width: 20%; }
 }
 @media (min-width: 1200px) {
   .col-xl-10 { flex: 0 0 auto; width: 41.6667%; }
@@ -712,6 +716,52 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   margin-bottom: 0;
   background-color: rgba(33, 37, 41, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+/* ── Progress bars (framework diagrams — Bootstrap compiled port) ──
+   All values verbatim from _archive/css/styles-dist.css: track #e9ecef
+   (--bs-secondary-bg), bar color #fff, striped = 45° 1rem gradient,
+   overflow:visible is the legacy site's own override (Bootstrap ships
+   hidden) — required so nested band content isn't clipped.
+   In @layer components ON PURPOSE: legacy's h-100/text-* utilities beat
+   these via Bootstrap's !important; here Tailwind's utilities layer must
+   likewise beat height:1rem (h-full) and color:#fff (text-fifth-dark). */
+@layer components {
+  .progress {
+    display: flex;
+    height: 1rem;
+    overflow: visible;
+    font-size: 0.75rem;
+    background-color: #e9ecef;
+    border-radius: 0.375rem;
+  }
+  .progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .progress-bar-striped {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+  }
+  .progress-bar-animated { animation: 1s linear infinite progress-bar-stripes; }
+  .bg-dark-subtle { background-color: #ced4da; } /* --bs-dark-bg-subtle */
+}
+@keyframes progress-bar-stripes {
+  0% { background-position-x: 1rem; }
 }
 
 /* ── List group (roadmap's numbered/colored list) ────────────────── */

@@ -38,6 +38,52 @@ export interface CardBlock {
   rows: { label: string; body: string }[] // card-body label/text pairs
 }
 
+// Shade-qualified brand token for the progress diagrams. 'dark-subtle' is
+// Bootstrap's gray (#ced4da, dentalplans band 1 container), black/white are
+// the band-heading text colors — none of the three are brand tokens.
+export type BrandShade =
+  | BrandToken
+  | `${BrandToken}-light`
+  | `${BrandToken}-dark`
+  | 'dark-subtle'
+  | 'black'
+  | 'white'
+
+export interface ProgressCell {
+  label: string
+  bg: BrandShade
+  textColor?: BrandShade // legacy text-fifth-dark etc.; omit = progress-bar default #fff
+  icon?: string // FA Pro class, rendered above the label at fa-xl
+  span?: number // 1–24 legacy col-N width; omit inside row-cols band grids
+  striped?: boolean // default true (hydra); band grid cells are plain
+  animated?: boolean // hydra's top "Consistent UX/UI" bar only
+  padY?: 4 | 5 // legacy py-4 (default) / py-5; ignored when sub is set (p-3 box)
+  // Nested child bar (dentalplans band 1: brand box → "Brand Theme").
+  sub?: { icon?: string; label: string; bg: BrandShade; textColor?: BrandShade }
+}
+
+export interface ProgressRow {
+  cells: ProgressCell[]
+  cols?: 'auto' | number // row-cols-lg-N band grid; omit when cells carry spans
+}
+
+// dentalplans only: a striped full-width container bar with its own
+// heading + icon, wrapping one or more grid rows of cells.
+export interface ProgressBand {
+  heading: string
+  icon?: string
+  bg: BrandShade
+  textColor?: BrandShade
+  rows: ProgressRow[]
+}
+
+export interface ProgressDiagramBlock {
+  type: 'progress-diagram'
+  heading?: string // "The System Framework" + hr solid-center
+  rows?: ProgressRow[] // flat variant (hydra)
+  bands?: ProgressBand[] // banded variant (dentalplans) — exactly one of rows|bands
+}
+
 export type ProjectMedia =
   | { type: 'heading'; text: string }
   | { type: 'text'; text: string }
@@ -53,6 +99,7 @@ export type ProjectMedia =
     }
   | StyledListBlock
   | CardBlock
+  | ProgressDiagramBlock
 
 export interface ProjectBadge {
   icon: string // FA Pro icon classes
@@ -258,15 +305,121 @@ export const projects: Project[] = [
           ]
         }
       },
-      { type: 'heading', text: 'The System Framework' },
-      { type: 'heading', text: 'Individual Product Sites' },
-      { type: 'text', text: 'Cigna' },
-      { type: 'text', text: 'Aetna' },
-      { type: 'text', text: 'WebMD' },
-      { type: 'text', text: 'LMDB' },
-      { type: 'text', text: 'Documentation' },
-      { type: 'heading', text: 'Core Framework' },
-      { type: 'heading', text: 'Microservices' },
+      {
+        type: 'progress-diagram',
+        heading: 'The System Framework',
+        bands: [
+          {
+            heading: 'Individual Product Sites',
+            icon: 'fa-sharp fa-regular fa-box',
+            bg: 'dark-subtle',
+            textColor: 'black',
+            rows: [
+              {
+                cols: 5,
+                cells: [
+                  {
+                    label: 'Cigna',
+                    icon: 'fa-light fa-box',
+                    bg: 'second',
+                    striped: false,
+                    sub: {
+                      icon: 'fa-regular fa-palette',
+                      label: 'Brand Theme',
+                      bg: 'second-light',
+                      textColor: 'second-dark'
+                    }
+                  },
+                  {
+                    label: 'Aetna',
+                    icon: 'fa-light fa-box',
+                    bg: 'prime',
+                    striped: false,
+                    sub: {
+                      icon: 'fa-regular fa-palette',
+                      label: 'Brand Theme',
+                      bg: 'prime-light',
+                      textColor: 'prime-dark'
+                    }
+                  },
+                  {
+                    label: 'WebMD',
+                    icon: 'fa-light fa-box',
+                    bg: 'third',
+                    striped: false,
+                    sub: {
+                      icon: 'fa-regular fa-palette',
+                      label: 'Brand Theme',
+                      bg: 'third-light',
+                      textColor: 'third-dark'
+                    }
+                  },
+                  {
+                    label: 'LMDB',
+                    icon: 'fa-light fa-box',
+                    bg: 'fourth',
+                    striped: false,
+                    sub: {
+                      icon: 'fa-regular fa-palette',
+                      label: 'Brand Theme',
+                      bg: 'fourth-light',
+                      textColor: 'fourth-dark'
+                    }
+                  },
+                  {
+                    label: 'Documentation',
+                    icon: 'fa-light fa-box',
+                    bg: 'fifth',
+                    striped: false,
+                    sub: {
+                      icon: 'fa-regular fa-palette',
+                      label: 'Brand Theme',
+                      bg: 'fifth-light',
+                      textColor: 'fifth-dark'
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            heading: 'Core Framework',
+            icon: 'fa-sharp fa-regular fa-boxes-stacked',
+            bg: 'fifth-dark',
+            textColor: 'white',
+            rows: [
+              {
+                cols: 5,
+                cells: [
+                  { label: 'API Integration', icon: 'fa-regular fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Component Libraries', icon: 'fa-regular fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Pattern Library', icon: 'fa-regular fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'CMS', icon: 'fa-brands fa-wordpress-simple', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Pipelines', icon: 'fa-regular fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
+                ]
+              }
+            ]
+          },
+          {
+            heading: 'Microservices',
+            icon: 'fa-regular fa-webhook',
+            bg: 'fifth-light',
+            textColor: 'fifth-dark',
+            rows: [
+              {
+                cols: 5,
+                cells: [
+                  { label: 'Plan Details', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Dentist Search', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Lead Create', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Call Center Status', icon: 'fa-sharp fa-regular fa-headset', bg: 'fifth', striped: false },
+                  { label: 'Google Maps (API)', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       { type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', span: 12 },
       { type: 'heading', text: 'Key Features' },
       {
@@ -522,7 +675,34 @@ export const projects: Project[] = [
       { type: 'text', text: 'Modules' },
       { type: 'text', text: 'Templates' },
       { type: 'text', text: 'Pages' },
-      { type: 'heading', text: 'The System Framework' },
+      {
+        type: 'progress-diagram',
+        heading: 'The System Framework',
+        rows: [
+          { cells: [{ label: 'Consistent UX/UI', bg: 'third', animated: true, span: 24 }] },
+          {
+            cells: [
+              { label: 'App One', bg: 'prime', span: 6 },
+              { label: 'App Two', bg: 'prime', span: 6 },
+              { label: 'Main Website', bg: 'prime', span: 6 },
+              { label: 'Sub Website', bg: 'second', span: 6 }
+            ]
+          },
+          {
+            cells: [
+              { label: 'Main Brand', bg: 'prime', span: 18 },
+              { label: 'Sub Brand', bg: 'second', span: 6 }
+            ]
+          },
+          { cells: [{ label: 'Design System', bg: 'fourth-light', span: 24 }] },
+          {
+            cells: [
+              { label: 'C#', bg: 'fourth', span: 12, padY: 5 },
+              { label: 'PHP', bg: 'fourth-dark', span: 12, padY: 5 }
+            ]
+          }
+        ]
+      },
       { type: 'heading', text: 'UI Elements' },
       {
         type: 'image-row',

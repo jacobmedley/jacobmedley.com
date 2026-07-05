@@ -10,7 +10,11 @@ import {
   type ProjectMetric,
   type BrandToken,
   type StyledListBlock,
-  type CardBlock
+  type CardBlock,
+  type BrandShade,
+  type ProgressCell,
+  type ProgressBand,
+  type ProgressDiagramBlock
 } from '@/lib/data/projects'
 
 // Tailwind's scanner needs literal class strings, not `bg-${token}-light/25`.
@@ -22,6 +26,30 @@ const BG_LIGHT_25: Record<BrandToken, string> = {
   fifth: 'bg-fifth-light/25',
   pop: 'bg-pop-light/25'
 }
+
+const BG_SHADE: Record<BrandShade, string> = {
+  prime: 'bg-prime', 'prime-light': 'bg-prime-light', 'prime-dark': 'bg-prime-dark',
+  second: 'bg-second', 'second-light': 'bg-second-light', 'second-dark': 'bg-second-dark',
+  third: 'bg-third', 'third-light': 'bg-third-light', 'third-dark': 'bg-third-dark',
+  fourth: 'bg-fourth', 'fourth-light': 'bg-fourth-light', 'fourth-dark': 'bg-fourth-dark',
+  fifth: 'bg-fifth', 'fifth-light': 'bg-fifth-light', 'fifth-dark': 'bg-fifth-dark',
+  pop: 'bg-pop', 'pop-light': 'bg-pop-light', 'pop-dark': 'bg-pop-dark',
+  'dark-subtle': 'bg-dark-subtle', black: 'bg-black', white: 'bg-white'
+}
+
+const TEXT_SHADE: Record<BrandShade, string> = {
+  prime: 'text-prime', 'prime-light': 'text-prime-light', 'prime-dark': 'text-prime-dark',
+  second: 'text-second', 'second-light': 'text-second-light', 'second-dark': 'text-second-dark',
+  third: 'text-third', 'third-light': 'text-third-light', 'third-dark': 'text-third-dark',
+  fourth: 'text-fourth', 'fourth-light': 'text-fourth-light', 'fourth-dark': 'text-fourth-dark',
+  fifth: 'text-fifth', 'fifth-light': 'text-fifth-light', 'fifth-dark': 'text-fifth-dark',
+  pop: 'text-pop', 'pop-light': 'text-pop-light', 'pop-dark': 'text-pop-dark',
+  'dark-subtle': 'text-[#ced4da]', black: 'text-black', white: 'text-white'
+}
+
+// Legacy col-N spans used by the hydra diagram (24-col grid, unprefixed).
+const COL_SPAN: Record<number, string> = { 6: 'col-6', 12: 'col-12', 18: 'col-18', 24: 'col-24' }
+const ROW_COLS_LG: Record<number, string> = { 4: 'row-cols-lg-4', 5: 'row-cols-lg-5' }
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -242,7 +270,140 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
           </div>
         </div>
       )
+    case 'progress-diagram':
+      return <ProgressDiagram block={block} />
   }
+}
+
+/**
+ * Legacy nested .progress/.progress-bar hierarchy diagrams. Two shapes,
+ * one type: hydra's flat col-N rows of striped bars (modal-hydra.html
+ * 185-268) and dentalplans' striped band containers holding row-cols-lg-5
+ * grids of icon cells, band 1 nesting a "Brand Theme" sub-bar per cell
+ * (modal-product.html 169-414). Spacing follows the legacy Bootstrap
+ * classes (band p-4→p-6, cell strong py-4/py-5→py-6/py-12, sub py-2).
+ */
+function ProgressDiagram({ block }: { block: ProgressDiagramBlock }) {
+  return (
+    <>
+      {block.heading && (
+        <div className="row">
+          <div className="col-24 mt-12">
+            <h4>{block.heading}</h4>
+            <hr className="solid-center" />
+          </div>
+        </div>
+      )}
+      {block.rows?.map((row, i) => (
+        <div key={i} className="row text-center mb-6">
+          {row.cells.map((cell, j) => (
+            <div key={j} className={(cell.span && COL_SPAN[cell.span]) || 'col'}>
+              <ProgressBarCell cell={cell} />
+            </div>
+          ))}
+        </div>
+      ))}
+      {block.bands?.map((band) => (
+        <ProgressBandSection key={band.heading} band={band} />
+      ))}
+    </>
+  )
+}
+
+function ProgressBandSection({ band }: { band: ProgressBand }) {
+  return (
+    <div className="row text-center mb-6">
+      <div className="col">
+        <div className="progress h-full">
+          <div className={cn('progress-bar progress-bar-striped w-full p-6', BG_SHADE[band.bg])}>
+            <h3 className={cn('mb-4', band.textColor && TEXT_SHADE[band.textColor])}>
+              {band.icon && (
+                <>
+                  <i className={band.icon} aria-hidden="true" />
+                  <br />
+                </>
+              )}
+              {band.heading}
+            </h3>
+            {band.rows.map((row, i) => (
+              <div
+                key={i}
+                className={cn(
+                  'row text-center mb-6 row-cols-1 row-cols-md-2 g-3',
+                  typeof row.cols === 'number' && ROW_COLS_LG[row.cols]
+                )}
+              >
+                {row.cells.map((cell, j) => (
+                  <div key={j} className="col">
+                    <ProgressBarCell cell={cell} inBand />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
+  const striped = cell.striped ?? true
+  return (
+    <div className="progress h-full">
+      <div
+        className={cn(
+          'progress-bar w-full',
+          striped && 'progress-bar-striped',
+          cell.animated && 'progress-bar-animated',
+          BG_SHADE[cell.bg],
+          cell.textColor && TEXT_SHADE[cell.textColor],
+          // band grid cells carry shadow-lg; a cell with a nested sub-bar is
+          // the unshadowed p-3 brand box (its sub carries the shadow instead)
+          cell.sub ? 'p-4' : inBand && 'shadow-[var(--shadow-bs-lg)]'
+        )}
+      >
+        {cell.sub ? (
+          <>
+            <p>
+              <strong>
+                {cell.icon && (
+                  <>
+                    <i className={`${cell.icon} fa-xl`} aria-hidden="true" /> <br />
+                  </>
+                )}
+                {cell.label}
+              </strong>
+            </p>
+            <div className="progress h-full">
+              <div
+                className={cn(
+                  'progress-bar w-full shadow-[var(--shadow-bs-lg)] py-2',
+                  BG_SHADE[cell.sub.bg],
+                  cell.sub.textColor && TEXT_SHADE[cell.sub.textColor]
+                )}
+              >
+                <strong className="font-bold">
+                  {cell.sub.icon && <i className={`${cell.sub.icon} fa-xl`} aria-hidden="true" />}{' '}
+                  {cell.sub.label}
+                </strong>
+              </div>
+            </div>
+          </>
+        ) : (
+          <strong className={cn('font-bold', cell.padY === 5 ? 'py-12' : 'py-6')}>
+            {cell.icon && (
+              <>
+                <i className={`${cell.icon} fa-xl`} aria-hidden="true" />
+                <br />
+              </>
+            )}
+            {cell.label}
+          </strong>
+        )}
+      </div>
+    </div>
+  )
 }
 
 /**

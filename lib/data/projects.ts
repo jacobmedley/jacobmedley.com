@@ -849,8 +849,13 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: { image: { src: '/images/work/workshop/ideas.jpg', alt: '' }, paragraphs: [] },
-    contributions: [],
-    technologies: [],
+    contributions: [{ icon: 'fa-regular fa-lightbulb-on', label: 'Facilitator' }],
+    technologies: [
+      { icon: 'fa-regular fa-chalkboard', label: 'Whiteboard' },
+      { icon: 'fa-regular fa-marker', label: 'Dry Erase Markers' },
+      { icon: 'fa-regular fa-notes', label: 'Post-it Notes' },
+      { icon: 'fa-regular fa-brain', label: 'Brains' }
+    ],
     media: [
       { type: 'heading', text: 'Solving the right problems.' },
       {
@@ -858,13 +863,6 @@ export const projects: Project[] = [
         text: 'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, CRO (Conversion Rate Optimization), and User Testing Strategy, effectively driving innovation and strategic thinking.'
       },
       { type: 'text', text: 'With the right team, anything is possible. Anything!' },
-      { type: 'heading', text: 'Contributions:' },
-      { type: 'text', text: 'Facilitator' },
-      { type: 'heading', text: 'Technology:' },
-      { type: 'text', text: 'Whiteboard' },
-      { type: 'text', text: 'Dry Erase Markers' },
-      { type: 'text', text: 'Post-it Notes' },
-      { type: 'text', text: 'Brains' },
       { type: 'heading', text: 'Various Types of Workshops I have Facilitated.' },
       {
         type: 'image',
@@ -899,8 +897,8 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: { image: { src: '/images/work/roadmap/rm.jpg', alt: '' }, paragraphs: [] },
-    contributions: [],
-    technologies: [],
+    contributions: [{ icon: 'fa-regular fa-mouse-field', label: 'Roadmap Planning' }],
+    technologies: [{ icon: 'fa-regular fa-chalkboard', label: 'Lucidchart' }],
     media: [
       { type: 'heading', text: 'Are we there yet?' },
       {
@@ -915,10 +913,6 @@ export const projects: Project[] = [
         type: 'text',
         text: 'I am a strong planner and lean hard into planning the work and working the plan. To quote Roberts Burns - "The best-laid plans of mice and men often go awry," so be ready to pivot.'
       },
-      { type: 'heading', text: 'Contributions:' },
-      { type: 'text', text: 'Roadmap Planning' },
-      { type: 'heading', text: 'Technology:' },
-      { type: 'text', text: 'Lucidchart' },
       { type: 'heading', text: 'Example UX Roadmap Obfuscated for client protection.' },
       { type: 'text', text: 'Structure and Components' },
       {
@@ -964,19 +958,17 @@ export const projects: Project[] = [
       image: { src: '/../images/work/kitchen-sink/persona-one.webp', alt: '' },
       paragraphs: []
     },
-    contributions: [],
-    technologies: [],
+    contributions: [
+      { icon: 'fa-regular fa-clipboard-list-check', label: 'Co-Project Lead' },
+      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+    ],
+    technologies: [{ icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' }],
     media: [
       { type: 'heading', text: 'Personas' },
       {
         type: 'text',
         text: 'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
       },
-      { type: 'heading', text: 'Contributions:' },
-      { type: 'text', text: 'Co-Project Lead' },
-      { type: 'text', text: 'Visual Design' },
-      { type: 'heading', text: 'Technology:' },
-      { type: 'text', text: 'Adobe Suite' },
       { type: 'heading', text: 'Example Persona' },
       {
         type: 'image',
@@ -1002,7 +994,11 @@ export const projects: Project[] = [
         'Conceptual and Visual Contributions:'
       ]
     },
-    contributions: [],
+    contributions: [
+      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
+      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+    ],
     technologies: [],
     media: [
       {
@@ -1024,10 +1020,6 @@ export const projects: Project[] = [
         type: 'text',
         text: 'Working together, we ensured that each concept seamlessly fit within the overarching theme of the campaign. Our combined efforts brought a cohesive and impactful message to life, demonstrating that the choice of Reveal Clear Aligners was indeed clear.'
       },
-      { type: 'heading', text: 'Contributions:' },
-      { type: 'text', text: 'Creative Concepting' },
-      { type: 'text', text: 'Collaboration' },
-      { type: 'text', text: 'Visual Design' },
       { type: 'heading', text: 'Concepts' },
       {
         type: 'image-row',
@@ -1174,7 +1166,11 @@ export const projects: Project[] = [
         'Visual and Messaging Strategy:'
       ]
     },
-    contributions: [],
+    contributions: [
+      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
+      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+    ],
     technologies: [],
     media: [
       {
@@ -1185,10 +1181,6 @@ export const projects: Project[] = [
           'Execution: Below is the final landing page and hero variants used for conversion rate optimization.'
         ]
       },
-      { type: 'heading', text: 'Contributions:' },
-      { type: 'text', text: 'Creative Lead' },
-      { type: 'text', text: 'Collaboration' },
-      { type: 'text', text: 'Visual Design' },
       { type: 'heading', text: 'Hero Variants for Testing' },
       {
         type: 'image-row',

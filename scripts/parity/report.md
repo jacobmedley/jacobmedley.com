@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-05 00:13 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-05 01:13 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|
@@ -23,12 +23,12 @@ Generated: 2026-07-05 00:13 UTC · pass threshold: < 2% pixel diff
 | `split-test` | 23.19% ❌ | 46.37% ❌ |
 | `call-center-ux` | 18.49% ❌ | 21.59% ❌ |
 | `marketing-auto` | 15.21% ❌ | 46.92% ❌ |
-| `workshops` | 24.10% ❌ | 53.19% ❌ |
-| `roadmap` | 19.17% ❌ | 16.92% ❌ |
-| `personas` | 18.71% ❌ | 41.33% ❌ |
-| `reveal` | 36.91% ❌ | 25.77% ❌ |
+| `workshops` | 23.25% ❌ | 45.04% ❌ |
+| `roadmap` | 18.32% ❌ | 9.53% ❌ |
+| `personas` | 21.53% ❌ | 20.49% ❌ |
+| `reveal` | 38.75% ❌ | 42.42% ❌ |
 | `viva` | 26.76% ❌ | 28.58% ❌ |
-| `wrong` | 39.33% ❌ | 56.06% ❌ |
+| `wrong` | 39.92% ❌ | 58.79% ❌ |
 
 ## Size mismatches (legacy vs new)
 
@@ -53,17 +53,17 @@ Generated: 2026-07-05 00:13 UTC · pass threshold: < 2% pixel diff
 - `modal-call-center-ux` @ 1280px: 1140×1513 vs 1140×1326
 - `modal-marketing-auto` @ 375px: 375×2075 vs 375×2103
 - `modal-marketing-auto` @ 1280px: 1140×1354 vs 1140×2191
-- `modal-workshops` @ 375px: 375×2576 vs 375×2718
-- `modal-workshops` @ 1280px: 1140×1238 vs 1140×2333
-- `modal-roadmap` @ 375px: 375×2763 vs 375×2466
-- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2368
-- `modal-personas` @ 375px: 375×1405 vs 375×1390
-- `modal-personas` @ 1280px: 1140×1570 vs 1140×1847
-- `modal-reveal` @ 375px: 375×3820 vs 375×3421
-- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2608
+- `modal-workshops` @ 375px: 375×2576 vs 375×2666
+- `modal-workshops` @ 1280px: 1140×1238 vs 1140×2019
+- `modal-roadmap` @ 375px: 375×2763 vs 375×2494
+- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2174
+- `modal-personas` @ 375px: 375×1405 vs 375×1378
+- `modal-personas` @ 1280px: 1140×1570 vs 1140×1613
+- `modal-reveal` @ 375px: 375×3820 vs 375×3383
+- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2431
 - `modal-viva` @ 375px: 375×3220 vs 375×3445
 - `modal-viva` @ 1280px: 1140×4694 vs 1140×4895
-- `modal-wrong` @ 375px: 375×5043 vs 375×4313
-- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7308
+- `modal-wrong` @ 375px: 375×5043 vs 375×4274
+- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7177
 
 **20/52 passing** (0 missing)

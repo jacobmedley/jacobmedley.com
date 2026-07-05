@@ -79,6 +79,7 @@ export default function CaseStudiesSection() {
                       type="button"
                       className="btn thinking-thumb"
                       onClick={() => setActiveId(module.id)}
+                      data-modal-trigger={module.id}
                     >
                       <i className={`${module.icon ?? 'fa-light fa-star'} thinking-icon`} aria-hidden="true" />
                       <h6 className="thinking-title">{module.title}</h6>

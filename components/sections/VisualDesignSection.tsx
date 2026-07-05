@@ -39,6 +39,7 @@ export default function VisualDesignSection() {
                       : undefined
                   }
                   onClick={() => setActiveId(project.id)}
+                  data-modal-trigger={project.id}
                 >
                   <h6 className="thinking-title font-bold fs-1 z-2 relative">{project.title}</h6>
                   <div className="thinking-view z-2 relative">

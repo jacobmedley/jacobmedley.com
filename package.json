@@ -8,9 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "parity:capture": "node scripts/parity/capture.mjs",
+    "parity:setup-legacy": "node scripts/parity/setup-legacy.mjs",
+    "parity:capture": "npm run parity:setup-legacy && node --experimental-strip-types scripts/parity/capture.mjs",
+    "parity:capture:modals": "npm run parity:setup-legacy && node --experimental-strip-types scripts/parity/capture.mjs --modals",
     "parity:diff": "node scripts/parity/diff.mjs",
-    "parity": "npm run parity:capture && npm run parity:diff"
+    "parity": "npm run parity:capture && npm run parity:capture:modals && npm run parity:diff"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",

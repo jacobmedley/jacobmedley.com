@@ -13,5 +13,12 @@ tsconfig.tsbuildinfo
 # On macOS/Linux: ln -s ../images public/images
 /public/images
 
+# _archive/{images,components,node_modules} are local junctions created by
+# scripts/parity/setup-legacy.mjs so the archived static site can resolve
+# its own includes/assets when served on :4000 (machine-specific, not committed)
+/_archive/images
+/_archive/components
+/_archive/node_modules
+
 # Parity harness screenshots
 /scripts/parity/shots

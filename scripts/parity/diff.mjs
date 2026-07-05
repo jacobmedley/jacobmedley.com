@@ -23,6 +23,25 @@ const PASS_THRESHOLD = 2 // percent
 const BREAKPOINTS = [375, 768, 1280, 1920]
 const SECTIONS = ['nav', 'hi', 'work', 'visual-design', 'resume', 'education']
 
+const MODAL_BREAKPOINTS = [375, 1280]
+// Kept in sync with LEGACY_MODAL_IDS in capture.mjs / lib/data/projects.ts.
+const MODAL_IDS = [
+  'webmd',
+  'dentalplans',
+  'bumblebeemd',
+  'hydra',
+  'opfred',
+  'split-test',
+  'call-center-ux',
+  'marketing-auto',
+  'workshops',
+  'roadmap',
+  'personas',
+  'reveal',
+  'viva',
+  'wrong',
+]
+
 /** Copy `src` onto a white W×H canvas (top-left aligned). */
 function onCanvas(src, width, height) {
   if (src.width === width && src.height === height) return src
@@ -72,6 +91,13 @@ for (const section of SECTIONS) {
   }
 }
 
+const modalResults = []
+for (const id of MODAL_IDS) {
+  for (const bp of MODAL_BREAKPOINTS) {
+    modalResults.push(compare(`modal-${id}`, bp))
+  }
+}
+
 function cell(r) {
   if (r.missing) return '—'
   const mark = r.pct < PASS_THRESHOLD ? '✅' : '❌'
@@ -92,7 +118,21 @@ for (const section of SECTIONS) {
   lines.push(`| \`${section}\` | ${row.map(cell).join(' | ')} |`)
 }
 
-const mismatches = results.filter((r) => r.sizeMismatch)
+lines.push(
+  '',
+  '## Modals',
+  '',
+  `| Project | ${MODAL_BREAKPOINTS.map((b) => `${b}px`).join(' | ')} |`,
+  `|---|${MODAL_BREAKPOINTS.map(() => '---').join('|')}|`
+)
+for (const id of MODAL_IDS) {
+  const row = modalResults.filter((r) => r.section === `modal-${id}`)
+  lines.push(`| \`${id}\` | ${row.map(cell).join(' | ')} |`)
+}
+
+const all = [...results, ...modalResults]
+
+const mismatches = all.filter((r) => r.sizeMismatch)
 if (mismatches.length) {
   lines.push('', '## Size mismatches (legacy vs new)', '')
   for (const m of mismatches) {
@@ -100,13 +140,13 @@ if (mismatches.length) {
   }
 }
 
-const missing = results.filter((r) => r.missing)
+const missing = all.filter((r) => r.missing)
 if (missing.length) {
   lines.push('', '## Missing captures', '')
   for (const m of missing) lines.push(`- \`${m.section}\` @ ${m.bp}px`)
 }
 
-const compared = results.filter((r) => !r.missing)
+const compared = all.filter((r) => !r.missing)
 const passing = compared.filter((r) => r.pct < PASS_THRESHOLD)
 lines.push(
   '',

@@ -26,7 +26,12 @@ export default function WorkCard({
     <div className="work-item py-2 lg:py-6 2xl:py-12">
       <div className={cn('row items-start 2xl:items-center', reverse && 'flex-row-reverse')}>
         <div className="col-24 col-lg-12 mb-12 lg:mb-0">
-          <button type="button" className="btn p-0 m-0" onClick={open}>
+          <button
+            type="button"
+            className="btn p-0 m-0"
+            onClick={open}
+            data-modal-trigger={project.id}
+          >
             {project.cardImage && (
               // eslint-disable-next-line @next/next/no-img-element -- legacy parity: native img, natural aspect
               <img

@@ -56,7 +56,22 @@
       "Bash(git stash *)",
       "Bash(node -e \"const m = require\\('./.next/server/app/page.js'\\); console.log\\(typeof m\\)\")",
       "Bash(node -e ' *)",
-      "Bash(NEXT_TELEMETRY_DISABLED=1 npx next build)"
+      "Bash(NEXT_TELEMETRY_DISABLED=1 npx next build)",
+      "Bash(netstat -ano)",
+      "Bash(node --experimental-strip-types -e \"import\\('./lib/data/projects.ts'\\).then\\(m => console.log\\(m.projects.length\\)\\)\")",
+      "Bash(cat)",
+      "Bash(cp /tmp/test-import.mjs /c/dev/jacobmedley.com/scripts/parity/_test-import.mjs)",
+      "Bash(node --experimental-strip-types /c/dev/jacobmedley.com/scripts/parity/_test-import.mjs)",
+      "Bash(rm /c/dev/jacobmedley.com/scripts/parity/_test-import.mjs)",
+      "Bash(node *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4000/)",
+      "Bash(nohup npx serve _archive -p 4000)",
+      "Bash(curl -s -o /dev/null -w \"4000: %{http_code}\\\\n\" http://localhost:4000/)",
+      "Bash(curl -s -o /dev/null -w \"4000 images: %{http_code}\\\\n\" http://localhost:4000/images/icons/favicon.ico)",
+      "Bash(curl -s -o /dev/null -w \"4000 components: %{http_code}\\\\n\" http://localhost:4000/components/modal-webmd.html)",
+      "Bash(curl -s -o /dev/null -w \"4000 bootstrap: %{http_code}\\\\n\" http://localhost:4000/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js)",
+      "Bash(curl -sIL http://localhost:4000/components/modal-webmd.html)"
     ]
   }
 }

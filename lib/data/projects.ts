@@ -84,11 +84,26 @@ export interface ProgressDiagramBlock {
   bands?: ProgressBand[] // banded variant (dentalplans) — exactly one of rows|bands
 }
 
+// Legacy two-column row (e.g. modal-hydra.html's "The Problem"/"Why Hydra?"
+// rows, modal-product.html's alternating "Iteration N" rows): an image
+// column beside a heading/paragraph column, sometimes reversed so the image
+// sits on the right (flex-lg-row-reverse). Recurses into ProjectMedia so
+// either side can hold more than one block without its own nested full-width
+// row.
+export interface SplitRowBlock {
+  type: 'split-row'
+  left: ProjectMedia[]
+  right: ProjectMedia[]
+  reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
+  leftSpan?: number // Bootstrap col-lg-N, default 12
+  rightSpan?: number // default 12
+}
+
 export type ProjectMedia =
   | { type: 'heading'; text: string }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
-  | { type: 'image'; src: string; alt: string; span?: number }
+  | { type: 'image'; src: string; alt: string; span?: number; caption?: string }
   | { type: 'image-pair'; desktop: ProjectImage; mobile: ProjectImage }
   | { type: 'image-row'; images: ProjectImage[]; cols: number[] }
   | {
@@ -100,6 +115,7 @@ export type ProjectMedia =
   | StyledListBlock
   | CardBlock
   | ProgressDiagramBlock
+  | SplitRowBlock
 
 export interface ProjectBadge {
   icon: string // FA Pro icon classes

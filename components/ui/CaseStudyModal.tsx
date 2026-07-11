@@ -14,7 +14,8 @@ import {
   type BrandShade,
   type ProgressCell,
   type ProgressBand,
-  type ProgressDiagramBlock
+  type ProgressDiagramBlock,
+  type SplitRowBlock
 } from '@/lib/data/projects'
 
 // Tailwind's scanner needs literal class strings, not `bg-${token}-light/25`.
@@ -136,39 +137,75 @@ function BadgeList({ badges }: { badges: ProjectBadge[] }) {
 }
 
 /* eslint-disable @next/next/no-img-element -- legacy parity: native imgs */
-function MediaBlock({ block }: { block: ProjectMedia }) {
+/**
+ * Bare content for a media block, with no outer `.row`/`.col-*` shell.
+ * MediaBlock wraps this in the appropriate row/column for top-level use;
+ * split-row renders it directly inside its own col-lg-N so children stack
+ * without an extra nested full-width row. Composite types that manage their
+ * own multi-column grid (image-pair, image-row, metric-grid, progress-diagram,
+ * split-row) fall back to the full MediaBlock render — their internal `.row`
+ * is load-bearing, not a superfluous wrapper.
+ */
+function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading':
       return (
-        <div className="row">
-          <div className="col-24">
-            <h5>{block.text}</h5>
-            <hr className="solid-center" />
-          </div>
-        </div>
+        <>
+          <h5>{block.text}</h5>
+          <hr className="solid-center" />
+        </>
       )
     case 'text':
-      return (
-        <div className="row">
-          <div className="col-24">
-            <p>{block.text}</p>
-          </div>
-        </div>
-      )
+      return <p>{block.text}</p>
     case 'list':
       return (
+        <ul className="fa-ul">
+          {block.items.map((item) => (
+            <li key={item} className="mb-2">
+              <span className="fa-li">
+                <i className="fa-regular fa-angle-right" aria-hidden="true" />
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      )
+    case 'image':
+      return block.caption ? (
+        <figure className="figure">
+          <img
+            loading="lazy"
+            className="figure-img img-fluid rounded shadow-[var(--shadow-bs-lg)]"
+            src={block.src}
+            alt={block.alt}
+          />
+          <figcaption className="figure-caption text-right">{block.caption}</figcaption>
+        </figure>
+      ) : (
+        <p>
+          <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={block.src} alt={block.alt} />
+        </p>
+      )
+    case 'styled-list':
+      return <StyledListContent block={block} />
+    case 'card':
+      return <CardContent block={block} />
+    default:
+      return <MediaBlock block={block} />
+  }
+}
+
+function MediaBlock({ block }: { block: ProjectMedia }) {
+  switch (block.type) {
+    case 'heading':
+    case 'text':
+    case 'list':
+    case 'styled-list':
+    case 'card':
+      return (
         <div className="row">
           <div className="col-24">
-            <ul className="fa-ul">
-              {block.items.map((item) => (
-                <li key={item} className="mb-2">
-                  <span className="fa-li">
-                    <i className="fa-regular fa-angle-right" aria-hidden="true" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <BlockContent block={block} />
           </div>
         </div>
       )
@@ -176,9 +213,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       return (
         <div className="row mb-6 justify-center">
           <div className={block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
-            <p>
-              <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={block.src} alt={block.alt} />
-            </p>
+            <BlockContent block={block} />
           </div>
         </div>
       )
@@ -254,25 +289,35 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
           </div>
         </div>
       )
-    case 'styled-list':
-      return (
-        <div className="row">
-          <div className="col-24">
-            <StyledListContent block={block} />
-          </div>
-        </div>
-      )
-    case 'card':
-      return (
-        <div className="row">
-          <div className="col-24">
-            <CardContent block={block} />
-          </div>
-        </div>
-      )
     case 'progress-diagram':
       return <ProgressDiagram block={block} />
+    case 'split-row':
+      return <SplitRow block={block} />
   }
+}
+
+/**
+ * Legacy two-column image+narrative row (modal-hydra.html's "The Problem"/
+ * "Why Hydra?" rows, modal-product.html's alternating "Iteration N" rows).
+ * Children stack directly in their col-lg-N via BlockContent — no nested
+ * full-width row per child, matching how legacy places bare <p>/<h4>/<img>
+ * elements straight inside the column.
+ */
+function SplitRow({ block }: { block: SplitRowBlock }) {
+  return (
+    <div className={cn('row', block.reverse && 'lg:flex-row-reverse')}>
+      <div className={`col-24 col-lg-${block.leftSpan ?? 12}`}>
+        {block.left.map((child, i) => (
+          <BlockContent key={i} block={child} />
+        ))}
+      </div>
+      <div className={`col-24 col-lg-${block.rightSpan ?? 12}`}>
+        {block.right.map((child, i) => (
+          <BlockContent key={i} block={child} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 /**

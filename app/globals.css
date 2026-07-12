@@ -735,11 +735,17 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
     background-color: #e9ecef;
     border-radius: 0.375rem;
   }
+  /* Bootstrap normally rounds progress-bars by clipping to .progress's
+     overflow:hidden; our .progress forces overflow:visible (dentalplans'
+     nested "Brand Theme" sub-bars must not be clipped), so the bar's own
+     square corners poke past the rounded track. Give the bar its own
+     matching radius instead of relying on clipping. */
   .progress-bar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    border-radius: 0.375rem;
     color: #fff;
     text-align: center;
     white-space: nowrap;
@@ -758,6 +764,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
     background-size: 1rem 1rem;
   }
   .progress-bar-animated { animation: 1s linear infinite progress-bar-stripes; }
+
   .bg-dark-subtle { background-color: #ced4da; } /* --bs-dark-bg-subtle */
 }
 @keyframes progress-bar-stripes {

@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-12 01:31 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-12 02:23 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|
@@ -15,20 +15,20 @@ Generated: 2026-07-12 01:31 UTC · pass threshold: < 2% pixel diff
 
 | Project | 375px | 1280px |
 |---|---|---|
-| `webmd` | 16.52% ❌ | 15.01% ❌ |
-| `dentalplans` | 30.97% ❌ | 32.63% ❌ |
-| `bumblebeemd` | 22.73% ❌ | 34.73% ❌ |
-| `hydra` | 23.52% ❌ | 25.94% ❌ |
-| `opfred` | 17.42% ❌ | 48.42% ❌ |
-| `split-test` | 23.11% ❌ | 46.38% ❌ |
-| `call-center-ux` | 18.50% ❌ | 21.25% ❌ |
-| `marketing-auto` | 15.39% ❌ | 46.91% ❌ |
-| `workshops` | 23.51% ❌ | 44.88% ❌ |
-| `roadmap` | 13.03% ❌ | 8.44% ❌ |
-| `personas` | 22.43% ❌ | 20.44% ❌ |
-| `reveal` | 41.05% ❌ | 26.01% ❌ |
-| `viva` | 26.65% ❌ | 28.63% ❌ |
-| `wrong` | 40.50% ❌ | 59.44% ❌ |
+| `webmd` | 23.02% ❌ | 24.08% ❌ |
+| `dentalplans` | 27.67% ❌ | 31.88% ❌ |
+| `bumblebeemd` | 25.40% ❌ | 18.81% ❌ |
+| `hydra` | 31.54% ❌ | 16.81% ❌ |
+| `opfred` | 35.98% ❌ | 21.64% ❌ |
+| `split-test` | 42.05% ❌ | 46.01% ❌ |
+| `call-center-ux` | 28.96% ❌ | 21.48% ❌ |
+| `marketing-auto` | 20.01% ❌ | 21.83% ❌ |
+| `workshops` | 35.84% ❌ | 50.88% ❌ |
+| `roadmap` | 9.05% ❌ | 8.73% ❌ |
+| `personas` | 24.32% ❌ | 30.94% ❌ |
+| `reveal` | 35.04% ❌ | 26.76% ❌ |
+| `viva` | 35.66% ❌ | 36.31% ❌ |
+| `wrong` | 32.61% ❌ | 57.03% ❌ |
 
 ## Size mismatches (legacy vs new)
 
@@ -37,33 +37,33 @@ Generated: 2026-07-12 01:31 UTC · pass threshold: < 2% pixel diff
 - `resume` @ 768px: 768×5120 vs 768×5088
 - `resume` @ 1920px: 1920×3020 vs 1920×3012
 - `education` @ 1280px: 1280×1749 vs 1280×1750
-- `modal-webmd` @ 375px: 375×11102 vs 375×11126
-- `modal-webmd` @ 1280px: 1140×7798 vs 1140×7822
-- `modal-dentalplans` @ 375px: 375×9717 vs 375×9096
-- `modal-dentalplans` @ 1280px: 1140×5249 vs 1140×5087
-- `modal-bumblebeemd` @ 375px: 375×12431 vs 375×12632
-- `modal-bumblebeemd` @ 1280px: 1140×8779 vs 1140×12550
-- `modal-hydra` @ 375px: 375×5359 vs 375×5207
-- `modal-hydra` @ 1280px: 1140×3688 vs 1140×3496
-- `modal-opfred` @ 375px: 375×10915 vs 375×10963
-- `modal-opfred` @ 1280px: 1140×7409 vs 1140×10004
-- `modal-split-test` @ 375px: 375×4251 vs 375×4309
-- `modal-split-test` @ 1280px: 1140×3263 vs 1140×5012
-- `modal-call-center-ux` @ 375px: 375×1985 vs 375×2111
-- `modal-call-center-ux` @ 1280px: 1140×1513 vs 1140×1327
-- `modal-marketing-auto` @ 375px: 375×2075 vs 375×2103
-- `modal-marketing-auto` @ 1280px: 1140×1354 vs 1140×2191
-- `modal-workshops` @ 375px: 375×2576 vs 375×2666
-- `modal-workshops` @ 1280px: 1140×1238 vs 1140×2020
-- `modal-roadmap` @ 375px: 375×2763 vs 375×2681
-- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2069
-- `modal-personas` @ 375px: 375×1405 vs 375×1378
-- `modal-personas` @ 1280px: 1140×1570 vs 1140×1613
-- `modal-reveal` @ 375px: 375×3820 vs 375×3327
-- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2542
-- `modal-viva` @ 375px: 375×3220 vs 375×3445
-- `modal-viva` @ 1280px: 1140×4694 vs 1140×4895
-- `modal-wrong` @ 375px: 375×5043 vs 375×4250
-- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7154
+- `modal-webmd` @ 375px: 375×11102 vs 375×11462
+- `modal-webmd` @ 1280px: 1140×7798 vs 1140×8158
+- `modal-dentalplans` @ 375px: 375×9717 vs 375×9789
+- `modal-dentalplans` @ 1280px: 1140×5249 vs 1140×5135
+- `modal-bumblebeemd` @ 375px: 375×12431 vs 375×13116
+- `modal-bumblebeemd` @ 1280px: 1140×8779 vs 1140×9044
+- `modal-hydra` @ 375px: 375×5359 vs 375×6020
+- `modal-hydra` @ 1280px: 1140×3688 vs 1140×3664
+- `modal-opfred` @ 375px: 375×10915 vs 375×11527
+- `modal-opfred` @ 1280px: 1140×7409 vs 1140×7505
+- `modal-split-test` @ 375px: 375×4251 vs 375×4834
+- `modal-split-test` @ 1280px: 1140×3263 vs 1140×3547
+- `modal-call-center-ux` @ 375px: 375×1985 vs 375×2546
+- `modal-call-center-ux` @ 1280px: 1140×1513 vs 1140×1375
+- `modal-marketing-auto` @ 375px: 375×2075 vs 375×2232
+- `modal-marketing-auto` @ 1280px: 1140×1354 vs 1140×1282
+- `modal-workshops` @ 375px: 375×2576 vs 375×2906
+- `modal-workshops` @ 1280px: 1140×1238 vs 1140×2260
+- `modal-roadmap` @ 375px: 375×2763 vs 375×2777
+- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2165
+- `modal-personas` @ 375px: 375×1405 vs 375×1474
+- `modal-personas` @ 1280px: 1140×1570 vs 1140×1709
+- `modal-reveal` @ 375px: 375×3820 vs 375×3633
+- `modal-reveal` @ 1280px: 1140×2628 vs 1140×2590
+- `modal-viva` @ 375px: 375×3220 vs 375×4063
+- `modal-viva` @ 1280px: 1140×4694 vs 1140×5255
+- `modal-wrong` @ 375px: 375×5043 vs 375×4733
+- `modal-wrong` @ 1280px: 1140×7637 vs 1140×7250
 
 **20/52 passing** (0 missing)

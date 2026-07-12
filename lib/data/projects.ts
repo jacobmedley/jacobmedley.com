@@ -115,7 +115,15 @@ export type ProjectMedia =
   | { type: 'heading'; text: string; level?: 2 | 3 | 4 | 5; icon?: string }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
-  | { type: 'image'; src: string; alt: string; span?: number; caption?: string; shape?: 'rounded' | 'circle' }
+  | {
+      type: 'image'
+      src: string
+      alt: string
+      span?: number
+      caption?: string
+      shape?: 'rounded' | 'circle'
+      flush?: boolean // true: no shadow, no rounding (raw) — baked-in-chrome UI screenshots
+    }
   | { type: 'image-pair'; desktop: ProjectImage; mobile: ProjectImage }
   | { type: 'image-row'; images: ProjectImage[]; cols: number[] }
   | {
@@ -589,75 +597,61 @@ export const projects: Project[] = [
     media: [
       { type: 'heading', text: 'Homepage' },
       {
-        type: 'image',
-        src: '/images/work/bmd-modal/home-dt.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        span: 18
-      },
-      {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/bmd-modal/gran-ma-w.png',
-          alt: 'BumblebeeMD Homepage Desktop'
-        },
-        mobile: { src: '/images/work/bmd-modal/home-mb.png', alt: 'BumblebeeMD Homepage Mobile' }
+        type: 'split-row',
+        left: [
+          { type: 'image', src: '/images/work/bmd-modal/home-dt.png', alt: 'BumblebeeMD Homepage Desktop' },
+          { type: 'image', src: '/images/work/bmd-modal/gran-ma-w.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+        ],
+        right: [{ type: 'image', src: '/images/work/bmd-modal/home-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
+        leftSpan: 18,
+        rightSpan: 6
       },
       { type: 'heading', text: 'Content Page' },
       {
-        type: 'image',
-        src: '/images/work/bmd-modal/content-dt.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        span: 18
-      },
-      {
-        type: 'image-pair',
-        desktop: { src: '/images/work/bmd-modal/family.png', alt: 'BumblebeeMD Homepage Desktop' },
-        mobile: {
-          src: '/images/work/bmd-modal/content-mb.png',
-          alt: 'BumblebeeMD Homepage Mobile'
-        }
+        type: 'split-row',
+        left: [
+          { type: 'image', src: '/images/work/bmd-modal/content-dt.png', alt: 'BumblebeeMD Homepage Desktop' },
+          { type: 'image', src: '/images/work/bmd-modal/family.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+        ],
+        right: [{ type: 'image', src: '/images/work/bmd-modal/content-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
+        leftSpan: 18,
+        rightSpan: 6
       },
       { type: 'heading', text: 'UI Components & Style' },
-      { type: 'heading', text: 'Buttons' },
       {
-        type: 'image',
-        src: '/images/work/bmd-modal/buttons.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        span: 12
-      },
-      { type: 'heading', text: 'Inputs' },
-      {
-        type: 'image',
-        src: '/images/work/bmd-modal/inputs.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        span: 12
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'Buttons' },
+          { type: 'image', src: '/images/work/bmd-modal/buttons.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+        ],
+        right: [
+          { type: 'heading', text: 'Inputs' },
+          { type: 'image', src: '/images/work/bmd-modal/inputs.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Icons' },
       {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/bmd-modal/icons-01.png',
-            alt: 'BumblebeeMD Homepage Desktop'
-          },
-          {
-            src: '/images/work/bmd-modal/icons-02.png',
-            alt: 'BumblebeeMD Homepage Desktop'
-          }
-        ],
-        cols: [ 12, 12 ]
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/bmd-modal/icons-01.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }],
+        right: [{ type: 'image', src: '/images/work/bmd-modal/icons-02.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Image Treatments' },
       {
         type: 'image',
         src: '/images/work/bmd-modal/images.png',
-        alt: 'BumblebeeMD Homepage Desktop'
+        alt: 'BumblebeeMD Homepage Desktop',
+        flush: true
       },
       { type: 'heading', text: '"Buy Box" Treatments' },
       {
         type: 'image',
         src: '/images/work/bmd-modal/buy-box.png',
-        alt: 'BumblebeeMD Homepage Desktop'
+        alt: 'BumblebeeMD Homepage Desktop',
+        flush: true
       },
       { type: 'heading', text: 'Wireframes' },
       {
@@ -718,7 +712,8 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/ui-rag.png',
             alt: 'UI fragmentation on buttons',
-            caption: 'UX/UI Fragmentation - Button Treatments'
+            caption: 'UX/UI Fragmentation - Button Treatments',
+            flush: true
           }
         ],
         leftSpan: 14,
@@ -732,7 +727,8 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/error-01.png',
             alt: '...',
-            caption: 'UX/UI Fragmentation - error and input treatments.'
+            caption: 'UX/UI Fragmentation - error and input treatments.',
+            flush: true
           }
         ],
         right: [
@@ -740,7 +736,8 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/error-02.png',
             alt: '...',
-            caption: 'UX/UI Fragmentation - error and input treatments.'
+            caption: 'UX/UI Fragmentation - error and input treatments.',
+            flush: true
           }
         ],
         leftSpan: 12,
@@ -810,12 +807,11 @@ export const projects: Project[] = [
       },
       { type: 'heading', text: 'UI Elements' },
       {
-        type: 'image-row',
-        images: [
-          { src: '/images/work/hydra/hydra-ui-01.png', alt: "Big'ol Hydra" },
-          { src: '/images/work/hydra/hydra-ui-02.png', alt: "Big'ol Hydra" }
-        ],
-        cols: [ 12, 12 ]
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/hydra/hydra-ui-01.png', alt: "Big'ol Hydra", flush: true }],
+        right: [{ type: 'image', src: '/images/work/hydra/hydra-ui-02.png', alt: "Big'ol Hydra", flush: true }],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Why Hydra?' },
       {
@@ -872,62 +868,60 @@ export const projects: Project[] = [
     ],
     media: [
       { type: 'heading', text: 'Homepage' },
-      { type: 'text', text: 'Before' },
       {
-        type: 'image',
-        src: '/images/work/opf-modal/brief-befor.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley'
-      },
-      { type: 'text', text: 'After' },
-      {
-        type: 'image',
-        src: '/images/work/opf-modal/brief.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley'
+        type: 'split-row',
+        left: [
+          { type: 'text', text: 'Before' },
+          { type: 'image', src: '/images/work/opf-modal/brief-befor.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        right: [
+          { type: 'text', text: 'After' },
+          { type: 'image', src: '/images/work/opf-modal/brief.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'How It Works' },
-      { type: 'text', text: 'Before:' },
       {
-        type: 'image',
-        src: '/images/work/opf-modal/hiw-before.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley',
-        span: 12
-      },
-      { type: 'text', text: 'After:' },
-      {
-        type: 'image',
-        src: '/images/work/opf-modal/hiw.png',
-        alt: 'WebMD Homepage Mobile  by Jacob Medley',
-        span: 12
+        type: 'split-row',
+        left: [
+          { type: 'text', text: 'Before:' },
+          { type: 'image', src: '/images/work/opf-modal/hiw-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        right: [
+          { type: 'text', text: 'After:' },
+          { type: 'image', src: '/images/work/opf-modal/hiw.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'About Us' },
-      { type: 'text', text: 'Before:' },
       {
-        type: 'image',
-        src: '/images/work/opf-modal/about-us-before.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley',
-        span: 12
-      },
-      { type: 'text', text: 'After:' },
-      {
-        type: 'image',
-        src: '/images/work/opf-modal/about.png',
-        alt: 'WebMD Homepage Mobile  by Jacob Medley',
-        span: 12
+        type: 'split-row',
+        left: [
+          { type: 'text', text: 'Before:' },
+          { type: 'image', src: '/images/work/opf-modal/about-us-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        right: [
+          { type: 'text', text: 'After:' },
+          { type: 'image', src: '/images/work/opf-modal/about.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Module: Our Process' },
-      { type: 'text', text: 'Before:' },
       {
-        type: 'image',
-        src: '/images/work/opf-modal/mod-proc-before.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley',
-        span: 12
-      },
-      { type: 'text', text: 'After:' },
-      {
-        type: 'image',
-        src: '/images/work/opf-modal/mod-proc-after.png',
-        alt: 'WebMD Homepage Mobile  by Jacob Medley',
-        span: 12
+        type: 'split-row',
+        left: [
+          { type: 'text', text: 'Before:' },
+          { type: 'image', src: '/images/work/opf-modal/mod-proc-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        right: [
+          { type: 'text', text: 'After:' },
+          { type: 'image', src: '/images/work/opf-modal/mod-proc-after.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Full Homepage' },
       {
@@ -970,64 +964,70 @@ export const projects: Project[] = [
         text: 'I partnered with the talented product marketing manager J.R. Hernandez on the following projects.'
       },
       {
-        type: 'image',
-        src: '/images/work/split01-modal/web-md-thumb.png',
-        alt: '',
-        span: 12
-      },
-      { type: 'heading', text: 'WebMD Demographic Test' },
-      {
-        type: 'text',
-        text: 'Hypothesis: WebMD would attract a different demographic than DentalPlans.com, which leans heavily to seniors. By showing a younger demographic we would resonate better with the customers.'
-      },
-      { type: 'heading', text: 'Control' },
-      {
-        type: 'image',
-        src: '/images/work/webmd-modal/control.png',
-        alt: 'WebMD Homepage Desktop by Jacob Medley',
-        span: 12
-      },
-      { type: 'heading', text: 'V1 Winner +14.9%' },
-      {
-        type: 'image',
-        src: '/images/work/webmd-modal/winner.png',
-        alt: 'WebMD Homepage Desktop ',
-        span: 12
-      },
-      { type: 'heading', text: 'V2 -2.48%' },
-      {
-        type: 'image',
-        src: '/images/work/webmd-modal/v2.png',
-        alt: 'WebMD Homepage Desktop',
-        span: 12
-      },
-      { type: 'heading', text: 'V3 -35.13%' },
-      {
-        type: 'image-row',
-        images: [
-          { src: '/images/work/webmd-modal/v3.png', alt: 'WebMD Homepage Desktop' },
-          { src: '/images/work/split01-modal/sc-thumb.png', alt: '' }
+        type: 'split-row',
+        reverse: true,
+        left: [{ type: 'image', src: '/images/work/split01-modal/web-md-thumb.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'WebMD Demographic Test' },
+          {
+            type: 'text',
+            text: 'Hypothesis: WebMD would attract a different demographic than DentalPlans.com, which leans heavily to seniors. By showing a younger demographic we would resonate better with the customers.'
+          }
         ],
-        cols: [ 12, 12 ]
+        leftSpan: 12,
+        rightSpan: 12
       },
-      { type: 'heading', text: 'Saving Calculator' },
       {
-        type: 'text',
-        text: 'Hypothesis: Providing customers more information on the product and using a niche celebrity would increase performance. The additional content would also improve organic rankings over time.'
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'Control' },
+          { type: 'image', src: '/images/work/webmd-modal/control.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+        ],
+        right: [
+          { type: 'heading', text: 'V1 Winner +14.9%' },
+          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD Homepage Desktop ' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
-      { type: 'heading', text: 'Control' },
       {
-        type: 'image',
-        src: '/images/work/split01-modal/sc-control.png',
-        alt: 'WebMD Homepage Desktop  by Jacob Medley',
-        span: 12
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'V2 -2.48%' },
+          { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD Homepage Desktop' }
+        ],
+        right: [
+          { type: 'heading', text: 'V3 -35.13%' },
+          { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD Homepage Desktop' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
-      { type: 'heading', text: 'V1 Winner +24.2%' },
       {
-        type: 'image',
-        src: '/images/work/split01-modal/sc-winner.png',
-        alt: 'WebMD Homepage Desktop ',
-        span: 12
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/split01-modal/sc-thumb.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Saving Calculator' },
+          {
+            type: 'text',
+            text: 'Hypothesis: Providing customers more information on the product and using a niche celebrity would increase performance. The additional content would also improve organic rankings over time.'
+          }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
+      },
+      {
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'Control' },
+          { type: 'image', src: '/images/work/split01-modal/sc-control.png', alt: 'WebMD Homepage Desktop  by Jacob Medley' }
+        ],
+        right: [
+          { type: 'heading', text: 'V1 Winner +24.2%' },
+          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'WebMD Homepage Desktop ' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       }
     ]
   },
@@ -1146,17 +1146,18 @@ export const projects: Project[] = [
         type: 'text',
         text: 'I worked with stakeholders from the marketing, business analysis, and data teams to engineer and design a dynamic campaign using the new platform. I optimized the campaign to leverage the system, which reduced the workload on campaign managers by 92% while meeting the business KPIs set by the business.'
       },
-      { type: 'heading', text: 'Before' },
       {
-        type: 'image',
-        src: '/images/work/ma-modal/ma-36.png',
-        alt: 'Viva Medicare Logo Design by Jacob Medley'
-      },
-      { type: 'heading', text: 'After' },
-      {
-        type: 'image',
-        src: '/images/work/ma-modal/ma-3b.png',
-        alt: 'Viva Medicare Logo Design by Jacob Medley'
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'Before' },
+          { type: 'image', src: '/images/work/ma-modal/ma-36.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+        ],
+        right: [
+          { type: 'heading', text: 'After' },
+          { type: 'image', src: '/images/work/ma-modal/ma-3b.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       }
     ]
   },
@@ -1293,7 +1294,7 @@ export const projects: Project[] = [
         ]
       },
       { type: 'text', text: 'Obfuscated Lucid Chart' },
-      { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart' }
+      { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart', flush: true }
     ]
   },
   {
@@ -1441,24 +1442,22 @@ export const projects: Project[] = [
     media: [
       { type: 'heading', text: 'Logo Design' },
       {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/viva-modal/logo-design-stack.png',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
-          },
-          {
-            src: '/images/work/viva-modal/logo-design-inline.png',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
-          }
+        type: 'split-row',
+        left: [
+          { type: 'image', src: '/images/work/viva-modal/logo-design-stack.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
         ],
-        cols: [ 12, 12 ]
+        right: [
+          { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
       { type: 'heading', text: 'Color Study' },
       {
         type: 'image',
         src: '/images/work/viva-modal/colors.png',
-        alt: 'Color Study for Viva Medicare by Jacob Medley'
+        alt: 'Color Study for Viva Medicare by Jacob Medley',
+        flush: true
       },
       { type: 'heading', text: 'Visual Style and Tone' },
       {
@@ -1496,19 +1495,22 @@ export const projects: Project[] = [
       {
         type: 'image',
         src: '/images/work/viva-modal/buttons.png',
-        alt: 'Viva Medicare Button Concepts by Jacob Medley'
+        alt: 'Viva Medicare Button Concepts by Jacob Medley',
+        flush: true
       },
       { type: 'heading', text: 'Inputs' },
       {
         type: 'image',
         src: '/images/work/viva-modal/inputs.png',
-        alt: 'Viva Medicare Input Concepts by Jacob Medley'
+        alt: 'Viva Medicare Input Concepts by Jacob Medley',
+        flush: true
       },
       { type: 'heading', text: 'Navigation' },
       {
         type: 'image',
         src: '/images/work/viva-modal/nav.png',
-        alt: 'Viva Medicare - Navigation Concepts by Jacob Medley'
+        alt: 'Viva Medicare - Navigation Concepts by Jacob Medley',
+        flush: true
       }
     ]
   },

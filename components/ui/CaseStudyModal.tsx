@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import {
@@ -197,7 +197,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         <figure className="figure">
           <img
             loading="lazy"
-            className={`figure-img img-fluid ${shapeClass} shadow-[var(--shadow-bs-lg)]`}
+            className={cn('figure-img img-fluid', !block.flush && [shapeClass, 'shadow-[var(--shadow-bs-lg)]'])}
             src={block.src}
             alt={block.alt}
           />
@@ -207,7 +207,10 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         <p>
           <img
             loading="lazy"
-            className={cn('img-fluid shadow-[var(--shadow-bs-lg)]', block.shape === 'circle' && shapeClass)}
+            className={cn(
+              'img-fluid',
+              !block.flush && ['shadow-[var(--shadow-bs-lg)]', block.shape === 'circle' && shapeClass]
+            )}
             src={block.src}
             alt={block.alt}
           />
@@ -225,7 +228,18 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
 
 function MediaBlock({ block }: { block: ProjectMedia }) {
   switch (block.type) {
+    // Legacy consistently wraps a new section's heading col in `mt-5`
+    // (occasionally `py-5`) to separate it from the previous block — every
+    // other block type here has no such margin in legacy, so this is
+    // heading-only, matching ProgressDiagram's own inline heading (mt-12).
     case 'heading':
+      return (
+        <div className="row">
+          <div className="col-24 mt-12">
+            <BlockContent block={block} />
+          </div>
+        </div>
+      )
     case 'text':
     case 'list':
     case 'styled-list':
@@ -280,11 +294,18 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       return (
         <div className="row mb-6 justify-center">
           {block.images.map((img, i) => (
-            <div key={img.src} className={`col-24 col-lg-${block.cols[i] ?? 12}`}>
-              <p>
-                <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
-              </p>
-            </div>
+            <Fragment key={img.src}>
+              {i > 0 && (
+                <div className="col-24 py-12 block lg:hidden">
+                  <hr className="solid-center" />
+                </div>
+              )}
+              <div className={`col-24 col-lg-${block.cols[i] ?? 12}`}>
+                <p>
+                  <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
+                </p>
+              </div>
+            </Fragment>
           ))}
         </div>
       )
@@ -383,6 +404,12 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         {block.left.map((child, i) => (
           <BlockContent key={i} block={child} />
         ))}
+      </div>
+      {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
+          d-block d-lg-none` + hr) before the lg+ breakpoint turns this row
+          side-by-side. */}
+      <div className="col-24 py-12 block lg:hidden">
+        <hr className="solid-center" />
       </div>
       <div className={`col-24 col-lg-${block.rightSpan ?? 12}`}>
         {block.right.map((child, i) => (

@@ -14,7 +14,7 @@ export default function HeroSection() {
                 <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
               </p>
 
-              <h1 className="display-4 font-bold text-prime mt-0">Hello, I'm Jacob Medley.</h1>
+              <h1 className="display-4 font-bold text-prime mt-0">Hello, I&apos;m Jacob Medley.</h1>
               <h2 className="display-2 text-prime">UX/UI Designer &amp; Digital Strategist</h2>
 
               <div className="py-3 w-1/4 mx-auto">

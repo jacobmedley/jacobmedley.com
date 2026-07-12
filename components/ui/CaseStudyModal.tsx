@@ -136,6 +136,20 @@ function BadgeList({ badges }: { badges: ProjectBadge[] }) {
   )
 }
 
+/** Shared by ModalContent's fixed post-brief slot and the `contributions`
+ * media block (reveal's inlineContributions — legacy interleaves this badge
+ * row among its custom prose instead of right after the brief). */
+function ContributionsSection({ contributions }: { contributions: ProjectBadge[] }) {
+  if (contributions.length === 0) return null
+  return (
+    <>
+      <h4>Contributions:</h4>
+      <hr className="solid-center" />
+      <BadgeList badges={contributions} />
+    </>
+  )
+}
+
 /* eslint-disable @next/next/no-img-element -- legacy parity: native imgs */
 /**
  * Bare content for a media block, with no outer `.row`/`.col-*` shell.
@@ -149,7 +163,7 @@ function BadgeList({ badges }: { badges: ProjectBadge[] }) {
 function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
-      const Tag = `h${block.level ?? 5}` as 'h3' | 'h4' | 'h5'
+      const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
       return (
         <>
           {block.icon && (
@@ -307,6 +321,31 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       return <ProgressDiagram block={block} />
     case 'split-row':
       return <SplitRow block={block} />
+    case 'icon-grid':
+      return (
+        <div
+          className={cn(
+            'row text-center',
+            `row-cols-${block.cols ?? 2}`,
+            block.colsLg && `row-cols-lg-${block.colsLg}`
+          )}
+        >
+          {block.items.map((item) => (
+            <div key={item.title} className="col mb-4">
+              <div className="card">
+                <div className="card-body">
+                  <p className="mb-1">
+                    <i className={`${item.icon} fa-2x`} aria-hidden="true" />
+                  </p>
+                  <p className="card-title font-brand m-0">{item.title}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    case 'contributions':
+      return null // only meaningful at renderMedia's top level; intercepted there
   }
 }
 
@@ -603,13 +642,7 @@ function ModalContent({ project }: { project: Project }) {
             </>
           )}
 
-          {project.contributions.length > 0 && (
-            <>
-              <h4>Contributions:</h4>
-              <hr className="solid-center" />
-              <BadgeList badges={project.contributions} />
-            </>
-          )}
+          {!project.inlineContributions && <ContributionsSection contributions={project.contributions} />}
 
           {project.technologies.length > 0 && (
             <>
@@ -621,7 +654,7 @@ function ModalContent({ project }: { project: Project }) {
         </div>
       </div>
 
-      {renderMedia(project.media)}
+      {renderMedia(project.media, project.contributions)}
     </>
   )
 }
@@ -633,10 +666,20 @@ function ModalContent({ project }: { project: Project }) {
  * text/styled-list/text/card run and render it as one two-column row;
  * everything else renders as its own full-width MediaBlock, unchanged.
  */
-function renderMedia(media: ProjectMedia[]) {
+function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
   const nodes: ReactNode[] = []
   for (let i = 0; i < media.length; i++) {
     const [b0, b1, b2, b3] = [media[i], media[i + 1], media[i + 2], media[i + 3]]
+    if (b0.type === 'contributions') {
+      nodes.push(
+        <div className="row" key={i}>
+          <div className="col-24">
+            <ContributionsSection contributions={contributions} />
+          </div>
+        </div>
+      )
+      continue
+    }
     if (b0.type === 'text' && b1?.type === 'styled-list' && b2?.type === 'text' && b3?.type === 'card') {
       nodes.push(
         <div className="row" key={i}>

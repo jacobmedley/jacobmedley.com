@@ -101,8 +101,18 @@ export interface SplitRowBlock {
   hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
 }
 
+// Repeated icon+title tiles (hydra's Nomenclature grid: Elements/Controls/
+// Components/Modules/Templates/Pages) — legacy's row-cols-2 grid of .card
+// markup. Distinct from CardBlock (a single header+rows mockup card).
+export interface IconGridBlock {
+  type: 'icon-grid'
+  items: { icon: string; title: string }[]
+  cols?: number // row-cols-N, default 2
+  colsLg?: number // row-cols-lg-N, optional
+}
+
 export type ProjectMedia =
-  | { type: 'heading'; text: string; level?: 3 | 4 | 5; icon?: string }
+  | { type: 'heading'; text: string; level?: 2 | 3 | 4 | 5; icon?: string }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'image'; src: string; alt: string; span?: number; caption?: string; shape?: 'rounded' | 'circle' }
@@ -118,6 +128,8 @@ export type ProjectMedia =
   | CardBlock
   | ProgressDiagramBlock
   | SplitRowBlock
+  | IconGridBlock
+  | { type: 'contributions' } // zero-config marker: renders project.contributions inline in media[]
 
 export interface ProjectBadge {
   icon: string // FA Pro icon classes
@@ -139,6 +151,11 @@ export interface Project {
   cardImage?: ProjectImage // feature-card image
   brief: { image?: ProjectImage; paragraphs: string[] }
   contributions: ProjectBadge[]
+  // true when legacy interleaves the Contributions badges among the modal's
+  // custom prose (reveal) rather than right after the brief — skips the
+  // fixed post-brief slot so a `{ type: 'contributions' }` media block can
+  // render them at the correct position instead.
+  inlineContributions?: boolean
   technologies: ProjectBadge[]
   media: ProjectMedia[] // preserves the legacy modal section order
 }
@@ -457,7 +474,7 @@ export const projects: Project[] = [
           }
         ]
       },
-      { type: 'heading', text: 'The Journey', level: 3, icon: 'fa-light fa-map-location-dot' },
+      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-light fa-map-location-dot' },
       {
         type: 'split-row',
         reverse: true,
@@ -746,19 +763,19 @@ export const projects: Project[] = [
             text: 'The sub-brand issues were solved by having all attributes set to variables. The variables allowed for a unique brand look, color, fonts, and UI treatment without changing the core. The design system could be independently updated and consumed across any application or digital product.'
           }
         ],
-        // NOTE: legacy's right column is a row-cols-2 grid of 6 small
-        // icon+title cards (Elements/Controls/Components/Modules/Templates/
-        // Pages). The existing CardBlock (single header+rows mockup card)
-        // and StyledListBlock (list-group rows) can't represent a repeated
-        // icon+title tile grid — left as flat text pending a new block type.
         right: [
           { type: 'text', text: 'Nomenclature' },
-          { type: 'text', text: 'Elements' },
-          { type: 'text', text: 'Controls' },
-          { type: 'text', text: 'Components' },
-          { type: 'text', text: 'Modules' },
-          { type: 'text', text: 'Templates' },
-          { type: 'text', text: 'Pages' }
+          {
+            type: 'icon-grid',
+            items: [
+              { icon: 'fa-regular fa-image', title: 'Elements' },
+              { icon: 'fa-regular fa-toggle-on', title: 'Controls' },
+              { icon: 'fa-regular fa-sliders', title: 'Components' },
+              { icon: 'fa-light fa-sidebar', title: 'Modules' },
+              { icon: 'fa-regular fa-table-layout', title: 'Templates' },
+              { icon: 'fa-regular fa-browsers', title: 'Pages' }
+            ]
+          }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1332,6 +1349,7 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
       { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
     ],
+    inlineContributions: true,
     technologies: [],
     media: [
       { type: 'text', text: 'Conceptual and Visual Contributions:' },
@@ -1366,6 +1384,7 @@ export const projects: Project[] = [
         type: 'text',
         text: 'Working together, we ensured that each concept seamlessly fit within the overarching theme of the campaign. Our combined efforts brought a cohesive and impactful message to life, demonstrating that the choice of Reveal Clear Aligners was indeed clear.'
       },
+      { type: 'contributions' },
       { type: 'heading', text: 'Concepts' },
       {
         type: 'image-row',

@@ -794,5 +794,18 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   content: "";
 }
 
+/* ── Figures (Bootstrap compiled port, values from _archive/css/styles.css) ── */
+.figure {
+  display: inline-block;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.figure-caption {
+  font-size: 0.875em;
+  color: rgba(33, 37, 41, 0.75);
+}
+
 } /* end @layer components */
 

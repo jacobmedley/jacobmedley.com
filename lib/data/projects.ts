@@ -729,10 +729,17 @@ export const projects: Project[] = [
         cols: [ 12, 12 ]
       },
       { type: 'heading', text: 'Why Hydra?' },
-      { type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra", span: 8 },
       {
-        type: 'text',
-        text: 'Good question! Hydra was a mythical beast that had many heads and one body. The design system had a core body of design patterns that branched out to many systems and brands. 🙂'
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra" }],
+        right: [
+          {
+            type: 'text',
+            text: 'Good question! Hydra was a mythical beast that had many heads and one body. The design system had a core body of design patterns that branched out to many systems and brands. 🙂'
+          }
+        ],
+        leftSpan: 8,
+        rightSpan: 12
       }
     ]
   },

@@ -102,7 +102,7 @@ export interface SplitRowBlock {
 }
 
 export type ProjectMedia =
-  | { type: 'heading'; text: string }
+  | { type: 'heading'; text: string; level?: 3 | 4 | 5; icon?: string }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'image'; src: string; alt: string; span?: number; caption?: string; shape?: 'rounded' | 'circle' }
@@ -442,7 +442,7 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle' }],
         right: [
-          { type: 'heading', text: 'Key Features' },
+          { type: 'heading', text: 'Key Features', level: 4 },
           {
             type: 'list',
             items: [
@@ -457,17 +457,18 @@ export const projects: Project[] = [
           }
         ]
       },
-      { type: 'heading', text: 'The Journey' },
+      { type: 'heading', text: 'The Journey', level: 3, icon: 'fa-light fa-map-location-dot' },
       {
         type: 'split-row',
         reverse: true,
-        left: [
-          { type: 'heading', text: 'Initial Launch and Learnings' },
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Initial Launch and Learnings', level: 4 },
           {
             type: 'text',
             text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"'
           },
-          { type: 'heading', text: 'Plan:' },
+          { type: 'heading', text: 'Plan:', level: 4 },
           {
             type: 'text',
             text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label ecommerce platform.'
@@ -476,24 +477,23 @@ export const projects: Project[] = [
             type: 'text',
             text: 'I developed a bootstrapped WordPress theme for a home page, contact us, about, product details, and an add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
           },
-          { type: 'heading', text: 'Results:' },
+          { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
             text: 'The launch showed moderately higher conversion rates and a lower CPA compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
           }
-        ],
-        right: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle' }]
+        ]
       },
       {
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle' }],
         right: [
-          { type: 'heading', text: 'Iteration Two: Scaling and Optimization' },
+          { type: 'heading', text: 'Iteration Two: Scaling and Optimization', level: 4 },
           {
             type: 'text',
             text: 'With the success of the first site, we faced new challenges. The second site needed dynamic content and a seamless brand experience from the initial interaction to the shopping cart. We started two new projects: a full white-label shopping cart with microservices for product information and a comprehensive A/B testing and conversion rate optimization initiative.'
           },
-          { type: 'heading', text: 'Results:' },
+          { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
             text: 'The second site launched with similar results, providing a solid foundation for future features. We quickly iterated and tested live, planning for future enhancements. The componentized code and design system allowed easy updates and testing, from landing pages to entire user flows.'
@@ -503,30 +503,30 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [
-          { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices' },
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
           {
             type: 'text',
             text: "Focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
           },
-          { type: 'heading', text: 'Results:' },
+          { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
             text: 'We aggressively created landing pages, developed a content strategy for organic growth, and focused on lead generation and conversion rate optimization.'
           }
-        ],
-        right: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle' }]
+        ]
       },
       {
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle' }],
         right: [
-          { type: 'heading', text: 'Iteration Four: Dentist Search Feature' },
+          { type: 'heading', text: 'Iteration Four: Dentist Search Feature', level: 4 },
           {
             type: 'text',
             text: 'The final phase involved designing and coding the UX and UI for a dentist search feature. Leveraging our pattern and component libraries, we expedited the development process.'
           },
-          { type: 'heading', text: 'Results:' },
+          { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
             text: 'The dentist search feature was integrated smoothly, further enhancing the user experience and solidifying our scalable, efficient development framework.'
@@ -731,24 +731,38 @@ export const projects: Project[] = [
       },
       { type: 'heading', text: 'The Rise of Hydra' },
       {
-        type: 'text',
-        text: 'I created a single source of truth for the UX/UI across our products. I streamlined the UI and created a design system that would be tech agnostic and support multiple brands. I established a vocabulary around the design system that would make sense to UI developers and engineers.'
+        type: 'split-row',
+        left: [
+          {
+            type: 'text',
+            text: 'I created a single source of truth for the UX/UI across our products. I streamlined the UI and created a design system that would be tech agnostic and support multiple brands. I established a vocabulary around the design system that would make sense to UI developers and engineers.'
+          },
+          {
+            type: 'text',
+            text: 'I engineered the design system in a way that only affected the frontend mark-up. This enabled us to avoid costly back-end updates, leaving the functional code behind the front end untouched.'
+          },
+          {
+            type: 'text',
+            text: 'The sub-brand issues were solved by having all attributes set to variables. The variables allowed for a unique brand look, color, fonts, and UI treatment without changing the core. The design system could be independently updated and consumed across any application or digital product.'
+          }
+        ],
+        // NOTE: legacy's right column is a row-cols-2 grid of 6 small
+        // icon+title cards (Elements/Controls/Components/Modules/Templates/
+        // Pages). The existing CardBlock (single header+rows mockup card)
+        // and StyledListBlock (list-group rows) can't represent a repeated
+        // icon+title tile grid — left as flat text pending a new block type.
+        right: [
+          { type: 'text', text: 'Nomenclature' },
+          { type: 'text', text: 'Elements' },
+          { type: 'text', text: 'Controls' },
+          { type: 'text', text: 'Components' },
+          { type: 'text', text: 'Modules' },
+          { type: 'text', text: 'Templates' },
+          { type: 'text', text: 'Pages' }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
-      {
-        type: 'text',
-        text: 'I engineered the design system in a way that only affected the frontend mark-up. This enabled us to avoid costly back-end updates, leaving the functional code behind the front end untouched.'
-      },
-      {
-        type: 'text',
-        text: 'The sub-brand issues were solved by having all attributes set to variables. The variables allowed for a unique brand look, color, fonts, and UI treatment without changing the core. The design system could be independently updated and consumed across any application or digital product.'
-      },
-      { type: 'text', text: 'Nomenclature' },
-      { type: 'text', text: 'Elements' },
-      { type: 'text', text: 'Controls' },
-      { type: 'text', text: 'Components' },
-      { type: 'text', text: 'Modules' },
-      { type: 'text', text: 'Templates' },
-      { type: 'text', text: 'Pages' },
       {
         type: 'progress-diagram',
         heading: 'The System Framework',

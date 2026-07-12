@@ -205,6 +205,10 @@ async function captureModalsForSite(browser, site, projects) {
       .catch(() => {})
     await page.evaluate(() => document.fonts.ready)
     await page.addStyleTag({ content: FREEZE_CSS })
+    // The fixed/sticky main nav (#the-menu) isn't part of modal content —
+    // left visible, it re-renders at every scroll offset once the modal is
+    // unclipped into normal flow, smearing across the stitched screenshot.
+    await page.addStyleTag({ content: '#the-menu { visibility: hidden !important; }' })
 
     const dir = join(SHOTS_DIR, site.name)
     mkdirSync(dir, { recursive: true })

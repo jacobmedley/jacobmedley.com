@@ -148,13 +148,20 @@ function BadgeList({ badges }: { badges: ProjectBadge[] }) {
  */
 function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
-    case 'heading':
+    case 'heading': {
+      const Tag = `h${block.level ?? 5}` as 'h3' | 'h4' | 'h5'
       return (
         <>
-          <h5>{block.text}</h5>
+          {block.icon && (
+            <p className="display-4">
+              <i className={block.icon} aria-hidden="true" />
+            </p>
+          )}
+          <Tag>{block.text}</Tag>
           <hr className="solid-center" />
         </>
       )
+    }
     case 'text':
       return <p>{block.text}</p>
     case 'list':
@@ -488,7 +495,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
   if (!rich) {
     return (
-      <ul>
+      <ul className="list-disc pl-6">
         {block.items.map((item, i) => (
           <li key={i}>
             {item.label && <strong>{item.label} </strong>}

@@ -95,8 +95,9 @@ export interface SplitRowBlock {
   left: ProjectMedia[]
   right: ProjectMedia[]
   reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
-  leftSpan?: number // Bootstrap col-lg-N, default 12
+  leftSpan?: number // Bootstrap col-{breakpoint}-N, default 12
   rightSpan?: number // default 12
+  breakpoint?: 'md' | 'lg' // legacy col-md-N vs col-lg-N, default 'lg'
   vAlign?: 'top' | 'center' | 'bottom' // legacy align-items-*, default 'top'
   hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
 }
@@ -741,7 +742,8 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        breakpoint: 'md'
       },
       { type: 'heading', text: 'The Rise of Hydra' },
       {
@@ -879,7 +881,8 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/opf-modal/brief.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        breakpoint: 'md'
       },
       { type: 'heading', text: 'How It Works' },
       {

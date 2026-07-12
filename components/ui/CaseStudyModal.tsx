@@ -390,28 +390,35 @@ const SPLIT_ROW_H_ALIGN = {
   end: 'justify-end'
 } as const
 
+// Tailwind's JIT scanner needs literal class strings per breakpoint — a
+// template-literal `${bp}:hidden` never appears verbatim in source, so it
+// wouldn't get generated.
+const SPLIT_ROW_REVERSE_CLASS = { md: 'md:flex-row-reverse', lg: 'lg:flex-row-reverse' } as const
+const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as const
+
 function SplitRow({ block }: { block: SplitRowBlock }) {
+  const bp = block.breakpoint ?? 'lg'
   return (
     <div
       className={cn(
         'row',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
-        block.reverse && 'lg:flex-row-reverse'
+        block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
       )}
     >
-      <div className={`col-24 col-lg-${block.leftSpan ?? 12}`}>
+      <div className={`col-24 col-${bp}-${block.leftSpan ?? 12}`}>
         {block.left.map((child, i) => (
           <BlockContent key={i} block={child} />
         ))}
       </div>
       {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
-          d-block d-lg-none` + hr) before the lg+ breakpoint turns this row
+          d-block d-lg-none` + hr) before the row's breakpoint turns it
           side-by-side. */}
-      <div className="col-24 py-12 block lg:hidden">
+      <div className={cn('col-24 py-12 block', SPLIT_ROW_DIVIDER_HIDDEN_CLASS[bp])}>
         <hr className="solid-center" />
       </div>
-      <div className={`col-24 col-lg-${block.rightSpan ?? 12}`}>
+      <div className={`col-24 col-${bp}-${block.rightSpan ?? 12}`}>
         {block.right.map((child, i) => (
           <BlockContent key={i} block={child} />
         ))}

@@ -194,17 +194,22 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
     case 'image': {
       const shapeClass = block.shape === 'circle' ? 'rounded-full' : 'rounded'
       return block.caption ? (
-        <figure className="figure">
-          <img
-            loading="lazy"
-            className={cn('figure-img img-fluid', !block.flush && [shapeClass, 'shadow-[var(--shadow-bs-lg)]'])}
-            src={block.src}
-            alt={block.alt}
-          />
-          <figcaption className="figure-caption text-right">{block.caption}</figcaption>
-        </figure>
+        // .figure is display:inline-block (Bootstrap), so text-center has to
+        // live on this wrapping block, not the figure itself, to actually
+        // reposition it within the column.
+        <div className="text-center">
+          <figure className="figure">
+            <img
+              loading="lazy"
+              className={cn('figure-img img-fluid', !block.flush && [shapeClass, 'shadow-[var(--shadow-bs-lg)]'])}
+              src={block.src}
+              alt={block.alt}
+            />
+            <figcaption className="figure-caption text-right">{block.caption}</figcaption>
+          </figure>
+        </div>
       ) : (
-        <p>
+        <p className="text-center">
           <img
             loading="lazy"
             className={cn(

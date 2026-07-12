@@ -98,6 +98,7 @@ export interface SplitRowBlock {
   leftSpan?: number // Bootstrap col-lg-N, default 12
   rightSpan?: number // default 12
   vAlign?: 'top' | 'center' | 'bottom' // legacy align-items-*, default 'top'
+  hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
 }
 
 export type ProjectMedia =
@@ -741,7 +742,8 @@ export const projects: Project[] = [
         ],
         leftSpan: 8,
         rightSpan: 12,
-        vAlign: 'center'
+        vAlign: 'center',
+        hAlign: 'center'
       }
     ]
   },

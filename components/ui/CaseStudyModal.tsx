@@ -316,10 +316,22 @@ const SPLIT_ROW_V_ALIGN = {
   bottom: 'items-end'
 } as const
 
+const SPLIT_ROW_H_ALIGN = {
+  start: 'justify-start',
+  center: 'justify-center',
+  between: 'justify-between',
+  end: 'justify-end'
+} as const
+
 function SplitRow({ block }: { block: SplitRowBlock }) {
   return (
     <div
-      className={cn('row', SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'], block.reverse && 'lg:flex-row-reverse')}
+      className={cn(
+        'row',
+        SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
+        SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
+        block.reverse && 'lg:flex-row-reverse'
+      )}
     >
       <div className={`col-24 col-lg-${block.leftSpan ?? 12}`}>
         {block.left.map((child, i) => (

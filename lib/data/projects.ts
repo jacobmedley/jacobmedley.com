@@ -438,73 +438,100 @@ export const projects: Project[] = [
           }
         ]
       },
-      { type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', span: 12 },
-      { type: 'heading', text: 'Key Features' },
       {
-        type: 'list',
-        items: [
-          'Product Design Framework: Enabled updates, testing, and conversion rate optimization at scale.',
-          'Multi-Brand Design System: One to one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
-          'Microservices and APIs: Provided product information, dentist search, and shopping cart functionalities.',
-          'Sales and Promotional Management: Scheduled and managed sales and promotional campaigns.',
-          'Robust Marketing and Campaign Tracking: Included PPC, affiliate, and organic tracking.',
-          'Knowledge Base and Documentation: Supported designers and developers with comprehensive resources.',
-          'DevOps Pipelines: Facilitated global system updates and individual feature deployments across all sites or single sites.'
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Key Features' },
+          {
+            type: 'list',
+            items: [
+              'Product Design Framework: Enabled updates, testing, and conversion rate optimization at scale.',
+              'Multi-Brand Design System: One to one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
+              'Microservices and APIs: Provided product information, dentist search, and shopping cart functionalities.',
+              'Sales and Promotional Management: Scheduled and managed sales and promotional campaigns.',
+              'Robust Marketing and Campaign Tracking: Included PPC, affiliate, and organic tracking.',
+              'Knowledge Base and Documentation: Supported designers and developers with comprehensive resources.',
+              'DevOps Pipelines: Facilitated global system updates and individual feature deployments across all sites or single sites.'
+            ]
+          }
         ]
       },
       { type: 'heading', text: 'The Journey' },
-      { type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', span: 12 },
-      { type: 'heading', text: 'Initial Launch and Learnings' },
       {
-        type: 'text',
-        text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"'
+        type: 'split-row',
+        reverse: true,
+        left: [
+          { type: 'heading', text: 'Initial Launch and Learnings' },
+          {
+            type: 'text',
+            text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"'
+          },
+          { type: 'heading', text: 'Plan:' },
+          {
+            type: 'text',
+            text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label ecommerce platform.'
+          },
+          {
+            type: 'text',
+            text: 'I developed a bootstrapped WordPress theme for a home page, contact us, about, product details, and an add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
+          },
+          { type: 'heading', text: 'Results:' },
+          {
+            type: 'text',
+            text: 'The launch showed moderately higher conversion rates and a lower CPA compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
+          }
+        ],
+        right: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle' }]
       },
-      { type: 'heading', text: 'Plan:' },
       {
-        type: 'text',
-        text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label ecommerce platform.'
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Iteration Two: Scaling and Optimization' },
+          {
+            type: 'text',
+            text: 'With the success of the first site, we faced new challenges. The second site needed dynamic content and a seamless brand experience from the initial interaction to the shopping cart. We started two new projects: a full white-label shopping cart with microservices for product information and a comprehensive A/B testing and conversion rate optimization initiative.'
+          },
+          { type: 'heading', text: 'Results:' },
+          {
+            type: 'text',
+            text: 'The second site launched with similar results, providing a solid foundation for future features. We quickly iterated and tested live, planning for future enhancements. The componentized code and design system allowed easy updates and testing, from landing pages to entire user flows.'
+          }
+        ]
       },
       {
-        type: 'text',
-        text: 'I developed a bootstrapped WordPress theme for a home page, contact us, about, product details, and an add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
+        type: 'split-row',
+        reverse: true,
+        left: [
+          { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices' },
+          {
+            type: 'text',
+            text: "Focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
+          },
+          { type: 'heading', text: 'Results:' },
+          {
+            type: 'text',
+            text: 'We aggressively created landing pages, developed a content strategy for organic growth, and focused on lead generation and conversion rate optimization.'
+          }
+        ],
+        right: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle' }]
       },
-      { type: 'heading', text: 'Results:' },
       {
-        type: 'text',
-        text: 'The launch showed moderately higher conversion rates and a lower CPA compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
-      },
-      { type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', span: 12 },
-      { type: 'heading', text: 'Iteration Two: Scaling and Optimization' },
-      {
-        type: 'text',
-        text: 'With the success of the first site, we faced new challenges. The second site needed dynamic content and a seamless brand experience from the initial interaction to the shopping cart. We started two new projects: a full white-label shopping cart with microservices for product information and a comprehensive A/B testing and conversion rate optimization initiative.'
-      },
-      { type: 'heading', text: 'Results:' },
-      {
-        type: 'text',
-        text: 'The second site launched with similar results, providing a solid foundation for future features. We quickly iterated and tested live, planning for future enhancements. The componentized code and design system allowed easy updates and testing, from landing pages to entire user flows.'
-      },
-      { type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', span: 12 },
-      { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices' },
-      {
-        type: 'text',
-        text: "Focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
-      },
-      { type: 'heading', text: 'Results:' },
-      {
-        type: 'text',
-        text: 'We aggressively created landing pages, developed a content strategy for organic growth, and focused on lead generation and conversion rate optimization.'
-      },
-      { type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', span: 12 },
-      { type: 'heading', text: 'Iteration Four: Dentist Search Feature' },
-      {
-        type: 'text',
-        text: 'The final phase involved designing and coding the UX and UI for a dentist search feature. Leveraging our pattern and component libraries, we expedited the development process.'
-      },
-      { type: 'heading', text: 'Results:' },
-      {
-        type: 'text',
-        text: 'The dentist search feature was integrated smoothly, further enhancing the user experience and solidifying our scalable, efficient development framework.'
+        type: 'split-row',
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle' }],
+        right: [
+          { type: 'heading', text: 'Iteration Four: Dentist Search Feature' },
+          {
+            type: 'text',
+            text: 'The final phase involved designing and coding the UX and UI for a dentist search feature. Leveraging our pattern and component libraries, we expedited the development process.'
+          },
+          { type: 'heading', text: 'Results:' },
+          {
+            type: 'text',
+            text: 'The dentist search feature was integrated smoothly, further enhancing the user experience and solidifying our scalable, efficient development framework.'
+          }
+        ]
       }
     ]
   },
@@ -656,23 +683,52 @@ export const projects: Project[] = [
     ],
     media: [
       { type: 'heading', text: 'The Problem' },
-      { type: 'heading', text: 'The user experience was fragmented.' },
       {
-        type: 'text',
-        text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
+        type: 'split-row',
+        left: [
+          { type: 'heading', text: 'The user experience was fragmented.' },
+          {
+            type: 'text',
+            text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
+          },
+          {
+            type: 'text',
+            text: 'The fragmentation created confusion and unneeded friction for the user. The insufficient variety of UI elements created design and technical debt.'
+          }
+        ],
+        right: [
+          {
+            type: 'image',
+            src: '/images/work/hydra/ui-rag.png',
+            alt: 'UI fragmentation on buttons',
+            caption: 'UX/UI Fragmentation - Button Treatments'
+          }
+        ],
+        leftSpan: 14,
+        rightSpan: 10,
+        vAlign: 'center'
       },
       {
-        type: 'text',
-        text: 'The fragmentation created confusion and unneeded friction for the user. The insufficient variety of UI elements created design and technical debt.'
+        type: 'split-row',
+        left: [
+          {
+            type: 'image',
+            src: '/images/work/hydra/error-01.png',
+            alt: '...',
+            caption: 'UX/UI Fragmentation - error and input treatments.'
+          }
+        ],
+        right: [
+          {
+            type: 'image',
+            src: '/images/work/hydra/error-02.png',
+            alt: '...',
+            caption: 'UX/UI Fragmentation - error and input treatments.'
+          }
+        ],
+        leftSpan: 12,
+        rightSpan: 12
       },
-      {
-        type: 'image',
-        src: '/images/work/hydra/ui-rag.png',
-        alt: 'UI fragmentation on buttons',
-        span: 10
-      },
-      { type: 'image', src: '/images/work/hydra/error-01.png', alt: '...' },
-      { type: 'image', src: '/images/work/hydra/error-02.png', alt: '...' },
       { type: 'heading', text: 'The Rise of Hydra' },
       {
         type: 'text',

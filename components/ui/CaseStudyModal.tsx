@@ -170,12 +170,13 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
           ))}
         </ul>
       )
-    case 'image':
+    case 'image': {
+      const shapeClass = block.shape === 'circle' ? 'rounded-full' : 'rounded'
       return block.caption ? (
         <figure className="figure">
           <img
             loading="lazy"
-            className="figure-img img-fluid rounded shadow-[var(--shadow-bs-lg)]"
+            className={`figure-img img-fluid ${shapeClass} shadow-[var(--shadow-bs-lg)]`}
             src={block.src}
             alt={block.alt}
           />
@@ -183,9 +184,15 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         </figure>
       ) : (
         <p>
-          <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={block.src} alt={block.alt} />
+          <img
+            loading="lazy"
+            className={cn('img-fluid shadow-[var(--shadow-bs-lg)]', block.shape === 'circle' && shapeClass)}
+            src={block.src}
+            alt={block.alt}
+          />
         </p>
       )
+    }
     case 'styled-list':
       return <StyledListContent block={block} />
     case 'card':
@@ -303,9 +310,17 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
  * full-width row per child, matching how legacy places bare <p>/<h4>/<img>
  * elements straight inside the column.
  */
+const SPLIT_ROW_V_ALIGN = {
+  top: 'items-start',
+  center: 'items-center',
+  bottom: 'items-end'
+} as const
+
 function SplitRow({ block }: { block: SplitRowBlock }) {
   return (
-    <div className={cn('row', block.reverse && 'lg:flex-row-reverse')}>
+    <div
+      className={cn('row', SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'], block.reverse && 'lg:flex-row-reverse')}
+    >
       <div className={`col-24 col-lg-${block.leftSpan ?? 12}`}>
         {block.left.map((child, i) => (
           <BlockContent key={i} block={child} />

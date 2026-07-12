@@ -97,13 +97,14 @@ export interface SplitRowBlock {
   reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
   leftSpan?: number // Bootstrap col-lg-N, default 12
   rightSpan?: number // default 12
+  vAlign?: 'top' | 'center' | 'bottom' // legacy align-items-*, default 'top'
 }
 
 export type ProjectMedia =
   | { type: 'heading'; text: string }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
-  | { type: 'image'; src: string; alt: string; span?: number; caption?: string }
+  | { type: 'image'; src: string; alt: string; span?: number; caption?: string; shape?: 'rounded' | 'circle' }
   | { type: 'image-pair'; desktop: ProjectImage; mobile: ProjectImage }
   | { type: 'image-row'; images: ProjectImage[]; cols: number[] }
   | {
@@ -731,7 +732,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Why Hydra?' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra" }],
+        left: [{ type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra", shape: 'circle' }],
         right: [
           {
             type: 'text',
@@ -739,7 +740,8 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 8,
-        rightSpan: 12
+        rightSpan: 12,
+        vAlign: 'center'
       }
     ]
   },

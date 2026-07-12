@@ -356,18 +356,32 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
             block.colsLg && `row-cols-lg-${block.colsLg}`
           )}
         >
-          {block.items.map((item) => (
-            <div key={item.title} className="col mb-4">
-              <div className="card">
-                <div className="card-body">
-                  <p className="mb-1">
-                    <i className={`${item.icon} fa-2x`} aria-hidden="true" />
-                  </p>
-                  <p className="card-title font-brand m-0">{item.title}</p>
+          {block.items.map((item) =>
+            item.image ? (
+              <div key={item.title} className="col mb-4">
+                <p>
+                  <img
+                    loading="lazy"
+                    className="img-fluid rounded-full shadow-[var(--shadow-bs-lg)]"
+                    src={item.image.src}
+                    alt={item.image.alt}
+                  />
+                </p>
+                <h5>{item.title}</h5>
+              </div>
+            ) : (
+              <div key={item.title} className="col mb-4">
+                <div className="card">
+                  <div className="card-body">
+                    <p className="mb-1">
+                      <i className={`${item.icon} fa-2x`} aria-hidden="true" />
+                    </p>
+                    <p className="card-title font-brand m-0">{item.title}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       )
     case 'contributions':
@@ -673,7 +687,7 @@ function ModalContent({ project }: { project: Project }) {
         <div className="col-24 col-lg-12 col-xl-14 self-center">
           {project.brief.paragraphs.length > 0 && (
             <>
-              <h3>Project Brief:</h3>
+              <h3>{project.briefHeading ?? 'Project Brief:'}</h3>
               <hr className="solid-center" />
               {project.brief.paragraphs.map((p) => (
                 <p key={p.slice(0, 40)}>{p}</p>

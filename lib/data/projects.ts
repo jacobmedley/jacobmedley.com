@@ -105,9 +105,12 @@ export interface SplitRowBlock {
 // Repeated icon+title tiles (hydra's Nomenclature grid: Elements/Controls/
 // Components/Modules/Templates/Pages) — legacy's row-cols-2 grid of .card
 // markup. Distinct from CardBlock (a single header+rows mockup card).
+// Items carry exactly one of icon/image: `icon` renders the existing FA
+// .card tile (hydra); `image` renders a plain circular photo + <h5> below
+// it, matching legacy's photo-grid markup (workshops) — no .card wrapper.
 export interface IconGridBlock {
   type: 'icon-grid'
-  items: { icon: string; title: string }[]
+  items: { icon?: string; image?: { src: string; alt: string }; title: string }[]
   cols?: number // row-cols-N, default 2
   colsLg?: number // row-cols-lg-N, optional
 }
@@ -159,6 +162,7 @@ export interface Project {
   thumb?: ProjectImage // visual-design thumb background
   cardImage?: ProjectImage // feature-card image
   brief: { image?: ProjectImage; paragraphs: string[] }
+  briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
   contributions: ProjectBadge[]
   // true when legacy interleaves the Contributions badges among the modal's
   // custom prose (reveal) rather than right after the brief — skips the
@@ -1173,7 +1177,14 @@ export const projects: Project[] = [
     icon: 'fa-light fa-screen-users',
     visible: true,
     summary: '',
-    brief: { image: { src: '/images/work/workshop/ideas.jpg', alt: '' }, paragraphs: [] },
+    brief: {
+      image: { src: '/images/work/workshop/ideas.jpg', alt: '' },
+      paragraphs: [
+        'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, CRO (Conversion Rate Optimization), and User Testing Strategy, effectively driving innovation and strategic thinking.',
+        'With the right team, anything is possible. Anything!'
+      ]
+    },
+    briefHeading: 'Solving the right problems.',
     contributions: [{ icon: 'fa-regular fa-lightbulb-on', label: 'Facilitator' }],
     technologies: [
       { icon: 'fa-regular fa-chalkboard', label: 'Whiteboard' },
@@ -1182,34 +1193,26 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-brain', label: 'Brains' }
     ],
     media: [
-      { type: 'heading', text: 'Solving the right problems.' },
-      {
-        type: 'text',
-        text: 'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, CRO (Conversion Rate Optimization), and User Testing Strategy, effectively driving innovation and strategic thinking.'
-      },
-      { type: 'text', text: 'With the right team, anything is possible. Anything!' },
       { type: 'heading', text: 'Various Types of Workshops I have Facilitated.' },
       {
-        type: 'image',
-        src: '/images/work/workshop/cover.jpg',
-        alt: 'Content Strategy',
-        span: 6
-      },
-      { type: 'heading', text: 'Creative Brainstorming' },
-      {
-        type: 'image',
-        src: '/images/work/workshop/cover-02.jpg',
-        alt: 'Content Strategy',
-        span: 6
-      },
-      { type: 'heading', text: 'UX/UI Strategy' },
-      {
-        type: 'image',
-        src: '/images/work/workshop/planning.jpg',
-        alt: 'Content Strategy',
-        span: 6
-      },
-      { type: 'heading', text: 'CRO Testing Strategy' }
+        type: 'icon-grid',
+        items: [
+          {
+            image: { src: '/images/work/workshop/cover.jpg', alt: 'Content Strategy' },
+            title: 'Creative Brainstorming'
+          },
+          {
+            image: { src: '/images/work/workshop/cover-02.jpg', alt: 'Content Strategy' },
+            title: 'UX/UI Strategy'
+          },
+          {
+            image: { src: '/images/work/workshop/planning.jpg', alt: 'Content Strategy' },
+            title: 'CRO Testing Strategy'
+          }
+        ],
+        cols: 1,
+        colsLg: 3
+      }
     ]
   },
   {
@@ -1221,23 +1224,18 @@ export const projects: Project[] = [
     icon: 'fa-light fa-mouse-field',
     visible: true,
     summary: '',
-    brief: { image: { src: '/images/work/roadmap/rm.jpg', alt: '' }, paragraphs: [] },
+    brief: {
+      image: { src: '/images/work/roadmap/rm.jpg', alt: '' },
+      paragraphs: [
+        "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects.",
+        'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under "Example UX Roadmap".',
+        'I am a strong planner and lean hard into planning the work and working the plan. To quote Roberts Burns - "The best-laid plans of mice and men often go awry," so be ready to pivot.'
+      ]
+    },
+    briefHeading: 'Are we there yet?',
     contributions: [{ icon: 'fa-regular fa-mouse-field', label: 'Roadmap Planning' }],
     technologies: [{ icon: 'fa-regular fa-chalkboard', label: 'Lucidchart' }],
     media: [
-      { type: 'heading', text: 'Are we there yet?' },
-      {
-        type: 'text',
-        text: "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects."
-      },
-      {
-        type: 'text',
-        text: 'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under "Example UX Roadmap".'
-      },
-      {
-        type: 'text',
-        text: 'I am a strong planner and lean hard into planning the work and working the plan. To quote Roberts Burns - "The best-laid plans of mice and men often go awry," so be ready to pivot.'
-      },
       { type: 'heading', text: 'Example UX Roadmap Obfuscated for client protection.' },
       { type: 'text', text: 'Structure and Components' },
       {
@@ -1311,19 +1309,17 @@ export const projects: Project[] = [
     summary: '',
     brief: {
       image: { src: '/../images/work/kitchen-sink/persona-one.webp', alt: '' },
-      paragraphs: []
+      paragraphs: [
+        'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
+      ]
     },
+    briefHeading: 'Personas',
     contributions: [
       { icon: 'fa-regular fa-clipboard-list-check', label: 'Co-Project Lead' },
       { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
     ],
     technologies: [{ icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' }],
     media: [
-      { type: 'heading', text: 'Personas' },
-      {
-        type: 'text',
-        text: 'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
-      },
       { type: 'heading', text: 'Example Persona' },
       {
         type: 'image',

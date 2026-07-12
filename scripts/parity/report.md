@@ -1,6 +1,6 @@
 # Parity Report
 
-Generated: 2026-07-12 02:23 UTC · pass threshold: < 2% pixel diff
+Generated: 2026-07-12 03:02 UTC · pass threshold: < 2% pixel diff
 
 | Section | 375px | 768px | 1280px | 1920px |
 |---|---|---|---|---|
@@ -17,17 +17,17 @@ Generated: 2026-07-12 02:23 UTC · pass threshold: < 2% pixel diff
 |---|---|---|
 | `webmd` | 23.02% ❌ | 24.08% ❌ |
 | `dentalplans` | 27.67% ❌ | 31.88% ❌ |
-| `bumblebeemd` | 25.40% ❌ | 18.81% ❌ |
+| `bumblebeemd` | 25.40% ❌ | 18.34% ❌ |
 | `hydra` | 31.54% ❌ | 16.81% ❌ |
 | `opfred` | 35.98% ❌ | 21.64% ❌ |
 | `split-test` | 42.05% ❌ | 46.01% ❌ |
 | `call-center-ux` | 28.96% ❌ | 21.48% ❌ |
 | `marketing-auto` | 20.01% ❌ | 21.83% ❌ |
-| `workshops` | 35.84% ❌ | 50.88% ❌ |
-| `roadmap` | 9.05% ❌ | 8.73% ❌ |
-| `personas` | 24.32% ❌ | 30.94% ❌ |
+| `workshops` | 14.01% ❌ | 17.78% ❌ |
+| `roadmap` | 9.79% ❌ | 13.41% ❌ |
+| `personas` | 16.54% ❌ | 28.71% ❌ |
 | `reveal` | 35.04% ❌ | 26.76% ❌ |
-| `viva` | 35.66% ❌ | 36.31% ❌ |
+| `viva` | 35.66% ❌ | 36.22% ❌ |
 | `wrong` | 32.61% ❌ | 57.03% ❌ |
 
 ## Size mismatches (legacy vs new)
@@ -53,12 +53,12 @@ Generated: 2026-07-12 02:23 UTC · pass threshold: < 2% pixel diff
 - `modal-call-center-ux` @ 1280px: 1140×1513 vs 1140×1375
 - `modal-marketing-auto` @ 375px: 375×2075 vs 375×2232
 - `modal-marketing-auto` @ 1280px: 1140×1354 vs 1140×1282
-- `modal-workshops` @ 375px: 375×2576 vs 375×2906
-- `modal-workshops` @ 1280px: 1140×1238 vs 1140×2260
-- `modal-roadmap` @ 375px: 375×2763 vs 375×2777
-- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×2165
-- `modal-personas` @ 375px: 375×1405 vs 375×1474
-- `modal-personas` @ 1280px: 1140×1570 vs 1140×1709
+- `modal-workshops` @ 375px: 375×2576 vs 375×2619
+- `modal-workshops` @ 1280px: 1140×1238 vs 1140×1308
+- `modal-roadmap` @ 375px: 375×2763 vs 375×2733
+- `modal-roadmap` @ 1280px: 1140×2111 vs 1140×1952
+- `modal-personas` @ 375px: 375×1405 vs 375×1430
+- `modal-personas` @ 1280px: 1140×1570 vs 1140×1516
 - `modal-reveal` @ 375px: 375×3820 vs 375×3633
 - `modal-reveal` @ 1280px: 1140×2628 vs 1140×2590
 - `modal-viva` @ 375px: 375×3220 vs 375×4063

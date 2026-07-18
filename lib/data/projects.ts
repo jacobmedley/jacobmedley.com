@@ -97,11 +97,14 @@ export interface SplitRowBlock {
   reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
   leftSpan?: number // Bootstrap col-{breakpoint}-N, default 12
   rightSpan?: number // default 12
+  leftSpanXl?: number // legacy col-xl-N, omit for no xl override
+  rightSpanXl?: number // legacy col-xl-N, omit for no xl override
   breakpoint?: 'md' | 'lg' // legacy col-md-N vs col-lg-N, default 'lg'
   vAlign?: 'top' | 'center' | 'bottom' // legacy align-items-*, default 'top'
   hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
   leftSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for left only
   rightSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for right only
+  mobileDivider?: boolean // legacy `col-24 py-5 d-block d-lg-none` hr between stacked columns, default false — most legacy rows have none
 }
 
 // Repeated icon+title tiles (hydra's Nomenclature grid: Elements/Controls/
@@ -118,7 +121,16 @@ export interface IconGridBlock {
 }
 
 export type ProjectMedia =
-  | { type: 'heading'; text: string; level?: 2 | 3 | 4 | 5; icon?: string }
+  | {
+      type: 'heading'
+      text: string
+      level?: 2 | 3 | 4 | 5
+      icon?: string
+      // legacy's `hr.my-5 -> icon -> h2 -> hr.my-5` section-break pattern
+      // (col gets text-center, leading hr added, trailing hr gets my-12,
+      // the usual mt-12 dropped since the leading hr supplies the gap)
+      sectionDivider?: boolean
+    }
   | { type: 'text'; text: string }
   | { type: 'list'; items: string[] }
   | {
@@ -129,9 +141,12 @@ export type ProjectMedia =
       caption?: string
       shape?: 'rounded' | 'circle'
       flush?: boolean // true: no shadow, no rounding (raw) — baked-in-chrome UI screenshots
+      widthPct?: 25 | 50 | 75 | 100 // legacy w-25/w-50/w-75/w-100, default 100
+      bordered?: boolean // legacy `border border-light` -> border-white (see brief image)
     }
   | { type: 'image-pair'; desktop: ProjectImage; mobile: ProjectImage }
-  | { type: 'image-row'; images: ProjectImage[]; cols: number[] }
+  | { type: 'image-row'; images: ProjectImage[]; cols: number[]; mobileDivider?: boolean } // default false, see SplitRowBlock.mobileDivider
+  | { type: 'divider' } // legacy standalone `col-24.my-5 > hr.solid-center` row
   | {
       type: 'metric-grid'
       heading: string
@@ -470,9 +485,12 @@ export const projects: Project[] = [
           }
         ]
       },
+      { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle' }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle', bordered: true }],
+        leftSpanXl: 10,
+        rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Key Features', level: 4 },
@@ -490,11 +508,13 @@ export const projects: Project[] = [
           }
         ]
       },
-      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-light fa-map-location-dot' },
+      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-light fa-map-location-dot', sectionDivider: true },
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle' }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        leftSpanXl: 10,
+        rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Initial Launch and Learnings', level: 4 },
@@ -518,9 +538,12 @@ export const projects: Project[] = [
           }
         ]
       },
+      { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle' }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        leftSpanXl: 10,
+        rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Two: Scaling and Optimization', level: 4 },
@@ -535,10 +558,13 @@ export const projects: Project[] = [
           }
         ]
       },
+      { type: 'divider' },
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle' }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        leftSpanXl: 10,
+        rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
@@ -553,9 +579,12 @@ export const projects: Project[] = [
           }
         ]
       },
+      { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle' }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        leftSpanXl: 10,
+        rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Four: Dentist Search Feature', level: 4 },
@@ -989,7 +1018,10 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        leftSpanXl: 8,
+        rightSpanXl: 10,
+        hAlign: 'center'
       },
       {
         type: 'split-row',
@@ -1028,7 +1060,10 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        leftSpanXl: 8,
+        rightSpanXl: 10,
+        hAlign: 'center'
       },
       {
         type: 'split-row',
@@ -1171,7 +1206,10 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/ma-modal/ma-3b.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        leftSpanXl: 8,
+        rightSpanXl: 8,
+        hAlign: 'center'
       }
     ]
   },
@@ -1405,7 +1443,8 @@ export const projects: Project[] = [
             alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ]
+        cols: [ 12, 12 ],
+        mobileDivider: true
       },
       {
         type: 'image-row',
@@ -1419,7 +1458,8 @@ export const projects: Project[] = [
             alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ]
+        cols: [ 12, 12 ],
+        mobileDivider: true
       }
     ]
   },
@@ -1576,7 +1616,8 @@ export const projects: Project[] = [
             alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ]
+        cols: [ 12, 12 ],
+        mobileDivider: true
       },
       {
         type: 'image-row',
@@ -1590,7 +1631,8 @@ export const projects: Project[] = [
             alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ]
+        cols: [ 12, 12 ],
+        mobileDivider: true
       },
       {
         type: 'image-row',
@@ -1604,7 +1646,8 @@ export const projects: Project[] = [
             alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ]
+        cols: [ 12, 12 ],
+        mobileDivider: true
       },
       { type: 'heading', text: 'Full Landing Page' },
       {

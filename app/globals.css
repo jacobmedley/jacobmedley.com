@@ -237,9 +237,12 @@
   .row-cols-lg-5 > * { flex: 0 0 auto; width: 20%; }
 }
 @media (min-width: 1200px) {
+  .col-xl-8  { flex: 0 0 auto; width: 33.3333%; }
   .col-xl-10 { flex: 0 0 auto; width: 41.6667%; }
+  .col-xl-11 { flex: 0 0 auto; width: 45.8333%; }
   .col-xl-14 { flex: 0 0 auto; width: 58.3333%; }
   .col-xl-16 { flex: 0 0 auto; width: 66.6667%; }
+  .col-xl-18 { flex: 0 0 auto; width: 75%; }
   .row-cols-xl-4 > * { flex: 0 0 auto; width: 25%; }
 }
 @media (min-width: 1400px) {

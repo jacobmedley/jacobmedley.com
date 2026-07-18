@@ -28,6 +28,9 @@ const BG_LIGHT_25: Record<BrandToken, string> = {
   pop: 'bg-pop-light/25'
 }
 
+// Legacy w-25/w-50/w-75/w-100 on media images. Literal map, same reason as BG_LIGHT_25.
+const WIDTH_PCT_CLASS = { 25: 'w-1/4', 50: 'w-1/2', 75: 'w-3/4', 100: 'w-full' } as const
+
 const BG_SHADE: Record<BrandShade, string> = {
   prime: 'bg-prime', 'prime-light': 'bg-prime-light', 'prime-dark': 'bg-prime-dark',
   second: 'bg-second', 'second-light': 'bg-second-light', 'second-dark': 'bg-second-dark',
@@ -167,13 +170,14 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
       return (
         <>
+          {block.sectionDivider && <hr className="solid-center my-12" />}
           {block.icon && (
             <p className="display-4">
               <i className={block.icon} aria-hidden="true" />
             </p>
           )}
           <Tag>{block.text}</Tag>
-          <hr className="solid-center" />
+          <hr className={cn('solid-center', block.sectionDivider && 'my-12')} />
         </>
       )
     }
@@ -194,6 +198,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       )
     case 'image': {
       const shapeClass = block.shape === 'circle' ? 'rounded-full' : 'rounded'
+      const widthClass = block.widthPct && WIDTH_PCT_CLASS[block.widthPct]
       return block.caption ? (
         // .figure is display:inline-block (Bootstrap), so text-center has to
         // live on this wrapping block, not the figure itself, to actually
@@ -202,7 +207,12 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
           <figure className="figure">
             <img
               loading="lazy"
-              className={cn('figure-img img-fluid', !block.flush && [shapeClass, 'shadow-[var(--shadow-bs-lg)]'])}
+              className={cn(
+                'figure-img img-fluid',
+                widthClass,
+                block.bordered && 'border border-white',
+                !block.flush && [shapeClass, 'shadow-[var(--shadow-bs-lg)]']
+              )}
               src={block.src}
               alt={block.alt}
             />
@@ -215,6 +225,8 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
             loading="lazy"
             className={cn(
               'img-fluid',
+              widthClass,
+              block.bordered && 'border border-white',
               !block.flush && ['shadow-[var(--shadow-bs-lg)]', block.shape === 'circle' && shapeClass]
             )}
             src={block.src}
@@ -241,8 +253,16 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
     case 'heading':
       return (
         <div className="row">
-          <div className="col-24 mt-12">
+          <div className={cn('col-24', block.sectionDivider ? 'text-center' : 'mt-12')}>
             <BlockContent block={block} />
+          </div>
+        </div>
+      )
+    case 'divider':
+      return (
+        <div className="row">
+          <div className="col-24 my-12">
+            <hr className="solid-center" />
           </div>
         </div>
       )
@@ -301,7 +321,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
         <div className="row mb-6 justify-center">
           {block.images.map((img, i) => (
             <Fragment key={img.src}>
-              {i > 0 && (
+              {i > 0 && block.mobileDivider && (
                 <div className="col-24 py-12 block lg:hidden">
                   <hr className="solid-center" />
                 </div>
@@ -436,6 +456,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
+          block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
@@ -445,13 +466,16 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       </div>
       {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
           d-block d-lg-none` + hr) before the row's breakpoint turns it
-          side-by-side. */}
-      <div className={cn('col-24 py-12 block', SPLIT_ROW_DIVIDER_HIDDEN_CLASS[bp])}>
-        <hr className="solid-center" />
-      </div>
+          side-by-side — most legacy rows don't have one, so this is opt-in. */}
+      {block.mobileDivider && (
+        <div className={cn('col-24 py-12 block', SPLIT_ROW_DIVIDER_HIDDEN_CLASS[bp])}>
+          <hr className="solid-center" />
+        </div>
+      )}
       <div
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
+          block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >

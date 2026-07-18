@@ -403,6 +403,12 @@ const SPLIT_ROW_V_ALIGN = {
   bottom: 'items-end'
 } as const
 
+const SPLIT_ROW_SELF_ALIGN = {
+  top: 'self-start',
+  center: 'self-center',
+  bottom: 'self-end'
+} as const
+
 const SPLIT_ROW_H_ALIGN = {
   start: 'justify-start',
   center: 'justify-center',
@@ -427,7 +433,12 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
       )}
     >
-      <div className={`col-24 col-${bp}-${block.leftSpan ?? 12}`}>
+      <div
+        className={cn(
+          `col-24 col-${bp}-${block.leftSpan ?? 12}`,
+          block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
+        )}
+      >
         {block.left.map((child, i) => (
           <BlockContent key={i} block={child} />
         ))}
@@ -438,7 +449,12 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div className={cn('col-24 py-12 block', SPLIT_ROW_DIVIDER_HIDDEN_CLASS[bp])}>
         <hr className="solid-center" />
       </div>
-      <div className={`col-24 col-${bp}-${block.rightSpan ?? 12}`}>
+      <div
+        className={cn(
+          `col-24 col-${bp}-${block.rightSpan ?? 12}`,
+          block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
+        )}
+      >
         {block.right.map((child, i) => (
           <BlockContent key={i} block={child} />
         ))}

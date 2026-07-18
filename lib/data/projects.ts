@@ -100,6 +100,8 @@ export interface SplitRowBlock {
   breakpoint?: 'md' | 'lg' // legacy col-md-N vs col-lg-N, default 'lg'
   vAlign?: 'top' | 'center' | 'bottom' // legacy align-items-*, default 'top'
   hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
+  leftSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for left only
+  rightSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for right only
 }
 
 // Repeated icon+title tiles (hydra's Nomenclature grid: Elements/Controls/
@@ -471,6 +473,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle' }],
+        rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Key Features', level: 4 },
           {
@@ -492,6 +495,7 @@ export const projects: Project[] = [
         type: 'split-row',
         reverse: true,
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle' }],
+        rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Initial Launch and Learnings', level: 4 },
           {
@@ -517,6 +521,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle' }],
+        rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Two: Scaling and Optimization', level: 4 },
           {
@@ -534,6 +539,7 @@ export const projects: Project[] = [
         type: 'split-row',
         reverse: true,
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle' }],
+        rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
           {
@@ -550,6 +556,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle' }],
+        rightSelfAlign: 'center',
         right: [
           { type: 'heading', text: 'Iteration Four: Dentist Search Feature', level: 4 },
           {

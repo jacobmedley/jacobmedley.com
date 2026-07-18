@@ -82,7 +82,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
             <div className="modal-content container rounded-lg">
               <div className="modal-header">
                 <Dialog.Title asChild>
-                  <h2 className="modal-title">
+                  <h2 className="modal-title flex min-w-0 flex-1 items-center gap-3 pr-3">
                     {/* eslint-disable-next-line @next/next/no-img-element -- legacy brand asset */}
                     <img
                       loading="lazy"
@@ -90,14 +90,15 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                       alt="Jacob Medley | UX UI Designer"
                       height={58}
                       width={58}
-                    />{' '}
-                    {project?.modalTitle ?? project?.title}
+                      className="shrink-0"
+                    />
+                    <span className="min-w-0 flex-1">{project?.modalTitle ?? project?.title}</span>
                   </h2>
                 </Dialog.Title>
                 <Dialog.Close asChild>
                   <button
                     type="button"
-                    className="btn btn-prime rounded-full btn-close-modal"
+                    className="btn btn-prime rounded-full btn-close-modal shrink-0"
                     aria-label="Close"
                   >
                     <i className="fa-sharp fa-regular fa-xmark-large" aria-hidden="true" />

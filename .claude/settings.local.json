@@ -74,7 +74,12 @@
       "Bash(curl -sIL http://localhost:4000/components/modal-webmd.html)",
       "Bash(npm -v)",
       "Bash(NEXT_TELEMETRY_DISABLED=1 timeout 25 npx next build --debug)",
-      "Bash(tee /c/Users/jacob/AppData/Local/Temp/claude/C--dev-jacobmedley-com/ab03b61f-a6f9-43b7-83e8-5c68ec8814f1/scratchpad/build-debug.log)"
+      "Bash(tee /c/Users/jacob/AppData/Local/Temp/claude/C--dev-jacobmedley-com/ab03b61f-a6f9-43b7-83e8-5c68ec8814f1/scratchpad/build-debug.log)",
+      "Bash(gh api *)",
+      "Bash(gh pr *)",
+      "Bash(powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter \\\\\"Name='node.exe'\\\\\" | Select-Object ProcessId, CommandLine | Format-List\")",
+      "Bash(npx serve *)",
+      "Bash(curl -s -o /dev/null -w \"root: %{http_code}\\\\n\" http://localhost:5000/)"
     ]
   }
 }

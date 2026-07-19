@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -21,6 +23,18 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Compute site iteration
+        # Site version 12 started at commit 17f3eb2 (iteration 4 as of that
+        # commit); each commit since then bumps the iteration by one, so the
+        # footer version ticks up automatically on every push to main that
+        # deploys. Bump lib/version.ts's SITE_VERSION and move this baseline
+        # forward when a redesign warrants calling it a new site version.
+        run: |
+          BASELINE=17f3eb2f278748c493e3e150dafbf90c071b4267
+          BASELINE_ITERATION=4
+          COUNT=$(git rev-list --count "$BASELINE"..HEAD)
+          echo "NEXT_PUBLIC_SITE_ITERATION=$((BASELINE_ITERATION + COUNT))" >> "$GITHUB_ENV"
 
       - name: Build (static export)
         run: npm run build

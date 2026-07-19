@@ -1,4 +1,5 @@
 import SectionHeader from '@/components/ui/SectionHeader'
+import { SITE_VERSION, SITE_ITERATION } from '@/lib/version'
 
 const educationItems = [
   {
@@ -132,6 +133,9 @@ export default function EducationSection() {
                 <i className="fa-kit fa-jm-icon-full" aria-hidden="true" />
               </p>
               <p>© {year} by Jacob Medley</p>
+              <p className="small opacity-75 mb-0">
+                v{SITE_VERSION}.{SITE_ITERATION}
+              </p>
             </div>
           </div>
         </div>

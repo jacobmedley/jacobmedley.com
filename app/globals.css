@@ -1,0 +1,821 @@
+@import "tailwindcss";
+
+/*
+ * Parity foundation — values extracted from the legacy source.
+ * See docs/parity-values.md. scss/styles.scss = intent,
+ * css/styles-dist.css = compiled truth (all hexes below are dist values).
+ */
+
+/* ── Theme tokens ───────────────────────────────────────────────── */
+@theme {
+  /* Bootstrap breakpoints so responsive utilities match legacy */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
+  /* Brand tokens (compiled tint 50% / shade 30%) */
+  --color-prime: #644672;
+  --color-prime-light: #b2a3b9;
+  --color-prime-dark: #463150;
+
+  --color-second: #8391a3;
+  --color-second-light: #c1c8d1;
+  --color-second-dark: #5c6672;
+
+  --color-third: #5e915d;
+  --color-third-light: #afc8ae;
+  --color-third-dark: #426641;
+
+  --color-fourth: #7e3232;
+  --color-fourth-light: #bf9999;
+  --color-fourth-dark: #582323;
+
+  --color-fifth: #454336;
+  --color-fifth-light: #a2a19b;
+  --color-fifth-dark: #302f26;
+
+  --color-pop: #e3b211;
+  --color-pop-light: #f1d988;
+  --color-pop-dark: #9f7d0c;
+
+  --font-sans: urw-form, "Manrope", sans-serif;
+  --font-heading: urw-form, sans-serif;
+
+  /* Bootstrap radii / shadows referenced by components */
+  --radius-bs: 0.375rem;
+  --radius-bs-lg: 0.5rem;
+  --radius-bs-xl: 1rem;
+  --radius-bs-xxl: 2rem;
+  --shadow-bs: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-bs-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* ── Base (Bootstrap reboot subset) ─────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+  }
+
+  h1 { font-size: calc(1.375rem + 1.5vw); }
+  h2 { font-size: calc(1.325rem + 0.9vw); }
+  h3 { font-size: calc(1.3rem + 0.6vw); }
+  h4 { font-size: calc(1.275rem + 0.3vw); }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1rem; }
+
+  @media (min-width: 1200px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.75rem; }
+    h4 { font-size: 1.5rem; }
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: 1px solid;
+    opacity: 0.25;
+  }
+
+  strong { font-weight: bolder; }
+  small { font-size: 0.875em; }
+
+  /* Legacy (Bootstrap reboot) image behavior: inline, baseline-aligned —
+     Tailwind preflight's display:block breaks centering and button
+     baseline gaps that the legacy layout depends on. */
+  img {
+    display: inline;
+    vertical-align: middle;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  i { font-style: normal; }
+}
+
+/*
+ * Bootstrap container widths. Deliberately OUTSIDE the cascade layers:
+ * Tailwind v4 ships its own `.container` utility (max-width = active
+ * breakpoint), and layered utilities would override these legacy widths.
+ */
+.container {
+  width: 100%;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; } }
+@media (min-width: 992px)  { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
+
+/*
+ * All legacy-port classes live in the components layer so Tailwind
+ * utilities can override them (matching Bootstrap's utility semantics).
+ */
+@layer components {
+
+/* Heading utility classes (legacy h4.h2, p.h4, p.h5 patterns) */
+.h1 { font-size: calc(1.375rem + 1.5vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.h2 { font-size: calc(1.325rem + 0.9vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.h3 { font-size: calc(1.3rem + 0.6vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.h4 { font-size: calc(1.275rem + 0.3vw); font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.h5 { font-size: 1.25rem; font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+.h6 { font-size: 1rem; font-family: var(--font-heading); font-weight: 500; line-height: 1.2; margin-bottom: 0.5rem; }
+
+@media (min-width: 1200px) {
+  .h1 { font-size: 2.5rem; }
+  .h2 { font-size: 2rem; }
+  .h3 { font-size: 1.75rem; }
+  .h4 { font-size: 1.5rem; }
+}
+
+/* Bootstrap responsive font-size utility used by legacy markup */
+.fs-1 { font-size: calc(1.375rem + 1.5vw); }
+@media (min-width: 1200px) {
+  .fs-1 { font-size: 2.5rem; }
+}
+
+/* Display scale (custom legacy map: display-N → N rem, weight 300) */
+.display-1 { font-size: calc(1.275rem + 0.3vw); font-weight: 300; line-height: 1.2; }
+.display-2 { font-size: calc(1.325rem + 0.9vw); font-weight: 300; line-height: 1.2; }
+.display-3 { font-size: calc(1.425rem + 2.1vw); font-weight: 300; line-height: 1.2; }
+.display-4 { font-size: calc(1.525rem + 3.3vw); font-weight: 300; line-height: 1.2; }
+.display-5 { font-size: calc(1.625rem + 4.5vw); font-weight: 300; line-height: 1.2; }
+.display-12 { font-size: calc(2.325rem + 12.9vw); font-weight: 300; line-height: 1.2; }
+
+@media (min-width: 1200px) {
+  .display-1 { font-size: 1.5rem; }
+  .display-2 { font-size: 2rem; }
+  .display-3 { font-size: 3rem; }
+  .display-4 { font-size: 4rem; }
+  .display-5 { font-size: 5rem; }
+  .display-12 { font-size: 12rem; }
+}
+
+.fw-bolder { font-weight: bolder; }
+
+/* ── Grid (24-column Bootstrap flex grid, gutter 1.2rem) ────────── */
+
+.row {
+  --gutter-x: 1.2rem;
+  --gutter-y: 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+
+.g-3 { --gutter-x: 1rem; --gutter-y: 1rem; }
+.g-4 { --gutter-x: 1.5rem; --gutter-y: 1.5rem; }
+
+.col { flex: 1 0 0%; }
+.col-6  { flex: 0 0 auto; width: 25%; }
+.col-12 { flex: 0 0 auto; width: 50%; }
+.col-18 { flex: 0 0 auto; width: 75%; }
+.col-24 { flex: 0 0 auto; width: 100%; }
+
+.row-cols-1 > * { flex: 0 0 auto; width: 100%; }
+.row-cols-2 > * { flex: 0 0 auto; width: 50%; }
+
+@media (min-width: 576px) {
+  .col-sm-8 { flex: 0 0 auto; width: 33.3333%; }
+  .row-cols-sm-2 > * { flex: 0 0 auto; width: 50%; }
+}
+@media (min-width: 768px) {
+  .col-md-12 { flex: 0 0 auto; width: 50%; }
+  .row-cols-md-2 > * { flex: 0 0 auto; width: 50%; }
+  .row-cols-md-3 > * { flex: 0 0 auto; width: 33.3333%; }
+}
+@media (min-width: 992px) {
+  .col-lg-6  { flex: 0 0 auto; width: 25%; }
+  .col-lg-8  { flex: 0 0 auto; width: 33.3333%; }
+  .col-lg-9  { flex: 0 0 auto; width: 37.5%; }
+  .col-lg-10 { flex: 0 0 auto; width: 41.6667%; }
+  .col-lg-15 { flex: 0 0 auto; width: 62.5%; }
+  .col-lg-20 { flex: 0 0 auto; width: 83.3333%; }
+  .col-lg-12 { flex: 0 0 auto; width: 50%; }
+  .col-lg-14 { flex: 0 0 auto; width: 58.3333%; }
+  .col-lg-16 { flex: 0 0 auto; width: 66.6667%; }
+  .col-lg-18 { flex: 0 0 auto; width: 75%; }
+  .row-cols-lg-3 > * { flex: 0 0 auto; width: 33.3333%; }
+  .row-cols-lg-4 > * { flex: 0 0 auto; width: 25%; }
+  .row-cols-lg-5 > * { flex: 0 0 auto; width: 20%; }
+}
+@media (min-width: 1200px) {
+  .col-xl-8  { flex: 0 0 auto; width: 33.3333%; }
+  .col-xl-10 { flex: 0 0 auto; width: 41.6667%; }
+  .col-xl-11 { flex: 0 0 auto; width: 45.8333%; }
+  .col-xl-14 { flex: 0 0 auto; width: 58.3333%; }
+  .col-xl-16 { flex: 0 0 auto; width: 66.6667%; }
+  .col-xl-18 { flex: 0 0 auto; width: 75%; }
+  .row-cols-xl-4 > * { flex: 0 0 auto; width: 25%; }
+}
+@media (min-width: 1400px) {
+  .col-xxl-6  { flex: 0 0 auto; width: 25%; }
+  .col-xxl-14 { flex: 0 0 auto; width: 58.3333%; }
+}
+
+/* ── Section scaffolding ────────────────────────────────────────── */
+section .content,
+.content {
+  position: relative;
+  z-index: 10;
+  padding-left: 0;
+}
+@media (min-width: 768px) {
+  section .content,
+  .content { padding-left: 9rem; }
+}
+
+/* Hero row height */
+#hi.row-content,
+#hi .row-content { height: 90vh; }
+@media (min-width: 768px) {
+  #hi.row-content,
+  #hi .row-content { height: 100vh; }
+}
+
+/* Hero layered radial gradient background */
+#hi {
+  background-color: #fff;
+  background-image:
+    radial-gradient(ellipse at center center, #fff, transparent),
+    radial-gradient(ellipse at top center, #c1c8d1, transparent),
+    radial-gradient(ellipse at top right, #afc8ae, transparent),
+    radial-gradient(ellipse at top left, #f1d988, transparent);
+}
+
+/* Bootstrap .bg-gradient overlay */
+.bg-gradient-bs {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+/* ── hr gradient variants ───────────────────────────────────────── */
+hr.solid-left   { border-image: linear-gradient(to right, #000, transparent) 1; }
+hr.solid-right  { border-image: linear-gradient(to left, #000, transparent) 1; }
+hr.solid-center { border-image: linear-gradient(to left, transparent, #000, transparent) 1; }
+hr.solid-left.light   { border-image: linear-gradient(to right, #fff, transparent) 1; }
+hr.solid-right.light  { border-image: linear-gradient(to left, #fff, transparent) 1; }
+hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff, transparent) 1; }
+
+#work hr.solid-left   { border-image: linear-gradient(to right, #8391a3, transparent) 1; }
+#work hr.solid-right  { border-image: linear-gradient(to left, #8391a3, transparent) 1; }
+#work hr.solid-center { border-image: linear-gradient(to left, transparent, #8391a3, transparent) 1; }
+
+#resume { color: #1e2e1e; }
+#resume hr.solid-left   { border-image: linear-gradient(to right, #1e2e1e, transparent) 1; }
+#resume hr.solid-right  { border-image: linear-gradient(to left, #1e2e1e, transparent) 1; }
+#resume hr.solid-center { border-image: linear-gradient(to left, transparent, #1e2e1e, transparent) 1; }
+
+/* Gradient headline text */
+.text-gradient-prime {
+  background: linear-gradient(#463150, #b2a3b9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Buttons (Bootstrap base + used variants, compiled values) ──── */
+.btn {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-lg {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.btn-prime { color: #fff; background-color: #644672; border-color: #644672; }
+.btn-prime:hover { color: #fff; background-color: #553c61; border-color: #50385b; }
+.btn-prime:active { background-color: #50385b; border-color: #4b3556; }
+
+.btn-second-dark { color: #fff; background-color: #5c6672; border-color: #5c6672; }
+.btn-second-dark:hover { color: #fff; background-color: #4e5761; border-color: #4a525b; }
+.btn-second-dark:active { background-color: #4a525b; border-color: #454d56; }
+
+.btn-fourth-light { color: #000; background-color: #bf9999; border-color: #bf9999; }
+.btn-fourth-light:hover { color: #000; background-color: #c9a8a8; border-color: #c5a3a3; }
+.btn-fourth-light:active { background-color: #ccadad; border-color: #c5a3a3; }
+
+.btn-outline-prime-dark { color: #463150; border-color: #463150; }
+.btn-outline-prime-dark:hover { color: #fff; background-color: #463150; border-color: #463150; }
+
+/* ── NavMain (#the-menu) ────────────────────────────────────────── */
+#the-menu {
+  position: fixed;
+  z-index: 950;
+  background-color: #fff;
+  text-align: center;
+  height: auto;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #the-menu {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 8rem;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0 1rem 1rem 0;
+    border-right: 2px solid #fff;
+    overflow: hidden;
+  }
+}
+@media (min-width: 1600px) { #the-menu { left: 4%; } }
+@media (min-width: 1800px) { #the-menu { left: 8%; } }
+@media (min-width: 1900px) { #the-menu { left: 10%; } }
+@media (min-width: 1999px) { #the-menu { left: 12%; } }
+@media (min-width: 2199px) { #the-menu { left: 14%; } }
+@media (min-width: 2299px) { #the-menu { left: 16%; } }
+@media (min-width: 2399px) { #the-menu { left: 18%; } }
+@media (min-width: 2499px) { #the-menu { left: 20%; } }
+
+#the-menu.the-menu i { font-size: 1.5rem; }
+@media (min-width: 768px) {
+  #the-menu.the-menu i { font-size: 2rem; }
+}
+
+#the-menu.the-menu .btn {
+  transition: background-color 0.3s ease-in-out, border-left-width 0.1s ease-in-out;
+  border-radius: 0;
+  padding: 10px 0;
+  margin: 0;
+  font-size: 0.8rem;
+  border: none;
+  border-bottom-width: 6px;
+  border-bottom-style: solid;
+  background-color: #fff;
+  color: #000;
+  width: 25%;
+}
+@media (min-width: 576px) {
+  #the-menu.the-menu .btn { width: 20%; padding: 10px 0; }
+}
+@media (min-width: 768px) {
+  #the-menu.the-menu .btn {
+    border: none;
+    border-left-width: 8px;
+    border-left-style: solid;
+    font-size: 1rem;
+    padding: 20px 0;
+    display: block;
+    width: 100%;
+  }
+  #the-menu.the-menu .btn:hover { border-left-width: 16px; }
+  #the-menu.the-menu .btn.active { border-left-width: 8px; }
+  #the-menu.the-menu .btn.active:hover { border-left-width: 16px; }
+}
+
+#the-menu.the-menu .btn.hi { border-color: #b2a3b9; color: #463150; }
+#the-menu.the-menu .btn.hi:hover { border-color: #644672; background: #ece9ee; color: #0c080e; }
+#the-menu.the-menu .btn.hi.active { border-color: #463150; color: #e0dae3; background: #644672; }
+
+#the-menu.the-menu .btn.work { border-color: #c1c8d1; color: #5c6672; }
+#the-menu.the-menu .btn.work:hover { border-color: #8391a3; background: #f0f2f4; color: #101114; }
+#the-menu.the-menu .btn.work.active { border-color: #49515b; color: #fff; background: #66717f; }
+
+#the-menu.the-menu .btn.results { border-color: #f1d988; color: #7f640a; }
+#the-menu.the-menu .btn.results:hover { border-color: #e3b211; background: #fcf6e2; color: #1b1502; }
+#the-menu.the-menu .btn.results.active { border-color: #9f7d0c; color: #fff; background: #e3b211; }
+
+#the-menu.the-menu .btn.resume { border-color: #afc8ae; color: #426641; }
+#the-menu.the-menu .btn.resume:hover { border-color: #5e915d; background: #fff; color: #0b110b; }
+#the-menu.the-menu .btn.resume.active { border-color: #426641; color: #fff; background: #5e915d; }
+
+#the-menu.the-menu .btn.education { border-color: #bf9999; color: #582323; }
+#the-menu.the-menu .btn.education:hover { border-color: #7e3232; background: #f0e6e6; color: #0f0606; }
+#the-menu.the-menu .btn.education.active { border-color: #582323; color: #e5d6d6; background: #7e3232; }
+
+/* ── Hero typography ────────────────────────────────────────────── */
+#hi .h-jakeicon { font-size: calc(2rem + 28vw); }
+@media (min-width: 576px) {
+  #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
+}
+@media (min-width: 768px)  { #hi .h-jakeicon { font-size: calc(2rem + 16vw); } }
+@media (min-width: 992px)  { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
+@media (min-width: 1200px) { #hi .h-jakeicon { font-size: calc(2rem + 12vw); } }
+@media (min-width: 1400px) { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
+
+#hi .h-hello { font-size: calc(1rem + 3vw); }
+#hi .h-hello small { font-size: calc(0.7rem + 2vw); }
+@media (min-width: 576px) {
+  #hi .h-hello small { font-size: calc(0.5rem + 2vw); }
+}
+
+#hi .h-believe { font-size: calc(0.8rem + 2vw); }
+@media (min-width: 576px)  { #hi .h-believe { font-size: calc(0.4rem + 2vw); } }
+@media (min-width: 1400px) { #hi .h-believe { font-size: calc(0.1rem + 2vw); } }
+
+/* ── Waves ──────────────────────────────────────────────────────── */
+.waves-wrapper {
+  position: relative;
+  z-index: 5;
+  bottom: 10vh;
+}
+@media (min-width: 768px) {
+  .waves-wrapper { bottom: 22vh; }
+}
+.waves-wrapper.top {
+  transform: rotate(180deg);
+  top: 0;
+}
+
+.waves {
+  width: 100%;
+  height: 10vh;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .waves { height: 22vh; }
+}
+
+.wave-one   { fill: #b2a3b9; }
+.wave-two   { fill: rgba(131, 145, 163, 0.25); }
+.wave-three { fill: rgba(94, 145, 93, 0.25); }
+.wave-four  { fill: rgba(227, 178, 17, 0.25); }
+
+#visual-design .wave-one   { fill: #fff; }
+#visual-design .wave-two   { fill: rgba(255, 255, 255, 0.25); }
+#visual-design .wave-three { fill: rgba(255, 255, 255, 0.25); }
+#visual-design .wave-four  { fill: rgba(255, 255, 255, 0.25); }
+
+#resume .wave-one   { fill: #f1d988; }
+#resume .wave-two   { fill: rgba(66, 102, 65, 0.12); }
+#resume .wave-three { fill: rgba(94, 145, 93, 0.12); }
+#resume .wave-four  { fill: rgba(66, 102, 65, 0.12); }
+#resume .bottom .wave-one { fill: #704343; }
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-forever {
+  0%   { transform: translate3d(-90px, 0, 0); }
+  100% { transform: translate3d(85px, 0, 0); }
+}
+
+/* ── Work / thinking items ──────────────────────────────────────── */
+.badge-work {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+.btn-art {
+  transition: transform 0.2s ease-in-out;
+}
+.btn-art:hover { transform: scale(1.06); }
+
+.img-fluid { max-width: 100%; height: auto; }
+
+.thinking-thumb {
+  width: 100%;
+  height: 180px;
+  border-radius: 2rem;
+  margin: 0 0 20px 0;
+  color: #424952;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.thinking-thumb:hover {
+  transform: scale(1.02);
+  background: #6c757d;
+  color: #fff;
+}
+/* image-variant thumb backgrounds are data-driven (Project.thumb → inline style) */
+
+.thinking-title { margin: 15px 0 0 0; }
+.thinking-view { margin-top: 12px; margin-bottom: 0; }
+.thinking-icon { font-size: 48px; }
+
+/* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  /* legacy custom: blur the page behind the whole modal viewport */
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(150%);
+}
+.modal[data-state='open'] { animation: modal-fade-in 0.15s linear; }
+.modal[data-state='closed'] { animation: modal-fade-out 0.15s linear forwards; }
+
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 0;
+  pointer-events: none;
+}
+/* Bootstrap entrance: dialog slides from translateY(-50px), .3s ease-out */
+.modal[data-state='open'] .modal-dialog { animation: modal-dialog-in 0.3s ease-out; }
+.modal[data-state='closed'] .modal-dialog { animation: modal-dialog-out 0.3s ease-out forwards; }
+
+.modal-fullscreen {
+  width: 100vw;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  color: #212529;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  outline: 0;
+}
+
+.modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* legacy override (Bootstrap default is flex-end) */
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+}
+.modal-footer > * { margin: 0.25rem; }
+
+.modal-header .btn-close-modal {
+  border-radius: 500rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  padding: 0;
+}
+.modal-footer .btn-close-modal { width: 100%; }
+@media (min-width: 576px) {
+  .modal-footer .btn-close-modal { width: 180px; }
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background-color: #000;
+  opacity: 0.5;
+}
+.modal-backdrop[data-state='open'] { animation: backdrop-fade-in 0.15s linear; }
+.modal-backdrop[data-state='closed'] { animation: backdrop-fade-out 0.15s linear forwards; }
+
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes modal-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes modal-dialog-in {
+  from { transform: translate(0, -50px); }
+  to   { transform: none; }
+}
+@keyframes modal-dialog-out {
+  from { transform: none; }
+  to   { transform: translate(0, -50px); }
+}
+@keyframes backdrop-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 0.5; }
+}
+@keyframes backdrop-fade-out {
+  from { opacity: 0.5; }
+  to   { opacity: 0; }
+}
+
+/* Blend utilities used by legacy markup */
+.mix-blend-screen { mix-blend-mode: screen; }
+
+.logo-icon { width: 82px; height: auto; }
+@media (min-width: 768px) {
+  .logo-icon { width: 98px; }
+}
+
+/* ── Cards (Bootstrap subset for the education grid) ────────────── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 0.375rem;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+.card-title { margin-bottom: 0.5rem; }
+.card-text:last-child { margin-bottom: 0; }
+.card-footer {
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.175);
+}
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 37, 41, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+/* ── Progress bars (framework diagrams — Bootstrap compiled port) ──
+   All values verbatim from _archive/css/styles-dist.css: track #e9ecef
+   (--bs-secondary-bg), bar color #fff, striped = 45° 1rem gradient,
+   overflow:visible is the legacy site's own override (Bootstrap ships
+   hidden) — required so nested band content isn't clipped.
+   In @layer components ON PURPOSE: legacy's h-100/text-* utilities beat
+   these via Bootstrap's !important; here Tailwind's utilities layer must
+   likewise beat height:1rem (h-full) and color:#fff (text-fifth-dark). */
+@layer components {
+  .progress {
+    display: flex;
+    height: 1rem;
+    overflow: visible;
+    font-size: 0.75rem;
+    background-color: #e9ecef;
+    border-radius: 0.375rem;
+  }
+  /* Bootstrap normally rounds progress-bars by clipping to .progress's
+     overflow:hidden; our .progress forces overflow:visible (dentalplans'
+     nested "Brand Theme" sub-bars must not be clipped), so the bar's own
+     square corners poke past the rounded track. Give the bar its own
+     matching radius instead of relying on clipping. */
+  .progress-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .progress-bar-striped {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+  }
+  .progress-bar-animated { animation: 1s linear infinite progress-bar-stripes; }
+
+  .bg-dark-subtle { background-color: #ced4da; } /* --bs-dark-bg-subtle */
+}
+@keyframes progress-bar-stripes {
+  0% { background-position-x: 1rem; }
+}
+
+/* ── List group (roadmap's numbered/colored list) ────────────────── */
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.375rem;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+.list-group-item + .list-group-item { border-top-width: 0; }
+.list-group-numbered { list-style-type: none; counter-reset: section; }
+.list-group-numbered > .list-group-item::before {
+  content: counters(section, ".") ". ";
+  counter-increment: section;
+}
+
+.stretched-link::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* ── Figures (Bootstrap compiled port, values from _archive/css/styles.css) ── */
+.figure {
+  display: inline-block;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.figure-caption {
+  font-size: 0.875em;
+  color: rgba(33, 37, 41, 0.75);
+}
+
+} /* end @layer components */
+

@@ -1,0 +1,163 @@
+/**
+ * Parity harness — diff step.
+ *
+ * Compares scripts/parity/shots/legacy/*.png against .../new/*.png with
+ * pixelmatch, writes diff PNGs to .../diff/ and a report table to
+ * scripts/parity/report.md. Pass threshold: < 2% differing pixels.
+ *
+ * Images of unequal size are compared on a white canvas the size of the
+ * larger of the two; the size mismatch is noted in the report.
+ */
+import { PNG } from 'pngjs'
+import pixelmatch from 'pixelmatch'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
+import { fileURLToPath } from 'url'
+import { join } from 'path'
+
+const PARITY_DIR = fileURLToPath(new URL('./', import.meta.url))
+const SHOTS_DIR = join(PARITY_DIR, 'shots')
+const DIFF_DIR = join(SHOTS_DIR, 'diff')
+const REPORT_PATH = join(PARITY_DIR, 'report.md')
+
+const PASS_THRESHOLD = 2 // percent
+const BREAKPOINTS = [375, 768, 1280, 1920]
+const SECTIONS = ['nav', 'hi', 'work', 'visual-design', 'resume', 'education']
+
+const MODAL_BREAKPOINTS = [375, 1280]
+// Kept in sync with LEGACY_MODAL_IDS in capture.mjs / lib/data/projects.ts.
+const MODAL_IDS = [
+  'webmd',
+  'dentalplans',
+  'bumblebeemd',
+  'hydra',
+  'opfred',
+  'split-test',
+  'call-center-ux',
+  'marketing-auto',
+  'workshops',
+  'roadmap',
+  'personas',
+  'reveal',
+  'viva',
+  'wrong',
+]
+
+/** Copy `src` onto a white W×H canvas (top-left aligned). */
+function onCanvas(src, width, height) {
+  if (src.width === width && src.height === height) return src
+  const out = new PNG({ width, height })
+  out.data.fill(255)
+  PNG.bitblt(src, out, 0, 0, src.width, src.height, 0, 0)
+  return out
+}
+
+function compare(section, bp) {
+  const legacyPath = join(SHOTS_DIR, 'legacy', `${section}-${bp}.png`)
+  const newPath = join(SHOTS_DIR, 'new', `${section}-${bp}.png`)
+  if (!existsSync(legacyPath) || !existsSync(newPath)) {
+    return { section, bp, missing: true }
+  }
+  const legacy = PNG.sync.read(readFileSync(legacyPath))
+  const fresh = PNG.sync.read(readFileSync(newPath))
+
+  const width = Math.max(legacy.width, fresh.width)
+  const height = Math.max(legacy.height, fresh.height)
+  const a = onCanvas(legacy, width, height)
+  const b = onCanvas(fresh, width, height)
+  const diff = new PNG({ width, height })
+
+  const diffPixels = pixelmatch(a.data, b.data, diff.data, width, height, {
+    threshold: 0.1,
+  })
+  writeFileSync(
+    join(DIFF_DIR, `${section}-${bp}.png`),
+    PNG.sync.write(diff)
+  )
+
+  const pct = (diffPixels / (width * height)) * 100
+  const sizeMismatch =
+    legacy.width !== fresh.width || legacy.height !== fresh.height
+      ? `${legacy.width}×${legacy.height} vs ${fresh.width}×${fresh.height}`
+      : null
+  return { section, bp, pct, sizeMismatch }
+}
+
+mkdirSync(DIFF_DIR, { recursive: true })
+
+const results = []
+for (const section of SECTIONS) {
+  for (const bp of BREAKPOINTS) {
+    results.push(compare(section, bp))
+  }
+}
+
+const modalResults = []
+for (const id of MODAL_IDS) {
+  for (const bp of MODAL_BREAKPOINTS) {
+    modalResults.push(compare(`modal-${id}`, bp))
+  }
+}
+
+function cell(r) {
+  if (r.missing) return '—'
+  const mark = r.pct < PASS_THRESHOLD ? '✅' : '❌'
+  return `${r.pct.toFixed(2)}% ${mark}`
+}
+
+const now = new Date().toISOString().replace('T', ' ').slice(0, 16)
+const lines = [
+  '# Parity Report',
+  '',
+  `Generated: ${now} UTC · pass threshold: < ${PASS_THRESHOLD}% pixel diff`,
+  '',
+  `| Section | ${BREAKPOINTS.map((b) => `${b}px`).join(' | ')} |`,
+  `|---|${BREAKPOINTS.map(() => '---').join('|')}|`,
+]
+for (const section of SECTIONS) {
+  const row = results.filter((r) => r.section === section)
+  lines.push(`| \`${section}\` | ${row.map(cell).join(' | ')} |`)
+}
+
+lines.push(
+  '',
+  '## Modals',
+  '',
+  `| Project | ${MODAL_BREAKPOINTS.map((b) => `${b}px`).join(' | ')} |`,
+  `|---|${MODAL_BREAKPOINTS.map(() => '---').join('|')}|`
+)
+for (const id of MODAL_IDS) {
+  const row = modalResults.filter((r) => r.section === `modal-${id}`)
+  lines.push(`| \`${id}\` | ${row.map(cell).join(' | ')} |`)
+}
+
+const all = [...results, ...modalResults]
+
+const mismatches = all.filter((r) => r.sizeMismatch)
+if (mismatches.length) {
+  lines.push('', '## Size mismatches (legacy vs new)', '')
+  for (const m of mismatches) {
+    lines.push(`- \`${m.section}\` @ ${m.bp}px: ${m.sizeMismatch}`)
+  }
+}
+
+const missing = all.filter((r) => r.missing)
+if (missing.length) {
+  lines.push('', '## Missing captures', '')
+  for (const m of missing) lines.push(`- \`${m.section}\` @ ${m.bp}px`)
+}
+
+const compared = all.filter((r) => !r.missing)
+const passing = compared.filter((r) => r.pct < PASS_THRESHOLD)
+lines.push(
+  '',
+  `**${passing.length}/${compared.length} passing** (${missing.length} missing)`,
+  ''
+)
+
+writeFileSync(REPORT_PATH, lines.join('\n'))
+console.log(lines.join('\n'))
+console.log(`Report written to ${REPORT_PATH}`)
+
+if (process.argv.includes('--strict') && passing.length < compared.length) {
+  process.exit(1)
+}

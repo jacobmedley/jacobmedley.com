@@ -47,5 +47,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./out/
-          server-dir: /public_html/
+          server-dir: /jacobmedley.com/public_html/
           dangerous-clean-slate: false

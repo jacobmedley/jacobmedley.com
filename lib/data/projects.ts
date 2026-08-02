@@ -219,11 +219,11 @@ export const projects: Project[] = [
     ],
     technologies: [
       { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fab fa-wordpress-simple', label: 'WordPress' },
-      { icon: 'fab fa-bootstrap', label: 'Bootstrap' },
+      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
+      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
       { icon: 'fa-regular fa-code', label: 'HTML' },
       { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fab fa-git-alt', label: 'GIT' }
+      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
       { type: 'heading', text: 'Homepage' },
@@ -335,7 +335,7 @@ export const projects: Project[] = [
     },
     contributions: [
       { icon: 'fa-regular fa-boxes-stacked', label: 'Product Owner' },
-      { icon: 'far fa-solar-system ary', label: 'System Design' },
+      { icon: 'fa-regular fa-solar-system', label: 'System Design' },
       { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
       { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' }
     ],
@@ -347,7 +347,7 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
       { icon: 'fa-regular fa-elephant', label: 'PHP' },
       { icon: 'fa-regular fa-gear-code', label: 'DevOps Pipelines' },
-      { icon: 'fab fa-git-alt', label: 'GIT' },
+      { icon: 'fa-brands fa-git-alt', label: 'GIT' },
       { icon: 'fa-regular fa-webhook', label: 'APIs' }
     ],
     media: [
@@ -629,11 +629,11 @@ export const projects: Project[] = [
     ],
     technologies: [
       { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fab fa-wordpress-simple', label: 'WordPress' },
-      { icon: 'fab fa-bootstrap', label: 'Bootstrap' },
+      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
+      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
       { icon: 'fa-regular fa-code', label: 'HTML' },
       { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fab fa-git-alt', label: 'GIT' }
+      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
       { type: 'heading', text: 'Homepage' },
@@ -731,7 +731,7 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-regular fa-code', label: 'HTML' },
       { icon: 'fa-regular fa-brackets-curly', label: 'CSS/SASS' },
-      { icon: 'fab fa-git-alt', label: 'GIT' }
+      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
       { type: 'heading', text: 'The Problem' },
@@ -903,10 +903,10 @@ export const projects: Project[] = [
     technologies: [
       { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-brands fa-laravel', label: 'Laravel & Statamic' },
-      { icon: 'fab fa-bootstrap', label: 'Bootstrap' },
+      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
       { icon: 'fa-regular fa-code', label: 'HTML' },
       { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fab fa-git-alt', label: 'GIT' }
+      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
       { type: 'heading', text: 'Homepage' },
@@ -1096,13 +1096,13 @@ export const projects: Project[] = [
         'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.'
       ]
     },
-    contributions: [ { icon: 'fa-regular fa-clipboard-list-check ary', label: 'Project Lead' } ],
+    contributions: [ { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' } ],
     technologies: [
       {
-        icon: 'fa-regular fa-project-diagram ary',
+        icon: 'fa-regular fa-project-diagram',
         label: 'Application Programming Interface (API)'
       },
-      { icon: 'fa-regular fa-drafting-compass ary', label: 'Adobe Target' }
+      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Target' }
     ],
     media: [
       { type: 'heading', text: 'Messaging and State Change' },
@@ -1174,20 +1174,20 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on ary', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-pencil-ruler ary', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-laptop-code ary', label: 'Front-end Dev' },
-      { icon: 'fal fa-phone-laptop ary', label: 'Responsive Design' },
-      { icon: 'fa-regular fa-clipboard-list-check ary', label: 'Project Lead' },
-      { icon: 'fal fa-solar-system ary', label: 'Integration Strategy' }
+      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-light fa-phone-laptop', label: 'Responsive Design' },
+      { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' },
+      { icon: 'fa-light fa-solar-system', label: 'Integration Strategy' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass ary', label: 'Adobe Suite' },
-      { icon: 'fa-regular fa-drafting-compass ary', label: 'Adobe Scene 7' },
-      { icon: 'fa-regular fa-drafting-compass ary', label: 'Aprimo' },
-      { icon: 'fa-regular fa-code ary', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly ary', label: 'CSS' },
-      { icon: 'fa-regular fa-brackets-curly ary', label: 'JS' }
+      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Scene 7' },
+      { icon: 'fa-regular fa-drafting-compass', label: 'Aprimo' },
+      { icon: 'fa-regular fa-code', label: 'HTML' },
+      { icon: 'fa-regular fa-brackets-curly', label: 'CSS' },
+      { icon: 'fa-regular fa-brackets-curly', label: 'JS' }
     ],
     media: [
       { type: 'heading', text: 'Results' },

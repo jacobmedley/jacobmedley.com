@@ -83,7 +83,10 @@
       "Bash(git show *)",
       "Bash(git ls-tree *)",
       "Bash(git config *)",
-      "Bash(echo \"exit=$?\")"
+      "Bash(echo \"exit=$?\")",
+      "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" status)",
+      "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" branch -a)",
+      "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" log --oneline -15)"
     ]
   }
 }

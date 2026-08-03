@@ -58,7 +58,7 @@ const experience = [
     ],
   },
   {
-    title: 'Director UX/UI & Product Design',
+    title: 'Director of UX/UI & Product Design',
     company: 'One Park Financial, Coconut Grove, FL',
     period: '2021 to 2022',
     paragraphs: [
@@ -67,7 +67,7 @@ const experience = [
     ],
   },
   {
-    title: 'Sr. Manager UX/UI Designer',
+    title: 'Sr. Manager, UX/UI Design',
     company: 'DentalPlans.com, Plantation, FL',
     period: '2015 to 2021',
     paragraphs: [
@@ -77,7 +77,7 @@ const experience = [
   },
   {
     title: 'Sr. Digital Designer',
-    company: 'Bluegreen Corp., Boca Raton, FL',
+    company: 'Bluegreen Vacations, Boca Raton, FL',
     period: '2011 to 2015',
     paragraphs: [
       'As the design lead, I contributed to the company-wide transition to a data-driven omnichannel marketing platform, incorporating digital signage across 48 resort locations and interactive kiosk interfaces. This role involved crafting engaging user experiences across various marketing platforms and channels, ensuring a seamless integration of digital and physical touchpoints.',
@@ -87,20 +87,20 @@ const experience = [
 ]
 
 const expertise = [
-  'Design Thinking', 'System Thinking', 'User Experience Design', 'User Interface Design',
+  'Design Thinking', 'Systems Thinking', 'User Experience Design', 'User Interface Design',
   'Interaction Design', 'Brand & Visual Design', 'Mobile-First & Responsive Design',
   'UX Roadmapping & Prioritization', 'User Testing', 'Facilitating Workshops',
   'A/B Testing & Planning', 'Conversion Rate Optimization', 'Wireframing', 'Prototyping',
   'Accessibility Standards (WCAG)', 'Designing for B2C & B2B', 'Design Systems',
-  'Mobile & Responsive Design', 'Accessibility Design', 'Project Management',
+  'Project Management',
   'Agile Workflows', 'Writing User Stories & Acceptance Criteria', 'Front-end Development',
   'HTML and CSS', 'Less and Sass', 'Bootstrap Framework',
 ]
 
 const tools = [
-  'Figma', 'Adobe XD', 'Adobe Creative Suite', 'FigJam', 'Miro', 'Balsamiq', 'Lucid Chart',
-  'Adobe Target', 'Optimizely', 'VWO', 'Fullstory', 'SessionCam', 'HotJar',
-  'UserTesting.com', 'Userlytics', 'Google Analytics', 'Newrelic', 'Splunk', 'Lighthouse',
+  'Figma', 'Adobe XD', 'Adobe Creative Suite', 'FigJam', 'Miro', 'Balsamiq', 'Lucidchart',
+  'Adobe Target', 'Optimizely', 'VWO', 'FullStory', 'SessionCam', 'Hotjar',
+  'UserTesting.com', 'Userlytics', 'Google Analytics', 'New Relic', 'Splunk', 'Lighthouse',
   'ChatGPT', 'VS Code', 'Sublime Text', 'Jira', 'Asana', 'Bitbucket', 'GitHub', 'GitKraken',
 ]
 
@@ -153,8 +153,8 @@ export default function ResumeSection() {
                   <div className="col-24">
                     <hr className="solid-center w-1/4 mx-auto" />
                     <h2 className="py-4">
-                      &ldquo;With the right team anything,
-                      <br className="hidden md:block" /> is possible. Anything!&rdquo;
+                      &ldquo;With the right team, anything is possible.
+                      <br className="hidden md:block" /> Anything!&rdquo;
                     </h2>
                     <hr className="solid-center w-1/4 mx-auto" />
                   </div>

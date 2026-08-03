@@ -317,13 +317,13 @@ export const projects: Project[] = [
     section: 'work',
     display: 'feature',
     order: 2,
-    title: 'Dentalplans.com',
+    title: 'DentalPlans.com',
     subtitle: 'Product Framework and Design System',
     cardImage: {
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product ecommerce websites for notable brands such as Cigna, Aetna, and WebMD.",
+    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product ecommerce websites for Cigna, Aetna, WebMD, and Lower My Dental Bills (LMDB).",
     modalTitle: 'Product Framework and Design System',
     visible: true,
     brief: {
@@ -363,7 +363,7 @@ export const projects: Project[] = [
         valueCreated: {
           heading: 'Value Created',
           items: [
-            'Large scale efforts by a small lean team',
+            'Large-scale efforts by a small, lean team',
             'Scalable Product Features',
             'Rapid launch and learn efforts and conversion rate optimization',
             'Proprietary platform and systems owned by the company'
@@ -498,7 +498,7 @@ export const projects: Project[] = [
             type: 'list',
             items: [
               'Product Design Framework: Enabled updates, testing, and conversion rate optimization at scale.',
-              'Multi-Brand Design System: One to one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
+              'Multi-Brand Design System: One-to-one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
               'Microservices and APIs: Provided product information, dentist search, and shopping cart functionalities.',
               'Sales and Promotional Management: Scheduled and managed sales and promotional campaigns.',
               'Robust Marketing and Campaign Tracking: Included PPC, affiliate, and organic tracking.',
@@ -570,7 +570,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
           {
             type: 'text',
-            text: "Focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
+            text: "We focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
           },
           { type: 'heading', text: 'Results:', level: 4 },
           {
@@ -609,13 +609,13 @@ export const projects: Project[] = [
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'I had the privilege to partner with a brilliant brand manager Tiffany Tibbets on this project. We worked with executive stake holders to bring this brand to life. Our goal was to invent a fun and family focused brand.',
-    modalTitle: 'BumbleBeeMD',
+    summary: 'I had the privilege to partner with a brilliant brand manager, Tiffany Tibbets, on this project. We worked with executive stakeholders to bring this brand to life. Our goal was to invent a fun and family-focused brand.',
+    modalTitle: 'BumblebeeMD',
     visible: true,
     brief: {
       image: { src: '/images/work/bmd-modal/brief.png', alt: '' },
       paragraphs: [
-        'I was the creative lead and responsible for the primary concept. We worked with a brand agency to develop the colors and illustrations. I took the final brand element and incorporated them in the UI design of the site.'
+        'I was the creative lead and responsible for the primary concept. We worked with a brand agency to develop the colors and illustrations. I took the final brand elements and incorporated them into the UI design of the site.'
       ]
     },
     contributions: [
@@ -745,7 +745,7 @@ export const projects: Project[] = [
           },
           {
             type: 'text',
-            text: 'The fragmentation created confusion and unneeded friction for the user. The insufficient variety of UI elements created design and technical debt.'
+            text: 'The fragmentation created confusion and unneeded friction for the user. The uncontrolled variety of UI elements created design and technical debt.'
           }
         ],
         right: [
@@ -795,7 +795,7 @@ export const projects: Project[] = [
           },
           {
             type: 'text',
-            text: 'I engineered the design system in a way that only affected the frontend mark-up. This enabled us to avoid costly back-end updates, leaving the functional code behind the front end untouched.'
+            text: 'I engineered the design system in a way that only affected the front-end markup. This enabled us to avoid costly back-end updates, leaving the functional code behind the front end untouched.'
           },
           {
             type: 'text',
@@ -888,7 +888,7 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
       paragraphs: [
-        'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow. This project was part of a more extensive implementation of the Hydra Design system.',
+        'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow. This project was part of a more extensive implementation of the Hydra Design System.',
         'I analyzed how users utilized the current site to make informed design choices for this effort—using Google Analytics to see the primary devices used and how each device performed for lead conversion and engagement. I leveraged heat maps and scroll maps to understand what UI elements and content the users interacted with or ignored.'
       ]
     },
@@ -1004,7 +1004,7 @@ export const projects: Project[] = [
       },
       {
         type: 'text',
-        text: 'I partnered with the talented product marketing manager J.R. Hernandez on the following projects.'
+        text: 'I partnered with the talented product marketing manager, J.R. Hernandez, on the following projects.'
       },
       {
         type: 'split-row',
@@ -1014,7 +1014,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'WebMD Demographic Test' },
           {
             type: 'text',
-            text: 'Hypothesis: WebMD would attract a different demographic than DentalPlans.com, which leans heavily to seniors. By showing a younger demographic we would resonate better with the customers.'
+            text: 'Hypothesis: WebMD would attract a different demographic than DentalPlans.com, which leans heavily toward seniors. By showing a younger demographic, we would resonate better with customers.'
           }
         ],
         leftSpan: 12,
@@ -1053,7 +1053,7 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [{ type: 'image', src: '/images/work/split01-modal/sc-thumb.png', alt: '', shape: 'circle' }],
         right: [
-          { type: 'heading', text: 'Saving Calculator' },
+          { type: 'heading', text: 'Savings Calculator' },
           {
             type: 'text',
             text: 'Hypothesis: Providing customers more information on the product and using a niche celebrity would increase performance. The additional content would also improve organic rankings over time.'
@@ -1087,20 +1087,20 @@ export const projects: Project[] = [
     order: 7,
     title: 'Call Center XD',
     icon: 'fa-light fa-headset',
-    modalTitle: 'Call Center CX',
+    modalTitle: 'Call Center XD',
     visible: true,
-    summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.',
+    summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.',
     brief: {
       image: { src: '/images/work/ccux-modal/flow.png', alt: '' },
       paragraphs: [
-        'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.'
+        'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.'
       ]
     },
     contributions: [ { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' } ],
     technologies: [
       {
         icon: 'fa-regular fa-project-diagram',
-        label: 'Application Programming Interface (API)'
+        label: 'API'
       },
       { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Target' }
     ],
@@ -1108,7 +1108,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Messaging and State Change' },
       {
         type: 'text',
-        text: 'Our API checked the status of the call center every 5 minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'
+        text: 'Our API checked the status of the call center every five minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'
       },
       { type: 'text', text: 'Call Center Status: Green' },
       {
@@ -1162,9 +1162,9 @@ export const projects: Project[] = [
     section: 'work',
     display: 'thumb',
     order: 8,
-    title: 'Data Driven Personalisation',
+    title: 'Data-Driven Personalization',
     icon: 'fa-light fa-bullseye-arrow',
-    modalTitle: 'Data Driven Personalization',
+    modalTitle: 'Data-Driven Personalization',
     visible: true,
     summary: 'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.',
     brief: {
@@ -1274,7 +1274,7 @@ export const projects: Project[] = [
       paragraphs: [
         "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects.",
         'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under "Example UX Roadmap".',
-        'I am a strong planner and lean hard into planning the work and working the plan. To quote Roberts Burns - "The best-laid plans of mice and men often go awry," so be ready to pivot.'
+        'I am a strong planner and lean hard into planning the work and working the plan. To quote Robert Burns - "The best-laid schemes of mice and men often go awry," so be ready to pivot.'
       ]
     },
     briefHeading: 'Are we there yet?',
@@ -1299,13 +1299,13 @@ export const projects: Project[] = [
             bg: 'second'
           },
           {
-            label: 'High Level Goals/Vision:',
+            label: 'High-Level Goals/Vision:',
             body: 'Larger company strategy, vision, or specific goals that the roadmap aligns to.',
             bg: 'third'
           },
           {
             label: 'Timeline',
-            body: 'Now → Next → Later (note: these are not specific dates, but what should be tackled first.)',
+            body: 'Now → Next → Later (note: these are not specific dates, but what should be tackled first).',
             bg: 'fourth'
           },
           {
@@ -1333,13 +1333,13 @@ export const projects: Project[] = [
           },
           { label: 'Need:', body: 'The problem that will be solved or the purpose.' },
           {
-            label: 'Business objective(s):',
+            label: 'Business Objective(s):',
             body: 'Objectives and potential outcomes that will be achieved upon completion. Success metrics for the work.'
           },
           { label: 'Team:', body: 'Who is involved.' }
         ]
       },
-      { type: 'text', text: 'Obfuscated Lucid Chart' },
+      { type: 'text', text: 'Obfuscated Lucidchart' },
       { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart', flush: true }
     ]
   },
@@ -1472,11 +1472,11 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/btn-viva.png', alt: 'Viva Medicare brand' },
     modalTitle: 'Viva Medicare',
     visible: true,
-    summary: 'Develop a brand based on our product and customer research for Medicare and Medicare supplement. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.',
+    summary: 'Develop a brand based on our product and customer research for Medicare and Medicare Supplement plans. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.',
     brief: {
       image: { src: '/images/work/viva-modal/brief.png', alt: '' },
       paragraphs: [
-        'Develop a brand based on our product and customer research for Medicare and Medicare supplement. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.'
+        'Develop a brand based on our product and customer research for Medicare and Medicare Supplement plans. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.'
       ]
     },
     contributions: [

@@ -740,7 +740,7 @@ function ModalContent({ project }: { project: Project }) {
 
           {project.technologies.length > 0 && (
             <>
-              <h4 className="mt-6">Technology:</h4>
+              <h4 className="mt-6">Technologies:</h4>
               <hr className="solid-center" />
               <BadgeList badges={project.technologies} />
             </>

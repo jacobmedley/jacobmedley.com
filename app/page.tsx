@@ -1,6 +1,5 @@
 import NavMain from '@/components/nav/NavMain'
 import HeroSection from '@/components/sections/HeroSection'
-import ResultsSection from '@/components/sections/ResultsSection'
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
 import VisualDesignSection from '@/components/sections/VisualDesignSection'
 import ResumeSection from '@/components/sections/ResumeSection'
@@ -17,10 +16,6 @@ export default function Home() {
       <section id="hi" className="row-content">
         <HeroSection />
       </section>
-
-      <div id="results">
-        <ResultsSection />
-      </div>
 
       <div id="work">
         <CaseStudiesSection />

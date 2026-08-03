@@ -353,12 +353,12 @@ export const projects: Project[] = [
     media: [
       {
         type: 'metric-grid',
-        heading: 'Business Results',
+        heading: 'Business Results — DentalPlans.com Partner Platform, 2015–2021',
         metrics: [
-          { value: '47%', direction: 'up', label: 'New Sales' },
+          { value: '47%', direction: 'up', label: 'New Revenue' },
           { value: '20%', direction: 'up', label: 'Company Revenue' },
           { value: '27%', direction: 'up', label: 'Lead Generation' },
-          { value: '66%', direction: 'down', label: 'Reduction Project Timeline' }
+          { value: '66%', direction: 'down', label: 'Reduced Project Timelines' }
         ],
         valueCreated: {
           heading: 'Value Created',

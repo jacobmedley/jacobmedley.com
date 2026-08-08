@@ -640,8 +640,8 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'image', src: '/images/work/bmd-modal/home-dt.png', alt: 'BumblebeeMD Homepage Desktop' },
-          { type: 'image', src: '/images/work/bmd-modal/gran-ma-w.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+          { type: 'image', src: '/images/work/bmd-modal/home-dt.png', alt: 'BumblebeeMD homepage, desktop' },
+          { type: 'image', src: '/images/work/bmd-modal/gran-ma-w.png', alt: 'BumblebeeMD homepage lifestyle photography', flush: true }
         ],
         right: [{ type: 'image', src: '/images/work/bmd-modal/home-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
         leftSpan: 18,
@@ -651,8 +651,8 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'image', src: '/images/work/bmd-modal/content-dt.png', alt: 'BumblebeeMD Homepage Desktop' },
-          { type: 'image', src: '/images/work/bmd-modal/family.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+          { type: 'image', src: '/images/work/bmd-modal/content-dt.png', alt: 'BumblebeeMD content page, desktop' },
+          { type: 'image', src: '/images/work/bmd-modal/family.png', alt: 'BumblebeeMD family lifestyle photography', flush: true }
         ],
         right: [{ type: 'image', src: '/images/work/bmd-modal/content-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
         leftSpan: 18,
@@ -663,11 +663,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'Buttons' },
-          { type: 'image', src: '/images/work/bmd-modal/buttons.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+          { type: 'image', src: '/images/work/bmd-modal/buttons.png', alt: 'BumblebeeMD button component styles', flush: true }
         ],
         right: [
           { type: 'heading', text: 'Inputs' },
-          { type: 'image', src: '/images/work/bmd-modal/inputs.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }
+          { type: 'image', src: '/images/work/bmd-modal/inputs.png', alt: 'BumblebeeMD form input component styles', flush: true }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -752,8 +752,8 @@ export const projects: Project[] = [
           {
             type: 'image',
             src: '/images/work/hydra/ui-rag.png',
-            alt: 'UI fragmentation on buttons',
-            caption: 'UX/UI Fragmentation - Button Treatments',
+            alt: 'Eight inconsistent button treatments across products',
+            caption: 'UX/UI Fragmentation — Button Treatments',
             flush: true
           }
         ],
@@ -767,8 +767,8 @@ export const projects: Project[] = [
           {
             type: 'image',
             src: '/images/work/hydra/error-01.png',
-            alt: '...',
-            caption: 'UX/UI Fragmentation - error and input treatments.',
+            alt: 'Inconsistent error message and input field treatments, first set',
+            caption: 'UX/UI Fragmentation — Error and Input Treatments (1 of 2)',
             flush: true
           }
         ],
@@ -776,8 +776,8 @@ export const projects: Project[] = [
           {
             type: 'image',
             src: '/images/work/hydra/error-02.png',
-            alt: '...',
-            caption: 'UX/UI Fragmentation - error and input treatments.',
+            alt: 'Inconsistent error message and input field treatments, second set',
+            caption: 'UX/UI Fragmentation — Error and Input Treatments (2 of 2)',
             flush: true
           }
         ],
@@ -914,11 +914,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/brief-befor.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/brief-befor.png', alt: 'One Park Financial homepage, before redesign' }
         ],
         right: [
           { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/brief.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/brief.png', alt: 'One Park Financial homepage, after redesign' }
         ],
         leftSpan: 12,
         rightSpan: 12,
@@ -929,11 +929,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/hiw-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/hiw-before.png', alt: 'One Park Financial How It Works page, before redesign' }
         ],
         right: [
           { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/hiw.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/hiw.png', alt: 'One Park Financial How It Works page, after redesign' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -943,11 +943,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/about-us-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/about-us-before.png', alt: 'One Park Financial About Us page, before redesign' }
         ],
         right: [
           { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/about.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/about.png', alt: 'One Park Financial About Us page, after redesign' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -957,11 +957,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/mod-proc-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/mod-proc-before.png', alt: 'One Park Financial Our Process module, before redesign' }
         ],
         right: [
           { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/mod-proc-after.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
+          { type: 'image', src: '/images/work/opf-modal/mod-proc-after.png', alt: 'One Park Financial Our Process module, after redesign' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1027,11 +1027,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'Control' },
-          { type: 'image', src: '/images/work/webmd-modal/control.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
+          { type: 'image', src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage, control variant' }
         ],
         right: [
           { type: 'heading', text: 'V1 Winner +14.9%' },
-          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD Homepage Desktop ' }
+          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, winning variant V1' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1040,11 +1040,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'V2 -2.5%' },
-          { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD Homepage Desktop' }
+          { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD homepage, variant V2' }
         ],
         right: [
           { type: 'heading', text: 'V3 -35.1%' },
-          { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD Homepage Desktop' }
+          { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD homepage, variant V3' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1069,11 +1069,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'Control' },
-          { type: 'image', src: '/images/work/split01-modal/sc-control.png', alt: 'WebMD Homepage Desktop  by Jacob Medley' }
+          { type: 'image', src: '/images/work/split01-modal/sc-control.png', alt: 'Savings calculator landing page, control variant' }
         ],
         right: [
           { type: 'heading', text: 'V1 Winner +24.2%' },
-          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'WebMD Homepage Desktop ' }
+          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'Savings calculator landing page, winning variant V1' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1199,11 +1199,11 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'Before' },
-          { type: 'image', src: '/images/work/ma-modal/ma-36.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+          { type: 'image', src: '/images/work/ma-modal/ma-36.png', alt: 'Personalized campaign email, before optimization', flush: true }
         ],
         right: [
           { type: 'heading', text: 'After' },
-          { type: 'image', src: '/images/work/ma-modal/ma-3b.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+          { type: 'image', src: '/images/work/ma-modal/ma-3b.png', alt: 'Personalized campaign email, after optimization', flush: true }
         ],
         leftSpan: 12,
         rightSpan: 12,

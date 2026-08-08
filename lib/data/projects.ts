@@ -323,7 +323,7 @@ export const projects: Project[] = [
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product ecommerce websites for Cigna, Aetna, WebMD, and Lower My Dental Bills (LMDB).",
+    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product eCommerce websites for Cigna, Aetna, WebMD, and Lower My Dental Bills (LMDB).",
     modalTitle: 'Product Framework and Design System',
     visible: true,
     brief: {
@@ -525,7 +525,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Plan:', level: 4 },
           {
             type: 'text',
-            text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label ecommerce platform.'
+            text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label eCommerce platform.'
           },
           {
             type: 'text',
@@ -708,15 +708,15 @@ export const projects: Project[] = [
     display: 'feature',
     order: 4,
     title: 'Hydra',
-    subtitle: 'The making of a design system.',
+    subtitle: 'The Making of a Design System',
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: "I championed and implemented the HYDRA design system. A large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
+    summary: "I championed and implemented the Hydra design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
     modalTitle: 'Hydra Design System',
     visible: true,
     brief: {
       image: { src: '/images/work/hydra/brief.png', alt: '' },
       paragraphs: [
-        "I championed and implemented the HYDRA design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
+        "I championed and implemented the Hydra design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
         'Executing the project spanned multiple departments. I presented the issues and plan of action to the SVP of Marketing and the CTO, gaining executive sponsorship and support.'
       ]
     },
@@ -928,11 +928,11 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'text', text: 'Before:' },
+          { type: 'text', text: 'Before' },
           { type: 'image', src: '/images/work/opf-modal/hiw-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
         ],
         right: [
-          { type: 'text', text: 'After:' },
+          { type: 'text', text: 'After' },
           { type: 'image', src: '/images/work/opf-modal/hiw.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
         ],
         leftSpan: 12,
@@ -942,11 +942,11 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'text', text: 'Before:' },
+          { type: 'text', text: 'Before' },
           { type: 'image', src: '/images/work/opf-modal/about-us-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
         ],
         right: [
-          { type: 'text', text: 'After:' },
+          { type: 'text', text: 'After' },
           { type: 'image', src: '/images/work/opf-modal/about.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
         ],
         leftSpan: 12,
@@ -956,11 +956,11 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'text', text: 'Before:' },
+          { type: 'text', text: 'Before' },
           { type: 'image', src: '/images/work/opf-modal/mod-proc-before.png', alt: 'WebMD Homepage Desktop by Jacob Medley' }
         ],
         right: [
-          { type: 'text', text: 'After:' },
+          { type: 'text', text: 'After' },
           { type: 'image', src: '/images/work/opf-modal/mod-proc-after.png', alt: 'WebMD Homepage Mobile  by Jacob Medley' }
         ],
         leftSpan: 12,
@@ -1039,11 +1039,11 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'heading', text: 'V2 -2.48%' },
+          { type: 'heading', text: 'V2 -2.5%' },
           { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD Homepage Desktop' }
         ],
         right: [
-          { type: 'heading', text: 'V3 -35.13%' },
+          { type: 'heading', text: 'V3 -35.1%' },
           { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD Homepage Desktop' }
         ],
         leftSpan: 12,
@@ -1225,11 +1225,11 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/workshop/ideas.jpg', alt: '' },
       paragraphs: [
-        'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, CRO (Conversion Rate Optimization), and User Testing Strategy, effectively driving innovation and strategic thinking.',
+        'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, conversion rate optimization (CRO), and user testing strategy, effectively driving innovation and strategic thinking.',
         'With the right team, anything is possible. Anything!'
       ]
     },
-    briefHeading: 'Solving the right problems.',
+    briefHeading: 'Solving the Right Problems',
     contributions: [{ icon: 'fa-regular fa-lightbulb-on', label: 'Facilitator' }],
     technologies: [
       { icon: 'fa-regular fa-chalkboard', label: 'Whiteboard' },
@@ -1238,7 +1238,7 @@ export const projects: Project[] = [
       { icon: 'fa-regular fa-brain', label: 'Brains' }
     ],
     media: [
-      { type: 'heading', text: 'Various Types of Workshops I have Facilitated.' },
+      { type: 'heading', text: 'Types of Workshops I’ve Facilitated' },
       {
         type: 'icon-grid',
         items: [
@@ -1273,7 +1273,7 @@ export const projects: Project[] = [
       image: { src: '/images/work/roadmap/rm.jpg', alt: '' },
       paragraphs: [
         "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects.",
-        'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under "Example UX Roadmap".',
+        'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under “Example UX Roadmap.”',
         'I am a strong planner and lean hard into planning the work and working the plan. To quote Robert Burns - "The best-laid schemes of mice and men often go awry," so be ready to pivot.'
       ]
     },
@@ -1281,7 +1281,7 @@ export const projects: Project[] = [
     contributions: [{ icon: 'fa-regular fa-mouse-field', label: 'Roadmap Planning' }],
     technologies: [{ icon: 'fa-regular fa-chalkboard', label: 'Lucidchart' }],
     media: [
-      { type: 'heading', text: 'Example UX Roadmap Obfuscated for client protection.' },
+      { type: 'heading', text: 'Example UX Roadmap — obfuscated for client protection' },
       { type: 'text', text: 'Structure and Components' },
       {
         type: 'styled-list',
@@ -1304,12 +1304,12 @@ export const projects: Project[] = [
             bg: 'third'
           },
           {
-            label: 'Timeline',
+            label: 'Timeline:',
             body: 'Now → Next → Later (note: these are not specific dates, but what should be tackled first).',
             bg: 'fourth'
           },
           {
-            label: 'Specific Projects or Initiatives',
+            label: 'Specific Projects or Initiatives:',
             bg: 'pop',
             subItems: [
               'Project Title / Number',
@@ -1358,7 +1358,7 @@ export const projects: Project[] = [
         'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
       ]
     },
-    briefHeading: 'Personas',
+    briefHeading: 'What Frugal Francine Taught Us',
     contributions: [
       { icon: 'fa-regular fa-clipboard-list-check', label: 'Co-Project Lead' },
       { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }

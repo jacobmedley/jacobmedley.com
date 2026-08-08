@@ -711,7 +711,7 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
 function ModalContent({ project }: { project: Project }) {
   return (
     <>
-      {/* Intro row: circular brief image + Project Brief / Contributions / Technology */}
+      {/* Intro row: circular brief image + Project Brief / Contributions / Technologies */}
       <div className="row mb-6">
         {project.brief.image && (
           <div className="col-24 col-lg-12 col-xl-10 self-center text-center">

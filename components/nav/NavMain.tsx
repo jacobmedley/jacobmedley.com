@@ -17,9 +17,12 @@ const buttonClass: Record<string, string> = {
   education: 'education',
 }
 
+// Stable reference — useScrollSpy re-runs its effect whenever this array
+// identity changes, so it can't be recreated inline on every render.
+const NAV_IDS = navSections.map((s) => s.id)
+
 export default function NavMain() {
-  const ids = navSections.map((s) => s.id)
-  const activeId = useScrollSpy(ids)
+  const activeId = useScrollSpy(NAV_IDS)
 
   return (
     <nav

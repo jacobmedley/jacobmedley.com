@@ -47,38 +47,56 @@ const leadershipRight = [
   },
 ]
 
+type ExperienceRole = {
+  title: string
+  period: string
+}
+
+type ExperienceEntry = {
+  company: string
+  roles: ExperienceRole[]
+  paragraphs: string[]
+}
+
 // Text ported verbatim from components/section-resume.html
-const experience = [
+const experience: ExperienceEntry[] = [
   {
-    title: 'Sr. UX Designer',
+    company: 'Health-E Commerce, New York, NY (Remote)',
+    roles: [
+      { title: 'Director of User and Experience Design', period: 'Feb 2026 to Present' },
+      { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
+    ],
+    paragraphs: [
+      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. The first year closed with roughly a 70% increase in output against a temporary 6.7% increase in contractor headcount, and one of the smoothest Surge seasons on record — the company’s highest-volume period of the year.',
+      'With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company’s first dedicated XD/UX designer.',
+    ],
+  },
+  {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
-    period: '2023 to current',
+    roles: [{ title: 'Sr. UX Designer', period: '2023 to 2025' }],
     paragraphs: [
       'At Mutual of America, I collaborate with stakeholders and cross-functional teams to identify and resolve key user experience challenges. I lead strategic planning sessions and facilitate workshops to align design objectives and strategies. By defining user-centric epics and crafting detailed user stories and acceptance criteria for the main website, I ensure that our digital products meet and exceed user needs. I established best practices for A/B testing to inform design decisions and optimize usability. Additionally, I contributed to the design and development of a GPT/LLM conversational search application within Salesforce and the public websites.',
     ],
   },
   {
-    title: 'Director of UX/UI & Product Design',
     company: 'One Park Financial, Coconut Grove, FL',
-    period: '2021 to 2022',
+    roles: [{ title: 'Director of UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
       'At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.',
       'I evangelized the need for a design system, partnering with the SVP of Marketing to secure executive buy-in for the project. This led to the creation of the Hydra Design System, a unified pattern and component library. This empowered the company to design and engineer rapidly and "fail fast," improving business goals and user experience.',
     ],
   },
   {
-    title: 'Sr. Manager, UX/UI Design',
     company: 'DentalPlans.com, Plantation, FL',
-    period: '2015 to 2021',
+    roles: [{ title: 'Sr. Manager, UX/UI Design', period: '2015 to 2021' }],
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
       "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. These strategic initiatives resulted in over 47% of new revenue, 27% of total lead generation, and contributed to 20% of the company's overall revenue, highlighting the essential role of strategic product design and development in business expansion and profitability.",
     ],
   },
   {
-    title: 'Sr. Digital Designer',
     company: 'Bluegreen Vacations, Boca Raton, FL',
-    period: '2011 to 2015',
+    roles: [{ title: 'Sr. Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
       'As the design lead, I contributed to the company-wide transition to a data-driven omnichannel marketing platform, incorporating digital signage across 48 resort locations and interactive kiosk interfaces. This role involved crafting engaging user experiences across various marketing platforms and channels, ensuring a seamless integration of digital and physical touchpoints.',
       "In collaboration with stakeholders, cross-functional teams, and external consultants, I played a key role in implementing and integrating a comprehensive marketing experience strategy. This strategy was focused on unifying our messaging and branding across all channels, including the innovative use of digital signage and interactive kiosks, to create a cohesive and dynamic customer journey. My leadership in this area was pivotal in enhancing customer engagement and reinforcing the company's presence in the competitive resort industry.",
@@ -169,13 +187,21 @@ export default function ResumeSection() {
               <div className="row">
                 <div className="col-24">
                   {experience.map((job, i) => (
-                    <div key={job.title}>
+                    <div key={job.company}>
                       <p>
-                        <strong>{job.title}</strong>
+                        <strong>{job.roles[0].title}</strong>
                         <br />
                         {job.company}
                         <br />
-                        <em>{job.period}</em>
+                        <em>{job.roles[0].period}</em>
+                        {job.roles.slice(1).map((role) => (
+                          <span key={role.title}>
+                            <br />
+                            <strong>{role.title}</strong>
+                            <br />
+                            <em>{role.period}</em>
+                          </span>
+                        ))}
                       </p>
                       {job.paragraphs.map((p, j) => (
                         <p key={j}>{p}</p>

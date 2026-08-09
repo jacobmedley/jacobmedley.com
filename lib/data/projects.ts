@@ -231,11 +231,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/home-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD dental savings homepage, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/home-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD dental savings homepage, mobile'
         }
       },
       { type: 'heading', text: 'Plan Search Results' },
@@ -243,11 +243,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/plan-search-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD plan search results, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/plan-search-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD plan search results, mobile'
         }
       },
       { type: 'heading', text: 'Plan Compare' },
@@ -255,11 +255,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/plan-compare-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD plan comparison view, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/plan-compare-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD plan comparison view, mobile'
         }
       },
       { type: 'heading', text: 'Plan Details' },
@@ -267,11 +267,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/plan-details-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD plan details page, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/plan-details-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD plan details page, mobile'
         }
       },
       { type: 'heading', text: 'Dentist Search Results' },
@@ -279,11 +279,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/dentist-search-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD dentist search results, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/dentist-search-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD dentist search results, mobile'
         }
       },
       { type: 'heading', text: 'Dentist Details' },
@@ -291,11 +291,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/dentist-profile-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD dentist profile page, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/dentist-profile-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD dentist profile page, mobile'
         }
       },
       { type: 'heading', text: 'Cart' },
@@ -303,11 +303,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/webmd-modal/cart-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'WebMD shopping cart and checkout, desktop'
         },
         mobile: {
           src: '/images/work/webmd-modal/cart-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'WebMD shopping cart and checkout, mobile'
         }
       }
     ]
@@ -512,7 +512,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: 'DentalPlans partner site MVP, iteration one', shape: 'circle', widthPct: 75, bordered: true }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -541,7 +541,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: 'DentalPlans partner site MVP, iteration two', shape: 'circle', widthPct: 75, bordered: true }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -562,7 +562,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: 'DentalPlans partner site MVP, iteration three', shape: 'circle', widthPct: 75, bordered: true }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -582,7 +582,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: '', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: 'DentalPlans partner site MVP, iteration four', shape: 'circle', widthPct: 75, bordered: true }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -697,8 +697,8 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Wireframes' },
       {
         type: 'image-pair',
-        desktop: { src: '/images/work/bmd-modal/home-wf-dt.png', alt: '' },
-        mobile: { src: '/images/work/bmd-modal/home-wf-mb.png', alt: '' }
+        desktop: { src: '/images/work/bmd-modal/home-wf-dt.png', alt: 'BumblebeeMD homepage wireframe, desktop' },
+        mobile: { src: '/images/work/bmd-modal/home-wf-mb.png', alt: 'BumblebeeMD homepage wireframe, mobile' }
       }
     ]
   },
@@ -971,11 +971,11 @@ export const projects: Project[] = [
         type: 'image-pair',
         desktop: {
           src: '/images/work/opf-modal/home-dt.png',
-          alt: 'WebMD Homepage Desktop by Jacob Medley'
+          alt: 'One Park Financial full homepage, desktop'
         },
         mobile: {
           src: '/images/work/opf-modal/home-mb.png',
-          alt: 'WebMD Homepage Mobile  by Jacob Medley'
+          alt: 'One Park Financial full homepage, mobile'
         }
       }
     ]
@@ -1091,7 +1091,7 @@ export const projects: Project[] = [
     visible: true,
     summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.',
     brief: {
-      image: { src: '/images/work/ccux-modal/flow.png', alt: '' },
+      image: { src: '/images/work/ccux-modal/flow.png', alt: 'Call center availability API flow diagram' },
       paragraphs: [
         'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
       ]
@@ -1116,11 +1116,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/ccux-modal/dt-header-green.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center open and available, desktop'
           },
           {
             src: '/images/work/ccux-modal/mb-header-green.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center open and available, mobile'
           }
         ],
         cols: [ 15, 9 ]
@@ -1131,11 +1131,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/ccux-modal/dt-header-closed.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center closed, desktop'
           },
           {
             src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center at high call volume, mobile'
           }
         ],
         cols: [ 15, 9 ]
@@ -1146,11 +1146,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/ccux-modal/dt-header-busy.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center at high call volume, desktop'
           },
           {
             src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Call center customer experience by Jacob Medley'
+            alt: 'Site header showing call center at high call volume, mobile'
           }
         ],
         cols: [ 15, 9 ]
@@ -1168,7 +1168,7 @@ export const projects: Project[] = [
     visible: true,
     summary: 'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.',
     brief: {
-      image: { src: '/images/work/ma-modal/automation.gif', alt: '' },
+      image: { src: '/images/work/ma-modal/automation.gif', alt: 'Animated walkthrough of the marketing automation workflow' },
       paragraphs: [
         'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.'
       ]
@@ -1223,7 +1223,7 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/workshop/ideas.jpg', alt: '' },
+      image: { src: '/images/work/workshop/ideas.jpg', alt: 'Workshop wall covered in sticky notes from a brainstorming session' },
       paragraphs: [
         'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, conversion rate optimization (CRO), and user testing strategy, effectively driving innovation and strategic thinking.',
         'With the right team, anything is possible. Anything!'
@@ -1270,7 +1270,7 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/roadmap/rm.jpg', alt: '' },
+      image: { src: '/images/work/roadmap/rm.jpg', alt: 'Obfuscated UX roadmap in Lucidchart' },
       paragraphs: [
         "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects.",
         'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under “Example UX Roadmap.”',
@@ -1353,7 +1353,7 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/../images/work/kitchen-sink/persona-one.webp', alt: '' },
+      image: { src: '/images/work/kitchen-sink/persona-one.webp', alt: 'Example persona card for Frugal Francine' },
       paragraphs: [
         'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
       ]
@@ -1426,11 +1426,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/kitchen-sink/reveal-clear-01.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Reveal Clear Aligners campaign concept, clarity theme, first execution'
           },
           {
             src: '/images/work/kitchen-sink/reveal-clear-02.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Reveal Clear Aligners campaign concept, clarity theme, second execution'
           }
         ],
         cols: [ 12, 12 ],
@@ -1441,7 +1441,7 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/kitchen-sink/reveal-omg-01.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Reveal Clear Aligners campaign concept, OMG Your Aligner Is Showing'
           }
         ],
         cols: [ 12 ],
@@ -1477,10 +1477,10 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'image', src: '/images/work/viva-modal/logo-design-stack.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+          { type: 'image', src: '/images/work/viva-modal/logo-design-stack.png', alt: 'Viva Medicare logo, stacked lockup', flush: true }
         ],
         right: [
-          { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare Logo Design by Jacob Medley', flush: true }
+          { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare logo, inline lockup', flush: true }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1489,25 +1489,25 @@ export const projects: Project[] = [
       {
         type: 'image',
         src: '/images/work/viva-modal/colors.png',
-        alt: 'Color Study for Viva Medicare by Jacob Medley',
+        alt: 'Viva Medicare color study',
         flush: true
       },
       { type: 'heading', text: 'Visual Style and Tone' },
       {
         type: 'image',
         src: '/images/work/viva-modal/vs-1.png',
-        alt: 'Viva Medicare Visual Style and Tone by Jacob Medley'
+        alt: 'Viva Medicare visual style exploration, option one'
       },
       {
         type: 'image-row',
         images: [
           {
             src: '/images/work/viva-modal/vs-2.png',
-            alt: 'Viva Medicare Visual Style and Tone by Jacob Medley'
+            alt: 'Viva Medicare visual style exploration, option two'
           },
           {
             src: '/images/work/viva-modal/vs-3.png',
-            alt: 'Viva Medicare Visual Style and Tone by Jacob Medley'
+            alt: 'Viva Medicare visual style exploration, option three'
           }
         ],
         cols: [ 12, 12 ]
@@ -1516,33 +1516,33 @@ export const projects: Project[] = [
       {
         type: 'image',
         src: '/images/work/viva-modal/hero-1.png',
-        alt: 'Viva Medicare Hero Concepts by Jacob Medley'
+        alt: 'Viva Medicare hero concept, option one'
       },
       {
         type: 'image',
         src: '/images/work/viva-modal/hero-2.png',
-        alt: 'Viva Medicare Hero Concepts by Jacob Medley'
+        alt: 'Viva Medicare hero concept, option two'
       },
       { type: 'heading', text: 'UI Components & Style' },
       { type: 'heading', text: 'Buttons' },
       {
         type: 'image',
         src: '/images/work/viva-modal/buttons.png',
-        alt: 'Viva Medicare Button Concepts by Jacob Medley',
+        alt: 'Viva Medicare button styles',
         flush: true
       },
       { type: 'heading', text: 'Inputs' },
       {
         type: 'image',
         src: '/images/work/viva-modal/inputs.png',
-        alt: 'Viva Medicare Input Concepts by Jacob Medley',
+        alt: 'Viva Medicare form input styles',
         flush: true
       },
       { type: 'heading', text: 'Navigation' },
       {
         type: 'image',
         src: '/images/work/viva-modal/nav.png',
-        alt: 'Viva Medicare - Navigation Concepts by Jacob Medley',
+        alt: 'Viva Medicare navigation design',
         flush: true
       }
     ]
@@ -1596,11 +1596,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/kitchen-sink/wrong-hero-hip-lady.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, younger woman'
           },
           {
             src: '/images/work/kitchen-sink/wrong-hero-hip-senior.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, active senior man'
           }
         ],
         cols: [ 12, 12 ],
@@ -1611,11 +1611,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/kitchen-sink/wrong-hero-kid.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, child'
           },
           {
             src: '/images/work/kitchen-sink/wrong-hero-family.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, family'
           }
         ],
         cols: [ 12, 12 ],
@@ -1626,11 +1626,11 @@ export const projects: Project[] = [
         images: [
           {
             src: '/images/work/kitchen-sink/wrong-hero-senior-single.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, senior woman'
           },
           {
             src: '/images/work/kitchen-sink/wrong-hero-senior-couple.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
+            alt: 'Wrong campaign hero, senior couple'
           }
         ],
         cols: [ 12, 12 ],
@@ -1640,7 +1640,7 @@ export const projects: Project[] = [
       {
         type: 'image',
         src: '/images/work/kitchen-sink/wrong-full-lp.jpg',
-        alt: 'Viva Medicare Logo Design by Jacob Medley'
+        alt: 'Wrong campaign full landing page'
       }
     ]
   }

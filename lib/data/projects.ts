@@ -1382,11 +1382,11 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/btn-reveal.png', alt: 'Reveal Aligners campaign' },
     modalTitle: 'Reveal Aligners',
     visible: true,
-    summary: 'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight the superiority and clarity of our product over the competition. I adopted a fun and edgy tone for both the copy and visuals to ensure the campaign stood out for my creatives.',
+    summary: 'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight our product’s clarity and its advantages over the competition. I adopted a fun, edgy tone for both copy and visuals. We produced many concepts; these are the ones I’m proudest of.',
     brief: {
       image: { src: '/images/work/kitchen-sink/reveal-cover.jpg', alt: '' },
       paragraphs: [
-        'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight the superiority and clarity of our product over the competition. I adopted a fun and edgy tone for both the copy and visuals to ensure the campaign stood out for my creatives.'
+        'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight our product’s clarity and its advantages over the competition. I adopted a fun, edgy tone for both copy and visuals. We produced many concepts; these are the ones I’m proudest of.'
       ]
     },
     contributions: [
@@ -1397,7 +1397,7 @@ export const projects: Project[] = [
     inlineContributions: true,
     technologies: [],
     media: [
-      { type: 'text', text: 'Conceptual and Visual Contributions:' },
+      { type: 'text', text: 'My Concepts:' },
       {
         type: 'styled-list',
         items: [
@@ -1408,16 +1408,6 @@ export const projects: Project[] = [
           {
             label: "So Clear, Like It's Not Even There:",
             body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
-          }
-        ]
-      },
-      { type: 'text', text: 'Visual Contributions:' },
-      {
-        type: 'styled-list',
-        items: [
-          {
-            label: 'The Difference Is Clear:',
-            body: 'This concept, developed by Rick Hoyle, provided a strong comparative angle, further driving home our message of clarity.'
           },
           {
             label: 'OMG, Your Aligner Is Showing:',
@@ -1427,7 +1417,7 @@ export const projects: Project[] = [
       },
       {
         type: 'text',
-        text: 'Working together, we ensured that each concept seamlessly fit within the overarching theme of the campaign. Our combined efforts brought a cohesive and impactful message to life, demonstrating that the choice of Reveal Clear Aligners was indeed clear.'
+        text: 'Each concept had to sit inside one overarching campaign theme while standing on its own in a paid placement. The through-line was simple: the choice of Reveal Clear Aligners was, itself, clear.'
       },
       { type: 'contributions' },
       { type: 'heading', text: 'Concepts' },
@@ -1452,13 +1442,9 @@ export const projects: Project[] = [
           {
             src: '/images/work/kitchen-sink/reveal-omg-01.jpg',
             alt: 'Viva Medicare Logo Design by Jacob Medley'
-          },
-          {
-            src: '/images/work/kitchen-sink/reveal-cost-01.jpg',
-            alt: 'Viva Medicare Logo Design by Jacob Medley'
           }
         ],
-        cols: [ 12, 12 ],
+        cols: [ 12 ],
         mobileDivider: true
       }
     ]

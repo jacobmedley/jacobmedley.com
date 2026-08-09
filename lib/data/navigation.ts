@@ -9,7 +9,7 @@ export interface NavSection {
 export const navSections: NavSection[] = [
   { id: 'hi',            label: 'Hello',         icon: 'fa-kit fa-jm-icon-cropped',           color: 'prime'  },
   { id: 'work',          label: 'Case Studies',  icon: 'fa-thin fa-briefcase',                color: 'second' },
-  { id: 'visual-design', label: 'Visual Design', icon: 'fa-thin fa-fw fa-paintbrush-pencil',  color: 'pop'    },
+  { id: 'full-stack',    label: 'Full-Stack',    icon: 'fa-thin fa-fw fa-toolbox',            color: 'pop'    },
   { id: 'resume',        label: 'Resume',        icon: 'fa-thin fa-fw fa-list-timeline',      color: 'third'  },
   { id: 'education',     label: 'Education',     icon: 'fa-thin fa-fw fa-brain-circuit',      color: 'fourth' },
 ]

@@ -1,7 +1,7 @@
 import NavMain from '@/components/nav/NavMain'
 import HeroSection from '@/components/sections/HeroSection'
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
-import VisualDesignSection from '@/components/sections/VisualDesignSection'
+import FullStackSection from '@/components/sections/FullStackSection'
 import ResumeSection from '@/components/sections/ResumeSection'
 import EducationSection from '@/components/sections/EducationSection'
 
@@ -21,8 +21,8 @@ export default function Home() {
         <CaseStudiesSection />
       </div>
 
-      <div id="visual-design">
-        <VisualDesignSection />
+      <div id="full-stack">
+        <FullStackSection />
       </div>
 
       <div id="resume">

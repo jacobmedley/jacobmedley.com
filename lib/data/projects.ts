@@ -329,7 +329,7 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/dpprod-modal/brief.png', alt: '' },
       paragraphs: [
-        "DentalPlans.com, a marketplace for dental savings and insurance plans, identified an opportunity to create brand-focused product sites for larger partners. These sites would highlight specific brands, catering to customers' preferences, and optimizing sales and conversions by crafting individualized brand experiences.",
+        "DentalPlans.com, a marketplace for dental savings and insurance plans, identified an opportunity to create brand-focused product sites for larger partners. These sites would highlight specific brands, cater to customers’ preferences, and optimize sales and conversions by crafting individualized brand experiences.",
         'This case study highlights how a small, lean team transformed an idea for a single product-focused site into a robust framework supporting rapid product site deployment, a multi-brand design system, and microservices that drive significant business results.'
       ]
     },
@@ -500,7 +500,7 @@ export const projects: Project[] = [
               'Product Design Framework: Enabled updates, testing, and conversion rate optimization at scale.',
               'Multi-Brand Design System: One-to-one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
               'Microservices and APIs: Provided product information, dentist search, and shopping cart functionalities.',
-              'Sales and Promotional Management: Scheduled and managed sales and promotional campaigns.',
+              'Sales and Promotional Management: Scheduling, versioning, and expiry handling for offers across every partner site.',
               'Robust Marketing and Campaign Tracking: Included PPC, affiliate, and organic tracking.',
               'Knowledge Base and Documentation: Supported designers and developers with comprehensive resources.',
               'DevOps Pipelines: Facilitated global system updates and individual feature deployments across all sites or single sites.'
@@ -517,7 +517,7 @@ export const projects: Project[] = [
         rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
-          { type: 'heading', text: 'Initial Launch and Learnings', level: 4 },
+          { type: 'heading', text: 'Iteration One: Initial Launch and Learnings', level: 4 },
           {
             type: 'text',
             text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"'
@@ -529,12 +529,12 @@ export const projects: Project[] = [
           },
           {
             type: 'text',
-            text: 'I developed a bootstrapped WordPress theme for a home page, contact us, about, product details, and an add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
+            text: 'I built a Bootstrap-based WordPress theme covering the home, contact, about, and product detail pages, plus add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
           },
           { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
-            text: 'The launch showed moderately higher conversion rates and a lower CPA compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
+            text: 'The launch showed moderately higher conversion rates and a lower cost per acquisition (CPA) compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
           }
         ]
       },
@@ -889,7 +889,7 @@ export const projects: Project[] = [
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
       paragraphs: [
         'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow. This project was part of a more extensive implementation of the Hydra Design System.',
-        'I analyzed how users utilized the current site to make informed design choices for this effort—using Google Analytics to see the primary devices used and how each device performed for lead conversion and engagement. I leveraged heat maps and scroll maps to understand what UI elements and content the users interacted with or ignored.'
+        'I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with — and which they scrolled straight past.'
       ]
     },
     contributions: [
@@ -1089,11 +1089,11 @@ export const projects: Project[] = [
     icon: 'fa-light fa-headset',
     modalTitle: 'Call Center XD',
     visible: true,
-    summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.',
+    summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.',
     brief: {
       image: { src: '/images/work/ccux-modal/flow.png', alt: '' },
       paragraphs: [
-        'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and business intelligence to build a customer call center health API that we could update the online experience in real-time based on call center availability.'
+        'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
       ]
     },
     contributions: [ { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' } ],
@@ -1193,7 +1193,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Results' },
       {
         type: 'text',
-        text: 'I worked with stakeholders from the marketing, business analysis, and data teams to engineer and design a dynamic campaign using the new platform. I optimized the campaign to leverage the system, which reduced the workload on campaign managers by 92% while meeting the business KPIs set by the business.'
+        text: 'I worked with stakeholders from the marketing, business analysis, and data teams to engineer and design a dynamic campaign using the new platform. I optimized the campaign to leverage the system, which reduced the workload on campaign managers by 92% while meeting every KPI the business had set.'
       },
       {
         type: 'split-row',
@@ -1472,11 +1472,12 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/btn-viva.png', alt: 'Viva Medicare brand' },
     modalTitle: 'Viva Medicare',
     visible: true,
-    summary: 'Develop a brand based on our product and customer research for Medicare and Medicare Supplement plans. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.',
+    summary: 'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
     brief: {
       image: { src: '/images/work/viva-modal/brief.png', alt: '' },
       paragraphs: [
-        'Develop a brand based on our product and customer research for Medicare and Medicare Supplement plans. I partnered with executive stakeholders and the Director of Creative Development, Rick Hoyle, to brainstorm and go through several branding exercises. Below are my favorite variations produced for the project.'
+        'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
+        'Every mark, palette, and UI treatment shown here is my own work. These are my favorite variations produced for the project.'
       ]
     },
     contributions: [
@@ -1569,11 +1570,11 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/btn-wrong.png', alt: 'The Wrong campaign' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
-    summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to individuals seeking crowns, fillings, and root canals—terms with the highest search volume and traffic. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+    summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals — the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
     brief: {
       image: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: '' },
       paragraphs: [
-        'The "WRONG" marketing campaign aimed to promote dental savings plans to individuals seeking crowns, fillings, and root canals—terms with the highest search volume and traffic. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+        'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals — the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
         'Campaign Concept:',
         'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
       ]

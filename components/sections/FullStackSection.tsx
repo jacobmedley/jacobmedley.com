@@ -16,8 +16,9 @@ const fullStackProjects = projects
  * gradient treatment (was section-visual-design.html). Tiles are a mix of
  * image thumbs (Reveal / Viva / Wrong) and icon thumbs (the rest) — icon
  * tiles reuse the design-thinking icon markup that used to live inline in
- * CaseStudiesSection's interstitial, on a solid bg-pop-dark background so
- * both variants share the same dimensions, overlay, and hover treatment.
+ * CaseStudiesSection's interstitial, on .thinking-thumb's default white
+ * background so both variants share the same dimensions and hover
+ * treatment; only image tiles get the dark screen overlay + white text.
  */
 export default function FullStackSection() {
   const [activeId, setActiveId] = useState<string | null>(null)
@@ -25,7 +26,7 @@ export default function FullStackSection() {
 
   return (
     <section className="show-me-the-money bg-pop-light bg-gradient-bs">
-      <WaveSeparator position="top" waveId="wave-fs" />
+      <WaveSeparator position="top" waveId="wave-vd" />
 
       <div className="content">
         <div className="container">
@@ -46,8 +47,8 @@ export default function FullStackSection() {
                 <button
                   type="button"
                   className={cn(
-                    'btn thinking-thumb text-white relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
-                    !project.thumb && 'bg-pop-dark'
+                    'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
+                    project.thumb && 'text-white'
                   )}
                   style={
                     project.thumb
@@ -63,11 +64,13 @@ export default function FullStackSection() {
                       aria-hidden="true"
                     />
                   )}
-                  <h6 className="thinking-title font-bold fs-1 z-2 relative">{project.title}</h6>
+                  <h6 className="thinking-title z-2 relative">{project.title}</h6>
                   <div className="thinking-view z-2 relative">
                     <i className="fa-regular fa-eye" aria-hidden="true" /> View
                   </div>
-                  <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />
+                  {project.thumb && (
+                    <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />
+                  )}
                 </button>
               </div>
             ))}

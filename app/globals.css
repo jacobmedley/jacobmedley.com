@@ -491,10 +491,10 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .wave-three { fill: rgba(94, 145, 93, 0.25); }
 .wave-four  { fill: rgba(227, 178, 17, 0.25); }
 
-#visual-design .wave-one   { fill: #fff; }
-#visual-design .wave-two   { fill: rgba(255, 255, 255, 0.25); }
-#visual-design .wave-three { fill: rgba(255, 255, 255, 0.25); }
-#visual-design .wave-four  { fill: rgba(255, 255, 255, 0.25); }
+#full-stack .wave-one   { fill: #fff; }
+#full-stack .wave-two   { fill: rgba(255, 255, 255, 0.25); }
+#full-stack .wave-three { fill: rgba(255, 255, 255, 0.25); }
+#full-stack .wave-four  { fill: rgba(255, 255, 255, 0.25); }
 
 #resume .wave-one   { fill: #f1d988; }
 #resume .wave-two   { fill: rgba(66, 102, 65, 0.12); }

@@ -6,13 +6,13 @@ import { cn } from '@/lib/utils'
 
 /**
  * Legacy #the-menu button color classes are keyed by section in
- * globals.css (.hi/.work/.results/.resume/.education — visual-design
- * kept its legacy "results" class name).
+ * globals.css (.hi/.work/.results/.resume/.education — full-stack
+ * (formerly visual-design) kept its legacy "results" class name).
  */
 const buttonClass: Record<string, string> = {
   hi: 'hi',
   work: 'work',
-  'visual-design': 'results',
+  'full-stack': 'results',
   resume: 'resume',
   education: 'education',
 }

@@ -5,7 +5,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Jacob Medley — UX/UI Designer & Digital Strategist',
   description:
-    'Portfolio of Jacob Medley, a UX/UI Designer & Digital Strategist with 10+ years experience driving business results through design.',
+    'Portfolio of Jacob Medley, a UX/UI Designer & Digital Strategist driving business results through design systems, platform thinking, and research.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

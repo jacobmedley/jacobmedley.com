@@ -12,7 +12,7 @@ interface WaveSeparatorProps {
 /**
  * Legacy animated wave separator (scss .waves / .parallax). Fill colors
  * come from globals.css (.wave-one … .wave-four, with per-section
- * overrides under #visual-design and #resume).
+ * overrides under #full-stack and #resume).
  */
 export default function WaveSeparator({
   position = 'bottom',

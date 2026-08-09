@@ -11,19 +11,19 @@ const educationItems = [
   {
     icon: 'fa-light fa-file-certificate',
     title: 'AI for Designers',
-    source: 'Interaction Design Foundation (IDxF)',
+    source: 'Interaction Design Foundation (IxDF)',
     url: 'https://www.interaction-design.org/members/jacob-medley/certificate/course/1ad7ed0b-29c1-469c-b7f5-33a667742a51?certificateType=course',
   },
   {
     icon: 'fa-light fa-file-certificate',
     title: 'Design Patterns for AI UX',
-    source: 'Interaction Design Foundation (IDxF)',
+    source: 'Interaction Design Foundation (IxDF)',
     url: 'https://www.interaction-design.org/members/jacob-medley/certificate/masterclass/mcc_e4727ae8f711444c86808940cbcd5d85',
   },
   {
     icon: 'fa-light fa-file-certificate',
     title: 'Micro-Usability: How to Design for Frictionless UX',
-    source: 'Interaction Design Foundation (IDxF)',
+    source: 'Interaction Design Foundation (IxDF)',
     url: 'https://www.interaction-design.org/members/jacob-medley/certificate/masterclass/mcc_6df3907c7b334a35a200fa4ccf54b396',
   },
   {
@@ -59,7 +59,7 @@ const educationItems = [
   {
     icon: 'fa-light fa-file-certificate',
     title: 'Certificate of Membership',
-    source: 'Interaction Design Foundation (IDxF)',
+    source: 'Interaction Design Foundation (IxDF)',
     url: 'https://www.interaction-design.org/members/jacob-medley/certificate/membership/mc_V0FMlS9wR',
   },
 ]

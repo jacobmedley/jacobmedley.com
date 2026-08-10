@@ -712,9 +712,16 @@ function ModalContent({ project }: { project: Project }) {
   return (
     <>
       {/* Intro row: circular brief image + Project Brief / Contributions / Technologies */}
-      <div className="row mb-6">
+      <div className={cn('row mb-6', project.briefVariant === 'narrow' && 'justify-center')}>
         {project.brief.image && (
-          <div className="col-24 col-lg-12 col-xl-10 self-center text-center">
+          <div
+            className={cn(
+              'self-center text-center',
+              project.briefVariant === 'narrow'
+                ? 'col-20 col-lg-12 col-xl-8'
+                : 'col-24 col-lg-12 col-xl-10'
+            )}
+          >
             <p>
               <img
                 loading="lazy"
@@ -725,7 +732,14 @@ function ModalContent({ project }: { project: Project }) {
             </p>
           </div>
         )}
-        <div className="col-24 col-lg-12 col-xl-14 self-center">
+        <div
+          className={cn(
+            'self-center',
+            project.briefVariant === 'narrow'
+              ? 'col-24 col-lg-12 col-xl-10'
+              : 'col-24 col-lg-12 col-xl-14'
+          )}
+        >
           {project.brief.paragraphs.length > 0 && (
             <>
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>

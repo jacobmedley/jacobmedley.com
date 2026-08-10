@@ -180,6 +180,10 @@ export interface Project {
   cardImage?: ProjectImage // feature-card image
   brief: { image?: ProjectImage; paragraphs: string[] }
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
+  // Legacy ships two intro-row shapes. 'wide' (default) = plain `.row` with
+  // image col-xl-10 / text col-xl-14. 'narrow' = `.row.justify-content-center`
+  // with image col-20 col-xl-8 / text col-xl-10 (modal-split-test.html 14-20).
+  briefVariant?: 'wide' | 'narrow'
   contributions: ProjectBadge[]
   // true when legacy interleaves the Contributions badges among the modal's
   // custom prose (reveal) rather than right after the brief — skips the
@@ -989,23 +993,20 @@ export const projects: Project[] = [
     icon: 'fa-light fa-vial',
     visible: true,
     summary: '',
-    brief: { image: { src: '/images/work/split01-modal/thumb.png', alt: '' }, paragraphs: [] },
+    briefHeading: 'Never Stop Testing!',
+    briefVariant: 'narrow',
+    brief: {
+      image: { src: '/images/work/split01-modal/thumb.png', alt: '' },
+      paragraphs: [
+        'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
+        "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
+        'I partnered with the talented product marketing manager, J.R. Hernandez, on the following projects.'
+      ]
+    },
     contributions: [],
     technologies: [],
     media: [
-      { type: 'heading', text: 'Never Stop Testing!' },
-      {
-        type: 'text',
-        text: 'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.'
-      },
-      {
-        type: 'text',
-        text: "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run."
-      },
-      {
-        type: 'text',
-        text: 'I partnered with the talented product marketing manager, J.R. Hernandez, on the following projects.'
-      },
+      { type: 'divider' },
       {
         type: 'split-row',
         reverse: true,
@@ -1021,7 +1022,8 @@ export const projects: Project[] = [
         rightSpan: 12,
         leftSpanXl: 8,
         rightSpanXl: 10,
-        hAlign: 'center'
+        hAlign: 'center',
+        vAlign: 'center'
       },
       {
         type: 'split-row',
@@ -1063,7 +1065,8 @@ export const projects: Project[] = [
         rightSpan: 12,
         leftSpanXl: 8,
         rightSpanXl: 10,
-        hAlign: 'center'
+        hAlign: 'center',
+        vAlign: 'center'
       },
       {
         type: 'split-row',

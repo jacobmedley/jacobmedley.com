@@ -718,7 +718,7 @@ function ModalContent({ project }: { project: Project }) {
             className={cn(
               'self-center text-center',
               project.briefVariant === 'narrow'
-                ? 'col-20 col-lg-12 col-xl-8'
+                ? 'col-24 col-lg-12 col-xl-8'
                 : 'col-24 col-lg-12 col-xl-10'
             )}
           >

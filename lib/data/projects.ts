@@ -182,7 +182,9 @@ export interface Project {
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
   // Legacy ships two intro-row shapes. 'wide' (default) = plain `.row` with
   // image col-xl-10 / text col-xl-14. 'narrow' = `.row.justify-content-center`
-  // with image col-20 col-xl-8 / text col-xl-10 (modal-split-test.html 14-20).
+  // with image col-24 col-xl-8 / text col-xl-10. Legacy used col-20 at the base
+  // width here, but its own split-row circles are col-24 — that step-down was a
+  // legacy inconsistency, not intent, so the base is normalized to col-24.
   briefVariant?: 'wide' | 'narrow'
   contributions: ProjectBadge[]
   // true when legacy interleaves the Contributions badges among the modal's

@@ -1002,7 +1002,7 @@ export const projects: Project[] = [
       paragraphs: [
         'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
         "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
-        'I partnered with the talented product marketing manager, J.R. Hernandez, on the following projects.'
+        'I partnered with the talented product marketing manager, [J.R. Hernandez](https://www.linkedin.com/in/iamjr/), on the following projects.'
       ]
     },
     contributions: [],
@@ -1012,7 +1012,15 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/split01-modal/web-md-thumb.png', alt: '', shape: 'circle' }],
+        left: [
+          {
+            type: 'image',
+            src: '/images/work/split01-modal/web-md-thumb.png',
+            alt: '',
+            shape: 'circle',
+            bordered: true
+          }
+        ],
         right: [
           { type: 'heading', text: 'WebMD Demographic Test' },
           {
@@ -1055,7 +1063,15 @@ export const projects: Project[] = [
       },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/split01-modal/sc-thumb.png', alt: '', shape: 'circle' }],
+        left: [
+          {
+            type: 'image',
+            src: '/images/work/split01-modal/sc-thumb.png',
+            alt: '',
+            shape: 'circle',
+            bordered: true
+          }
+        ],
         right: [
           { type: 'heading', text: 'Savings Calculator' },
           {

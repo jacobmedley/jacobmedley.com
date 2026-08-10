@@ -117,6 +117,14 @@
 }
 
 /*
+ * Inline prose links. Legacy used Bootstrap's `.text-secondary` on anchors
+ * inside modal copy (modal-split-test.html 40). The base layer resets `a` to
+ * `color: inherit`, so this rule lives unlayered to outrank it.
+ */
+.link-inline { color: var(--color-second); }
+.link-inline:hover { color: var(--color-second-dark); text-decoration: underline; }
+
+/*
  * Bootstrap container widths. Deliberately OUTSIDE the cascade layers:
  * Tailwind v4 ships its own `.container` utility (max-width = active
  * breakpoint), and layered utilities would override these legacy widths.

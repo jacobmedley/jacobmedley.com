@@ -154,6 +154,40 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
   )
 }
 
+/*
+ * Legacy modal copy occasionally carries an inline anchor (e.g. the J.R.
+ * Hernandez LinkedIn link in modal-split-test.html 40). Prose in the data
+ * layer is plain `string`, so links are authored markdown-style as
+ * `[label](https://url)` and expanded here. Strings without the marker are
+ * returned untouched, so every existing paragraph renders exactly as before.
+ */
+const INLINE_LINK_SPLIT = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g
+
+function withInlineLinks(text: string): ReactNode {
+  const parts = text.split(INLINE_LINK_SPLIT)
+  if (parts.length === 1) return text
+  const out: ReactNode[] = []
+  for (let i = 0; i < parts.length; i += 3) {
+    if (parts[i]) out.push(parts[i])
+    const label = parts[i + 1]
+    const href = parts[i + 2]
+    if (label && href) {
+      out.push(
+        <a
+          key={i}
+          className="link-inline"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {label}
+        </a>
+      )
+    }
+  }
+  return out
+}
+
 /* eslint-disable @next/next/no-img-element -- legacy parity: native imgs */
 /**
  * Bare content for a media block, with no outer `.row`/`.col-*` shell.
@@ -182,7 +216,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       )
     }
     case 'text':
-      return <p>{block.text}</p>
+      return <p>{withInlineLinks(block.text)}</p>
     case 'list':
       return (
         <ul className="fa-ul">
@@ -745,7 +779,7 @@ function ModalContent({ project }: { project: Project }) {
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>
               <hr className="solid-center" />
               {project.brief.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
+                <p key={p.slice(0, 40)}>{withInlineLinks(p)}</p>
               ))}
             </>
           )}

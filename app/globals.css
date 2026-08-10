@@ -271,11 +271,17 @@ section .content,
 }
 
 /* Hero row height */
+/*
+ * min-height, not height. The single child is align-self:center, so once the
+ * stack is taller than the box it overflows BOTH edges and the icon + first
+ * h1 line end up above the scroll origin, unreachable. Below ~576px the hero
+ * exceeds 90vh. Above sm the content always fits, so this renders identically.
+ */
 #hi.row-content,
-#hi .row-content { height: 90vh; }
+#hi .row-content { min-height: 90vh; }
 @media (min-width: 768px) {
   #hi.row-content,
-  #hi .row-content { height: 100vh; }
+  #hi .row-content { min-height: 100vh; }
 }
 
 /* Hero layered radial gradient background */
@@ -453,6 +459,17 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 /* ── Hero typography ────────────────────────────────────────────── */
 #hi .h-jakeicon { font-size: calc(2rem + 28vw); }
+/*
+ * The hero display sizes are vw-driven with no lower-end tuning, so they grow
+ * disproportionate as the viewport narrows. Scoped to #hi and to below-sm
+ * only, so no other section and no larger viewport is affected.
+ */
+@media (max-width: 575.98px) {
+  #hi .h-jakeicon { font-size: calc(1.5rem + 20vw); }
+  #hi .display-4  { font-size: calc(1.25rem + 3vw); }
+  #hi .display-2  { font-size: calc(1.05rem + 0.9vw); }
+  #hi .display-1  { font-size: calc(1rem + 0.3vw); }
+}
 @media (min-width: 576px) {
   #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
 }

@@ -14,7 +14,12 @@ export default function HeroSection() {
                 <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
               </p>
 
-              <h1 className="display-4 font-bold text-prime mt-0">Hello, I&apos;m Jacob Medley.</h1>
+              {/* Only one span is in the render tree at a time — `hidden` is
+                  display:none, which assistive tech skips, so no aria needed. */}
+              <h1 className="display-4 font-bold text-prime mt-0">
+                <span className="sm:hidden">Hi,</span>
+                <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
+              </h1>
               <h2 className="display-2 text-prime">UX/UI Designer &amp; Digital Strategist</h2>
 
               <div className="py-3 w-1/4 mx-auto">
@@ -23,9 +28,12 @@ export default function HeroSection() {
 
               <p className="display-1">
                 I believe there&rsquo;s always a better way, and together we can find it. In this
-                portfolio, you&rsquo;ll see highlights from my design journey so far. By
-                collaborating with cross-functional teams and applying a creative, scrappy
-                approach, I help scale products, create value, and drive business results.
+                portfolio, you&rsquo;ll see highlights from my design journey so far.
+                <span className="hidden sm:inline">
+                  {' '}
+                  By collaborating with cross-functional teams and applying a creative, scrappy
+                  approach, I help scale products, create value, and drive business results.
+                </span>
               </p>
 
               <a className="btn btn-outline-prime-dark mt-4 mb-4 btn-lg rounded-full" href="#work">

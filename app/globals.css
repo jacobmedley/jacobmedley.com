@@ -302,6 +302,8 @@ section .content,
 
 /* Hero layered radial gradient background */
 #hi {
+  /* Containing block for the absolutely-positioned wave below. */
+  position: relative;
   background-color: #fff;
   background-image:
     radial-gradient(ellipse at center center, #fff, transparent),
@@ -516,6 +518,26 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .waves-wrapper.top {
   transform: rotate(180deg);
   top: 0;
+}
+
+/*
+ * #hi's wave is a sibling of .content INSIDE the #hi section, and
+ * position:relative offsets an element visually while it still occupies its
+ * full height in flow. So the section measured .content (100vh) + wrapper
+ * (22vh) = 122vh, leaving 22vh of dead space before #work. The old fixed
+ * `height: 100vh` hid this by clamping the box; once that became min-height
+ * the box was free to grow and the gap appeared.
+ *
+ * Absolute + bottom:0 against the now-relative #hi puts the wave's bottom
+ * edge at the section's bottom edge — the same place it already renders —
+ * while contributing zero flow height. Scoped to #hi; the four other wave
+ * instances keep their existing behaviour.
+ */
+#hi .waves-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .waves {

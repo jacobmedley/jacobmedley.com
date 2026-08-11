@@ -475,6 +475,12 @@ const SPLIT_ROW_H_ALIGN = {
 // wouldn't get generated.
 const SPLIT_ROW_REVERSE_CLASS = { md: 'md:flex-row-reverse', lg: 'lg:flex-row-reverse' } as const
 const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as const
+// Section lead-in for the SECOND column. Side-by-side both columns start at
+// the row's top edge and both need it; stacked they are sequential, so this
+// one would land between an image and its own heading. Breakpoint-scoped so
+// it only applies once the row is actually side-by-side. Written out in full
+// because Tailwind cannot see dynamically-built class names.
+const SPLIT_ROW_SECTION_MT_CLASS = { md: 'md:mt-12', lg: 'lg:mt-12' } as const
 
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
@@ -528,7 +534,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
-          startsSection && 'mt-12',
+          startsSection && SPLIT_ROW_SECTION_MT_CLASS[bp],
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >

@@ -478,10 +478,21 @@ const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as c
 
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
+  /*
+   * SplitRow was the only block type with no margins. Every other top-level
+   * block carries `mb-6`, and a top-level `heading` additionally carries
+   * `mt-12` to open a new section (legacy's `mt-5` on the heading column).
+   * A split-row whose columns contain a heading IS a section opener, but its
+   * heading is rendered by BlockContent — bypassing MediaBlock's wrapper — so
+   * it never received that lead-in. Result: split-row sections got 24px of
+   * separation where heading-led sections got 72px.
+   */
+  const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
     <div
       className={cn(
-        'row',
+        'row mb-6',
+        startsSection && 'mt-12',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]

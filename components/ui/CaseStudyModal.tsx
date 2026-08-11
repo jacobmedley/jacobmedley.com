@@ -486,13 +486,19 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
    * heading is rendered by BlockContent — bypassing MediaBlock's wrapper — so
    * it never received that lead-in. Result: split-row sections got 24px of
    * separation where heading-led sections got 72px.
+   *
+   * The lead-in goes on the COLUMNS, not the row. Two sibling rows collapse
+   * their adjacent margins (max, not sum), so row-level `mt-12` would yield
+   * only 48px. `.row` is display:flex and flex-item margins never collapse,
+   * so column-level `mt-12` gives the previous row's 24px PLUS 48px = 72px —
+   * identical to the heading block, which does exactly this. Applied to both
+   * columns so `vAlign` keeps image and text aligned to each other.
    */
   const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
     <div
       className={cn(
         'row mb-6',
-        startsSection && 'mt-12',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
@@ -502,6 +508,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
           block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
+          startsSection && 'mt-12',
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
@@ -521,6 +528,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
+          startsSection && 'mt-12',
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >

@@ -1360,7 +1360,10 @@ export const projects: Project[] = [
           { label: 'Team:', body: 'Who is involved.' }
         ]
       },
-      { type: 'text', text: 'Obfuscated Lucidchart' },
+      // Legacy kept label + hr + image in one column with mt-5 (modal-roadmap
+      // .html:133-137) — a title for the chart below, not a caption for the
+      // block above. `heading` restores the h3, the rule, and the lead-in.
+      { type: 'heading', text: 'Obfuscated Lucidchart' },
       { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart', flush: true }
     ]
   },

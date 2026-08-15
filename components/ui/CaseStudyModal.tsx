@@ -154,6 +154,40 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
   )
 }
 
+/*
+ * Legacy modal copy occasionally carries an inline anchor (e.g. the J.R.
+ * Hernandez LinkedIn link in modal-split-test.html 40). Prose in the data
+ * layer is plain `string`, so links are authored markdown-style as
+ * `[label](https://url)` and expanded here. Strings without the marker are
+ * returned untouched, so every existing paragraph renders exactly as before.
+ */
+const INLINE_LINK_SPLIT = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g
+
+function withInlineLinks(text: string): ReactNode {
+  const parts = text.split(INLINE_LINK_SPLIT)
+  if (parts.length === 1) return text
+  const out: ReactNode[] = []
+  for (let i = 0; i < parts.length; i += 3) {
+    if (parts[i]) out.push(parts[i])
+    const label = parts[i + 1]
+    const href = parts[i + 2]
+    if (label && href) {
+      out.push(
+        <a
+          key={i}
+          className="link-inline"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {label}
+        </a>
+      )
+    }
+  }
+  return out
+}
+
 /* eslint-disable @next/next/no-img-element -- legacy parity: native imgs */
 /**
  * Bare content for a media block, with no outer `.row`/`.col-*` shell.
@@ -182,7 +216,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       )
     }
     case 'text':
-      return <p>{block.text}</p>
+      return <p>{withInlineLinks(block.text)}</p>
     case 'list':
       return (
         <ul className="fa-ul">
@@ -441,13 +475,36 @@ const SPLIT_ROW_H_ALIGN = {
 // wouldn't get generated.
 const SPLIT_ROW_REVERSE_CLASS = { md: 'md:flex-row-reverse', lg: 'lg:flex-row-reverse' } as const
 const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as const
+// Section lead-in for the SECOND column. Side-by-side both columns start at
+// the row's top edge and both need it; stacked they are sequential, so this
+// one would land between an image and its own heading. Breakpoint-scoped so
+// it only applies once the row is actually side-by-side. Written out in full
+// because Tailwind cannot see dynamically-built class names.
+const SPLIT_ROW_SECTION_MT_CLASS = { md: 'md:mt-12', lg: 'lg:mt-12' } as const
 
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
+  /*
+   * SplitRow was the only block type with no margins. Every other top-level
+   * block carries `mb-6`, and a top-level `heading` additionally carries
+   * `mt-12` to open a new section (legacy's `mt-5` on the heading column).
+   * A split-row whose columns contain a heading IS a section opener, but its
+   * heading is rendered by BlockContent — bypassing MediaBlock's wrapper — so
+   * it never received that lead-in. Result: split-row sections got 24px of
+   * separation where heading-led sections got 72px.
+   *
+   * The lead-in goes on the COLUMNS, not the row. Two sibling rows collapse
+   * their adjacent margins (max, not sum), so row-level `mt-12` would yield
+   * only 48px. `.row` is display:flex and flex-item margins never collapse,
+   * so column-level `mt-12` gives the previous row's 24px PLUS 48px = 72px —
+   * identical to the heading block, which does exactly this. Applied to both
+   * columns so `vAlign` keeps image and text aligned to each other.
+   */
+  const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
     <div
       className={cn(
-        'row',
+        'row mb-6',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
@@ -457,6 +514,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
           block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
+          startsSection && 'mt-12',
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
@@ -476,6 +534,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
+          startsSection && SPLIT_ROW_SECTION_MT_CLASS[bp],
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >
@@ -712,9 +771,16 @@ function ModalContent({ project }: { project: Project }) {
   return (
     <>
       {/* Intro row: circular brief image + Project Brief / Contributions / Technologies */}
-      <div className="row mb-6">
+      <div className={cn('row mb-6', project.briefVariant === 'narrow' && 'justify-center')}>
         {project.brief.image && (
-          <div className="col-24 col-lg-12 col-xl-10 self-center text-center">
+          <div
+            className={cn(
+              'self-center text-center',
+              project.briefVariant === 'narrow'
+                ? 'col-24 col-lg-12 col-xl-8'
+                : 'col-24 col-lg-12 col-xl-10'
+            )}
+          >
             <p>
               <img
                 loading="lazy"
@@ -725,13 +791,20 @@ function ModalContent({ project }: { project: Project }) {
             </p>
           </div>
         )}
-        <div className="col-24 col-lg-12 col-xl-14 self-center">
+        <div
+          className={cn(
+            'self-center',
+            project.briefVariant === 'narrow'
+              ? 'col-24 col-lg-12 col-xl-10'
+              : 'col-24 col-lg-12 col-xl-14'
+          )}
+        >
           {project.brief.paragraphs.length > 0 && (
             <>
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>
               <hr className="solid-center" />
               {project.brief.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
+                <p key={p.slice(0, 40)}>{withInlineLinks(p)}</p>
               ))}
             </>
           )}

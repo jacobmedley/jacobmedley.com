@@ -117,6 +117,14 @@
 }
 
 /*
+ * Inline prose links. Legacy used Bootstrap's `.text-secondary` on anchors
+ * inside modal copy (modal-split-test.html 40). The base layer resets `a` to
+ * `color: inherit`, so this rule lives unlayered to outrank it.
+ */
+.link-inline { color: var(--color-second); }
+.link-inline:hover { color: var(--color-second-dark); text-decoration: underline; }
+
+/*
  * Bootstrap container widths. Deliberately OUTSIDE the cascade layers:
  * Tailwind v4 ships its own `.container` utility (max-width = active
  * breakpoint), and layered utilities would override these legacy widths.
@@ -202,6 +210,22 @@
 
 .g-3 { --gutter-x: 1rem; --gutter-y: 1rem; }
 .g-4 { --gutter-x: 1.5rem; --gutter-y: 1.5rem; }
+/*
+ * .g-4's 1.5rem gutter gives .row a 12px negative margin per side, but
+ * .container only has 9.6px (0.6rem) of padding to absorb it — leaking 2.4px
+ * of unclipped overflow past each viewport edge. Invisible above sm, where the
+ * container is max-width'd and centred so the outdent lands in the auto
+ * margins; below 576px the container is full-bleed and it pushes the document
+ * to 377px at a 375px viewport.
+ *
+ * Clamping the OUTER outdent to 0.6rem rather than raising .container's
+ * padding globally: the 1.5rem gutter BETWEEN columns is preserved, and no
+ * other section's content edges move.
+ */
+.g-4 {
+  margin-right: -0.6rem;
+  margin-left: -0.6rem;
+}
 
 .col { flex: 1 0 0%; }
 .col-6  { flex: 0 0 auto; width: 25%; }
@@ -263,15 +287,23 @@ section .content,
 }
 
 /* Hero row height */
+/*
+ * min-height, not height. The single child is align-self:center, so once the
+ * stack is taller than the box it overflows BOTH edges and the icon + first
+ * h1 line end up above the scroll origin, unreachable. Below ~576px the hero
+ * exceeds 90vh. Above sm the content always fits, so this renders identically.
+ */
 #hi.row-content,
-#hi .row-content { height: 90vh; }
+#hi .row-content { min-height: 90vh; }
 @media (min-width: 768px) {
   #hi.row-content,
-  #hi .row-content { height: 100vh; }
+  #hi .row-content { min-height: 100vh; }
 }
 
 /* Hero layered radial gradient background */
 #hi {
+  /* Containing block for the absolutely-positioned wave below. */
+  position: relative;
   background-color: #fff;
   background-image:
     radial-gradient(ellipse at center center, #fff, transparent),
@@ -445,6 +477,17 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 /* ── Hero typography ────────────────────────────────────────────── */
 #hi .h-jakeicon { font-size: calc(2rem + 28vw); }
+/*
+ * The hero display sizes are vw-driven with no lower-end tuning, so they grow
+ * disproportionate as the viewport narrows. Scoped to #hi and to below-sm
+ * only, so no other section and no larger viewport is affected.
+ */
+@media (max-width: 575.98px) {
+  #hi .h-jakeicon { font-size: calc(1.5rem + 20vw); }
+  #hi .display-4  { font-size: calc(1.25rem + 3vw); }
+  #hi .display-2  { font-size: calc(1.05rem + 0.9vw); }
+  #hi .display-1  { font-size: calc(1rem + 0.3vw); }
+}
 @media (min-width: 576px) {
   #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
 }
@@ -475,6 +518,26 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .waves-wrapper.top {
   transform: rotate(180deg);
   top: 0;
+}
+
+/*
+ * #hi's wave is a sibling of .content INSIDE the #hi section, and
+ * position:relative offsets an element visually while it still occupies its
+ * full height in flow. So the section measured .content (100vh) + wrapper
+ * (22vh) = 122vh, leaving 22vh of dead space before #work. The old fixed
+ * `height: 100vh` hid this by clamping the box; once that became min-height
+ * the box was free to grow and the gap appeared.
+ *
+ * Absolute + bottom:0 against the now-relative #hi puts the wave's bottom
+ * edge at the section's bottom edge — the same place it already renders —
+ * while contributing zero flow height. Scoped to #hi; the four other wave
+ * instances keep their existing behaviour.
+ */
+#hi .waves-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .waves {

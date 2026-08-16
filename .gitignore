@@ -1,12 +1,19 @@
 
 /node_modules
-package.json
 prepros.config
 
 # Next.js build artifacts
 /.next
 /out
 tsconfig.tsbuildinfo
+
+# OS metadata
+.DS_Store
+**/.DS_Store
+
+# Machine-local Claude Code permission cache — tracked changes here don't
+# belong in the repo history and shouldn't fire a deploy.
+.claude/settings.local.json
 
 # public/images is a local junction/symlink → ../images/ (machine-specific, not committed)
 # On Windows: cmd /c mklink /J public\images images

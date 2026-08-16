@@ -947,3 +947,93 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   }
 }
 
+/* ── Portfolio sticky half-waves (feat/recruiter-portfolio) ─────────
+ * Reuses the shared WaveSeparator component unmodified — these rules only
+ * override its positioning, and only inside #portfolio-shell (the index
+ * page's own wrapper, not PortfolioShell's site-wide #portfolio chrome), so
+ * the public site's five other WaveSeparator instances (#hi, #full-stack,
+ * #resume, ...) keep their existing in-flow behaviour untouched.
+ * Specificity (#portfolio-shell .waves-wrapper) beats the base
+ * .waves-wrapper / .waves-wrapper.top rules above without touching them.
+ */
+@layer components {
+  #portfolio-shell {
+    --portfolio-wave-height: 8vh;
+    /* Clears PortfolioShell's shared header (measured ~111px at mobile,
+       where the "Main site" button label wraps to two lines) so the fixed
+       top wave renders below it instead of underneath its (transparent)
+       background, and the header stays readable above the wave (see the
+       #portfolio > header stacking rule below). */
+    --portfolio-wave-top-offset: 7.5rem;
+  }
+  @media (min-width: 768px) {
+    #portfolio-shell {
+      --portfolio-wave-height: 14vh;
+      --portfolio-wave-top-offset: 6rem; /* header is single-line, ~89px, above this */
+    }
+  }
+
+  /* The shared header has no background of its own (its parent #portfolio
+   * does) and isn't a stacking context, so without this it would render
+   * underneath the fixed wave/chip nav (z-index 10/20) instead of above
+   * them. Scoped to #portfolio (PortfolioShell's own root id) so it's a
+   * no-op on pages without a z-index:10+ fixed element, i.e. everywhere
+   * except the index grid. */
+  #portfolio > header {
+    position: relative;
+    z-index: 30;
+    background-color: #fff;
+  }
+
+  #portfolio-shell .waves-wrapper {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+  #portfolio-shell .waves-wrapper.top {
+    bottom: auto;
+    top: var(--portfolio-wave-top-offset);
+  }
+  #portfolio-shell .waves {
+    height: var(--portfolio-wave-height);
+  }
+
+  #portfolio-filter {
+    top: calc(var(--portfolio-wave-top-offset) + var(--portfolio-wave-height));
+  }
+
+  /* Spacers page.tsx uses instead of ad-hoc padding, so the heading and the
+   * grid's last row always clear the fixed waves — one source of truth
+   * with the wave positioning above. The top spacer only needs
+   * --portfolio-wave-height, not --portfolio-wave-top-offset too: the
+   * header is normal-flow (not fixed), so its own real height already
+   * pushes this content down past the offset; adding the offset again here
+   * would double-count it and leave a much bigger gap than necessary. */
+  #portfolio-shell .portfolio-top-spacer {
+    padding-top: var(--portfolio-wave-height);
+  }
+  #portfolio-shell .portfolio-bottom-spacer {
+    padding-bottom: calc(var(--portfolio-wave-height) + 2rem);
+  }
+}
+
+/* ── Portfolio filter transition (feat/recruiter-portfolio) ─────────
+ * Fade only under no-preference; under reduce the skeleton-to-card swap is
+ * an instant, unanimated content change (animation-name stays "none").
+ */
+@layer components {
+  @media (prefers-reduced-motion: no-preference) {
+    .portfolio-filter-transition {
+      animation: portfolio-filter-fade 0.15s ease-out;
+    }
+  }
+
+  @keyframes portfolio-filter-fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+  }
+}
+

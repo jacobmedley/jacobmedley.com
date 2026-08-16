@@ -882,3 +882,68 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 } /* end @layer components */
 
+/* ── Portfolio index grid (feat/recruiter-portfolio) ────────────────
+ * Additive only — nothing above this line is touched. Plain CSS Grid,
+ * deliberately not the Bootstrap-parity .row/.col system above, scoped
+ * under #portfolio-grid so it can never leak into the public site.
+ * Card weight (data-weight="featured"|"standard") comes from
+ * PortfolioStudy.weight; the grid item order (featured-first) is decided
+ * in app/portfolio/page.tsx, not by CSS.
+ */
+@layer components {
+  #portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* matches the site's existing mb-6 / g-4-ish spacing scale */
+  }
+  #portfolio-grid > * {
+    grid-column: span 1; /* below 768px: single column, weight ignored */
+  }
+
+  @media (min-width: 768px) {
+    #portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense; /* lets standard cards backfill gaps left by spans */
+    }
+    #portfolio-grid > [data-weight='featured'] {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    #portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+/* ── Portfolio skeleton screen (feat/recruiter-portfolio) ───────────
+ * Ghost tone reuses --color-fifth-light (the site's existing muted/ink
+ * token) — no new greys. Shimmer only runs under
+ * prefers-reduced-motion: no-preference; the base rule below it is the
+ * static (reduced-motion) tone with no animation-name set at all.
+ */
+@layer components {
+  .study-skeleton-tone {
+    background-color: color-mix(in srgb, var(--color-fifth-light) 45%, transparent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .study-skeleton-tone {
+      background-image: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-fifth-light) 35%, transparent) 25%,
+        color-mix(in srgb, var(--color-fifth-light) 60%, transparent) 50%,
+        color-mix(in srgb, var(--color-fifth-light) 35%, transparent) 75%
+      );
+      background-size: 200% 100%;
+      animation: study-skeleton-shimmer 1.6s ease-in-out infinite;
+    }
+  }
+
+  @keyframes study-skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+}
+

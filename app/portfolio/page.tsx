@@ -1,17 +1,23 @@
 import { portfolioStudies } from '@/lib/data/portfolio-studies'
 import StudyCard from '@/components/portfolio/StudyCard'
 
+// Featured studies render first in DOM order; #portfolio-grid's dense flow
+// (app/globals.css) lets standard cards backfill the gaps their 2-column
+// span leaves behind.
+const orderedStudies = [
+  ...portfolioStudies.filter((s) => s.weight === 'featured'),
+  ...portfolioStudies.filter((s) => s.weight === 'standard'),
+]
+
 export default function PortfolioIndexPage() {
   return (
     <>
       <h1 className="mb-2">Selected Work</h1>
       <hr className="solid-center" />
 
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4">
-        {portfolioStudies.map((study) => (
-          <div key={study.slug} className="col mb-6">
-            <StudyCard study={study} />
-          </div>
+      <div id="portfolio-grid" className="mt-4">
+        {orderedStudies.map((study) => (
+          <StudyCard key={study.slug} study={study} />
         ))}
       </div>
     </>

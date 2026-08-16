@@ -39,7 +39,7 @@ export const portfolioStudies: PortfolioStudy[] = [
   {
     slug: 'buy-the-audit-or-build-the-machine',
     title: 'Buy the Audit or Build the Machine',
-    blurb: 'Manual audits cost days a page. The pipeline costs none.',
+    blurb: 'Manual audits cost days a page. The pipeline made the next page free.',
     summary: 'Automated accessibility auditing. Days per page down to hours. Vendor line item replaced by owned capability. Now runs on a schedule.',
     tags: ['AI', 'Design Systems'],
     weight: 'featured',
@@ -189,7 +189,7 @@ export const portfolioStudies: PortfolioStudy[] = [
   {
     slug: 'four-executives-four-different-customer-journeys',
     title: 'Four Executives, Four Different Customer Journeys',
-    blurb: 'Each leader owned a slice of the journey. Nobody owned the whole map.',
+    blurb: 'Each leader owned a slice of the journey. Nobody held the whole map.',
     summary: 'Cross-functional journey workshop with C-level participation. Custom board system, moderator guide, scenario matrix. Reusable assets, not a one-off event.',
     tags: ['Facilitation', 'UX Research'],
     weight: 'standard',

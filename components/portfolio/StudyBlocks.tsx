@@ -10,19 +10,39 @@ import type { ContentBlock } from '@/lib/data/portfolio-studies'
  * (BlockContent / MediaBlock / SplitRow / StyledListContent / CardContent),
  * but none of it is exported — only the default CaseStudyModal component is
  * — and the isolation rules for this feature forbid editing that file to
- * export them. So this is a deliberate fork, trimmed to the four block
- * types the portfolio placeholder data actually uses (split-row /
- * styled-list / card / divider — see lib/data/portfolio-studies.ts).
+ * export them. So this is a deliberate fork, trimmed to the block types
+ * the migrated case-study content actually uses (heading / text, plus
+ * split-row / styled-list / card / divider retained from the earlier
+ * placeholder shapes — see lib/data/portfolio-studies.ts).
  *
  * It reuses the same global `.row`/`.col-*`/`.card`/`.list-group` classes
  * from app/globals.css (unchanged, shared with the public site) so the
  * output matches CaseStudyModal's typography/spacing without duplicating
  * any CSS. If the portfolio ever needs the other ProjectMedia variants
- * (heading, text, image, image-row, metric-grid, progress-diagram, ...),
- * port them into this file too rather than reaching back into the modal.
+ * (image, image-row, metric-grid, progress-diagram, ...), port them into
+ * this file too rather than reaching back into the modal.
  */
 export function StudyBlock({ block }: { block: ContentBlock }): ReactNode {
   switch (block.type) {
+    case 'heading': {
+      const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      return (
+        <div className="row">
+          <div className="col-24 mt-12">
+            <Tag>{block.text}</Tag>
+            <hr className="solid-center" />
+          </div>
+        </div>
+      )
+    }
+    case 'text':
+      return (
+        <div className="row">
+          <div className="col-24">
+            <p>{block.text}</p>
+          </div>
+        </div>
+      )
     case 'divider':
       return (
         <div className="row">
@@ -80,6 +100,12 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
  * BlockContent-vs-MediaBlock split). */
 function StudyBlockBare({ block }: { block: ContentBlock }): ReactNode {
   switch (block.type) {
+    case 'heading': {
+      const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      return <Tag>{block.text}</Tag>
+    }
+    case 'text':
+      return <p>{block.text}</p>
     case 'styled-list':
       return <StyledList block={block} />
     case 'card':

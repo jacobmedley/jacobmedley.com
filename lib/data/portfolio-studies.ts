@@ -3,223 +3,356 @@
 // reaches into lib/data/projects.ts for the block-content type union — a
 // type-only import, so there is zero runtime coupling to the public site's
 // data or components.
-//
-// All seven entries below are scaffolding: every prose field is lorem ipsum,
-// marked with the '⚠ LOREM — REWRITE:' prefix, and `draft: true`. Replace the
-// lorem, then flip `draft` to false study-by-study as real copy lands.
-import type { ProjectMedia, StyledListBlock, CardBlock, SplitRowBlock } from './projects'
+import type { ProjectMedia } from './projects'
 
-// Reuse the public site's block union verbatim (heading/text/image/styled-list/
-// card/split-row/divider/etc.) under the name the spec calls for. Type-only —
-// no value from projects.ts is imported, so this file has no runtime dependency
-// on the public site's data module.
+// Reuse the public site's block union verbatim (heading/text/... — this
+// content only uses heading and text) under the name the spec calls for.
+// Type-only — no value from projects.ts is imported, so this file has no
+// runtime dependency on the public site's data module.
 export type ContentBlock = ProjectMedia
+
+export type StudyTag =
+  | 'AI'
+  | 'UX Research'
+  | 'Design Systems'
+  | 'Strategy'
+  | 'Facilitation'
+  | 'Measurement'
+  | 'A/B Testing'
+
+export type StudyWeight = 'featured' | 'standard'
 
 export interface PortfolioStudy {
   slug: string
-  codename: string // e.g. 'Ferryman'; '—' when the engagement has no codename
   title: string
-  role: string // one line: what Jacob did
-  context: string // one line: company descriptor, anonymized
-  year: string
-  draft: boolean // true while lorem — renders a visible badge
+  /** One-line card description. Max ~90 chars. Distinct from `summary`. */
+  blurb: string
+  /** The Skim line from the source doc. Longer, used on the study page. */
   summary: string
-  blocks: ContentBlock[] // reuse the existing block union
-}
-
-const MARKER = '⚠ LOREM — REWRITE: '
-
-// Rotates through a fixed pool of standard lorem ipsum sentences so every
-// field reads as distinct placeholder text rather than one block repeated
-// verbatim, without needing a random generator (keeps the data deterministic
-// across builds).
-const LOREM_SENTENCES = [
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-  'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.',
-  'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.',
-  'Curabitur pretium tincidunt lacus, nulla gravida orci a odio.',
-  'Nullam varius turpis et commodo pharetra est eros bibendum elit.',
-  'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices.',
-  'Praesent commodo cursus magna vel scelerisque nisl consectetur et.',
-  'Aenean lacinia bibendum nulla sed consectetur porttitor.',
-  'Cras mattis consectetur purus sit amet fermentum.',
-  'Donec ullamcorper nulla non metus auctor fringilla.',
-]
-
-let cursor = 0
-/** Marked lorem, 2-4 full sentences — for body/paragraph-shaped fields. */
-function lorem(sentenceCount: 2 | 3 | 4): string {
-  const picked: string[] = []
-  for (let i = 0; i < sentenceCount; i++) {
-    picked.push(LOREM_SENTENCES[cursor % LOREM_SENTENCES.length])
-    cursor++
-  }
-  return MARKER + picked.join(' ')
-}
-/** Marked lorem, short phrase — for label/heading-shaped fields (still
- * flagged, but sized like the title text it stands in for). */
-function loremLabel(): string {
-  const word = LOREM_SENTENCES[cursor % LOREM_SENTENCES.length].split(' ').slice(0, 3).join(' ').replace(/[.,]/g, '')
-  cursor++
-  return MARKER + word
-}
-
-// Two block-set shapes, alternated across studies for a bit of visual
-// variety while a reader browses several drafts back to back. Both use only
-// split-row / styled-list / card / divider, per spec — no heading/text/image
-// blocks are introduced, including inside split-row's nested columns.
-function blockSetA(): ContentBlock[] {
-  const styledList: StyledListBlock = {
-    type: 'styled-list',
-    items: [
-      { label: loremLabel(), body: lorem(2) },
-      { label: loremLabel(), body: lorem(2) },
-      { label: loremLabel(), body: lorem(2) },
-    ],
-  }
-  const card: CardBlock = {
-    type: 'card',
-    header: loremLabel(),
-    rows: [
-      { label: loremLabel(), body: lorem(2) },
-      { label: loremLabel(), body: lorem(2) },
-    ],
-  }
-  const split: SplitRowBlock = {
-    type: 'split-row',
-    left: [styledList],
-    right: [card],
-  }
-  return [
-    split,
-    { type: 'divider' },
-    {
-      type: 'card',
-      header: loremLabel(),
-      rows: [
-        { label: loremLabel(), body: lorem(2) },
-        { label: loremLabel(), body: lorem(2) },
-        { label: loremLabel(), body: lorem(2) },
-      ],
-    },
-  ]
-}
-
-function blockSetB(): ContentBlock[] {
-  const card: CardBlock = {
-    type: 'card',
-    header: loremLabel(),
-    rows: [
-      { label: loremLabel(), body: lorem(2) },
-      { label: loremLabel(), body: lorem(2) },
-    ],
-  }
-  const styledList: StyledListBlock = {
-    type: 'styled-list',
-    items: [
-      { label: loremLabel(), body: lorem(2) },
-      { label: loremLabel(), body: lorem(2) },
-    ],
-  }
-  const split: SplitRowBlock = {
-    type: 'split-row',
-    left: [card],
-    right: [styledList],
-    reverse: true,
-  }
-  return [
-    {
-      type: 'styled-list',
-      items: [
-        { label: loremLabel(), body: lorem(2) },
-        { label: loremLabel(), body: lorem(2) },
-        { label: loremLabel(), body: lorem(2) },
-        { label: loremLabel(), body: lorem(2) },
-      ],
-    },
-    { type: 'divider' },
-    split,
-  ]
+  tags: StudyTag[] // 1-3. Order matters: primary discipline first.
+  weight: StudyWeight // drives grid cell size
+  thumbnail: string | null // null renders a typographic fallback card
+  blocks: ContentBlock[]
 }
 
 export const portfolioStudies: PortfolioStudy[] = [
   {
-    slug: 'ferryman',
-    codename: 'Ferryman',
-    title: 'Conversational AI in a Regulated Space',
-    year: '2023–2025',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetA(),
+    slug: 'buy-the-audit-or-build-the-machine',
+    title: 'Buy the Audit or Build the Machine',
+    blurb: 'Manual audits cost days a page. The pipeline costs none.',
+    summary: 'Automated accessibility auditing. Days per page down to hours. Vendor line item replaced by owned capability. Now runs on a schedule.',
+    tags: ['AI', 'Design Systems'],
+    weight: 'featured',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Two people. Seven workstreams. A health commerce platform about to push condition-specific landing pages live, and accessibility sitting in our lap. Accessibility can sit quietly on a backlog right up until it introduces itself through counsel.' },
+      { type: 'text', text: 'Two ways to handle it, both rough. Audit by hand and burn days per page, with results that shift depending on who ran them. Hire a vendor, pay full freight, wait weeks, and by the time the report lands the page has already moved.' },
+      { type: 'text', text: 'Neither one survives a team of two. So I stopped asking how to audit the page. The better question was how to make auditing so cheap we would never skip it.' },
+      { type: 'heading', text: 'What I built' },
+      { type: 'text', text: 'A static analysis pipeline that reads saved page HTML and checks what actually breaks for people. Document structure. Landmark regions. Heading order. Alt text coverage. ARIA. Keyboard operability. Motion guards. Contrast ratios pulled from what renders in the browser, not what the design file promised.' },
+      { type: 'text', text: 'I let AI chew through the mechanical portion and kept the pieces where being confidently wrong would matter. I put AI on the work whose primary requirement was refusing to become bored. I checked every finding against the standard, ranked severity, and turned raw output into work an engineer could pick up without a translation meeting.' },
+      { type: 'text', text: 'Fourteen findings came back on the first pass, sorted into four tiers. Keyboard access on interactive elements. Missing semantic headings. Alt text gaps. Motion with no off switch.' },
+      { type: 'heading', text: 'The finding under the findings' },
+      { type: 'text', text: 'Components held up. Color system held up. Almost every failure clustered in the layer where non-engineers assemble pages.' },
+      { type: 'text', text: 'That changes what you fix. Nobody needs to rebuild a component library, and nobody needs another manual review gate slowing down teams that are already stretched. Those approaches inspect the wreckage. I wanted to close the door the defects were walking through.' },
+      { type: 'text', text: 'Good people were shipping bad markup because the software was perfectly content to let them. Nothing in the publishing flow objected. That was the defect.' },
+      { type: 'text', text: 'The publishing path needed teeth. Give it enough rules to refuse the failures we already know how to detect.' },
+      { type: 'heading', text: 'What it changed' },
+      { type: 'text', text: 'Findings went out as ticket groups split by owner, content, front end, design, each carrying severity and evidence. Triage time dropped to near zero. Fixes landed before launch instead of after a complaint.' },
+      { type: 'text', text: 'Because it is code and not a one-time effort, the next page cost nothing. Then the one after that. Now it runs on a schedule against the live site, so drift gets caught while it is still small.' },
+      { type: 'text', text: 'Tactically, days became hours. Strategically, two people picked up a practice we had no headcount to hire for. That is the real answer to covering seven workstreams with two heads. You do not move faster. You make the work smaller.' },
+    ],
   },
   {
-    slug: 'keystone',
-    codename: 'Keystone',
-    title: 'Design Tokens as Infrastructure',
-    year: '2025–2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetB(),
+    slug: 'four-documents-one-checkout-zero-agreement',
+    title: 'Four Documents, One Checkout, Zero Agreement',
+    blurb: 'Four specs disagreed on one price. AI found the fight, I ended it.',
+    summary: 'Conflicting specs at the payment step. Resolved in a day with a documented decision trail instead of another meeting cycle.',
+    tags: ['AI', 'Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Checkout is the money step. A customer committing to a telehealth subscription with a consult fee attached, deciding in that moment whether this feels legitimate.' },
+      { type: 'text', text: 'Four requirements documents said show the consult fee itemized, broken out on its own line. The most recent meeting directive and the design said show one combined price. Both were written down. Both had authors who believed they were current.' },
+      { type: 'text', text: 'Engineering could build either. Whichever they picked, someone was going to call it wrong after the fact.' },
+      { type: 'text', text: 'You can call it a spec conflict right up until it changes what appears beside the Buy button.' },
+      { type: 'heading', text: 'What I did' },
+      { type: 'text', text: 'Fed the full requirements corpus to AI and had it read everything at once. Specification pages, meeting transcripts, ticket history. Forty source documents is exactly the sort of reading problem where human working memory begins quietly dropping plates.' },
+      { type: 'text', text: 'AI surfaced the contradictions. I made the call.' },
+      { type: 'text', text: 'Single combined price, matching a checkout pattern already converting with real customers. Documented the decision, tagged all four superseded requirements with their sources, and flagged the open dependency: refund messaging had to match the combined-price model or we would create a new conflict solving the old one.' },
+      { type: 'heading', text: 'Why it stuck' },
+      { type: 'text', text: 'The decision closed in a day instead of circling through another meeting cycle. Engineering built once. The superseded trail meant nobody could reopen it three weeks later on a hunch.' },
+      { type: 'text', text: 'A checkout question accidentally gave us a governance answer. It established that design makes experience calls and owns them, with receipts, rather than offering opinions and waiting.' },
+    ],
   },
   {
-    slug: 'force-multiplier',
-    codename: '—',
-    title: 'AI as a Force Multiplier',
-    year: '2025–2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetA(),
+    slug: 'reporting-should-not-cost-a-headcount',
+    title: 'Reporting Should Not Cost a Headcount',
+    blurb: 'Status reporting ran on memory. Now it runs on live data, unattended.',
+    summary: 'Status, goals, and priority scans automated from live systems. Hours per week down to minutes. No workstream dropped at a two-to-seven ratio.',
+    tags: ['AI', 'Measurement'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'A new function, two people, roughly half-allocated to one major program, accountable across seven-plus initiatives.' },
+      { type: 'text', text: 'Do the math on status reporting alone. Rollups, goal tracking, leadership visibility, cross-project scanning. There was a headcount-shaped hole in the operating work, and it competed directly with the work people actually hired us to do.' },
+      { type: 'text', text: 'Nobody gets promoted for status decks. But leadership blindness is fatal, so it cannot simply be dropped.' },
+      { type: 'heading', text: 'The operational layer' },
+      { type: 'text', text: 'I built reporting that runs on live data instead of memory.' },
+      { type: 'text', text: 'A tri-weekly rollup pulling straight from the ticket system, chat, and calendar, formatted and ready to post. Performance and goal updates generated from actual work records, not recollection. Quarterly goals built directly from live ticket data. Cross-project priority scans that surface what needs attention, including tickets other teams file into ours without telling anyone.' },
+      { type: 'heading', text: 'What came of it' },
+      { type: 'text', text: 'Leadership visibility held without recurring status meetings. Reporting overhead went from hours a week to minutes. Nothing dropped, at a ratio where dropping things is the expected outcome.' },
+      { type: 'text', text: 'Every team I have worked on is lean and covering more ground than its headcount suggests. Teams short on capacity have a curious habit of prescribing themselves more meetings. Automate the reporting layer instead and design time goes back to design.' },
+      { type: 'text', text: 'Eventually, nobody had to ask whether the work was under control. That is a useful reputation to acquire.' },
+    ],
   },
   {
-    slug: 'accessibility-pipeline',
-    codename: '—',
-    title: 'Accessibility as an Engineering Problem',
-    year: '2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetB(),
+    slug: 'finance-grade-answers-from-a-design-team',
+    title: 'Finance-Grade Answers From a Design Team',
+    blurb: 'A seat export and an HR file, joined into numbers finance could trust.',
+    summary: 'Software license spend analysis for marketing leadership. Seat allocation, external accounts, and waste identified. Analysis to leadership deck in a fraction of typical turnaround.',
+    tags: ['AI', 'Measurement'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Marketing leadership needed answers about design software spend. Who holds paid seats. Which departments they sit in. Where the waste is hiding.' },
+      { type: 'text', text: 'Budget questions, not design questions. The raw material was a seat export and an HR employee index, two files that answer nothing on their own and everything when joined correctly.' },
+      { type: 'heading', text: 'How it ran' },
+      { type: 'text', text: 'Structured analysis joining the seat export against the employee index, then five specific business questions answered with defensible numbers. Packaged as a fourteen-slide deck built for a leadership audience, meaning conclusions first and methodology available if asked.' },
+      { type: 'text', text: 'Paid seat split established at roughly half marketing, half everyone else. Forty-one external guest accounts identified, most of which nobody had inventoried. Concrete basis for cleanup and renewal negotiation.' },
+      { type: 'heading', text: 'What it turned into' },
+      { type: 'text', text: 'I thought I was answering a budget question. I was also changing the team\'s job description by a few degrees.' },
+      { type: 'text', text: 'Design moved a few seats upstream. The organization changed its idea of our lane after watching us operate outside it without hitting anything.' },
+    ],
   },
   {
-    slug: 'forensics',
-    codename: '—',
-    title: 'Requirements Forensics',
-    year: '2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetA(),
+    slug: 'a-retrospective-built-on-evidence-not-memory',
+    title: 'A Retrospective Built on Evidence, Not Memory',
+    blurb: 'Twelve contradictions, each traced to a source instead of a memory.',
+    summary: 'Forensic launch timeline assembled from system records. Twelve contradictions documented with sources. Blameless format. Unestimated work identified as the systemic gap.',
+    tags: ['AI', 'Facilitation', 'Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'A six-week product launch closed with a senior leadership process review scheduled.' },
+      { type: 'text', text: 'Post-launch memory is a poor database with excellent confidence. Everyone arrives with a version of events shaped by where they sat and what went badly for them personally, and the loudest recollection tends to win. That produces a blame session, and a blame session teaches an organization to hide problems rather than surface them.' },
+      { type: 'heading', text: 'Building the record' },
+      { type: 'text', text: 'AI assembled a forensic timeline from ticket history, documentation pages, chat records, and screenshots. Every entry traced to a source. Twelve contradictions and pivots surfaced, each one anchored to evidence rather than recollection.' },
+      { type: 'text', text: 'I translated it into visual review panels with friction markers, structured so the conversation stays on the process and off the people.' },
+      { type: 'text', text: 'Memory makes people defend themselves. Evidence gives everyone a third object to look at.' },
+      { type: 'text', text: 'Two facts landed on the record that had been circulating as informal knowledge. The creative estimate excluded wireframing entirely. Wireframing, reusable component design, and content template work appeared in no timeline, anywhere, on any version of the plan.' },
+      { type: 'heading', text: 'Why that finding is the whole story' },
+      { type: 'text', text: 'The failure was pleasantly impersonal: whole categories of work had never entered the estimate. The team was measured against a schedule that never included what they were doing.' },
+      { type: 'text', text: 'Once we found the omission, the remedy became rather boring. Estimate it next time.' },
+      { type: 'text', text: 'A blameless account can still have sharp edges. Ours had citations. A timestamp is not infallible, but it is wonderfully indifferent to office politics.' },
+    ],
   },
   {
-    slug: 'measurement',
-    codename: '—',
-    title: 'Making UX Measurable',
-    year: '2025–2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetB(),
+    slug: 'measuring-the-thing-that-measures-everything',
+    title: 'Measuring the Thing That Measures Everything',
+    blurb: 'AI usage tracked across a dozen task types, with a risk note for each.',
+    summary: 'AI usage instrumented across twelve task types. Time saved, quality, and risk logged per use. Team survey synthesized. Adoption decisions made on data.',
+    tags: ['AI', 'Measurement'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: '"It feels faster" is a poor unit of measure.' },
+      { type: 'text', text: 'AI usage was expanding faster than our ability to explain whether any of it was useful. I needed to know where the machine was genuinely earning its electricity.' },
+      { type: 'heading', text: 'The instrument' },
+      { type: 'text', text: 'A usage tracker covering twelve task types across six categories, spanning research, design, business writing, presentation work, and design system work. Every row logs time saved, frequency, quality rating, effort saved, and a specific risk note.' },
+      { type: 'text', text: 'The risk note is mandatory. Every logged use case names what could go wrong with it, and every AI-assisted deliverable gets director review before it reaches leadership. A verbal guardrail is mostly a preference with witnesses, so I wrote them down.' },
+      { type: 'text', text: 'Separately, a formatted team report analyzing survey responses across seven people.' },
+      { type: 'heading', text: 'What the numbers said' },
+      { type: 'text', text: 'Individual tasks saved up to eight hours each. Coding was the dominant use case at seventy-one percent of respondents. Collective savings landed around 690 minutes per cycle. Daily usage across every respondent, unanimous on both would-use-again and would-recommend.' },
+      { type: 'text', text: 'They were numbers I was willing to put in front of finance without developing a sudden interest in changing the subject.' },
+      { type: 'text', text: 'Measurement gave the habit handles. Other people could finally pick it up, inspect it, copy it, or decide it was nonsense. And we needed the savings on paper before they quietly disappeared into everyone\'s expectations.' },
+    ],
   },
   {
-    slug: 'facilitation',
-    codename: '—',
-    title: 'Facilitating to a Decision',
-    year: '2025–2026',
-    draft: true,
-    role: lorem(2),
-    context: lorem(2),
-    summary: lorem(3),
-    blocks: blockSetA(),
+    slug: 'catching-conflicts-before-anyone-writes-code',
+    title: 'Catching Conflicts Before Anyone Writes Code',
+    blurb: 'Same method as the checkout fight, run before a line got written.',
+    summary: 'Same forensic method as the checkout decision, moved earlier in the lifecycle. Five conflicts resolved before build started.',
+    tags: ['AI', 'Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'A landing page redesign sitting at the intersection of three artifacts. Creative brief, wireframe specifications, component library. Different authors, different weeks, all under launch pressure.' },
+      { type: 'text', text: 'We had three sources of truth, which is an ambitious number of truths for one landing page.' },
+      { type: 'heading', text: 'Running it early' },
+      { type: 'text', text: 'Same cross-referencing method proven on the checkout conflict, applied before build instead of during it. AI reconciled all three artifacts against each other and surfaced five documented conflicts, queued for resolution before a single component got built.' },
+      { type: 'heading', text: 'The shift' },
+      { type: 'text', text: 'Resolve the argument while it still has a Delete key. Everyone knows this. Almost nobody organizes around it, because catching conflicts early requires doing work when nothing appears to be wrong yet.' },
+      { type: 'text', text: 'Same machinery, installed at a much better point in the plumbing. The technique stayed put. The timing graduated.' },
+    ],
+  },
+  {
+    slug: 'four-executives-four-different-customer-journeys',
+    title: 'Four Executives, Four Different Customer Journeys',
+    blurb: 'Each leader owned a slice of the journey. Nobody owned the whole map.',
+    summary: 'Cross-functional journey workshop with C-level participation. Custom board system, moderator guide, scenario matrix. Reusable assets, not a one-off event.',
+    tags: ['Facilitation', 'UX Research'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'A major integration touching marketing, digital health, engineering, and the core commerce experience.' },
+      { type: 'text', text: 'Every leader held a piece of the customer journey and believed they held the whole thing. The organization had divided the journey into departments. Customers had declined to do the same.' },
+      { type: 'text', text: 'No shared end-to-end view existed of how a customer moves from first awareness to subscription to refill.' },
+      { type: 'heading', text: 'Designing the session' },
+      { type: 'text', text: 'Built a custom board system for this specific session rather than pulling a generic template, because a template shapes the conversation toward whatever the template was originally for.' },
+      { type: 'text', text: 'Wrote a moderator guide so facilitation quality did not depend on how sharp I happened to be that morning. Constructed a scenario matrix so the group worked concrete customer situations. The matrix kept the conversation attached to gravity.' },
+      { type: 'heading', text: 'What came out' },
+      { type: 'text', text: 'A documented end-to-end journey map with C-level participation and buy-in. Handoff failures surfaced live, in the room, with the owners of both sides present. That conversation does not happen over email.' },
+      { type: 'text', text: 'The assets outlived the session. Board system, moderator guide, and scenario matrix all exist for future journey work.' },
+      { type: 'text', text: 'The workshop mattered partly because the people in the room had budgets attached to their opinions. And it demonstrated that design runs executive working sessions, not just screens.' },
+    ],
+  },
+  {
+    slug: 'navigation-decisions-were-being-made-on-taste',
+    title: 'Navigation Decisions Were Being Made on Taste',
+    blurb: 'Ten users tested a menu that taste alone had been deciding for years.',
+    summary: 'Moderated usability study, ten participants. Evidence-backed IA findings feeding a navigation redesign. Established the research template.',
+    tags: ['UX Research'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Site navigation was being decided by preference. Mega menu, category structure, shop-by paths, none of it tested against a single real user.' },
+      { type: 'text', text: 'Navigation is the front door to every product page in the catalog. Getting it wrong does not cost you one page, it costs you findability across everything behind it. Deciding that on taste is an expensive habit.' },
+      { type: 'heading', text: 'The study' },
+      { type: 'text', text: 'Moderated usability testing with ten participants against the navigation and information architecture, synthesized into a report built to feed a decision rather than sit in a folder.' },
+      { type: 'text', text: 'Shop by Condition outperformed the alternative entry paths, which told us users arrive thinking about their problem, not our catalog structure. The mega menu had discoverability and visibility failures that no amount of internal debate had surfaced.' },
+      { type: 'heading', text: 'The recurring trap' },
+      { type: 'text', text: 'We were testing the menu on people who already knew where the kitchen was. Expertise had become a blindfold with excellent credentials.' },
+      { type: 'text', text: 'My field has elegant terms for this. Cognitive load. Mental models. If those words do not mean anything to you, that is exactly the point, and it is the same gap a first-time visitor hits on our navigation.' },
+      { type: 'text', text: 'The durable result was procedural: preference had lost its monopoly.' },
+    ],
+  },
+  {
+    slug: 'reframing-a-scope-fight-as-a-staffing-question',
+    title: 'Reframing a Scope Fight as a Staffing Question',
+    blurb: 'A scope debate stopped circling once staffing became the question.',
+    summary: 'One page ended a circling launch scope debate. Phasing paths with staffing implications. Recommended path adopted with the hire as an explicit gate.',
+    tags: ['Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Leadership was debating launch scope. Everything at once, or phase it.' },
+      { type: 'text', text: 'The conversation had developed a stable orbit. Every stakeholder owned a different piece of the scope, and every piece is the important one when you own it.' },
+      { type: 'heading', text: 'Changing the question' },
+      { type: 'text', text: 'One page. Phasing paths laid out with their staffing implications attached, so the tradeoff became visible instead of theoretical.' },
+      { type: 'text', text: 'Recommended phasing weight loss first, with a full-stack designer hire named as the explicit gate to phase two. Not a suggestion, a gate. Phase two starts when the person starts.' },
+      { type: 'text', text: 'Written for a VP audience, which means short, decision-ready, tradeoffs on the surface.' },
+      { type: 'heading', text: 'The outcome' },
+      { type: 'text', text: 'A circling debate converted into a bounded, decidable resourcing question. The recommended path was adopted with the hire formally tied to phase two.' },
+      { type: 'text', text: 'Scope could expand indefinitely. Staffing had the courtesy to be finite.' },
+      { type: 'text', text: 'A debate that refuses to resolve is often answering the wrong question very diligently.' },
+    ],
+  },
+  {
+    slug: 'tokens-before-surface-area',
+    title: 'Tokens Before Surface Area',
+    blurb: 'A second brand moved into a shared token layer, accessibility included by default.',
+    summary: 'Design token foundation and second brand theme on a shared commerce platform. Accessibility enforced at the token layer. Built before the pages, not after.',
+    tags: ['Design Systems'],
+    weight: 'featured',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'A second brand needed to live inside an existing commerce platform. The company had no design system at all.' },
+      { type: 'text', text: 'Without a token layer, every surface for the new brand gets hand-styled. Every brand adjustment becomes a manual hunt through files. Inconsistency compounds with each page, and it compounds quietly, so you do not notice until the cleanup is enormous.' },
+      { type: 'text', text: 'The first layer was going to either save us work or manufacture it.' },
+      { type: 'heading', text: 'The build' },
+      { type: 'text', text: 'Theme tokens covering color, typography, and spacing, with the new brand theme layered on top of the base. Four button variants with accessibility flags baked into the tokens rather than checked afterward. Evaluated a component substrate and documented the recommendation with reasoning.' },
+      { type: 'text', text: 'Governance model established first, so the system leads the build instead of chasing it.' },
+      { type: 'heading', text: 'What it bought' },
+      { type: 'text', text: 'The new brand launched coherent, on shared infrastructure, instead of arriving as a pile of one-off styles nobody could maintain.' },
+      { type: 'text', text: 'Accessibility stopped depending on somebody remembering to be virtuous on page seventeen.' },
+      { type: 'text', text: 'Brand changes now happen once, at the token layer, rather than page by page. And the incoming designer inherits a documented foundation to build against on day one instead of a folder of conventions living in someone\'s head.' },
+      { type: 'text', text: 'Everything is designed, everything. Including whether your next page is easy or expensive.' },
+    ],
+  },
+  {
+    slug: 'reviews-that-end-in-decisions',
+    title: 'Reviews That End in Decisions',
+    blurb: 'Critique now arrives with a proposed fix, or it does not arrive.',
+    summary: 'Design review operating model. Rules of engagement, critique-with-solution format, routed ticket outcomes. Reviews produce decisions instead of open threads.',
+    tags: ['Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Design reviews were opinion sessions.' },
+      { type: 'text', text: 'Feedback arrived as taste. I do not like the button. No owner attached, no decision reached, no record kept. A review without a decision is just a very elaborate way to move an argument to next Tuesday.' },
+      { type: 'heading', text: 'The model' },
+      { type: 'text', text: 'Rules of engagement defining what feedback is in bounds and what is not.' },
+      { type: 'text', text: 'A point-of-view-plus-proposed-solution format. Critique arrives with a recommendation attached or it does not arrive. That single constraint forces reviewers past preference and into reasoning, and the quality of feedback changed immediately once people had to finish the thought.' },
+      { type: 'text', text: 'Structured ticket comments with corrected owner routing, so every review output lands with the person accountable for it rather than dissolving into a thread.' },
+      { type: 'heading', text: 'Effect' },
+      { type: 'text', text: 'Reviews end with decisions and routed actions. Settled things stay settled because they are written down and traceable.' },
+      { type: 'text', text: 'The model is documented, so the next designer inherits a working practice instead of absorbing tribal habits by osmosis.' },
+      { type: 'text', text: 'The model turned an improvement into furniture. It stayed in the room.' },
+    ],
+  },
+  {
+    slug: 'estimates-that-excluded-the-work',
+    title: 'Estimates That Excluded the Work',
+    blurb: 'Wireframing was missing from every timeline. Nobody had said it aloud.',
+    summary: 'Cross-functional prioritization workshop. Timeline math corrected on the record. Unestimated work named as the structural gap. Agreed system authored by the CMO.',
+    tags: ['Facilitation', 'Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Landing page work was contested ground. Which pages, what order, what timeline, built by whom.' },
+      { type: 'text', text: 'Estimates were circulating that quietly excluded entire categories of work. Not maliciously, just by habit, because the excluded work is invisible to people who do not do it.' },
+      { type: 'heading', text: 'Facilitation, then the carpentry' },
+      { type: 'text', text: 'Ran a prioritization and alignment workshop with cross-functional leadership. The session produced raw material. I stayed for the carpentry: executive summaries, a process document, and talking points for the follow-up one-on-one.' },
+      { type: 'text', text: 'Two corrections landed on the record during the session. The creative estimate excluded wireframing entirely, confirmed by the person who owned the estimate. And wireframing, reusable component design, and content template work appeared in no timeline anywhere, which nobody had said out loud before.' },
+      { type: 'text', text: 'The CMO proposed the two-template wireframe structure that became the agreed system.' },
+      { type: 'heading', text: 'Why authorship matters' },
+      { type: 'text', text: 'That last detail is not incidental. The system had an executive co-owner before it had a chance to become "the UX process." My recommendation could be reconsidered. One carrying her handwriting was harder to dislodge.' },
+      { type: 'text', text: 'The facilitator has an unusual job: engineer the collision, then avoid standing in the crater.' },
+      { type: 'text', text: 'Future timelines have to account for wireframing, components, and templates now, because the omission is documented and cannot be quietly repeated.' },
+    ],
+  },
+  {
+    slug: 'making-ux-visible-in-the-numbers',
+    title: 'Making UX Visible in the Numbers',
+    blurb: 'Experience metrics tied to outcomes, so design stopped being absorbed.',
+    summary: 'KPI framework pairing experience metrics to business outcomes. Scorecard across three data sources. Voice of customer program replacing NPS with CSAT and CES.',
+    tags: ['Measurement', 'Strategy'],
+    weight: 'standard',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'Design had an accounting problem. Value went in; attribution did not come back out.' },
+      { type: 'text', text: 'Conversion and test wins were joint efforts reported entirely through another team. Worse, the company had no standing way to measure experience quality at all. No framework, no instruments, no customer feedback program.' },
+      { type: 'heading', text: 'Building the measurement layer' },
+      { type: 'text', text: 'A standing KPI framework structured on the HEART model, pairing experience metrics directly to business outcomes so the connection is explicit rather than implied.' },
+      { type: 'text', text: 'A scorecard drawing on three data sources: real user monitoring, moderated testing, and survey data. Each instrument had a blind spot, so I did not give any of them sole custody of the truth.' },
+      { type: 'text', text: 'A voice of customer program replacing NPS with CSAT and CES, including a structured vendor evaluation. NPS tells you a number moved. CSAT and CES tell you which experience caused it, which is the only version a designer can act on.' },
+      { type: 'heading', text: 'Result' },
+      { type: 'text', text: 'A repeatable scorecard connecting experience to business outcomes, and a feedback program ready for instrumentation with a vendor recommendation attached.' },
+      { type: 'text', text: 'Experience work now reports under its own name instead of being absorbed.' },
+      { type: 'text', text: 'If UX never appears in the numbers, eventually someone asks why it appears in the budget.' },
+    ],
+  },
+  {
+    slug: 'building-the-function-that-was-not-there',
+    title: 'Building the Function That Was Not There',
+    blurb: 'A design function did not exist. Five capabilities got built anyway.',
+    summary: 'Design system, research practice, review model, measurement framework, and facilitation capability. All net-new in year one, alongside shipping a major integration.',
+    tags: ['Strategy', 'Design Systems'],
+    weight: 'featured',
+    thumbnail: null,
+    blocks: [
+      { type: 'text', text: 'No prior team. No design system. No research practice. No operating model. No measurement.' },
+      { type: 'text', text: 'A function standing up from zero while simultaneously shipping a major product integration and covering seven-plus workstreams with two people.' },
+      { type: 'text', text: 'Visible work has an unfair advantage: people clap for it. Infrastructure rarely gets applause. It would have been easy to spend the year shipping screens and leave the machinery untouched.' },
+      { type: 'heading', text: 'What got built alongside the delivery work' },
+      { type: 'text', text: 'A token foundation with governance, before the surface area scaled. A usability testing practice with a repeatable report format. A review operating model with rules and routing. A KPI framework and customer feedback program. Executive facilitation capability with reusable assets.' },
+      { type: 'heading', text: 'The through line' },
+      { type: 'text', text: 'Successful UX often leaves very poor trophies. Nobody praises a review that ended cleanly, a timeline that included all the work, or a page that inherited its brand automatically.' },
+      { type: 'text', text: 'The artifact was stability. Portfolio photography remains challenging.' },
+      { type: 'text', text: 'If the second version costs as much as the first, I probably have not finished designing the first one. Wherever the work repeated, I tried to leave machinery behind.' },
+      { type: 'text', text: 'I like decisions to leave a paper trail and dead arguments to remain dead.' },
+      { type: 'text', text: 'There is always a better way.' },
+    ],
   },
 ]

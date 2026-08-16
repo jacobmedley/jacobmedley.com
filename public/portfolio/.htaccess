@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Portfolio"
-AuthUserFile /ABSOLUTE/PATH/TO/.htpasswd
-Require valid-user

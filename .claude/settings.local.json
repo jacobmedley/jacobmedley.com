@@ -86,7 +86,10 @@
       "Bash(echo \"exit=$?\")",
       "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" status)",
       "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" branch -a)",
-      "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" log --oneline -15)"
+      "Bash(git -C \"C:\\\\dev\\\\jacobmedley.com\" log --oneline -15)",
+      "Bash(git fetch *)",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(taskkill *)"
     ]
   }
 }

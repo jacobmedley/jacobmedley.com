@@ -359,7 +359,7 @@ export const projects: Project[] = [
     media: [
       {
         type: 'metric-grid',
-        heading: 'Business Results — DentalPlans.com Partner Platform, 2015–2021',
+        heading: 'Business Results: DentalPlans.com Partner Platform, 2015–2021',
         metrics: [
           { value: '47%', direction: 'up', label: 'New Revenue' },
           { value: '20%', direction: 'up', label: 'Company Revenue' },
@@ -759,7 +759,7 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/ui-rag.png',
             alt: 'Eight inconsistent button treatments across products',
-            caption: 'UX/UI Fragmentation — Button Treatments',
+            caption: 'UX/UI Fragmentation: Button Treatments',
             flush: true
           }
         ],
@@ -774,7 +774,7 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/error-01.png',
             alt: 'Inconsistent error message and input field treatments, first set',
-            caption: 'UX/UI Fragmentation — Error and Input Treatments (1 of 2)',
+            caption: 'UX/UI Fragmentation: Error and Input Treatments (1 of 2)',
             flush: true
           }
         ],
@@ -783,7 +783,7 @@ export const projects: Project[] = [
             type: 'image',
             src: '/images/work/hydra/error-02.png',
             alt: 'Inconsistent error message and input field treatments, second set',
-            caption: 'UX/UI Fragmentation — Error and Input Treatments (2 of 2)',
+            caption: 'UX/UI Fragmentation: Error and Input Treatments (2 of 2)',
             flush: true
           }
         ],
@@ -895,7 +895,7 @@ export const projects: Project[] = [
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
       paragraphs: [
         'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow. This project was part of a more extensive implementation of the Hydra Design System.',
-        'I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with — and which they scrolled straight past.'
+        'I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with, and which they scrolled straight past.'
       ]
     },
     contributions: [
@@ -1002,7 +1002,7 @@ export const projects: Project[] = [
       paragraphs: [
         'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
         "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
-        'I partnered with the talented product marketing manager, [J.R. Hernandez](https://www.linkedin.com/in/iamjr/), on the following projects.'
+        'Testing ran as a standing partnership with product marketing. They owned hypothesis and traffic, I owned the variant and the read.'
       ]
     },
     contributions: [],
@@ -1302,7 +1302,7 @@ export const projects: Project[] = [
     contributions: [{ icon: 'fa-regular fa-mouse-field', label: 'Roadmap Planning' }],
     technologies: [{ icon: 'fa-regular fa-chalkboard', label: 'Lucidchart' }],
     media: [
-      { type: 'heading', text: 'Example UX Roadmap — obfuscated for client protection' },
+      { type: 'heading', text: 'Example UX Roadmap: obfuscated for client protection' },
       { type: 'text', text: 'Structure and Components' },
       {
         type: 'styled-list',
@@ -1580,11 +1580,11 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/btn-wrong.png', alt: 'The Wrong campaign' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
-    summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals — the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+    summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
     brief: {
       image: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: '' },
       paragraphs: [
-        'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals — the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+        'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
         'Campaign Concept:',
         'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
       ]

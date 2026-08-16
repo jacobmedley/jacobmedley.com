@@ -67,7 +67,7 @@ const experience: ExperienceEntry[] = [
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
     ],
     paragraphs: [
-      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. The first year closed with roughly a 70% increase in output against a temporary 6.7% increase in contractor headcount, and one of the smoothest Surge seasons on record — the company’s highest-volume period of the year.',
+      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. The first year closed with roughly a 70% increase in output against a temporary 6.7% increase in contractor headcount, and one of the smoothest peak seasons on record, the company’s highest-volume period of the year.',
       'With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company’s first dedicated XD/UX designer.',
     ],
   },
@@ -75,7 +75,9 @@ const experience: ExperienceEntry[] = [
     company: 'Mutual of America Financial Group, Boca Raton, FL',
     roles: [{ title: 'Sr. UX Designer', period: '2023 to 2025' }],
     paragraphs: [
-      'At Mutual of America, I collaborate with stakeholders and cross-functional teams to identify and resolve key user experience challenges. I lead strategic planning sessions and facilitate workshops to align design objectives and strategies. By defining user-centric epics and crafting detailed user stories and acceptance criteria for the main website, I ensure that our digital products meet and exceed user needs. I established best practices for A/B testing to inform design decisions and optimize usability. Additionally, I contributed to the design and development of a GPT/LLM conversational search application within Salesforce and the public websites.',
+      'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for customer service and account management, and a customer-facing assistant on the public site. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
+      'I reviewed emerging research on LLM behavior and conversational patterns and partnered with a data scientist on the model and data layer. That research identified hallucination risk before it was widely understood. Testing confirmed it: asked for an account balance, the system returned a specific figure and supporting detail. The only compliant answer was to refer the customer to their account manager. I traced the cause to a sample account statement sitting in the training documentation.',
+      'I defined the interaction requirements, including response-time feedback thresholds, streaming responses, explicit system status and failure states, compliance alerting for internal users, and account and chat history summaries so both the assistant and the human agent opened with context. I secured tracking on the customer-facing assistant. The data showed early customer engagement followed by rapid dropoff correlated with response speed and friction, and internal adoption that stayed low.',
     ],
   },
   {

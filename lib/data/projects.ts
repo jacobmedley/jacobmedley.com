@@ -361,7 +361,7 @@ export const projects: Project[] = [
         type: 'metric-grid',
         heading: 'Business Results: DentalPlans.com Partner Platform, 2015–2021',
         metrics: [
-          { value: '47%', direction: 'up', label: 'New Revenue' },
+          { value: '47%', direction: 'up', label: 'Share of Revenue Growth' },
           { value: '20%', direction: 'up', label: 'Company Revenue' },
           { value: '27%', direction: 'up', label: 'Lead Generation' },
           { value: '66%', direction: 'down', label: 'Launch Cycle: Six Weeks to Two, per Property' }

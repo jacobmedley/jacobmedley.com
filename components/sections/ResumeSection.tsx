@@ -39,7 +39,7 @@ const leadershipRight = [
   },
   {
     title: 'Business-Centric Design',
-    body: 'Created user-centered solutions that achieved business goals, such as increasing sales by 47% and reducing project timelines by 66%.',
+    body: 'Built systems that delivered measurable business outcomes, including 47% of company revenue growth in a single measured year and a 66% reduction in launch time per property.',
   },
   {
     title: 'Collaboration & Alignment',
@@ -94,7 +94,7 @@ const experience: ExperienceEntry[] = [
     roles: [{ title: 'Sr. Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
-      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Delivered 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue in a single measured year.",
+      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Delivered 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue in a single measured year. Built and owned outright, with no licensed platform beneath it.",
     ],
   },
   {

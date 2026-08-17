@@ -231,14 +231,14 @@ Never guess a replacement anchor.
 
 **REPLACE WITH:** the two paragraphs in Section A under "Mutual of America Financial Group", beginning `I defined the interaction requirements.` Copy verbatim, strip blockquote markers, preserve JSX structure and className attributes, escape apostrophes as `&apos;`.
 
-## B4. DentalPlans employment entry [PENDING]
+## B4. DentalPlans employment entry [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
 
-Report whether the entry exists before editing. Title, dates, and location must match Section A exactly:
+Title, dates, and location match Section A exactly:
 
 > Sr. Manager of UX & UI Design / Product Manager, 2015 to 2021, Plantation, FL
 
-May carry this compressed ownership line:
+Closing sentence added to the DentalPlans paragraph:
 
 > Built and owned outright, with no licensed platform beneath it.
 
@@ -254,10 +254,20 @@ Report whether the entry exists before editing. Must match Section A exactly:
 
 If an EMPLOYMENT entry exists, remove it. BumblebeeMD was a DentalPlans sub-brand, never an employer. See Section A. If it appears only as a project reference rather than employment, leave it and report.
 
-## B7. Year-only date formatting [PENDING]
+## B7. Year-only date formatting [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
 
-Every employment date reads year-only. No months anywhere. Report every date string before and after.
+**Exception: Health-E Commerce keeps month-level dates.** Its two roles sit
+inside one employer within the same year (`Feb 2025 to Feb 2026`, `Feb 2026 to
+present`); collapsing both to `2025 to Present` makes the promotion read as a
+typo. The year-only rule exists for the boundary between employers, e.g. One
+Park ending and Mutual of America beginning. Health-E's two roles are nowhere
+near that boundary, so the exception does not weaken the rule.
+
+Every other employer stays year-only: One Park reads `2021 to 2022`, Mutual of
+America reads `2023 to 2025`, DentalPlans reads `2015 to 2021`, Bluegreen
+reads `2011 to 2015`. Verified against `ResumeSection.tsx` current state; no
+changes needed there. No month-level dates anywhere outside Health-E.
 
 ## B8. The 47% error [PENDING]
 **Files:** `components/sections/ResumeSection.tsx` and `lib/data/projects.ts`
@@ -285,6 +295,60 @@ Report every occurrence of `66` with surrounding text. The figure must never app
 Report the current entry in full first. It must read as one of five properties on the DentalPlans platform, and must state both its launch and its retirement.
 
 Permitted factual claims, and no others: it was a DentalPlans sub-brand, it launched on the shared platform, it was later retired. If the correction needs anything beyond these, SKIP and report.
+
+## B11. Leadership bullet, two factual errors [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+The 47% is a share of revenue growth, not a sales lift. The 66% is a launch
+cycle reduction, not a project timeline reduction.
+
+**FIND:**
+
+> Created user-centered solutions that achieved business goals, such as increasing sales by 47% and reducing project timelines by 66%.
+
+**REPLACE WITH:**
+
+> Built systems that delivered measurable business outcomes, including 47% of company revenue growth in a single measured year and a 66% reduction in launch time per property.
+
+## B12. Metric card label, projects.ts:364 [APPLIED]
+**File:** `lib/data/projects.ts`
+
+The `47%` metric card label overstated the figure as new revenue rather than
+a share of revenue growth, in the same way the leadership bullet did.
+
+**FIND:**
+
+> label: 'New Revenue'
+
+**REPLACE WITH:**
+
+> label: 'Share of Revenue Growth'
+
+Confirmed the FIND matched exactly once, on the object carrying `value: '47%'`.
+
+## B13. Colleague name sweep [PENDING]
+**Files:** `lib/data/projects.ts`, `components/sections/ResumeSection.tsx`
+
+Discovery pass only, no edits applied. B10 surfaced a named colleague
+(Tiffany Tibbets, in the pre-edit BumblebeeMD summary) that had been
+published without being caught by the anonymization rule. Full sweep of both
+files for any personal name that is not Jacob Medley, read for context rather
+than by regex alone.
+
+**Findings, three distinct names, four occurrences:**
+
+| File | Line | Surrounding text | Read |
+|---|---|---|---|
+| `lib/data/projects.ts` | 529 | `Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"` | Real named colleague, quoted directly. Same category as the J.R. Hernandez removal in B1 and the Tiffany Tibbets removal in B10. |
+| `lib/data/projects.ts` | 1298 | `I am a strong planner and lean hard into planning the work and working the plan. To quote Robert Burns - "The best-laid schemes of mice and men often go awry," so be ready to pivot.` | Historical/literary figure (poet), quoted for a proverb. Not a colleague or employer detail. Flagged for completeness since it matches the name pattern, not because it raises the same anonymization concern. |
+| `lib/data/projects.ts` | 1380, 1382, 1385 | `alt: 'Example persona card for Frugal Francine'` (1380); `One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.` (1382); `briefHeading: 'What Frugal Francine Taught Us'` (1385) | Fictional UX research persona, not a real person. Flagged for completeness, same reasoning as Robert Burns. |
+
+`components/sections/ResumeSection.tsx`: zero matches. No personal name besides
+Jacob Medley appears anywhere in that file.
+
+Replacements are not authored here yet. Once you've reviewed the findings,
+write the replacement wording into this section and flip status to PENDING
+implementation or APPLIED as appropriate.
 
 ---
 

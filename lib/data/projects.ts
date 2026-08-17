@@ -364,7 +364,7 @@ export const projects: Project[] = [
           { value: '47%', direction: 'up', label: 'New Revenue' },
           { value: '20%', direction: 'up', label: 'Company Revenue' },
           { value: '27%', direction: 'up', label: 'Lead Generation' },
-          { value: '66%', direction: 'down', label: 'Reduced Project Timelines' }
+          { value: '66%', direction: 'down', label: 'Launch Cycle: Six Weeks to Two, per Property' }
         ],
         valueCreated: {
           heading: 'Value Created',
@@ -615,13 +615,13 @@ export const projects: Project[] = [
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'I had the privilege to partner with a brilliant brand manager, Tiffany Tibbets, on this project. We worked with executive stakeholders to bring this brand to life. Our goal was to invent a fun and family-focused brand.',
+    summary: 'BumblebeeMD was a sub-brand built on the DentalPlans.com product platform, one of five properties launched from that shared framework. It was later retired.',
     modalTitle: 'BumblebeeMD',
     visible: true,
     brief: {
       image: { src: '/images/work/bmd-modal/brief.png', alt: '' },
       paragraphs: [
-        'I was the creative lead and responsible for the primary concept. We worked with a brand agency to develop the colors and illustrations. I took the final brand elements and incorporated them into the UI design of the site.'
+        'BumblebeeMD launched as one of five properties on the DentalPlans.com platform, sharing that system’s design and infrastructure. The brand was later retired.'
       ]
     },
     contributions: [

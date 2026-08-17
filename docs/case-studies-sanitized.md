@@ -45,7 +45,7 @@ Findings went out as ticket groups split by owner, content, front end, design, e
 
 Because it is code and not a one-time effort, the next page cost nothing. Then the one after that. Now it runs on a schedule against the live site, so drift gets caught while it is still small.
 
-Tactically, days became hours. Strategically, two people picked up a practice we had no headcount to hire for. That is the real answer to covering seven workstreams with two heads. You do not move faster. You make the work smaller.
+Tactically, days became hours. Strategically, two people picked up a practice we had no headcount to hire for. That is the real answer to covering seven workstreams with two heads. You create velocity by making the work smaller.
 
 ---
 
@@ -382,6 +382,62 @@ A repeatable scorecard connecting experience to business outcomes, and a feedbac
 Experience work now reports under its own name instead of being absorbed.
 
 If UX never appears in the numbers, eventually someone asks why it appears in the budget.
+
+---
+
+## The Alternative to Five Sites Was Five Teams
+
+**Skim:** A single-brand storefront hand-edited product by product, rebuilt as a platform. Token-based theming, source attribution, one-button deploys, one source of truth. Launch time fell from six weeks to two. Five properties, two builders. In one measured year the platform carried 47% of company revenue growth.
+
+The first version was embarrassing and it was supposed to be.
+
+A branded storefront on an off-the-shelf theme, sitting alongside the core marketplace. Sale pricing and strikethrough values were typed in by hand, per product, every time a promotion changed. The question it existed to answer was narrow: will people buy from a focused brand experience rather than from a marketplace showing them everything at once.
+
+They did. Within a year the thing became part of core business, and leadership wanted more of them.
+
+That is the moment where a team usually agrees, clones the repository, and inherits the manual work five times over.
+
+**What I argued for instead**
+
+I pushed back and brought a roadmap. Not a bigger version of the site. The machine that makes sites.
+
+Phased deliberately, because the alternative was a rewrite nobody would fund. Each release traded a piece of manual labor for a capability, and each capability made the next site cheaper than the one before it.
+
+A content management layer with a brand section, so identity became configuration rather than a build.
+
+Token-based theming, which meant an entirely bespoke storefront could be assembled without touching the underlying application.
+
+One source of truth for products, providers, locations, and reviews, consumed by every property. As engineering exposed new data, every site inherited it at once.
+
+Scheduled promotions with multi-phase logic, retiring the hand-typed strikethrough that started all of this.
+
+Campaign and source attribution, so promotion, copy, and messaging changed according to where a visitor arrived from. Search engines, social, email, paid, and specific affiliate identifiers each got their own treatment, and the site spoke in the language of the ad that brought the person there.
+
+The whole funnel, marketing pages through cart and checkout, owned outright. No licensed platform underneath it, no vendor holding the roadmap.
+
+And a deployment pipeline with one button per environment. Development, staging, production. One property or all of them.
+
+**What it cost and what it returned**
+
+Standing up a fully branded ecommerce property went from six weeks to two. A 66% reduction, and it held across five properties.
+
+One of the five was later retired. Winding it down cost about as little as standing it up, which is the half of the argument nobody makes when they are asking for a new site. A platform that makes launches cheap makes mistakes cheap too.
+
+The platform was built and maintained by two people. Me and a part-time offshore engineer. It ran on the smallest team supporting any property in the company.
+
+Ownership was the argument, and cost made it possible. Infrastructure ran on dedicated hardware with redundancy and managed support, which left budget where it was needed, on marketing the properties rather than hosting them. The platform was an asset the business held outright. No licensing, no vendor roadmap, no dependency someone else could reprice.
+
+In one measured year the properties accounted for 47% of the company's revenue growth, 27% of total lead capture, and 20% of overall revenue. Smaller in absolute revenue than the core marketplace, and a disproportionate share of the growth, which is what a growth lever looks like when it is working.
+
+**The staffing argument underneath the technical one**
+
+Four experience designers covered all of it. Two reporting to me on a dotted line, one at my level, and the engineer direct.
+
+The default path to five storefronts is five teams. Every additional property brings its own content updates, its own promotion calendar, its own deployment, its own bugs, and the headcount request follows about six months later.
+
+We did not boil the ocean and we did not staff up to survive our own success. Automation absorbed the repetitive work, and the people spent their hours on the parts where judgment changes the outcome.
+
+You create velocity by making the work smaller.
 
 ---
 

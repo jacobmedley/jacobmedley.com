@@ -238,7 +238,7 @@ inserted literally. The two paragraphs contained no apostrophes, so this
 didn't end up mattering here, but it applies to any future edit in this file
 that carries the `&apos;` instruction.
 
-## B4. DentalPlans employment entry [APPLIED], commit c917fe8; sentence corrected by B14, commit pending
+## B4. DentalPlans employment entry [APPLIED], commit c917fe8; sentence corrected by B14, commit f2f0995
 **File:** `components/sections/ResumeSection.tsx`
 
 Title, dates, and location match Section A exactly:
@@ -358,7 +358,7 @@ a share of revenue growth, in the same way the leadership bullet did.
 
 Confirmed the FIND matched exactly once, on the object carrying `value: '47%'`.
 
-## B13. Colleague name sweep [APPLIED], commit pending
+## B13. Colleague name sweep [APPLIED], commit f2f0995
 **Files:** `lib/data/projects.ts`, `components/sections/ResumeSection.tsx`
 
 Originally a discovery pass with no edits applied; resolution added and
@@ -399,7 +399,7 @@ Jacob Medley appears anywhere in that file.
   Fictional UX research persona, not a real person. No edit made. **Future
   sweeps should not re-flag these lines.**
 
-## B14. Dangling subject in the B4 sentence [APPLIED], commit pending
+## B14. Dangling subject in the B4 sentence [APPLIED], commit f2f0995
 **File:** `components/sections/ResumeSection.tsx`
 
 The sentence B4 added had no explicit subject, so it read as though the
@@ -417,7 +417,7 @@ Register wording error, not an implementation error.
 B4 above has been amended to carry this corrected sentence rather than the
 broken one.
 
-## B15. Relocate dead legacy HTML out of components/ [APPLIED], commit pending
+## B15. Relocate dead legacy HTML out of components/ [APPLIED], commit f2f0995
 **Files:** every `*.html` file directly under `components/`
 
 These are pre-React-migration static reference files. Nothing in the live

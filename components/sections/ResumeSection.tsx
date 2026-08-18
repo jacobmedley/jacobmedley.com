@@ -39,7 +39,7 @@ const leadershipRight = [
   },
   {
     title: 'Business-Centric Design',
-    body: 'Created user-centered solutions that achieved business goals, such as increasing sales by 47% and reducing project timelines by 66%.',
+    body: 'Built systems that delivered measurable business outcomes, including 47% of company revenue growth in a single measured year and a 66% reduction in launch time per property.',
   },
   {
     title: 'Collaboration & Alignment',
@@ -67,7 +67,7 @@ const experience: ExperienceEntry[] = [
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
     ],
     paragraphs: [
-      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. The first year closed with roughly a 70% increase in output against a temporary 6.7% increase in contractor headcount, and one of the smoothest Surge seasons on record — the company’s highest-volume period of the year.',
+      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. The systems and process work was put to the test during peak season, the highest revenue period of the year. Demand rose about 70% year over year. We met it with about a 7% increase in contractor headcount, and creative delivery held through the strongest peak in the company’s history.',
       'With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company’s first dedicated XD/UX designer.',
     ],
   },
@@ -75,12 +75,15 @@ const experience: ExperienceEntry[] = [
     company: 'Mutual of America Financial Group, Boca Raton, FL',
     roles: [{ title: 'Sr. UX Designer', period: '2023 to 2025' }],
     paragraphs: [
-      'At Mutual of America, I collaborate with stakeholders and cross-functional teams to identify and resolve key user experience challenges. I lead strategic planning sessions and facilitate workshops to align design objectives and strategies. By defining user-centric epics and crafting detailed user stories and acceptance criteria for the main website, I ensure that our digital products meet and exceed user needs. I established best practices for A/B testing to inform design decisions and optimize usability. Additionally, I contributed to the design and development of a GPT/LLM conversational search application within Salesforce and the public websites.',
+      'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for customer service and account management, and a customer-facing assistant on the public site. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
+      'I reviewed emerging research on LLM behavior and conversational patterns and partnered with a data scientist on the model and data layer. That research identified hallucination risk before it was widely understood. Testing confirmed it: asked for an account balance, the system returned a specific figure and supporting detail. The only compliant answer was to refer the customer to their account manager. I traced the cause to a sample account statement sitting in the training documentation.',
+      'I defined the interaction requirements. Conduct came first, since the assistant stood in for the opening minutes of a service conversation. It had to stay courteous, stay useful, and never dead-end a customer. From there: response-time feedback built on the standard anchors, streaming responses, explicit system status and failure states, escalation into a live service channel or the right department, compliance alerting that flagged exposure in what internal users were sending, and account and chat history summaries so the assistant and the agent both opened with context. I specified ingestion quality as well, since the source corpus arrived as mixed PDFs, documents, spreadsheets, presentations, and raster images, and what an assistant knows is settled before any interface question.',
+      'A subset of the requirements shipped. I secured tracking on the customer-facing assistant. The data showed early customer engagement followed by rapid dropoff correlated with response speed and friction, and internal adoption that stayed low, with representatives citing accuracy and wait.',
     ],
   },
   {
     company: 'One Park Financial, Coconut Grove, FL',
-    roles: [{ title: 'Director of UX/UI & Product Design', period: '2021 to 2022' }],
+    roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
       'At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.',
       'I evangelized the need for a design system, partnering with the SVP of Marketing to secure executive buy-in for the project. This led to the creation of the Hydra Design System, a unified pattern and component library. This empowered the company to design and engineer rapidly and "fail fast," improving business goals and user experience.',
@@ -88,10 +91,10 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'DentalPlans.com, Plantation, FL',
-    roles: [{ title: 'Sr. Manager, UX/UI Design', period: '2015 to 2021' }],
+    roles: [{ title: 'Sr. Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
-      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. These strategic initiatives resulted in over 47% of new revenue, 27% of total lead generation, and contributed to 20% of the company's overall revenue, highlighting the essential role of strategic product design and development in business expansion and profitability.",
+      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Delivered 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue in a single measured year. The platform was built and owned outright, with nothing licensed beneath it.",
     ],
   },
   {

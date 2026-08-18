@@ -13,5 +13,14 @@
     "figma@claude-plugins-official": true,
     "vercel@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true
+  },
+  "permissions": {
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git merge:*)",
+      "Bash(git checkout main)",
+      "Bash(git rm:*)",
+      "Bash(npm run build)"
+    ]
   }
 }

@@ -213,7 +213,7 @@ Never guess a replacement anchor.
 
 ---
 
-## B2. Health-E paragraph one [PENDING]
+## B2. Health-E paragraph one [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
 
 **FIND:** the entire sentence beginning `The first year closed with roughly a 70% increase in output`. B0 already altered nearby text, so build the anchor from current file state.
@@ -224,35 +224,49 @@ Never guess a replacement anchor.
 
 **Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate.
 
-## B3. Mutual of America paragraph three [PENDING]
+## B3. Mutual of America paragraph three [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
 
 **FIND:** paragraph three of the Mutual of America entry, in full.
 
 **REPLACE WITH:** the two paragraphs in Section A under "Mutual of America Financial Group", beginning `I defined the interaction requirements.` Copy verbatim, strip blockquote markers, preserve JSX structure and className attributes, escape apostrophes as `&apos;`.
 
-## B4. DentalPlans employment entry [APPLIED]
+**Implementation note:** `ResumeSection.tsx` stores these as plain JS string
+literals rendered via `{p}`, not JSX text nodes, so `&apos;` was translated to
+the file's existing typographic-apostrophe convention (`’`) rather than
+inserted literally. The two paragraphs contained no apostrophes, so this
+didn't end up mattering here, but it applies to any future edit in this file
+that carries the `&apos;` instruction.
+
+## B4. DentalPlans employment entry [APPLIED], commit c917fe8; sentence corrected by B14, commit pending
 **File:** `components/sections/ResumeSection.tsx`
 
 Title, dates, and location match Section A exactly:
 
 > Sr. Manager of UX & UI Design / Product Manager, 2015 to 2021, Plantation, FL
 
-Closing sentence added to the DentalPlans paragraph:
+Closing sentence added to the DentalPlans paragraph. Original wording shipped
+here had a dangling subject (see B14); the corrected sentence that now stands
+in the file is:
 
-> Built and owned outright, with no licensed platform beneath it.
+> The platform was built and owned outright, with nothing licensed beneath it.
 
-## B5. One Park Financial employment entry [PENDING]
+## B5. One Park Financial employment entry [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
 
-Report whether the entry exists before editing. Must match Section A exactly:
+Entry existed with an extra "of" (`Director of UX/UI & Product Design`).
+Corrected to match Section A exactly:
 
 > Director UX/UI & Product Design, 2021 to 2022, Coconut Grove, FL
 
-## B6. BumblebeeMD employment removal [PENDING]
+## B6. BumblebeeMD employment removal [APPLIED], commit c917fe8, verified no-op
 **File:** `components/sections/ResumeSection.tsx`
 
-If an EMPLOYMENT entry exists, remove it. BumblebeeMD was a DentalPlans sub-brand, never an employer. See Section A. If it appears only as a project reference rather than employment, leave it and report.
+Searched for any BumblebeeMD reference, employment or otherwise: zero matches.
+Nothing to remove. BumblebeeMD never appeared in this file, so there was
+nothing that could have been miscategorized as employment. Marked applied
+because the check ran and the file is confirmed clean, not because an edit
+was made.
 
 ## B7. Year-only date formatting [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -269,7 +283,7 @@ America reads `2023 to 2025`, DentalPlans reads `2015 to 2021`, Bluegreen
 reads `2011 to 2015`. Verified against `ResumeSection.tsx` current state; no
 changes needed there. No month-level dates anywhere outside Health-E.
 
-## B8. The 47% error [PENDING]
+## B8. The 47% error [APPLIED — superseded by B11 and B12], commit c917fe8
 **Files:** `components/sections/ResumeSection.tsx` and `lib/data/projects.ts`
 
 Report every occurrence of `47` with full surrounding text before editing.
@@ -282,19 +296,37 @@ Any phrasing of the form "increased sales by 47%" is factually wrong. The 47% is
 
 If the surrounding sentence structure makes that replacement awkward, SKIP and report the exact text rather than forcing it.
 
-## B9. The 66% attribution [PENDING]
+**Resolution:** two occurrences found. The DentalPlans paragraph occurrence
+took this exact replacement (commit c917fe8). The `leadershipRight` bullet
+occurrence and the `projects.ts` metric-card label occurrence were both
+skipped as awkward fits for a full-sentence replacement; both were later
+fixed by dedicated edits with their own wording — see B11 (bullet, commit
+55299e3) and B12 (label, commit 55299e3). Marked applied because the
+underlying factual error no longer exists anywhere; the literal B8 REPLACE
+text above only ended up shipping in one of the three spots it touched.
+
+## B9. The 66% attribution [APPLIED], commit 09ffe0d
 **File:** `lib/data/projects.ts`
 
 Report every occurrence of `66` with surrounding text. The figure must never appear unattributed. Anchor it to its source by working this into whatever sentence carries it:
 
 > six weeks to two per property
 
-## B10. BumblebeeMD reframing [PENDING]
+**Resolution:** the `metric-grid` label at `projects.ts:367` was rewritten
+from `Reduced Project Timelines` to `Launch Cycle: Six Weeks to Two, per
+Property`, working the anchor phrase directly into the label since no full
+sentence carried the figure at that anchor.
+
+## B10. BumblebeeMD reframing [APPLIED], commit 09ffe0d
 **File:** `lib/data/projects.ts`
 
 Report the current entry in full first. It must read as one of five properties on the DentalPlans platform, and must state both its launch and its retirement.
 
 Permitted factual claims, and no others: it was a DentalPlans sub-brand, it launched on the shared platform, it was later retired. If the correction needs anything beyond these, SKIP and report.
+
+**Resolution:** `summary` and `brief.paragraphs[0]` were rewritten using only
+the three permitted facts, dropping the named-colleague narrative that had
+been there (see B13 for the related name sweep this surfaced).
 
 ## B11. Leadership bullet, two factual errors [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -326,10 +358,11 @@ a share of revenue growth, in the same way the leadership bullet did.
 
 Confirmed the FIND matched exactly once, on the object carrying `value: '47%'`.
 
-## B13. Colleague name sweep [PENDING]
+## B13. Colleague name sweep [APPLIED], commit pending
 **Files:** `lib/data/projects.ts`, `components/sections/ResumeSection.tsx`
 
-Discovery pass only, no edits applied. B10 surfaced a named colleague
+Originally a discovery pass with no edits applied; resolution added and
+applied in a follow-up run (see below). B10 surfaced a named colleague
 (Tiffany Tibbets, in the pre-edit BumblebeeMD summary) that had been
 published without being caught by the anonymization rule. Full sweep of both
 files for any personal name that is not Jacob Medley, read for context rather
@@ -346,9 +379,71 @@ than by regex alone.
 `components/sections/ResumeSection.tsx`: zero matches. No personal name besides
 Jacob Medley appears anywhere in that file.
 
-Replacements are not authored here yet. Once you've reviewed the findings,
-write the replacement wording into this section and flip status to PENDING
-implementation or APPLIED as appropriate.
+**Resolution:**
+
+- **Bill Chase (`projects.ts:529`):** name removed, quote kept. Credit moved
+  to the function, not the person.
+
+  **FIND:**
+
+  > Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"
+
+  **REPLACE WITH:**
+
+  > Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"
+
+- **Robert Burns (`projects.ts:1298`):** reviewed and cleared. Historical
+  figure, quoted for a proverb, not a colleague or employer detail. No edit
+  made. **Future sweeps should not re-flag this line.**
+- **Frugal Francine (`projects.ts:1380, 1382, 1385`):** reviewed and cleared.
+  Fictional UX research persona, not a real person. No edit made. **Future
+  sweeps should not re-flag these lines.**
+
+## B14. Dangling subject in the B4 sentence [APPLIED], commit pending
+**File:** `components/sections/ResumeSection.tsx`
+
+The sentence B4 added had no explicit subject, so it read as though the
+revenue figures in the preceding sentence were what got built and owned.
+Register wording error, not an implementation error.
+
+**FIND:**
+
+> Built and owned outright, with no licensed platform beneath it.
+
+**REPLACE WITH:**
+
+> The platform was built and owned outright, with nothing licensed beneath it.
+
+B4 above has been amended to carry this corrected sentence rather than the
+broken one.
+
+## B15. Relocate dead legacy HTML out of components/ [APPLIED], commit pending
+**Files:** every `*.html` file directly under `components/`
+
+These are pre-React-migration static reference files. Nothing in the live
+app imports them, but every content sweep across `components/` was hitting
+them and needing a manual exclusion (see B13, V2/V4 in the prior two runs).
+They have reference value, so moved rather than deleted.
+
+Moved to `_archive/legacy-components/`, verified beforehand that no active
+`.ts`/`.tsx` file under `app/`, `components/`, `lib/`, or `scripts/` imports
+any of them (comments mentioning them, e.g. `ResumeSection.tsx:61`, were left
+as-is and still resolve correctly since the referenced path is a comment, not
+an import).
+
+**Files moved (20):** 14 `modal-*.html` files —
+`modal-bee.html`, `modal-call-center-ux.html`, `modal-hydra.html`,
+`modal-marketing-auto.html`, `modal-opfred.html`, `modal-personas.html`,
+`modal-product.html`, `modal-reveal.html`, `modal-roadmap.html`,
+`modal-split-test.html`, `modal-viva.html`, `modal-webmd.html`,
+`modal-workshops.html`, `modal-wrong.html` — plus 6 `section-*.html` files:
+`section-education.html`, `section-hi.html`, `section-quote.html`,
+`section-resume.html`, `section-visual-design.html`, `section-work-v2.html`.
+
+**Going forward:** content sweeps across `components/` and `lib/` should
+scope to `.ts` and `.tsx` files only. The legacy HTML under
+`_archive/legacy-components/` is out of scope for copy sweeps; it is a
+reference archive, not live content.
 
 ---
 

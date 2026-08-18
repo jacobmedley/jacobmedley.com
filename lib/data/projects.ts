@@ -526,7 +526,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Iteration One: Initial Launch and Learnings', level: 4 },
           {
             type: 'text',
-            text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"'
+            text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"'
           },
           { type: 'heading', text: 'Plan:', level: 4 },
           {

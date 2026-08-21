@@ -23,6 +23,11 @@ Read `docs/voice-rules.md` before editing anything in this file.
 **Employer names are permitted in employment history.** The no-names rule applies to
 case study content, not the work history section of a resume.
 
+**Vendor and platform names are permitted in employment history.** Product and
+vendor names (e.g. Four Winds Interactive, Adobe Scene7, Aprimo Marketing Studio)
+establish period context and serve ATS keyword matching in the work history
+section. They remain barred from case study content.
+
 ---
 
 # Section A: Employment history
@@ -175,6 +180,31 @@ retired.
 - The retirement is an asset, not an omission. A property that could be wound down
   as cheaply as it was stood up is direct evidence of the platform economics. It is
   now stated in the case study.
+
+## Bluegreen Vacations
+
+**Sr. Digital Designer**, 2011 to 2015
+Boca Raton, FL
+
+> I evaluated the digital signage platforms and designed the integration that
+> connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for
+> dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress
+> in the middle as the authoring surface. Learning how each system expected to be
+> fed, then designing a path through all four, was most of the work.
+>
+> The wider effort built a 360 degree view of the customer across email, landing
+> pages, and account management, driven by personas rather than by channel.
+> Campaigns had to cover 48 resorts across four seasons and several personas at
+> once, so variant content came out of a central asset library and a shared data
+> layer instead of being rebuilt per property. I owned UX and UI and worked with a
+> PHP engineer, a data engineer, an outside consultant, and marketing managers.
+> The integration had to stay usable for a wide range of content creators and
+> designers, not only for the people who built it.
+
+**Resolved.** See B16. No figures exist for this role and none may be added. The
+48 resorts, four seasons, and multiple personas are structural facts about the
+scope of the integration, not performance metrics, and must not be read or
+rephrased as one.
 
 ---
 
@@ -444,6 +474,18 @@ an import).
 scope to `.ts` and `.tsx` files only. The legacy HTML under
 `_archive/legacy-components/` is out of scope for copy sweeps; it is a
 reference archive, not live content.
+
+## B16. Bluegreen Vacations paragraphs [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+Replaced both paragraphs of the Bluegreen Vacations entry with the canonical
+version now in Section A. See that section for the full text and the resolved
+note on figures.
+
+Vendor names are load-bearing and must be spelled exactly: Four Winds
+Interactive, Adobe Scene7 (one word), Aprimo Marketing Studio. See the new rule
+under "Where copy lives" for why they're permitted here despite the no-names
+rule that governs case study content.
 
 ---
 

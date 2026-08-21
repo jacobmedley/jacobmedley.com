@@ -101,8 +101,8 @@ const experience: ExperienceEntry[] = [
     company: 'Bluegreen Vacations, Boca Raton, FL',
     roles: [{ title: 'Sr. Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
-      'As the design lead, I contributed to the company-wide transition to a data-driven omnichannel marketing platform, incorporating digital signage across 48 resort locations and interactive kiosk interfaces. This role involved crafting engaging user experiences across various marketing platforms and channels, ensuring a seamless integration of digital and physical touchpoints.',
-      "In collaboration with stakeholders, cross-functional teams, and external consultants, I played a key role in implementing and integrating a comprehensive marketing experience strategy. This strategy was focused on unifying our messaging and branding across all channels, including the innovative use of digital signage and interactive kiosks, to create a cohesive and dynamic customer journey. My leadership in this area was pivotal in enhancing customer engagement and reinforcing the company's presence in the competitive resort industry.",
+      'I evaluated the digital signage platforms and designed the integration that connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress in the middle as the authoring surface. Learning how each system expected to be fed, then designing a path through all four, was most of the work.',
+      "The wider effort built a 360 degree view of the customer across email, landing pages, and account management, driven by personas rather than by channel. Campaigns had to cover 48 resorts across four seasons and several personas at once, so variant content came out of a central asset library and a shared data layer instead of being rebuilt per property. I owned UX and UI and worked with a PHP engineer, a data engineer, an outside consultant, and marketing managers. The integration had to stay usable for a wide range of content creators and designers, not only for the people who built it.",
     ],
   },
 ]

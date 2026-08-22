@@ -45,10 +45,10 @@ New York, NY (Remote)
 > experience design practice the company had never had. Rather than absorbing more
 > requests, I applied systems thinking and UX research methods to identify the right
 > problems to solve, rebuilding intake, process, and creative operations around them.
-> The systems and process work was put to the test during peak season, the highest
-> revenue period of the year. Demand rose about 70% year over year. We met it with
-> about a 7% increase in contractor headcount, and creative delivery held through the
-> strongest peak in the company's history.
+> Peak season, the highest revenue period of the year, tested the operating model.
+> Creative output rose about 70% year over year on a 6.6% increase in production
+> hours. Assets per hour went up about 62% and assets per person about 48%. The gain
+> came from rebuilt process and workflow, not proportional labor.
 >
 > With creative operations stable, we split the department and I moved full time to
 > building the experience design side of the business, a function that had not

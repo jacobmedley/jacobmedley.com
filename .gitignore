@@ -33,3 +33,6 @@ tsconfig.tsbuildinfo
 # Private, unscrubbed source data. Never commit. Repo is public.
 /_data_case_studies
 /_private
+
+# Multi-session working-agreement lock file (machine-local, not committed)
+.tree-lock

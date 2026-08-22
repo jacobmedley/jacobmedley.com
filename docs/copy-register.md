@@ -6,7 +6,9 @@ Both the portfolio workstream and the resume workstream reconcile against this f
 **Rule: copy is authored here first, then implemented.** If copy exists in a component
 or a document but not here, it is unreconciled and may be stale.
 
-Read `docs/voice-rules.md` before editing anything in this file.
+Read `docs/jacob-style.md`, `docs/voice-and-tone.md`, and
+`docs/data-reporting.md` before editing anything in this file. (`docs/voice-rules.md`
+is now a pointer to these three; load all three, not just the pointer.)
 
 ---
 

@@ -42,18 +42,28 @@ run shorter. It must never contradict this.
 New York, NY (Remote)
 
 > I joined Health-E Commerce to restructure creative marketing and build an
-> experience design practice the company had never had. Rather than absorbing more
-> requests, I applied systems thinking and UX research methods to identify the right
-> problems to solve, rebuilding intake, process, and creative operations around them.
-> Peak season, the highest revenue period of the year, tested the operating model.
-> Creative output rose about 70% year over year on a 6.6% increase in production
-> hours. Assets per hour went up about 62% and assets per person about 48%. The gain
-> came from rebuilt process and workflow, not proportional labor.
+> experience design practice the company had never had. Four direct reports, a team
+> of seven, and seven contractors across creative marketing, design systems, and UX.
+> Rather than absorbing more requests, I applied systems thinking and UX research
+> methods to find the right problems, then rebuilt intake, process, and creative
+> operations around them. Peak season, the highest revenue period of the year, tested
+> the operating model. Creative output rose about 70% year over year on a 6.6%
+> increase in production hours. Assets per hour went up about 62% and assets per
+> person about 48%. The gain came from rebuilt process and workflow, not proportional
+> labor.
 >
-> With creative operations stable, we split the department and I moved full time to
-> building the experience design side of the business, a function that had not
-> previously existed. I defined the practice and hired the company's first dedicated
-> XD/UX designer.
+> Once creative operations held, we split the department. A new creative director
+> took the creative team and I took everything else, moving full time to the
+> experience design side, a function that had not existed. I defined the practice and
+> the role, then hired the first XD designer into it. Started the year with one
+> direct report and will finish it with three.
+>
+> Owned the company Figma account including contract renewal, through a large influx
+> of product and engineering seats. After the split I kept everything outside the
+> creative team, ran a seat and usage audit, and got Figma reclassified as a
+> company-wide tool rather than a department one, moving a standing administrative
+> load off design. Own the tooling and research budget and propose the headcount the
+> function needs.
 
 **Resolved.** Baseline is the prior year's peak season, same period comparison.
 Attribution: owned the intake, process, and creative operations redesign that
@@ -69,14 +79,14 @@ while it happened.
 
 ## Mutual of America Financial Group
 
-**Sr. UX Designer**, 2023 to 2025
+**Senior UX Designer**, 2023 to 2025
 Boca Raton, FL
 
 > I led research and scoping for an internally built conversational assistant with
-> two outputs: a Salesforce-integrated helper for customer service and account
-> management, and a customer-facing assistant on the public site. Handling retirement
-> and financial account data meant security, compliance, and accuracy governed every
-> decision.
+> two outputs: a Salesforce-integrated helper for service and account management
+> representatives, built with a service designer, and a public assistant on the main
+> website. Handling retirement and financial account data meant security, compliance,
+> and accuracy governed every decision.
 >
 > I reviewed emerging research on LLM behavior and conversational patterns and
 > partnered with a data scientist on the model and data layer. That research
@@ -122,7 +132,7 @@ data showed.
 
 ## DentalPlans.com
 
-**Sr. Manager of UX & UI Design / Product Manager**, 2015 to 2021
+**Senior Manager of UX & UI Design / Product Manager**, 2015 to 2021
 Plantation, FL
 
 **Figures, single measured year:**
@@ -183,7 +193,7 @@ retired.
 
 ## Bluegreen Vacations
 
-**Sr. Digital Designer**, 2011 to 2015
+**Senior Digital Designer**, 2011 to 2015
 Boca Raton, FL
 
 > I evaluated the digital signage platforms and designed the integration that
@@ -535,6 +545,170 @@ explained.
 when the reference is positive. Internal detail, colleague names, and
 business condition stay barred regardless of employer or era. Confirmed by
 Jacob.
+
+## B18. Health-E team composition [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+**FIND** (match count 1): the two sentences beginning `I joined Health-E
+Commerce` through `...creative operations around them.`
+
+**REPLACE WITH:**
+
+> I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them.
+
+**Register note:** five contractors on creative marketing, one on design
+systems, one on UX. Current contractor count is unknown and must not be
+stated.
+
+## B19. Health-E department split [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Reported before editing, current second paragraph:**
+
+> With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company's first dedicated XD/UX designer.
+
+**FIND** match count 1. **REPLACE WITH:**
+
+> Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. Started the year with one direct report and will finish it with three.
+
+## B20. Health-E Figma governance, new paragraph [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+Appended as a new third paragraph to the Health-E entry, same JSX pattern as
+the others:
+
+> Owned the company Figma account including contract renewal, through a large influx of product and engineering seats. After the split I kept everything outside the creative team, ran a seat and usage audit, and got Figma reclassified as a company-wide tool rather than a department one, moving a standing administrative load off design. Own the tooling and research budget and propose the headcount the function needs.
+
+**Register note:** budget scope is UserTesting, design tooling, and team
+education. "Propose the headcount the function needs" is deliberate. Do not
+later substitute "own headcount planning." That would be an overclaim.
+
+## B21. Mutual of America, service designer credit [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Reported before editing, current scoping sentence:**
+
+> I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for customer service and account management, and a customer-facing assistant on the public site.
+
+**FIND** match count 1. **REPLACE WITH:**
+
+> I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website.
+
+Credit by function only. No name.
+
+## B22. "training corpus" becomes "training warehouse" [SKIPPED — content mismatch, 0 occurrences]
+**Files checked:** `components/sections/ResumeSection.tsx`,
+`docs/copy-register.md`, `lib/data/projects.ts`,
+`docs/case-studies-sanitized.md`
+
+`grep -c "training corpus"` returned **0** in all four files. Per the FAILURE
+POLICY (content mismatch: log the edit ID and actual count, skip, continue),
+no edit was made anywhere. The nearest existing phrases are "training
+documentation" (`ResumeSection.tsx`, Mutual of America paragraph two) and
+"source corpus" (paragraph three) — neither is a literal match for "training
+corpus," so neither was touched.
+
+## B23. One Park Financial, full entry [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Reported before editing, current entry in full:**
+
+> At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.
+>
+> I evangelized the need for a design system, partnering with the SVP of Marketing to secure executive buy-in for the project. This led to the creation of the Hydra Design System, a unified pattern and component library. This empowered the company to design and engineer rapidly and "fail fast," improving business goals and user experience.
+
+**REPLACE WITH (four paragraphs, replacing the prior two):**
+
+> Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.
+>
+> Built the case for a unified pattern library and design system, then shipped it. Product, marketing, and engineering had been describing the same components three different ways. Delivery time halved, with work that had taken two sprints landing in one.
+>
+> The system was complete enough that the product ran for about a year afterward with no design resource, on one engineer and one product manager.
+>
+> Owned design process and set the usability testing practice. Worked with PPC, SEO, and affiliate channels on conversion rate strategy across acquisition funnels.
+
+**REGISTER NOTE, recorded verbatim:** the durability sentence in paragraph
+three must not be edited toward the fuller story. The underlying situation
+involves a company-wide contraction, which the register's own rule bars from
+published copy. The sentence states what the artifact did and nothing about
+anyone's decisions. The fuller account is verbal interview material only.
+
+**Note:** Section A never carried prose for this entry (only title, dates,
+and location) — this predates B23 and is not a regression from it. Not
+backfilled here since it wasn't asked for; flagging so it isn't mistaken for
+an oversight.
+
+## B24. Sr. becomes Senior [APPLIED]
+**Files:** `components/sections/ResumeSection.tsx`,
+`docs/copy-register.md` Section A
+
+**Reported before editing, every occurrence:**
+
+| File | Line | Context |
+|---|---|---|
+| `ResumeSection.tsx` | 76 | `roles: [{ title: 'Sr. UX Designer', ...` |
+| `ResumeSection.tsx` | 94 | `roles: [{ title: 'Sr. Manager of UX & UI Design / Product Manager', ...` |
+| `ResumeSection.tsx` | 102 | `roles: [{ title: 'Sr. Digital Designer', ...` |
+| `copy-register.md` Section A | 72 | `**Sr. UX Designer**, 2023 to 2025` |
+| `copy-register.md` Section A | 125 | `**Sr. Manager of UX & UI Design / Product Manager**, 2015 to 2021` |
+| `copy-register.md` Section A | 186 | `**Sr. Digital Designer**, 2011 to 2015` |
+| `copy-register.md` Section B (B4) | 281 | `> Sr. Manager of UX & UI Design / Product Manager, 2015 to 2021, Plantation, FL` |
+
+All seven are job titles, not proper nouns — nothing skipped on those
+grounds. Applied to the six in `ResumeSection.tsx` and Section A as
+instructed. The seventh, inside B4's historical quote in Section B, was left
+as `Sr.` — the instruction scoped this edit to "Section A," and B4 is a
+dated record of what a past commit actually shipped, not current canonical
+copy.
+
+## B25. Weak ownership verbs and banned constructions [APPLIED — partial]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Searched, reported in full:**
+
+- `contributed to`, `involved in`, `played a key role`, `was pivotal`,
+  `helped`, `supported`, `was part of a team`, `Won executive backing` — **0
+  occurrences each.**
+- `Partnered with` (exact case) — 1 occurrence: `body: 'Partnered with
+  marketing, engineering, and product teams to deliver cohesive brand and
+  product experiences across all touchpoints.'` (leadershipRight bullet).
+  **Confirmed replacement applied** → `Worked with marketing, engineering,
+  and product teams...`
+- `partnered with` (lowercase, mid-sentence) — 1 occurrence, Mutual of
+  America paragraph two: `...conversational patterns and partnered with a
+  data scientist on the model and data layer.` Not a match for the confirmed
+  "Partnered with" → "Worked with" rule as given (different literal string).
+  **Reported, not edited.**
+- `rather than` — 3 occurrences: Health-E paragraph one (`Rather than
+  absorbing more requests...`), Health-E paragraph three / B20's new text
+  (`...reclassified as a company-wide tool rather than a department
+  one...`), Bluegreen paragraph two (`...driven by personas rather than by
+  channel.`). No confirmed replacement given for this phrase. **Reported,
+  not edited.**
+
+Only the two confirmed replacements were applied. Everything else above is
+reported for a future edit with its own wording.
+
+## B26. The 47% mechanism [APPLIED — partial]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Reported, both occurrences:**
+
+1. `leadershipRight` bullet: `Built systems that delivered measurable
+   business outcomes, including 47% of company revenue growth in a single
+   measured year and a 66% reduction in launch time per property.` Bundles
+   47% and 66% together in a one-line bullet card body. The mechanism
+   replacement is three full sentences and never mentions 66% — inserting it
+   here would be awkward and would drop the 66% figure entirely. **SKIPPED**,
+   per the instruction's own awkwardness clause.
+2. DentalPlans paragraph two: `Delivered 47% of company revenue growth, 27%
+   of total lead capture, and 20% of overall revenue in a single measured
+   year.` A bare claim sitting inside a full paragraph with room before and
+   after it. **REPLACE WITH:**
+
+   > Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue.
+
+   **Applied.**
 
 ---
 

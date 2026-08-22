@@ -43,7 +43,7 @@ const leadershipRight = [
   },
   {
     title: 'Collaboration & Alignment',
-    body: 'Partnered with marketing, engineering, and product teams to deliver cohesive brand and product experiences across all touchpoints.',
+    body: 'Worked with marketing, engineering, and product teams to deliver cohesive brand and product experiences across all touchpoints.',
   },
 ]
 
@@ -67,15 +67,16 @@ const experience: ExperienceEntry[] = [
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
     ],
     paragraphs: [
-      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Rather than absorbing more requests, I applied systems thinking and UX research methods to identify the right problems to solve, rebuilding intake, process, and creative operations around them. Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.',
-      'With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company’s first dedicated XD/UX designer.',
+      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them. Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.',
+      'Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. Started the year with one direct report and will finish it with three.',
+      'Owned the company Figma account including contract renewal, through a large influx of product and engineering seats. After the split I kept everything outside the creative team, ran a seat and usage audit, and got Figma reclassified as a company-wide tool rather than a department one, moving a standing administrative load off design. Own the tooling and research budget and propose the headcount the function needs.',
     ],
   },
   {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
-    roles: [{ title: 'Sr. UX Designer', period: '2023 to 2025' }],
+    roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
-      'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for customer service and account management, and a customer-facing assistant on the public site. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
+      'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
       'I reviewed emerging research on LLM behavior and conversational patterns and partnered with a data scientist on the model and data layer. That research identified hallucination risk before it was widely understood. Testing confirmed it: asked for an account balance, the system returned a specific figure and supporting detail. The only compliant answer was to refer the customer to their account manager. I traced the cause to a sample account statement sitting in the training documentation.',
       'I defined the interaction requirements. Conduct came first, since the assistant stood in for the opening minutes of a service conversation. It had to stay courteous, stay useful, and never dead-end a customer. From there: response-time feedback built on the standard anchors, streaming responses, explicit system status and failure states, escalation into a live service channel or the right department, compliance alerting that flagged exposure in what internal users were sending, and account and chat history summaries so the assistant and the agent both opened with context. I specified ingestion quality as well, since the source corpus arrived as mixed PDFs, documents, spreadsheets, presentations, and raster images, and what an assistant knows is settled before any interface question.',
       'A subset of the requirements shipped. I secured tracking on the customer-facing assistant. The data showed early customer engagement followed by rapid dropoff correlated with response speed and friction, and internal adoption that stayed low, with representatives citing accuracy and wait.',
@@ -85,21 +86,23 @@ const experience: ExperienceEntry[] = [
     company: 'One Park Financial, Coconut Grove, FL',
     roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
-      'At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.',
-      'I evangelized the need for a design system, partnering with the SVP of Marketing to secure executive buy-in for the project. This led to the creation of the Hydra Design System, a unified pattern and component library. This empowered the company to design and engineer rapidly and "fail fast," improving business goals and user experience.',
+      'Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.',
+      'Built the case for a unified pattern library and design system, then shipped it. Product, marketing, and engineering had been describing the same components three different ways. Delivery time halved, with work that had taken two sprints landing in one.',
+      'The system was complete enough that the product ran for about a year afterward with no design resource, on one engineer and one product manager.',
+      'Owned design process and set the usability testing practice. Worked with PPC, SEO, and affiliate channels on conversion rate strategy across acquisition funnels.',
     ],
   },
   {
     company: 'DentalPlans.com, Plantation, FL',
-    roles: [{ title: 'Sr. Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
+    roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
       'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
-      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Delivered 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue in a single measured year. The platform was built and owned outright, with nothing licensed beneath it.",
+      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The platform was built and owned outright, with nothing licensed beneath it.",
     ],
   },
   {
     company: 'Bluegreen Vacations, Boca Raton, FL',
-    roles: [{ title: 'Sr. Digital Designer', period: '2011 to 2015' }],
+    roles: [{ title: 'Senior Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
       'I evaluated the digital signage platforms and designed the integration that connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress in the middle as the authoring surface. Learning how each system expected to be fed, then designing a path through all four, was most of the work.',
       "The wider effort built a 360 degree view of the customer across email, landing pages, and account management, driven by personas rather than by channel. Campaigns had to cover 48 resorts across four seasons and several personas at once, so variant content came out of a central asset library and a shared data layer instead of being rebuilt per property. I owned UX and UI and worked with a PHP engineer, a data engineer, an outside consultant, and marketing managers. The integration had to stay usable for a wide range of content creators and designers, not only for the people who built it.",

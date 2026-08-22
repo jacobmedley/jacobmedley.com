@@ -243,16 +243,21 @@ Never guess a replacement anchor.
 
 ---
 
-## B2. Health-E paragraph one [APPLIED], commit c917fe8
+## B2. Health-E paragraph one [APPLIED], commit c917fe8; figures corrected by B17
+
 **File:** `components/sections/ResumeSection.tsx`
 
 **FIND:** the entire sentence beginning `The first year closed with roughly a 70% increase in output`. B0 already altered nearby text, so build the anchor from current file state.
 
-**REPLACE WITH:**
+**REPLACE WITH (original, 2026-07):**
 
 > The systems and process work was put to the test during peak season, the highest revenue period of the year. Demand rose about 70% year over year. We met it with about a 7% increase in contractor headcount, and creative delivery held through the strongest peak in the company&apos;s history.
 
-**Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate.
+**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount — actual headcount rose 16.7% (18 to 21), understating the true number by more than half. See B17 for the full correction, source figures, and caveats. The text now standing in the file is:
+
+> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
+
+**Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Open:** Section A (line ~49-51) still carries the original, now-incorrect figures — B17 did not update it; the site resume and Section A are inconsistent as of this edit.
 
 ## B3. Mutual of America paragraph three [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
@@ -486,6 +491,50 @@ Vendor names are load-bearing and must be spelled exactly: Four Winds
 Interactive, Adobe Scene7 (one word), Aprimo Marketing Studio. See the new rule
 under "Where copy lives" for why they're permitted here despite the no-names
 rule that governs case study content.
+
+## B17. Health-E figures corrected, measurement caveat recorded [APPLIED]
+
+**File:** `components/sections/ResumeSection.tsx`, amending B2.
+
+Two claims in the live B2 text were checked against a source analysis held
+outside the repo (`C:\dev\_private\jacobmedley-source-data\assets-counts` —
+not read for this edit beyond the figures already extracted; it holds
+unscrubbed data including personal names). Both were wrong:
+
+- The "70%" was delivered creative output (assets produced), not demand.
+- The "about a 7% increase in contractor headcount" was actually a 6.6%
+  increase in total production hours. Actual creative headcount rose 16.7%,
+  from 18 to 21 — the 7%/6.6% figure understates the real headcount change by
+  more than half, which is the damaging direction: anyone who checks finds a
+  larger number than the resume claimed.
+
+**MEASUREMENT CAVEAT:**
+
+- Assets: ~1,145 prior peak to ~1,974.5 current, about 72%
+- Creative headcount: 18 to 21, about 16.7%
+- Production hours: 680 to 725, about 6.6%
+- Assets per hour: about 62%, derived
+- Assets per person: about 48%, derived
+
+Some monthly counts were EXTRAPOLATED, not directly counted. These are
+directional year-over-year comparisons, not audited metrics. Never harden
+them into precision they do not have.
+
+Assets per hour is the strongest figure. It is a pure productivity ratio,
+independent of headcount. If only one number survives a future compression,
+keep that one.
+
+Source file holds personal names. None may appear in any deliverable.
+
+**UNRESOLVED:** the register elsewhere describes the Health-E team as seven
+FTE plus seven contractors, fourteen people. That does not reconcile with 18
+to 21 creative headcount in the source. Do not publish both until the gap is
+explained.
+
+**New rule, previously unwritten, answered:** former employers may be named
+when the reference is positive. Internal detail, colleague names, and
+business condition stay barred regardless of employer or era. Confirmed by
+Jacob.
 
 ---
 

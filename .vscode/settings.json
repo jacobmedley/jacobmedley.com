@@ -1,4 +1,13 @@
 {
     "editor.wordWrap": "on",
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "files.watcherExclude": {
+        "**/.next/**": true,
+        "**/out/**": true,
+        "**/node_modules/**": true
+    },
+    "search.exclude": {
+        "**/.next": true,
+        "**/out": true
+    }
 }

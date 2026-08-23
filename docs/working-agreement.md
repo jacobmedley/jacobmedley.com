@@ -199,6 +199,20 @@ instead.
 
 Merging to `main` is always an explicit decision, never a step inside a larger task.
 
+SiteGround runs an edge cache in front of the site. A cache-bypassed fetch or a
+Playwright load reads origin, so both can confirm a deploy that visitors are not
+yet seeing. Verification that only checks origin is incomplete.
+
+After any deploy, check the cache state:
+
+```
+curl -sI https://jacobmedley.com/ | grep -i "x-proxy-cache\|last-modified"
+```
+
+X-Proxy-Cache: HIT with a Last-Modified older than the deploy means visitors are
+on stale content. Purge via Site Tools, Speed, Caching, Dynamic Cache, then
+re-verify and confirm MISS with a matching Last-Modified.
+
 ---
 
 ## 11. Handoff report

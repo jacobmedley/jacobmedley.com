@@ -1,9 +1,10 @@
 # Copy Register
 
-**Status:** edits B0 through B33. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B34. All APPLIED unless marked otherwise.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
-numbering during application; it is not missing content.)
+numbering during application; it is not missing content. B31 is SUPERSEDED —
+see B34 for the correction.)
 
 Single source of truth for every piece of written copy across jacobmedley.com.
 Both the portfolio workstream and the resume workstream reconcile against this file.
@@ -56,7 +57,7 @@ New York, NY (Remote)
 > operations around them. Peak season, the highest revenue period of the year, tested
 > the operating model. Creative output rose about 70% year over year on a 6.6%
 > increase in production hours. Assets per hour went up about 62% and assets per
-> person about 57%. The gain came from rebuilt process and workflow, not proportional
+> person about 48%. The gain came from rebuilt process and workflow, not proportional
 > labor.
 >
 > Once creative operations held, we split the department. A new creative director
@@ -270,9 +271,9 @@ Never guess a replacement anchor.
 
 > The systems and process work was put to the test during peak season, the highest revenue period of the year. Demand rose about 70% year over year. We met it with about a 7% increase in contractor headcount, and creative delivery held through the strongest peak in the company&apos;s history.
 
-**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount. (The headcount change figure cited here at the time, "16.7% (18 to 21)," was itself later found wrong — see B31, which corrects it to +10%, 20 to 22.) See B17 for the full correction, source figures, and caveats, and B31 for the headcount and assets-per-person correction. The text now standing in the file is:
+**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount. (The headcount change figure cited here at the time, "16.7% (18 to 21)," was briefly flagged as wrong by B31 — B31 was itself wrong; see B34, which reverts to the original 16.7%, 18 to 21.) See B17 for the full correction, source figures, and caveats, and B34 for the final headcount and assets-per-person figures. The text now standing in the file is:
 
-> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 57%. The gain came from rebuilt process and workflow, not proportional labor.
+> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
 
 **Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Resolved, 2026-08-22:** verified Section A (lines ~49-51) carries the corrected figures — "Creative output rose about 70% year over year on a 6.6% increase in production hours" — matching the site resume. The open flag was stale; B17's correction did reach Section A.
 
@@ -522,16 +523,16 @@ unscrubbed data including personal names). Both were wrong:
 - The "about a 7% increase in contractor headcount" was actually a 6.6%
   increase in total production hours, not contractor headcount.
 
-**MEASUREMENT CAVEAT — superseded 2026-08-23, see B31.** The headcount and
-assets-per-person figures originally recorded here (creative headcount 18 to
-21, about 16.7%; assets per person about 48%, derived) were themselves wrong.
-B31 corrects both against Jacob's verified source spreadsheets. Assets, hours,
-and assets-per-hour below were already correct and are unchanged:
+**MEASUREMENT CAVEAT — original figures confirmed correct, 2026-08-23 (see
+B34).** B31 (2026-08-23, same day) briefly recorded these as wrong and
+replaced them with figures derived from raw roster-row counts. That was the
+error — see B34. The figures originally recorded here stand:
 
 - Assets: ~1,145 prior peak to ~1,974.5 current, about 72%
+- Creative headcount: 18 to 21 contributing people, about 16.7%
 - Production hours: 680 to 725, about 6.6%
 - Assets per hour: about 62%, derived
-- Creative headcount and assets per person: see B31 for corrected figures.
+- Assets per person: about 48%, derived
 
 Some monthly counts were EXTRAPOLATED, not directly counted. These are
 directional year-over-year comparisons, not audited metrics. Never harden
@@ -543,16 +544,18 @@ keep that one.
 
 Source file holds personal names. None may appear in any deliverable.
 
-**RESOLVED, 2026-08-23 (see B31).** Previously PENDING CONFIRMATION: the
+**RESOLVED, 2026-08-23 (see B34).** Previously PENDING CONFIRMATION: the
 register elsewhere describes the Health-E team as seven FTE plus seven
-contractors, fourteen people, which did not reconcile with the "18 to 21"
-creative headcount figure then recorded here. The 18 to 21 figure was simply
-wrong, not a different population — source tables give 20 (prior peak) and 22
-(current peak). The separate "seven FTE plus seven contractors" figure
-describes Jacob's direct reporting line, which is a subset of everyone who
-logged hours during peak season. Different scopes, not contradictory. Neither
-number contradicts the other and both may stand, though they should not
-appear in the same sentence.
+contractors, fourteen people, which did not, on its face, reconcile with the
+"18 to 21" creative headcount figure then recorded here. Resolution: 18 to 21
+is correct and is not a different population from the wider figure — it is
+the wider figure. (B31 briefly restated this as 20/22 and as a population
+mismatch; both claims in B31 were wrong — see B34.) The separate "seven FTE
+plus seven contractors" figure describes Jacob's direct reporting line, which
+is a subset of the 18-to-21 contributing-people figure for the whole creative
+org during peak season. Different scopes, not contradictory. Neither number
+contradicts the other and both may stand, though they should not appear in
+the same sentence.
 
 **New rule, previously unwritten, answered:** former employers may be named
 when the reference is positive. Internal detail, colleague names, and
@@ -569,12 +572,16 @@ Commerce` through `...creative operations around them.`
 
 > I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them.
 
-**Register note, amended 2026-08-23 to name the scope:** seven contractors on
-Jacob's direct team: five creative marketing, one design systems, one UX.
-This is a subset of the eleven contractors in B31's wider peak-season
-population. Jacob's current team contractor count is unknown and must not be
-stated. The eleven in B31 is a historical peak figure for a wider population
-and is not a current count either.
+**Register note, amended 2026-08-23, then corrected same day (see B34).**
+Seven contractors on Jacob's direct team: five creative marketing, one design
+systems, one UX. This is a subset of the wider creative-org contractor count
+during peak season — but the "eleven contractors" figure this note previously
+cited came from B31's contractor/employee breakdown, which was part of the
+row-count error B34 reverts. B34's corrected figures do not include a
+contractor/employee split, so the wider-population contractor count is
+presently **unverified** and must not be stated as eleven or any other
+number. Jacob's current team contractor count is separately unknown and must
+not be stated either.
 
 ## B19. Health-E department split [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -879,9 +886,19 @@ and it is absent from every surface. Flagged as missing evidence in the resume r
 as well. **This is the largest content gap in the document.** Needs source material
 from Jacob before anything can be written. Do not invent specifics to fill it.
 
-## B31. Health-E headcount and assets-per-person figures corrected [APPLIED]
+## B31. Health-E headcount and assets-per-person figures corrected [SUPERSEDED, see B34]
 **Files:** `components/sections/ResumeSection.tsx`; `docs/copy-register.md`
 Section A; amends B17's MEASUREMENT CAVEAT.
+
+**REVERTED, same day, 2026-08-23. This entire entry was wrong — see B34.**
+The source read behind this edit counted raw rows in the workbook's "Head
+Count and Hours" tab without checking for zero-hour, NULL, or duplicate
+entries: a 2024 row with 0 logged hours, a 2024 NULL row (maternity leave),
+and a 2025 duplicate name were each counted as a person. The correct method
+counts contributing humans, not roster rows, which gives 18 (prior peak) and
+21 (current peak) — restoring B17's original figures exactly. Kept below as a
+historical record, not as current guidance. Do not implement anything from
+this entry.
 
 B17's headcount figure (18 to 21 people, about 16.7%) and the assets-per-person
 figure derived from it (about 48%) were both wrong. Corrected against Jacob's
@@ -912,15 +929,7 @@ excludes a contributor who was out.
 independent of headcount, unaffected by the headcount correction. If only one
 number survives a future compression, keep that one.
 
-**Applied:**
-
-- `ResumeSection.tsx` and Section A of this file (character-for-character
-  match): `assets per person about 48%` → `assets per person about 57%`.
-- B17's MEASUREMENT CAVEAT: superseded, points here.
-- B17's PENDING CONFIRMATION headcount item: resolved here and in B17
-  directly — see B17 for the resolution text.
-
-Source file holds personal names. None may appear in any deliverable.
+**Applied, then reverted same day — see B34.**
 
 ## B33. Design Leadership bullet corrected — one function, not two [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`, `leadershipRight` array.
@@ -950,6 +959,58 @@ seven bullets sharing an opening word. `experience` now appears twice: "Led
 function" (Design Leadership). Both are the same stylistic-tic class as
 `single`/`attached`/`carried`, not the exempted domain-noun class. Flagged for a
 follow-up edit; not blocking this merge per instruction to proceed.
+
+## B34. B31 reverted — headcount and assets-per-person restored to B17's original figures [APPLIED]
+**Files:** `components/sections/ResumeSection.tsx`; `docs/copy-register.md`
+Section A; corrects B31; amends B17's MEASUREMENT CAVEAT and RESOLVED note;
+amends B18's register note.
+
+B31's correction was itself wrong. Jacob identified the error against the
+source workbook (`2025-JIRA-Assets-Count.xlsx`, tab "Head Count and Hours"):
+B31 counted raw roster rows. The correct method counts contributing humans:
+
+```
+2024: 20 rows — Lee logged 0 hours, Kamila NULL for maternity leave
+      = 18 contributing people
+2025: 22 rows — "Meghan" appears twice (duplicate entry)
+      = 21 unique contributing people
+```
+
+**Restored, final figures — these match B17's original numbers exactly:**
+
+```
+Prior peak:   18 contributing people, 680 hours
+Current peak: 21 contributing people, 725 hours
+
+headcount          +16.7%  (18 to 21 — B31's "20 to 22, +10%" was WRONG)
+hours              +6.6%   (correct throughout, never changed)
+assets             ~1,145 to ~1,974.5, +72%
+assets per hour    +62%    (correct throughout, never changed)
+assets per person  +48%    (B31's "+57%" was WRONG, derived from bad headcount)
+```
+
+**Advisor error, recorded per instruction:** the 20-to-22 reading was an
+advisor error — counting workbook rows without checking for zero-hour, NULL,
+or duplicate-name entries. Not a data problem; a counting-method problem. The
+source data itself was fine.
+
+**Applied:**
+
+- `ResumeSection.tsx` and Section A of this file (character-for-character
+  match): `assets per person about 57%` → `assets per person about 48%`.
+- B31: marked SUPERSEDED, kept as historical record, not deleted.
+- B17's MEASUREMENT CAVEAT: restored to original figures, no longer points to
+  B31 as a correction.
+- B17's RESOLVED note: "20 (prior peak) and 22 (current peak)" corrected to
+  18/21; the underlying scope-distinction reasoning (Jacob's direct team vs.
+  the wider creative org) still holds and was not itself wrong.
+- B18's contractor note: the "eleven contractors" figure it cited came from
+  B31's now-reverted contractor/employee breakdown. B34's corrected figures
+  carry no contractor/employee split, so that count is marked unverified, not
+  restated as a number. This is a gap, not a resolved question — do not
+  invent a replacement figure.
+
+Source file holds personal names. None may appear in any deliverable.
 
 ---
 

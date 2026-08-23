@@ -3,47 +3,35 @@ import SectionHeader from '@/components/ui/SectionHeader'
 
 const leadershipLeft = [
   {
-    title: 'Design Leadership',
-    body: 'Directed cross-functional teams to create scalable design systems, ensuring consistency across digital ecosystems and delivering measurable business impact.',
+    title: 'Design Systems',
+    body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
   {
-    title: 'Strategic Vision',
-    body: 'Aligned product and brand design with user needs and business objectives through comprehensive UX roadmaps and prioritized initiatives.',
+    title: 'Accessibility',
+    body: 'An automated auditing pipeline covering structure, landmarks, alt text, ARIA, keyboard operability, and rendered contrast. Per-page review dropped from days to hours, and it runs on a schedule against production.',
   },
   {
-    title: 'Inclusive Design Culture',
-    body: 'Fostered a culture of collaboration and innovation by mentoring designers, promoting accessibility standards (WCAG), and encouraging experimentation.',
+    title: 'Research and Measurement',
+    body: 'Set a usability testing practice at ten participants per round and a HEART-based KPI framework, so design decisions rested on evidence and outcomes had a number to move.',
   },
   {
-    title: 'Conversion Optimization',
-    body: 'Spearheaded conversion rate optimization (CRO) strategies, enhancing user funnels and driving substantial increases in engagement and revenue.',
-  },
-  {
-    title: 'SEO and Content Strategy',
-    body: 'Developed SEO-optimized website structures, blending technical performance with engaging user experiences to boost search rankings and user retention.',
+    title: 'AI Product Design',
+    body: 'Led experience research and scoping for two LLM assistants in a regulated financial environment. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
   },
 ]
 
 const leadershipRight = [
   {
-    title: 'AI-Powered Tools',
-    body: 'Designed and implemented GPT/LLM-based products, including conversational chatbots and intelligent search tools, to improve customer engagement and operational efficiency.',
+    title: 'Conversion and Experimentation',
+    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
   },
   {
-    title: 'Data-Driven Insights',
-    body: 'Applied qualitative and quantitative research to inform design decisions, continuously iterating to exceed user expectations.',
+    title: 'Business Outcomes',
+    body: 'Systems work with numbers attached: 47% of company revenue growth in a single measured year, and a 66% reduction in launch time per property.',
   },
   {
-    title: 'End-to-End Design Process',
-    body: 'Managed all phases of design, from ideation and prototyping to testing and implementation, delivering seamless user experiences across web and mobile platforms.',
-  },
-  {
-    title: 'Business-Centric Design',
-    body: 'Built systems that delivered measurable business outcomes, including 47% of company revenue growth in a single measured year and a 66% reduction in launch time per property.',
-  },
-  {
-    title: 'Collaboration & Alignment',
-    body: 'Worked with marketing, engineering, and product teams to deliver cohesive brand and product experiences across all touchpoints.',
+    title: 'Design Leadership',
+    body: 'Two design functions that did not exist before I got there. I hired into both, defined the practice, and set a review model that ends in decisions instead of opinions.',
   },
 ]
 
@@ -96,8 +84,8 @@ const experience: ExperienceEntry[] = [
     company: 'DentalPlans.com, Plantation, FL',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
-      'I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.',
-      "Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth. Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The platform was built and owned outright, with nothing licensed beneath it.",
+      'The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. Cloning it was the obvious path, so I brought a roadmap instead: token-based theming, scheduled multi-phase promotions, one source of truth for products and providers, and one-button deploys per environment. Launch time for a fully branded property fell from six weeks to two. Five properties ran on it. Two people built and maintained the platform, and four experience designers covered every property on it.',
+      "I led UX, UI, and front-end work across the LAMP stack, including the properties built with product partners. Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The platform was built and owned outright, with nothing licensed beneath it.",
     ],
   },
   {

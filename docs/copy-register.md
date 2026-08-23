@@ -269,7 +269,7 @@ Never guess a replacement anchor.
 
 > Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
 
-**Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Open:** Section A (line ~49-51) still carries the original, now-incorrect figures — B17 did not update it; the site resume and Section A are inconsistent as of this edit.
+**Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Resolved, 2026-08-22:** verified Section A (lines ~49-51) carries the corrected figures — "Creative output rose about 70% year over year on a 6.6% increase in production hours" — matching the site resume. The open flag was stale; B17's correction did reach Section A.
 
 ## B3. Mutual of America paragraph three [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
@@ -538,10 +538,15 @@ keep that one.
 
 Source file holds personal names. None may appear in any deliverable.
 
-**UNRESOLVED:** the register elsewhere describes the Health-E team as seven
-FTE plus seven contractors, fourteen people. That does not reconcile with 18
-to 21 creative headcount in the source. Do not publish both until the gap is
-explained.
+**PENDING CONFIRMATION** (amended 2026-08-22, not resolved): the register
+elsewhere describes the Health-E team as seven FTE plus seven contractors,
+fourteen people. That does not reconcile with 18 to 21 creative headcount in
+the source. Proposed explanation: different populations, not contradictory
+figures. Seven FTE plus seven contractors describes Jacob's own reporting
+line. The 18 to 21 describes everyone who produced an asset during peak
+season, a wider population spanning the creative organization beyond his
+direct reports. This has not been confirmed by Jacob. Neither number may
+publish alongside the other until it is.
 
 **New rule, previously unwritten, answered:** former employers may be named
 when the reference is positive. Internal detail, colleague names, and
@@ -711,6 +716,159 @@ reported for a future edit with its own wording.
    > Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue.
 
    **Applied.**
+
+## B27. DentalPlans paragraph one [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+Pre-audit copy. Two long sentences, no concrete noun, no figure. Banned verbs and
+constructions present: `fostering`, `significantly boosted`, `aligning with product
+design excellence and business growth`.
+
+**FIND** (match count 1):
+
+> I pioneered a design system and code componentization at the company, fostering rapid development and refinement of product features and marketing strategies, crucial for our omnichannel eCommerce platforms. This approach, coupled with DevOps practices and product design for microservices, significantly boosted our testing and iteration capabilities, aligning with product design excellence and business growth.
+
+**REPLACE WITH:**
+
+> The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. Cloning it was the obvious path, so I brought a roadmap instead: token-based theming, scheduled multi-phase promotions, one source of truth for products and providers, and one-button deploys per environment. Launch time for a fully branded property fell from six weeks to two. Five properties ran on it. Two people built and maintained the platform, and four experience designers covered every property on it.
+
+WordPress is named deliberately, per the register's rule that vendor and platform
+names are permitted in employment history. The six-weeks-to-two figure is stated as a
+plain before-and-after rather than as a percentage, since the percentage (66%) already
+lives in the Business Outcomes bullet under B28 — repeating it here would be a third
+appearance of one figure on one page. **Applied.**
+
+## B28. Design Leadership bullets, ten reduced to seven [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`, `leadershipLeft` and
+`leadershipRight` arrays.
+
+Corrects the amendment's assumed field name: the bullets are stored as `title`/`body`
+pairs, not `label`/`body`. Ten bullets shared one construction — label, colon,
+participial phrase, gerund tail — reduced to seven with varied construction.
+
+**Cut, four bullets:** Strategic Vision, End-to-End Design Process, Collaboration &
+Alignment, SEO and Content Strategy. Reasons: unfalsifiable, table stakes at director
+level, superseded (see below), and lack of concrete material, respectively.
+
+**Merged:** Data-Driven Insights folded into the new Research and Measurement bullet.
+
+**Supersedes B25.** B25 changed the Collaboration & Alignment bullet's "Partnered
+with" to "Worked with." B28 cuts that bullet entirely. Intentional, not a regression.
+
+**Final seven**, split 4 (`leadershipLeft`) / 3 (`leadershipRight`) — ten does not
+split evenly into seven, so the column break moves; no other layout change:
+
+1. **Design Systems** — Built token foundations so brand identity became
+   configuration instead of a build. One system carried five ecommerce properties,
+   with one source of truth for products and providers behind all of them.
+2. **Accessibility** — An automated auditing pipeline covering structure, landmarks,
+   alt text, ARIA, keyboard operability, and rendered contrast. Per-page review
+   dropped from days to hours, and it runs on a schedule against production.
+3. **Research and Measurement** — Set a usability testing practice at ten
+   participants per round and a HEART-based KPI framework, so design decisions
+   arrived with evidence attached and outcomes had a number to move.
+4. **AI Product Design** — Led experience research and scoping for two LLM
+   assistants in a regulated financial environment. Wrote the interaction
+   specification: response timing against Nielsen and Doherty anchors, system
+   status, failure states, and escalation paths.
+5. **Conversion and Experimentation** — Ran conversion work as experiments with
+   hypothesis standards and a defined read. Source attribution changed promotion,
+   copy, and messaging by traffic source, down to individual affiliate IDs.
+6. **Business Outcomes** (renamed from Business-Centric Design) — Systems work with
+   numbers attached: 47% of company revenue growth in a single measured year, and a
+   66% reduction in launch time per property. B11's figures and framing preserved
+   exactly; only the wrapper sentence changed.
+7. **Design Leadership** — Two design functions that did not exist before I got
+   there. I hired into both, defined the practice, and set a review model that ends
+   in decisions instead of opinions. **PENDING CONFIRMATION:** the phrase "Two design
+   functions that did not exist before I got there" is applied as written per the
+   amendment, but is not yet confirmed by Jacob. Flag before this branch merges.
+
+Banned-verb sweep confirmed clean across all seven: ensuring, delivering, fostered,
+spearheaded, enhancing, driving, aligned, blending, promoting. No employer names in
+any bullet.
+
+**Word-collision fixes, 2026-08-23.** Two rounds:
+
+1. **"single."** Design Systems as first drafted read "a single source of truth";
+   Business Outcomes reads "a single measured year." Despite the original notes
+   claiming the collision had been avoided, it had not. Resolution: reworded Design
+   Systems only, per Jacob's direction. **FIND:** `with a single source of truth for
+   products and providers behind all of them` → **REPLACE:** `with one source of
+   truth for products and providers behind all of them`. "single measured year" is
+   protected B11 wording and was left exactly as written. "One source of truth"
+   already appears in the new B27 DentalPlans paragraph, so this is consistency with
+   existing copy, not a new construction.
+
+2. **"attached."** A follow-up scan (adjectives only) found a second collision the
+   first pass missed: "evidence attached" (Research and Measurement) and "numbers
+   attached" (Business Outcomes). Resolution: reworded Research and Measurement, per
+   Jacob's direction; Business Outcomes' "numbers attached" is unchanged. **FIND:**
+   `so design decisions arrived with evidence attached and outcomes had a number to
+   move` → **REPLACE:** `so design decisions carried evidence and outcomes had a
+   number to move`. Jacob specifically rejected "behind" as the replacement verb
+   because "behind" already appears in Design Systems ("behind all of them") — that
+   would have traded one collision for another.
+
+3. **"carried."** Introduced by fix 2's own replacement text: "One system **carried**
+   five ecommerce properties" (Design Systems) and "design decisions **carried**
+   evidence" (Research and Measurement). Resolution: reworded Research and
+   Measurement again, not Design Systems — Jacob's call, on the grounds that Design
+   Systems' use of "carried" is the more concrete of the two (a system carrying five
+   live properties) and the replacement text from fix 2 was what introduced the
+   collision, so that's the side that changes. **FIND:** `so design decisions carried
+   evidence and outcomes had a number to move` → **REPLACE:** `so design decisions
+   rested on evidence and outcomes had a number to move`. Confirmed "rested" occurred
+   nowhere else across the seven bullets before applying.
+
+**Full content-word audit, 2026-08-23, final pass** (not just adjectives — every
+content word appearing twice or more across the seven bullets, articles/prepositions/
+conjunctions/copulas excluded; no lead paragraph precedes the bullets, only the
+"Design Leadership" `<h3>`, so the scan covers the seven bullets alone). Re-run after
+the "carried" fix: **no new collision.** `single`, `attached`, and `carried` are each
+now single-occurrence.
+
+**Standing rule, recorded so this isn't re-litigated:** `design`, `research`,
+`systems`/`system`, `review`, `practice`, `decisions`, `outcomes`, `set`, `work`,
+`source`, `two`, and `defined` each appear twice across the seven bullets. Confirmed
+correct as-is, by Jacob. Each is the section's own recurring subject-matter noun
+(design, research, systems, review, decisions, outcomes, practice) naming a genuinely
+different instance in a different bullet, or the same word in a different part of
+speech (`defined`: "a defined read" is adjectival, "defined the practice" is the
+verb). **The word-collision rule targets stylistic tics — a light, low-content word
+doing decorative filler work twice (`single`, `attached`, `carried`) — not domain
+nouns that are the section's actual subject matter and cannot repeat twice without
+contorting the copy.** Do not flag this list again without a new instance to weigh
+against it. `one` (Design Systems: "One system" / "one source of truth") is a
+same-bullet internal repeat, not a cross-bullet collision, and was never in scope.
+
+## B29. Weak phrase in DentalPlans paragraph two [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+Filed separately from B27 so it could be declined without blocking that edit.
+`driving remarkable financial growth` used a banned verb and an unfalsifiable
+adjective, and repeated "design and development" within one sentence.
+
+**FIND** (match count 1):
+
+> Leading UX/UI design and development, especially for projects involving product partners, I managed design and development for LAMP stack projects, driving remarkable financial growth.
+
+**REPLACE WITH:**
+
+> I led UX, UI, and front-end work across the LAMP stack, including the properties built with product partners.
+
+Nothing else in the paragraph changed. **Applied.**
+
+## B30. Open item: mentorship and team development [OPEN]
+**File:** none yet — no surface in the document addresses this.
+
+The old "Inclusive Design Culture" bullet, cut under B28, claimed mentoring. Nothing
+else in the register, the site resume, or `docs/case-studies-sanitized.md` describes
+how Jacob develops people — hiring decisions, growth conversations, review or
+feedback practice, career development. This is half of what a design director does
+and it is absent from every surface. Flagged as missing evidence in the resume review
+as well. **This is the largest content gap in the document.** Needs source material
+from Jacob before anything can be written. Do not invent specifics to fill it.
 
 ---
 

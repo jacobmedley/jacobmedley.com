@@ -96,6 +96,16 @@ The mechanism goes first. The number lands as a consequence rather than an asser
 
 ---
 
+## Row counts are not entity counts
+
+**Row counts are not entity counts.** Before any per-person, per-team, or
+per-unit ratio publishes, confirm the denominator excludes zero-value rows,
+null rows, and duplicate entries. If the numerator's source already excludes
+them, the denominator must too, or the ratio describes a population that does
+not exist.
+
+---
+
 ## Choosing which figure to lead with
 
 When several figures describe the same result, they are not equally durable.

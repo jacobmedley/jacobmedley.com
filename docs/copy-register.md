@@ -56,7 +56,7 @@ New York, NY (Remote)
 > methods to find the right problems, then rebuilt intake, process, and creative
 > operations around them. Peak season, the highest revenue period of the year, tested
 > the operating model. Creative output rose about 70% year over year on a 6.6%
-> increase in production hours. Assets per hour went up about 62% and assets per
+> increase in production hours. Output per hour went up about 62% and output per
 > person about 48%. The gain came from rebuilt process and workflow, not proportional
 > labor.
 >
@@ -273,7 +273,7 @@ Never guess a replacement anchor.
 
 **Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount. (The headcount change figure cited here at the time, "16.7% (18 to 21)," was briefly flagged as wrong by B31 — B31 was itself wrong; see B34, which reverts to the original 16.7%, 18 to 21.) See B17 for the full correction, source figures, and caveats, and B34 for the final headcount and assets-per-person figures. The text now standing in the file is:
 
-> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
+> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Output per hour went up about 62% and output per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
 
 **Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Resolved, 2026-08-22:** verified Section A (lines ~49-51) carries the corrected figures — "Creative output rose about 70% year over year on a 6.6% increase in production hours" — matching the site resume. The open flag was stale; B17's correction did reach Section A.
 
@@ -572,16 +572,17 @@ Commerce` through `...creative operations around them.`
 
 > I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them.
 
-**Register note, amended 2026-08-23, then corrected same day (see B34).**
-Seven contractors on Jacob's direct team: five creative marketing, one design
-systems, one UX. This is a subset of the wider creative-org contractor count
-during peak season — but the "eleven contractors" figure this note previously
-cited came from B31's contractor/employee breakdown, which was part of the
-row-count error B34 reverts. B34's corrected figures do not include a
-contractor/employee split, so the wider-population contractor count is
-presently **unverified** and must not be stated as eleven or any other
-number. Jacob's current team contractor count is separately unknown and must
-not be stated either.
+**Register note, amended 2026-08-23, corrected same day, then re-verified
+same day (see B34).** Seven contractors on Jacob's direct team: five creative
+marketing, one design systems, one UX. This is a subset of the wider
+creative-org contractor count during peak season. The wider-population figure
+went through two states in one day: B31's "eleven contractors, flat both
+years" was wrong (row-count error); this was briefly marked unverified; B34
+has since re-derived it against contributing humans: **11 contractors in
+2024, 10 in 2025** (down one), with employees up four to compensate for the
+larger headcount increase. See B34 for the full breakdown. This wider figure
+is not published anywhere on the site. Jacob's current team contractor count
+is separately unknown and must not be stated either.
 
 ## B19. Health-E department split [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -984,9 +985,9 @@ Current peak: 21 contributing people, 725 hours
 
 headcount          +16.7%  (18 to 21 — B31's "20 to 22, +10%" was WRONG)
 hours              +6.6%   (correct throughout, never changed)
-assets             ~1,145 to ~1,974.5, +72%
-assets per hour    +62%    (correct throughout, never changed)
-assets per person  +48%    (B31's "+57%" was WRONG, derived from bad headcount)
+output             ~1,145 to ~1,974.5, +72%
+output per hour    +62%    (correct throughout, never changed)
+output per person  +48%    (B31's "+57%" was WRONG, derived from bad headcount)
 ```
 
 **Advisor error, recorded per instruction:** the 20-to-22 reading was an
@@ -994,21 +995,62 @@ advisor error — counting workbook rows without checking for zero-hour, NULL,
 or duplicate-name entries. Not a data problem; a counting-method problem. The
 source data itself was fine.
 
+**Noun corrected, 2026-08-23 (same day, follow-up).** Both the resume sentence
+and Section A said "assets per hour" / "assets per person." Corrected to
+"output per hour" / "output per person" in both, character-for-character
+match verified. This table's row labels above are updated to match; earlier
+quotes elsewhere in this register that describe what a past version of the
+file said (B2's superseded text, B17's original caveat) keep "assets" where
+that's what was actually live at the time — not touched retroactively.
+
+**Contractor/employee split, re-derived against contributing humans (not
+published — recorded for reference only):**
+
+```
+2024: 18 contributing — 11 contractors, 7 employees
+2025: 21 contributing — 10 contractors, 11 employees
+```
+
+Contractors went **down** by one; employees went **up** by four. B31's "flat
+at eleven both years" claim was wrong, from the same row-count error as the
+headcount figure. Neither number is published anywhere on the site. Both are
+now correct and available if a future edit needs them — see B18, whose
+contractor note previously marked this figure unverified; that note is
+updated below to point here rather than restate "unverified."
+
+**Open question — do not resolve by picking one side.** Deduplicating the
+repeated 2025 name ("Meghan" appears twice) drops the hours total from 725 to
+685 — exactly one 40-hour row. Two readings are both consistent with part of
+the workbook and neither is consistent with all of it:
+
+- Two different people are both named Meghan, headcount is genuinely 22, and
+  725 hours is correct as summed.
+- One "Meghan" row is a duplicate entry (not two people), headcount is 21,
+  and the hours total should be 685, not 725.
+
+The workbook as read cannot support both "725 hours" and "21 people" at once
+under the contributing-humans method — one of those two numbers is off by
+exactly one 40-hour employee. **Published figures are unaffected either way:**
+725 hours and +6.6% are what the source states outright (not derived from the
+headcount reconciliation), and output-per-hour holds regardless of which
+reading is correct. Flagging for Jacob to confirm with the PM who built the
+tab, not resolving it here.
+
 **Applied:**
 
 - `ResumeSection.tsx` and Section A of this file (character-for-character
-  match): `assets per person about 57%` → `assets per person about 48%`.
+  match): `assets per person about 57%` → `assets per person about 48%`, then
+  same-day: `assets per hour` / `assets per person` → `output per hour` /
+  `output per person`.
 - B31: marked SUPERSEDED, kept as historical record, not deleted.
 - B17's MEASUREMENT CAVEAT: restored to original figures, no longer points to
   B31 as a correction.
 - B17's RESOLVED note: "20 (prior peak) and 22 (current peak)" corrected to
   18/21; the underlying scope-distinction reasoning (Jacob's direct team vs.
   the wider creative org) still holds and was not itself wrong.
-- B18's contractor note: the "eleven contractors" figure it cited came from
-  B31's now-reverted contractor/employee breakdown. B34's corrected figures
-  carry no contractor/employee split, so that count is marked unverified, not
-  restated as a number. This is a gap, not a resolved question — do not
-  invent a replacement figure.
+- B18's contractor note: updated to point here for the re-derived, verified
+  (but unpublished) contractor/employee split, instead of stating the figure
+  is unverified.
 
 Source file holds personal names. None may appear in any deliverable.
 

@@ -31,7 +31,7 @@ const leadershipRight = [
   },
   {
     title: 'Design Leadership',
-    body: 'Two design functions that did not exist before I got there. I hired into both, defined the practice, and set a review model that ends in decisions instead of opinions.',
+    body: 'Built an experience design function where none existed and hired into it. Set a review model that ends in decisions instead of opinions.',
   },
 ]
 

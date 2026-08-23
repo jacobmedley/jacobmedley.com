@@ -564,9 +564,12 @@ Commerce` through `...creative operations around them.`
 
 > I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them.
 
-**Register note:** five contractors on creative marketing, one on design
-systems, one on UX. Current contractor count is unknown and must not be
-stated.
+**Register note, amended 2026-08-23 to name the scope:** seven contractors on
+Jacob's direct team: five creative marketing, one design systems, one UX.
+This is a subset of the eleven contractors in B31's wider peak-season
+population. Jacob's current team contractor count is unknown and must not be
+stated. The eleven in B31 is a historical peak figure for a wider population
+and is not a current count either.
 
 ## B19. Health-E department split [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -913,6 +916,35 @@ number survives a future compression, keep that one.
   directly — see B17 for the resolution text.
 
 Source file holds personal names. None may appear in any deliverable.
+
+## B33. Design Leadership bullet corrected — one function, not two [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`, `leadershipRight` array.
+
+B28's Design Leadership bullet ("Two design functions that did not exist before I
+got there...") was applied with a pending-confirmation flag. Jacob confirmed only
+one design function was built from nothing: at DentalPlans, UX, visual design, and
+brand already existed; the design system and ecommerce framework did not. "Two
+design functions" overclaimed.
+
+**FIND** (match count 1):
+
+> Two design functions that did not exist before I got there. I hired into both, defined the practice, and set a review model that ends in decisions instead of opinions.
+
+**REPLACE WITH:**
+
+> Built an experience design function where none existed and hired into it. Set a review model that ends in decisions instead of opinions.
+
+**Note:** this was specified in an earlier prompt that did not run — found still on the
+old text when checked 2026-08-23, applied then.
+
+**New content-word collisions introduced by this wording, found on re-sweep and not
+yet resolved:** `built` now opens both the Design Systems bullet ("Built token
+foundations...") and this one ("Built an experience design function..."), two of
+seven bullets sharing an opening word. `experience` now appears twice: "Led
+**experience** research" (AI Product Design) and "Built an **experience** design
+function" (Design Leadership). Both are the same stylistic-tic class as
+`single`/`attached`/`carried`, not the exempted domain-noun class. Flagged for a
+follow-up edit; not blocking this merge per instruction to proceed.
 
 ---
 

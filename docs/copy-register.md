@@ -51,7 +51,7 @@ New York, NY (Remote)
 > operations around them. Peak season, the highest revenue period of the year, tested
 > the operating model. Creative output rose about 70% year over year on a 6.6%
 > increase in production hours. Assets per hour went up about 62% and assets per
-> person about 48%. The gain came from rebuilt process and workflow, not proportional
+> person about 57%. The gain came from rebuilt process and workflow, not proportional
 > labor.
 >
 > Once creative operations held, we split the department. A new creative director
@@ -265,9 +265,9 @@ Never guess a replacement anchor.
 
 > The systems and process work was put to the test during peak season, the highest revenue period of the year. Demand rose about 70% year over year. We met it with about a 7% increase in contractor headcount, and creative delivery held through the strongest peak in the company&apos;s history.
 
-**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount — actual headcount rose 16.7% (18 to 21), understating the true number by more than half. See B17 for the full correction, source figures, and caveats. The text now standing in the file is:
+**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount. (The headcount change figure cited here at the time, "16.7% (18 to 21)," was itself later found wrong — see B31, which corrects it to +10%, 20 to 22.) See B17 for the full correction, source figures, and caveats, and B31 for the headcount and assets-per-person correction. The text now standing in the file is:
 
-> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
+> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Assets per hour went up about 62% and assets per person about 57%. The gain came from rebuilt process and workflow, not proportional labor.
 
 **Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Resolved, 2026-08-22:** verified Section A (lines ~49-51) carries the corrected figures — "Creative output rose about 70% year over year on a 6.6% increase in production hours" — matching the site resume. The open flag was stale; B17's correction did reach Section A.
 
@@ -515,18 +515,18 @@ unscrubbed data including personal names). Both were wrong:
 
 - The "70%" was delivered creative output (assets produced), not demand.
 - The "about a 7% increase in contractor headcount" was actually a 6.6%
-  increase in total production hours. Actual creative headcount rose 16.7%,
-  from 18 to 21 — the 7%/6.6% figure understates the real headcount change by
-  more than half, which is the damaging direction: anyone who checks finds a
-  larger number than the resume claimed.
+  increase in total production hours, not contractor headcount.
 
-**MEASUREMENT CAVEAT:**
+**MEASUREMENT CAVEAT — superseded 2026-08-23, see B31.** The headcount and
+assets-per-person figures originally recorded here (creative headcount 18 to
+21, about 16.7%; assets per person about 48%, derived) were themselves wrong.
+B31 corrects both against Jacob's verified source spreadsheets. Assets, hours,
+and assets-per-hour below were already correct and are unchanged:
 
 - Assets: ~1,145 prior peak to ~1,974.5 current, about 72%
-- Creative headcount: 18 to 21, about 16.7%
 - Production hours: 680 to 725, about 6.6%
 - Assets per hour: about 62%, derived
-- Assets per person: about 48%, derived
+- Creative headcount and assets per person: see B31 for corrected figures.
 
 Some monthly counts were EXTRAPOLATED, not directly counted. These are
 directional year-over-year comparisons, not audited metrics. Never harden
@@ -538,15 +538,16 @@ keep that one.
 
 Source file holds personal names. None may appear in any deliverable.
 
-**PENDING CONFIRMATION** (amended 2026-08-22, not resolved): the register
-elsewhere describes the Health-E team as seven FTE plus seven contractors,
-fourteen people. That does not reconcile with 18 to 21 creative headcount in
-the source. Proposed explanation: different populations, not contradictory
-figures. Seven FTE plus seven contractors describes Jacob's own reporting
-line. The 18 to 21 describes everyone who produced an asset during peak
-season, a wider population spanning the creative organization beyond his
-direct reports. This has not been confirmed by Jacob. Neither number may
-publish alongside the other until it is.
+**RESOLVED, 2026-08-23 (see B31).** Previously PENDING CONFIRMATION: the
+register elsewhere describes the Health-E team as seven FTE plus seven
+contractors, fourteen people, which did not reconcile with the "18 to 21"
+creative headcount figure then recorded here. The 18 to 21 figure was simply
+wrong, not a different population — source tables give 20 (prior peak) and 22
+(current peak). The separate "seven FTE plus seven contractors" figure
+describes Jacob's direct reporting line, which is a subset of everyone who
+logged hours during peak season. Different scopes, not contradictory. Neither
+number contradicts the other and both may stand, though they should not
+appear in the same sentence.
 
 **New rule, previously unwritten, answered:** former employers may be named
 when the reference is positive. Internal detail, colleague names, and
@@ -869,6 +870,49 @@ feedback practice, career development. This is half of what a design director do
 and it is absent from every surface. Flagged as missing evidence in the resume review
 as well. **This is the largest content gap in the document.** Needs source material
 from Jacob before anything can be written. Do not invent specifics to fill it.
+
+## B31. Health-E headcount and assets-per-person figures corrected [APPLIED]
+**Files:** `components/sections/ResumeSection.tsx`; `docs/copy-register.md`
+Section A; amends B17's MEASUREMENT CAVEAT.
+
+B17's headcount figure (18 to 21 people, about 16.7%) and the assets-per-person
+figure derived from it (about 48%) were both wrong. Corrected against Jacob's
+verified source spreadsheets, authoritative over the prior figures:
+
+```
+Prior peak:   20 people, 680 hours, 11 contractors,  9 employees
+Current peak: 22 people, 725 hours, 11 contractors, 11 employees
+
+headcount          +10%    (earlier 18 to 21 / +16.7% was WRONG)
+hours              +6.6%   (correct, unchanged)
+assets    ~1,145 to ~1,974.5, +72%
+assets per hour    +62%    (correct, unchanged)
+assets per person  +57%    (earlier 48% was WRONG, derived from bad headcount)
+```
+
+Both rows reconcile exactly to their stated hour totals.
+
+**Contractor count was flat at eleven, both years.** The two added people
+between prior and current peak were both employees. No framing may credit
+contractor growth for any part of the increase.
+
+**One prior-year row shows NULL hours, maternity leave.** That is why 680 is
+the correct prior-peak hour total rather than an understated one — it already
+excludes a contributor who was out.
+
+**Assets per hour remains the strongest figure.** A pure productivity ratio,
+independent of headcount, unaffected by the headcount correction. If only one
+number survives a future compression, keep that one.
+
+**Applied:**
+
+- `ResumeSection.tsx` and Section A of this file (character-for-character
+  match): `assets per person about 48%` → `assets per person about 57%`.
+- B17's MEASUREMENT CAVEAT: superseded, points here.
+- B17's PENDING CONFIRMATION headcount item: resolved here and in B17
+  directly — see B17 for the resolution text.
+
+Source file holds personal names. None may appear in any deliverable.
 
 ---
 

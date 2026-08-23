@@ -1,5 +1,10 @@
 # Copy Register
 
+**Status:** edits B0 through B33. All APPLIED unless marked otherwise.
+Advisors read this before proposing. If a proposal already exists as an
+APPLIED edit, report that rather than resending. (B32 was skipped in
+numbering during application; it is not missing content.)
+
 Single source of truth for every piece of written copy across jacobmedley.com.
 Both the portfolio workstream and the resume workstream reconcile against this file.
 

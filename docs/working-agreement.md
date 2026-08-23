@@ -229,3 +229,99 @@ Every session ends by reporting:
 
 State what was requested, what passed, what failed, what was improved beyond the
 request, and what remains unverified. Keep those separate.
+
+---
+
+## 12. Advisors author prose. They do not author implementation.
+
+Every factual error that reached a live page in this project came from an
+advisor asserting something about repository state it could not read.
+
+The record, one session:
+
+- Proposed tag values absent from the type union. Twice.
+- Claimed a file "already references dental procedures." It contained zero.
+- Ran an adjective audit that missed a collision. Three times.
+- Re-sent amendments already applied and marked APPLIED.
+- Produced two derived figures from a headcount that was wrong.
+- Reported a live production bug inferred from a framework pattern, never read
+  the lines. The code was correct.
+- Counted a type declaration as a data entry and reported the wrong item count.
+- Built FIND anchors from the register instead of the file. Twice.
+
+None were caught by care. Every one was caught by someone opening a file.
+
+### What an advisor produces
+
+Prose. Arguments. Structure. Voice corrections. Reasoning about what should be
+said and why.
+
+### What an advisor never produces
+
+FIND strings or replacement anchors. Line numbers. File paths. Tag values,
+weights, or any other enum. Status flags. Commit hashes. Counts of anything in
+a file.
+
+Any claim about what a file currently contains. If an advisor needs to
+reference existing copy, it quotes what it was handed and says where the quote
+came from.
+
+### Deliverable format for advisors
+
+Advisors do not supply FIND anchors. They supply:
+
+  LOCATE: a prose description of the text to change, e.g. "the sentence in the
+          DentalPlans entry beginning 'I pioneered a design system'"
+  REPLACE WITH: the new text, verbatim
+
+Whoever holds file access builds the anchor by reading the file. Register text
+goes stale as earlier edits move it, so an anchor authored from the register is
+authored against a file that may no longer exist in that form.
+
+This supersedes any earlier instruction asking an advisor for exact FIND
+strings. That instruction was the error, and it produced at least one anchor
+mismatch.
+
+### Cheap status check
+
+`docs/copy-register.md` carries a status header. An advisor reads it before
+proposing anything. If a proposal already exists as a numbered edit marked
+APPLIED, the advisor reports that instead of resending.
+
+---
+
+## 13. If there is smoke there is fire
+
+A defect is evidence of a class of defect. It is almost never the only
+instance.
+
+The record, same session. Each left-hand item was reported as a single problem:
+
+| Found | The class actually held |
+|---|---|
+| One named colleague in published copy | Two more |
+| One repeated word in a bullet set | Two more |
+| One em dash | Eleven across two files |
+| One wrong figure in a bullet | The same figure wrong in a metric label |
+| One wrong number in the register | A second number derived from it |
+
+Five for five. Not once was an instance isolated.
+
+### The rule
+
+When a defect is found, the next action is a sweep of its class. Not a fix of
+the instance. The fix comes after the sweep and covers everything it found.
+
+### Sweeping properly
+
+Scope the sweep to the defect type, not the wording that surfaced it. A rule
+against repeated adjectives fails on repeated nouns and participles, so the
+sweep checks every content word.
+
+Report every instance at once. Serial reporting costs a round trip each and
+makes the total invisible.
+
+Search the whole class of file, not the file where it was noticed.
+
+State the sweep result explicitly, including when it comes back empty.
+"Checked the class, found only this one" is a finding. Silence is not.

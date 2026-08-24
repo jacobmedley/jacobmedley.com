@@ -116,7 +116,7 @@ best-in-class, thought leader, strategic vision, transformative, curated, meticu
 
 ## Jacob's own lines, available for reuse
 
-- There is always a better way. (correct ending, no second clause)
+- There is always a better way, together we can find it. **This is the full slogan and the second clause is not optional.** An earlier rule recorded the single-clause form as correct. That was wrong. The comma splice is deliberate and characteristic.
 - You create velocity by making the work smaller. **Capped at two appearances across all
   case studies.** Twice reads as a through-line. Three times reads as a tic. Currently
   spoken for by the accessibility study and the platform study.
@@ -149,3 +149,28 @@ and should.
 
 **Cover letters and outreach.** Front-load the verdict. The domain-bounded hedging is an
 asset here, since it reads as calibration rather than uncertainty.
+
+---
+
+### Naming rule, RESOLVED
+
+Former employers may be named when the reference is positive. Internal
+detail, colleague names, and business condition stay barred regardless of
+employer or era. Employment history always names employers. Case studies
+name them only when the reference is positive and nothing barred rides
+along.
+
+Confirmed by Jacob, Aug 22. Recorded in copy-register as B17. Not open.
+
+Note: `docs/case-studies-sanitized.md` currently anonymizes every study.
+Under this rule some could name their employer. Available, not required. No
+change scheduled.
+
+### Rules about Jacob's own vocabulary need provenance
+
+Two rules in the original voice file overwrote his words with conventional
+terms and carried no source: one cut half his signature line, one replaced
+"warehouse" with "corpus." Both were advisor judgment presented as rule.
+
+Any rule constraining his own vocabulary records who decided it and when, or
+it does not bind.

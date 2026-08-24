@@ -28,6 +28,21 @@ are not headcount. Revenue is not sales. Sessions are not users.
 never measured. A reader asking "70% more what" got an answer the document could not
 give.
 
+### 1a. Is the denominator the same population as the numerator?
+
+Row counts are not entity counts. Before any per-person, per-team, or per-unit ratio
+publishes, confirm the denominator excludes zero-value rows, null rows, and duplicate
+entries. If the numerator's source already excludes them, the denominator must too, or
+the ratio describes a population that does not exist.
+
+*Failure case, twice.* A peak-season table held 20 rows one year and 22 the next. One
+row logged zero hours, one was null for maternity leave, and one name appeared twice.
+The hours total already excluded the first two. Contributing headcount was 18 and 21,
+not 20 and 22, and the per-person figure moved by nine points when that was caught.
+
+The ratio built on hours was unaffected through both corrections, because hours and
+output came from the same source and the same people.
+
 ### 2. Share or change?
 
 A percentage is one of two completely different claims and they are routinely confused.
@@ -93,16 +108,6 @@ IDs. In one measured year finance credited the properties with 47% of company re
 growth."
 
 The mechanism goes first. The number lands as a consequence rather than an assertion.
-
----
-
-## Row counts are not entity counts
-
-**Row counts are not entity counts.** Before any per-person, per-team, or
-per-unit ratio publishes, confirm the denominator excludes zero-value rows,
-null rows, and duplicate entries. If the numerator's source already excludes
-them, the denominator must too, or the ratio describes a population that does
-not exist.
 
 ---
 

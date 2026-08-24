@@ -115,6 +115,20 @@ Voice governance lives in three files, all of which apply to every draft:
 - `docs/voice-and-tone.md`: register, personality, the moves, reusable lines
 - `docs/data-reporting.md`: how every figure is framed and checked
 
+### Naming rule, RESOLVED
+
+Former employers may be named when the reference is positive. Internal
+detail, colleague names, and business condition stay barred regardless of
+employer or era. Employment history always names employers. Case studies
+name them only when the reference is positive and nothing barred rides
+along.
+
+Confirmed by Jacob, Aug 22. Recorded in copy-register as B17. Not open.
+
+Note: `docs/case-studies-sanitized.md` currently anonymizes every study.
+Under this rule some could name their employer. Available, not required. No
+change scheduled.
+
 ---
 
 ## 6. Ports
@@ -287,6 +301,11 @@ mismatch.
 `docs/copy-register.md` carries a status header. An advisor reads it before
 proposing anything. If a proposal already exists as a numbered edit marked
 APPLIED, the advisor reports that instead of resending.
+
+### A figure needs a source and a method
+
+A figure applies when it arrives with a source and a method. A figure with
+neither is a claim, not data, and does not publish.
 
 ---
 

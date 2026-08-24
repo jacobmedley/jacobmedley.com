@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B35. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B36. All APPLIED unless marked otherwise.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -1082,6 +1082,64 @@ claimed in the title.
 | IC postings | Principal Product Designer |
 
 Site hero previously read "UX/UI Designer & Digital Strategist."
+
+## B36. Page title and meta description brought onto the title standard [APPLIED]
+**File:** `app/layout.tsx`
+
+B35 changed the hero. It did not change the page `<title>` or meta
+`description`, which live in `app/layout.tsx`, outside `components/` and
+`lib/` — so they still read the retired title after B35 shipped. Caught by
+live-site verification after B35's deploy, not by B35's own sweep.
+
+**LOCATE:** `app/layout.tsx` line 6, the metadata title.
+
+**Before:** `title: 'Jacob Medley — UX/UI Designer & Digital Strategist',`
+
+**After:** `title: 'Jacob Medley, Product Design Leader',`
+
+The em dash in the old value is gone with this change — comma instead.
+
+**LOCATE:** `app/layout.tsx` line 8, the meta description.
+
+**Before:** `'Portfolio of Jacob Medley, a UX/UI Designer & Digital Strategist driving business results through design systems, platform thinking, and research.',`
+
+**After:** `'Portfolio of Jacob Medley, a Product Design Leader driving business results through design systems, platform thinking, and research.',`
+
+Only the phrase "a UX/UI Designer & Digital Strategist" changed to "a Product
+Design Leader." Rest of the sentence untouched.
+
+**Re-swept, properly scoped this time — `app/`, `components/`, `lib/`,
+`public/`, `docs/`.** "UX/UI Designer," "Digital Strategist," "Digital
+Strategy": zero hits in `app/`, `components/`, `lib/`, `public/` after this
+fix. Remaining hits are all in `docs/`:
+
+- `copy-register.md` (this file, B35's own FIND quote, heading, and
+  reasoning prose, plus this entry) — audit-trail, naming the retired value
+  to record or correct it. Expected, not live copy.
+- `docs/ideas.md` — the hero-title-cycle idea (status IDEA, not scheduled,
+  no branch) opens with "Current hero subtitle: 'UX/UI Designer & Digital
+  Strategist'" and its proposed animation sequence includes "Digital
+  Strategist" as one cycled frame. Neither is audit-trail (it's a forward
+  proposal, not a record of a past value) nor live copy (nothing is
+  implemented). Both are now stale against the current hero and against this
+  entry's title standard, which retires "Digital Strategist" from headers
+  entirely. Flagged, not edited — the idea needs reconciling with the title
+  standard before anyone builds it, whichever hero title is live then.
+
+**Em-dash sweep, `app/`, `components/`, `lib/`, `public/`, excluding code
+comments.** Every em dash found in those paths is inside a `//`, `/* */`, or
+JSX `{/* */}` comment (`app/globals.css`, `components/nav/NavMain.tsx`,
+`components/sections/FullStackSection.tsx`,
+`components/sections/HeroSection.tsx`, `components/ui/CaseStudyModal.tsx`,
+`lib/data/projects.ts`, plus the one now-removed from `app/layout.tsx`'s
+title). **Zero in rendered strings.** The em dash B36 just removed from the
+page title is exactly the kind of gap this sweep was checking for — B0's
+original em-dash sweep evidently had the same scope gap B35's did.
+
+**Scope note, recorded so it isn't relitigated:** B35's sweep covered
+`components/` and `lib/` only, which missed `app/layout.tsx`. Future sweeps
+for retired copy or banned constructs cover `app/`, `components/`, `lib/`,
+and `public/` at minimum — not just `components/` and `lib/`.
 
 ---
 

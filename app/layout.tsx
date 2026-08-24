@@ -3,9 +3,9 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Jacob Medley — UX/UI Designer & Digital Strategist',
+  title: 'Jacob Medley, Product Design Leader',
   description:
-    'Portfolio of Jacob Medley, a UX/UI Designer & Digital Strategist driving business results through design systems, platform thinking, and research.',
+    'Portfolio of Jacob Medley, a Product Design Leader driving business results through design systems, platform thinking, and research.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

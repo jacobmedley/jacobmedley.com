@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B34. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B35. All APPLIED unless marked otherwise.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -1053,6 +1053,35 @@ tab, not resolving it here.
   is unverified.
 
 Source file holds personal names. None may appear in any deliverable.
+
+## B35. Hero title standard set; "Digital Strategist" retired [APPLIED]
+**File:** `components/sections/HeroSection.tsx`
+
+**FIND** (match count 1):
+
+> UX/UI Designer &amp; Digital Strategist
+
+**REPLACE WITH:**
+
+> Product Design Leader
+
+Reason: the hero undersold the page beneath it. The work shown on the site is
+product surface, not marketing craft, and "Digital Strategist" pointed at
+work the page doesn't demonstrate.
+
+**TITLE STANDARD.** "Product Design" is the constant across every surface.
+The seniority word varies by application target. "Digital Strategist" is
+retired from all headers; strategy is demonstrated in the bullets, not
+claimed in the title.
+
+| Surface | Title |
+|---|---|
+| Site hero and resume master | Product Design Leader |
+| Director postings | Director of Product Design |
+| Head of Design postings | Head of Design |
+| IC postings | Principal Product Designer |
+
+Site hero previously read "UX/UI Designer & Digital Strategist."
 
 ---
 

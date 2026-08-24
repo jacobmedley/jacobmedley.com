@@ -20,7 +20,7 @@ export default function HeroSection() {
                 <span className="sm:hidden">Hi,</span>
                 <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
               </h1>
-              <h2 className="display-2 text-prime">UX/UI Designer &amp; Digital Strategist</h2>
+              <h2 className="display-2 text-prime">Product Design Leader</h2>
 
               <div className="py-3 w-1/4 mx-auto">
                 <hr className="solid-center" />

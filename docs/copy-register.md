@@ -18,6 +18,40 @@ is now a pointer to these three; load all three, not just the pointer.)
 
 ---
 
+## Surface alignment
+
+Four surfaces carry the same claims. A correction that lands on one and not
+the register will drift.
+
+| Surface | Owner | Status |
+|---|---|---|
+| Site | this repo, main | current at 5388c1c |
+| Word master | resume workstream | v1r6 pending |
+| Designed PDF | resume workstream | rebuild after v1r6 |
+| LinkedIn | Jacob, manual | UNMANAGED, not in register |
+
+Canonical figures, verified against 2025-JIRA-Assets-Count.xlsx:
+  assets +72%, hours +6.6%, output per hour +62%,
+  output per person +48%, contributing people 18 to 21
+
+Round the set from one source at one time. A 70% numerator against ratios
+derived from 72.4% makes the arithmetic fail a check a reader will perform.
+
+Title standard: "Product Design" is constant. Seniority varies by target.
+Site hero and resume master read "Product Design Leader."
+
+Assistant wording: one internally built assistant, two deployments. Never
+"two assistants."
+
+LINKEDIN IS OUT OF ALIGNMENT. Known violations as of this entry: a colleague
+named and quoted in a pre-2011 entry, and an internal codename on the One
+Park entry. Both banned without exception. Empty About section. Health-E and
+Mutual of America entries have no descriptions. Three older entries carry
+pre-audit copy with banned verbs. Six title strings diverge from Section A.
+No figures appear anywhere on the profile.
+
+---
+
 ## Where copy lives
 
 | Surface | Canonical location | Implemented in |

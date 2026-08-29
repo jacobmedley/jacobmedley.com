@@ -16,7 +16,7 @@ const leadershipLeft = [
   },
   {
     title: 'AI Product Design',
-    body: 'Led experience research and scoping for two LLM assistants in a regulated financial environment. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
+    body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
   },
 ]
 
@@ -55,8 +55,8 @@ const experience: ExperienceEntry[] = [
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
     ],
     paragraphs: [
-      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them. Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Output per hour went up about 62% and output per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.',
-      'Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. Started the year with one direct report and will finish it with three.',
+      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them. Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 72% year over year on a 6.6% increase in production hours. Output per hour went up about 62% and output per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.',
+      'Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. The function grew from one direct report to two full-time designers and a contractor.',
       'Owned the company Figma account including contract renewal, through a large influx of product and engineering seats. After the split I kept everything outside the creative team, ran a seat and usage audit, and got Figma reclassified as a company-wide tool rather than a department one, moving a standing administrative load off design. Own the tooling and research budget and propose the headcount the function needs.',
     ],
   },

@@ -55,7 +55,7 @@ New York, NY (Remote)
 > Rather than absorbing more requests, I applied systems thinking and UX research
 > methods to find the right problems, then rebuilt intake, process, and creative
 > operations around them. Peak season, the highest revenue period of the year, tested
-> the operating model. Creative output rose about 70% year over year on a 6.6%
+> the operating model. Creative output rose about 72% year over year on a 6.6%
 > increase in production hours. Output per hour went up about 62% and output per
 > person about 48%. The gain came from rebuilt process and workflow, not proportional
 > labor.
@@ -63,8 +63,8 @@ New York, NY (Remote)
 > Once creative operations held, we split the department. A new creative director
 > took the creative team and I took everything else, moving full time to the
 > experience design side, a function that had not existed. I defined the practice and
-> the role, then hired the first XD designer into it. Started the year with one
-> direct report and will finish it with three.
+> the role, then hired the first XD designer into it. The function grew from one
+> direct report to two full-time designers and a contractor.
 >
 > Owned the company Figma account including contract renewal, through a large influx
 > of product and engineering seats. After the split I kept everything outside the
@@ -137,6 +137,11 @@ data showed.
    services employer's product behavior. The hallucination finding in paragraph two
    already carries the accuracy problem with a documented root cause. Raise the
    conduct issue verbally if asked.
+
+**ASSISTANT WORDING STANDARD.** One internally built conversational assistant
+with two deployments. Never "two assistants," never "two LLM assistants."
+Correct: "an internally built conversational assistant with two outputs."
+Confirmed by Jacob. Applies to every surface including LinkedIn.
 
 ## DentalPlans.com
 
@@ -223,6 +228,30 @@ Boca Raton, FL
 48 resorts, four seasons, and multiple personas are structural facts about the
 scope of the integration, not performance metrics, and must not be read or
 rephrased as one.
+
+## Education
+
+**EDUCATION.** Lives in `components/sections/EducationSection.tsx`, not
+`ResumeSection.tsx`. Now reads "Associate of Science, Digital Media. Full Sail
+University, Winter Park, FL, 2002." Previously "Degree in Digital Design" with
+no level and no year, which a resume screen flags. Jacob confirmed the full
+credential publishes; no suppression. UX degrees did not exist at the
+associate level in 2002, so Digital Media was the correct available path.
+
+## Concurrency
+
+**CONCURRENCY NOTE.** The 72% rounding fix, the future-tense fix, the
+data-reporting rounding rule, the assistant wording standard, and the
+`EducationSection.tsx` degree-level fix were all found already applied in the
+working tree but uncommitted, meaning a parallel session edited the same
+tree. Two separate parallel edits were found mid-task: the first set
+(Health-E figures, future tense, rounding rule, wording standard) was already
+in place when this task began; the second (`EducationSection.tsx`) appeared
+between one read of the tree and the next within this same session. Correct
+work, no conflict, but uncommitted edits are invisible to every other session
+and to the live site, and a second edit landing between two reads inside one
+session is the strongest evidence yet for the .tree-lock rule in
+`working-agreement.md` Section 2.
 
 ---
 

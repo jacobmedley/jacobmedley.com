@@ -4,8 +4,8 @@ import { SITE_VERSION, SITE_ITERATION } from '@/lib/version'
 const educationItems = [
   {
     icon: 'fa-light fa-graduation-cap',
-    title: 'Degree in Digital Design',
-    source: 'Full Sail University, Winter Park, Florida',
+    title: 'Associate of Science, Digital Media',
+    source: 'Full Sail University, Winter Park, FL, 2002',
     url: 'https://www.fullsail.edu/',
   },
   {

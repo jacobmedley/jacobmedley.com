@@ -160,6 +160,17 @@ and it reads better than an invented one survives.
 
 ---
 
+## Rounding
+
+**Round a figure set from one source at one time.** When a headline figure
+and its derived ratios publish together, a reader will check the arithmetic.
+Rounding one input independently can make the whole set fail that check. The
+peak-season set published a 70% numerator against ratios derived from 72.4%,
+which meant the numbers were correct and could not be reconciled. Correct and
+indefensible is worse than approximate and consistent.
+
+---
+
 ## Where canonical values live
 
 This file holds the rules. `docs/copy-register.md` holds the values. When a figure's

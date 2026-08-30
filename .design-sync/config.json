@@ -1,0 +1,26 @@
+{
+  "projectId": "8a3ad63c-3efe-492d-a932-97dbe999c4a4",
+  "shape": "package",
+  "pkg": "jacobmedley-com",
+  "globalName": "JacobMedleyDS",
+  "entry": "./dist/index.js",
+  "buildCmd": "npm run build && node .design-sync/prepare-css.mjs",
+  "cssEntry": ".design-sync/.cache/compiled-globals.css",
+  "tsconfig": "tsconfig.json",
+  "guidelinesGlob": [],
+  "extraFonts": [".design-sync/fonts/manrope-latin.css"],
+  "runtimeFontPrefixes": ["urw-form"],
+  "readmeHeader": ".design-sync/conventions.md",
+  "componentSrcMap": {
+    "WorkCard": null,
+    "WaveSeparator": null,
+    "SectionHeader": null,
+    "CaseStudyModal": null,
+    "ResumeSection": null,
+    "HeroSection": null,
+    "FullStackSection": null,
+    "EducationSection": null,
+    "CaseStudiesSection": null,
+    "NavMain": null
+  }
+}

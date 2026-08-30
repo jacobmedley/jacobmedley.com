@@ -36,3 +36,12 @@ tsconfig.tsbuildinfo
 
 # Multi-session working-agreement lock file (machine-local, not committed)
 .tree-lock
+
+# design-sync: staged converter scripts + isolated deps, build output, and
+# machine-local sync state (durable state lives in .design-sync/config.json,
+# NOTES.md, previews/, overrides/ — those ARE committed)
+/.ds-sync
+/ds-bundle
+/.design-sync/.cache
+/.design-sync/learnings
+/.design-sync/node_modules

@@ -1,0 +1,23 @@
+/*
+ * Manrope, Latin subset only, weights 400 + 700 — matches the site's
+ * --font-weight-normal / --font-weight-bold tokens. Sourced from
+ * @fontsource/manrope (SIL Open Font License 1.1, freely redistributable).
+ * Used as cfg.extraFonts for the design-sync tokens-only bundle — this repo
+ * never self-hosts Manrope itself (it's a fallback behind the Adobe Fonts
+ * "urw-form" family, which loads only in a real browser via a <script>/<link>
+ * this bundle can't ship — see NOTES.md).
+ */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./manrope-latin-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./manrope-latin-700.woff2') format('woff2');
+}

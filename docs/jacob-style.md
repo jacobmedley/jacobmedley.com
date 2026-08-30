@@ -38,6 +38,17 @@ hypothesis and traffic, I owned the variant and the read."
 **No repeated adjective inside a single piece.** If a word has done its job once, find
 another.
 
+The repetition rule targets decorative words doing the same job twice, like
+the single/attached/carried chain. It does not apply to:
+- subject-matter nouns the section cannot avoid (customer, design, system)
+- facts that recur because they are the same fact (five properties and five
+  businesses are the same five)
+- single common words separated by enough distinct text that no reader hears
+  an echo
+
+A rule that forces a design resume to avoid the word "customer" has let the
+rule win over the writing.
+
 **No PII, no internal codenames, no ticket IDs** in any content type.
 
 **Spelling of proper nouns is load-bearing.** Getting a vendor or company name wrong in
@@ -146,6 +157,22 @@ accurate and sounded like everyone else.
 
 Jacob's vocabulary survives by default. If a word looks unusual, check whether it is
 wrong before assuming it is.
+
+---
+
+### Compression failure
+
+A claim compressed past the point where the person who did the work can
+recognize it has been compressed too far. If Jacob cannot identify his own
+accomplishment in a line, a hiring manager cannot interrogate it either.
+
+Distinct from fabrication. The claim is true and traceable; the compression
+destroyed the mechanism that made it meaningful. Surfaced when a six-word
+version of a documented design review practice was unrecognizable to its
+author.
+
+Test: read the line back to the person who did the work. If they ask what it
+refers to, expand it or cut it.
 
 ---
 

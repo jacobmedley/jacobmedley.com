@@ -117,9 +117,8 @@ best-in-class, thought leader, strategic vision, transformative, curated, meticu
 ## Jacob's own lines, available for reuse
 
 - There is always a better way, together we can find it. **This is the full slogan and the second clause is not optional.** An earlier rule recorded the single-clause form as correct. That was wrong. The comma splice is deliberate and characteristic.
-- You create velocity by making the work smaller. **Capped at two appearances across all
-  case studies.** Twice reads as a through-line. Three times reads as a tic. Currently
-  spoken for by the accessibility study and the platform study.
+- You create velocity by making the work smaller. **No longer capped at two appearances,
+  see "Making the work smaller is a thesis, not a capped line" below.**
 - Everything is designed, everything.
 - Good UX is transparent. You only notice the bad UX.
 - If the car does not start, it does not matter how great the engine is.
@@ -174,3 +173,17 @@ terms and carried no source: one cut half his signature line, one replaced
 
 Any rule constraining his own vocabulary records who decided it and when, or
 it does not bind.
+
+### Making the work smaller is a thesis, not a capped line
+
+Previously capped at two appearances to prevent a stylistic tic. The cap is
+lifted. The idea surfaced independently in three separate pieces of work,
+written months apart, across three employers. That is a through-line, not
+repetition for effect.
+
+The idea may appear wherever it is earned. Vary the exact phrasing.
+
+Recorded because a rule that suppresses a genuine through-line is doing the
+opposite of its job. This is the third rule in this file written without
+provenance that turned out to constrain Jacob's own voice, after the slogan
+truncation and "corpus" over "warehouse."

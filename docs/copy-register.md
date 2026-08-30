@@ -287,6 +287,20 @@ and to the live site, and a second edit landing between two reads inside one
 session is the strongest evidence yet for the .tree-lock rule in
 `working-agreement.md` Section 2.
 
+## LinkedIn scope
+
+**LINKEDIN SCOPE, RESOLVED.** Entries before 2015 are out of scope and stay as
+written. Nobody evaluates a 2008 role on prose quality. Do not re-flag them.
+
+**HYDRA IS A PERMITTED PROPER NOUN.** Hydra was the official name of the design
+system, not an internal codename, so the codename ban in jacob-style.md does
+not apply. A named design system is an artifact and an insider noun, which
+the style file explicitly protects. It stays on LinkedIn, the site, and in
+case studies.
+
+Both were flagged as violations and both flags were wrong. Recorded so a
+sweep does not rediscover them.
+
 ---
 
 # Section B: Implementable edits
@@ -1203,6 +1217,35 @@ original em-dash sweep evidently had the same scope gap B35's did.
 `components/` and `lib/` only, which missed `app/layout.tsx`. Future sweeps
 for retired copy or banned constructs cover `app/`, `components/`, `lib/`,
 and `public/` at minimum — not just `components/` and `lib/`.
+
+## B37. Design Leadership bullet replaced; Design Practice bullet never existed [APPLIED]
+**File:** `components/sections/ResumeSection.tsx`
+
+**Design Practice bullet: not found, match count 0.** A prompt asked to
+remove a leadership bullet titled "Design Practice" (design reviews, rules of
+engagement, routing outcomes to owners). No such bullet exists in this file
+or in this register's history. It was never added, so the set was already
+seven bullets before this edit. Nothing removed, nothing to reconcile.
+
+**Design Leadership bullet: replaced, match count 1.** The prior body ("Built
+an experience design function where none existed and hired into it. Set a
+review model that ends in decisions instead of opinions.") is replaced with:
+
+> Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.
+
+Deliberately the longest bullet in the set. This also closes both B33 flags:
+the bullet no longer opens with "Built" (resolving the opener collision with
+Design Systems) and no longer uses "experience" as a modifier (resolving the
+collision with AI Product Design).
+
+**Four content-word collisions surfaced, left as-is by Jacob's direction:**
+`built` (Design Systems / Design Leadership), `customer`/`customers` (AI
+Product Design / Design Leadership), `one` (Design Systems / Design
+Leadership), `five` (Design Systems / Design Leadership). See
+`jacob-style.md`'s repetition-rule scope note for why: subject-matter nouns
+the section cannot avoid, the same fact recurring as the same fact, and
+single common words spaced apart enough that no reader hears an echo are all
+outside the rule's target.
 
 ---
 

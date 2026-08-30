@@ -31,7 +31,7 @@ const leadershipRight = [
   },
   {
     title: 'Design Leadership',
-    body: 'Built an experience design function where none existed and hired into it. Set a review model that ends in decisions instead of opinions.',
+    body: 'Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.',
   },
 ]
 

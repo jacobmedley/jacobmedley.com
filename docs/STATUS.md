@@ -10,7 +10,7 @@ If a fact would still be true in three months, it belongs there, not here.
 |---|---|---|
 | Site | main, see git log | site chat |
 | Word master | v1r8 | resume workstream |
-| Designed PDF | see resume workstream | resume workstream |
+| Designed PDF | v2r3 | resume workstream |
 | LinkedIn | unmanaged, out of scope | Jacob |
 
 ## Open
@@ -22,6 +22,9 @@ Carried on feat/recruiter-portfolio, unmerged:
   - fix "Two assistants came out of the same build" per the assistant
     wording standard
   - thumbnails, layout issues
+  - Note: docs/case-studies-sanitized.md on feat/ai-assistant-case-study still
+    reads "Two assistants came out of the same build." Both resume surfaces are
+    already fixed. That branch is the last place it survives.
 
 Carried on feat/ai-assistant-case-study, unmerged:
   - Jacob's wireframes, notes, and spec-versus-shipped content

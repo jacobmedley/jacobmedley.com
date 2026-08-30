@@ -358,3 +358,27 @@ Search the whole class of file, not the file where it was noticed.
 
 State the sweep result explicitly, including when it comes back empty.
 "Checked the class, found only this one" is a finding. Silence is not.
+
+---
+
+## 14. Model routing
+
+Match effort to blast radius. Most work is Sonnet Medium.
+
+| Model | Use for |
+|---|---|
+| Qwen, local | sweeps, greps, inventories. Mechanical, verifiable by inspection, no judgment. |
+| Code Sonnet Medium | single-file LOCATE and REPLACE, verification runs, commits. The default. |
+| Code Sonnet High | multi-file edits, rebases, anything with conflict risk |
+| Code Opus High | merges to main, deploys, and any prompt that could ship a factual error to a live page |
+| Chat Sonnet | status checks, routine advisory where nothing is contested |
+| Opus | anchor construction against files it can read, factual claims, defect-class judgment |
+
+Recalibrated against real work: the Health-E figure corrections should have
+been Opus High, since they shipped a wrong number live. The portfolio rebase
+should have been Sonnet High. Doc cleanup and register housekeeping were
+correctly Sonnet Medium.
+
+Also: .tree-lock in Section 2 has never been used. Two parallel sessions
+edited this tree mid-task on Aug 29 and it happened to be harmless. Claim
+the lock before writing.

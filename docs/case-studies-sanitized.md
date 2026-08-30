@@ -307,32 +307,6 @@ Everything is designed, everything. Including whether your next page is easy or 
 
 ---
 
-## Reviews That End in Decisions
-
-**Skim:** Design review operating model. Rules of engagement, critique-with-solution format, routed ticket outcomes. Reviews produce decisions instead of open threads.
-
-Design reviews were opinion sessions.
-
-Feedback arrived as taste. I do not like the button. No owner attached, no decision reached, no record kept. A review without a decision is just a very elaborate way to move an argument to next Tuesday.
-
-**The model**
-
-Rules of engagement defining what feedback is in bounds and what is not.
-
-A point-of-view-plus-proposed-solution format. Critique arrives with a recommendation attached or it does not arrive. That single constraint forces reviewers past preference and into reasoning, and the quality of feedback changed immediately once people had to finish the thought.
-
-Structured ticket comments with corrected owner routing, so every review output lands with the person accountable for it rather than dissolving into a thread.
-
-**Effect**
-
-Reviews end with decisions and routed actions. Settled things stay settled because they are written down and traceable.
-
-The model is documented, so the next designer inherits a working practice instead of absorbing tribal habits by osmosis.
-
-The model turned an improvement into furniture. It stayed in the room.
-
----
-
 ## Estimates That Excluded the Work
 
 **Skim:** Cross-functional prioritization workshop. Timeline math corrected on the record. Unestimated work named as the structural gap. Agreed system authored by the CMO.

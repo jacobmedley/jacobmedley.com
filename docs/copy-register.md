@@ -301,6 +301,10 @@ case studies.
 Both were flagged as violations and both flags were wrong. Recorded so a
 sweep does not rediscover them.
 
+**WORD MASTER DIVERGES BY DESIGN.** The DOCX is single-column with no
+leadership bullets. The site and designed PDF carry seven. All Word-version
+content lives in the employment entries. Structural difference, not drift.
+
 ---
 
 # Section B: Implementable edits
@@ -1280,6 +1284,43 @@ product, colleague, or date. Thesis line, verbatim:
 `['Design Systems', 'Strategy']`, weight `standard`.
 
 Three details from the delivered draft were cut before publishing, see Section E.
+
+**REVIEWS THAT END IN DECISIONS, REMOVED.** The practice was Jacob's. He set
+rules of engagement, required critique to arrive with a proposed solution,
+and routed outcomes to owners. It worked, then eroded once he stopped
+enforcing it against pushback. Removed by choice rather than for accuracy.
+Not a fabrication and not a compression failure. Do not restore it without
+asking.
+
+Removed from `docs/case-studies-sanitized.md`, Part Two: Core Craft (was
+between "Tokens Before Surface Area" and "Estimates That Excluded the
+Work"). Sanitized study count: 16 before removal (7 Part One, 9 Part Two),
+15 after (7 Part One, 8 Part Two) — this file's own header ("Fifteen case
+studies... eight on core craft") was already stated as if the removal had
+happened; it now matches the actual count for the first time.
+
+Also exists on `feat/recruiter-portfolio`, `lib/data/portfolio-studies.ts`,
+slug `reviews-that-end-in-decisions` (confirmed via `git show`, branch not
+checked out). **That branch needs the same removal** — not done here, since
+this task's scope was `main` only.
+
+No reference to it in `lib/data/projects.ts`. One other sanitized study
+references the underlying practice without naming this study: "Building the
+Function That Was Not There" (the closing study, Part Two) lists "A review
+operating model with rules and routing" among what got built. Left as-is —
+reporting only, not in scope to edit here.
+
+**B28's sourcing note: not found.** This task asked to mark superseded a
+note in B28 citing this study as the source for the review-model claim in
+the old Design Leadership bullet. No such citation exists — B28 (below) and
+B33 both introduce the "review model that ends in decisions instead of
+opinions" phrasing directly in their own bullet text, without citing
+`case-studies-sanitized.md` or this study by name anywhere. Reporting the
+mismatch rather than fabricating a citation to supersede. What IS accurate:
+the claim itself is superseded, twice over — B33 already replaced it once,
+and this session's Design Leadership rewrite (B37) replaced it again, so no
+live copy anywhere still carries the "review model" phrasing this study
+would have sourced.
 
 ## Response-time specification, canonical
 

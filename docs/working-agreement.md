@@ -244,6 +244,20 @@ Every session ends by reporting:
 State what was requested, what passed, what failed, what was improved beyond the
 request, and what remains unverified. Keep those separate.
 
+### Read first, write last
+
+Every session opens by reading docs/STATUS.md and closes by updating it. A
+session that starts with current state does not ask what version anything is
+on. One that ends by writing state does not leave rulings stranded in a
+transcript.
+
+Handoffs are file writes to a known path, not prose pasted between chats.
+A handoff says what changed, what is open, and who owns it. Reasoning goes
+in the register, once.
+
+Every re-raised decision in this project was made in conversation and
+written nowhere, or written somewhere nobody re-read.
+
 ---
 
 ## 12. Advisors author prose. They do not author implementation.

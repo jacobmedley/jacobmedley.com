@@ -7,10 +7,6 @@ const leadershipLeft = [
     body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
   {
-    title: 'Accessibility',
-    body: 'An automated auditing pipeline covering structure, landmarks, alt text, ARIA, keyboard operability, and rendered contrast. Per-page review dropped from days to hours, and it runs on a schedule against production.',
-  },
-  {
     title: 'Research and Measurement',
     body: 'Set a usability testing practice at ten participants per round and a HEART-based KPI framework, so design decisions rested on evidence and outcomes had a number to move.',
   },

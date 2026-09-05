@@ -862,6 +862,8 @@ split evenly into seven, so the column break moves; no other layout change:
 2. **Accessibility** — An automated auditing pipeline covering structure, landmarks,
    alt text, ARIA, keyboard operability, and rendered contrast. Per-page review
    dropped from days to hours, and it runs on a schedule against production.
+   **[RETIRED 2026-09-05 — bullet deleted, do not reimplement. See ACCESSIBILITY
+   CLAIM, RETIRED in Section D. The wording above is audit trail only.]**
 3. **Research and Measurement** — Set a usability testing practice at ten
    participants per round and a HEART-based KPI framework, so design decisions
    arrived with evidence attached and outcomes had a number to move.
@@ -1299,6 +1301,12 @@ Work"). Sanitized study count: 16 before removal (7 Part One, 9 Part Two),
 studies... eight on core craft") was already stated as if the removal had
 happened; it now matches the actual count for the first time.
 
+**Count superseded 2026-09-05:** the accessibility study removal (below) took
+Part One from 7 to 6, so the current sanitized count is **14 (6 Part One, 8
+Part Two)** and the header now reads "Fourteen case studies. Six where AI
+carries the work, eight on core craft." The 15/16 figures above are the state
+as of the reviews removal, kept as audit trail.
+
 Also exists on `feat/recruiter-portfolio`, `lib/data/portfolio-studies.ts`,
 slug `reviews-that-end-in-decisions` (confirmed via `git show`, branch not
 checked out). **That branch needs the same removal** — not done here, since
@@ -1321,6 +1329,59 @@ the claim itself is superseded, twice over — B33 already replaced it once,
 and this session's Design Leadership rewrite (B37) replaced it again, so no
 live copy anywhere still carries the "review model" phrasing this study
 would have sourced.
+
+**ACCESSIBILITY CLAIM, RETIRED 2026-09-05.** Never reuse in any wording:
+
+> "Built an automated accessibility auditing pipeline"
+> "runs on a schedule against production"
+> "runs on a schedule against the live site"
+> "a two-person function can now flag critical issues before launch"
+> "per-page review dropped from days to hours"
+> "automated auditing for structure, landmarks, alt text, ARIA, keyboard
+> operability, motion guards, and rendered contrast"
+> "Vendor line item replaced by owned capability"
+
+What is true: Jacob devised a process letting a non-technical person run a
+script against an unpublished page before launch, catching work nothing else
+was catching. Full automation is in progress. He dropped the claim entirely
+as weak beside the rest of his record, and removed the case study built on it
+rather than rewrite it.
+
+"Per-page review dropped from days to hours" is a recollection, confirmed by
+Jacob 2026-09-05. Under `data-reporting.md` question 5 it cannot publish as a
+figure on any surface in any wording.
+
+Still allowed: accessibility and WCAG as a competency. No pipeline, no
+automation, no schedule.
+
+Ruling: `The-Hunt/rules/canonical-figures.md`, "Health-E Commerce, the ADA
+scan: DROPPED".
+
+**BUY THE AUDIT OR BUILD THE MACHINE, REMOVED.** The case study built on the
+retired claim. Removed entirely rather than rewritten, per Jacob's ruling
+2026-09-05. Removed from `docs/case-studies-sanitized.md`, Part One: AI as
+Working Capacity (was the first study in that part, immediately before "Four
+Documents, One Checkout, Zero Agreement"). Sanitized study count: 15 before
+removal (7 Part One, 8 Part Two), **14 after (6 Part One, 8 Part Two)**; this
+file's own header was updated in the same commit to read "Fourteen case
+studies. Six where AI carries the work, eight on core craft."
+
+The matching resume card was deleted from `components/sections/ResumeSection.tsx`,
+`leadershipLeft` (title `'Accessibility'`). Leadership cards: 7 before, 6 after
+(3 left, 3 right). The `'Accessibility Standards (WCAG)'` skills chip stays —
+competency, not capability claim.
+
+Also exists on `feat/recruiter-portfolio`, `lib/data/portfolio-studies.ts`,
+`title: 'Buy the Audit or Build the Machine'` (confirmed via `git show`, branch
+not checked out). **That branch needs the same removal** — not done here, since
+this task's scope was `main` only. No reference to it in `lib/data/projects.ts`.
+No other sanitized study references it or its claims.
+
+Also carried on `feat/ai-assistant-case-study`, `docs/case-studies-sanitized.md`,
+where the study sits at line 78 and that branch's header still reads "Seventeen
+case studies. Eight where AI carries the work, nine on core craft" (confirmed via
+`git show`, branch not checked out). **That branch needs the same removal and a
+header correction** when it merges. Neither branch was edited by this task.
 
 ## Response-time specification, canonical
 
@@ -1374,6 +1435,10 @@ Reason: the original opens by denying something the reader wants to be true, whi
 gives them a reason to stop reading at the period. Appears in exactly two case
 studies, accessibility and DentalPlans, which sit in different parts of the document.
 It must not appear in a third. Twice is a through-line. Three times is a tic.
+
+**Updated 2026-09-05:** the accessibility case study was removed, so the line now
+appears in exactly one study, DentalPlans. It may appear in a second. It must not
+appear in a third.
 
 ---
 

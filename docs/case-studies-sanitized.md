@@ -3,49 +3,11 @@
 **Status:** Cleared for public site and gated portfolio
 **Rule set:** No PII. No company specifics. No identifiable dates. No named individuals. No internal codenames.
 
-Fifteen case studies. Seven where AI carries the work, eight on core craft. Use whole, or pull sections.
+Fourteen case studies. Six where AI carries the work, eight on core craft. Use whole, or pull sections.
 
 ---
 
 # Part One: AI as Working Capacity
-
----
-
-## Buy the Audit or Build the Machine
-
-**Skim:** Automated accessibility auditing. Days per page down to hours. Vendor line item replaced by owned capability. Now runs on a schedule.
-
-Two people. Seven workstreams. A health commerce platform about to push condition-specific landing pages live, and accessibility sitting in our lap. Accessibility can sit quietly on a backlog right up until it introduces itself through counsel.
-
-Two ways to handle it, both rough. Audit by hand and burn days per page, with results that shift depending on who ran them. Hire a vendor, pay full freight, wait weeks, and by the time the report lands the page has already moved.
-
-Neither one survives a team of two. So I stopped asking how to audit the page. The better question was how to make auditing so cheap we would never skip it.
-
-**What I built**
-
-A static analysis pipeline that reads saved page HTML and checks what actually breaks for people. Document structure. Landmark regions. Heading order. Alt text coverage. ARIA. Keyboard operability. Motion guards. Contrast ratios pulled from what renders in the browser, not what the design file promised.
-
-I let AI chew through the mechanical portion and kept the pieces where being confidently wrong would matter. I put AI on the work whose primary requirement was refusing to become bored. I checked every finding against the standard, ranked severity, and turned raw output into work an engineer could pick up without a translation meeting.
-
-Fourteen findings came back on the first pass, sorted into four tiers. Keyboard access on interactive elements. Missing semantic headings. Alt text gaps. Motion with no off switch.
-
-**The finding under the findings**
-
-Components held up. Color system held up. Almost every failure clustered in the layer where non-engineers assemble pages.
-
-That changes what you fix. Nobody needs to rebuild a component library, and nobody needs another manual review gate slowing down teams that are already stretched. Those approaches inspect the wreckage. I wanted to close the door the defects were walking through.
-
-Good people were shipping bad markup because the software was perfectly content to let them. Nothing in the publishing flow objected. That was the defect.
-
-The publishing path needed teeth. Give it enough rules to refuse the failures we already know how to detect.
-
-**What it changed**
-
-Findings went out as ticket groups split by owner, content, front end, design, each carrying severity and evidence. Triage time dropped to near zero. Fixes landed before launch instead of after a complaint.
-
-Because it is code and not a one-time effort, the next page cost nothing. Then the one after that. Now it runs on a schedule against the live site, so drift gets caught while it is still small.
-
-Tactically, days became hours. Strategically, two people picked up a practice we had no headcount to hire for. That is the real answer to covering seven workstreams with two heads. You create velocity by making the work smaller.
 
 ---
 

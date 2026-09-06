@@ -584,27 +584,38 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 .img-fluid { max-width: 100%; height: auto; }
 
+.section-heading-icon { margin: 0; line-height: 1; }
+.section-heading-icon i { font-size: clamp(3rem, 6vw, 4rem); font-weight: 100; }
+.section-heading-title { margin-top: -.35rem; font-size: clamp(2.25rem, 4.2vw, 3rem); line-height: 1.15; font-weight: 500; }
+
 .thinking-thumb {
   width: 100%;
-  height: 180px;
+  height: 240px;
   border-radius: 2rem;
   margin: 0 0 20px 0;
   color: #424952;
   border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
   background: #fff;
 }
 .thinking-thumb:hover {
   transform: scale(1.02);
-  background: #6c757d;
-  color: #fff;
 }
-/* image-variant thumb backgrounds are data-driven (Project.thumb → inline style) */
-
-.thinking-title { margin: 15px 0 0 0; }
-.thinking-view { margin-top: 12px; margin-bottom: 0; }
-.thinking-icon { font-size: 48px; }
+.thinking-media { flex: 1; min-height: 0; width: 100%; }
+.thinking-media-image { background-position: center; background-size: cover; }
+.thinking-media-icon { display: grid; place-items: center; background: linear-gradient(135deg, #fff 0%, #f1e8cb 100%); }
+.thinking-icon { font-size: 58px; color: #7f640a; }
+.thinking-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 14px 17px; border-top: 1px solid rgba(127, 100, 10, .2); background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(12px) saturate(130%); backdrop-filter: blur(12px) saturate(130%); color: #424952; }
+.thinking-title { margin: 0; font-size: .95rem; line-height: 1.25; }
+.thinking-view { margin: 0; flex: 0 0 auto; font-size: .82rem; }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .thinking-panel { background: #fff; }
+}
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */
 .modal {

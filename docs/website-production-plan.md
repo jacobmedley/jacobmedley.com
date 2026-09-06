@@ -6,7 +6,8 @@ Approved by Jacob on September 6, 2026. This repository copy is the website work
 
 - Recovery checkpoint: `b8aac95d`, tagged `checkpoint/portfolio-before-brand-wave-20260906`.
 - Wave 1 implementation: committed at `3868955`; final responsive and interaction acceptance is in progress.
-- Waves 2–4: approved as staged work and not yet accepted or published.
+- Wave 2: implemented and visually checked at 375 and 1440px; see `docs/wave-2-visual-checkpoint.md`.
+- Waves 3–4: approved as staged work and not yet accepted or published.
 - Publication and remote push: not authorized.
 - Claims and resume terminology: use only current repository sources and located resume masters. Missing sources remain blockers, never invitations to infer.
 
@@ -148,5 +149,4 @@ At inspection: Plus, 54% of the five-hour Codex window remaining, resetting Sept
 Approve the full hybrid sequence and the conflict resolutions above, with the 60k planning target / 75k estimated review ceiling and zero extra spending. Approval authorizes staged local website implementation and verification; it does not authorize publication. Resolve the laptop SSH problem before counting on laptop capacity; the desktop route and source checks are working now.
 
 References: [routing policy and portable chat prompt](../model-routing-policy.md), [OpenAI model guidance](https://developers.openai.com/api/docs/guides/latest-model), [requested thin circle-arrow-down](https://fontawesome.com/icons/classic/thin/circle-arrow-down). The external-link and chevron reference pages did not return readable content during this check; verify glyph availability through the installed kit during implementation.
-
 

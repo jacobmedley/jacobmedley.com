@@ -46,31 +46,23 @@ export default function FullStackSection() {
               <div key={project.id} className="col thinking-item">
                 <button
                   type="button"
-                  className={cn(
-                    'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
-                    project.thumb && 'text-white'
-                  )}
-                  style={
-                    project.thumb
-                      ? { background: `url(${project.thumb.src})`, backgroundSize: 'cover' }
-                      : undefined
-                  }
+                  className="btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]"
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
-                  {!project.thumb && (
-                    <i
-                      className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon z-2 relative`}
-                      aria-hidden="true"
-                    />
-                  )}
-                  <h6 className="thinking-title z-2 relative">{project.title}</h6>
-                  <div className="thinking-view action-label z-2 relative">
-                    View <i className="fa-thin fa-arrow-right" aria-hidden="true" />
+                  <div
+                    className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')}
+                    style={project.thumb ? { backgroundImage: `url(${project.thumb.src})` } : undefined}
+                    aria-hidden="true"
+                  >
+                    {!project.thumb && <i className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon`} />}
                   </div>
-                  {project.thumb && (
-                    <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />
-                  )}
+                  <div className="thinking-panel">
+                    <h6 className="thinking-title">{project.title}</h6>
+                    <span className="thinking-view action-label">
+                      View <i className="fa-thin fa-arrow-right" aria-hidden="true" />
+                    </span>
+                  </div>
                 </button>
               </div>
             ))}

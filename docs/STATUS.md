@@ -8,7 +8,9 @@ Work continues on `work/portfolio-brand-wave-20260906` in
 First-wave source changes and browser acceptance pass. The continuation lives on
 `codex/portfolio-brand-wave-continuation-20260906` in the assigned Codex worktree.
 See [the focused handoff](brand-wave-handoff.md), [the owning production plan](website-production-plan.md),
-and [Wave 1 acceptance evidence](wave-1-browser-acceptance.md). No publication.
+[Wave 1 acceptance evidence](wave-1-browser-acceptance.md), and the
+[Wave 2 visual checkpoint](wave-2-visual-checkpoint.md). Wave 2 card/rule treatments
+are implemented locally. No publication.
 The original checkout and its existing ownership marker were preserved.
 
 Volatile state. Read this first, write it last.

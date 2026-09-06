@@ -44,12 +44,7 @@
 .cs-hero-aside { padding-bottom: 4px; }
 .cs-hero-aside p { max-width: 370px; font-size: 17px; line-height: 1.65; color: var(--cs-muted); }
 .cs-hero-aside .cs-text-link { margin-top: 24px; }
-.cs-color-signature { display: flex; gap: 5px; margin-top: 27px; }
-.cs-color-signature i { width: 31px; height: 4px; background: var(--color-prime-light); }
-.cs-color-signature i:nth-child(2) { background: var(--color-second-light); }
-.cs-color-signature i:nth-child(3) { background: var(--color-third-light); }
-.cs-color-signature i:nth-child(4) { background: var(--color-pop-light); }
-.cs-color-signature i:nth-child(5) { background: var(--color-fourth-light); }
+.cs-hero-rule { width: min(190px, 60%); margin: 27px 0 0; border: 0; border-top: 1px solid; border-image: linear-gradient(to right, var(--cs-line), transparent) 1; }
 .cs-featured-label { display: flex; justify-content: space-between; align-items: center; padding-block: 0 15px; color: var(--cs-muted); }
 .cs-featured-label > span:last-child { font-size: 11px; }
 .cs-featured { display: grid; grid-template-columns: 1.38fr 1fr; border: 1px solid #d4cbd9; border-radius: 12px; overflow: hidden; background: #f0eaf2; }
@@ -78,23 +73,25 @@
 .cs-theme-gold { --cs-accent: #635315; --cs-tint: #f0e8cf; --cs-art-line: #cfc094; }
 .cs-theme-slate { --cs-accent: #3f5066; --cs-tint: #e1e7ee; --cs-art-line: #b5c2d0; }
 .cs-theme-rose { --cs-accent: #6c3636; --cs-tint: #eee0df; --cs-art-line: #d1afad; }
-.cs-study-card { display: flex; flex-direction: column; min-width: 0; }
-.cs-card-art { position: relative; display: flex; align-items: center; justify-content: center; background: var(--cs-tint); border: 1px solid var(--cs-art-line); border-radius: 9px; padding: 30px 36px 48px; aspect-ratio: 1.5; min-height: 430px; color: var(--cs-accent); overflow: hidden; transition: border-color 180ms ease; }
+.cs-study-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--cs-art-line); border-radius: 10px; background: #fffdfa; transition: box-shadow 180ms ease, transform 180ms ease; }
+.cs-study-card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(48, 41, 54, .1); }
+.cs-card-art { position: relative; display: flex; align-items: center; justify-content: center; background: var(--cs-tint); border-bottom: 1px solid var(--cs-art-line); padding: 30px 36px 48px; aspect-ratio: 1.5; min-height: 430px; color: var(--cs-accent); overflow: hidden; transition: border-color 180ms ease; }
 .cs-card-art > .cs-diagram { transition: transform 250ms ease; }
 .cs-study-card:hover .cs-card-art > .cs-diagram { transform: translateY(-3px); }
 .cs-open-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--cs-art-line); display: flex; align-items: center; justify-content: center; background: var(--cs-paper); flex: 0 0 auto; transition: background 180ms ease, color 180ms ease; }
 .cs-card-art > .cs-open-circle { position: absolute; bottom: 16px; right: 16px; width: 32px; height: 32px; }
 .cs-card-art .cs-open-circle svg { width: 14px; }
 .cs-study-card:hover .cs-open-circle { background: var(--cs-accent); color: white; }
-.cs-card-copy { padding: 24px 2px 0; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.cs-card-copy { padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
 .cs-card-copy > .cs-eyebrow { color: var(--cs-accent); font-size: 10px; letter-spacing: 1.5px; }
 .cs-card-copy h3 { font-size: 27px; line-height: 1.15; letter-spacing: -.6px; margin-top: 0; font-weight: 500; }
 .cs-card-copy p { font-size: 15px; line-height: 1.6; color: var(--cs-muted); margin-block: 13px 20px; max-width: 480px; }
 .cs-card-copy .cs-text-link { font-size: 12px; margin-top: auto; }
 .cs-card-copy .cs-arrow { width: 16px; }
-.cs-perspective { padding-block: 78px 85px; margin-top: 75px; border-top: 1px solid var(--cs-line); text-align: center; }
+.cs-perspective { padding-block: 78px 85px; margin-top: 75px; text-align: center; }
 .cs-perspective > .cs-eyebrow { color: var(--cs-muted); }
-.cs-perspective p { margin-block: 24px; font-size: clamp(29px, 3.8vw, 48px); letter-spacing: -1.5px; line-height: 1.2; color: var(--color-prime); }
+.cs-perspective-rule { width: min(720px, 82%); margin: 24px auto; border: 0; border-top: 1px solid; border-image: linear-gradient(to right, transparent, var(--cs-line), transparent) 1; }
+.cs-perspective p { margin-block: 0; font-size: clamp(29px, 3.8vw, 48px); letter-spacing: -1.5px; line-height: 1.2; color: var(--color-prime); }
 .cs-perspective-credit { font-size: 12px; color: var(--cs-muted); }
 .cs-footer { background: #eae4ed; border-top: 1px solid #d5cbdc; }
 .cs-footer-top { display: flex; justify-content: space-between; align-items: center; gap: 36px; padding-block: 58px; }

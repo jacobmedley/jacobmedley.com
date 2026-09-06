@@ -9,13 +9,39 @@ If a fact would still be true in three months, it belongs there, not here.
 | Surface | Current | Owner |
 |---|---|---|
 | Site | main, see git log | site chat |
-| Word master | v1r8 | resume workstream |
+| Word master | v1r9 | resume workstream |
+| Principal IC master | v1r1 | resume workstream |
+| Design systems master | v1r1 | resume workstream |
 | Designed PDF | v2r3 | resume workstream |
 | LinkedIn | unmanaged, out of scope | Jacob |
 
 ## Open
 
 Nothing blocking on the site side.
+
+**For the Coordinator, Aug 31. The accessibility claim is dropped, not corrected. The repo
+still carries it.**
+
+The masters said "Built an automated accessibility auditing pipeline ... runs on a schedule
+against production." Jacob corrected the facts, then dropped the whole claim: he devised a
+process letting a non-technical person run a script against an unpublished page, automation
+still in progress, and his read is that it is weak beside the rest of the record.
+
+Retired, never reuse: "Built an automated accessibility auditing pipeline," "runs on a
+schedule against production," "a two-person function can now flag critical issues before
+launch."
+
+Still allowed: accessibility and WCAG as a competency. No pipeline, no automation, no
+schedule.
+
+  - docs/case-studies-sanitized.md carries the retired wording. Remove it.
+  - docs/copy-register.md should record the retirement so it cannot come back.
+  - Full history is in The-Hunt/rules/canonical-figures.md.
+
+The resume workstream cleared its own masters and unsent files. It does not write the repo,
+so both items above are the Coordinator's.
+
+Job search state lives in The-Hunt/pipeline.md, not here.
 
 Carried on feat/recruiter-portfolio, unmerged:
   - remove the reviews-that-end-in-decisions study from portfolio-studies.ts

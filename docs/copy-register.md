@@ -1263,6 +1263,39 @@ this register.
 
 # Section C: Portfolio UI strings
 
+## Public case study pages, refined edition
+
+Canonical implementation copy for `/case-studies/` is authored in
+`docs/case-study-site-copy.json`, imported directly by the new pages so prose
+is not duplicated in components. This edition selects six cleared studies
+from `docs/case-studies-sanitized.md`; every entry records its source.
+
+Index headline: "The thinking behind the work."
+Introduction: "I design products, build systems, and make room for teams to do
+better work. These are the problems I took on, the decisions I made, and what
+changed."
+
+Homepage entry: "The thinking behind the work"; "Problems, decisions, and
+results across product design, systems, and leadership."; "Explore the case
+studies". Index section title: "Different problems. Deliberate decisions."
+Footer uses the complete signature line from voice-and-tone.md.
+
+The problem / journey / solution / results structure follows Jacob's
+explicit request for this edition. Platform figures follow Section A, B26,
+and B27: six to two weeks per property; five properties; finance-attributed
+47% of company revenue growth, 27% of total lead capture, and 20% of overall
+revenue in one measured year. No derived percentage is added. Other studies
+describe documented capability, findings, and decisions without inventing
+business lift. Team scope is historical to each study, not current headcount.
+
+Diagrams are explanatory reconstructions of the cleared narratives, labeled
+as such on detail pages. They are not original project artifacts. No private
+boards or screenshots from unrelated work are presented as evidence.
+
+The retired accessibility and reviews studies are excluded. Accessibility
+in the token study is a competency applied to tokens, not an auditing pipeline.
+Existing modal copy and the unmerged recruiter portfolio remain separate.
+
 On `feat/recruiter-portfolio`. Fix before that branch merges or the em dashes return.
 
 | File | Line | Current | Corrected |

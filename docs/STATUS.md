@@ -1,5 +1,14 @@
 # Status
 
+## Isolated brand wave, September 6, 2026
+
+Work continues on `work/portfolio-brand-wave-20260906` in
+`C:\dev\jacobmedley-brand-wave`. Pre-change recovery tag:
+`checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
+First-wave source changes and production build pass; responsive/modal acceptance
+remains. See [the focused handoff](brand-wave-handoff.md). No publication.
+The original checkout and its existing ownership marker were preserved.
+
 Volatile state. Read this first, write it last.
 Durable rulings, wording standards, and figures live in copy-register.md.
 If a fact would still be true in three months, it belongs there, not here.

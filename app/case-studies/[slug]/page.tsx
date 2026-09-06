@@ -30,25 +30,25 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <main id="main-content" tabIndex={-1} className={`cs-detail cs-theme-${study.theme}`}>
       <section className="cs-detail-hero cs-container">
-        <Link href="/case-studies/" className="cs-back-link"><i className="fa-regular fa-arrow-left" aria-hidden="true" /> All case studies</Link>
-        <div className="cs-detail-meta"><span className="cs-eyebrow">{study.category}</span><span>Case study / {String(index + 1).padStart(2, '0')}</span></div>
+        <Link href="/case-studies/" className="cs-back-link"><i className="fa-thin fa-arrow-left" aria-hidden="true" /> All case studies</Link>
+        <div className="cs-detail-meta"><span className="cs-eyebrow">{study.category}</span><span>Case Study // {String(index + 1).padStart(2, '0')}</span></div>
         <h1>{study.title}</h1><p className="cs-detail-deck">{study.summary}</p>
         <dl className="cs-role-grid"><div><dt>My role</dt><dd>{study.role}</dd></div><div><dt>The scope</dt><dd>{study.scope}</dd></div><div><dt>Working together</dt><dd>{study.collaboration}</dd></div></dl>
       </section>
 
       <div className="cs-container"><div className="cs-detail-cover" aria-hidden="true"><StudyVisual kind={study.visual} /></div><p className="cs-figure-caption">Explanatory reconstruction of the approach, based on the project narrative.</p></div>
 
-      <section className="cs-at-glance cs-container" aria-label="Case study at a glance">{['Problem', 'Solution', 'Result'].map((label, i) => <div key={label}><span className="cs-eyebrow">0{i + 1} / {label}</span><p>{study.atAGlance[i]}</p></div>)}</section>
+      <section className="cs-at-glance cs-container" aria-label="Case study at a glance">{['Problem', 'Solution', 'Result'].map((label, i) => <div key={label}><span className="cs-eyebrow">0{i + 1}{' // '}{label}</span><p>{study.atAGlance[i]}</p></div>)}</section>
 
       <div className="cs-story-layout cs-container">
-        <aside className="cs-story-sidebar"><nav aria-label="In this case study"><span className="cs-eyebrow">In this story</span>{study.sections.map((section, i) => <a href={`#${section.id}`} key={section.id}><span>0{i + 1}</span><span className="cs-nav-label-full">{section.label}</span><span className="cs-nav-label-mobile">{mobileSectionLabels[section.id] ?? section.label}</span></a>)}</nav><div className="cs-sidebar-note"><span className="cs-tiny-dot" /> {study.discipline}</div></aside>
+        <aside className="cs-story-sidebar"><nav aria-label="In this case study"><span className="cs-eyebrow">In This Story</span>{study.sections.map((section, i) => <a href={`#${section.id}`} key={section.id}><span>0{i + 1}</span><span className="cs-nav-label-full">{section.label}</span><span className="cs-nav-label-mobile">{mobileSectionLabels[section.id] ?? section.label}</span></a>)}</nav><div className="cs-sidebar-note">{study.discipline}</div></aside>
         <article className="cs-story">
           {study.sections.map((section, i) => (
             <section className="cs-story-section" id={section.id} key={section.id} aria-labelledby={`${section.id}-title`}>
-              <p className="cs-eyebrow">0{i + 1} / {section.label}</p><h2 id={`${section.id}-title`}>{section.title}</h2>
+              <p className="cs-eyebrow">0{i + 1}{' // '}{section.label}</p><h2 id={`${section.id}-title`}>{section.title}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              {section.decision && <div className="cs-decision-callout"><span className="cs-eyebrow">The decision</span><p>{section.decision}</p></div>}
-              {section.points && <ul className="cs-solution-points">{section.points.map((point) => <li key={point}><i className="fa-regular fa-arrow-up-right" aria-hidden="true" />{point}</li>)}</ul>}
+              {section.decision && <div className="cs-decision-callout"><span className="cs-eyebrow">The Decision</span><p>{section.decision}</p></div>}
+              {section.points && <ul className="cs-solution-points">{section.points.map((point) => <li key={point}>{point}</li>)}</ul>}
               {section.id === 'results' && <dl className="cs-results-grid">{study.proof.map((proof) => <div key={proof.value}><dt>{proof.value}</dt><dd>{proof.label}</dd></div>)}</dl>}
               {section.takeaway && <blockquote>{section.takeaway}</blockquote>}
             </section>
@@ -56,7 +56,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </article>
       </div>
 
-      <section className="cs-next-study cs-container" aria-label="Continue reading"><span className="cs-eyebrow">Next case study</span><Link href={`/case-studies/${nextStudy.slug}/`}><div><span>{nextStudy.category}</span><h2>{nextStudy.shortTitle}</h2></div><span className="cs-open-circle"><Arrow diagonal /></span></Link><Link className="cs-text-link" href="/case-studies/">View all case studies <Arrow /></Link></section>
+      <section className="cs-next-study cs-container" aria-label="Continue reading"><span className="cs-eyebrow">Next Case Study</span><Link href={`/case-studies/${nextStudy.slug}/`}><div><span>{nextStudy.category}</span><h2>{nextStudy.shortTitle}</h2></div><span className="cs-open-circle"><Arrow /></span></Link><Link className="cs-text-link" href="/case-studies/">View all case studies <Arrow /></Link></section>
     </main>
   )
 }

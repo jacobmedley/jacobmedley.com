@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div className="container">
           <div className="row text-center justify-center row-content">
             <div className="col-24 col-lg-14 self-center">
-              <p className="display-12 font-bold text-prime mb-0 h-jakeicon">
+              <p className="font-bold text-prime mb-0 h-jakeicon">
                 <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
               </p>
 
@@ -20,7 +20,7 @@ export default function HeroSection() {
                 <span className="sm:hidden">Hi,</span>
                 <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
               </h1>
-              <h2 className="display-2 text-prime">Product Design Leader</h2>
+              <h2 className="display-2 text-prime">Product &amp; Design Leader</h2>
 
               <div className="py-3 w-1/4 mx-auto">
                 <hr className="solid-center" />
@@ -36,9 +36,9 @@ export default function HeroSection() {
                 </span>
               </p>
 
-              <a className="btn btn-outline-prime-dark mt-4 mb-4 btn-lg rounded-full" href="#work">
-                <i className="fa-regular fa-angle-down" aria-hidden="true" />
-                <span className="sr-only">Scroll to case studies</span>
+              <a className="btn btn-outline-prime-dark action-label mt-4 mb-4 btn-lg rounded-full" href="#work">
+                <span>Explore the case studies</span>
+                <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 {
   "intro": {
-    "eyebrow": "Jacob Medley / Selected work",
+    "eyebrow": "Jacob Medley // Selected Work",
     "title": "The thinking behind the work.",
     "description": "I design products, build systems, and make room for teams to do better work. These are the problems I took on, the decisions I made, and what changed.",
     "closing": "There is always a better way, together we can find it."
@@ -10,7 +10,7 @@
       "slug": "one-platform-five-properties",
       "title": "The alternative to five sites was five teams.",
       "shortTitle": "One platform. Five properties.",
-      "category": "Design systems",
+      "category": "Design Systems",
       "discipline": "Platform strategy · Design systems · Delivery",
       "theme": "plum",
       "visual": "platform",
@@ -31,7 +31,7 @@
       ],
       "sections": [
         {
-          "id": "problem", "label": "The problem", "title": "The first site worked. Copying it would multiply the work.",
+          "id": "problem", "label": "The Problem", "title": "The first site worked. Copying it would multiply the work.",
           "paragraphs": [
             "The first version was a branded storefront on an off-the-shelf theme. Sale pricing and strikethrough values were typed in by hand, product by product, every time a promotion changed.",
             "It answered a useful question: would people buy from a focused brand experience? They did. Leadership wanted more properties, and cloning the site would carry every manual task into every new one."
@@ -47,7 +47,7 @@
           "decision": "Make each launch cheaper by removing repeated work in the platform."
         },
         {
-          "id": "solution", "label": "The solution", "title": "One foundation, with room for each brand.",
+          "id": "solution", "label": "The Solution", "title": "One foundation, with room for each brand.",
           "paragraphs": [
             "The platform combined token-based themes, a shared source for products and providers, scheduled multi-phase promotions, and one-button deployment per environment. A property could change its identity without changing the underlying application.",
             "Source attribution connected the acquisition experience to the storefront. Promotion, copy, and messaging changed according to the visitor's source, down to specific affiliate identifiers. The page said what the ad promised."
@@ -56,7 +56,7 @@
           "figure": true
         },
         {
-          "id": "results", "label": "The results", "title": "The business grew without rebuilding the machinery.",
+          "id": "results", "label": "The Results", "title": "The business grew without rebuilding the machinery.",
           "paragraphs": [
             "Launching a fully branded property fell from six weeks to two. Five properties ran on the platform. One was later retired, and the shared foundation also made winding it down inexpensive.",
             "In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company's growth increment in that year.",
@@ -70,7 +70,7 @@
       "slug": "building-a-design-function",
       "title": "Building the function that was not there.",
       "shortTitle": "A design practice built to last.",
-      "category": "Design leadership",
+      "category": "Design Leadership",
       "discipline": "Practice building · Governance · Research",
       "theme": "sage",
       "visual": "practice",
@@ -90,17 +90,17 @@
         "The next project inherited a system, research practice, and scorecard."
       ],
       "sections": [
-        { "id": "problem", "label": "The problem", "title": "The delivery work arrived before the practice.", "paragraphs": ["There was no prior experience design team, no design system, no research practice, and no measurement framework. The function had to take shape while shipping a major integration.", "Spending all our capacity on screens would leave the next project with the same missing foundations. I needed to make room for the operating work inside the delivery work."] },
+        { "id": "problem", "label": "The Problem", "title": "The delivery work arrived before the practice.", "paragraphs": ["There was no prior experience design team, no design system, no research practice, and no measurement framework. The function had to take shape while shipping a major integration.", "Spending all our capacity on screens would leave the next project with the same missing foundations. I needed to make room for the operating work inside the delivery work."] },
         { "id": "approach", "label": "The Journey", "title": "Where the work repeated, I left something behind.", "paragraphs": ["I built the token foundation before the page count grew. Usability testing came with a report format that could be reused. Executive workshops had a board system, moderator guide, and scenario matrix, so the next session could start with working materials.", "Measurement needed its own structure. I paired experience metrics with business outcomes and drew on real user monitoring, moderated testing, and survey data. Each source answered a different question."], "decision": "Treat the foundations as part of delivering the product." },
-        { "id": "solution", "label": "The solution", "title": "A practice people could use again.", "paragraphs": ["The function gained a governed token foundation, a usability testing practice, a KPI framework, and reusable materials for executive working sessions. These were working parts of the practice, with documentation another designer could pick up.", "The measurement work produced a repeatable scorecard and a customer feedback program ready for instrumentation, with a vendor recommendation attached."], "points": ["Tokens and governance before more pages", "Research with a repeatable report format", "An experience scorecard tied to business outcomes", "Workshop materials that outlive the meeting"], "figure": true },
-        { "id": "results", "label": "The results", "title": "The next project had a starting point.", "paragraphs": ["The design function built its foundations alongside delivery of the integration. Subsequent work could inherit the tokens, research format, measurement framework, and workshop materials.", "The customer feedback program was ready for instrumentation, with a vendor recommendation attached. The function had a way to connect experience work to business outcomes."], "takeaway": "If the second version costs as much as the first, I probably have not finished designing the first one." }
+        { "id": "solution", "label": "The Solution", "title": "A practice people could use again.", "paragraphs": ["The function gained a governed token foundation, a usability testing practice, a KPI framework, and reusable materials for executive working sessions. These were working parts of the practice, with documentation another designer could pick up.", "The measurement work produced a repeatable scorecard and a customer feedback program ready for instrumentation, with a vendor recommendation attached."], "points": ["Tokens and governance before more pages", "Research with a repeatable report format", "An experience scorecard tied to business outcomes", "Workshop materials that outlive the meeting"], "figure": true },
+        { "id": "results", "label": "The Results", "title": "The next project had a starting point.", "paragraphs": ["The design function built its foundations alongside delivery of the integration. Subsequent work could inherit the tokens, research format, measurement framework, and workshop materials.", "The customer feedback program was ready for instrumentation, with a vendor recommendation attached. The function had a way to connect experience work to business outcomes."], "takeaway": "If the second version costs as much as the first, I probably have not finished designing the first one." }
       ]
     },
     {
       "slug": "one-customer-journey",
       "title": "Four executives, four different customer journeys.",
       "shortTitle": "One customer. A shared journey.",
-      "category": "Design leadership",
+      "category": "Design Leadership",
       "discipline": "Executive facilitation · Journey mapping",
       "theme": "gold",
       "visual": "journey",
@@ -116,17 +116,17 @@
       ],
       "atAGlance": ["Each department held only part of the customer journey.", "A custom working session followed concrete customer scenarios.", "Leaders left with a shared journey and visible handoff failures."],
       "sections": [
-        { "id": "problem", "label": "The problem", "title": "Customers had declined to organize themselves into departments.", "paragraphs": ["A major integration crossed marketing, digital health, engineering, and commerce. Each leader held a piece of the customer journey. No shared view covered the path from first awareness through subscription and refill.", "The gaps between those views were the places where the customer changed hands. We needed to examine the complete journey together."] },
+        { "id": "problem", "label": "The Problem", "title": "Customers had declined to organize themselves into departments.", "paragraphs": ["A major integration crossed marketing, digital health, engineering, and commerce. Each leader held a piece of the customer journey. No shared view covered the path from first awareness through subscription and refill.", "The gaps between those views were the places where the customer changed hands. We needed to examine the complete journey together."] },
         { "id": "approach", "label": "The Journey", "title": "I designed the conversation before the session.", "paragraphs": ["I built a custom board system for the integration. A generic template would have shaped the discussion around somebody else's problem.", "I wrote a moderator guide and constructed a scenario matrix. The group would work through concrete customer situations, with enough structure that the session did not depend entirely on my improvisation."], "decision": "Put the owners of both sides of a handoff in the same conversation." },
-        { "id": "solution", "label": "The solution", "title": "Follow the customer across the boundaries.", "paragraphs": ["The session used the board system to work across the end-to-end experience. Scenarios kept the conversation attached to customer situations, and the moderator guide kept the discussion moving.", "Handoff failures became visible with the people responsible for both sides present. Leaders could see how a decision in their part of the journey affected the next one."], "points": ["A board system built for the integration", "A moderator guide for repeatable facilitation", "A matrix of concrete customer scenarios"], "figure": true },
-        { "id": "results", "label": "The results", "title": "The map was shared. So was the understanding.", "paragraphs": ["The group produced a documented end-to-end journey with C-level participation and buy-in. Handoff failures were discussed in the room instead of being passed between departments afterward.", "The board system, moderator guide, and scenario matrix remained available for future journey work. Design had also demonstrated its ability to run executive working sessions."] }
+        { "id": "solution", "label": "The Solution", "title": "Follow the customer across the boundaries.", "paragraphs": ["The session used the board system to work across the end-to-end experience. Scenarios kept the conversation attached to customer situations, and the moderator guide kept the discussion moving.", "Handoff failures became visible with the people responsible for both sides present. Leaders could see how a decision in their part of the journey affected the next one."], "points": ["A board system built for the integration", "A moderator guide for repeatable facilitation", "A matrix of concrete customer scenarios"], "figure": true },
+        { "id": "results", "label": "The Results", "title": "The map was shared. So was the understanding.", "paragraphs": ["The group produced a documented end-to-end journey with C-level participation and buy-in. Handoff failures were discussed in the room instead of being passed between departments afterward.", "The board system, moderator guide, and scenario matrix remained available for future journey work. Design had also demonstrated its ability to run executive working sessions."] }
       ]
     },
     {
       "slug": "navigation-beyond-opinion",
       "title": "Navigation decisions were being made on taste.",
       "shortTitle": "Let the customer find the way.",
-      "category": "Product design",
+      "category": "Product Design",
       "discipline": "Usability research · Information architecture",
       "theme": "slate",
       "visual": "navigation",
@@ -142,17 +142,17 @@
       ],
       "atAGlance": ["Navigation choices depended on internal preference.", "Moderated testing examined how people used the navigation.", "Findings gave the redesign a customer-based rationale."],
       "sections": [
-        { "id": "problem", "label": "The problem", "title": "We knew the catalog. Our customers did not.", "paragraphs": ["Mega menu choices, category structure, and shop-by paths were being debated internally without testing them against real users.", "Navigation affects findability across the catalog. People who already know where products live are poorly placed to judge whether someone new can find them."] },
+        { "id": "problem", "label": "The Problem", "title": "We knew the catalog. Our customers did not.", "paragraphs": ["Mega menu choices, category structure, and shop-by paths were being debated internally without testing them against real users.", "Navigation affects findability across the catalog. People who already know where products live are poorly placed to judge whether someone new can find them."] },
         { "id": "approach", "label": "The Journey", "title": "Watch people use the front door.", "paragraphs": ["I ran moderated usability testing against the navigation and information architecture, then synthesized the findings into a report built to inform the redesign.", "The study examined entry paths and the mega menu. It gave us evidence about the customer's mental model and the visibility of the navigation itself."], "decision": "Use observed behavior to decide how the catalog should be entered." },
-        { "id": "solution", "label": "The solution", "title": "Start with the problem the customer came to solve.", "paragraphs": ["Shop by Condition performed better than the alternative entry paths. People arrived thinking about their problem, while the catalog reflected how the business grouped its products.", "The mega menu also had discoverability and visibility failures. The research report brought these findings into the navigation redesign and provided a format for subsequent studies."], "points": ["Customer needs as an entry point", "Documented discoverability failures", "A research report built for a design decision"], "figure": true },
-        { "id": "results", "label": "The results", "title": "Preference lost its monopoly.", "paragraphs": ["The redesign had evidence-backed information architecture findings and a repeatable research template. The team could discuss observed customer behavior alongside its own preferences.", "The research also left a report format that could carry the next study into a design decision."] }
+        { "id": "solution", "label": "The Solution", "title": "Start with the problem the customer came to solve.", "paragraphs": ["Shop by Condition performed better than the alternative entry paths. People arrived thinking about their problem, while the catalog reflected how the business grouped its products.", "The mega menu also had discoverability and visibility failures. The research report brought these findings into the navigation redesign and provided a format for subsequent studies."], "points": ["Customer needs as an entry point", "Documented discoverability failures", "A research report built for a design decision"], "figure": true },
+        { "id": "results", "label": "The Results", "title": "Preference lost its monopoly.", "paragraphs": ["The redesign had evidence-backed information architecture findings and a repeatable research template. The team could discuss observed customer behavior alongside its own preferences.", "The research also left a report format that could carry the next study into a design decision."] }
       ]
     },
     {
       "slug": "tokens-before-pages",
       "title": "Tokens before surface area.",
       "shortTitle": "Build the foundation before the pages.",
-      "category": "Design systems",
+      "category": "Design Systems",
       "discipline": "Design tokens · Brand architecture · Governance",
       "theme": "plum",
       "visual": "tokens",
@@ -168,17 +168,17 @@
       ],
       "atAGlance": ["A second brand needed a home on a platform without a design system.", "Theme tokens and governance came before the pages.", "Brand changes could happen at the token layer."],
       "sections": [
-        { "id": "problem", "label": "The problem", "title": "Every page could become another place to fix a brand.", "paragraphs": ["A second brand needed to live inside an existing commerce platform. There was no design system.", "Without a token layer, each new surface would need its own styles. A brand adjustment would become a search through pages and files, and every new page would add to that work."] },
+        { "id": "problem", "label": "The Problem", "title": "Every page could become another place to fix a brand.", "paragraphs": ["A second brand needed to live inside an existing commerce platform. There was no design system.", "Without a token layer, each new surface would need its own styles. A brand adjustment would become a search through pages and files, and every new page would add to that work."] },
         { "id": "approach", "label": "The Journey", "title": "Decide what the pages should inherit.", "paragraphs": ["I started with theme tokens for color, typography, and spacing, then layered the new brand theme over the base. Button variants carried accessibility flags in the tokens.", "I evaluated a component substrate and documented the recommendation with its reasoning. Governance came first so incoming work had something explicit to follow."], "decision": "Make the shared decisions once, before they spread across the interface." },
-        { "id": "solution", "label": "The solution", "title": "A brand layer on a shared foundation.", "paragraphs": ["The theme separated brand choices from the underlying platform. Color, typography, spacing, and button variants had a documented foundation.", "The incoming designer could build against that foundation on day one. Brand changes had a place to happen without a page-by-page styling pass."], "points": ["Base tokens for shared decisions", "A brand theme layered over the base", "Accessibility flags in button tokens", "A documented component recommendation"], "figure": true },
-        { "id": "results", "label": "The results", "title": "The brand arrived with a system to maintain it.", "paragraphs": ["The new brand launched coherently on shared infrastructure. Brand adjustments could happen at the token layer, and the next designer inherited documented decisions.", "The incoming designer could begin with the foundation and its reasoning already documented."] }
+        { "id": "solution", "label": "The Solution", "title": "A brand layer on a shared foundation.", "paragraphs": ["The theme separated brand choices from the underlying platform. Color, typography, spacing, and button variants had a documented foundation.", "The incoming designer could build against that foundation on day one. Brand changes had a place to happen without a page-by-page styling pass."], "points": ["Base tokens for shared decisions", "A brand theme layered over the base", "Accessibility flags in button tokens", "A documented component recommendation"], "figure": true },
+        { "id": "results", "label": "The Results", "title": "The brand arrived with a system to maintain it.", "paragraphs": ["The new brand launched coherently on shared infrastructure. Brand adjustments could happen at the token layer, and the next designer inherited documented decisions.", "The incoming designer could begin with the foundation and its reasoning already documented."] }
       ]
     },
     {
       "slug": "a-checkout-decision-with-receipts",
       "title": "Four documents, one checkout, zero agreement.",
       "shortTitle": "A checkout decision with receipts.",
-      "category": "Design leadership",
+      "category": "Design Leadership",
       "discipline": "Experience strategy · AI-assisted analysis · Decisions",
       "theme": "rose",
       "visual": "decision",
@@ -194,10 +194,10 @@
       ],
       "atAGlance": ["Requirements disagreed on how to present a consult fee.", "AI cross-referenced the sources; I made the experience decision.", "Engineering built against a documented combined-price model."],
       "sections": [
-        { "id": "problem", "label": "The problem", "title": "Both versions were written down. Both looked current.", "paragraphs": ["Requirements documents called for an itemized consult fee at checkout. The latest meeting directive and the design called for one combined price. Engineering could build either, with a written source to justify it.", "The conflict affected what a customer saw beside the Buy button. It needed an experience decision and a record of which requirements that decision replaced."] },
+        { "id": "problem", "label": "The Problem", "title": "Both versions were written down. Both looked current.", "paragraphs": ["Requirements documents called for an itemized consult fee at checkout. The latest meeting directive and the design called for one combined price. Engineering could build either, with a written source to justify it.", "The conflict affected what a customer saw beside the Buy button. It needed an experience decision and a record of which requirements that decision replaced."] },
         { "id": "approach", "label": "The Journey", "title": "Read the sources together, then make the call.", "paragraphs": ["I used AI to cross-reference the requirements, meeting transcripts, and ticket history. Reading the records together exposed where the instructions disagreed.", "I chose a combined price, matching a checkout pattern already converting with customers. AI identified the contradictions; the experience decision was mine."], "decision": "Use a combined price, and record exactly which requirements it supersedes." },
-        { "id": "solution", "label": "The solution", "title": "Give engineering a decision that can survive the next meeting.", "paragraphs": ["I documented the combined-price decision and tagged the superseded requirements with their sources. The record explained what changed and why.", "Refund messaging remained an explicit dependency. It needed to match the combined-price model, otherwise resolving checkout would create another contradiction later in the experience."], "points": ["A recorded combined-price decision", "Source-linked superseded requirements", "Refund messaging named as an open dependency"], "figure": true },
-        { "id": "results", "label": "The results", "title": "Engineering built once.", "paragraphs": ["The decision closed without another meeting cycle, and engineering built against the documented direction. The superseded trail gave the team a way to resolve later questions using the record.", "Design owned the experience call and its reasoning. Refund messaging remained an explicit dependency for the team to resolve."] }
+        { "id": "solution", "label": "The Solution", "title": "Give engineering a decision that can survive the next meeting.", "paragraphs": ["I documented the combined-price decision and tagged the superseded requirements with their sources. The record explained what changed and why.", "Refund messaging remained an explicit dependency. It needed to match the combined-price model, otherwise resolving checkout would create another contradiction later in the experience."], "points": ["A recorded combined-price decision", "Source-linked superseded requirements", "Refund messaging named as an open dependency"], "figure": true },
+        { "id": "results", "label": "The Results", "title": "Engineering built once.", "paragraphs": ["The decision closed without another meeting cycle, and engineering built against the documented direction. The superseded trail gave the team a way to resolve later questions using the record.", "Design owned the experience call and its reasoning. Refund messaging remained an explicit dependency for the team to resolve."] }
       ]
     }
   ]

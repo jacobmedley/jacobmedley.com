@@ -476,25 +476,16 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 #the-menu.the-menu .btn.education.active { border-color: #582323; color: #e5d6d6; background: #7e3232; }
 
 /* ── Hero typography ────────────────────────────────────────────── */
-#hi .h-jakeicon { font-size: calc(2rem + 28vw); }
 /*
  * The hero display sizes are vw-driven with no lower-end tuning, so they grow
  * disproportionate as the viewport narrows. Scoped to #hi and to below-sm
  * only, so no other section and no larger viewport is affected.
  */
 @media (max-width: 575.98px) {
-  #hi .h-jakeicon { font-size: calc(1.5rem + 20vw); }
   #hi .display-4  { font-size: calc(1.25rem + 3vw); }
   #hi .display-2  { font-size: calc(1.05rem + 0.9vw); }
   #hi .display-1  { font-size: calc(1rem + 0.3vw); }
 }
-@media (min-width: 576px) {
-  #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
-}
-@media (min-width: 768px)  { #hi .h-jakeicon { font-size: calc(2rem + 16vw); } }
-@media (min-width: 992px)  { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
-@media (min-width: 1200px) { #hi .h-jakeicon { font-size: calc(2rem + 12vw); } }
-@media (min-width: 1400px) { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
 
 #hi .h-hello { font-size: calc(1rem + 3vw); }
 #hi .h-hello small { font-size: calc(0.7rem + 2vw); }
@@ -882,3 +873,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 } /* end @layer components */
 
+
+/* Shared action rhythm and brand glyph; main narrative typography is unchanged. */
+.action-label { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+#hi .h-jakeicon { font-size: 78px; line-height: 1; margin-top: 0; }

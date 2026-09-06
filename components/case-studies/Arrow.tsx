@@ -1,3 +1,3 @@
-export default function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <i className={`cs-arrow fa-regular ${diagonal ? 'fa-arrow-up-right' : 'fa-arrow-right'}`} aria-hidden="true" />
+export default function Arrow({ external = false }: { external?: boolean }) {
+  return <i className={`cs-arrow fa-thin ${external ? 'fa-arrow-up-right-from-square' : 'fa-arrow-right'}`} aria-hidden="true" />
 }

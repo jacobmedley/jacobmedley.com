@@ -38,7 +38,8 @@ Round the set from one source at one time. A 70% numerator against ratios
 derived from 72.4% makes the arithmetic fail a check a reader will perform.
 
 Title standard: "Product Design" is constant. Seniority varies by target.
-Site hero and resume master read "Product Design Leader."
+Website brand title: "Product & Design Leader," per Jacob, September 6, 2026.
+This website instruction supersedes the earlier public-site title; external resume masters remain under their own workstream.
 
 Assistant wording: one internally built assistant, two deployments. Never
 "two assistants."
@@ -1502,3 +1503,21 @@ Three items were removed before publishing. Each is recoverable if you disagree.
 secret. The anonymization rule protects internal detail, not the employer's identity.
 If you want a different standard for former employers than for the current one, say
 so and I will apply it consistently rather than case by case.
+
+
+## Website brand cleanup, September 6, 2026
+
+Source: Jacob's 21 browser annotations and subsequent instruction to begin the
+staged site work with a recovery checkpoint. This section governs the current
+website branch; employment titles, claims and external resume masters are unchanged.
+
+- Public brand title and metadata: Product & Design Leader.
+- Case-study eyebrows, category/filter labels, diagram labels and badges use
+  Title Case; headlines, quotations and prose use sentence case. Preserve acronyms.
+- Label separator: //, including Jacob Medley // Selected Work and the dynamic
+  collection count, 6 // Case Studies (1 // Case Study for a single result).
+- Action labels: Read the story, View, Read case study, Explore the case studies.
+  The arrow follows the label; an external destination uses the external-link icon.
+- Case-study navigation: Case Studies; About & experience; More about Jacob.
+- Existing case-study-copy JSON remains the canonical story source; these casing
+  edits do not change its metrics, narrative, scope or provenance.

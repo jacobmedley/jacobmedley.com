@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import WorkCard from '@/components/ui/WorkCard'
@@ -25,10 +26,16 @@ export default function CaseStudiesSection() {
         <div className="container">
           <SectionHeader
             title="Case Studies"
-            icon="fa-light fa-briefcase"
+            icon="fa-thin fa-briefcase"
             className="text-second-dark"
             titleClassName="mb-0"
           />
+
+          <p className="text-center mb-8">
+            <Link href="/case-studies/" className="btn btn-outline-prime-dark rounded-full action-label">
+              Explore the case studies <i className="fa-thin fa-arrow-right" aria-hidden="true" />
+            </Link>
+          </p>
 
           {caseStudies.map((project, i) => (
             <WorkCard

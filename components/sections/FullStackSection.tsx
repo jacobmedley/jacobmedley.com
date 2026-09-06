@@ -30,7 +30,7 @@ export default function FullStackSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Full-Stack Designer" icon="fa-light fa-toolbox" />
+          <SectionHeader title="Full-Stack Designer" icon="fa-thin fa-toolbox" />
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
@@ -60,13 +60,13 @@ export default function FullStackSection() {
                 >
                   {!project.thumb && (
                     <i
-                      className={`${project.icon ?? 'fa-light fa-star'} thinking-icon z-2 relative`}
+                      className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon z-2 relative`}
                       aria-hidden="true"
                     />
                   )}
                   <h6 className="thinking-title z-2 relative">{project.title}</h6>
-                  <div className="thinking-view z-2 relative">
-                    <i className="fa-regular fa-eye" aria-hidden="true" /> View
+                  <div className="thinking-view action-label z-2 relative">
+                    View <i className="fa-thin fa-arrow-right" aria-hidden="true" />
                   </div>
                   {project.thumb && (
                     <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />

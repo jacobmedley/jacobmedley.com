@@ -55,20 +55,10 @@ export default function WorkCard({
             <div className="col-24">
               <button
                 type="button"
-                className="btn btn-lg btn-second-dark rounded-full"
+                className="btn btn-lg btn-second-dark rounded-full action-label"
                 onClick={open}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- animated gif, legacy asset */}
-                <img
-                  loading="lazy"
-                  src="/images/the-eye-third-reverse.gif"
-                  alt=""
-                  width={36}
-                  className="mix-blend-screen -mt-2 inline-block"
-                  role="presentation"
-                  aria-hidden="true"
-                />{' '}
-                Case Study
+                Read case study <i className="fa-thin fa-arrow-right" aria-hidden="true" />
               </button>
             </div>
           </div>

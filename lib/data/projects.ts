@@ -214,21 +214,21 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-regular fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-regular fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-regular fa-user-chart', label: 'User Testing' },
-      { icon: 'fa-regular fa-vial', label: 'A/B Testing' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
+      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
+      { icon: 'fa-thin fa-user-chart', label: 'User Testing' },
+      { icon: 'fa-thin fa-vial', label: 'A/B Testing' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
       { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
@@ -340,21 +340,21 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-boxes-stacked', label: 'Product Owner' },
-      { icon: 'fa-regular fa-solar-system', label: 'System Design' },
-      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' }
+      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Owner' },
+      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
+      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
       { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fa-regular fa-elephant', label: 'PHP' },
-      { icon: 'fa-regular fa-gear-code', label: 'DevOps Pipelines' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
+      { icon: 'fa-thin fa-elephant', label: 'PHP' },
+      { icon: 'fa-thin fa-gear-code', label: 'DevOps Pipelines' },
       { icon: 'fa-brands fa-git-alt', label: 'GIT' },
-      { icon: 'fa-regular fa-webhook', label: 'APIs' }
+      { icon: 'fa-thin fa-webhook', label: 'APIs' }
     ],
     media: [
       {
@@ -382,7 +382,7 @@ export const projects: Project[] = [
         bands: [
           {
             heading: 'Individual Product Sites',
-            icon: 'fa-sharp fa-regular fa-box',
+            icon: 'fa-thin fa-box',
             bg: 'dark-subtle',
             textColor: 'black',
             rows: [
@@ -391,11 +391,11 @@ export const projects: Project[] = [
                 cells: [
                   {
                     label: 'Cigna',
-                    icon: 'fa-light fa-box',
+                    icon: 'fa-thin fa-box',
                     bg: 'second',
                     striped: false,
                     sub: {
-                      icon: 'fa-regular fa-palette',
+                      icon: 'fa-thin fa-palette',
                       label: 'Brand Theme',
                       bg: 'second-light',
                       textColor: 'second-dark'
@@ -403,11 +403,11 @@ export const projects: Project[] = [
                   },
                   {
                     label: 'Aetna',
-                    icon: 'fa-light fa-box',
+                    icon: 'fa-thin fa-box',
                     bg: 'prime',
                     striped: false,
                     sub: {
-                      icon: 'fa-regular fa-palette',
+                      icon: 'fa-thin fa-palette',
                       label: 'Brand Theme',
                       bg: 'prime-light',
                       textColor: 'prime-dark'
@@ -415,11 +415,11 @@ export const projects: Project[] = [
                   },
                   {
                     label: 'WebMD',
-                    icon: 'fa-light fa-box',
+                    icon: 'fa-thin fa-box',
                     bg: 'third',
                     striped: false,
                     sub: {
-                      icon: 'fa-regular fa-palette',
+                      icon: 'fa-thin fa-palette',
                       label: 'Brand Theme',
                       bg: 'third-light',
                       textColor: 'third-dark'
@@ -427,11 +427,11 @@ export const projects: Project[] = [
                   },
                   {
                     label: 'LMDB',
-                    icon: 'fa-light fa-box',
+                    icon: 'fa-thin fa-box',
                     bg: 'fourth',
                     striped: false,
                     sub: {
-                      icon: 'fa-regular fa-palette',
+                      icon: 'fa-thin fa-palette',
                       label: 'Brand Theme',
                       bg: 'fourth-light',
                       textColor: 'fourth-dark'
@@ -439,11 +439,11 @@ export const projects: Project[] = [
                   },
                   {
                     label: 'Documentation',
-                    icon: 'fa-light fa-box',
+                    icon: 'fa-thin fa-box',
                     bg: 'fifth',
                     striped: false,
                     sub: {
-                      icon: 'fa-regular fa-palette',
+                      icon: 'fa-thin fa-palette',
                       label: 'Brand Theme',
                       bg: 'fifth-light',
                       textColor: 'fifth-dark'
@@ -455,36 +455,36 @@ export const projects: Project[] = [
           },
           {
             heading: 'Core Framework',
-            icon: 'fa-sharp fa-regular fa-boxes-stacked',
+            icon: 'fa-thin fa-boxes-stacked',
             bg: 'fifth-dark',
             textColor: 'white',
             rows: [
               {
                 cols: 5,
                 cells: [
-                  { label: 'API Integration', icon: 'fa-regular fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Component Libraries', icon: 'fa-regular fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Pattern Library', icon: 'fa-regular fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'API Integration', icon: 'fa-thin fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Component Libraries', icon: 'fa-thin fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Pattern Library', icon: 'fa-thin fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
                   { label: 'CMS', icon: 'fa-brands fa-wordpress-simple', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Pipelines', icon: 'fa-regular fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
+                  { label: 'Pipelines', icon: 'fa-thin fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
                 ]
               }
             ]
           },
           {
             heading: 'Microservices',
-            icon: 'fa-regular fa-webhook',
+            icon: 'fa-thin fa-webhook',
             bg: 'fifth-light',
             textColor: 'fifth-dark',
             rows: [
               {
                 cols: 5,
                 cells: [
-                  { label: 'Plan Details', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Dentist Search', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Lead Create', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Call Center Status', icon: 'fa-sharp fa-regular fa-headset', bg: 'fifth', striped: false },
-                  { label: 'Google Maps (API)', icon: 'fa-regular fa-webhook', bg: 'fifth', striped: false }
+                  { label: 'Plan Details', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Dentist Search', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Lead Create', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
+                  { label: 'Call Center Status', icon: 'fa-thin fa-headset', bg: 'fifth', striped: false },
+                  { label: 'Google Maps (API)', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false }
                 ]
               }
             ]
@@ -514,7 +514,7 @@ export const projects: Project[] = [
           }
         ]
       },
-      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-light fa-map-location-dot', sectionDivider: true },
+      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-thin fa-map-location-dot', sectionDivider: true },
       {
         type: 'split-row',
         reverse: true,
@@ -625,20 +625,20 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-regular fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-regular fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-regular fa-user-chart', label: 'User Testing' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
+      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
+      { icon: 'fa-thin fa-user-chart', label: 'User Testing' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
       { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
@@ -727,16 +727,16 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-regular fa-magnifying-glass-chart', label: 'Analysis' },
-      { icon: 'fa-regular fa-solar-system', label: 'System Design' },
-      { icon: 'fa-regular fa-laptop-code', label: 'System Dev' },
-      { icon: 'fa-regular fa-phone-laptop', label: 'Device Testing' }
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Analysis' },
+      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'System Dev' },
+      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS/SASS' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/SASS' },
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
@@ -813,12 +813,12 @@ export const projects: Project[] = [
           {
             type: 'icon-grid',
             items: [
-              { icon: 'fa-regular fa-image', title: 'Elements' },
-              { icon: 'fa-regular fa-toggle-on', title: 'Controls' },
-              { icon: 'fa-regular fa-sliders', title: 'Components' },
-              { icon: 'fa-light fa-sidebar', title: 'Modules' },
-              { icon: 'fa-regular fa-table-layout', title: 'Templates' },
-              { icon: 'fa-regular fa-browsers', title: 'Pages' }
+              { icon: 'fa-thin fa-image', title: 'Elements' },
+              { icon: 'fa-thin fa-toggle-on', title: 'Controls' },
+              { icon: 'fa-thin fa-sliders', title: 'Components' },
+              { icon: 'fa-thin fa-sidebar', title: 'Modules' },
+              { icon: 'fa-thin fa-table-layout', title: 'Templates' },
+              { icon: 'fa-thin fa-browsers', title: 'Pages' }
             ]
           }
         ],
@@ -899,19 +899,19 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-regular fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-regular fa-magnifying-glass-chart', label: 'User Research' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
       { icon: 'fa-brands fa-laravel', label: 'Laravel & Statamic' },
       { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS/LESS' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
@@ -992,7 +992,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 6,
     title: 'A/B Testing',
-    icon: 'fa-light fa-vial',
+    icon: 'fa-thin fa-vial',
     visible: true,
     summary: '',
     briefHeading: 'Never Stop Testing!',
@@ -1107,7 +1107,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 7,
     title: 'Call Center XD',
-    icon: 'fa-light fa-headset',
+    icon: 'fa-thin fa-headset',
     modalTitle: 'Call Center XD',
     visible: true,
     summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.',
@@ -1117,13 +1117,13 @@ export const projects: Project[] = [
         'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
       ]
     },
-    contributions: [ { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' } ],
+    contributions: [ { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' } ],
     technologies: [
       {
-        icon: 'fa-regular fa-project-diagram',
+        icon: 'fa-thin fa-project-diagram',
         label: 'API'
       },
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Target' }
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Target' }
     ],
     media: [
       { type: 'heading', text: 'Messaging and State Change' },
@@ -1184,7 +1184,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 8,
     title: 'Data-Driven Personalization',
-    icon: 'fa-light fa-bullseye-arrow',
+    icon: 'fa-thin fa-bullseye-arrow',
     modalTitle: 'Data-Driven Personalization',
     visible: true,
     summary: 'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.',
@@ -1195,20 +1195,20 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-regular fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-light fa-phone-laptop', label: 'Responsive Design' },
-      { icon: 'fa-regular fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-light fa-solar-system', label: 'Integration Strategy' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-phone-laptop', label: 'Responsive Design' },
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
+      { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' }
     ],
     technologies: [
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-regular fa-drafting-compass', label: 'Adobe Scene 7' },
-      { icon: 'fa-regular fa-drafting-compass', label: 'Aprimo' },
-      { icon: 'fa-regular fa-code', label: 'HTML' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'CSS' },
-      { icon: 'fa-regular fa-brackets-curly', label: 'JS' }
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Scene 7' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Aprimo' },
+      { icon: 'fa-thin fa-code', label: 'HTML' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'CSS' },
+      { icon: 'fa-thin fa-brackets-curly', label: 'JS' }
     ],
     media: [
       { type: 'heading', text: 'Results' },
@@ -1240,7 +1240,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 9,
     title: 'Team Workshops',
-    icon: 'fa-light fa-screen-users',
+    icon: 'fa-thin fa-screen-users',
     visible: true,
     summary: '',
     brief: {
@@ -1251,12 +1251,12 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Solving the Right Problems',
-    contributions: [{ icon: 'fa-regular fa-lightbulb-on', label: 'Facilitator' }],
+    contributions: [{ icon: 'fa-thin fa-lightbulb-on', label: 'Facilitator' }],
     technologies: [
-      { icon: 'fa-regular fa-chalkboard', label: 'Whiteboard' },
-      { icon: 'fa-regular fa-marker', label: 'Dry Erase Markers' },
-      { icon: 'fa-regular fa-notes', label: 'Post-it Notes' },
-      { icon: 'fa-regular fa-brain', label: 'Brains' }
+      { icon: 'fa-thin fa-chalkboard', label: 'Whiteboard' },
+      { icon: 'fa-thin fa-marker', label: 'Dry Erase Markers' },
+      { icon: 'fa-thin fa-notes', label: 'Post-it Notes' },
+      { icon: 'fa-thin fa-brain', label: 'Brains' }
     ],
     media: [
       { type: 'heading', text: 'Types of Workshops I’ve Facilitated' },
@@ -1287,7 +1287,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 10,
     title: 'UX Roadmaps',
-    icon: 'fa-light fa-mouse-field',
+    icon: 'fa-thin fa-mouse-field',
     visible: true,
     summary: '',
     brief: {
@@ -1299,8 +1299,8 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Are we there yet?',
-    contributions: [{ icon: 'fa-regular fa-mouse-field', label: 'Roadmap Planning' }],
-    technologies: [{ icon: 'fa-regular fa-chalkboard', label: 'Lucidchart' }],
+    contributions: [{ icon: 'fa-thin fa-mouse-field', label: 'Roadmap Planning' }],
+    technologies: [{ icon: 'fa-thin fa-chalkboard', label: 'Lucidchart' }],
     media: [
       { type: 'heading', text: 'Example UX Roadmap: obfuscated for client protection' },
       { type: 'text', text: 'Structure and Components' },
@@ -1373,7 +1373,7 @@ export const projects: Project[] = [
     display: 'thumb',
     order: 11,
     title: 'Personas',
-    icon: 'fa-light fa-masks-theater',
+    icon: 'fa-thin fa-masks-theater',
     visible: true,
     summary: '',
     brief: {
@@ -1384,10 +1384,10 @@ export const projects: Project[] = [
     },
     briefHeading: 'What Frugal Francine Taught Us',
     contributions: [
-      { icon: 'fa-regular fa-clipboard-list-check', label: 'Co-Project Lead' },
-      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Co-Project Lead' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
     ],
-    technologies: [{ icon: 'fa-regular fa-drafting-compass', label: 'Adobe Suite' }],
+    technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],
     media: [
       { type: 'heading', text: 'Example Persona' },
       {
@@ -1414,9 +1414,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Concepting' },
-      { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
     ],
     inlineContributions: true,
     technologies: [],
@@ -1491,9 +1491,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Concepting' },
-      { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
     ],
     technologies: [],
     media: [
@@ -1590,9 +1590,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-regular fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-regular fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-regular fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
     ],
     technologies: [],
     media: [

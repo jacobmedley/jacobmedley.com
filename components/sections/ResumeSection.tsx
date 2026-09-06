@@ -118,7 +118,7 @@ function SkillList({ items }: { items: string[] }) {
       {items.map((skill) => (
         <li key={skill}>
           <span className="fa-li">
-            <i className="fa-regular fa-angle-right" aria-hidden="true" />
+            <i className="fa-thin fa-angle-right" aria-hidden="true" />
           </span>
           {skill}
         </li>
@@ -134,7 +134,7 @@ export default function ResumeSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Resume" icon="fa-light fa-fw fa-list-timeline" />
+          <SectionHeader title="Resume" icon="fa-thin fa-fw fa-list-timeline" />
 
           <div className="row">
             <div className="col-24">
@@ -146,7 +146,7 @@ export default function ResumeSection() {
                       {column.map((item) => (
                         <li key={item.title} className="mb-4">
                           <span className="fa-li">
-                            <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                            <i className="fa-thin fa-angle-right" aria-hidden="true" />
                           </span>
                           <strong>{item.title}:</strong> {item.body}
                         </li>

@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, type ReactNode } from 'react'
+import { Fragment, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import {
@@ -69,6 +69,8 @@ interface CaseStudyModalProps {
  * the original legacy section order. Styles in globals.css (.modal…).
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
+  const returnFocusRef = useRef<HTMLElement | null>(null)
+
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -76,6 +78,14 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
         <Dialog.Content
           aria-describedby={undefined}
           className="modal"
+          onOpenAutoFocus={() => {
+            returnFocusRef.current = document.activeElement as HTMLElement | null
+          }}
+          onCloseAutoFocus={(event) => {
+            event.preventDefault()
+            returnFocusRef.current?.focus()
+            returnFocusRef.current = null
+          }}
           onClick={(e) => {
             // Bootstrap closes when the area outside the dialog content is clicked
             if (!(e.target as HTMLElement).closest('.modal-content')) onOpenChange(false)

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const badges = (labels: string[]) => (
   <div className="thinking-badges" aria-label="Disciplines">
-    {labels.map((label) => <span key={label}>{label.toLowerCase()}</span>)}
+    {labels.map((label) => <span key={label}>{label}</span>)}
   </div>
 )
 

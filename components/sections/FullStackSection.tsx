@@ -73,7 +73,7 @@ export default function FullStackSection() {
                   data-modal-trigger={project.id}
                 >
                   <div className="thinking-badges" aria-label="Disciplines">
-                    {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline.toLowerCase()}</span> : null)}
+                    {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline}</span> : null)}
                   </div>
                   <div className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')} aria-hidden="true">
                     {project.thumb ? (

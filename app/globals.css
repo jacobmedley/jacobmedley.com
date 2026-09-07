@@ -625,9 +625,18 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-geometry { position: absolute; inset: 0; }
 .thinking-geometry > i { position: absolute; display: none; border-color: rgba(127, 100, 10, .38); border-style: solid; border-width: 0; }
 
-/* Experimentation: one stable focal circle, then triangle, then square. */
-.thinking-art-split-test .thinking-geometry > i:nth-child(1) { display: block; top: var(--art-center-y); left: 50%; width: 220px; height: 220px; border-width: 1px; transform: translate(-50%, -50%); }
-.thinking-art-split-test .thinking-geometry > i:nth-child(2) { display: block; top: var(--art-center-y); left: 50%; width: 190px; height: 170px; background: rgba(127, 100, 10, .07); clip-path: polygon(50% 0, 100% 100%, 0 100%); transform: translate(-50%, -50%); }
+/* Experimentation: a blurred focal lens over a rotating, expanding triangle fractal. */
+.thinking-art-split-test .thinking-icon-anchor { width: 140px; height: 140px; background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%); }
+.thinking-art-split-test .thinking-icon { font-size: 56px; }
+.thinking-art-split-test .thinking-geometry > i { display: block; top: var(--art-center-y); left: 50%; aspect-ratio: 1; background: rgba(127, 100, 10, .08); clip-path: polygon(50% 0, 100% 100%, 0 100%); transform: translate(-50%, -50%); transform-origin: center; }
+.thinking-art-split-test .thinking-geometry > i:nth-child(1) { width: 128px; background: rgba(127, 100, 10, .14); transform: translate(-50%, -50%) rotate(0deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(2) { width: 172px; background: rgba(127, 100, 10, .12); transform: translate(-50%, -50%) rotate(12deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(3) { width: 222px; background: rgba(127, 100, 10, .1); transform: translate(-50%, -50%) rotate(25deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(4) { width: 278px; background: rgba(127, 100, 10, .08); transform: translate(-50%, -50%) rotate(39deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(5) { width: 340px; background: rgba(127, 100, 10, .065); transform: translate(-50%, -50%) rotate(54deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(6) { width: 408px; background: rgba(127, 100, 10, .05); transform: translate(-50%, -50%) rotate(70deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(7) { width: 482px; background: rgba(127, 100, 10, .035); transform: translate(-50%, -50%) rotate(87deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(8) { width: 562px; background: rgba(127, 100, 10, .022); transform: translate(-50%, -50%) rotate(105deg); }
 
 /* Service availability: mixed empty, partial, and filled signals radiate from the anchor. */
 .thinking-art-call-center-ux .thinking-geometry > i { display: block; width: 13px; height: 13px; border-width: 1px; border-radius: 50%; }
@@ -687,7 +696,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-art-personas .thinking-geometry > i:nth-child(5) { top: 8%; left: 57%; width: 20px; height: 20px; background: rgba(255, 255, 255, .5); }
 .thinking-art-personas .thinking-geometry > i:nth-child(6) { top: 56%; left: 69%; width: 34px; height: 34px; background: rgba(255, 255, 255, .3); }
 .thinking-badges { position: absolute; z-index: 4; top: 14px; right: 14px; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 5px; max-width: calc(100% - 28px); }
-.thinking-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border-radius: 999px; font-size: .68rem; font-weight: 300; line-height: 1; letter-spacing: .02em; text-transform: lowercase; }
+.thinking-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border-radius: 999px; font-size: .68rem; font-weight: 300; line-height: 1; letter-spacing: .02em; text-transform: capitalize; }
 .thinking-thumb-photo .thinking-badges > span { color: #fff; background: rgba(0, 0, 0, .5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
 .thinking-thumb-icon .thinking-badges > span { color: #735251; border: #735251 solid 1px; background: rgba(255, 253, 248, .62); }
 .thinking-panel { position: relative; z-index: 3; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; width: 100%; min-height: 94px; margin-top: auto; padding: 17px 20px 18px; background: linear-gradient(135deg, rgba(255, 255, 255, .64), rgba(241, 232, 203, .58)); -webkit-backdrop-filter: blur(14px) saturate(120%); backdrop-filter: blur(14px) saturate(120%); color: #424952; }

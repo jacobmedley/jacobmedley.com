@@ -21,7 +21,7 @@ export default function StudyCollection({ studies }: { studies: StudyPreview[] }
         {filtered.map((study) => (
           <Link className={`cs-study-card cs-theme-${study.theme}`} key={study.slug} href={`/case-studies/${study.slug}/`} aria-label={`Read ${study.shortTitle}`}>
             <div className="cs-card-art" aria-hidden="true"><StudyVisual kind={study.visual} /></div>
-            <div className="cs-card-copy"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read the story <Arrow /></span></div>
+            <div className="cs-card-copy"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read <Arrow /></span></div>
           </Link>
         ))}
       </div>

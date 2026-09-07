@@ -36,7 +36,7 @@ export default function HeroSection() {
                 </span>
               </p>
 
-              <a className="btn btn-outline-prime-dark action-label mt-4 mb-4 rounded-full hero-case-studies-link" href="#work" aria-label="Explore the case studies">
+              <a className="btn action-label mt-4 mb-4 hero-case-studies-link" href="#work" aria-label="Explore the case studies">
                 <span className="sr-only">Explore the case studies</span>
                 <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" />
               </a>

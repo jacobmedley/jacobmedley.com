@@ -53,8 +53,10 @@ export default function DesignVariantsPage() {
           <article className="thinking-thumb thinking-thumb-icon thinking-art-workshops">
             {badges(['Leadership'])}
             <div className="thinking-media thinking-media-icon" aria-hidden="true">
-              <span className="thinking-geometry"><i /><i /><i /><i /><i /></span>
-              <i className="fa-thin fa-screen-users thinking-icon" />
+              <span className="thinking-geometry">
+                {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
+              </span>
+              <span className="thinking-icon-anchor"><i className="fa-thin fa-lightbulb thinking-icon" /></span>
             </div>
             <div className="thinking-panel">
               <div className="thinking-copy">

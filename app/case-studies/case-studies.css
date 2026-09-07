@@ -23,7 +23,7 @@
 .cs-container { width: min(1200px, calc(100% - 112px)); margin-inline: auto; }
 .cs-eyebrow { display: block; font-size: 11px; line-height: 1.5; font-weight: 600; margin-bottom: 4px; letter-spacing: .65px; text-transform: none; }
 .cs-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
-.cs-badges > span { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 9px; border: 1px solid var(--cs-art-line, var(--cs-line)); border-radius: 999px; color: var(--cs-accent, var(--color-prime-dark)); background: rgba(255, 255, 255, .58); font-size: 9px; line-height: 1; font-weight: 600; letter-spacing: .55px; }
+.cs-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border: 1px solid var(--cs-art-line, var(--cs-line)); border-radius: 999px; color: var(--cs-accent, var(--color-prime-dark)); background: rgba(255, 255, 255, .58); font-size: .68rem; line-height: 1; font-weight: 300; letter-spacing: .02em; }
 .cs-arrow { flex: 0 0 auto; transition: transform 180ms ease; font-size: 1em; line-height: 1; }
 .cs-text-link { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-size: 14px; font-weight: 600; }
 .cs-text-link:hover .cs-arrow { transform: translateX(4px); }

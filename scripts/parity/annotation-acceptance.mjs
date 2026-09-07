@@ -31,6 +31,7 @@ for (const width of [375, 1191, 1440]) {
     const heroButton = document.querySelector('.hero-case-studies-link')
     const workItems = [...document.querySelectorAll('#work .work-item')]
     const readButtons = [...document.querySelectorAll('#work .case-study-read')]
+    const thinkingBadges = [...document.querySelectorAll('.thinking-badges > span')]
     const sectionIconBox = sectionIcon?.getBoundingClientRect()
     const sectionTitleBox = document.querySelector('#work .section-heading-title')?.getBoundingClientRect()
     return {
@@ -42,12 +43,22 @@ for (const width of [375, 1191, 1440]) {
       sectionIconTitleGap: sectionIconBox && sectionTitleBox ? Math.round(sectionTitleBox.top - sectionIconBox.bottom) : null,
       heroButtonSize: heroButton ? [heroButton.clientWidth, heroButton.clientHeight] : null,
       heroButtonAnimation: heroButton?.querySelector('i') ? getComputedStyle(heroButton.querySelector('i')).animationName : null,
+      heroButtonBorderWidth: heroButton ? getComputedStyle(heroButton).borderWidth : null,
+      mainCaseStudyRouteLinks: [...document.querySelectorAll('a')].filter((link) => link.getAttribute('href')?.startsWith('/case-studies/')).length,
       workItems: workItems.length,
       internalRules: workItems.reduce((count, item) => count + item.querySelectorAll('hr').length, 0),
       betweenRules: document.querySelectorAll('#work .work-separator').length,
       summaryLabels: workItems.filter((item) => item.textContent.includes('Summary:')).length,
       workBadgeGroups: workItems.reduce((count, item) => count + item.querySelectorAll('.work-card-badges').length, 0),
       readButtonWeights: [...new Set(readButtons.map((button) => getComputedStyle(button).fontWeight))],
+      readButtonLabels: [...new Set(readButtons.map((button) => button.textContent.trim()))],
+      selectedTitles: [...document.querySelectorAll('.thinking-title')].map((node) => node.textContent.trim()),
+      iconAnchors: document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor').length,
+      geometryPieceCounts: [...document.querySelectorAll('.thinking-thumb-icon .thinking-geometry')].map((node) => node.children.length),
+      thinkingBadgeStyles: [...new Set(thinkingBadges.map((badge) => {
+        const style = getComputedStyle(badge)
+        return [style.fontSize, style.fontWeight, style.lineHeight, style.letterSpacing, style.minHeight, style.padding].join('|')
+      }))],
       errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
     }
   })
@@ -81,6 +92,11 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.internalRules !== 0 || result.betweenRules !== result.workItems - 1 ||
   result.summaryLabels !== 0 || result.workBadgeGroups !== result.workItems ||
   result.readButtonWeights.some((weight) => weight !== '300') ||
+  result.readButtonLabels.join(',') !== 'Read Case Study' ||
+  result.heroButtonSize.join(',') !== '48,48' || result.heroButtonBorderWidth !== '0px' ||
+  result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 ||
+  result.geometryPieceCounts.some((count) => count !== 12) || result.thinkingBadgeStyles.length !== 1 ||
+  !result.selectedTitles.includes('Viva Medicare') || !result.selectedTitles.includes('Modular Experience for Growth') ||
   (Number(width) >= 768 && result.heroTitleLines !== 1)
 )) || Object.values(results.variants).some((result) => (
   result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || result.sections !== 1 || result.cards !== 2 ||

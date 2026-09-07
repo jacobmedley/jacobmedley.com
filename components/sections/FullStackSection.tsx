@@ -25,6 +25,8 @@ const cardKickers: Record<string, string> = {
 
 const cardTitles: Record<string, string> = {
   reveal: 'The Choice Is Clear',
+  viva: 'Viva Medicare',
+  wrong: 'Modular Experience for Growth',
 }
 
 /**
@@ -78,8 +80,12 @@ export default function FullStackSection() {
                       <span className="thinking-photo-image" style={{ backgroundImage: `url(${project.thumb.src})` }} />
                     ) : (
                       <>
-                        <span className="thinking-geometry"><i /><i /><i /><i /><i /></span>
-                        <i className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
+                        <span className="thinking-geometry">
+                          {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
+                        </span>
+                        <span className="thinking-icon-anchor">
+                          <i className={`${project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
+                        </span>
                       </>
                     )}
                   </div>

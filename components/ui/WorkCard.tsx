@@ -56,7 +56,7 @@ export default function WorkCard({
                 className="btn btn-lg btn-second-dark rounded-full action-label case-study-read"
                 onClick={open}
               >
-                Read case study <i className="fa-thin fa-arrow-right" aria-hidden="true" />
+                Read Case Study <i className="fa-thin fa-arrow-right" aria-hidden="true" />
               </button>
             </div>
           </div>

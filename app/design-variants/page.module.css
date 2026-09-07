@@ -10,7 +10,8 @@
 .sectionHeading h2 { max-width: 560px; margin-top: 7px; font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 500; line-height: 1; letter-spacing: -.04em; }
 .sectionHeading > p { max-width: 360px; color: #6f6773; line-height: 1.55; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.grid :global(.thinking-thumb) { height: 480px; margin: 0; pointer-events: auto; }
+.grid :global(.thinking-thumb) { --art-center-y: calc(50% - 58px); height: 480px; margin: 0; pointer-events: auto; }
+.grid :global(.thinking-media-icon) { --art-center-y: calc(50% - 58px); padding-bottom: 116px; }
 .grid :global(.thinking-panel) { min-height: 116px; }
 .grid :global(.thinking-title) { font-size: clamp(1.55rem, 3vw, 2rem); }
 .grid :global(.thinking-icon) { font-size: 4.5rem; }

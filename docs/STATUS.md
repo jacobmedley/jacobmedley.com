@@ -9,13 +9,18 @@ The continuation commits are `02468cb`, `8a94356`, `53dcbb9`, `e58dd20`, and
 available at `checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
 
 Follow-up browser annotations are implemented at `d6e8c55`, and Jacob's selected
-photo/icon card system is implemented at `f104b61` and visually refined at `108ce73`; see
+photo/icon card system is implemented at `f104b61`, visually refined at `108ce73`,
+and extended across the main/case-study experience at `c0b87f1`; see
 [the annotation checkpoint](browser-annotation-checkpoint.md). Selected Work now uses
 one shared card layout with full-color photo and project-specific icon treatments.
 Discipline badges and case-study filters use the concise taxonomy without the redundant
 word `Design`. `/design-variants/` remains a noindex review page containing the approved
 pair, not the earlier six-option comparison. Both treatments now share clipped 32px
 corners, a translucent blurred caption panel, Title Case eyebrows, and media-only motion.
+The six icon cards now use a shared centered circular anchor with project-specific
+geometry. Badge metrics are unified without changing colors, the main page no longer
+links into the standalone case-study route, and its in-page hero control is a single
+48px circular-arrow glyph.
 
 See [the owning production plan](website-production-plan.md),
 [final acceptance](final-brand-wave-acceptance.md), and the individual

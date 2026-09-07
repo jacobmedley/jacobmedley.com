@@ -1,16 +1,18 @@
 # Status
 
-## Isolated brand wave, September 6, 2026
+## Portfolio brand wave complete locally, September 6, 2026
 
-Work continues on `work/portfolio-brand-wave-20260906` in
-`C:\dev\jacobmedley-brand-wave`. Pre-change recovery tag:
-`checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
-First-wave source changes and browser acceptance pass. The continuation lives on
+The approved four-wave implementation and final browser acceptance are complete on
 `codex/portfolio-brand-wave-continuation-20260906` in the assigned Codex worktree.
-See [the focused handoff](brand-wave-handoff.md), [the owning production plan](website-production-plan.md),
-[Wave 1 acceptance evidence](wave-1-browser-acceptance.md), and the
-[Wave 2 visual checkpoint](wave-2-visual-checkpoint.md). Wave 2 card/rule treatments
-are implemented locally. No publication.
+The continuation commits are `02468cb`, `8a94356`, `53dcbb9`, `e58dd20`, and
+`ebb025c`, built on the approved Wave 1 commit `3868955`. Pre-change recovery remains
+available at `checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
+
+See [the owning production plan](website-production-plan.md),
+[final acceptance](final-brand-wave-acceptance.md), and the individual
+[Wave 1](wave-1-browser-acceptance.md), [Wave 2](wave-2-visual-checkpoint.md),
+[Wave 3](wave-3-taxonomy-checkpoint.md), and [Wave 4](wave-4-outcomes-checkpoint.md)
+checkpoints. No publication, deployment, merge, or remote push was performed.
 The original checkout and its existing ownership marker were preserved.
 
 Volatile state. Read this first, write it last.

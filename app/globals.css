@@ -596,8 +596,9 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .case-study-read { font-weight: 300; }
 
 .thinking-thumb {
+  position: relative;
   width: 100%;
-  height: 240px;
+  height: 360px;
   border-radius: 2rem;
   margin: 0 0 20px 0;
   color: #424952;
@@ -606,22 +607,69 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   display: flex;
   flex-direction: column;
   text-align: left;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
   background: #fff;
 }
 .thinking-thumb:hover {
   transform: scale(1.02);
 }
-.thinking-media { flex: 1; min-height: 0; width: 100%; }
-.thinking-media-image { background-position: center; background-size: cover; }
-.thinking-media-icon { display: grid; place-items: center; background: linear-gradient(135deg, #fff 0%, #f1e8cb 100%); }
-.thinking-icon { font-size: 58px; color: #7f640a; }
-.thinking-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; width: 100%; min-height: 72px; padding: 9px 13px 11px; border-top: 1px solid rgba(127, 100, 10, .2); background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(12px) saturate(130%); backdrop-filter: blur(12px) saturate(130%); color: #424952; }
-.thinking-title { margin: 0; font-size: .95rem; line-height: 1.25; }
-.thinking-view { margin: 0; flex: 0 0 auto; font-size: .82rem; }
+.thinking-media { position: relative; flex: 1; min-height: 0; width: 100%; overflow: hidden; }
+.thinking-media-image { background: #302a35; }
+.thinking-photo-image { position: absolute; inset: 0; background-position: center; background-size: cover; transition: transform .45s ease-out; }
+.thinking-thumb-photo:hover { transform: none; }
+.thinking-thumb-photo:hover .thinking-photo-image,
+.thinking-thumb-photo:focus-visible .thinking-photo-image { transform: scale(1.13); transition-duration: 5.5s; transition-timing-function: cubic-bezier(.18, .72, .3, 1); }
+.thinking-media-icon { display: grid; place-items: center; background: linear-gradient(135deg, #fffdf8 0%, #f1e8cb 100%); }
+.thinking-icon { position: relative; z-index: 2; font-size: 58px; color: #7f640a; }
+.thinking-geometry { position: absolute; inset: 12px; }
+.thinking-geometry > i { position: absolute; display: none; border: 1px solid rgba(127, 100, 10, .38); }
+.thinking-geometry > i:nth-child(-n + 3),
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(4) { display: block; }
+.thinking-art-split-test .thinking-geometry > i:nth-child(1) { inset: 12% 28%; border-radius: 50%; }
+.thinking-art-split-test .thinking-geometry > i:nth-child(2) { inset: 25% 15%; border-radius: 50%; transform: rotate(24deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(3) { top: 18%; bottom: 18%; left: 50%; transform: rotate(38deg); }
+.thinking-art-call-center-ux .thinking-geometry > i { left: 50%; top: 50%; border-radius: 50%; transform: translate(-50%, -50%); }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(1) { width: 78%; height: 34%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(2) { width: 60%; height: 54%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3) { width: 40%; height: 74%; }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(1) { width: 132px; height: 132px; top: 50%; left: 50%; border-radius: 50%; transform: translate(-50%, -50%); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(2) { width: 92px; height: 92px; top: 50%; left: 50%; border-radius: 50%; transform: translate(-50%, -50%); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(3) { width: 54px; height: 1px; right: 12%; top: 30%; transform: rotate(-32deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(4) { width: 54px; height: 1px; left: 12%; bottom: 25%; transform: rotate(-32deg); }
+.thinking-art-workshops .thinking-geometry > i { left: 50%; top: 50%; border-radius: 50%; transform: translate(-50%, -50%); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(1) { width: 178px; height: 178px; }
+.thinking-art-workshops .thinking-geometry > i:nth-child(2) { width: 132px; height: 132px; }
+.thinking-art-workshops .thinking-geometry > i:nth-child(3) { width: 86px; height: 86px; background: rgba(255, 255, 255, .55); }
+.thinking-art-roadmap .thinking-geometry { background-image: linear-gradient(90deg, transparent 49.7%, rgba(127, 100, 10, .3) 50%, transparent 50.3%), linear-gradient(transparent 49.7%, rgba(127, 100, 10, .3) 50%, transparent 50.3%); background-size: 42px 42px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(1) { width: 62%; height: 34%; top: 15%; left: 8%; border-width: 1px 1px 0 0; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(2) { width: 48%; height: 36%; right: 8%; bottom: 12%; border-width: 0 0 1px 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(3) { width: 1px; height: 72%; top: 12%; left: 27%; }
+.thinking-art-personas .thinking-geometry > i { width: 104px; height: 104px; top: 50%; border-radius: 48% 52% 46% 54%; transform: translateY(-50%) rotate(12deg); }
+.thinking-art-personas .thinking-geometry > i:nth-child(1) { left: 15%; }
+.thinking-art-personas .thinking-geometry > i:nth-child(2) { left: 36%; transform: translateY(-50%) rotate(-12deg); }
+.thinking-art-personas .thinking-geometry > i:nth-child(3) { right: 15%; }
+.thinking-badges { position: absolute; z-index: 4; top: 14px; right: 14px; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 5px; max-width: calc(100% - 28px); }
+.thinking-badges > span { padding: .3rem .6rem; border-radius: 999rem; font-size: clamp(.75rem, 1vw, .875rem); font-weight: 300; line-height: 1; text-transform: lowercase; }
+.thinking-thumb-photo .thinking-badges > span { color: #fff; background: rgba(0, 0, 0, .5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); font-weight: 200; letter-spacing: .15rem; }
+.thinking-thumb-icon .thinking-badges > span { color: #735251; border: #735251 solid 1px; background: rgba(255, 253, 248, .62); }
+.thinking-panel { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; width: 100%; min-height: 94px; padding: 17px 20px 18px; background: linear-gradient(135deg, #fffdf8 0%, #f1e8cb 100%); color: #424952; }
+.thinking-panel::before { position: absolute; top: 0; left: 0; width: 100%; height: 1px; content: ''; background: linear-gradient(to right, transparent, rgba(127, 100, 10, .48), transparent); }
+.thinking-thumb-photo .thinking-panel { background: linear-gradient(135deg, rgba(255, 255, 255, .8), rgba(241, 232, 203, .76)); -webkit-backdrop-filter: blur(14px) saturate(120%); backdrop-filter: blur(14px) saturate(120%); }
+.thinking-thumb-photo .thinking-panel::before { background: linear-gradient(to right, transparent, rgba(255, 255, 255, .95), transparent); }
+.thinking-copy { min-width: 0; }
+.thinking-eyebrow { display: block; margin-bottom: 7px; font-size: .64rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
+.thinking-title { margin: 0 0 12px; font-size: 1.25rem; line-height: 1.1; font-weight: 300; }
+.thinking-arrow { flex: 0 0 auto; margin-bottom: 12px; font-size: 1.5rem; font-weight: 100; }
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .thinking-panel { background: #fff; }
+  .thinking-thumb-photo .thinking-panel { background: #f6efd9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .thinking-photo-image { transition-duration: .01ms !important; }
+}
+
+@media (max-width: 575px) {
+  .thinking-thumb { height: 340px; }
 }
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */

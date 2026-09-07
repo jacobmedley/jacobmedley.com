@@ -11,6 +11,22 @@ const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
   .sort((a, b) => a.order - b.order)
 
+const cardKickers: Record<string, string> = {
+  'split-test': 'Experimentation',
+  'call-center-ux': 'Service experience',
+  'marketing-auto': 'Personalization',
+  workshops: 'Facilitation',
+  roadmap: 'Planning',
+  personas: 'Research synthesis',
+  reveal: 'Reveal campaign',
+  viva: 'Viva brand',
+  wrong: 'Wrong campaign',
+}
+
+const cardTitles: Record<string, string> = {
+  reveal: 'The choice is clear',
+}
+
 /**
  * Full-Stack Designer: carries the old Visual Design section's pop-light
  * gradient treatment (was section-visual-design.html). Tiles are a mix of
@@ -46,27 +62,33 @@ export default function FullStackSection() {
               <div key={project.id} className="col thinking-item">
                 <button
                   type="button"
-                  className="btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]"
+                  className={cn(
+                    'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
+                    project.thumb ? 'thinking-thumb-photo' : 'thinking-thumb-icon',
+                    `thinking-art-${project.id}`,
+                  )}
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
-                  <div
-                    className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')}
-                    style={project.thumb ? { backgroundImage: `url(${project.thumb.src})` } : undefined}
-                    aria-hidden="true"
-                  >
-                    {!project.thumb && <i className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon`} />}
+                  <div className="thinking-badges" aria-label="Disciplines">
+                    {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline.toLowerCase()}</span> : null)}
+                  </div>
+                  <div className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')} aria-hidden="true">
+                    {project.thumb ? (
+                      <span className="thinking-photo-image" style={{ backgroundImage: `url(${project.thumb.src})` }} />
+                    ) : (
+                      <>
+                        <span className="thinking-geometry"><i /><i /><i /><i /><i /></span>
+                        <i className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
+                      </>
+                    )}
                   </div>
                   <div className="thinking-panel">
-                    <div>
-                      <div className="portfolio-badges portfolio-badges-compact" aria-label="Disciplines">
-                        {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
-                      </div>
-                      <h6 className="thinking-title">{project.title}</h6>
+                    <div className="thinking-copy">
+                      <span className="thinking-eyebrow">{cardKickers[project.id] ?? 'Selected work'}</span>
+                      <h6 className="thinking-title">{cardTitles[project.id] ?? project.title}</h6>
                     </div>
-                    <span className="thinking-view action-label">
-                      View <i className="fa-thin fa-arrow-right" aria-hidden="true" />
-                    </span>
+                    <i className="fa-thin fa-arrow-right thinking-arrow" aria-hidden="true" />
                   </div>
                 </button>
               </div>

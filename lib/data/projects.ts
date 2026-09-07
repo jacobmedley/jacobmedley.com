@@ -166,12 +166,12 @@ export interface ProjectBadge {
 }
 
 export type PortfolioDiscipline =
-  | 'Product Design'
-  | 'Design Systems'
+  | 'Product'
+  | 'Systems'
   | 'UX Research'
-  | 'Design Leadership'
-  | 'Visual Design'
-  | 'Brand Design'
+  | 'Leadership'
+  | 'Visual'
+  | 'Brand'
   | 'Conversion Optimization'
 
 export interface Project {
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     id: 'webmd',
     section: 'work',
     display: 'feature',
-    disciplines: ['Product Design', 'Conversion Optimization'],
+    disciplines: ['Product', 'Conversion Optimization'],
     order: 1,
     title: 'WebMD',
     subtitle: 'eCommerce Website',
@@ -333,7 +333,7 @@ export const projects: Project[] = [
     id: 'dentalplans',
     section: 'work',
     display: 'feature',
-    disciplines: ['Design Systems', 'Product Design'],
+    disciplines: ['Systems', 'Product'],
     order: 2,
     title: 'DentalPlans.com',
     subtitle: 'Product Framework and Design System',
@@ -623,7 +623,7 @@ export const projects: Project[] = [
     id: 'bumblebeemd',
     section: 'work',
     display: 'feature',
-    disciplines: ['Design Systems', 'Brand Design'],
+    disciplines: ['Systems', 'Brand'],
     order: 3,
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
@@ -725,7 +725,7 @@ export const projects: Project[] = [
     id: 'hydra',
     section: 'work',
     display: 'feature',
-    disciplines: ['Design Systems', 'Product Design'],
+    disciplines: ['Systems', 'Product'],
     order: 4,
     title: 'Hydra',
     subtitle: 'The Making of a Design System',
@@ -896,7 +896,7 @@ export const projects: Project[] = [
     id: 'opfred',
     section: 'work',
     display: 'feature',
-    disciplines: ['Product Design', 'Conversion Optimization'],
+    disciplines: ['Product', 'Conversion Optimization'],
     order: 5,
     title: 'One Park Financial',
     subtitle: 'Redesign Corporate Website',
@@ -1005,7 +1005,7 @@ export const projects: Project[] = [
     id: 'split-test',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Conversion Optimization', 'Product Design'],
+    disciplines: ['Conversion Optimization', 'Product'],
     order: 6,
     title: 'A/B Testing',
     icon: 'fa-thin fa-vial',
@@ -1121,7 +1121,7 @@ export const projects: Project[] = [
     id: 'call-center-ux',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Product Design'],
+    disciplines: ['Product'],
     order: 7,
     title: 'Call Center XD',
     icon: 'fa-thin fa-headset',
@@ -1199,7 +1199,7 @@ export const projects: Project[] = [
     id: 'marketing-auto',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Product Design'],
+    disciplines: ['Product'],
     order: 8,
     title: 'Data-Driven Personalization',
     icon: 'fa-thin fa-bullseye-arrow',
@@ -1256,7 +1256,7 @@ export const projects: Project[] = [
     id: 'workshops',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Design Leadership'],
+    disciplines: ['Leadership'],
     order: 9,
     title: 'Team Workshops',
     icon: 'fa-thin fa-screen-users',
@@ -1304,7 +1304,7 @@ export const projects: Project[] = [
     id: 'roadmap',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Product Design', 'Design Leadership'],
+    disciplines: ['Product', 'Leadership'],
     order: 10,
     title: 'UX Roadmaps',
     icon: 'fa-thin fa-mouse-field',
@@ -1391,7 +1391,7 @@ export const projects: Project[] = [
     id: 'personas',
     section: 'work',
     display: 'thumb',
-    disciplines: ['UX Research', 'Product Design'],
+    disciplines: ['UX Research', 'Product'],
     order: 11,
     title: 'Personas',
     icon: 'fa-thin fa-masks-theater',
@@ -1422,10 +1422,10 @@ export const projects: Project[] = [
     id: 'reveal',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Brand Design', 'Visual Design'],
+    disciplines: ['Brand', 'Visual'],
     order: 12,
     title: 'Reveal',
-    thumb: { src: '/images/work/kitchen-sink/btn-reveal.png', alt: 'Reveal Aligners campaign' },
+    thumb: { src: '/images/work/kitchen-sink/reveal-cover.png', alt: 'Reveal Aligners campaign, The choice is clear' },
     modalTitle: 'Reveal Aligners',
     visible: true,
     summary: 'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight our product’s clarity and its advantages over the competition. I adopted a fun, edgy tone for both copy and visuals. We produced many concepts; these are the ones I’m proudest of.',
@@ -1499,10 +1499,10 @@ export const projects: Project[] = [
     id: 'viva',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Brand Design', 'UX Research'],
+    disciplines: ['Brand', 'UX Research'],
     order: 13,
     title: 'Viva',
-    thumb: { src: '/images/work/kitchen-sink/btn-viva.png', alt: 'Viva Medicare brand' },
+    thumb: { src: '/images/work/viva-modal/hero-1.png', alt: 'Viva Medicare brand campaign concept' },
     modalTitle: 'Viva Medicare',
     visible: true,
     summary: 'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
@@ -1598,10 +1598,10 @@ export const projects: Project[] = [
     id: 'wrong',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Brand Design', 'Visual Design'],
+    disciplines: ['Brand', 'Visual'],
     order: 14,
     title: 'Wrong',
-    thumb: { src: '/images/work/kitchen-sink/btn-wrong.png', alt: 'The Wrong campaign' },
+    thumb: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: 'The Wrong campaign portrait' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
     summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',

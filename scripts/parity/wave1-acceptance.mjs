@@ -70,7 +70,7 @@ for (const width of widths) {
     }
   })
   facts.filterCounts = {}
-  for (const filter of ['Product Design', 'Design Systems', 'UX Research', 'Design Leadership', 'Brand Design']) {
+  for (const filter of ['Product', 'Systems', 'UX Research', 'Leadership', 'Brand']) {
     await page.getByRole('button', { name: filter }).click()
     facts.filterCounts[filter] = (await page.locator('.cs-section-heading > span').textContent())?.trim()
   }

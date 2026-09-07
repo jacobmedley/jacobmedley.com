@@ -6,7 +6,7 @@ import type { CaseStudy } from '@/lib/data/case-studies'
 import StudyVisual from './StudyVisual'
 import Arrow from './Arrow'
 
-const categories = ['All Work', 'Product Design', 'Design Systems', 'UX Research', 'Design Leadership', 'Brand Design']
+const categories = ['All Work', 'Product', 'Systems', 'UX Research', 'Leadership', 'Brand']
 type StudyPreview = Pick<CaseStudy, 'slug' | 'shortTitle' | 'category' | 'tags' | 'theme' | 'visual' | 'summary'>
 
 export default function StudyCollection({ studies }: { studies: StudyPreview[] }) {

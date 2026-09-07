@@ -66,6 +66,8 @@ for (const width of [375, 1191]) {
     sections: document.querySelectorAll('main > section').length,
     cards: document.querySelectorAll('main article').length,
     headings: [...document.querySelectorAll('main section h2')].map((node) => node.textContent.trim()),
+    cardKinds: [...document.querySelectorAll('main article')].map((node) => node.classList.contains('thinking-thumb-photo') ? 'photo' : 'icon'),
+    badgesLowercase: [...document.querySelectorAll('.thinking-badges span')].every((node) => node.textContent === node.textContent.toLowerCase()),
     errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
   }))
   results.variants[width].status = response?.status()
@@ -81,7 +83,8 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.readButtonWeights.some((weight) => weight !== '300') ||
   (Number(width) >= 768 && result.heroTitleLines !== 1)
 )) || Object.values(results.variants).some((result) => (
-  result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || result.sections !== 2 || result.cards !== 6
+  result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || result.sections !== 1 || result.cards !== 2 ||
+  result.cardKinds.join(',') !== 'photo,icon' || !result.badgesLowercase
 ))
 
 await writeFile(path.join(outputDir, 'results.json'), `${JSON.stringify(results, null, 2)}\n`)

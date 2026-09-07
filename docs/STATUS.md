@@ -11,7 +11,9 @@ available at `checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
 Follow-up browser annotations are implemented at `d6e8c55`, and Jacob's selected
 photo/icon card system is implemented at `f104b61`, visually refined at `108ce73`,
 extended across the main/case-study experience at `c0b87f1`, and given its final
-label and A/B geometry refinements at `c98bede`; see
+label and A/B geometry refinements at `c98bede`. Shared icon-card motion, expanded
+geometry, read-action spacing, and the Font Awesome hydration fix are implemented at
+`9530f74`; see
 [the annotation checkpoint](browser-annotation-checkpoint.md). Selected Work now uses
 one shared card layout with full-color photo and project-specific icon treatments.
 Discipline badges and case-study filters use the concise taxonomy without the redundant
@@ -24,6 +26,12 @@ links into the standalone case-study route, and its in-page hero control is a si
 48px circular-arrow glyph. Badge labels are Title Case across the main and review
 surfaces, card-style actions read `Read` with the arrow, and A/B Testing uses a 140px
 translucent blurred icon anchor over expanding, rotating, fading triangle geometry.
+All icon cards now use the same 140px translucent blurred anchor, desktop hover/focus
+dolly motion, slow touch-device motion, and layered parallax depth; reduced-motion
+preferences remain static. Personalization uses twelve warp lines, Personas uses twelve
+visible expanding layers, and the main `Read` action uses `10px 26px` padding. The
+development preview is error-free after moving the Font Awesome kit to post-hydration
+loading.
 
 See [the owning production plan](website-production-plan.md),
 [final acceptance](final-brand-wave-acceptance.md), and the individual

@@ -8,10 +8,13 @@ The continuation commits are `02468cb`, `8a94356`, `53dcbb9`, `e58dd20`, and
 `ebb025c`, built on the approved Wave 1 commit `3868955`. Pre-change recovery remains
 available at `checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
 
-Follow-up browser annotations are implemented at `d6e8c55`; see
-[the annotation checkpoint](browser-annotation-checkpoint.md). Global refinements are
-applied, while `/design-variants/` remains a noindex comparison page awaiting Jacob's
-choice among three Visual Design and three icon-design directions.
+Follow-up browser annotations are implemented at `d6e8c55`, and Jacob's selected
+photo/icon card system is implemented at `f104b61`; see
+[the annotation checkpoint](browser-annotation-checkpoint.md). Selected Work now uses
+one shared card layout with full-color photo and project-specific icon treatments.
+Discipline badges and case-study filters use the concise taxonomy without the redundant
+word `Design`. `/design-variants/` remains a noindex review page containing the approved
+pair, not the earlier six-option comparison.
 
 See [the owning production plan](website-production-plan.md),
 [final acceptance](final-brand-wave-acceptance.md), and the individual

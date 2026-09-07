@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { caseStudies, caseStudyIntro } from '@/lib/data/case-studies'
 import StudyCollection from '@/components/case-studies/StudyCollection'
-import StudyVisual from '@/components/case-studies/StudyVisual'
-import Arrow from '@/components/case-studies/Arrow'
+import OutcomeDashboard from '@/components/case-studies/OutcomeDashboard'
 
 export const metadata: Metadata = {
   title: 'Case Studies | Jacob Medley, Product & Design Leader',
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 }
 
 export default function CaseStudiesPage() {
-  const featured = caseStudies[0]
   const previews = caseStudies.map(({ slug, shortTitle, category, tags, theme, visual, summary }) => ({ slug, shortTitle, category, tags, theme, visual, summary }))
 
   return (
@@ -23,13 +20,7 @@ export default function CaseStudiesPage() {
         <div className="cs-hero-aside"><p>{caseStudyIntro.description}</p><a className="cs-button cs-button-outline" href="#selected-work">Explore the case studies <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" /></a><hr className="cs-hero-rule" aria-hidden="true" /></div>
       </section>
 
-      <section className="cs-container cs-featured-section" aria-labelledby="featured-title">
-        <div className="cs-featured-label"><span className="cs-eyebrow">A Closer Look</span><span>01 // Platform Thinking</span></div>
-        <Link className="cs-featured cs-theme-plum" href={`/case-studies/${featured.slug}/`}>
-          <div className="cs-featured-art" aria-hidden="true"><StudyVisual kind="platform" /></div>
-          <div className="cs-featured-copy"><div className="cs-badges" aria-label="Disciplines">{featured.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h2 id="featured-title">One platform.<br />Five properties.</h2><p>{featured.summary}</p><div className="cs-featured-metric"><strong>6 <span>→</span> 2</strong><span>weeks to launch<br />a branded property</span></div><span className="cs-text-link">Inside the case study <Arrow /></span></div>
-        </Link>
-      </section>
+      <OutcomeDashboard />
 
       <StudyCollection studies={previews} />
       <section className="cs-perspective cs-container"><span className="cs-eyebrow">A Through-Line</span><hr className="cs-perspective-rule" aria-hidden="true" /><p>“You create velocity by<br className="cs-desktop-break" /> making the work smaller.”</p><hr className="cs-perspective-rule" aria-hidden="true" /><span className="cs-perspective-credit">Jacob Medley // From the platform case study</span></section>

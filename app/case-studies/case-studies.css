@@ -61,6 +61,17 @@
 .cs-featured-metric > span { color: var(--cs-muted); font-size: 12px; line-height: 1.5; }
 .cs-featured-copy > .cs-text-link { margin-top: auto; color: var(--color-prime-dark); }
 .cs-featured:hover .cs-text-link .cs-arrow { transform: translateX(5px); }
+.cs-outcome-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.cs-outcome-card { grid-column: span 2; display: flex; flex-direction: column; align-items: flex-start; min-width: 0; min-height: 278px; padding: 26px; border: 1px solid var(--cs-art-line); border-radius: 10px; background: #fffdfa; transition: box-shadow 180ms ease, transform 180ms ease; }
+.cs-outcome-card:nth-last-child(-n + 2) { grid-column: span 3; }
+.cs-outcome-card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(48, 41, 54, .1); }
+.cs-outcome-card > .cs-badges { margin-bottom: 22px; }
+.cs-outcome-type { color: var(--cs-muted); font-size: 9px; font-weight: 600; letter-spacing: 1.35px; text-transform: uppercase; }
+.cs-outcome-card > strong { margin-top: 9px; color: var(--cs-accent); font-size: 25px; line-height: 1.08; font-weight: 500; letter-spacing: -.5px; }
+.cs-outcome-label { margin-top: 5px; color: var(--cs-muted); font-size: 12px; line-height: 1.45; }
+.cs-outcome-card > p { margin-top: 20px; color: var(--cs-muted); font-size: 13px; line-height: 1.55; }
+.cs-outcome-card > .cs-text-link { margin-top: auto; padding-top: 22px; color: var(--cs-ink); }
+.cs-outcome-card:hover .cs-text-link .cs-arrow { transform: translateX(5px); }
 .cs-collection { padding-top: 92px; scroll-margin-top: 24px; }
 .cs-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
 .cs-section-heading h2 { font-size: 28px; line-height: 1.25; font-weight: 500; letter-spacing: -.65px; }
@@ -262,6 +273,8 @@
   .cs-featured { grid-template-columns: 1.15fr 1fr; }
   .cs-featured-art { padding: 26px; }
   .cs-featured-copy { padding: 32px 28px; }
+  .cs-outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs-outcome-card, .cs-outcome-card:nth-last-child(-n + 2) { grid-column: span 1; }
   .cs-card-art { padding: 25px 25px 48px; aspect-ratio: 1.3; }
   .cs-diagram-caption { font-size: 7px; letter-spacing: 1px; margin-bottom: 22px; }
   .cs-storefronts { gap: 6px; }
@@ -293,6 +306,8 @@
   .cs-featured-label > span:last-child { font-size: 10px; }
   .cs-featured-art { padding: 32px 24px; }
   .cs-featured-art .cs-diagram { max-width: 480px; margin-inline: auto; }
+  .cs-outcome-grid { grid-template-columns: 1fr; }
+  .cs-outcome-card { min-height: 0; }
   .cs-featured-copy { padding: 29px 25px; }
   .cs-featured-copy > .cs-eyebrow { margin-bottom: 4px; }
   .cs-featured-copy h2 { font-size: 35px; }

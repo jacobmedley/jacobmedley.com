@@ -8,7 +8,8 @@ Approved by Jacob on September 6, 2026. This repository copy is the website work
 - Wave 1 implementation and responsive acceptance are complete; see `docs/wave-1-browser-acceptance.md`.
 - Wave 2 is complete and visually checked at 375 and 1440px; see `docs/wave-2-visual-checkpoint.md`.
 - Wave 3 taxonomy alignment is complete; see `docs/wave-3-taxonomy-checkpoint.md`.
-- Wave 4's sourced outcomes dashboard and final acceptance remain pending.
+- Wave 4's sourced outcomes dashboard is complete; see `docs/wave-4-outcomes-checkpoint.md`.
+- Final local acceptance is complete; see `docs/final-brand-wave-acceptance.md`.
 - Publication and remote push: not authorized.
 - Claims and resume terminology: use only current repository sources and located resume masters. Missing sources remain blockers, never invitations to infer.
 

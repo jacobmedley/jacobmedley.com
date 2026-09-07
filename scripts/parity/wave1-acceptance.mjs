@@ -64,12 +64,16 @@ for (const width of widths) {
       labels,
       externalLinks: externalLinks.map((link) => ({ href: link.getAttribute('href'), target: link.target, rel: link.rel })),
       count: document.querySelector('.cs-section-heading > span')?.textContent.trim(),
+      outcomeCards: document.querySelectorAll('.cs-outcome-card').length,
+      featuredOutcome: document.querySelector('.cs-featured-metric')?.textContent.replace(/\s+/g, ' ').trim(),
+      maximumBadgeCount: Math.max(...[...document.querySelectorAll('.cs-badges')].map((node) => node.children.length)),
     }
   })
-  await page.getByRole('button', { name: 'Design Systems' }).click()
-  facts.designSystemsCount = (await page.locator('.cs-section-heading > span').textContent())?.trim()
-  await page.getByRole('button', { name: 'Product Design' }).click()
-  facts.productDesignCount = (await page.locator('.cs-section-heading > span').textContent())?.trim()
+  facts.filterCounts = {}
+  for (const filter of ['Product Design', 'Design Systems', 'UX Research', 'Design Leadership', 'Brand Design']) {
+    await page.getByRole('button', { name: filter }).click()
+    facts.filterCounts[filter] = (await page.locator('.cs-section-heading > span').textContent())?.trim()
+  }
   facts.status = response?.status()
   results.widths[width] = facts
   await page.close()

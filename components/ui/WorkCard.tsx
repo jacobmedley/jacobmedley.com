@@ -4,8 +4,6 @@ import { type Project } from '@/lib/data/projects'
 interface WorkCardProps {
   project: Project
   reverse?: boolean
-  /** Legacy wraps the closing hr in a .mt-4 div on some cards (webmd, bee) */
-  closingHrSpacer?: boolean
   onOpen?: (id: string) => void
 }
 
@@ -17,7 +15,6 @@ interface WorkCardProps {
 export default function WorkCard({
   project,
   reverse = false,
-  closingHrSpacer = false,
   onOpen,
 }: WorkCardProps) {
   const open = () => onOpen?.(project.id)
@@ -45,28 +42,24 @@ export default function WorkCard({
         </div>
 
         <div className="col-24 col-lg-12">
-          <div className="portfolio-badges" aria-label="Disciplines">
-            {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
-          </div>
           <h4 className="h2">{project.title}</h4>
           <p className="h5">{project.subtitle}</p>
-          <hr className="solid-center" />
-          <p className="h4">Summary:</p>
+          <div className="portfolio-badges work-card-badges" aria-label="Disciplines">
+            {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
+          </div>
           <p>{project.summary}</p>
 
           <div className="row text-center md:text-left">
             <div className="col-24">
               <button
                 type="button"
-                className="btn btn-lg btn-second-dark rounded-full action-label"
+                className="btn btn-lg btn-second-dark rounded-full action-label case-study-read"
                 onClick={open}
               >
                 Read case study <i className="fa-thin fa-arrow-right" aria-hidden="true" />
               </button>
             </div>
           </div>
-          {/* legacy wraps some closing hrs in a .mt-4 div; net effect is +4px */}
-          <hr className={closingHrSpacer ? 'solid-center mt-5' : 'solid-center'} />
         </div>
       </div>
     </div>

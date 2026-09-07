@@ -10,13 +10,13 @@ export default function HeroSection() {
         <div className="container">
           <div className="row text-center justify-center row-content">
             <div className="col-24 col-lg-14 self-center">
-              <p className="font-bold text-prime mb-0 h-jakeicon">
+              <p className="display-12 font-bold text-prime mb-0 h-jakeicon">
                 <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
               </p>
 
               {/* Only one span is in the render tree at a time — `hidden` is
                   display:none, which assistive tech skips, so no aria needed. */}
-              <h1 className="display-4 font-bold text-prime mt-0">
+              <h1 className="display-4 hero-title text-prime mt-0">
                 <span className="sm:hidden">Hi,</span>
                 <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
               </h1>
@@ -36,8 +36,8 @@ export default function HeroSection() {
                 </span>
               </p>
 
-              <a className="btn btn-outline-prime-dark action-label mt-4 mb-4 btn-lg rounded-full" href="#work">
-                <span>Explore the case studies</span>
+              <a className="btn btn-outline-prime-dark action-label mt-4 mb-4 rounded-full hero-case-studies-link" href="#work" aria-label="Explore the case studies">
+                <span className="sr-only">Explore the case studies</span>
                 <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" />
               </a>
             </div>

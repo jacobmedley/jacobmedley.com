@@ -4,6 +4,9 @@ Volatile state. Read this first, write it last.
 Durable rulings, wording standards, and figures live in copy-register.md.
 If a fact would still be true in three months, it belongs there, not here.
 
+The protocol around this file is `AGENTS.md`. Read that too, at the same time.
+Project Genesis coordination is `docs/genesis-exchange.md`.
+
 ## Surfaces
 
 | Surface | Current | Owner |
@@ -16,6 +19,19 @@ If a fact would still be true in three months, it belongs there, not here.
 ## Open
 
 Nothing blocking on the site side.
+
+Exchange records owed, coordinator action required:
+  - The handoff protocol work on `claude/genesis-handoff-protocol-5hzaqj` was done
+    from a Linux container with no `X:` mount. `X:\Genesis Exchange` was unreachable
+    and `sync-project-genesis\tools\exchange.py` was not present, so no fingerprint
+    was read and NO inbox event was written. Exchange context for that session was
+    stale throughout.
+  - One `update` event still needs writing from a host with `X:` mounted, carrying
+    the commit SHA, changed files, and checks run. Content is in the session handoff.
+  - Nothing in this repo can confirm the protocol text matches
+    `01-rules\COORDINATION.md` or `01-rules\MODEL-ROUTING.md`. It was written from
+    the task brief and existing repo docs only. It needs a read against those rules
+    before it is treated as reconciled.
 
 Carried on feat/recruiter-portfolio, unmerged:
   - remove the reviews-that-end-in-decisions study from portfolio-studies.ts

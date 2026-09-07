@@ -1,12 +1,19 @@
 # Working Agreement
 
-Governs every AI session touching `C:\dev\jacobmedley.com`.
+Governs every AI session touching this repository, at whatever path it is checked out:
+the primary clone, any `git worktree`, or a remote container. The rules follow the
+repo, not the drive letter.
 
 Multiple sessions run against this repo at once: this chat, a resume chat, a design
 system chat, ChatGPT, and one or more Claude Code terminals. The repo is PUBLIC and
 `main` deploys to a live site on push, with no dry run.
 
 Read this before doing anything.
+
+**This file covers repository mechanics.** The handoff protocol every agent follows is
+`AGENTS.md`, and it is read first. Coordination with Project Genesis is
+`docs/genesis-exchange.md`, summarised here in section 15. Where this file and
+`AGENTS.md` appear to disagree, `AGENTS.md` is correct.
 
 ---
 
@@ -50,6 +57,16 @@ Do not remove another session's lock without Jacob saying so.
 ```powershell
 Remove-Item .tree-lock
 ```
+
+**Same three steps outside Windows.** Sessions also run on macOS, Linux, and in remote
+containers, and the lock binds there identically:
+```bash
+[ -f .tree-lock ] && cat .tree-lock                                        # check
+printf '%s | %s | %s\n' "$(hostname)" "$(date -Is)" "<label>" > .tree-lock # claim
+rm -f .tree-lock                                                           # release
+```
+A session on a host that cannot see the other session's machine is still bound by the
+lock file, because the lock lives in the tree rather than on the machine.
 
 `.tree-lock` is gitignored.
 
@@ -233,12 +250,15 @@ re-verify and confirm MISS with a matching Last-Modified.
 
 Every session ends by reporting:
 
-- Working tree state, and whether the lock is held or released
+- Working tree path and state, and whether the lock is held or released
 - Current branch and commit hash
+- Exchange fingerprint at last read, and whether the Exchange was reachable at all
+- Inbox events written, by type, or the events handed off unwritten
 - Running services, with ports
 - Files changed
 - B edit numbers applied or skipped
 - Verification actually performed, with observable evidence rather than confidence
+- Coordinator action required, if any
 - Blockers and anything left unverified
 
 State what was requested, what passed, what failed, what was improved beyond the
@@ -257,6 +277,10 @@ in the register, once.
 
 Every re-raised decision in this project was made in conversation and
 written nowhere, or written somewhere nobody re-read.
+
+The closing order is fixed and `docs/STATUS.md` is the last write of it: verify, write
+the Exchange inbox `update` event, then update STATUS. Writing STATUS before the record
+exists leaves the repo claiming a handoff that the Exchange has never heard of.
 
 ---
 
@@ -365,6 +389,11 @@ State the sweep result explicitly, including when it comes back empty.
 
 Match effort to blast radius. Most work is Sonnet Medium.
 
+Project Genesis carries its own routing rules in
+`X:\Genesis Exchange\01-rules\MODEL-ROUTING.md`. Those are authoritative. The table
+below is the website-local view and is the stale copy whenever the two differ. Read the
+Exchange rule at intake rather than assuming this table still matches it.
+
 | Model | Use for |
 |---|---|
 | Qwen, local | sweeps, greps, inventories. Mechanical, verifiable by inspection, no judgment. |
@@ -382,3 +411,35 @@ correctly Sonnet Medium.
 Also: .tree-lock in Section 2 has never been used. Two parallel sessions
 edited this tree mid-task on Aug 29 and it happened to be harmless. Claim
 the lock before writing.
+
+---
+
+## 15. Project Genesis
+
+This website is one workstream inside Project Genesis. Full procedure in
+`docs/genesis-exchange.md`. The shape of it:
+
+**Two authorities, neither a copy of the other.** This Git repository is authoritative
+for website source and detailed implementation records: what the code does, what the
+copy says, which commit shipped, what was verified. `X:\Genesis Exchange` is
+authoritative for Genesis direction, ownership, decisions, and handoffs. Inside the
+Exchange's scope the Exchange wins and a disagreeing repo record is stale.
+
+**Re-read the Exchange at five points,** not once at the start: task intake, before a
+change that depends on a Genesis decision, before acceptance, before handoff, before
+publishing. Re-check the fingerprint each time with
+`py -3.11 "X:\sync-project-genesis\tools\exchange.py" check --expect <FINGERPRINT>`.
+
+**Record two kinds of event, append-only, each written once.** A `change` event for
+Jacob's changed direction. An `update` event for checkpoints, final commits,
+verification, deployment state, and rollback references.
+
+**Two hard limits.** Never rewrite the entire Exchange from a website worktree. Only
+the designated Genesis coordinator reconciles inbox records into `CURRENT.md`, shared
+rules, workstream cards, decisions, and evidence. From here the write surface is the
+inbox and nothing else.
+
+**When `X:` is not mounted,** which happens on every remote container session, report
+stale context and hand off the records that still need writing. Never report the
+Exchange as updated when no event was written. Repository work continues; only the
+claim stops.

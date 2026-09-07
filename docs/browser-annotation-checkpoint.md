@@ -11,6 +11,7 @@ Status: implemented and verified locally on 2026-09-07. No deployment or push pe
 - Removed half-width rules from inside case-study records and placed full-width rules between records.
 - Replaced the `Summary:` label position with each case study's existing discipline badges.
 - Reduced every card-style read action to `Read` with the thin right arrow, including the standalone case-study collection.
+- Set the main case-study `Read` control to `10px 26px` padding at every breakpoint, preserving the existing shared button shape and type treatment.
 - Removed the main-site link into the standalone case-study route; the case-study area remains a walled, directly addressable experience.
 - Reduced the hero case-study control to the 48px circular arrow glyph itself, eliminating the duplicate outer circle.
 
@@ -28,6 +29,10 @@ The subsequent refinements clip all card children to the shared 32px radius; set
 
 All six icon cards now share a circular icon anchor centered above the caption. Their geometry is project-specific: A/B Testing uses a 140px translucent blurred anchor over rotating, expanding, fading fractal triangles; the remaining cards use mixed availability dots, converging personalization lines, seven progressively wider and fainter facilitation rings, intersecting roadmap paths, and a central persona system with satellite circles. Team Workshops uses the hosted kit's thin classic lightbulb. The photo-card labels now read `The Choice Is Clear`, `Viva Medicare`, and `Modular Experience for Growth`.
 
+The 140px translucent, blurred anchor is now the global icon-card rule. On fine-pointer desktop devices, hover and keyboard focus produce a faster internal dolly zoom while the geometry layers move at different depths and blur levels; touch devices run the same focal effect as a slower continuous loop. Reduced-motion preferences disable these animations. Data-Driven Personalization now uses all twelve geometry slots as converging warp-speed action lines, and Personas repeats six additional progressively wider and fainter circles to fill the visual field.
+
+The Font Awesome kit now loads after React becomes interactive. This prevents the kit from rewriting icon accessibility attributes before hydration and eliminates the development hydration mismatch without changing the icon set.
+
 ## Verification
 
 - Production build generated 12 static pages, including the approved-pair review route.
@@ -35,4 +40,6 @@ All six icon cards now share a circular icon anchor centered above the caption. 
 - Existing full browser acceptance remains green at 320, 375, 576, 768, and 1440px, including all detail routes and modal keyboard behavior.
 - Focused checks pass at 375, 1191, and 1440px on the home page and at 375 and 1191px on the review page, including the one-photo/one-icon structure, unified Title Case badge metrics, `Read` actions, six icon anchors, twelve geometry slots per icon card, title labels, and zero main-site links to `/case-studies/`.
 - A final narrow-viewport visual inspection confirms the A/B card's triangle field, blurred 140px anchor, badge placement, and caption remain legible and intentionally aligned.
+- The refreshed production build passes, and live browser verification confirms the prior Font Awesome hydration error is absent on a fresh page load.
+- Responsive acceptance confirms `10px 26px` read-action padding, six `140x140` anchors, twelve Personalization lines, twelve visible Personas geometry layers, and the intended slow anchor/field animations under a coarse touch pointer.
 - No checked viewport has horizontal overflow, framework overlays, console errors, or page errors.

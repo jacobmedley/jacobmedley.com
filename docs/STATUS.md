@@ -10,7 +10,8 @@ available at `checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
 
 Follow-up browser annotations are implemented at `d6e8c55`, and Jacob's selected
 photo/icon card system is implemented at `f104b61`, visually refined at `108ce73`,
-and extended across the main/case-study experience at `c0b87f1`; see
+extended across the main/case-study experience at `c0b87f1`, and given its final
+label and A/B geometry refinements at `c98bede`; see
 [the annotation checkpoint](browser-annotation-checkpoint.md). Selected Work now uses
 one shared card layout with full-color photo and project-specific icon treatments.
 Discipline badges and case-study filters use the concise taxonomy without the redundant
@@ -20,7 +21,9 @@ corners, a translucent blurred caption panel, Title Case eyebrows, and media-onl
 The six icon cards now use a shared centered circular anchor with project-specific
 geometry. Badge metrics are unified without changing colors, the main page no longer
 links into the standalone case-study route, and its in-page hero control is a single
-48px circular-arrow glyph.
+48px circular-arrow glyph. Badge labels are Title Case across the main and review
+surfaces, card-style actions read `Read` with the arrow, and A/B Testing uses a 140px
+translucent blurred icon anchor over expanding, rotating, fading triangle geometry.
 
 See [the owning production plan](website-production-plan.md),
 [final acceptance](final-brand-wave-acceptance.md), and the individual

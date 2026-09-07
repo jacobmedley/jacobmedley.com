@@ -45,6 +45,9 @@ export default function WorkCard({
         </div>
 
         <div className="col-24 col-lg-12">
+          <div className="portfolio-badges" aria-label="Disciplines">
+            {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
+          </div>
           <h4 className="h2">{project.title}</h4>
           <p className="h5">{project.subtitle}</p>
           <hr className="solid-center" />

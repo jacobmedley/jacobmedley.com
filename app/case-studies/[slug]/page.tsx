@@ -31,7 +31,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <main id="main-content" tabIndex={-1} className={`cs-detail cs-theme-${study.theme}`}>
       <section className="cs-detail-hero cs-container">
         <Link href="/case-studies/" className="cs-back-link"><i className="fa-thin fa-arrow-left" aria-hidden="true" /> All case studies</Link>
-        <div className="cs-detail-meta"><span className="cs-eyebrow">{study.category}</span><span>Case Study // {String(index + 1).padStart(2, '0')}</span></div>
+        <div className="cs-detail-meta"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span>Case Study // {String(index + 1).padStart(2, '0')}</span></div>
         <h1>{study.title}</h1><p className="cs-detail-deck">{study.summary}</p>
         <dl className="cs-role-grid"><div><dt>My role</dt><dd>{study.role}</dd></div><div><dt>The scope</dt><dd>{study.scope}</dd></div><div><dt>Working together</dt><dd>{study.collaboration}</dd></div></dl>
       </section>

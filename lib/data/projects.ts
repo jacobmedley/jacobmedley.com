@@ -165,12 +165,22 @@ export interface ProjectBadge {
   label: string
 }
 
+export type PortfolioDiscipline =
+  | 'Product Design'
+  | 'Design Systems'
+  | 'UX Research'
+  | 'Design Leadership'
+  | 'Visual Design'
+  | 'Brand Design'
+  | 'Conversion Optimization'
+
 export interface Project {
   id: string // stable slug, used by the modal
   title: string // section/card title (and thumb label)
   modalTitle?: string // legacy modal header title when it differs
   section: 'work' | 'visual-design'
   display: 'feature' | 'thumb' // editorial row vs thinking-thumb button
+  disciplines: [PortfolioDiscipline, PortfolioDiscipline?]
   visible: boolean // false = removed from render, data retained
   order: number
   subtitle?: string // feature-card strapline (p.h5)
@@ -201,6 +211,7 @@ export const projects: Project[] = [
     id: 'webmd',
     section: 'work',
     display: 'feature',
+    disciplines: ['Product Design', 'Conversion Optimization'],
     order: 1,
     title: 'WebMD',
     subtitle: 'eCommerce Website',
@@ -322,6 +333,7 @@ export const projects: Project[] = [
     id: 'dentalplans',
     section: 'work',
     display: 'feature',
+    disciplines: ['Design Systems', 'Product Design'],
     order: 2,
     title: 'DentalPlans.com',
     subtitle: 'Product Framework and Design System',
@@ -611,6 +623,7 @@ export const projects: Project[] = [
     id: 'bumblebeemd',
     section: 'work',
     display: 'feature',
+    disciplines: ['Design Systems', 'Brand Design'],
     order: 3,
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
@@ -712,6 +725,7 @@ export const projects: Project[] = [
     id: 'hydra',
     section: 'work',
     display: 'feature',
+    disciplines: ['Design Systems', 'Product Design'],
     order: 4,
     title: 'Hydra',
     subtitle: 'The Making of a Design System',
@@ -882,6 +896,7 @@ export const projects: Project[] = [
     id: 'opfred',
     section: 'work',
     display: 'feature',
+    disciplines: ['Product Design', 'Conversion Optimization'],
     order: 5,
     title: 'One Park Financial',
     subtitle: 'Redesign Corporate Website',
@@ -990,6 +1005,7 @@ export const projects: Project[] = [
     id: 'split-test',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Conversion Optimization', 'Product Design'],
     order: 6,
     title: 'A/B Testing',
     icon: 'fa-thin fa-vial',
@@ -1105,6 +1121,7 @@ export const projects: Project[] = [
     id: 'call-center-ux',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Product Design'],
     order: 7,
     title: 'Call Center XD',
     icon: 'fa-thin fa-headset',
@@ -1182,6 +1199,7 @@ export const projects: Project[] = [
     id: 'marketing-auto',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Product Design'],
     order: 8,
     title: 'Data-Driven Personalization',
     icon: 'fa-thin fa-bullseye-arrow',
@@ -1238,6 +1256,7 @@ export const projects: Project[] = [
     id: 'workshops',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Design Leadership'],
     order: 9,
     title: 'Team Workshops',
     icon: 'fa-thin fa-screen-users',
@@ -1285,6 +1304,7 @@ export const projects: Project[] = [
     id: 'roadmap',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Product Design', 'Design Leadership'],
     order: 10,
     title: 'UX Roadmaps',
     icon: 'fa-thin fa-mouse-field',
@@ -1371,6 +1391,7 @@ export const projects: Project[] = [
     id: 'personas',
     section: 'work',
     display: 'thumb',
+    disciplines: ['UX Research', 'Product Design'],
     order: 11,
     title: 'Personas',
     icon: 'fa-thin fa-masks-theater',
@@ -1401,6 +1422,7 @@ export const projects: Project[] = [
     id: 'reveal',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Brand Design', 'Visual Design'],
     order: 12,
     title: 'Reveal',
     thumb: { src: '/images/work/kitchen-sink/btn-reveal.png', alt: 'Reveal Aligners campaign' },
@@ -1477,6 +1499,7 @@ export const projects: Project[] = [
     id: 'viva',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Brand Design', 'UX Research'],
     order: 13,
     title: 'Viva',
     thumb: { src: '/images/work/kitchen-sink/btn-viva.png', alt: 'Viva Medicare brand' },
@@ -1575,6 +1598,7 @@ export const projects: Project[] = [
     id: 'wrong',
     section: 'work',
     display: 'thumb',
+    disciplines: ['Brand Design', 'Visual Design'],
     order: 14,
     title: 'Wrong',
     thumb: { src: '/images/work/kitchen-sink/btn-wrong.png', alt: 'The Wrong campaign' },

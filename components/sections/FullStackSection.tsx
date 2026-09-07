@@ -30,7 +30,7 @@ export default function FullStackSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Full-Stack Designer" icon="fa-thin fa-toolbox" />
+          <SectionHeader title="Selected Work" icon="fa-thin fa-toolbox" />
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
@@ -58,7 +58,12 @@ export default function FullStackSection() {
                     {!project.thumb && <i className={`${project.icon ?? 'fa-thin fa-star'} thinking-icon`} />}
                   </div>
                   <div className="thinking-panel">
-                    <h6 className="thinking-title">{project.title}</h6>
+                    <div>
+                      <div className="portfolio-badges portfolio-badges-compact" aria-label="Disciplines">
+                        {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
+                      </div>
+                      <h6 className="thinking-title">{project.title}</h6>
+                    </div>
                     <span className="thinking-view action-label">
                       View <i className="fa-thin fa-arrow-right" aria-hidden="true" />
                     </span>

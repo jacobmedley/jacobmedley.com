@@ -6,12 +6,12 @@ import type { CaseStudy } from '@/lib/data/case-studies'
 import StudyVisual from './StudyVisual'
 import Arrow from './Arrow'
 
-const categories = ['All Work', 'Design Leadership', 'Design Systems', 'Product Design']
-type StudyPreview = Pick<CaseStudy, 'slug' | 'shortTitle' | 'category' | 'theme' | 'visual' | 'summary'>
+const categories = ['All Work', 'Product Design', 'Design Systems', 'UX Research', 'Design Leadership', 'Brand Design']
+type StudyPreview = Pick<CaseStudy, 'slug' | 'shortTitle' | 'category' | 'tags' | 'theme' | 'visual' | 'summary'>
 
 export default function StudyCollection({ studies }: { studies: StudyPreview[] }) {
   const [category, setCategory] = useState('All Work')
-  const filtered = category === 'All Work' ? studies : studies.filter((study) => study.category === category)
+  const filtered = category === 'All Work' ? studies : studies.filter((study) => study.tags.includes(category))
 
   return (
     <section className="cs-collection cs-container" id="selected-work" aria-labelledby="selected-work-title">
@@ -21,7 +21,7 @@ export default function StudyCollection({ studies }: { studies: StudyPreview[] }
         {filtered.map((study) => (
           <Link className={`cs-study-card cs-theme-${study.theme}`} key={study.slug} href={`/case-studies/${study.slug}/`} aria-label={`Read ${study.shortTitle}`}>
             <div className="cs-card-art" aria-hidden="true"><StudyVisual kind={study.visual} /></div>
-            <div className="cs-card-copy"><span className="cs-eyebrow">{study.category}</span><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read the story <Arrow /></span></div>
+            <div className="cs-card-copy"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read the story <Arrow /></span></div>
           </Link>
         ))}
       </div>

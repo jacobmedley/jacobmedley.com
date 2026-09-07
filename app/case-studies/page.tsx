@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function CaseStudiesPage() {
   const featured = caseStudies[0]
-  const previews = caseStudies.map(({ slug, shortTitle, category, theme, visual, summary }) => ({ slug, shortTitle, category, theme, visual, summary }))
+  const previews = caseStudies.map(({ slug, shortTitle, category, tags, theme, visual, summary }) => ({ slug, shortTitle, category, tags, theme, visual, summary }))
 
   return (
     <main id="main-content" tabIndex={-1}>
@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
         <div className="cs-featured-label"><span className="cs-eyebrow">A Closer Look</span><span>01 // Platform Thinking</span></div>
         <Link className="cs-featured cs-theme-plum" href={`/case-studies/${featured.slug}/`}>
           <div className="cs-featured-art" aria-hidden="true"><StudyVisual kind="platform" /></div>
-          <div className="cs-featured-copy"><span className="cs-eyebrow">{featured.category}</span><h2 id="featured-title">One platform.<br />Five properties.</h2><p>{featured.summary}</p><div className="cs-featured-metric"><strong>6 <span>→</span> 2</strong><span>weeks to launch<br />a branded property</span></div><span className="cs-text-link">Inside the case study <Arrow /></span></div>
+          <div className="cs-featured-copy"><div className="cs-badges" aria-label="Disciplines">{featured.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h2 id="featured-title">One platform.<br />Five properties.</h2><p>{featured.summary}</p><div className="cs-featured-metric"><strong>6 <span>→</span> 2</strong><span>weeks to launch<br />a branded property</span></div><span className="cs-text-link">Inside the case study <Arrow /></span></div>
         </Link>
       </section>
 

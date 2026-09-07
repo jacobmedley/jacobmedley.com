@@ -587,6 +587,10 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .section-heading-icon { margin: 0; line-height: 1; }
 .section-heading-icon i { font-size: clamp(3rem, 6vw, 4rem); font-weight: 100; }
 .section-heading-title { margin-top: -.35rem; font-size: clamp(2.25rem, 4.2vw, 3rem); line-height: 1.15; font-weight: 500; }
+.portfolio-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.portfolio-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border: 1px solid currentColor; border-radius: 999px; font-size: .68rem; line-height: 1; letter-spacing: .02em; }
+.portfolio-badges-compact { gap: 4px; margin-bottom: 5px; }
+.portfolio-badges-compact > span { min-height: 19px; padding: 3px 6px; font-size: .56rem; }
 
 .thinking-thumb {
   width: 100%;
@@ -610,7 +614,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-media-image { background-position: center; background-size: cover; }
 .thinking-media-icon { display: grid; place-items: center; background: linear-gradient(135deg, #fff 0%, #f1e8cb 100%); }
 .thinking-icon { font-size: 58px; color: #7f640a; }
-.thinking-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 14px 17px; border-top: 1px solid rgba(127, 100, 10, .2); background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(12px) saturate(130%); backdrop-filter: blur(12px) saturate(130%); color: #424952; }
+.thinking-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; width: 100%; min-height: 72px; padding: 9px 13px 11px; border-top: 1px solid rgba(127, 100, 10, .2); background: rgba(255, 255, 255, .82); -webkit-backdrop-filter: blur(12px) saturate(130%); backdrop-filter: blur(12px) saturate(130%); color: #424952; }
 .thinking-title { margin: 0; font-size: .95rem; line-height: 1.25; }
 .thinking-view { margin: 0; flex: 0 0 auto; font-size: .82rem; }
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {

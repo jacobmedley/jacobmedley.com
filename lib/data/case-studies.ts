@@ -15,6 +15,7 @@ export type CaseStudy = {
   title: string
   shortTitle: string
   category: string
+  tags: string[]
   discipline: string
   theme: string
   visual: string

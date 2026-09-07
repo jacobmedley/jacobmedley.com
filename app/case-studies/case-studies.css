@@ -22,6 +22,8 @@
 .cs-site a, .cs-site button { -webkit-tap-highlight-color: transparent; }
 .cs-container { width: min(1200px, calc(100% - 112px)); margin-inline: auto; }
 .cs-eyebrow { display: block; font-size: 11px; line-height: 1.5; font-weight: 600; margin-bottom: 4px; letter-spacing: .65px; text-transform: none; }
+.cs-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.cs-badges > span { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 9px; border: 1px solid var(--cs-art-line, var(--cs-line)); border-radius: 999px; color: var(--cs-accent, var(--color-prime-dark)); background: rgba(255, 255, 255, .58); font-size: 9px; line-height: 1; font-weight: 600; letter-spacing: .55px; }
 .cs-arrow { flex: 0 0 auto; transition: transform 180ms ease; font-size: 1em; line-height: 1; }
 .cs-text-link { display: inline-flex; align-items: center; gap: 10px; width: fit-content; font-size: 14px; font-weight: 600; }
 .cs-text-link:hover .cs-arrow { transform: translateX(4px); }
@@ -50,7 +52,7 @@
 .cs-featured { display: grid; grid-template-columns: 1.38fr 1fr; border: 1px solid #d4cbd9; border-radius: 12px; overflow: hidden; background: #f0eaf2; }
 .cs-featured-art { display: flex; align-items: center; padding: 40px 36px; background: #e7dfea; min-width: 0; }
 .cs-featured-copy { padding: 42px 40px; display: flex; flex-direction: column; align-items: flex-start; }
-.cs-featured-copy > .cs-eyebrow { color: var(--color-prime); margin-bottom: 4px; }
+.cs-featured-copy > .cs-badges { margin-bottom: 8px; }
 .cs-featured-copy h2 { font-size: clamp(29px, 3vw, 42px); line-height: 1.12; letter-spacing: -1.3px; font-weight: 500; }
 .cs-featured-copy > p { font-size: 15px; line-height: 1.65; color: var(--cs-muted); margin-top: 20px; max-width: 350px; }
 .cs-featured-metric { display: flex; align-items: center; gap: 22px; padding-block: 24px; margin-block: 26px; border-top: 1px solid #d4cbd9; border-bottom: 1px solid #d4cbd9; width: 100%; }
@@ -83,7 +85,7 @@
 .cs-card-art .cs-open-circle svg { width: 14px; }
 .cs-study-card:hover .cs-open-circle { background: var(--cs-accent); color: white; }
 .cs-card-copy { padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
-.cs-card-copy > .cs-eyebrow { color: var(--cs-accent); font-size: 10px; letter-spacing: 1.5px; }
+.cs-card-copy > .cs-badges { margin-bottom: 8px; }
 .cs-card-copy h3 { font-size: 27px; line-height: 1.15; letter-spacing: -.6px; margin-top: 0; font-weight: 500; }
 .cs-card-copy p { font-size: 15px; line-height: 1.6; color: var(--cs-muted); margin-block: 13px 20px; max-width: 480px; }
 .cs-card-copy .cs-text-link { font-size: 12px; margin-top: auto; }

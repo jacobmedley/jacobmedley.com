@@ -16,11 +16,13 @@ Status: implemented and verified locally on 2026-09-07. No deployment or push pe
 
 Jacob selected the image-led Type-led frame and the icon-led Facilitator orbit. The two treatments now share one card layout across Selected Work: badges at the top right, a centered fading rule, a bottom-aligned eyebrow/title row, and a right-aligned arrow.
 
-- Photo cards use full-color project imagery, dark translucent lowercase badges, a translucent gradient caption panel, and a slow image-only hover scale with a quick animated return.
+- Photo cards use full-color project imagery, dark translucent lowercase badges, a translucent gradient caption panel, and a slow media-only hover scale with a quick animated return.
 - Icon cards use centered project icons, project-specific geometric fields, outlined lowercase badges, and the warm gradient treatment.
-- The Reveal card uses the approved `The choice is clear` title.
+- The Reveal card uses the approved `The Choice Is Clear` title.
 - `/design-variants/` is now a noindex review page containing only the approved photo and icon pair.
 - Discipline badges and case-study filters omit the redundant word `Design`: Product, Systems, UX Research, Leadership, Visual, Brand, and Conversion Optimization.
+
+The subsequent refinement clips all card children to the shared 32px radius; sets `The Choice Is Clear` and every card eyebrow in Title Case; reduces photo-badge weight to 100; uses the same translucent gradient, blur, and media-only hover motion for both card types; and expands the Workshop orbit to five progressively wider, fainter rings across the card.
 
 ## Verification
 

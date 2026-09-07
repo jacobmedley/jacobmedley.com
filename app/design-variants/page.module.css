@@ -14,9 +14,6 @@
 .grid :global(.thinking-panel) { min-height: 116px; }
 .grid :global(.thinking-title) { font-size: clamp(1.55rem, 3vw, 2rem); }
 .grid :global(.thinking-icon) { font-size: 4.5rem; }
-.grid :global(.thinking-art-workshops .thinking-geometry > i:nth-child(1)) { width: 220px; height: 220px; }
-.grid :global(.thinking-art-workshops .thinking-geometry > i:nth-child(2)) { width: 164px; height: 164px; }
-.grid :global(.thinking-art-workshops .thinking-geometry > i:nth-child(3)) { width: 104px; height: 104px; }
 @media (max-width: 767px) {
   .header, .section { width: min(100% - 32px, 520px); }
   .header { padding-block: 34px 56px; }

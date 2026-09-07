@@ -13,18 +13,18 @@ const fullStackProjects = projects
 
 const cardKickers: Record<string, string> = {
   'split-test': 'Experimentation',
-  'call-center-ux': 'Service experience',
+  'call-center-ux': 'Service Experience',
   'marketing-auto': 'Personalization',
   workshops: 'Facilitation',
   roadmap: 'Planning',
-  personas: 'Research synthesis',
-  reveal: 'Reveal campaign',
-  viva: 'Viva brand',
-  wrong: 'Wrong campaign',
+  personas: 'Research Synthesis',
+  reveal: 'Reveal Campaign',
+  viva: 'Viva Brand',
+  wrong: 'Wrong Campaign',
 }
 
 const cardTitles: Record<string, string> = {
-  reveal: 'The choice is clear',
+  reveal: 'The Choice Is Clear',
 }
 
 /**

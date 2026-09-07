@@ -43,8 +43,8 @@ export default function DesignVariantsPage() {
             </div>
             <div className="thinking-panel">
               <div className="thinking-copy">
-                <span className="thinking-eyebrow">Reveal campaign</span>
-                <h3 className="thinking-title">The choice is clear</h3>
+                <span className="thinking-eyebrow">Reveal Campaign</span>
+                <h3 className="thinking-title">The Choice Is Clear</h3>
               </div>
               <i className="fa-thin fa-arrow-right thinking-arrow" aria-hidden="true" />
             </div>

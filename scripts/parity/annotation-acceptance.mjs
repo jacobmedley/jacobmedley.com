@@ -5,7 +5,7 @@ import path from 'node:path'
 const baseUrl = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:8090'
 const outputDir = path.resolve('scripts/parity/shots/annotations')
 const browser = await chromium.launch({ headless: true })
-const results = { baseUrl, home: {}, caseStudies: {}, variants: {}, mobileMotion: {}, errors: [] }
+const results = { baseUrl, home: {}, caseStudies: {}, mobileMotion: {}, errors: [] }
 
 await mkdir(outputDir, { recursive: true })
 
@@ -104,24 +104,9 @@ for (const width of [375, 974, 1200, 1440]) {
   await page.close()
 }
 
-for (const width of [375, 1191]) {
-  const page = await browser.newPage({ viewport: { width, height: 1000 } })
-  watch(page, `variants-${width}`)
-  const response = await page.goto(`${baseUrl}/design-variants/`, { waitUntil: 'networkidle' })
-  await page.evaluate(() => document.fonts.ready)
-  await page.screenshot({ path: path.join(outputDir, `design-variants-${width}.png`), fullPage: true })
-  results.variants[width] = await page.evaluate(() => ({
-    overflowPx: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-    sections: document.querySelectorAll('main > section').length,
-    cards: document.querySelectorAll('main article').length,
-    headings: [...document.querySelectorAll('main section h2')].map((node) => node.textContent.trim()),
-    cardKinds: [...document.querySelectorAll('main article')].map((node) => node.classList.contains('thinking-thumb-photo') ? 'photo' : 'icon'),
-    badgesTitleCase: [...document.querySelectorAll('.thinking-badges span')].every((node) => node.textContent === node.textContent.replace(/\b\w/g, (character) => character.toUpperCase())),
-    errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
-  }))
-  results.variants[width].status = response?.status()
-  await page.close()
-}
+// The /design-variants/ review page was removed before launch, so this harness no
+// longer visits it. Its accepted result is preserved in
+// docs/browser-annotation-checkpoint.md.
 
 const mobileContext = await browser.newContext({ viewport: { width: 375, height: 812 }, hasTouch: true, isMobile: true })
 const mobilePage = await mobileContext.newPage()
@@ -167,9 +152,6 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   (Number(width) >= 768 && result.heroTitleLines !== 1)
 )) || Object.values(results.caseStudies).some((result) => (
   result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || !result.iconClasses?.includes('fa-chevron-down')
-)) || Object.values(results.variants).some((result) => (
-  result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || result.sections !== 1 || result.cards !== 2 ||
-  result.cardKinds.join(',') !== 'photo,icon' || !result.badgesTitleCase
 )) || results.mobileMotion.status !== 200 || !results.mobileMotion.hoverNone || !results.mobileMotion.pointerCoarse ||
 results.mobileMotion.anchorAnimation !== 'thinking-dolly-anchor-mobile' ||
 results.mobileMotion.fieldAnimation !== 'thinking-dolly-field-mobile'

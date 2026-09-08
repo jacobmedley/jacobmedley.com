@@ -33,6 +33,18 @@ visible expanding layers, and the main `Read` action uses `10px 26px` padding. T
 development preview is error-free after moving the Font Awesome kit to post-hydration
 loading.
 
+Responsive collection refinements are checkpointed at `023bb11`. The visible main
+section heading is restored to `Full Stack Designer`. Icon cards now stack one, two,
+then three columns at the mobile, small-through-large, and extra-large ranges. The
+visual cards are ordered Wrong, Reveal, Viva; Wrong spans the row from 576px through
+1199px, with Reveal and Viva paired below, and all three share a row from 1200px.
+The case-study index action uses a thin down chevron. Shared icon motion values are
+collected as custom properties on `.thinking-thumb-icon` for manual tuning. Exact
+breakpoint acceptance passed at 375, 768, 974, 1191, 1200, and 1440px with no
+horizontal overflow or browser errors. This checkpoint also installs repository-level
+agent instructions and the append-only Genesis Exchange protocol; shared direction is
+recorded through the Exchange inbox rather than by editing coordinator-owned files.
+
 See [the owning production plan](website-production-plan.md),
 [final acceptance](final-brand-wave-acceptance.md), and the individual
 [Wave 1](wave-1-browser-acceptance.md), [Wave 2](wave-2-visual-checkpoint.md),

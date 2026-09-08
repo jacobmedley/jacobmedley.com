@@ -5,7 +5,7 @@ import path from 'node:path'
 const baseUrl = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:8090'
 const outputDir = path.resolve('scripts/parity/shots/annotations')
 const browser = await chromium.launch({ headless: true })
-const results = { baseUrl, home: {}, variants: {}, mobileMotion: {}, errors: [] }
+const results = { baseUrl, home: {}, caseStudies: {}, variants: {}, mobileMotion: {}, errors: [] }
 
 await mkdir(outputDir, { recursive: true })
 
@@ -16,7 +16,7 @@ function watch(page, label) {
   page.on('pageerror', (error) => results.errors.push(`${label}: ${error.message}`))
 }
 
-for (const width of [375, 1191, 1440]) {
+for (const width of [375, 768, 974, 1191, 1200, 1440]) {
   const page = await browser.newPage({ viewport: { width, height: 992 } })
   watch(page, `home-${width}`)
   const response = await page.goto(`${baseUrl}/`, { waitUntil: 'networkidle' })
@@ -32,6 +32,7 @@ for (const width of [375, 1191, 1440]) {
     const workItems = [...document.querySelectorAll('#work .work-item')]
     const readButtons = [...document.querySelectorAll('#work .case-study-read')]
     const thinkingBadges = [...document.querySelectorAll('.thinking-badges > span')]
+    const thinkingItems = [...document.querySelectorAll('.thinking-item')]
     const sectionIconBox = sectionIcon?.getBoundingClientRect()
     const sectionTitleBox = document.querySelector('#work .section-heading-title')?.getBoundingClientRect()
     return {
@@ -57,6 +58,16 @@ for (const width of [375, 1191, 1440]) {
         return [style.paddingTop, style.paddingRight, style.paddingBottom, style.paddingLeft].join('|')
       }))],
       selectedTitles: [...document.querySelectorAll('.thinking-title')].map((node) => node.textContent.trim()),
+      selectedSectionTitle: document.querySelector('#full-stack .section-heading-title')?.textContent.trim() ?? null,
+      thinkingCards: thinkingItems.map((node) => {
+        const box = node.getBoundingClientRect()
+        return {
+          id: node.getAttribute('data-project-id'),
+          kind: node.classList.contains('thinking-item-photo') ? 'photo' : 'icon',
+          width: Math.round(box.width),
+          top: Math.round(box.top),
+        }
+      }),
       iconAnchors: document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor').length,
       iconAnchorSizes: [...new Set([...document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor')].map((node) => {
         const box = node.getBoundingClientRect()
@@ -73,6 +84,23 @@ for (const width of [375, 1191, 1440]) {
     }
   })
   results.home[width].status = response?.status()
+  await page.close()
+}
+
+for (const width of [375, 974, 1200, 1440]) {
+  const page = await browser.newPage({ viewport: { width, height: 800 } })
+  watch(page, `case-studies-${width}`)
+  const response = await page.goto(`${baseUrl}/case-studies/`, { waitUntil: 'networkidle' })
+  results.caseStudies[width] = await page.evaluate(() => {
+    const action = document.querySelector('.cs-index-hero .cs-button-outline')
+    return {
+      status: null,
+      overflowPx: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      iconClasses: action?.querySelector('i')?.className ?? null,
+      errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
+    }
+  })
+  results.caseStudies[width].status = response?.status()
   await page.close()
 }
 
@@ -126,8 +154,19 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 || result.iconAnchorSizes.join(',') !== '140x140' ||
   result.personalizationLines !== 12 || result.personaRings !== 12 ||
   result.geometryPieceCounts.some((count) => count !== 12) || result.thinkingBadgeStyles.length !== 1 ||
+  result.selectedSectionTitle !== 'Full Stack Designer' ||
+  result.thinkingCards.filter((card) => card.kind === 'icon').length !== 6 ||
+  result.thinkingCards.filter((card) => card.kind === 'photo').map((card) => card.id).join(',') !== 'wrong,reveal,viva' ||
+  (Number(width) < 576 && new Set(result.thinkingCards.map((card) => card.width)).size !== 1) ||
+  (Number(width) >= 576 && Number(width) < 1200 && result.thinkingCards.find((card) => card.id === 'wrong').width <= result.thinkingCards.find((card) => card.id === 'reveal').width * 1.8) ||
+  (Number(width) >= 576 && Number(width) < 1200 && result.thinkingCards.filter((card) => card.kind === 'icon')[0].width !== result.thinkingCards.filter((card) => card.kind === 'icon')[1].width) ||
+  (Number(width) >= 1200 && new Set(result.thinkingCards.map((card) => card.width)).size !== 1) ||
+  (Number(width) >= 1200 && new Set(result.thinkingCards.slice(0, 3).map((card) => card.top)).size !== 1) ||
+  (Number(width) >= 1200 && new Set(result.thinkingCards.filter((card) => card.kind === 'photo').map((card) => card.top)).size !== 1) ||
   !result.selectedTitles.includes('Viva Medicare') || !result.selectedTitles.includes('Modular Experience for Growth') ||
   (Number(width) >= 768 && result.heroTitleLines !== 1)
+)) || Object.values(results.caseStudies).some((result) => (
+  result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || !result.iconClasses?.includes('fa-chevron-down')
 )) || Object.values(results.variants).some((result) => (
   result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || result.sections !== 1 || result.cards !== 2 ||
   result.cardKinds.join(',') !== 'photo,icon' || !result.badgesTitleCase

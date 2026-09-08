@@ -9,7 +9,10 @@ import WaveSeparator from '@/components/ui/WaveSeparator'
 
 const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
-  .sort((a, b) => a.order - b.order)
+  .sort((a, b) => {
+    const visualOrder: Record<string, number> = { wrong: 12, reveal: 13, viva: 14 }
+    return (visualOrder[a.id] ?? a.order) - (visualOrder[b.id] ?? b.order)
+  })
 
 const cardKickers: Record<string, string> = {
   'split-test': 'Experimentation',
@@ -48,7 +51,7 @@ export default function FullStackSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Selected Work" icon="fa-thin fa-toolbox" />
+          <SectionHeader title="Full Stack Designer" icon="fa-thin fa-toolbox" />
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
@@ -59,9 +62,17 @@ export default function FullStackSection() {
             </div>
           </div>
 
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 items-center mt-0 sm:mt-4 justify-center thinking-row">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-3 items-center mt-0 sm:mt-4 justify-center thinking-row">
             {fullStackProjects.map((project) => (
-              <div key={project.id} className="col thinking-item">
+              <div
+                key={project.id}
+                className={cn(
+                  'col thinking-item',
+                  project.thumb ? 'thinking-item-photo' : 'thinking-item-icon',
+                  project.id === 'wrong' && 'thinking-item-featured',
+                )}
+                data-project-id={project.id}
+              >
                 <button
                   type="button"
                   className={cn(

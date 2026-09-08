@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B36. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B38. All APPLIED unless marked otherwise.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -1253,6 +1253,15 @@ Leadership), `five` (Design Systems / Design Leadership). See
 the section cannot avoid, the same fact recurring as the same fact, and
 single common words spaced apart enough that no reader hears an echo are all
 outside the rule's target.
+
+## B38. Main portfolio section heading restored [APPLIED]
+
+**File:** `components/sections/FullStackSection.tsx`
+
+Jacob restored the visible section heading to `Full Stack Designer` on September 7,
+2026. The navigation label remains `Selected Work`, and the stable `#full-stack`
+anchor remains unchanged. This direct instruction supersedes the heading portion of
+the earlier Wave 3 rename; it does not change the site hero title standard in B35.
 
 ---
 

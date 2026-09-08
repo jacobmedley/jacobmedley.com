@@ -267,6 +267,7 @@
   .col-xl-14 { flex: 0 0 auto; width: 58.3333%; }
   .col-xl-16 { flex: 0 0 auto; width: 66.6667%; }
   .col-xl-18 { flex: 0 0 auto; width: 75%; }
+  .row-cols-xl-3 > * { flex: 0 0 auto; width: 33.3333%; }
   .row-cols-xl-4 > * { flex: 0 0 auto; width: 25%; }
 }
 @media (min-width: 1400px) {
@@ -613,6 +614,25 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   background: #fff;
 }
 .thinking-thumb:hover { transform: none; }
+.thinking-thumb-icon {
+  /* Icon-card motion controls: adjust these values to tune the shared treatment. */
+  --thinking-anchor-size: 140px;
+  --thinking-icon-size: 54px;
+  --thinking-anchor-transition: .7s;
+  --thinking-field-transition: 1.35s;
+  --thinking-hover-anchor-scale: 1.16;
+  --thinking-hover-icon-scale: 1.1;
+  --thinking-hover-field-scale: 1.12;
+  --thinking-hover-field-opacity: .76;
+  --thinking-mobile-anchor-scale: 1.07;
+  --thinking-mobile-icon-scale: 1.055;
+  --thinking-mobile-field-scale: 1.12;
+  --thinking-mobile-anchor-duration: 10s;
+  --thinking-mobile-field-duration: 14s;
+  --thinking-mobile-near-duration: 13s;
+  --thinking-mobile-mid-duration: 16s;
+  --thinking-mobile-far-duration: 19s;
+}
 .thinking-media { position: absolute; inset: 0; width: 100%; overflow: hidden; transition: transform .45s ease-out; }
 .thinking-media-image { background: #302a35; }
 .thinking-photo-image { position: absolute; inset: 0; background-position: center; background-size: cover; }
@@ -620,13 +640,13 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-thumb-photo:hover .thinking-media,
 .thinking-thumb-photo:focus-visible .thinking-media { transform: scale(1.1); transition-duration: 5.5s; transition-timing-function: cubic-bezier(.18, .72, .3, 1); }
 .thinking-media-icon { --art-center-y: calc(50% - 47px); display: grid; place-items: center; padding-bottom: 94px; background: linear-gradient(135deg, #fffdf8 0%, #f1e8cb 100%); }
-.thinking-icon-anchor { position: absolute; z-index: 2; top: var(--art-center-y); left: 50%; display: grid; place-items: center; width: 140px; height: 140px; border: 1px solid rgba(127, 100, 10, .48); border-radius: 50%; background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%); transform: translate(-50%, -50%); transform-origin: center; transition: transform .7s cubic-bezier(.2, .8, .2, 1), box-shadow .7s ease; will-change: transform; }
-.thinking-icon { font-size: 54px; color: #7f640a; transition: transform .7s cubic-bezier(.2, .8, .2, 1); }
-.thinking-geometry { position: absolute; inset: 0; transform-origin: center var(--art-center-y); transition: transform 1.35s cubic-bezier(.16, .8, .2, 1), filter 1.35s ease, opacity 1.35s ease; will-change: transform, filter; }
-.thinking-geometry > i { position: absolute; display: none; border-color: rgba(127, 100, 10, .38); border-style: solid; border-width: 0; transition: translate 1.35s cubic-bezier(.16, .8, .2, 1), scale 1.35s cubic-bezier(.16, .8, .2, 1), filter 1.35s ease, opacity 1.35s ease; will-change: translate, scale, filter; }
+.thinking-icon-anchor { position: absolute; z-index: 2; top: var(--art-center-y); left: 50%; display: grid; place-items: center; width: var(--thinking-anchor-size); height: var(--thinking-anchor-size); border: 1px solid rgba(127, 100, 10, .48); border-radius: 50%; background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%); transform: translate(-50%, -50%); transform-origin: center; transition: transform var(--thinking-anchor-transition) cubic-bezier(.2, .8, .2, 1), box-shadow var(--thinking-anchor-transition) ease; will-change: transform; }
+.thinking-icon { font-size: var(--thinking-icon-size); color: #7f640a; transition: transform var(--thinking-anchor-transition) cubic-bezier(.2, .8, .2, 1); }
+.thinking-geometry { position: absolute; inset: 0; transform-origin: center var(--art-center-y); transition: transform var(--thinking-field-transition) cubic-bezier(.16, .8, .2, 1), filter var(--thinking-field-transition) ease, opacity var(--thinking-field-transition) ease; will-change: transform, filter; }
+.thinking-geometry > i { position: absolute; display: none; border-color: rgba(127, 100, 10, .38); border-style: solid; border-width: 0; transition: translate var(--thinking-field-transition) cubic-bezier(.16, .8, .2, 1), scale var(--thinking-field-transition) cubic-bezier(.16, .8, .2, 1), filter var(--thinking-field-transition) ease, opacity var(--thinking-field-transition) ease; will-change: translate, scale, filter; }
 
 /* Experimentation: a blurred focal lens over a rotating, expanding triangle fractal. */
-.thinking-art-split-test .thinking-icon { font-size: 56px; }
+.thinking-art-split-test { --thinking-icon-size: 56px; }
 .thinking-art-split-test .thinking-geometry > i { display: block; top: var(--art-center-y); left: 50%; aspect-ratio: 1; background: rgba(127, 100, 10, .08); clip-path: polygon(50% 0, 100% 100%, 0 100%); transform: translate(-50%, -50%); transform-origin: center; }
 .thinking-art-split-test .thinking-geometry > i:nth-child(1) { width: 128px; background: rgba(127, 100, 10, .14); transform: translate(-50%, -50%) rotate(0deg); }
 .thinking-art-split-test .thinking-geometry > i:nth-child(2) { width: 172px; background: rgba(127, 100, 10, .12); transform: translate(-50%, -50%) rotate(12deg); }
@@ -721,11 +741,11 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 }
 @media (hover: hover) and (pointer: fine) {
   .thinking-thumb-icon:hover .thinking-icon-anchor,
-  .thinking-thumb-icon:focus-visible .thinking-icon-anchor { transform: translate(-50%, -50%) scale(1.16); box-shadow: 0 18px 38px rgba(91, 70, 8, .14); }
+  .thinking-thumb-icon:focus-visible .thinking-icon-anchor { transform: translate(-50%, -50%) scale(var(--thinking-hover-anchor-scale)); box-shadow: 0 18px 38px rgba(91, 70, 8, .14); }
   .thinking-thumb-icon:hover .thinking-icon,
-  .thinking-thumb-icon:focus-visible .thinking-icon { transform: scale(1.1); }
+  .thinking-thumb-icon:focus-visible .thinking-icon { transform: scale(var(--thinking-hover-icon-scale)); }
   .thinking-thumb-icon:hover .thinking-geometry,
-  .thinking-thumb-icon:focus-visible .thinking-geometry { transform: scale(1.12); opacity: .76; }
+  .thinking-thumb-icon:focus-visible .thinking-geometry { transform: scale(var(--thinking-hover-field-scale)); opacity: var(--thinking-hover-field-opacity); }
   .thinking-thumb-icon:hover .thinking-geometry > i:nth-child(3n + 1),
   .thinking-thumb-icon:focus-visible .thinking-geometry > i:nth-child(3n + 1) { translate: -9px -6px; scale: 1.09; filter: blur(.6px); }
   .thinking-thumb-icon:hover .thinking-geometry > i:nth-child(3n + 2),
@@ -734,19 +754,19 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .thinking-thumb-icon:focus-visible .thinking-geometry > i:nth-child(3n) { translate: 3px -9px; scale: 1.04; filter: blur(2px); }
 }
 @media (hover: none), (pointer: coarse) {
-  .thinking-thumb-icon .thinking-icon-anchor { animation: thinking-dolly-anchor-mobile 10s ease-in-out infinite; }
-  .thinking-thumb-icon .thinking-icon { animation: thinking-dolly-icon-mobile 10s ease-in-out infinite; }
-  .thinking-thumb-icon .thinking-geometry { animation: thinking-dolly-field-mobile 14s ease-in-out infinite; }
-  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 1) { animation: thinking-depth-near-mobile 13s ease-in-out infinite; }
-  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 2) { animation: thinking-depth-mid-mobile 16s ease-in-out infinite; }
-  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n) { animation: thinking-depth-far-mobile 19s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-icon-anchor { animation: thinking-dolly-anchor-mobile var(--thinking-mobile-anchor-duration) ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-icon { animation: thinking-dolly-icon-mobile var(--thinking-mobile-anchor-duration) ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry { animation: thinking-dolly-field-mobile var(--thinking-mobile-field-duration) ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 1) { animation: thinking-depth-near-mobile var(--thinking-mobile-near-duration) ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 2) { animation: thinking-depth-mid-mobile var(--thinking-mobile-mid-duration) ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n) { animation: thinking-depth-far-mobile var(--thinking-mobile-far-duration) ease-in-out infinite; }
 }
 @keyframes thinking-dolly-anchor-mobile {
   0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 8px 22px rgba(91, 70, 8, .06); }
-  50% { transform: translate(-50%, -50%) scale(1.07); box-shadow: 0 16px 34px rgba(91, 70, 8, .12); }
+  50% { transform: translate(-50%, -50%) scale(var(--thinking-mobile-anchor-scale)); box-shadow: 0 16px 34px rgba(91, 70, 8, .12); }
 }
-@keyframes thinking-dolly-icon-mobile { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.055); } }
-@keyframes thinking-dolly-field-mobile { 0%, 100% { transform: scale(1.02); filter: blur(.2px); opacity: .9; } 50% { transform: scale(1.12); filter: blur(1.2px); opacity: .74; } }
+@keyframes thinking-dolly-icon-mobile { 0%, 100% { transform: scale(1); } 50% { transform: scale(var(--thinking-mobile-icon-scale)); } }
+@keyframes thinking-dolly-field-mobile { 0%, 100% { transform: scale(1.02); filter: blur(.2px); opacity: .9; } 50% { transform: scale(var(--thinking-mobile-field-scale)); filter: blur(1.2px); opacity: .74; } }
 @keyframes thinking-depth-near-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(.3px); } 50% { translate: -6px -4px; scale: 1.06; filter: blur(.75px); } }
 @keyframes thinking-depth-mid-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(.7px); } 50% { translate: 5px 4px; scale: .96; filter: blur(1.35px); } }
 @keyframes thinking-depth-far-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(1px); } 50% { translate: 2px -6px; scale: 1.025; filter: blur(2px); } }
@@ -760,6 +780,10 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 @media (max-width: 575px) {
   .thinking-thumb { height: 340px; }
+}
+
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  .thinking-row .thinking-item-featured { flex: 0 0 auto; width: 100%; }
 }
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */

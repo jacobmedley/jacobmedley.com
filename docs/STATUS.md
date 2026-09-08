@@ -1,6 +1,39 @@
 # Status
 
-## Portfolio brand wave open as a pull request, September 7, 2026
+## September 8, 2026: main-site annotation checkpoint
+
+Current branch: `codex/portfolio-brand-wave-continuation-20260906`. Release PR #7
+has merged at `588b550`; its SiteGround workflow completed successfully
+([run](https://github.com/jacobmedley/jacobmedley.com/actions/runs/34172180596)).
+This session has not independently verified its live edge cache. The released
+baseline was merged into this branch at `2f7ea04`, preserving removal of the internal
+`/design-variants/` route and the newer responsive card work.
+
+Latest main-site changes: Wrong image position `center 35%`, Full Stack navigation,
+image-only preview zoom inside clipped frames, Read buttons at 18px / `8px 26px`,
+Jacob's corrected slogan, and modal icons inheriting text color. See
+[annotation checkpoint](browser-annotation-checkpoint.md).
+
+Build, TypeScript, lint and annotation acceptance pass. Six home viewport sizes
+(375 through 1440px), four case-study index sizes, and touch motion were checked;
+no overflow, console errors or overlays. Stale generated types for the removed
+review route were resolved by a clean production build. Two duplicate development
+servers were stopped after verifying their command lines and worktree; one preview
+was restarted on port 3000. No push to main or deployment by this session.
+
+Genesis observed at `2026-09-08T11:36:21+00:00`, fingerprint
+`01278e47e6a59a10e3ac0435e09cbeb9a0d6f567ca68b01efe531ea3c054ac62`.
+Direction event: `20260908T112911Z-233ff7d808b348009325294020b88043`.
+Local inference and automatic usage resets remain on hold. Astra/high requested;
+task settings cannot be changed or verified through available tools.
+
+Next: publish this checkpoint as a PR, then refine the standalone case-study
+dashboard and icon cards separately. It is directly addressable, not authenticated;
+no auth changes are authorized. Lock remains held by task `01a078e0` during that work.
+Recovery: `2f7ea04` before these main-site edits, or the original
+`checkpoint/portfolio-before-brand-wave-20260906` (`b8aac95d`).
+
+## Historical launch PR notes, September 7, 2026
 
 **[Pull request 7](https://github.com/jacobmedley/jacobmedley.com/pull/7)** on
 `release/portfolio-brand-wave-launch` at `d439d36`, 21 commits and 37 files ahead of

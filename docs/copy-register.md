@@ -1273,6 +1273,14 @@ this register.
 
 # Section C: Portfolio UI strings
 
+## September 8, 2026 main-site annotations
+
+Jacob's direct instruction: the navigation link for `#full-stack` reads `Full Stack`.
+The section heading remains `Full Stack Designer`. The hero slogan reads
+`I believe there's always a better way, together we can find it.` The rest of the
+introductory paragraph is unchanged. These supersede the earlier navigation label
+and the extra conjunction in the hero slogan.
+
 ## Public case study pages, refined edition
 
 Canonical implementation copy for `/case-studies/` is authored in

@@ -1,6 +1,22 @@
 # Browser annotation checkpoint
 
-Status: implemented and verified locally on 2026-09-07. No deployment or push performed.
+## September 8 main-site follow-up
+
+All five main case-study previews now zoom their image inside a fixed, rounded,
+clipped frame. Read actions use 18px type and `8px 26px` padding at all breakpoints.
+Wrong uses `center 35%` image positioning. Navigation reads `Full Stack`; the heading
+remains `Full Stack Designer`. The hero slogan uses Jacob's requested comma, without
+`and`. Modal badge and metric icons inherit their adjacent text color.
+
+Validation: production build, TypeScript and lint pass. The existing annotation
+harness passes at 375, 768, 974, 1191, 1200 and 1440px, with no horizontal overflow
+or browser errors. It checks the five clipped images, exact button metrics, crop,
+navigation, prior responsive grids, and slow touch motion. No merge or deployment
+was performed for these edits. This supersedes older spacing and navigation notes below.
+
+## Historical September 7 checkpoint
+
+Status at that checkpoint: implemented and verified locally; not yet published.
 
 ## Applied globally
 

@@ -27,7 +27,7 @@ export default function HeroSection() {
               </div>
 
               <p className="display-1">
-                I believe there&rsquo;s always a better way, and together we can find it. In this
+                I believe there&rsquo;s always a better way, together we can find it. In this
                 portfolio, you&rsquo;ll see highlights from my design journey so far.
                 <span className="hidden sm:inline">
                   {' '}

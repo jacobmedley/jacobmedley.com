@@ -52,6 +52,10 @@ for (const width of [375, 768, 974, 1191, 1200, 1440]) {
       summaryLabels: workItems.filter((item) => item.textContent.includes('Summary:')).length,
       workBadgeGroups: workItems.reduce((count, item) => count + item.querySelectorAll('.work-card-badges').length, 0),
       readButtonWeights: [...new Set(readButtons.map((button) => getComputedStyle(button).fontWeight))],
+      readButtonSizes: [...new Set(readButtons.map((button) => getComputedStyle(button).fontSize))],
+      fullStackNav: document.querySelector('#the-menu a[href="#full-stack"]')?.textContent.trim(),
+      wrongPosition: getComputedStyle(document.querySelector('.thinking-art-wrong .thinking-photo-image')).backgroundPosition,
+      clippedWorkImages: document.querySelectorAll('.work-image-frame > .work-image').length,
       readButtonLabels: [...new Set(readButtons.map((button) => button.textContent.trim()))],
       readButtonPaddings: [...new Set(readButtons.map((button) => {
         const style = getComputedStyle(button)
@@ -133,8 +137,10 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.internalRules !== 0 || result.betweenRules !== result.workItems - 1 ||
   result.summaryLabels !== 0 || result.workBadgeGroups !== result.workItems ||
   result.readButtonWeights.some((weight) => weight !== '300') ||
+  result.readButtonSizes.join(',') !== '18px' || result.fullStackNav !== 'Full Stack' ||
+  result.wrongPosition !== '50% 35%' || result.clippedWorkImages !== result.workItems ||
   result.readButtonLabels.join(',') !== 'Read' ||
-  result.readButtonPaddings.join(',') !== '10px|26px|10px|26px' ||
+  result.readButtonPaddings.join(',') !== '8px|26px|8px|26px' ||
   result.heroButtonSize.join(',') !== '48,48' || result.heroButtonBorderWidth !== '0px' ||
   result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 || result.iconAnchorSizes.join(',') !== '140x140' ||
   result.personalizationLines !== 12 || result.personaRings !== 12 ||

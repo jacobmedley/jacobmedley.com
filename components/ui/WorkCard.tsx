@@ -25,7 +25,7 @@ export default function WorkCard({
         <div className="col-24 col-lg-12 mb-12 lg:mb-0">
           <button
             type="button"
-            className="btn p-0 m-0"
+            className="btn p-0 m-0 work-image-frame"
             onClick={open}
             data-modal-trigger={project.id}
           >
@@ -35,7 +35,7 @@ export default function WorkCard({
                 loading="lazy"
                 src={project.cardImage.src}
                 alt={project.cardImage.alt}
-                className="img-fluid rounded-2xl shadow-[var(--shadow-bs-lg)] btn-art"
+                className="img-fluid work-image"
               />
             )}
           </button>

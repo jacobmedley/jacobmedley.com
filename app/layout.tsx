@@ -3,9 +3,9 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Jacob Medley, Product Design Leader',
+  title: 'Jacob Medley, Product & Design Leader',
   description:
-    'Portfolio of Jacob Medley, a Product Design Leader driving business results through design systems, platform thinking, and research.',
+    'Portfolio of Jacob Medley, a Product & Design Leader driving business results through design systems, platform thinking, and research.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://kit.fontawesome.com/644e13edf7.js"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         {/* Google Tag Manager */}
         <Script

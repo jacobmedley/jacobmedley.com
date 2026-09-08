@@ -38,7 +38,8 @@ Round the set from one source at one time. A 70% numerator against ratios
 derived from 72.4% makes the arithmetic fail a check a reader will perform.
 
 Title standard: "Product Design" is constant. Seniority varies by target.
-Site hero and resume master read "Product Design Leader."
+Website brand title: "Product & Design Leader," per Jacob, September 6, 2026.
+This website instruction supersedes the earlier public-site title; external resume masters remain under their own workstream.
 
 Assistant wording: one internally built assistant, two deployments. Never
 "two assistants."
@@ -1263,6 +1264,39 @@ this register.
 
 # Section C: Portfolio UI strings
 
+## Public case study pages, refined edition
+
+Canonical implementation copy for `/case-studies/` is authored in
+`docs/case-study-site-copy.json`, imported directly by the new pages so prose
+is not duplicated in components. This edition selects six cleared studies
+from `docs/case-studies-sanitized.md`; every entry records its source.
+
+Index headline: "The thinking behind the work."
+Introduction: "I design products, build systems, and make room for teams to do
+better work. These are the problems I took on, the decisions I made, and what
+changed."
+
+Homepage entry: "The thinking behind the work"; "Problems, decisions, and
+results across product design, systems, and leadership."; "Explore the case
+studies". Index section title: "Different problems. Deliberate decisions."
+Footer uses the complete signature line from voice-and-tone.md.
+
+The problem / journey / solution / results structure follows Jacob's
+explicit request for this edition. Platform figures follow Section A, B26,
+and B27: six to two weeks per property; five properties; finance-attributed
+47% of company revenue growth, 27% of total lead capture, and 20% of overall
+revenue in one measured year. No derived percentage is added. Other studies
+describe documented capability, findings, and decisions without inventing
+business lift. Team scope is historical to each study, not current headcount.
+
+Diagrams are explanatory reconstructions of the cleared narratives, labeled
+as such on detail pages. They are not original project artifacts. No private
+boards or screenshots from unrelated work are presented as evidence.
+
+The retired accessibility and reviews studies are excluded. Accessibility
+in the token study is a competency applied to tokens, not an auditing pipeline.
+Existing modal copy and the unmerged recruiter portfolio remain separate.
+
 On `feat/recruiter-portfolio`. Fix before that branch merges or the em dashes return.
 
 | File | Line | Current | Corrected |
@@ -1469,3 +1503,21 @@ Three items were removed before publishing. Each is recoverable if you disagree.
 secret. The anonymization rule protects internal detail, not the employer's identity.
 If you want a different standard for former employers than for the current one, say
 so and I will apply it consistently rather than case by case.
+
+
+## Website brand cleanup, September 6, 2026
+
+Source: Jacob's 21 browser annotations and subsequent instruction to begin the
+staged site work with a recovery checkpoint. This section governs the current
+website branch; employment titles, claims and external resume masters are unchanged.
+
+- Public brand title and metadata: Product & Design Leader.
+- Case-study eyebrows, category/filter labels, diagram labels and badges use
+  Title Case; headlines, quotations and prose use sentence case. Preserve acronyms.
+- Label separator: //, including Jacob Medley // Selected Work and the dynamic
+  collection count, 6 // Case Studies (1 // Case Study for a single result).
+- Action labels: Read the story, View, Read case study, Explore the case studies.
+  The arrow follows the label; an external destination uses the external-link icon.
+- Case-study navigation: Case Studies; About & experience; More about Jacob.
+- Existing case-study-copy JSON remains the canonical story source; these casing
+  edits do not change its metrics, narrative, scope or provenance.

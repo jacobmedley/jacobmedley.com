@@ -16,11 +16,11 @@ export default function HeroSection() {
 
               {/* Only one span is in the render tree at a time — `hidden` is
                   display:none, which assistive tech skips, so no aria needed. */}
-              <h1 className="display-4 font-bold text-prime mt-0">
+              <h1 className="display-4 hero-title text-prime mt-0">
                 <span className="sm:hidden">Hi,</span>
                 <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
               </h1>
-              <h2 className="display-2 text-prime">Product Design Leader</h2>
+              <h2 className="display-2 text-prime">Product &amp; Design Leader</h2>
 
               <div className="py-3 w-1/4 mx-auto">
                 <hr className="solid-center" />
@@ -36,9 +36,9 @@ export default function HeroSection() {
                 </span>
               </p>
 
-              <a className="btn btn-outline-prime-dark mt-4 mb-4 btn-lg rounded-full" href="#work">
-                <i className="fa-regular fa-angle-down" aria-hidden="true" />
-                <span className="sr-only">Scroll to case studies</span>
+              <a className="btn action-label mt-4 mb-4 hero-case-studies-link" href="#work" aria-label="Explore the case studies">
+                <span className="sr-only">Explore the case studies</span>
+                <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" />
               </a>
             </div>
           </div>

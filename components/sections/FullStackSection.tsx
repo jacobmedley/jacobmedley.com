@@ -11,6 +11,24 @@ const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
   .sort((a, b) => a.order - b.order)
 
+const cardKickers: Record<string, string> = {
+  'split-test': 'Experimentation',
+  'call-center-ux': 'Service Experience',
+  'marketing-auto': 'Personalization',
+  workshops: 'Facilitation',
+  roadmap: 'Planning',
+  personas: 'Research Synthesis',
+  reveal: 'Reveal Campaign',
+  viva: 'Viva Brand',
+  wrong: 'Wrong Campaign',
+}
+
+const cardTitles: Record<string, string> = {
+  reveal: 'The Choice Is Clear',
+  viva: 'Viva Medicare',
+  wrong: 'Modular Experience for Growth',
+}
+
 /**
  * Full-Stack Designer: carries the old Visual Design section's pop-light
  * gradient treatment (was section-visual-design.html). Tiles are a mix of
@@ -30,7 +48,7 @@ export default function FullStackSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Full-Stack Designer" icon="fa-light fa-toolbox" />
+          <SectionHeader title="Selected Work" icon="fa-thin fa-toolbox" />
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
@@ -48,29 +66,36 @@ export default function FullStackSection() {
                   type="button"
                   className={cn(
                     'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
-                    project.thumb && 'text-white'
+                    project.thumb ? 'thinking-thumb-photo' : 'thinking-thumb-icon',
+                    `thinking-art-${project.id}`,
                   )}
-                  style={
-                    project.thumb
-                      ? { background: `url(${project.thumb.src})`, backgroundSize: 'cover' }
-                      : undefined
-                  }
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
-                  {!project.thumb && (
-                    <i
-                      className={`${project.icon ?? 'fa-light fa-star'} thinking-icon z-2 relative`}
-                      aria-hidden="true"
-                    />
-                  )}
-                  <h6 className="thinking-title z-2 relative">{project.title}</h6>
-                  <div className="thinking-view z-2 relative">
-                    <i className="fa-regular fa-eye" aria-hidden="true" /> View
+                  <div className="thinking-badges" aria-label="Disciplines">
+                    {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline}</span> : null)}
                   </div>
-                  {project.thumb && (
-                    <div className="screen absolute top-0 left-0 h-full w-full bg-black opacity-50 z-1" />
-                  )}
+                  <div className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')} aria-hidden="true">
+                    {project.thumb ? (
+                      <span className="thinking-photo-image" style={{ backgroundImage: `url(${project.thumb.src})` }} />
+                    ) : (
+                      <>
+                        <span className="thinking-geometry">
+                          {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
+                        </span>
+                        <span className="thinking-icon-anchor">
+                          <i className={`${project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  <div className="thinking-panel">
+                    <div className="thinking-copy">
+                      <span className="thinking-eyebrow">{cardKickers[project.id] ?? 'Selected work'}</span>
+                      <h6 className="thinking-title">{cardTitles[project.id] ?? project.title}</h6>
+                    </div>
+                    <i className="fa-thin fa-arrow-right thinking-arrow" aria-hidden="true" />
+                  </div>
                 </button>
               </div>
             ))}

@@ -14,8 +14,8 @@ interface SectionHeaderProps {
 }
 
 /**
- * Legacy section header: display-4 icon over display-4 bold title pulled
- * up with mt-n4, followed by a solid-center hr in a narrower column.
+ * Shared brand-wave section header: thin 4rem icon over a 3rem/500 title,
+ * followed by the existing centered rule in a narrower column.
  */
 export default function SectionHeader({
   title,
@@ -29,10 +29,10 @@ export default function SectionHeader({
     <>
       <div className={cn('row text-center justify-center', className)}>
         <div className="col-24 self-center">
-          <p className="display-4">
+          <p className="section-heading-icon">
             <i className={cn(icon, iconClassName)} aria-hidden="true" />
           </p>
-          <h3 className={cn('display-4 font-bold -mt-6', titleClassName)}>{title}</h3>
+          <h3 className={cn('section-heading-title', titleClassName)}>{title}</h3>
         </div>
       </div>
       <div className="row text-center justify-center">

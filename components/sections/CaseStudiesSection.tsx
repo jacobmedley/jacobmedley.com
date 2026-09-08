@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import WorkCard from '@/components/ui/WorkCard'
@@ -25,19 +25,20 @@ export default function CaseStudiesSection() {
         <div className="container">
           <SectionHeader
             title="Case Studies"
-            icon="fa-light fa-briefcase"
+            icon="fa-thin fa-briefcase"
             className="text-second-dark"
             titleClassName="mb-0"
           />
 
           {caseStudies.map((project, i) => (
-            <WorkCard
-              key={project.id}
-              project={project}
-              reverse={i % 2 === 1}
-              closingHrSpacer={i % 2 === 0 && i !== caseStudies.length - 1}
-              onOpen={setActiveId}
-            />
+            <Fragment key={project.id}>
+              <WorkCard
+                project={project}
+                reverse={i % 2 === 1}
+                onOpen={setActiveId}
+              />
+              {i < caseStudies.length - 1 && <hr className="solid-center work-separator" />}
+            </Fragment>
           ))}
         </div>
       </div>

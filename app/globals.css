@@ -476,25 +476,16 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 #the-menu.the-menu .btn.education.active { border-color: #582323; color: #e5d6d6; background: #7e3232; }
 
 /* ── Hero typography ────────────────────────────────────────────── */
-#hi .h-jakeicon { font-size: calc(2rem + 28vw); }
 /*
  * The hero display sizes are vw-driven with no lower-end tuning, so they grow
  * disproportionate as the viewport narrows. Scoped to #hi and to below-sm
  * only, so no other section and no larger viewport is affected.
  */
 @media (max-width: 575.98px) {
-  #hi .h-jakeicon { font-size: calc(1.5rem + 20vw); }
   #hi .display-4  { font-size: calc(1.25rem + 3vw); }
   #hi .display-2  { font-size: calc(1.05rem + 0.9vw); }
   #hi .display-1  { font-size: calc(1rem + 0.3vw); }
 }
-@media (min-width: 576px) {
-  #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
-}
-@media (min-width: 768px)  { #hi .h-jakeicon { font-size: calc(2rem + 16vw); } }
-@media (min-width: 992px)  { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
-@media (min-width: 1200px) { #hi .h-jakeicon { font-size: calc(2rem + 12vw); } }
-@media (min-width: 1400px) { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
 
 #hi .h-hello { font-size: calc(1rem + 3vw); }
 #hi .h-hello small { font-size: calc(0.7rem + 2vw); }
@@ -593,27 +584,183 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 .img-fluid { max-width: 100%; height: auto; }
 
+.section-heading-icon { margin: 0; line-height: 1; }
+.section-heading-icon i { font-size: clamp(3rem, 6vw, 4rem); font-weight: 100; }
+.section-heading-title { margin-top: .85rem; font-size: clamp(2.25rem, 4.2vw, 3rem); line-height: 1.15; font-weight: 500; }
+.portfolio-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.portfolio-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border: 1px solid currentColor; border-radius: 999px; font-size: .68rem; font-weight: 300; line-height: 1; letter-spacing: .02em; }
+.portfolio-badges-compact { gap: 4px; margin-bottom: 5px; }
+.portfolio-badges-compact > span { min-height: 19px; padding: 3px 6px; font-size: .56rem; }
+.work-card-badges { margin-top: 1.5rem; }
+.work-separator { margin: clamp(2.5rem, 6vw, 5rem) 0; }
+.case-study-read { padding: 10px 26px; font-weight: 300; }
+
 .thinking-thumb {
+  position: relative;
   width: 100%;
-  height: 180px;
+  height: 360px;
   border-radius: 2rem;
   margin: 0 0 20px 0;
   color: #424952;
   border: none;
-  transition: all 0.2s ease-in-out;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.1);
   background: #fff;
 }
-.thinking-thumb:hover {
-  transform: scale(1.02);
-  background: #6c757d;
-  color: #fff;
-}
-/* image-variant thumb backgrounds are data-driven (Project.thumb → inline style) */
+.thinking-thumb:hover { transform: none; }
+.thinking-media { position: absolute; inset: 0; width: 100%; overflow: hidden; transition: transform .45s ease-out; }
+.thinking-media-image { background: #302a35; }
+.thinking-photo-image { position: absolute; inset: 0; background-position: center; background-size: cover; }
+.thinking-thumb-photo:hover { transform: none; }
+.thinking-thumb-photo:hover .thinking-media,
+.thinking-thumb-photo:focus-visible .thinking-media { transform: scale(1.1); transition-duration: 5.5s; transition-timing-function: cubic-bezier(.18, .72, .3, 1); }
+.thinking-media-icon { --art-center-y: calc(50% - 47px); display: grid; place-items: center; padding-bottom: 94px; background: linear-gradient(135deg, #fffdf8 0%, #f1e8cb 100%); }
+.thinking-icon-anchor { position: absolute; z-index: 2; top: var(--art-center-y); left: 50%; display: grid; place-items: center; width: 140px; height: 140px; border: 1px solid rgba(127, 100, 10, .48); border-radius: 50%; background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%); transform: translate(-50%, -50%); transform-origin: center; transition: transform .7s cubic-bezier(.2, .8, .2, 1), box-shadow .7s ease; will-change: transform; }
+.thinking-icon { font-size: 54px; color: #7f640a; transition: transform .7s cubic-bezier(.2, .8, .2, 1); }
+.thinking-geometry { position: absolute; inset: 0; transform-origin: center var(--art-center-y); transition: transform 1.35s cubic-bezier(.16, .8, .2, 1), filter 1.35s ease, opacity 1.35s ease; will-change: transform, filter; }
+.thinking-geometry > i { position: absolute; display: none; border-color: rgba(127, 100, 10, .38); border-style: solid; border-width: 0; transition: translate 1.35s cubic-bezier(.16, .8, .2, 1), scale 1.35s cubic-bezier(.16, .8, .2, 1), filter 1.35s ease, opacity 1.35s ease; will-change: translate, scale, filter; }
 
-.thinking-title { margin: 15px 0 0 0; }
-.thinking-view { margin-top: 12px; margin-bottom: 0; }
-.thinking-icon { font-size: 48px; }
+/* Experimentation: a blurred focal lens over a rotating, expanding triangle fractal. */
+.thinking-art-split-test .thinking-icon { font-size: 56px; }
+.thinking-art-split-test .thinking-geometry > i { display: block; top: var(--art-center-y); left: 50%; aspect-ratio: 1; background: rgba(127, 100, 10, .08); clip-path: polygon(50% 0, 100% 100%, 0 100%); transform: translate(-50%, -50%); transform-origin: center; }
+.thinking-art-split-test .thinking-geometry > i:nth-child(1) { width: 128px; background: rgba(127, 100, 10, .14); transform: translate(-50%, -50%) rotate(0deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(2) { width: 172px; background: rgba(127, 100, 10, .12); transform: translate(-50%, -50%) rotate(12deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(3) { width: 222px; background: rgba(127, 100, 10, .1); transform: translate(-50%, -50%) rotate(25deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(4) { width: 278px; background: rgba(127, 100, 10, .08); transform: translate(-50%, -50%) rotate(39deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(5) { width: 340px; background: rgba(127, 100, 10, .065); transform: translate(-50%, -50%) rotate(54deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(6) { width: 408px; background: rgba(127, 100, 10, .05); transform: translate(-50%, -50%) rotate(70deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(7) { width: 482px; background: rgba(127, 100, 10, .035); transform: translate(-50%, -50%) rotate(87deg); }
+.thinking-art-split-test .thinking-geometry > i:nth-child(8) { width: 562px; background: rgba(127, 100, 10, .022); transform: translate(-50%, -50%) rotate(105deg); }
+
+/* Service availability: mixed empty, partial, and filled signals radiate from the anchor. */
+.thinking-art-call-center-ux .thinking-geometry > i { display: block; width: 13px; height: 13px; border-width: 1px; border-radius: 50%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3n) { background: rgba(127, 100, 10, .65); }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3n + 2) { background: rgba(127, 100, 10, .22); }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(1) { top: 18%; left: 20%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(2) { top: 11%; left: 37%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3) { top: 8%; left: 59%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(4) { top: 17%; left: 78%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(5) { top: 34%; left: 12%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(6) { top: 31%; left: 31%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(7) { top: 30%; left: 68%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(8) { top: 36%; left: 85%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(9) { top: 52%; left: 20%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(10) { top: 59%; left: 38%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(11) { top: 57%; left: 62%; }
+.thinking-art-call-center-ux .thinking-geometry > i:nth-child(12) { top: 50%; left: 79%; }
+
+/* Personalization: layered action lines converge like a warp-speed field. */
+.thinking-art-marketing-auto .thinking-geometry > i { display: block; width: 96px; height: 1px; border-top-width: 1px; }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(1) { top: 12%; left: -3%; width: 110px; transform: rotate(25deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(2) { top: 12%; right: -3%; width: 110px; transform: rotate(-25deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(3) { top: 26%; left: 5%; transform: rotate(12deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(4) { top: 26%; right: 5%; transform: rotate(-12deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(5) { top: 41%; left: -2%; width: 124px; transform: rotate(5deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(6) { top: 41%; right: -2%; width: 124px; transform: rotate(-5deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(7) { top: 55%; left: 7%; transform: rotate(-10deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(8) { top: 55%; right: 7%; transform: rotate(10deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(9) { top: 66%; left: -4%; width: 132px; transform: rotate(-25deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(10) { top: 66%; right: -4%; width: 132px; transform: rotate(25deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(11) { top: 34%; left: 18%; width: 64px; transform: rotate(4deg); }
+.thinking-art-marketing-auto .thinking-geometry > i:nth-child(12) { top: 34%; right: 18%; width: 64px; transform: rotate(-4deg); }
+
+/* Facilitation: seven increasingly wide and faint circles fill the field. */
+.thinking-art-workshops .thinking-geometry > i { display: block; left: 50%; top: var(--art-center-y); border-width: 1px; border-radius: 50%; transform: translate(-50%, -50%); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(1) { width: 86px; height: 86px; border-color: rgba(127, 100, 10, .5); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(2) { width: 142px; height: 142px; border-color: rgba(127, 100, 10, .42); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(3) { width: 206px; height: 206px; border-color: rgba(127, 100, 10, .34); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(4) { width: 278px; height: 278px; border-color: rgba(127, 100, 10, .26); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(5) { width: 358px; height: 358px; border-color: rgba(127, 100, 10, .18); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(6) { width: 446px; height: 446px; border-color: rgba(127, 100, 10, .11); }
+.thinking-art-workshops .thinking-geometry > i:nth-child(7) { width: 542px; height: 542px; border-color: rgba(127, 100, 10, .06); }
+
+/* Planning: connected right-angle paths form a readable maze around the mouse. */
+.thinking-art-roadmap .thinking-geometry > i { display: block; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(1) { top: 10%; left: 7%; width: 34%; height: 24%; border-top-width: 1px; border-right-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(2) { top: 10%; right: 7%; width: 27%; height: 18%; border-top-width: 1px; border-left-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(3) { top: 31%; left: 4%; width: 29%; height: 22%; border-bottom-width: 1px; border-right-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(4) { top: 29%; right: 4%; width: 31%; height: 27%; border-top-width: 1px; border-left-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(5) { top: 54%; left: 12%; width: 31%; height: 18%; border-top-width: 1px; border-right-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(6) { top: 54%; right: 11%; width: 29%; height: 17%; border-bottom-width: 1px; border-left-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(7) { top: 20%; left: 48%; width: 1px; height: 18%; border-left-width: 1px; }
+.thinking-art-roadmap .thinking-geometry > i:nth-child(8) { top: 44%; left: 48%; width: 1px; height: 24%; border-left-width: 1px; }
+
+/* Personas: one shared system, side groups, and three smaller outward signals. */
+.thinking-art-personas .thinking-geometry > i { display: block; border-width: 1px; border-radius: 50%; }
+.thinking-art-personas .thinking-geometry > i:nth-child(1) { top: var(--art-center-y); left: 50%; width: 218px; height: 218px; transform: translate(-50%, -50%); }
+.thinking-art-personas .thinking-geometry > i:nth-child(2) { top: var(--art-center-y); left: 9%; width: 110px; height: 110px; transform: translateY(-50%); }
+.thinking-art-personas .thinking-geometry > i:nth-child(3) { top: var(--art-center-y); right: 9%; width: 110px; height: 110px; transform: translateY(-50%); }
+.thinking-art-personas .thinking-geometry > i:nth-child(4) { top: 12%; left: 37%; width: 28px; height: 28px; background: rgba(255, 255, 255, .38); }
+.thinking-art-personas .thinking-geometry > i:nth-child(5) { top: 8%; left: 57%; width: 20px; height: 20px; background: rgba(255, 255, 255, .5); }
+.thinking-art-personas .thinking-geometry > i:nth-child(6) { top: 56%; left: 69%; width: 34px; height: 34px; background: rgba(255, 255, 255, .3); }
+.thinking-art-personas .thinking-geometry > i:nth-child(n + 7) { top: var(--art-center-y); left: 50%; transform: translate(-50%, -50%); }
+.thinking-art-personas .thinking-geometry > i:nth-child(7) { width: 288px; height: 288px; border-color: rgba(127, 100, 10, .28); }
+.thinking-art-personas .thinking-geometry > i:nth-child(8) { width: 360px; height: 360px; border-color: rgba(127, 100, 10, .22); }
+.thinking-art-personas .thinking-geometry > i:nth-child(9) { width: 440px; height: 440px; border-color: rgba(127, 100, 10, .17); }
+.thinking-art-personas .thinking-geometry > i:nth-child(10) { width: 530px; height: 530px; border-color: rgba(127, 100, 10, .12); }
+.thinking-art-personas .thinking-geometry > i:nth-child(11) { width: 630px; height: 630px; border-color: rgba(127, 100, 10, .08); }
+.thinking-art-personas .thinking-geometry > i:nth-child(12) { width: 740px; height: 740px; border-color: rgba(127, 100, 10, .045); }
+.thinking-badges { position: absolute; z-index: 4; top: 14px; right: 14px; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 5px; max-width: calc(100% - 28px); }
+.thinking-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border-radius: 999px; font-size: .68rem; font-weight: 300; line-height: 1; letter-spacing: .02em; text-transform: capitalize; }
+.thinking-thumb-photo .thinking-badges > span { color: #fff; background: rgba(0, 0, 0, .5); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.thinking-thumb-icon .thinking-badges > span { color: #735251; border: #735251 solid 1px; background: rgba(255, 253, 248, .62); }
+.thinking-panel { position: relative; z-index: 3; display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; width: 100%; min-height: 94px; margin-top: auto; padding: 17px 20px 18px; background: linear-gradient(135deg, rgba(255, 255, 255, .64), rgba(241, 232, 203, .58)); -webkit-backdrop-filter: blur(14px) saturate(120%); backdrop-filter: blur(14px) saturate(120%); color: #424952; }
+.thinking-panel::before { position: absolute; top: 0; left: 0; width: 100%; height: 1px; content: ''; background: linear-gradient(to right, transparent, rgba(255, 255, 255, .95), transparent); }
+.thinking-copy { min-width: 0; }
+.thinking-eyebrow { display: block; margin-bottom: 7px; font-size: .64rem; font-weight: 400; letter-spacing: .12em; text-transform: capitalize; }
+.thinking-title { margin: 0 0 12px; font-size: 1.25rem; line-height: 1.1; font-weight: 300; }
+.thinking-arrow { flex: 0 0 auto; margin-bottom: 12px; font-size: 1.5rem; font-weight: 100; }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .thinking-panel { background: rgba(246, 239, 217, .9); }
+  .thinking-icon-anchor { background: rgba(255, 255, 255, .82); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .thinking-thumb-icon:hover .thinking-icon-anchor,
+  .thinking-thumb-icon:focus-visible .thinking-icon-anchor { transform: translate(-50%, -50%) scale(1.16); box-shadow: 0 18px 38px rgba(91, 70, 8, .14); }
+  .thinking-thumb-icon:hover .thinking-icon,
+  .thinking-thumb-icon:focus-visible .thinking-icon { transform: scale(1.1); }
+  .thinking-thumb-icon:hover .thinking-geometry,
+  .thinking-thumb-icon:focus-visible .thinking-geometry { transform: scale(1.12); opacity: .76; }
+  .thinking-thumb-icon:hover .thinking-geometry > i:nth-child(3n + 1),
+  .thinking-thumb-icon:focus-visible .thinking-geometry > i:nth-child(3n + 1) { translate: -9px -6px; scale: 1.09; filter: blur(.6px); }
+  .thinking-thumb-icon:hover .thinking-geometry > i:nth-child(3n + 2),
+  .thinking-thumb-icon:focus-visible .thinking-geometry > i:nth-child(3n + 2) { translate: 8px 5px; scale: .94; filter: blur(1.35px); }
+  .thinking-thumb-icon:hover .thinking-geometry > i:nth-child(3n),
+  .thinking-thumb-icon:focus-visible .thinking-geometry > i:nth-child(3n) { translate: 3px -9px; scale: 1.04; filter: blur(2px); }
+}
+@media (hover: none), (pointer: coarse) {
+  .thinking-thumb-icon .thinking-icon-anchor { animation: thinking-dolly-anchor-mobile 10s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-icon { animation: thinking-dolly-icon-mobile 10s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry { animation: thinking-dolly-field-mobile 14s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 1) { animation: thinking-depth-near-mobile 13s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n + 2) { animation: thinking-depth-mid-mobile 16s ease-in-out infinite; }
+  .thinking-thumb-icon .thinking-geometry > i:nth-child(3n) { animation: thinking-depth-far-mobile 19s ease-in-out infinite; }
+}
+@keyframes thinking-dolly-anchor-mobile {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 8px 22px rgba(91, 70, 8, .06); }
+  50% { transform: translate(-50%, -50%) scale(1.07); box-shadow: 0 16px 34px rgba(91, 70, 8, .12); }
+}
+@keyframes thinking-dolly-icon-mobile { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.055); } }
+@keyframes thinking-dolly-field-mobile { 0%, 100% { transform: scale(1.02); filter: blur(.2px); opacity: .9; } 50% { transform: scale(1.12); filter: blur(1.2px); opacity: .74; } }
+@keyframes thinking-depth-near-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(.3px); } 50% { translate: -6px -4px; scale: 1.06; filter: blur(.75px); } }
+@keyframes thinking-depth-mid-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(.7px); } 50% { translate: 5px 4px; scale: .96; filter: blur(1.35px); } }
+@keyframes thinking-depth-far-mobile { 0%, 100% { translate: 0 0; scale: 1; filter: blur(1px); } 50% { translate: 2px -6px; scale: 1.025; filter: blur(2px); } }
+@media (prefers-reduced-motion: reduce) {
+  .thinking-media,
+  .thinking-icon-anchor,
+  .thinking-icon,
+  .thinking-geometry,
+  .thinking-geometry > i { animation: none !important; transition-duration: .01ms !important; }
+}
+
+@media (max-width: 575px) {
+  .thinking-thumb { height: 340px; }
+}
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */
 .modal {
@@ -882,3 +1029,33 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 } /* end @layer components */
 
+
+/* Shared action rhythm; placement-specific brand glyph scales remain independent. */
+.action-label { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+#hi .h-jakeicon { font-size: calc(2rem + 28vw); line-height: 1; }
+@media (max-width: 575.98px) {
+  #hi .h-jakeicon { font-size: calc(1.5rem + 20vw); }
+}
+@media (min-width: 576px) {
+  #hi .h-jakeicon { font-size: calc(2rem + 22vw); margin-top: -8rem; }
+}
+@media (min-width: 768px)  { #hi .h-jakeicon { font-size: calc(2rem + 16vw); } }
+@media (min-width: 992px)  { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
+@media (min-width: 1200px) { #hi .h-jakeicon { font-size: calc(2rem + 12vw); } }
+@media (min-width: 1400px) { #hi .h-jakeicon { font-size: calc(2rem + 10vw); } }
+
+#hi .hero-title { font-weight: 600; }
+@media (min-width: 768px) {
+  #hi .hero-title { font-size: clamp(2.75rem, 4.25vw, 4rem); white-space: nowrap; }
+}
+
+.hero-case-studies-link { width: 3rem; height: 3rem; padding: 0; border: 0; border-radius: 50%; background: transparent; line-height: 1; }
+.hero-case-studies-link:hover, .hero-case-studies-link:focus-visible { border: 0; background: transparent; }
+.hero-case-studies-link i { font-size: 3rem; animation: hero-arrow-bob 2.4s ease-in-out infinite; }
+@keyframes hero-arrow-bob {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-case-studies-link i { animation: none; }
+}

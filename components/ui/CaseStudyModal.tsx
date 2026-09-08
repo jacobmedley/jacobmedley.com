@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, type ReactNode } from 'react'
+import { Fragment, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import {
@@ -69,6 +69,8 @@ interface CaseStudyModalProps {
  * the original legacy section order. Styles in globals.css (.modal…).
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
+  const returnFocusRef = useRef<HTMLElement | null>(null)
+
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -76,6 +78,14 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
         <Dialog.Content
           aria-describedby={undefined}
           className="modal"
+          onOpenAutoFocus={() => {
+            returnFocusRef.current = document.activeElement as HTMLElement | null
+          }}
+          onCloseAutoFocus={(event) => {
+            event.preventDefault()
+            returnFocusRef.current?.focus()
+            returnFocusRef.current = null
+          }}
           onClick={(e) => {
             // Bootstrap closes when the area outside the dialog content is clicked
             if (!(e.target as HTMLElement).closest('.modal-content')) onOpenChange(false)
@@ -104,7 +114,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                     className="btn btn-prime rounded-full btn-close-modal shrink-0"
                     aria-label="Close"
                   >
-                    <i className="fa-sharp fa-regular fa-xmark-large" aria-hidden="true" />
+                    <i className="fa-thin fa-xmark-large" aria-hidden="true" />
                   </button>
                 </Dialog.Close>
               </div>
@@ -180,7 +190,7 @@ function withInlineLinks(text: string): ReactNode {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {label}
+          {label}{' '}<i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span>
         </a>
       )
     }
@@ -223,7 +233,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
           {block.items.map((item) => (
             <li key={item} className="mb-2">
               <span className="fa-li">
-                <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                <i className="fa-thin fa-angle-right" aria-hidden="true" />
               </span>
               {item}
             </li>
@@ -324,7 +334,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
         <div className="row mb-6">
           <div className="col-24 col-lg-18">
             <p className="lg:text-left">
-              <i className="fa-regular fa-desktop fa-2x" aria-hidden="true" />
+              <i className="fa-thin fa-desktop fa-2x" aria-hidden="true" />
             </p>
             <p>
               <img
@@ -337,7 +347,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
           </div>
           <div className="col-24 col-lg-6">
             <p className="lg:text-left">
-              <i className="fa-regular fa-mobile fa-2x" aria-hidden="true" />
+              <i className="fa-thin fa-mobile fa-2x" aria-hidden="true" />
             </p>
             <p className="text-center">
               <img
@@ -389,7 +399,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               {block.valueCreated.items.map((item) => (
                 <li key={item} className="mb-4">
                   <span className="fa-li">
-                    <i className="fa-regular fa-angle-right" aria-hidden="true" />
+                    <i className="fa-thin fa-angle-right" aria-hidden="true" />
                   </span>
                   {item}
                 </li>
@@ -757,7 +767,7 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
         {metric.value}
         <small>
           <i
-            className={`display-3 text-third fa-regular fa-long-arrow-${metric.direction}`}
+            className={`display-3 text-third fa-thin fa-long-arrow-${metric.direction}`}
             aria-hidden="true"
           />
         </small>

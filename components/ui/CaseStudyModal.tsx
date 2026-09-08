@@ -143,7 +143,7 @@ function BadgeList({ badges }: { badges: ProjectBadge[] }) {
     <>
       {badges.map((b) => (
         <span key={b.label} className="badge-work">
-          <i className={`${b.icon} text-second`} aria-hidden="true" /> {b.label}
+          <i className={b.icon} aria-hidden="true" /> {b.label}
         </span>
       ))}
     </>
@@ -767,7 +767,7 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
         {metric.value}
         <small>
           <i
-            className={`display-3 text-third fa-thin fa-long-arrow-${metric.direction}`}
+            className={`display-3 fa-thin fa-long-arrow-${metric.direction}`}
             aria-hidden="true"
           />
         </small>

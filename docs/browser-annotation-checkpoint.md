@@ -1,6 +1,22 @@
 # Browser annotation checkpoint
 
-Status: implemented and verified locally on 2026-09-07. No deployment or push performed.
+## September 8 main-site follow-up
+
+All five main case-study previews now zoom their image inside a fixed, rounded,
+clipped frame. Read actions use 18px type and `8px 26px` padding at all breakpoints.
+Wrong uses `center 35%` image positioning. Navigation reads `Full Stack`; the heading
+remains `Full Stack Designer`. The hero slogan uses Jacob's requested comma, without
+`and`. Modal badge and metric icons inherit their adjacent text color.
+
+Validation: production build, TypeScript and lint pass. The existing annotation
+harness passes at 375, 768, 974, 1191, 1200 and 1440px, with no horizontal overflow
+or browser errors. It checks the five clipped images, exact button metrics, crop,
+navigation, prior responsive grids, and slow touch motion. No merge or deployment
+was performed for these edits. This supersedes older spacing and navigation notes below.
+
+## Historical September 7 checkpoint
+
+Status at that checkpoint: implemented and verified locally; not yet published.
 
 ## Applied globally
 
@@ -33,6 +49,14 @@ The 140px translucent, blurred anchor is now the global icon-card rule. On fine-
 
 The Font Awesome kit now loads after React becomes interactive. This prevents the kit from rewriting icon accessibility attributes before hydration and eliminates the development hydration mismatch without changing the icon set.
 
+## Responsive collection layout and motion controls
+
+- The main section heading is restored to `Full Stack Designer`; its stable `#full-stack` anchor is unchanged.
+- Icon cards use one column below 576px, two columns from 576px through 1199px, and three columns from 1200px upward.
+- The photo-card group is ordered Wrong, Reveal, Viva. Below 576px all three stack. From 576px through 1199px Wrong spans the full row and Reveal/Viva share the next row. From 1200px upward all three share one row.
+- The case-study index action retains its label and now uses a thin down chevron.
+- Shared icon-card animation controls are collected in the `.thinking-thumb-icon` custom-property block in `app/globals.css`. Anchor and icon size, transition timing, desktop hover scale/opacity, and mobile loop scale/durations can be adjusted there without editing the individual card geometry.
+
 ## Verification
 
 - Production build generated 12 static pages, including the approved-pair review route.
@@ -42,4 +66,5 @@ The Font Awesome kit now loads after React becomes interactive. This prevents th
 - A final narrow-viewport visual inspection confirms the A/B card's triangle field, blurred 140px anchor, badge placement, and caption remain legible and intentionally aligned.
 - The refreshed production build passes, and live browser verification confirms the prior Font Awesome hydration error is absent on a fresh page load.
 - Responsive acceptance confirms `10px 26px` read-action padding, six `140x140` anchors, twelve Personalization lines, twelve visible Personas geometry layers, and the intended slow anchor/field animations under a coarse touch pointer.
+- Focused responsive acceptance passes at 375, 768, 974, 1191, 1200, and 1440px. It verifies the icon-card column changes, the Wrong/Reveal/Viva order and span behavior, the restored section heading, and the case-study down chevron.
 - No checked viewport has horizontal overflow, framework overlays, console errors, or page errors.

@@ -1,6 +1,6 @@
 # Working Agreement
 
-Governs every AI session touching `C:\dev\jacobmedley.com`.
+Governs every AI session touching any checkout or worktree of `jacobmedley.com`.
 
 Multiple sessions run against this repo at once: this chat, a resume chat, a design
 system chat, ChatGPT, and one or more Claude Code terminals. The repo is PUBLIC and
@@ -10,21 +10,22 @@ Read this before doing anything.
 
 ---
 
-## 1. Two roles
+## 1. Two access modes
 
-**ADVISOR.** Read-only, permanently. No unlock exists.
+Access follows the current task authorization, filesystem permissions, and tree-lock
+ownership. It does not follow an assistant or model brand.
 
-Advisors read files, propose changes, write prompts, and verify reports. They never
-edit, never run git write operations, never build, never start or stop a service.
+**REVIEW MODE.** Read-only for tasks that ask for an explanation, audit, report, or
+handoff prompt. Review mode may inspect files and run non-mutating checks. It does not
+edit, commit, deploy, or operate services.
 
-This chat is an advisor. So is the resume chat, the design system chat, and ChatGPT.
+**IMPLEMENTATION MODE.** Write access when Jacob requests a change and the session has
+permission to edit the owning checkout. An implementer edits files, runs relevant
+checks, and may create a local checkpoint. Pushes and deployments still require
+explicit authorization.
 
-**IMPLEMENTER.** Write access, one session at a time.
-
-Claude Code is the implementer. It edits files, runs git, builds, and serves.
-
-An advisor that finds itself about to write a file has misread its role. Stop and
-hand the change to the implementer instead.
+Only one implementation session may hold a checkout at a time. A second implementer
+uses a separate worktree or waits for the lock holder.
 
 ---
 

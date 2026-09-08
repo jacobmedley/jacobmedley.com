@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B36. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B38. All APPLIED unless marked otherwise.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -1254,6 +1254,15 @@ the section cannot avoid, the same fact recurring as the same fact, and
 single common words spaced apart enough that no reader hears an echo are all
 outside the rule's target.
 
+## B38. Main portfolio section heading restored [APPLIED]
+
+**File:** `components/sections/FullStackSection.tsx`
+
+Jacob restored the visible section heading to `Full Stack Designer` on September 7,
+2026. The navigation label remains `Selected Work`, and the stable `#full-stack`
+anchor remains unchanged. This direct instruction supersedes the heading portion of
+the earlier Wave 3 rename; it does not change the site hero title standard in B35.
+
 ---
 
 ## Implementation hazard
@@ -1263,6 +1272,14 @@ built by reading the current file, not from the pre-fix text quoted anywhere in
 this register.
 
 # Section C: Portfolio UI strings
+
+## September 8, 2026 main-site annotations
+
+Jacob's direct instruction: the navigation link for `#full-stack` reads `Full Stack`.
+The section heading remains `Full Stack Designer`. The hero slogan reads
+`I believe there's always a better way, together we can find it.` The rest of the
+introductory paragraph is unchanged. These supersede the earlier navigation label
+and the extra conjunction in the hero slogan.
 
 ## Public case study pages, refined edition
 

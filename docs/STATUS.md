@@ -1,5 +1,44 @@
 # Status
 
+## September 9, 2026: Stage 3 complete
+
+Stage 3 is complete at local commit `26c176a` on
+`codex/website-refinement-stage1-20260909`, from the Stage 2 checkpoint
+`59f5c63`. The shared motion system now covers homepage icon/photo/featured work,
+standalone outcomes and study cards on desktop and touch. It includes restrained
+idle movement, fast-start/slow-end rollover and focus behavior, a shared
+Pause motion / Resume motion control (B43), reduced-motion static behavior,
+offscreen suspension, hidden-tab suspension and observer reattachment after
+client navigation. Call Center now has 14 connected SVG node lines and
+Personalization has independent slow radial rotation plus interaction transforms.
+Text, badges, panels and hit areas remain stationary. Sticky headings, branded
+horizontal cards and supplied artwork were not started.
+
+Changed files: `app/globals.css`, `app/case-studies/dashboard.css`,
+`app/layout.tsx`, `components/sections/FullStackSection.tsx`,
+`components/ui/WorkCard.tsx`, `components/ui/MotionControls.tsx`,
+`components/ui/ThinkingConnections.tsx`, `components/case-studies/StudyIconArt.tsx`,
+`components/case-studies/OutcomeDashboard.tsx`,
+`components/case-studies/StudyCollection.tsx`, `docs/copy-register.md`, and
+`docs/stage3-checkpoint-20260909.md`.
+
+Checks: `git diff --check`, `npx tsc --noEmit --incremental false`, and targeted
+`npx eslint --no-cache` passed. The full `npm run lint` remains blocked by the
+worktree's denied `.next` cache write (`EPERM`), so no full-lint success is claimed.
+Playwright Chromium against the dedicated `http://localhost:3010/` preview passed
+desktop no-preference motion changes, 14 connections, Personalization rotation,
+pause state, client navigation, observer reattachment, touch idle motion and
+reduced-motion static behavior, with no page errors. Existing port 3000 was not
+disturbed. Physical devices, Safari and Firefox remain untested.
+
+No push, PR, merge, deployment, build claim, local-model job, reset or additional
+spending occurred. PR #8 remains historically merged at `e6b3672`; no current
+remote state was changed. Rollback is `59f5c63` after checking ownership; do not
+reset or clean this worktree. The dedicated preview on 3010 is the only service
+started by this stage and should be stopped by its owning terminal when no longer
+needed. Stage 4 owns the selected horizontal card family and supplied artwork;
+Stage 5 owns sticky headings; Stage 6 owns cross-site acceptance.
+
 ## September 9, 2026: Stage 2 complete
 
 Stage 2 is complete at local commit `9bf75f4d21ad8ec0e6745d6716a41cf028cd409a`

@@ -1,0 +1,93 @@
+{
+  "observedUTC": "2026-09-09T16:36:15.594761+00:00",
+  "selection": "B plus C schematic layers",
+  "source": "Jacob direct instruction",
+  "directionEvent": "20260909T162902Z-36446af3f6824f658c7dbe4a93386fe6",
+  "layouts": [
+    {
+      "cards": [
+        {
+          "anchor": 140,
+          "arrow": "none",
+          "copyOverflow": 0,
+          "drift": "none",
+          "glass": "rgba(255, 255, 255, 0.85)",
+          "height": 406.3671875,
+          "sceneWidth": 1216.3125,
+          "width": 1088
+        },
+        {
+          "anchor": 140,
+          "arrow": "none",
+          "copyOverflow": 0,
+          "drift": "none",
+          "glass": "rgba(255, 255, 255, 0.85)",
+          "height": 433.5625,
+          "sceneWidth": 1216.3125,
+          "width": 1088
+        }
+      ],
+      "client": 1425,
+      "scroll": 1425,
+      "status": "Animations off: reduced motion",
+      "width": 1440
+    },
+    {
+      "cards": [
+        {
+          "anchor": 140,
+          "copyOverflow": 0,
+          "height": 689.046875,
+          "sceneWidth": 365.109375,
+          "width": 328
+        },
+        {
+          "anchor": 140,
+          "copyOverflow": 0,
+          "height": 706.0390625,
+          "sceneWidth": 365.109375,
+          "width": 328
+        }
+      ],
+      "client": 360,
+      "scroll": 360,
+      "width": 375
+    },
+    {
+      "cards": [
+        {
+          "anchor": 140,
+          "copyOverflow": 0,
+          "width": 273
+        },
+        {
+          "anchor": 140,
+          "copyOverflow": 0,
+          "width": 273
+        }
+      ],
+      "client": 305,
+      "scroll": 305,
+      "width": 320
+    }
+  ],
+  "scriptSyntax": "PASS: Node vm.Script parse only",
+  "copyRegisterEquality": true,
+  "uniqueHTMLIds": true,
+  "productionSourceUnchangedFrom": "b95c330127ee51f76488d55096a5a6000906259e",
+  "httpStatus": {
+    "review8091": 200,
+    "standalone3000": 200
+  },
+  "reducedMotionHover": {
+    "arrowTransform": "none",
+    "fieldTransform": "none",
+    "bodyStatic": true
+  },
+  "limitations": [
+    "Browser OS reduced motion active. Normal-motion appearance and timing are authored but not visually accepted.",
+    "Original A/B/C screenshots and check-results.json describe the initial comparison; this file records the selected refinement."
+  ],
+  "mainRechecked": "e6b3672f88e5847d84a854f45ae3d29ca8269952",
+  "pr8": "MERGED"
+}

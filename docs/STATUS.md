@@ -1,5 +1,48 @@
 # Status
 
+## September 9, 2026: Jacob selected B with refinements
+
+Jacob chose Option B: slight gradient variation across cards, darker behind the
+glass content, full-card animated backgrounds combining B’s field and C’s layered
+schematic, slow perceptible idle motion and dynamic rollover. Global interactive
+arrow hover/focus moves simply left to right. Exact values and supersessions are in
+the [Stage 1 selection amendment](stage1-checkpoint-20260909.md#jacobs-selection-amendment-september-9-2026).
+
+The [selected B preview](reviews/stage1-20260909/selected-b.html) is available at
+`http://localhost:8091/selected-b.html`; the original comparison links to it.
+This continuation updates Stage 1 review artifacts and decisions only. Production
+UI is unchanged, Stage 2 has not started, and B41 copy approval remains pending.
+Earlier choice-pending statements below describe the original checkpoint.
+
+- Branch: `codex/website-refinement-stage1-20260909`. HEAD is the local commit
+  containing this selection update; final reply/Genesis record its actual hash.
+  Intake was clean at `b95c330127ee51f76488d55096a5a6000906259e`, with no lock.
+- Scope: STATUS, stage1-checkpoint-20260909.md, review index, selected-b.html,
+  two selected B JPEG screenshots and selected-b-checks.json. Copy register and
+  production files unchanged. Existing A/B/C specimens retain historical evidence.
+- Checks: register equality, unique HTML IDs, script syntax, zero production diff,
+  and 1440/375/320 browser layouts pass. Both anchors stay 140px; no horizontal
+  overflow. Reduced-motion hover is static. Normal-motion appearance/timing is
+  authored but not visually accepted because OS reduced motion is active.
+- Main rechecked at e6b3672; PR #8 remains MERGED. No branch/base operation,
+  push, new PR, merge or deployment. Dev /case-studies/ on3000 and selected review
+  on 8091 return 200. No service changes; 8090 is not rechecked in this continuation.
+- Rollback for this refinement: b95c330, reviewed in a separate worktree or revert
+  this documentation commit after checking ownership. Original recovery 8ee1310
+  and reconciled preservation 69a6b22 remain intact. Release this task’s own lock
+  after the local commit.
+- Genesis direction event 20260909T162902Z-36446af3f6824f658c7dbe4a93386fe6 records
+  Jacob’s selection. Fresh read 16:34:40Z fingerprint
+  418e02e895ba04c345f09fc5b5fce2b17fb2bdf7c4ad4f620594c83e0f85cffb. Append the
+  unique final update after commit. No coordinator-owned pointers edited; no
+  remote-sync/awareness claim. No inference, downloads, reset or extra spending.
+
+Remaining: B41 approval and separately instructed later stages. Stage 3 owns global
+motion/arrows; Stage 4 applies the selected featured-card family. No new option
+choice is required.
+
+---
+
 ## September 9, 2026: Stage 1 complete — choice pending
 
 **Current direction:** Stage 1 only is complete. No production UI edits, option

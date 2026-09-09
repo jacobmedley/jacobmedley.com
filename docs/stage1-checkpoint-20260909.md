@@ -1,7 +1,7 @@
 # Stage 1 checkpoint: baseline and design decisions
 
 September 9, 2026. Owner: Jacob; implementer: Codex task 01a084cd.
-Stage 1 only. No production UI changes. No option selected. No Stage 2 started.
+Stage 1 only. No production UI changes. Jacob selected B with the amendment below. No Stage 2 started.
 
 ## Review and decision state
 
@@ -22,10 +22,63 @@ Screenshot pixel sizes are recorded in the [manifest](reviews/stage1-20260909/sc
 
 Screenshots: [A desktop](reviews/stage1-20260909/a-desktop.jpg) / [A narrow](reviews/stage1-20260909/a-narrow.jpg), [B desktop](reviews/stage1-20260909/b-desktop.jpg) / [B narrow](reviews/stage1-20260909/b-narrow.jpg), [C desktop](reviews/stage1-20260909/c-desktop.jpg) / [C narrow](reviews/stage1-20260909/c-narrow.jpg).
 
-Selection remains **pending Jacob**. B41 copy approval also remains pending.
+Jacob selected **B with the amendment below**. B41 copy approval remains pending.
 The specifications below are Stage 1 design decisions for later implementation,
-not claims of deployed behavior or Jacob's final visual acceptance. Stage 4 needs
-his option choice. Stage 2 must not silently treat the B41 drafts as approved.
+not claims of deployed behavior or acceptance of the new motion implementation. Stage 4 uses
+his selected B family and the amendment below. Stage 2 must not silently treat the B41 drafts as approved.
+
+## Jacob’s selection amendment, September 9, 2026
+
+Source: Jacob’s direct reply choosing Option B and specifying gradient, full-card
+motion, C schematic layers and global arrow hover behavior. Direction event:
+`20260909T162902Z-36446af3f6824f658c7dbe4a93386fe6`.
+
+The [selected B review](reviews/stage1-20260909/selected-b.html) demonstrates two
+adjacent cards using the registered WebMD and DentalPlans drafts. Earlier A/B/C
+specimens and screenshots remain the original comparison, not the updated B.
+
+- Keep B’s continuous card and inset glass content. Alternate gradient angle and
+  hue slightly by stable card identity/order. Never reverse light/dark polarity:
+  the darker end stays behind the copy, including below the art on narrow cards.
+  Do not change color when hovering or randomly when rendering/filtering.
+- Combine B’s field with C’s three schematic planes. Decorative layers belong to
+  one full-card backing, extending under the glass, rather than being clipped to
+  the logo/art column. Preserve factual diagrams and source logos.
+- Idle motion must be slow and clearly perceptible in exposed art, with subtle
+  motion visible through glass. Prototype starting values: 10–14s alternating
+  plane/drift timelines, 24–32px total travel, at most 3deg total idle rotation.
+  Use staggered phases; no flashing, flicker, opacity pulse or abrupt loop reset.
+- Dynamic rollover scales the internal field to 1.065, rotates it 1.5deg and opens
+  the planes by 14–18px over 550ms, settling over 650ms on exit. Idle and hover
+  transforms use nested elements, so pointer exit does not restart the loop.
+  The 140px anchor, copy, glass panel and targets remain fixed. Keyboard focus
+  has the same response; touch does not require a preparatory tap.
+- Glass remains white at alpha .85 minimum. This selected specimen uses 16px
+  blur with saturation 110%, superseding the earlier 24px specimen blur for this
+  family so underlying motion remains visible. Opaque fallback remains #f7f9fa.
+  Later production acceptance must measure actual contrast over all moving phases.
+- Global arrow hover rule for both surfaces: translate arrow glyphs 6px from left
+  to right over 350ms on their owning interactive target’s hover/focus, then return
+  on exit. Preserve each arrow’s direction and label. Use the same simple nudge for
+  navigation/Read/CTA arrows, without moving the control, looping, bouncing or
+  rotating. Exclude factual diagram arrows, which remain part of protected content.
+  Paused/reduced-motion states keep arrows and all decorative layers static.
+
+Verification: [selected B checks](reviews/stage1-20260909/selected-b-checks.json),
+[desktop capture](reviews/stage1-20260909/selected-b-desktop.jpg) and
+[narrow capture](reviews/stage1-20260909/selected-b-narrow.jpg). Actual 1440/375/320
+layouts fit without horizontal overflow, full-card scene extents cover both columns,
+and anchors remain 140px. Both summaries exactly match B41. Script syntax and
+unique IDs pass. Reduced-motion hover leaves arrows and the field static. Normal
+motion remains authored but not visually accepted because this browser has reduced
+motion active. Production source has zero diff from b95c330.
+
+This amendment supersedes conflicting initial field extents, amplitude/blur values
+and choice-pending statements. Shared pause persistence, reduced motion, offscreen
+and hidden-tab rules still apply. The prototype preference is review-only and does
+not edit OS settings or the production site. Global production arrow implementation
+belongs to Stage 3; the selected card family belongs to Stage 4. B41 approval is
+separate; this choice authorizes no factual/copy rewrite or Stage 2 work.
 
 ## Reviewed recovery and merged-main reconciliation
 
@@ -392,7 +445,7 @@ into a separate worktree for review, or revert the Stage 1 docs commit after che
 ownership; do not reset another session's work. Whole-site historical recovery
 remains b8aac95d and is not the preferred recovery for these docs-only changes.
 
-Remaining: Jacob chooses A/B/C and reviews B41; separately start Stage 2, Stage 3
+Remaining: Jacob reviews B41; separately start Stage 2, Stage 3
 and later stages. Stage 4 imports the selected sources and chosen family, Stage 5
 implements sticky behavior, Stage 6 performs full acceptance, Stage 7 alone may
 package a separate PR when explicitly authorized. This task stops at Stage 1.

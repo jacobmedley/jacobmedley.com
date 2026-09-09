@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
+import MotionControls from '@/components/ui/MotionControls'
 
 export const metadata: Metadata = {
   title: 'Jacob Medley, Product & Design Leader',
@@ -54,6 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {children}
+        <MotionControls />
       </body>
     </html>
   )

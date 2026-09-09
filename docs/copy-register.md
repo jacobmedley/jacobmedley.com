@@ -1623,6 +1623,14 @@ If you want a different standard for former employers than for the current one, 
 so and I will apply it consistently rather than case by case.
 
 
+## B43. Shared motion control labels [APPLIED]
+
+**Files:** `components/ui/MotionControls.tsx`, `app/layout.tsx`
+
+The shared control uses the registered labels **Pause motion** and **Resume motion**.
+It is available on both the homepage and standalone case-study surface, with the
+current state exposed through `aria-pressed`.
+
 ## Website brand cleanup, September 6, 2026
 
 Source: Jacob's 21 browser annotations and subsequent instruction to begin the

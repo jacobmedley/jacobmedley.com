@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
+import ThinkingConnections from '@/components/ui/ThinkingConnections'
 
 const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
@@ -80,6 +81,7 @@ export default function FullStackSection() {
                     project.thumb ? 'thinking-thumb-photo' : 'thinking-thumb-icon',
                     `thinking-art-${project.id}`,
                   )}
+                  data-motion-root
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
@@ -92,6 +94,7 @@ export default function FullStackSection() {
                     ) : (
                       <>
                         <span className="thinking-geometry">
+                          {project.id === 'call-center-ux' ? <ThinkingConnections /> : null}
                           {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
                         </span>
                         <span className="thinking-icon-anchor">

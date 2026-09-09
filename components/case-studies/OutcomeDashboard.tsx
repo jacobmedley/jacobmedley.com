@@ -36,7 +36,7 @@ export default function OutcomeDashboard({ outcomes }: { outcomes: CaseStudyOutc
       </Link> : null}
       <div className="cs-outcome-grid">
         {supporting.map((outcome) => (
-          <Link className={`cs-icon-card cs-outcome-card thinking-thumb-icon cs-theme-${outcome.theme}`} href={`/case-studies/${outcome.slug}/`} key={outcome.slug}>
+          <Link data-motion-root className={`cs-icon-card cs-outcome-card thinking-thumb-icon cs-theme-${outcome.theme}`} href={`/case-studies/${outcome.slug}/`} key={outcome.slug}>
             <StudyIconArt kind={outcome.visual} />
             <div className="cs-icon-copy">
             <div className="cs-badges" aria-label="Disciplines">{outcome.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>

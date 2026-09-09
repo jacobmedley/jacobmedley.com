@@ -121,3 +121,6 @@
   .cs-index .cs-icon-card .thinking-icon, .cs-index .cs-icon-card .thinking-geometry { transform: none; }
   .cs-index .cs-icon-card .thinking-geometry > i { translate: none; scale: none; filter: none; }
 }
+@media (max-width: 575px) {
+  .motion-control { top: 10px; right: 10px; min-height: 38px; padding-inline: 10px; }
+}

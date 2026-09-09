@@ -28,6 +28,7 @@ export default function WorkCard({
             className="btn p-0 m-0 work-image-frame"
             onClick={open}
             data-modal-trigger={project.id}
+            data-motion-root
           >
             {project.cardImage && (
               // eslint-disable-next-line @next/next/no-img-element -- legacy parity: native img, natural aspect

@@ -1,0 +1,28 @@
+{
+  "cards": [
+    {
+      "anchor": 140,
+      "columns": "271.594px 407.398px",
+      "copyOverflow": 0,
+      "height": 434.7578125,
+      "width": 681
+    },
+    {
+      "anchor": 140,
+      "columns": "255.594px 383.398px",
+      "copyOverflow": 0,
+      "height": 460.7578125,
+      "width": 681
+    },
+    {
+      "anchor": 140,
+      "columns": "271.594px 407.398px",
+      "copyOverflow": 0,
+      "height": 434.7578125,
+      "width": 681
+    }
+  ],
+  "client": 753,
+  "scroll": 753,
+  "width": 768
+}

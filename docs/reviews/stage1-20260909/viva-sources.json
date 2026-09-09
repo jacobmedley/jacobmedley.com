@@ -1,0 +1,48 @@
+{
+  "candidates": [
+    {
+      "path": "public/images/work/viva-modal/hero-1.png",
+      "width": 1420,
+      "height": 768,
+      "sha256": "156215CD37E31E7467506B1471A5B0854A6F10511E3DF5178FA92C1928E4119A",
+      "visualReview": "Blanket couple; headline, form, phone and logo baked in."
+    },
+    {
+      "path": "public/images/work/viva-modal/hero-2.png",
+      "width": 1420,
+      "height": 768,
+      "sha256": "445D4A13E314B42E9806F1FF814521B79A04DC5D0D2AD11710D11C72B36622CB",
+      "visualReview": "Different surfer."
+    },
+    {
+      "path": "public/images/work/viva-modal/vs-1.png",
+      "width": 1420,
+      "height": 768,
+      "sha256": "1BD549B1188497EE0ADC33303D47A77ED9824F676C9E308D1F4BCC6E0F8672DA",
+      "visualReview": "Different family."
+    },
+    {
+      "path": "public/images/work/viva-modal/vs-2.png",
+      "width": 1420,
+      "height": 768,
+      "sha256": "629B8551508D0726CE6DE0E9A97316118EE7F2945349493D2F06470DA62B25F1",
+      "visualReview": "Different couple."
+    },
+    {
+      "path": "public/images/work/viva-modal/vs-3.png",
+      "width": 1420,
+      "height": 768,
+      "sha256": "0CFC759AF22F8E6D4EF8CF8194A161606761B4EA4DA60A6B73C2D8C0BAC1765D",
+      "visualReview": "Same blanket couple; clean left region, logo/copy on right."
+    }
+  ],
+  "selectedRegion": {
+    "source": "public/images/work/viva-modal/vs-3.png",
+    "x": 0,
+    "y": 0,
+    "width": 924,
+    "height": 768,
+    "method": "Review-only clipped wrapper; no image file edited",
+    "limitation": "Same couple in existing teal treatment, not a recovered raw full-color photograph."
+  }
+}

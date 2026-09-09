@@ -1,0 +1,156 @@
+{
+  "state": "Stage 1 specification only; no runtime map changed",
+  "owners": [
+    {
+      "id": "webmd",
+      "kind": "project",
+      "identity": "source:webmd_logo_white.svg",
+      "note": "supplied white wordmark"
+    },
+    {
+      "id": "dentalplans",
+      "kind": "project",
+      "identity": "fa-tooth",
+      "note": "featured identity"
+    },
+    {
+      "id": "bumblebeemd",
+      "kind": "project",
+      "identity": "source:bmd-icon2.svg",
+      "note": "bee-only vector"
+    },
+    {
+      "id": "hydra",
+      "kind": "project",
+      "identity": "fa-cubes",
+      "note": "featured identity"
+    },
+    {
+      "id": "opfred",
+      "kind": "project",
+      "identity": "fa-building-columns",
+      "note": "featured identity"
+    },
+    {
+      "id": "split-test",
+      "kind": "project",
+      "identity": "fa-vial",
+      "note": "Experimentation"
+    },
+    {
+      "id": "call-center-ux",
+      "kind": "project",
+      "identity": "fa-headset",
+      "note": "Call Center"
+    },
+    {
+      "id": "marketing-auto",
+      "kind": "project",
+      "identity": "fa-bullseye-arrow",
+      "note": "Personalization"
+    },
+    {
+      "id": "workshops",
+      "kind": "project",
+      "identity": "fa-lightbulb",
+      "note": "Facilitation; remove stale screen-users assignment"
+    },
+    {
+      "id": "roadmap",
+      "kind": "project",
+      "identity": "fa-mouse-field",
+      "note": "Planning"
+    },
+    {
+      "id": "personas",
+      "kind": "project",
+      "identity": "fa-masks-theater",
+      "note": "Research Synthesis"
+    },
+    {
+      "id": "one-platform-five-properties",
+      "kind": "study",
+      "identity": "fa-layer-group",
+      "note": "platform; career Shared Foundation is same sourced owner"
+    },
+    {
+      "id": "building-a-design-function",
+      "kind": "study",
+      "identity": "fa-seedling",
+      "note": "practice; replaces lightbulb"
+    },
+    {
+      "id": "one-customer-journey",
+      "kind": "study",
+      "identity": "fa-route",
+      "note": "journey; replaces headset"
+    },
+    {
+      "id": "navigation-beyond-opinion",
+      "kind": "study",
+      "identity": "fa-compass",
+      "note": "navigation; replaces bullseye-arrow"
+    },
+    {
+      "id": "tokens-before-pages",
+      "kind": "study",
+      "identity": "fa-swatchbook",
+      "note": "tokens"
+    },
+    {
+      "id": "a-checkout-decision-with-receipts",
+      "kind": "study",
+      "identity": "fa-file-check",
+      "note": "decision"
+    },
+    {
+      "id": "career-experience",
+      "kind": "metric",
+      "identity": "fa-id-card",
+      "note": "replaces compass-drafting alias of drafting-compass"
+    },
+    {
+      "id": "finance-attributed-growth",
+      "kind": "metric",
+      "identity": "fa-chart-line",
+      "note": "one measured year; share of growth increment"
+    },
+    {
+      "id": "launch-cycle",
+      "kind": "metric",
+      "identity": "fa-stopwatch",
+      "note": "platform proof[0]"
+    },
+    {
+      "id": "work",
+      "kind": "section",
+      "identity": "fa-briefcase",
+      "note": "Case Studies"
+    },
+    {
+      "id": "full-stack",
+      "kind": "section",
+      "identity": "fa-toolbox",
+      "note": "Full Stack Designer"
+    },
+    {
+      "id": "resume",
+      "kind": "section",
+      "identity": "fa-list-timeline",
+      "note": "Resume"
+    },
+    {
+      "id": "education",
+      "kind": "section",
+      "identity": "fa-brain-circuit",
+      "note": "Education"
+    }
+  ],
+  "exceptions": [
+    "Repeated section/nav marks identify the same owner.",
+    "Jacob full and cropped custom marks are one personal brand.",
+    "Actions, device icons and labeled factual diagram symbols are semantic, not study identities. Preserve diagrams.",
+    "Categories remain text-only. Wrong, Reveal and Viva retain photographs.",
+    "Legacy modal tool/capability ambiguities remain inventoried; later cleanup may use text-only labels."
+  ]
+}

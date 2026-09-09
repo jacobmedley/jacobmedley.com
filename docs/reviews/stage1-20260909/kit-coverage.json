@@ -1,0 +1,548 @@
+[
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-angle-right",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-down",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-left",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-right",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-turn-down",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-up",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-arrow-up-right-from-square",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Brands\"",
+    "glyph": "none",
+    "name": "fa-bootstrap",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-box",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-boxes-stacked",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-brackets-curly",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-brain",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-brain-circuit",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-briefcase",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-browsers",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-building-columns",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-bullseye-arrow",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-capsules",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-chalkboard",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-chart-line",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-check",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-chevron-down",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-circle-arrow-down",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-circle-nodes",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-clipboard-list-check",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-code",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-compass",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-compass-drafting",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-crosshairs",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-cubes",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-desktop",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-dna",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-drafting-compass",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-elephant",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-envelope",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-file-certificate",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-file-check",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-fill-drip",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-flag",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-gear-code",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Brands\"",
+    "glyph": "none",
+    "name": "fa-git-alt",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-graduation-cap",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-grid-2",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-handshake",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-headset",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-heart-pulse",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-id-card",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-image",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome Kit\"",
+    "glyph": "\"\"",
+    "name": "fa-jm-icon-cropped",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome Kit\"",
+    "glyph": "\"\"",
+    "name": "fa-jm-icon-full",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-laptop-code",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Brands\"",
+    "glyph": "none",
+    "name": "fa-laravel",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-layer-group",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-lightbulb",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-lightbulb-on",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-list-timeline",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-magnifying-glass-chart",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-map-location-dot",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-marker",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-masks-theater",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-message",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-mobile",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-mouse-field",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-notes",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-objects-column",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-palette",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-pencil-ruler",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-people-group",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-phone-laptop",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-project-diagram",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-route",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-ruler-triangle",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-screen-users",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-seedling",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-sidebar",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-sliders",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-solar-system",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-square-code",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-star",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-stethoscope",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-stopwatch",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-swatchbook",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-table-layout",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-toggle-on",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-toolbox",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-tooth",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-user-chart",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-vial",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-webhook",
+    "weight": "100"
+  },
+  {
+    "font": "\"Font Awesome 6 Brands\"",
+    "glyph": "none",
+    "name": "fa-wordpress-simple",
+    "weight": "400"
+  },
+  {
+    "font": "\"Font Awesome 6 Pro\"",
+    "glyph": "\"\"",
+    "name": "fa-xmark-large",
+    "weight": "100"
+  }
+]

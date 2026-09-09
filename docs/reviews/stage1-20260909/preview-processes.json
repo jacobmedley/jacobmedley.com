@@ -1,0 +1,14 @@
+[
+  {
+    "port": 8091,
+    "address": "127.0.0.1",
+    "pid": 16792,
+    "commandLine": "\"C:\\Users\\jacob\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\" -m http.server 8091 --bind 127.0.0.1 --directory C:/Users/jacob/.codex/worktrees/8350/jacobmedley.com/docs/reviews/stage1-20260909"
+  },
+  {
+    "port": 3000,
+    "address": "127.0.0.1",
+    "pid": 25352,
+    "commandLine": "\"C:\\Program Files\\nodejs\\node.exe\" C:\\Users\\jacob\\.codex\\worktrees\\8350\\jacobmedley.com\\node_modules\\next\\dist\\server\\lib\\start-server.js"
+  }
+]

@@ -1,5 +1,94 @@
 # Status
 
+## September 9, 2026: Stage 1 complete — choice pending
+
+**Current direction:** Stage 1 only is complete. No production UI edits, option
+selection or Stage 2 work. This section supersedes the historical uncommitted
+dashboard/planning handoff below. Start the next stage with the
+[Stage 1 checkpoint](stage1-checkpoint-20260909.md), which records all design,
+asset, icon, copy, motion, glass, type and sticky-header decisions and limitations.
+
+### Local state and recovery
+
+- Worktree: `C:\Users\jacob\.codex\worktrees\8350\jacobmedley.com`.
+- Branch: `codex/website-refinement-stage1-20260909`.
+- Stage 1 HEAD is the local documentation commit containing this STATUS update.
+  Resolve with `git log -1`; the final response and unique Genesis update record
+  its actual hash. The immediate preserved baseline is
+  `69a6b220a4c8333d8a9c8a7f20a3c917af0bfd7d`.
+- Before any branch/base operation, the existing 15-file dashboard/docs diff was
+  reviewed and committed as `8ee13104b9412ff9c35ce9af1c1ea3abc1c1e9c2`, tagged
+  `checkpoint/dashboard-before-stage1-20260909`. The original dashboard branch
+  remains there. No unrelated checkout was changed.
+- Main rechecked at `e6b3672f88e5847d84a854f45ae3d29ca8269952`; PR #8 is MERGED.
+  Its source tree equals the old a5fa620 baseline. Replayed the preserved checkpoint
+  onto merged main; zero full-tree diff between 8ee1310 and 69a6b22. No stacked PR
+  assumption remains. No PR exists for this Stage 1 branch at closeout.
+- Intake tree matched the preceding STATUS (7 modified, 8 untracked); no lock
+  existed. Task 01a084cd claimed it. Release only this task's lock after committing;
+  the next stage must inspect and reclaim actual ownership before writing.
+- Rollback: recover 69a6b22 in a separate worktree, or revert this Stage 1 docs
+  commit after checking ownership. Original recovery is 8ee1310/the named tag.
+  Never reset an unrelated or subsequently changed working tree.
+
+### Review packet and decisions
+
+- [Comparison board](reviews/stage1-20260909/index.html), served locally at
+  `http://localhost:8091/`: A split art/glass, B continuous glass band, C layered
+  schematic. All have desktop and narrow specimens/screenshots. No default
+  recommendation or selection is recorded. The Desktop control selects a viewing
+  width, not a design option.
+- [Copy register](copy-register.md): B41 five source-reviewed drafts, 25–33 words,
+  remain pending Jacob's approval. B40 placement/order reviewed; B42 action/status
+  behavior specified. None applied to production.
+- [Source/icon sheet](reviews/stage1-20260909/assets.html): supplied WebMD/BMD
+  vectors inspected, original hashes preserved. Viva vs-3 has a verified clean
+  same-couple region; raw untoned photo remains unavailable among inspected sources.
+- Registry reserves 24 project/study/metric/section identities, explains repeated
+  semantic diagram symbols, and preserves factual diagrams. Existing kit rendered
+  all 85 thin candidates and two custom marks; four legacy technology brands remain
+  unresolved. No fallback purchase, package or model download.
+- Changed files for Stage 1: this STATUS, copy-register.md,
+  stage1-checkpoint-20260909.md, and docs/reviews/stage1-20260909/ (five HTML pages,
+  six JPEG screenshots, source/registry/kit/layout/check/process evidence JSON).
+  Production app/components/lib/hooks/public/scripts are unchanged from 69a6b22.
+
+### Checks, previews and coordination
+
+TypeScript, lint and diff whitespace checks pass. Actual 320/375/768/1440 browser
+layouts have no horizontal document/copy overflow and retain 140px anchors. Exact
+register/artifact copy equality, source SVG hashes, canonical IDs, review isolation
+and full-tree baseline preservation pass. The raw 39-file closeout digest is
+3CF659D17ACA0DA2FC98A4E646E8D87DCAF472E94491D6D3506E9E591630488A; it differs from
+the intake byte digest while Git-tracked source content remains identical. See the
+checkpoint for method and the distinction from source-tree equality.
+
+Next dev is running at loopback 3000 (PID 25352 at closeout); / and /case-studies/
+were opened successfully. The standalone page remains directly addressable without
+authentication and separated from the homepage. Review-only loopback 8091 serves
+the docs directory (PID 16792); export port 8090 is stopped. Process evidence is in
+the packet. No production rebuild for docs-only changes. OS reduced motion was
+active: normal-motion and later sticky/UI acceptance remain for their own stages.
+
+No push, PR, merge, deployment, local inference job, usage reset or additional
+spending. PR #8's prior deployment is historical; live edge cache was not verified.
+Astra/high is available in host metadata and was recommended; no unsupported model
+switch is claimed. Initial cloud estimate 35–60k includes review overhead and is
+not measured usage/savings. Zero local jobs were dispatched.
+
+Genesis controls and seven unresolved directions were reread before closeout;
+2026-09-09T07:57:35Z fingerprint
+6fef3e064d31c3223c78ca748f5b22fb75efdecbf5274dcaac6713b7633e731f. The laptop hold
+and no-reset rule remain. Stage 1 direction event is
+20260909T061953Z-6157cbd8624a4faca1fa800e3c36a79d. Append a unique update after
+final commit with actual hash; coordinator-owned CURRENT/website pointers remain
+untouched. Local freshness does not assert remote sync or acknowledgement.
+
+**Remaining:** Jacob chooses A/B/C and reviews B41. Later stages require their own
+instruction. Stage 1 stops here; no option has been chosen on Jacob's behalf.
+
+---
+
 ## September 9, 2026: documentation-only handoff for September 8 annotations
 
 **Current direction:** Jacob requested a review and staged plan for 18 browser

@@ -1,0 +1,50 @@
+[
+  {
+    "file": "a-desktop.jpg",
+    "width": 1440,
+    "height": 850,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "735CF009B8366FE82B7094CE2F48293EB8C5127F4A4C0D21874A9C4B421096DD"
+  },
+  {
+    "file": "a-narrow.jpg",
+    "width": 375,
+    "height": 1000,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "98E341BDAF595E379DEFE405DB04A2D64DFB6DB2B4F33F859C9888F1E9C31A2F"
+  },
+  {
+    "file": "b-desktop.jpg",
+    "width": 1440,
+    "height": 850,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "95F201879EBF0476EBE131E3C2E8B07B4E39DD37300C41E5C0B7B76518C7AE20"
+  },
+  {
+    "file": "b-narrow.jpg",
+    "width": 360,
+    "height": 960,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "B55680999F6CD5F2DF05E6E8FB4133E3EC17ECF9D67852914DAB576F57F11A46"
+  },
+  {
+    "file": "c-desktop.jpg",
+    "width": 1440,
+    "height": 850,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "78B2BB772188AA7F5C5BF38CD9B90739A571FE2E47F44B82622F78ED50282134"
+  },
+  {
+    "file": "c-narrow.jpg",
+    "width": 375,
+    "height": 1000,
+    "format": "jpeg",
+    "capture": "Individual specimen, full viewport; OS reduced motion",
+    "sha256": "568E127BADB8FBCEE66CE30A0852D1088B1DEF2B281D4E57EA26DB883917ED09"
+  }
+]

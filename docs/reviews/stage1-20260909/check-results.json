@@ -1,0 +1,35 @@
+{
+  "observedUTC": "2026-09-09T07:56:52.263017+00:00",
+  "branch": "codex/website-refinement-stage1-20260909",
+  "baseline": "69a6b220a4c8333d8a9c8a7f20a3c917af0bfd7d",
+  "productionSourceUnchanged": true,
+  "postRebaseTreeEqual": true,
+  "sourceFiles": 39,
+  "rawSourceFingerprint": "3CF659D17ACA0DA2FC98A4E646E8D87DCAF472E94491D6D3506E9E591630488A",
+  "draftWordCounts": {
+    "WebMD": 26,
+    "DentalPlans": 33,
+    "BumblebeeMD": 25,
+    "Hydra": 31,
+    "One Park Financial": 29
+  },
+  "registerArtifactEquality": true,
+  "svgSourceHashesPreserved": true,
+  "checkpointRelativeLinks": true,
+  "actualViewportChecks": [
+    320,
+    375,
+    768,
+    1440
+  ],
+  "glyphAnchorPixels": 140,
+  "productionReviewRoutesAdded": 0,
+  "optionSelected": null,
+  "tsc": "PASS earlier in this Stage 1 session",
+  "lint": "PASS earlier in this Stage 1 session; existing next lint deprecation",
+  "limitations": [
+    "No normal-motion acceptance: OS reduced motion.",
+    "No production rebuild for documentation-only changes.",
+    "No deployment or live edge-cache verification."
+  ]
+}

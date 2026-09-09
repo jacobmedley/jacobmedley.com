@@ -1,7 +1,7 @@
 # Copy Register
 
 **Status:** edits B0 through B42. All APPLIED unless marked otherwise.
-B39 is applied only in the uncommitted local dashboard; B40–B42 are PENDING.
+B39 is applied only in the locally committed dashboard; B40–B42 are PENDING.
 The September 8 annotation plan does not apply these pending changes to the site.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
@@ -1268,8 +1268,9 @@ the earlier Wave 3 rename; it does not change the site hero title standard in B3
 ## B39. Career dashboard framing [APPLIED]
 
 **Publication state:** applied and locally verified on
-`codex/case-study-dashboard-refinement`, parent `a5fa620`; not committed or
-published. Jacob subsequently requested documentation and planning only. See
+`codex/case-study-dashboard-refinement`, preserved in `8ee1310` before base
+operations and replayed as `69a6b22` on merged main for Stage 1. Not published.
+See [Stage 1 checkpoint](stage1-checkpoint-20260909.md) for the current branch. See
 `case-study-dashboard-acceptance.md` for the prior local checks and `STATUS.md`
 for the current handoff. APPLIED here does not mean deployed.
 
@@ -1307,7 +1308,7 @@ Source: Jacob's September 8 browser comments 6–8. Owning implementation file:
   measured-year qualification and business figures remain canonical. Historical
   B28/B37 references to the old bullet layout are an audit trail.
 
-No site edit for B40 has been made. The layout request is authorized for its future
+Stage 1 verified the current B37 body matches the existing Design Leadership bullet exactly. Left order after placement: AI Product Design, Design Systems, Research and Measurement. Right order: Business Outcomes, Conversion and Experimentation. One introduction precedes both columns. No site edit for B40 has been made. The layout request is authorized for its future
 stage; it does not need a fresh copy rewrite or renewed permission for placement.
 
 ## B41. Comparable main featured-study summaries [PENDING]
@@ -1325,9 +1326,31 @@ platform scope and BumblebeeMD's retired status. Review Hydra's `championed` and
 `streamlined` against the style authority. Do not change detailed project content,
 standalone canonical JSON, source attribution or diagrams to achieve equal length.
 
-**Exact replacement copy has not been authored or approved yet.** Existing summaries
-remain canonical until the future draft is recorded and applied. No component copy
-is changed by this documentation entry.
+**Stage 1 source-reviewed drafts, September 9, 2026. Not applied; Jacob’s copy approval remains pending.**
+
+### WebMD
+
+> I led UX/UI design and front-end development for an ecommerce website combining WebMD’s brand with DentalPlans’ products. The work covered plan search, comparison, cart and checkout.
+
+### DentalPlans
+
+> I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data supported five properties, with launch time per property falling from six weeks to two.
+
+### BumblebeeMD
+
+> BumblebeeMD launched as a DentalPlans sub-brand on the shared product platform. It was one of five properties built on that framework and was later retired.
+
+### Hydra
+
+> I built Hydra to give products a shared design vocabulary across brands and technology stacks. The system joined reusable interface patterns with front-end components while leaving the underlying functional code intact.
+
+### One Park Financial
+
+> I redesigned One Park Financial’s corporate website and lead flow as part of the Hydra implementation. Visitor behavior, device performance, heat maps and scroll maps informed the interface decisions.
+
+Source review: WebMD contribution badges and plan/cart/checkout media; DentalPlans B27 and platform source JSON; BumblebeeMD B10 and current summary; Hydra The Rise of Hydra prose; One Park Financial current brief. No performance figure was added. DentalPlans preserves the per-property launch unit and shared-platform mechanism. BumblebeeMD remains a retired platform property, not an employer or independent venture. WebMD’s six-week first launch is intentionally absent to avoid confusing it with the later platform launch cycle. Hydra removes the banned verbs without adding a delivery claim. All five drafts were authored here before the review artifacts. Existing production summaries remain unchanged.
+
+Counts use whitespace-delimited words: WebMD 26, DentalPlans 33, BumblebeeMD 25, Hydra 31, One Park Financial 29. Counts are a guide; the review board shows all five at the same desktop/narrow copy widths without clamping.
 
 ## B42. Motion-control labels [PENDING]
 
@@ -1336,7 +1359,7 @@ Proposed interface strings for the shared pause/resume control in Stage 3:
 - While decorative animations are running: `Pause animations`.
 - While paused: `Resume animations`.
 
-These describe an action rather than a marketing claim. Define accessible state and
+Stage 1 accepts these action labels for the specification. Use a normal button whose label changes with the available action; do not pair changing labels with aria-pressed. With OS reduced motion, show noninteractive status `Animations off: reduced motion` and offer no override. On a user pause, freeze decorative motion and cancel interaction zoom; preserve the preference across both site surfaces. These describe an action rather than a marketing claim. Define accessible state and
 reduced-motion behavior in Stage 1's motion specification; do not present a control
 as running when reduced motion has made it static. This is proposed supporting copy
 for the requested cross-site motion/accessibility work, not an applied UI change.

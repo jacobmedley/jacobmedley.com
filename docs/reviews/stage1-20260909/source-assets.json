@@ -1,0 +1,30 @@
+[
+  {
+    "path": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\webmd\\webmd_logo_white.svg",
+    "bytes": 3828,
+    "sha256": "410BB5F75210086DD9D57CB93825D4AA73BEE32AFD2467397FFEEE6614485D12",
+    "viewBox": "0 0 110 25.53",
+    "externalReferences": false
+  },
+  {
+    "path": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\bmd\\SVG\\bmd-mark.svg",
+    "bytes": 3428,
+    "sha256": "78B4ABCEEB38F49141F50EEFBAEC275ECFC0B57248992917611C04B560980424",
+    "viewBox": "0 0 120 110.64",
+    "externalReferences": false
+  },
+  {
+    "path": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\bmd\\SVG\\bmd-icon2.svg",
+    "bytes": 2583,
+    "sha256": "5CDCA0AA75656770F2AA3408925082F223FFF84B74BD30A91B7FE803EA62B050",
+    "viewBox": "0 0 77 88.41",
+    "externalReferences": false
+  },
+  {
+    "path": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\bmd\\SVG\\bmd-hex3.svg",
+    "bytes": 796,
+    "sha256": "14C9AF0CB49BB200BC6238951C1B134F0D905453BF5C5F30D83C9BF08402E41D",
+    "viewBox": "0 0 120 110.64",
+    "externalReferences": false
+  }
+]

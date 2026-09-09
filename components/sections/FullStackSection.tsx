@@ -55,7 +55,7 @@ export default function FullStackSection() {
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
-              <p className="display-1">
+              <p className="display-1 full-stack-intro">
                 Here are some examples showcasing the diverse skill sets and methods I&rsquo;ve
                 used to create better user experiences and business outcomes.
               </p>

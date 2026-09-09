@@ -3,6 +3,10 @@ import SectionHeader from '@/components/ui/SectionHeader'
 
 const leadershipLeft = [
   {
+    title: 'AI Product Design',
+    body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
+  },
+  {
     title: 'Design Systems',
     body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
@@ -10,26 +14,20 @@ const leadershipLeft = [
     title: 'Research and Measurement',
     body: 'Set a usability testing practice at ten participants per round and a HEART-based KPI framework, so design decisions rested on evidence and outcomes had a number to move.',
   },
-  {
-    title: 'AI Product Design',
-    body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
-  },
 ]
 
 const leadershipRight = [
-  {
-    title: 'Conversion and Experimentation',
-    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
-  },
   {
     title: 'Business Outcomes',
     body: 'Systems work with numbers attached: 47% of company revenue growth in a single measured year, and a 66% reduction in launch time per property.',
   },
   {
-    title: 'Design Leadership',
-    body: 'Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.',
+    title: 'Conversion and Experimentation',
+    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
   },
 ]
+
+const designLeadershipIntro = 'Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.'
 
 type ExperienceRole = {
   title: string
@@ -139,7 +137,8 @@ export default function ResumeSection() {
           <div className="row">
             <div className="col-24">
               <h3 className="mb-6">Design Leadership</h3>
-              <div className="row">
+              <p className="resume-leadership-intro">{designLeadershipIntro}</p>
+              <div className="row mt-0 sm:mt-4 resume-leadership-grid">
                 {[leadershipLeft, leadershipRight].map((column, i) => (
                   <div key={i} className="col-md-12">
                     <ul className="fa-ul">

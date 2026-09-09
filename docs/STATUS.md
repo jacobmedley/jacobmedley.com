@@ -1,5 +1,42 @@
 # Status
 
+## September 9, 2026: Stage 2 complete
+
+Stage 2 is complete at local commit `9bf75f4d21ad8ec0e6745d6716a41cf028cd409a`
+on `codex/website-refinement-stage1-20260909`, from Stage 1 selection commit
+`7651df72026c70b5e2d7fef257732f0f7c7b8162`. Implemented the independent
+specified items: Full Stack spacing, B40 Design Leadership placement and order,
+shared 32px clipping/isolation, readable 14px type and registered secondary ink,
+and the standalone filter glass treatment. B41 featured-study summaries remain
+pending because Jacob's approval was not present; `lib/data/projects.ts` and the
+copy register's B41 drafts were not changed.
+
+Changed files: `app/globals.css`, `app/case-studies/case-studies.css`,
+`app/case-studies/dashboard.css`, `components/sections/FullStackSection.tsx`,
+`components/sections/ResumeSection.tsx`, and
+`docs/stage2-checkpoint-20260909.md`. The checkpoint records decisions, scope,
+contrast-token evidence and limitations.
+
+Checks: `git diff --check` passed; `npx tsc --noEmit --incremental false`
+passed; targeted ESLint had no errors, with CSS ignored by configuration. The
+dashboard acceptance passed at 11 widths with filters, sticky behavior,
+keyboard/touch, motion preferences, thin icons, navigation and six source
+stories. Annotation acceptance passed homepage widths 375/768/974/1191/1200/1440
+and standalone widths 375/974/1200/1440 with zero overflow and no browser
+errors. Registered contrast token ratios remain above their documented targets;
+exhaustive composited contrast over every moving/photo surface remains Stage 6
+work. `npm run build` was started but stopped after remaining blocked by the
+active worktree development output, so no build result is claimed.
+
+Preview: existing `http://localhost:3000/` and `/case-studies/` returned 200
+during acceptance. Deployment state: no push, PR, merge or deployment. PR #8
+remains historically merged at `e6b3672`; current main and PR state were not
+changed. Rollback is the prior local Stage 1 commit `7651df7`, after checking
+ownership; do not reset or clean this worktree. Stage 2 stops here. Remaining:
+B41 approval, then separately authorized Stages 3–7.
+
+Genesis completion event is appended after the final freshness reread below.
+
 ## September 9, 2026: Jacob selected B with refinements
 
 Jacob chose Option B: slight gradient variation across cards, darker behind the

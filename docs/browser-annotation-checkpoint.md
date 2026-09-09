@@ -1,5 +1,12 @@
 # Browser annotation checkpoint
 
+This file records the earlier implemented annotations. Jacob's later September 8
+batch of 18 requests is **planned only** in
+[the new annotation review](annotation-review-20260908.md) and
+[seven-stage plan](website-refinement-plan-20260908.md). Do not treat the historical
+acceptance below as acceptance of the new motion, artwork or sticky-header requests.
+PR #8 containing the earlier main-site checkpoint has merged; see [STATUS](STATUS.md).
+
 ## September 8 main-site follow-up
 
 All five main case-study previews now zoom their image inside a fixed, rounded,

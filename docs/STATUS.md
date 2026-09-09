@@ -1,6 +1,134 @@
 # Status
 
-## September 8, 2026: main-site annotation checkpoint
+## September 9, 2026: documentation-only handoff for September 8 annotations
+
+**Current direction:** Jacob requested a review and staged plan for 18 browser
+annotations, with a fresh chat per stage. Only documentation changed after that
+instruction. The previously completed local dashboard work is preserved. Commit,
+push and separate-PR closeout are deferred to the future stages; no new site edits
+or publication are authorized by this planning handoff.
+
+Start with the [seven-stage plan](website-refinement-plan-20260908.md),
+[18-item source review and asset inventory](annotation-review-20260908.md), and
+[paste-ready stage prompts](stage-prompts-20260908.md). Stage 1 is Astra/high:
+preserve a recoverable local checkpoint, reconcile the merged baseline, resolve
+icon ownership and copy, and present three horizontal card options. Later stages
+use Luna/medium for specified edits, Sol/medium for components/motion/sticky headers,
+Astra/medium for acceptance, and Luna/medium for explicitly authorized PR packaging.
+The plan contains token ranges, qualified local-model boundaries and checkpoints.
+
+### Git and release state
+
+- Assigned worktree: `C:\Users\jacob\.codex\worktrees\8350\jacobmedley.com`.
+  The initial handoff's `jacob.codex` path was corrected to this existing directory.
+- Branch: `codex/case-study-dashboard-refinement`.
+- Current HEAD: `a5fa6206ce00a54fd13a0550f8b3552cd42f5dec`. **No new commit**;
+  dashboard implementation and this documentation packet remain uncommitted.
+- [PR #8](https://github.com/jacobmedley/jacobmedley.com/pull/8) merged at
+  `2026-09-08T23:28:27Z`, merge commit
+  `e6b3672f88e5847d84a854f45ae3d29ca8269952`. GitHub main was verified at that
+  same commit during this handoff. Its [SiteGround workflow](https://github.com/jacobmedley/jacobmedley.com/actions/runs/34290806205)
+  reports success. This task did not initiate the merge or deployment and has not
+  independently checked the live edge cache.
+- No PR exists for the dashboard branch in the GitHub query at handoff. The earlier
+  plan to stack work on open PR #8 is stale. Future work must reconcile the merged
+  baseline, preserve later changes and use a separate PR. Do not reopen, overwrite,
+  merge or deploy as part of this planning task.
+- Lock was handed over from idle task `01a078e0` under Jacob's explicit continuation
+  and held by task `01a08244` during edits. Release this task's own lock at closeout;
+  next stage checks the actual lock and claims ownership before writing. Original
+  checkout ownership and assets were not changed.
+
+### Completed locally before the documentation-only instruction
+
+The dashboard has the left hero/CTA, four source-backed career cards, shared
+outcome/story filters and responsive frosted icon cards. The 47% card names finance,
+one measured year and the share of that year's growth increment. Six-to-two timing
+uses the canonical proof value. Exact 1100px outcome-grid behavior and narrow stat
+text fit were fixed. Canonical story JSON, source mappings, existing diagrams,
+detail pages and shared global CSS were preserved. See the detailed
+[local dashboard verification](case-study-dashboard-acceptance.md).
+
+Before the scope change, TypeScript, lint, production build, expanded dashboard
+acceptance against dev port 3000 and export port 8090, and `git diff --check` passed.
+The harness covers 11 widths from 320 to 1440px, both collections' filters, sticky
+placement, thin-font hydration, keyboard/touch motion, reduced motion, client
+navigation, all six detail routes and horizontal overflow. Chromium browser review
+covered desktop, tablet and phone. Physical devices, Safari and Firefox were not
+tested. These results do not accept the newly requested annotations.
+
+### Documentation-only changes and verification
+
+Documentation paths changed or added in this worktree:
+
+- `docs/STATUS.md` — this current handoff, updated last.
+- `docs/copy-register.md` — B39 explicitly local; B40 placement, B41 summary drafts
+  and B42 motion-control labels are pending. Site surface pointer reflects PR #8.
+- `docs/annotation-review-20260908.md` — all 18 requests, owning sources, icon
+  collisions, deterministic summary counts and four supplied SVG hashes.
+- `docs/website-refinement-plan-20260908.md` — seven stages, model/effort, budgets,
+  dependencies, accessibility criteria and acceptance checkpoints.
+- `docs/stage-prompts-20260908.md` — common intake plus one prompt per new chat.
+- `docs/case-study-dashboard-acceptance.md` — prior local evidence, with a clear
+  boundary separating it from the pending annotation work.
+- `docs/browser-annotation-checkpoint.md` and `docs/website-production-plan.md` —
+  historical records now point to the current plan and release state.
+
+Preserved uncommitted implementation paths: `app/case-studies/page.tsx`,
+`app/case-studies/dashboard.css`, `components/case-studies/CareerStats.tsx`,
+`components/case-studies/StudyIconArt.tsx`,
+`components/case-studies/OutcomeDashboard.tsx`,
+`components/case-studies/StudyCollection.tsx`, and
+`scripts/parity/dashboard-acceptance.mjs`.
+
+Planning verification: all annotation IDs 1–18 occur once in the request table;
+both plan and prompts contain stages 1–7; B39–B42 are unique; new packet file links,
+code fences and whitespace pass; the four SVG hashes match the untouched originals.
+`git diff --check` passes. Runtime sources were not rebuilt or retested for doc edits.
+The 39-file fingerprint over sorted `rg --files app components lib scripts` excluding
+`scripts/parity/shots/**` is unchanged before/after planning:
+`8BB2352270C82E0FE6C54F172E4B4431BB566DA28FD76DF3D4A1F0056A4F2CEF`.
+It hashes newline-joined `relative-path:SHA256` entries, UTF-8, with uppercase hashes.
+
+### Preview, recovery and remaining work
+
+The worktree's dev preview remains at `http://localhost:3000/case-studies/` and
+returns HTTP 200. At handoff, listener PID 42540 belongs to parent PID 43448;
+both command lines identify this worktree's Next server. Temporary export port 8090
+is stopped. Future sessions verify PID and command line before any service action.
+Prior captures/results are local, ignored files in `scripts/parity/shots/dashboard/`;
+the old PR-body draft there predates the planning direction and must not be published.
+
+Rollback reference for the dashboard code is `a5fa620`; whole-site historical
+recovery is `checkpoint/portfolio-before-brand-wave-20260906` at `b8aac95d`.
+The new local work has no commit yet: these references do not recover uncommitted
+files. Stage 1 must preserve them in a reviewed checkpoint before branch/base changes.
+Do not use a reset or clean to reconcile this dirty tree. Current main's merged
+release reference is `e6b3672`, distinct from the dashboard's parent.
+
+All 18 new requests remain pending. Open decisions are the horizontal design
+selection, complete icon registry, verified clean Viva source, exact B41 copy,
+motion/readability tokens and standalone sticky-header hierarchy. New BMD/WebMD
+vectors exist only in the original checkout and were inventoried, not copied.
+Later implementation needs fresh cross-site motion and WCAG 2.2 AA acceptance;
+the user phrase "WCAG 3.2 AA" is clarified with W3C sources in the plan.
+
+Genesis was reread before this handoff at fingerprint
+`10e92eb906768540d36a46c974bead83cbbea490ad39501ef9708d8add368373`, observed
+`2026-09-09T04:01:21+00:00`. Six unresolved change records were reread and reconciled:
+the latest docs-only direction governs this task; laptop inference hold and no-auto-
+reset remain honored. No conflicts were reported. Direction event:
+`20260909T034932Z-8dbc50d0b48c4648acb71f185d80b057`.
+A unique `update` event follows this final repository documentation write, recording
+the actual unchanged HEAD, verification, PR/deployment state and recovery reference.
+The coordinator still needs to refresh the stale website card/current brief;
+no other machine's synchronization or acknowledgement is asserted.
+
+This task used deterministic tools and the existing cloud session; no local model,
+paid fallback, model download, reset or additional spending. Model recommendations
+are not a claim that current-task settings were switched.
+
+## Historical September 8, 2026: main-site annotation checkpoint
 
 Current branch: `codex/portfolio-brand-wave-continuation-20260906`. Release PR #7
 has merged at `588b550`; its SiteGround workflow completed successfully

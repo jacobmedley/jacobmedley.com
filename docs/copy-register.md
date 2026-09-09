@@ -1,6 +1,8 @@
 # Copy Register
 
-**Status:** edits B0 through B38. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B42. All APPLIED unless marked otherwise.
+B39 is applied only in the uncommitted local dashboard; B40–B42 are PENDING.
+The September 8 annotation plan does not apply these pending changes to the site.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -25,7 +27,7 @@ the register will drift.
 
 | Surface | Owner | Status |
 |---|---|---|
-| Site | this repo, main | current at 5388c1c |
+| Site | this repo, main | PR #8 merged at e6b3672 on September 8, 2026; deploy workflow succeeded; live cache not independently verified. B39 remains local. See STATUS.md. |
 | Word master | resume workstream | v1r6 pending |
 | Designed PDF | resume workstream | rebuild after v1r6 |
 | LinkedIn | Jacob, manual | UNMANAGED, not in register |
@@ -1262,6 +1264,82 @@ Jacob restored the visible section heading to `Full Stack Designer` on September
 2026. The navigation label remains `Selected Work`, and the stable `#full-stack`
 anchor remains unchanged. This direct instruction supersedes the heading portion of
 the earlier Wave 3 rename; it does not change the site hero title standard in B35.
+
+## B39. Career dashboard framing [APPLIED]
+
+**Publication state:** applied and locally verified on
+`codex/case-study-dashboard-refinement`, parent `a5fa620`; not committed or
+published. Jacob subsequently requested documentation and planning only. See
+`case-study-dashboard-acceptance.md` for the prior local checks and `STATUS.md`
+for the current handoff. APPLIED here does not mean deployed.
+
+Jacob requested four large-number cards in the standalone case-study hero on
+September 8. Reuse documented figures, not inferred lifetime totals:
+
+- `20` / `Years in design`, from B37's twenty-year career description. Source link:
+  the main site's Resume section, opening separately as an outbound site link.
+- `5` / `properties on one platform`, canonical platform story proof[1].
+- `47%` / `of company revenue growth in one measured year`, canonical platform
+  proof[2]. Attribution reads `Finance Attributed`. The visible clarification reads
+  `Share of that year's growth increment.` This is not a revenue or sales lift.
+  The source story retains mechanism.
+- `6 → 2` / `weeks to launch a property`, canonical platform proof[0]. Split into
+  `Before` and `After` in the featured timing comparison. Six equal week marks before,
+  two after; no newly derived percentage. The hero uses the original value verbatim.
+
+Dashboard labels `Career at a Glance`, `Experience`, `Shared Foundation`, and
+`Launch Cycle` describe these same sources. Supporting qualitative outcomes stay
+qualitative. All source-story prose, disciplines and titles remain unchanged.
+
+## B40. Design Leadership introduction and column order [PENDING]
+
+Source: Jacob's September 8 browser comments 6–8. Owning implementation file:
+`components/sections/ResumeSection.tsx`. Stage 2 of the September 8 refinement plan.
+
+- Move the exact B37 body from the Design Leadership bullet to the main paragraph
+  immediately beneath the existing Design Leadership heading and before both
+  bullet columns. Remove that bullet and its redundant label; do not duplicate it.
+- Put the existing AI Product Design item first in `leadershipLeft` and Business
+  Outcomes first in `leadershipRight`. Preserve the current canonical bodies and
+  the relative order of the remaining items. On mobile, retain left-column then
+  right-column DOM reading order after the introduction.
+- This changes placement only. B37's wording, the assistant scope corrections,
+  measured-year qualification and business figures remain canonical. Historical
+  B28/B37 references to the old bullet layout are an audit trail.
+
+No site edit for B40 has been made. The layout request is authorized for its future
+stage; it does not need a fresh copy rewrite or renewed permission for placement.
+
+## B41. Comparable main featured-study summaries [PENDING]
+
+Source: Jacob's September 8 browser comment 12. Scope: the five featured `summary`
+fields in `lib/data/projects.ts`, used by the homepage WorkCard: WebMD, DentalPlans,
+BumblebeeMD, Hydra and One Park Financial. Their current whitespace word counts
+are respectively 27, 58, 23, 27 and 21.
+
+Stage 1 authors the exact proposed replacements here before any implementation;
+Stage 2 applies the approved drafts. Start around 25–35 words and compare rendered
+lengths. This is an approximate visual target, not permission to invent outcomes,
+pad short stories or erase a needed mechanism. Preserve Jacob's actual role,
+platform scope and BumblebeeMD's retired status. Review Hydra's `championed` and
+`streamlined` against the style authority. Do not change detailed project content,
+standalone canonical JSON, source attribution or diagrams to achieve equal length.
+
+**Exact replacement copy has not been authored or approved yet.** Existing summaries
+remain canonical until the future draft is recorded and applied. No component copy
+is changed by this documentation entry.
+
+## B42. Motion-control labels [PENDING]
+
+Proposed interface strings for the shared pause/resume control in Stage 3:
+
+- While decorative animations are running: `Pause animations`.
+- While paused: `Resume animations`.
+
+These describe an action rather than a marketing claim. Define accessible state and
+reduced-motion behavior in Stage 1's motion specification; do not present a control
+as running when reduced motion has made it static. This is proposed supporting copy
+for the requested cross-site motion/accessibility work, not an applied UI change.
 
 ---
 

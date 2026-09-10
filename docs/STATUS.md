@@ -1,5 +1,38 @@
 # Status
 
+## September 9, 2026: Stage 4 browser comments complete
+
+The seven browser comments following Stage 4 are complete on
+`codex/website-refinement-stage1-20260909`, from `fa9ca5d`. Featured cards use a
+desktop mosaic at 1200px and wider, while narrower layouts retain the linear
+sequence with divider spacing reduced by half. Every featured identity circle is
+220px. DentalPlans uses the supplied DP mark, Hydra uses Font Awesome Classic Thin
+Hydra, and the other approved identity treatments remain intact.
+
+Copy edit B44 supersedes pending B41 and is applied to the five homepage excerpts.
+Their character counts span 179 to 203. The BumblebeeMD excerpt no longer mentions
+retirement; detailed modal copy is unchanged. The copy register was updated before
+implementation.
+
+Changed files: `app/globals.css`, `components/sections/CaseStudiesSection.tsx`,
+`components/ui/WorkCard.tsx`, `lib/data/projects.ts`, `docs/copy-register.md`,
+`scripts/parity/stage4-acceptance.mjs`, the new verified
+`public/assets/featured/dentalplans-icon.svg`, and
+`docs/stage4-browser-comments-checkpoint-20260909.md`.
+
+Checks passed: diff check, non-incremental TypeScript, targeted no-cache ESLint,
+Stage 4 Playwright acceptance at nine widths from 320 through 1729px, existing
+annotation acceptance and the standalone dashboard suite. Browser checks cover
+the annotated 1131px and 1729px widths, 220px anchors, loaded DP/Hydra identities,
+B44 length spread, divider spacing, mosaic geometry, containment, zero overflow,
+focus/modal return and motion preferences. Visual inspection passed at 375, 1131,
+1440 and 1729px.
+
+The dedicated preview is running at `http://localhost:3010/`. No build, push, PR,
+merge or deployment occurred. The local checkpoint containing this entry is
+reported in the handoff. Rollback is `fa9ca5d` after checking ownership; do not
+reset or clean the worktree.
+
 ## September 9, 2026: Stage 4 complete
 
 Stage 4 is complete on `codex/website-refinement-stage1-20260909`, from the

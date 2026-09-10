@@ -43,11 +43,22 @@ function FeaturedAnchor({ projectId }: { projectId: string }) {
     )
   }
 
-  const icon = projectId === 'dentalplans'
-    ? 'fa-thin fa-tooth'
-    : projectId === 'hydra'
-      ? 'fa-thin fa-cubes'
-      : 'fa-thin fa-building-columns'
+  if (projectId === 'dentalplans') {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- supplied verified brand asset
+      <img
+        src="/assets/featured/dentalplans-icon.svg"
+        alt=""
+        width={132}
+        height={132}
+        className="featured-work-logo featured-work-logo-dentalplans"
+      />
+    )
+  }
+
+  const icon = projectId === 'hydra'
+    ? 'fa-thin fa-hydra'
+    : 'fa-thin fa-building-columns'
 
   return <i className={`${icon} featured-work-icon`} aria-hidden="true" />
 }
@@ -99,7 +110,7 @@ export default function WorkCard({
   const open = () => onOpen?.(project.id)
 
   return (
-    <div className="work-item py-2 lg:py-6 2xl:py-12">
+    <div className={`work-item work-item-${project.id} py-2 lg:py-6 2xl:py-12`}>
       <article
         className={cn(
           'featured-work-card',

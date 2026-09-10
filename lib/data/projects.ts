@@ -216,7 +216,7 @@ export const projects: Project[] = [
     title: 'WebMD',
     subtitle: 'eCommerce Website',
     cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: "Internet Brands wanted to open up new opportunities for growth across their portfolio. One of these efforts was combining the strength of WebMD's brand and DentalPlans product.",
+    summary: "I led UX/UI design and front-end development for an ecommerce website combining WebMD's brand with DentalPlans' products. The work covered plan search, comparison, cart and checkout.",
     visible: true,
     brief: {
       image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
@@ -341,7 +341,7 @@ export const projects: Project[] = [
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product eCommerce websites for Cigna, Aetna, WebMD, and Lower My Dental Bills (LMDB).",
+    summary: 'I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data carried five properties and cut each launch from six weeks to two.',
     modalTitle: 'Product Framework and Design System',
     visible: true,
     brief: {
@@ -628,7 +628,7 @@ export const projects: Project[] = [
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'BumblebeeMD was a sub-brand built on the DentalPlans.com product platform, one of five properties launched from that shared framework. It was later retired.',
+    summary: 'BumblebeeMD launched as a DentalPlans.com sub-brand on the shared product platform. It was one of five properties using the same design, product data and ecommerce infrastructure.',
     modalTitle: 'BumblebeeMD',
     visible: true,
     brief: {
@@ -730,7 +730,7 @@ export const projects: Project[] = [
     title: 'Hydra',
     subtitle: 'The Making of a Design System',
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: "I championed and implemented the Hydra design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
+    summary: 'I built Hydra as a shared design vocabulary across brands and technology stacks. Reusable interface patterns and front-end components kept products consistent while their functional code stayed intact.',
     modalTitle: 'Hydra Design System',
     visible: true,
     brief: {
@@ -904,7 +904,7 @@ export const projects: Project[] = [
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'
     },
-    summary: 'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow.',
+    summary: "I redesigned One Park Financial's corporate website and lead flow through the Hydra system. Visitor behavior, device performance, heat maps and scroll maps informed each interface decision.",
     visible: true,
     brief: {
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },

@@ -593,7 +593,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .portfolio-badges-compact { gap: 4px; margin-bottom: 5px; }
 .portfolio-badges-compact > span { min-height: 19px; padding: 3px 6px; font-size: .56rem; }
 .work-card-badges { margin: 0 0 20px; }
-.work-separator { margin: clamp(2.5rem, 6vw, 5rem) 0; }
+.work-separator { margin: clamp(1.25rem, 3vw, 2.5rem) 0; }
 .case-study-read { padding: 8px 26px; font-size: 18px; font-weight: 300; }
 .work-item { container-type: inline-size; }
 .featured-work-card {
@@ -674,16 +674,16 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   background: transparent;
 }
 .featured-work-art:focus-visible { outline: 3px solid #644672; outline-offset: 4px; }
-.featured-work-anchor { position: relative; z-index: 2; display: grid; place-items: center; width: 140px; height: 140px; border: 1px solid rgba(255, 255, 255, .56); border-radius: 50%; background: linear-gradient(145deg, #224b66, #17364f); box-shadow: 0 15px 36px rgba(19, 51, 76, .15), inset 0 0 0 7px rgba(255, 255, 255, .04); }
-.featured-work-card-dentalplans .featured-work-anchor { background: linear-gradient(145deg, #f7fbfd, #dce7eb); border-color: rgba(32, 55, 72, .3); }
+.featured-work-anchor { position: relative; z-index: 2; display: grid; place-items: center; width: 220px; height: 220px; border: 1px solid rgba(255, 255, 255, .56); border-radius: 50%; background: linear-gradient(145deg, #224b66, #17364f); box-shadow: 0 15px 36px rgba(19, 51, 76, .15), inset 0 0 0 7px rgba(255, 255, 255, .04); }
+.featured-work-card-dentalplans .featured-work-anchor { background: linear-gradient(145deg, #315b73, #1c4058); border-color: rgba(255, 255, 255, .56); }
 .featured-work-card-bumblebeemd .featured-work-anchor { background: rgba(255, 252, 229, .88); border-color: rgba(76, 57, 7, .34); }
 .featured-work-card-hydra .featured-work-anchor { background: linear-gradient(145deg, #5a446c, #30263e); }
 .featured-work-card-opfred .featured-work-anchor { background: linear-gradient(145deg, #704b42, #352326); }
 .featured-work-logo { display: block; max-width: none; height: auto; transition: transform 550ms cubic-bezier(.16, 1, .3, 1); }
-.featured-work-logo-webmd { width: 110px; }
-.featured-work-logo-bumblebee { width: 71px; }
-.featured-work-icon { font-size: 70px; font-weight: 100; color: #ecfaff; transition: transform 550ms cubic-bezier(.16, 1, .3, 1); }
-.featured-work-card-dentalplans .featured-work-icon { color: #29465a; }
+.featured-work-logo-webmd { width: 173px; }
+.featured-work-logo-dentalplans { width: 132px; }
+.featured-work-logo-bumblebee { width: 112px; }
+.featured-work-icon { font-size: 110px; font-weight: 100; color: #ecfaff; transition: transform 550ms cubic-bezier(.16, 1, .3, 1); }
 .featured-work-copy { position: relative; z-index: 3; display: flex; align-items: flex-start; flex-direction: column; min-width: 0; padding: 28px 32px; border: 1px solid rgba(255, 255, 255, .73); border-radius: 22px; background: rgba(255, 255, 255, .88); -webkit-backdrop-filter: blur(16px) saturate(110%); backdrop-filter: blur(16px) saturate(110%); color: #302c38; }
 .featured-work-copy .h2 { margin-bottom: 8px; font-size: 36px; line-height: 1.1; font-weight: 400; }
 .featured-work-subtitle { margin: 0 0 16px; color: #594c62; font-size: 14px; font-weight: 400; line-height: 1.45; letter-spacing: .03em; }
@@ -717,7 +717,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .featured-work-card-bumblebeemd { background: linear-gradient(176deg, #fff6c9 0%, #f1cd55 28%, #91701a 51%, #3b2d08 100%); }
   .featured-work-card-hydra { background: linear-gradient(168deg, #ede5f2 0%, #c6afd4 29%, #735887 52%, #382d48 100%); }
   .featured-work-card-opfred { background: linear-gradient(174deg, #f0e5df 0%, #cfae9e 28%, #795447 51%, #3c2727 100%); }
-  .featured-work-art { min-height: 236px; }
+  .featured-work-art { min-height: 280px; }
   .featured-work-copy { padding: 24px; }
   .featured-work-copy .h2 { font-size: 30px; }
   .featured-work-summary { font-size: 16px; }
@@ -731,6 +731,31 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .featured-work-motif-2 { top: 22%; left: 78%; }
   .featured-work-motif-3 { top: 60%; left: 12%; }
   .featured-work-motif-4 { top: 84%; left: 85%; }
+}
+@media (min-width: 1200px) {
+  .featured-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "webmd dentalplans"
+      "webmd bumblebeemd"
+      "hydra bumblebeemd"
+      "opfred opfred";
+    grid-template-rows: repeat(4, minmax(390px, auto));
+    gap: clamp(24px, 2.2vw, 36px);
+  }
+  .featured-work-grid > .work-item { min-width: 0; padding-block: 0 !important; }
+  .featured-work-grid > .work-separator { display: none; }
+  .work-item-webmd { grid-area: webmd; }
+  .work-item-dentalplans { grid-area: dentalplans; }
+  .work-item-bumblebeemd { grid-area: bumblebeemd; }
+  .work-item-hydra { grid-area: hydra; }
+  .work-item-opfred { grid-area: opfred; }
+  .featured-work-grid .featured-work-card { height: 100%; }
+  .work-item-webmd .featured-work-card,
+  .work-item-bumblebeemd .featured-work-card { grid-template-columns: 1fr; grid-template-rows: minmax(320px, 1fr) auto; }
+  .work-item-dentalplans .featured-work-card,
+  .work-item-hydra .featured-work-card { grid-template-columns: minmax(220px, 40%) minmax(0, 60%); padding: 20px; }
 }
 @keyframes featured-work-drift { from { transform: translate(-14px, -6px) rotate(-1.5deg) scale(1.01); } to { transform: translate(18px, 10px) rotate(1.5deg) scale(1.04); } }
 @keyframes featured-work-plane-drift { from { transform: translate(-10px, 10px); } to { transform: translate(12px, -12px); } }

@@ -1,7 +1,8 @@
 # Copy Register
 
-**Status:** edits B0 through B42. All APPLIED unless marked otherwise.
-B39 is applied only in the locally committed dashboard; B40–B42 are PENDING.
+**Status:** edits B0 through B44. All APPLIED unless marked otherwise.
+B39 is applied only in the locally committed dashboard. B41 is superseded by
+B44, and B42 remains PENDING.
 The September 8 annotation plan does not apply these pending changes to the site.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
@@ -1311,7 +1312,7 @@ Source: Jacob's September 8 browser comments 6–8. Owning implementation file:
 Stage 1 verified the current B37 body matches the existing Design Leadership bullet exactly. Left order after placement: AI Product Design, Design Systems, Research and Measurement. Right order: Business Outcomes, Conversion and Experimentation. One introduction precedes both columns. No site edit for B40 has been made. The layout request is authorized for its future
 stage; it does not need a fresh copy rewrite or renewed permission for placement.
 
-## B41. Comparable main featured-study summaries [PENDING]
+## B41. Comparable main featured-study summaries [SUPERSEDED BY B44]
 
 Source: Jacob's September 8 browser comment 12. Scope: the five featured `summary`
 fields in `lib/data/projects.ts`, used by the homepage WorkCard: WebMD, DentalPlans,
@@ -1630,6 +1631,37 @@ so and I will apply it consistently rather than case by case.
 The shared control uses the registered labels **Pause motion** and **Resume motion**.
 It is available on both the homepage and standalone case-study surface, with the
 current state exposed through `aria-pressed`.
+
+## B44. Comparable homepage featured-study excerpts [APPLIED]
+
+Source: Jacob's September 9 browser comment 4. Scope: the five homepage featured
+`summary` fields in `lib/data/projects.ts`: WebMD, DentalPlans, BumblebeeMD, Hydra
+and One Park Financial. This supersedes B41. The detailed modal paragraphs and
+standalone case-study copy remain outside this edit.
+
+Jacob directed that the BumblebeeMD excerpt remove the retirement sentence and
+that all five excerpts use approximately the same character count. No new figures
+or outcomes are introduced.
+
+### WebMD, 182 characters
+
+> I led UX/UI design and front-end development for an ecommerce website combining WebMD's brand with DentalPlans' products. The work covered plan search, comparison, cart and checkout.
+
+### DentalPlans, 203 characters
+
+> I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data carried five properties and cut each launch from six weeks to two.
+
+### BumblebeeMD, 179 characters
+
+> BumblebeeMD launched as a DentalPlans.com sub-brand on the shared product platform. It was one of five properties using the same design, product data and ecommerce infrastructure.
+
+### Hydra, 201 characters
+
+> I built Hydra as a shared design vocabulary across brands and technology stacks. Reusable interface patterns and front-end components kept products consistent while their functional code stayed intact.
+
+### One Park Financial, 189 characters
+
+> I redesigned One Park Financial's corporate website and lead flow through the Hydra system. Visitor behavior, device performance, heat maps and scroll maps informed each interface decision.
 
 ## Website brand cleanup, September 6, 2026
 

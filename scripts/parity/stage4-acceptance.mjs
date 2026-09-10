@@ -18,7 +18,7 @@ function watch(page, label) {
 }
 
 try {
-  for (const width of [320, 375, 768, 974, 1191, 1200, 1440]) {
+  for (const width of [320, 375, 768, 974, 1131, 1191, 1200, 1440, 1729]) {
     const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
     watch(page, `responsive-${width}`)
     assert.equal((await page.goto(`${base}/`, { waitUntil: 'networkidle' })).status(), 200)
@@ -42,6 +42,7 @@ try {
           copyBackground: copyStyle.backgroundColor,
           copyBlur: copyStyle.backdropFilter || copyStyle.webkitBackdropFilter,
           copyInsideCard: copyBox.left >= cardBox.left && copyBox.right <= cardBox.right && copyBox.bottom <= cardBox.bottom,
+          box: { left: Math.round(cardBox.left), top: Math.round(cardBox.top), width: Math.round(cardBox.width), height: Math.round(cardBox.height) },
         }
       }),
       logos: [...document.querySelectorAll('.featured-work-logo')].map(image => ({
@@ -51,34 +52,57 @@ try {
         rendered: [Math.round(image.getBoundingClientRect().width), Math.round(image.getBoundingClientRect().height)],
       })),
       iconGlyphs: [...document.querySelectorAll('.featured-work-icon')].map(icon => ({
+        className: icon.className,
         content: getComputedStyle(icon, '::before').content,
         font: getComputedStyle(icon).fontFamily,
         weight: getComputedStyle(icon).fontWeight,
       })),
       reducedAnimations: [...document.querySelectorAll('.featured-work-drift, .featured-work-planes, .featured-work-honeycomb img, .featured-work-logo, .featured-work-icon')].map(node => getComputedStyle(node).animationName),
+      separatorMargins: [...document.querySelectorAll('.work-separator')].map(rule => ({
+        display: getComputedStyle(rule).display,
+        top: getComputedStyle(rule).marginTop,
+        bottom: getComputedStyle(rule).marginBottom,
+      })),
+      summaries: [...document.querySelectorAll('.featured-work-summary')].map(node => node.textContent.trim()),
       errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
     }))
 
+    results.widths[width] = state
     assert.equal(state.overflow, 0, `overflow at ${width}`)
     assert.equal(state.errorOverlay, false, `error overlay at ${width}`)
     assert.deepEqual(state.cards.map(card => card.id), expectedIds)
     assert.ok(state.cards.every(card => card.radius === '32px'))
-    assert.ok(state.cards.every(card => card.anchor.join('x') === '140x140'))
-    assert.ok(state.cards.every(card => card.columns === (card.containerWidth < 680 ? 1 : 2)), `content breakpoint at ${width}`)
+    assert.ok(state.cards.every(card => card.anchor.join('x') === '220x220'))
+    assert.ok(state.cards.every(card => {
+      if (width >= 1200 && ['webmd', 'bumblebeemd'].includes(card.id)) return card.columns === 1
+      if (width >= 1200 && ['dentalplans', 'hydra'].includes(card.id)) return card.columns === 2
+      return card.columns === (card.containerWidth < 680 ? 1 : 2)
+    }), `content breakpoint at ${width}`)
     assert.ok(state.cards.every(card => card.copyBackground === 'rgba(255, 255, 255, 0.88)'))
     assert.ok(state.cards.every(card => card.copyBlur.includes('blur(16px)')))
     assert.ok(state.cards.every(card => card.copyInsideCard), `copy stays inside card at ${width}`)
     assert.deepEqual(state.logos.map(image => image.src), [
       '/assets/featured/webmd-logo-white.svg',
+      '/assets/featured/dentalplans-icon.svg',
       '/assets/featured/bumblebeemd-icon.svg',
     ])
     assert.ok(state.logos.every(image => image.complete && image.natural[0] > 0 && image.natural[1] > 0))
-    assert.deepEqual(state.logos.map(image => image.rendered), [[110, 26], [71, 82]])
+    assert.deepEqual(state.logos.map(image => image.rendered), [[173, 40], [132, 132], [112, 129]])
     assert.ok(state.iconGlyphs.every(icon => !['none', 'normal', '""'].includes(icon.content) && icon.font.includes('Font Awesome') && icon.weight === '100'))
+    assert.deepEqual(state.iconGlyphs.map(icon => icon.className), ['fa-thin fa-hydra featured-work-icon', 'fa-thin fa-building-columns featured-work-icon'])
     assert.ok(state.reducedAnimations.every(name => name === 'none'))
-    results.widths[width] = state
-
-    if (width === 375 || width === 1440) {
+    assert.ok(Math.max(...state.summaries.map(summary => summary.length)) - Math.min(...state.summaries.map(summary => summary.length)) <= 24)
+    assert.ok(state.summaries.every(summary => !/retired/i.test(summary)))
+    if (width < 1200) assert.ok(state.separatorMargins.every(rule => rule.display !== 'none' && parseFloat(rule.top) <= 40 && parseFloat(rule.bottom) <= 40))
+    if (width >= 1200) {
+      const [webmd, dentalplans, bumblebeemd, hydra, opfred] = state.cards
+      assert.equal(state.separatorMargins.every(rule => rule.display === 'none'), true)
+      assert.ok(webmd.box.left < dentalplans.box.left && webmd.box.top === dentalplans.box.top)
+      assert.ok(webmd.box.height > dentalplans.box.height * 1.7)
+      assert.ok(bumblebeemd.box.left > hydra.box.left && bumblebeemd.box.height > hydra.box.height * 1.7)
+      assert.ok(opfred.box.top > hydra.box.top && opfred.box.width > hydra.box.width * 1.8)
+    }
+    if ([375, 1131, 1440, 1729].includes(width)) {
       await page.locator('#work .container').screenshot({ path: `${output}/work-${width}.png` })
     }
     await page.close()
@@ -87,7 +111,7 @@ try {
   const breakpoint = await browser.newPage({ viewport: { width: 1200, height: 900 }, reducedMotion: 'reduce' })
   watch(breakpoint, 'breakpoint')
   await breakpoint.goto(`${base}/`, { waitUntil: 'networkidle' })
-  const exact = await breakpoint.locator('.work-item').first().evaluate(node => {
+  const exact = await breakpoint.locator('.work-item-opfred').evaluate(node => {
     const card = node.querySelector('.featured-work-card')
     const read = width => {
       node.style.width = `${width}px`

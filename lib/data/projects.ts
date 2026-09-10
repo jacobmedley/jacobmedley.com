@@ -1502,7 +1502,7 @@ export const projects: Project[] = [
     disciplines: ['Brand', 'UX Research'],
     order: 13,
     title: 'Viva',
-    thumb: { src: '/images/work/viva-modal/hero-1.png', alt: 'Viva Medicare brand campaign concept' },
+    thumb: { src: '/images/work/viva-modal/vs-3.png', alt: 'Viva Medicare brand campaign concept' },
     modalTitle: 'Viva Medicare',
     visible: true,
     summary: 'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',

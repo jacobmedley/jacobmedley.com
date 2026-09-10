@@ -1,5 +1,45 @@
 # Status
 
+## September 9, 2026: Stage 4 complete
+
+Stage 4 is complete on `codex/website-refinement-stage1-20260909`, from the
+`7e078f3` checkpoint. The five featured portfolio cards now use Jacob's selected
+B treatment: continuous identity-specific fields, darker color behind inset glass,
+three nested schematic planes, fixed 140px anchors and exact card-container
+stacking below 680px. WebMD uses its supplied white logo and approved health
+motifs; DentalPlans uses the approved tooth/depth treatment; BumblebeeMD uses its
+supplied bee and honeycomb assets; Hydra and One Park Financial retain their
+approved thin-icon treatments. Viva uses the supplied text-free `vs-3.png` crop.
+
+Modal actions and focus return, registered copy, canonical case-study data,
+diagrams and Stage 3 pause/offscreen/hidden/reduced-motion behavior are preserved.
+No copy-register change was needed; B41 remains pending. Changed production files
+are `app/globals.css`, `components/ui/WorkCard.tsx`, `lib/data/projects.ts` and
+three new verified assets under `public/assets/featured/`. Added the Stage 4
+acceptance harness, hardened two older regression harnesses for their actual
+sticky/offscreen contracts, and recorded details in
+`docs/stage4-checkpoint-20260909.md`.
+
+Checks passed: `git diff --check`, non-incremental TypeScript, targeted no-cache
+ESLint, dedicated Stage 4 Playwright acceptance, annotation acceptance and the
+standalone dashboard acceptance. Browser coverage includes 320-1440px, exact
+679/680 card behavior, asset loading, Viva crop bounds, glass/focus, desktop and
+touch motion, reduced motion, pause reset, modal focus return, filters and client
+navigation. Conservative glass contrast is 10.31:1 for primary and 6.04:1 for
+secondary copy. `/`, `/case-studies/` and a detail route return 200 on the
+dedicated `http://localhost:3010/` preview. Visual review passed at 1440px and
+375px. No full build, physical-device, Safari or Firefox claim is made.
+
+GPT-5.6 Sol / medium was recommended and host metadata confirmed availability;
+the task cannot inspect or switch Jacob's actual selection, so no switch is
+claimed. No inference, paid fallback, model download, reset, push, PR, merge or
+deployment occurred. GitHub intake recheck found PR #8 merged and remote `main`
+at `e6b3672`. Genesis's status helper remains blocked by the malformed prior Stage
+3 inbox event; that event was not edited, and Stage 4 appends its own unique update
+after the final freshness reread. Rollback is `7e078f3` after checking ownership;
+do not reset or clean the worktree. Stage 5 owns sticky section headings and Stage
+6 owns cross-site acceptance.
+
 ## September 9, 2026: Stage 3 complete
 
 Stage 3 is complete at local commit `26c176a` on

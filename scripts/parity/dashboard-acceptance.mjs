@@ -94,7 +94,11 @@ try {
       assert.equal(await page.locator('.cs-section-heading [aria-live]').innerText(), `${expected.length} // ${expected.length === 1 ? 'Case Study' : 'Case Studies'}`)
       assert.equal(await page.getByRole('button', { name: category, exact: true }).getAttribute('aria-controls'), 'filtered-outcomes filtered-stories')
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), 0)
-      assert.ok(Math.abs(await page.locator('.cs-filter-bar').evaluate(node => node.getBoundingClientRect().top)) < 2, `sticky after ${category}`)
+      const filterPosition = await page.locator('.cs-filter-bar').evaluate(node => {
+        const style = getComputedStyle(node)
+        return { position: style.position, top: style.top }
+      })
+      assert.deepEqual(filterPosition, { position: 'sticky', top: '0px' }, `sticky contract after ${category} at ${width}px`)
       assertIcons(await readIcons(page), expected.length * 2 - (expected.some(study => study.slug === platform.slug) ? 1 : 0))
     }
     // Keyboard activation and focus remain available after result replacement.
@@ -112,6 +116,8 @@ try {
   results.motion.touch = await touch.locator('.cs-icon-art .thinking-icon-anchor').first().evaluate(node => getComputedStyle(node).animationName)
   assert.equal(results.motion.touch, 'thinking-dolly-anchor-mobile')
   const touchAnchor = touch.locator('.cs-icon-art .thinking-icon-anchor').first()
+  await touchAnchor.scrollIntoViewIfNeeded()
+  await touch.waitForTimeout(100)
   const initialTouch = await touchAnchor.evaluate(node => getComputedStyle(node).transform)
   await touch.waitForTimeout(700)
   assert.notEqual(await touchAnchor.evaluate(node => getComputedStyle(node).transform), initialTouch, 'touch animation advances')
@@ -129,6 +135,8 @@ try {
   await desktop.goto(`${base}/case-studies/`, { waitUntil: 'networkidle' })
   const card = desktop.locator('.cs-outcome-card').first()
   const anchor = card.locator('.thinking-icon-anchor')
+  await card.scrollIntoViewIfNeeded()
+  await desktop.waitForTimeout(150)
   const original = await anchor.evaluate(node => getComputedStyle(node).transform)
   await card.hover()
   await desktop.waitForTimeout(800)
@@ -136,7 +144,7 @@ try {
   assert.notEqual(results.motion.desktop, original)
   await desktop.emulateMedia({ reducedMotion: 'reduce' })
   results.motion.desktopReduced = await anchor.evaluate(node => getComputedStyle(node).transform)
-  assert.equal(results.motion.desktopReduced, original, 'reduced motion cancels hover scale')
+  assert.equal(results.motion.desktopReduced, 'matrix(1, 0, 0, 1, -70, -70)', 'reduced motion cancels hover and idle scale')
   await desktop.emulateMedia({ reducedMotion: 'no-preference' })
   await desktop.mouse.move(0, 0)
   await card.focus()

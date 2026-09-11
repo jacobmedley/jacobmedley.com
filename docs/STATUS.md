@@ -1,5 +1,10 @@
 # Status
 
+Native-scrollbar contrast correction: rendered thumb/field samples on 57422f8
+fell below 3:1 for four featured themes (Hydra minimum 1.94:1). Use opaque
+existing body ink #302c38 for the thumb, preserving its native thin geometry
+and transparent track. Recheck actual contrast, dragging and integrated export.
+
 Development final checks: annotation and 59 contrast samples pass (minimum4.64:1).
 The original sticky script timed out before layout settled; font readiness plus
 two animation frames passes all original 320/375 assertions. That prerequisite

@@ -1422,7 +1422,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 .modal-content.modal-full-bleed { isolation: isolate; padding: 0; }
 .modal-bleed-field.featured-work-card { position: absolute; z-index: 0; inset: 0 0 auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; pointer-events: none; will-change: transform; }
 .modal-full-bleed > :is(.modal-header, .modal-footer) { position: relative; z-index: 2; background: #ffffff66; }
-.modal-full-bleed > .modal-body { z-index: 1; padding: 0; background: transparent; scrollbar-color: #46315099 transparent; scrollbar-width: thin; }
+.modal-full-bleed > .modal-body { z-index: 1; padding: 0; background: transparent; scrollbar-color: #302c38 transparent; scrollbar-width: thin; }
 .modal-full-bleed .modal-featured-hero { margin: 0; padding: clamp(1.25rem, 4cqi, 3rem); border: 0; border-radius: 0; background: transparent; }
 .modal-full-bleed .modal-study-content { padding: clamp(1rem, 3vw, 2.5rem); background: #faf9fc; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {

@@ -3,6 +3,9 @@
 import { Fragment, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
+import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
+import { MotionToggle } from './MotionControls'
+import AnimatedStudyImage from './AnimatedStudyImage'
 import {
   type Project,
   type ProjectMedia,
@@ -61,6 +64,18 @@ interface CaseStudyModalProps {
   onOpenChange: (open: boolean) => void
 }
 
+// The installed kit supplies thin icons but omits these brand glyphs.
+// Technology names remain explicit; use the site's available visual vocabulary.
+function projectIcon(icon: string) {
+  const alternatives: Record<string, string> = {
+    'fa-brands fa-wordpress-simple': 'fa-thin fa-browser',
+    'fa-brands fa-bootstrap': 'fa-thin fa-layer-group',
+    'fa-brands fa-git-alt': 'fa-thin fa-code-branch',
+    'fa-brands fa-laravel': 'fa-thin fa-code',
+  }
+  return alternatives[icon] ?? icon
+}
+
 /**
  * Legacy Bootstrap modal (components/modal-*.html): fullscreen dialog
  * with container-width content, blur behind the modal viewport, fade +
@@ -92,7 +107,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           }}
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
-            <div className="modal-content container rounded-lg">
+            <div className="modal-content container" data-project-id={project?.id}>
               <div className="modal-header">
                 <Dialog.Title asChild>
                   <h2 className="modal-title flex min-w-0 flex-1 items-center gap-3 pr-3">
@@ -100,7 +115,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                     <img
                       loading="lazy"
                       src="/images/brand/SVG/jm-icon-full-brand-prime.svg"
-                      alt="Jacob Medley | UX UI Designer"
+                      alt=""
                       height={58}
                       width={58}
                       className="shrink-0"
@@ -124,6 +139,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
               </div>
 
               <div className="modal-footer">
+                <MotionToggle className="modal-motion-control" />
                 <Dialog.Close asChild>
                   <button type="button" className="btn btn-prime btn-lg rounded-full btn-close-modal">
                     Close
@@ -140,13 +156,13 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
 
 function BadgeList({ badges }: { badges: ProjectBadge[] }) {
   return (
-    <>
+    <div className="modal-badges">
       {badges.map((b) => (
         <span key={b.label} className="badge-work">
-          <i className={b.icon} aria-hidden="true" /> {b.label}
+          <i className={projectIcon(b.icon)} aria-hidden="true" /> {b.label}
         </span>
       ))}
-    </>
+    </div>
   )
 }
 
@@ -631,7 +647,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full">
+    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
           'progress-bar w-full',
@@ -650,7 +666,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
               <strong>
                 {cell.icon && (
                   <>
-                    <i className={`${cell.icon} fa-xl`} aria-hidden="true" /> <br />
+                    <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" /> <br />
                   </>
                 )}
                 {cell.label}
@@ -675,7 +691,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
           <strong className={cn('font-bold', cell.padY === 5 ? 'py-12' : 'py-6')}>
             {cell.icon && (
               <>
-                <i className={`${cell.icon} fa-xl`} aria-hidden="true" />
+                <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" />
                 <br />
               </>
             )}
@@ -778,37 +794,32 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
 }
 
 function ModalContent({ project }: { project: Project }) {
+  const featured = ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'].includes(project.id)
   return (
     <>
-      {/* Intro row: circular brief image + Project Brief / Contributions / Technologies */}
-      <div className={cn('row mb-6', project.briefVariant === 'narrow' && 'justify-center')}>
+      <div className="modal-intro">
         {project.brief.image && (
-          <div
-            className={cn(
-              'self-center text-center',
-              project.briefVariant === 'narrow'
-                ? 'col-24 col-lg-12 col-xl-8'
-                : 'col-24 col-lg-12 col-xl-10'
-            )}
-          >
-            <p>
+          <div className="modal-intro-art">
+            {featured ? (
+              <div className={`modal-project-art featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
+                <FeaturedField projectId={project.id} />
+                <div className="featured-work-art">
+                  <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
+                </div>
+              </div>
+            ) : project.brief.image.src.endsWith('.gif') ? (
+              <AnimatedStudyImage src={project.brief.image.src} alt={project.brief.image.alt} />
+            ) : (
               <img
                 loading="lazy"
-                className="img-fluid shadow-[var(--shadow-bs-lg)] border border-white rounded-full"
+                className="img-fluid modal-brief-image"
                 src={project.brief.image.src}
                 alt={project.brief.image.alt}
               />
-            </p>
+            )}
           </div>
         )}
-        <div
-          className={cn(
-            'self-center',
-            project.briefVariant === 'narrow'
-              ? 'col-24 col-lg-12 col-xl-10'
-              : 'col-24 col-lg-12 col-xl-14'
-          )}
-        >
+        <div className="modal-intro-copy">
           {project.brief.paragraphs.length > 0 && (
             <>
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>

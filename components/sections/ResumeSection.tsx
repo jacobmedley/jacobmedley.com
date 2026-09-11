@@ -27,7 +27,7 @@ const leadershipRight = [
   },
 ]
 
-const designLeadershipIntro = 'Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.'
+const designLeadershipIntro = 'Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.'
 
 type ExperienceRole = {
   title: string
@@ -136,24 +136,20 @@ export default function ResumeSection() {
 
           <div className="row">
             <div className="col-24">
-              <h3 className="mb-6">Design Leadership</h3>
-              <p className="resume-leadership-intro">{designLeadershipIntro}</p>
-              <div className="row mt-0 sm:mt-4 resume-leadership-grid">
-                {[leadershipLeft, leadershipRight].map((column, i) => (
-                  <div key={i} className="col-md-12">
-                    <ul className="fa-ul">
-                      {column.map((item) => (
-                        <li key={item.title} className="mb-4">
-                          <span className="fa-li">
-                            <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                          </span>
-                          <strong>{item.title}:</strong> {item.body}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="resume-belief">
+                <h3>Twenty years. One belief.</h3>
+                <p className="resume-belief-slogan">I believe there&apos;s always a better way, together we can find it.</p>
+                <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
+              <hr className="solid-center resume-belief-divider" />
+              <ul className="resume-leadership-grid">
+                {[leadershipLeft[0], leadershipRight[0], leadershipLeft[1], leadershipRight[1], leadershipLeft[2]].map((item) => (
+                  <li key={item.title}>
+                    <i className="fa-thin fa-angle-right" aria-hidden="true" />
+                    <div><strong>{item.title}:</strong> {item.body}</div>
+                  </li>
+                ))}
+              </ul>
 
               <div className="mt-12 mb-12">
                 <div className="row text-center">

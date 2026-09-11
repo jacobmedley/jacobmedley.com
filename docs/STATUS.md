@@ -1,5 +1,56 @@
 # Status
 
+## September 11, 2026: overnight resume and modal housekeeping
+
+Jacob's latest request prioritizes the website resume, all-modal consistency and
+small full-experience fixes, with larger design work listed for the next review.
+Implemented on `codex/website-art-layout-20260910` in worktree `6fa6`, from rollback
+`30b58ce64f899466edb5d2298045bdb79ffce3a7`. The historical `8350` stage prompts are
+pointers; this work preserves the current card/animation implementation.
+
+B45 replaces Design Leadership with Twenty years. One belief., the existing slogan,
+larger body, a divider and balanced bullet rows. B46 reconciles synchronized
+inside/outside-modal motion actions and the reduced-motion status. B40/B42 are
+superseded. Employment history, bullets, project data, claims and source evidence
+are unchanged; external resume masters remain separately owned.
+
+All fourteen modals share rounded reading surfaces, screenshots, rules, controls
+and stronger 20px icons. Five featured modal heroes reuse their card artwork;
+source diagrams and other brief images are no longer forced into circles.
+Thirteen absent technology glyphs and one CMS diagram glyph now have available
+thin-icon alternatives. A modal motion control fixes access inside the focus trap;
+GIF frame freezing, diagram pause/reduced motion, unique SVG IDs and removed-root
+observer cleanup are included.
+
+The full morning report, eleven-file inventory, comment dispositions, remaining
+imagery inventory and model/route evidence are in
+`docs/housekeeping-report-20260911.md`. Production build/export, TypeScript,
+targeted ESLint, diff check and all six previous acceptance suites passed. The new
+suite passed 70 production modal/viewport combinations and seven resume widths;
+development passed 28 combinations across phone/desktop. Both have zero overflow,
+broken images, missing badge glyphs and page errors. Keyboard close/focus return,
+normal pause/resume, stable nonblank GIF frame and live reduced-preference checks
+passed. Sampled contrast: resume 8.57:1, modal body 13.64:1, Close 7.89:1.
+
+Independent Sol inventory, Luna route audit and Astra scoped acceptance were
+read-only. No local inference: the qualified profile points at another checkout,
+lane ownership was not certified, and the laptop hold remains. No extra spending,
+download, dependency addition, reset, push, PR, merge or deployment.
+
+Final export preview: `http://localhost:3011/#resume`, verified PID 58204, this
+worktree's `out/`. Temporary development PID 4056 on 3012 was stopped after checks.
+The icon kit returns 403 on `127.0.0.1` but loads on `localhost`; use the named URL.
+Other worktrees/previews are preserved. Final checkpoint hash, clean state and
+owned-lock release are recorded at handoff and in the unique Genesis update.
+
+Fresh Exchange reads and a manual matching fingerprint were used; the existing
+malformed historical provenance record still blocks the helper. Direction event
+`20260911T050808Z-d9af3670ffc34ff6bf7078f84544f9c6` records the new scope.
+Larger illustration replacement, Stage 5 sticky headers/Education containment,
+full Stage 6 accessibility acceptance and Stage 7 release remain open. Physical
+devices, Safari/Firefox, native hidden-tab transitions, exhaustive focus paths,
+200% text resize and text-spacing overrides are unverified; no full WCAG claim.
+
 ## September 11, 2026: alternating horizontal cards and eighteen comments
 
 Jacob's eighteen browser comments and layout decision are complete on

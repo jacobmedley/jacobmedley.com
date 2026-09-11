@@ -1,9 +1,9 @@
 # Copy Register
 
-**Status:** edits B0 through B44. All APPLIED unless marked otherwise.
-B39 is applied only in the locally committed dashboard. B41 is superseded by
-B44, and B42 remains PENDING.
-The September 8 annotation plan does not apply these pending changes to the site.
+**Status:** edits B0 through B46. All APPLIED unless marked otherwise.
+B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
+B41 by B44, and B42 by B46.
+The September 8 annotation plan is historical; later applied edits govern the site.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -1293,7 +1293,7 @@ Dashboard labels `Career at a Glance`, `Experience`, `Shared Foundation`, and
 `Launch Cycle` describe these same sources. Supporting qualitative outcomes stay
 qualitative. All source-story prose, disciplines and titles remain unchanged.
 
-## B40. Design Leadership introduction and column order [PENDING]
+## B40. Design Leadership introduction and column order [SUPERSEDED BY B45]
 
 Source: Jacob's September 8 browser comments 6–8. Owning implementation file:
 `components/sections/ResumeSection.tsx`. Stage 2 of the September 8 refinement plan.
@@ -1353,7 +1353,7 @@ Source review: WebMD contribution badges and plan/cart/checkout media; DentalPla
 
 Counts use whitespace-delimited words: WebMD 26, DentalPlans 33, BumblebeeMD 25, Hydra 31, One Park Financial 29. Counts are a guide; the review board shows all five at the same desktop/narrow copy widths without clamping.
 
-## B42. Motion-control labels [PENDING]
+## B42. Motion-control labels [SUPERSEDED BY B46]
 
 Proposed interface strings for the shared pause/resume control in Stage 3:
 
@@ -1679,3 +1679,32 @@ website branch; employment titles, claims and external resume masters are unchan
 - Case-study navigation: Case Studies; About & experience; More about Jacob.
 - Existing case-study-copy JSON remains the canonical story source; these casing
   edits do not change its metrics, narrative, scope or provenance.
+
+## B45. Resume belief headline and balanced introduction [APPLIED]
+
+Source: Jacob's September 11 overnight housekeeping request and resume annotation.
+This supersedes B40's retained Design Leadership heading and B37's opening sentence
+placement on the website. External resume documents remain separately owned.
+
+- Remove the visible Design Leadership heading.
+- Headline: `Twenty years. One belief.`
+- Subheadline, matching the existing registered hero slogan:
+  `I believe there's always a better way, together we can find it.`
+- Body, unchanged after the former opening sentence:
+
+> Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.
+
+Use a larger body, an explicit horizontal rule before the five existing bullets,
+and balanced rows: AI Product Design / Business Outcomes; Design Systems /
+Conversion and Experimentation; Research and Measurement across the final row.
+All bullet wording, employment history, measurements and source links are retained.
+
+## B46. Consistent motion controls inside and outside modals [APPLIED]
+
+Source: Jacob's September 11 request to review all buttons and the full experience.
+Retain the existing action labels `Pause motion` and `Resume motion`, and reuse
+them for the synchronized modal control. These action buttons change their label
+and do not also expose toggle-button `aria-pressed` semantics. With an OS reduced
+motion preference, show the noninteractive status `Motion off: reduced motion`.
+The preference cannot be overridden here. This supersedes B42's proposed labels
+while implementing its action/state and reduced-motion distinction.

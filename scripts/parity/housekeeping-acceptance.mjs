@@ -21,9 +21,11 @@ async function sampleContrast(locator) {
   return Number(ratio.toFixed(2))
 }
 await mkdir(output, { recursive: true })
-const browser = await chromium.launch({ headless: true })
+// Playwright hides scrollbars by default in headless mode; keep the real track
+// visible so full-bleed pixel checks and thumb dragging test browser behavior.
+const browser = await chromium.launch({ headless: true, ignoreDefaultArgs: ['--hide-scrollbars'] })
 try {
-  for (const width of (process.env.HOUSEKEEPING_WIDTHS ?? '320,375,768,899,900,1100,1440').split(',').map(Number)) {
+  for (const width of (process.env.HOUSEKEEPING_WIDTHS ?? '320,375,768,899,900,1100,1440').split(',').filter(Boolean).map(Number)) {
     const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' })
     page.on('pageerror', e => results.errors.push(e.message))
     await page.goto(base, { waitUntil: 'networkidle' })
@@ -73,8 +75,11 @@ try {
         const hero = n.querySelector('.modal-featured-hero')
         let heroCheck = null
         if (hero) {
-          const scene = hero.querySelector(':scope > .featured-work-scene').getBoundingClientRect()
+          const field = n.querySelector('.modal-bleed-field')
+          const scene = field.getBoundingClientRect()
           const bounds = hero.getBoundingClientRect()
+          const shellBounds = shell.getBoundingClientRect()
+          const header = n.querySelector('.modal-header')
           const copy = hero.querySelector(':scope > .modal-intro-copy')
           const art = hero.querySelector(':scope > .modal-intro-art').getBoundingClientRect()
           const copyBounds = copy.getBoundingClientRect()
@@ -85,6 +90,11 @@ try {
             blur: getComputedStyle(copy).backdropFilter,
             columns,
             placement: columns === 2 ? copyBounds.left >= art.right : copyBounds.top >= art.bottom,
+            shellBleed: [scene, body.getBoundingClientRect(), header.getBoundingClientRect()].every(r => Math.abs(r.left-shellBounds.left-1) < 1 && Math.abs(r.right-shellBounds.right+1) < 1),
+            nativeGutter: body.offsetWidth-body.clientWidth,
+            headerGlass: getComputedStyle(header).backgroundColor,
+            headerBlur: getComputedStyle(header).backdropFilter,
+            aligned: Math.abs(scene.bottom-bounds.bottom) < 1,
           }
         }
         return {
@@ -102,6 +112,43 @@ try {
       })
       results.modals.push({ width, id, ...check })
       if (check.featured) assert.ok(check.hero?.fullField && check.hero.placement && check.hero.glass === 'rgba(255, 255, 255, 0.4)' && check.hero.blur === 'blur(3px)', `${id}: continuous field and glass hero`)
+      if (check.featured) {
+        assert.ok(check.hero.shellBleed && check.hero.aligned && check.hero.headerGlass === 'rgba(255, 255, 255, 0.4)' && check.hero.headerBlur === 'blur(3px)', `${id}: full bleed and translucent header`)
+        // Render a diagnostic solid field: a native scrollbar with an opaque
+        // track would produce a contrasting strip at the modal's right edge.
+        const probe = await dialog.evaluate(n => {
+          const field = n.querySelector('.modal-bleed-field')
+          const scene = field.querySelector('.featured-work-scene')
+          const body = n.querySelector('.modal-body').getBoundingClientRect()
+          const bounds = field.getBoundingClientRect()
+          const saved = { background: field.style.background, visibility: scene.style.visibility }
+          field.style.background = 'rgb(10, 255, 40)'
+          scene.style.visibility = 'hidden'
+          return { saved, x: Math.floor(bounds.right)-2, top: Math.ceil(body.top)+20, bottom: Math.floor(Math.min(body.bottom,bounds.bottom))-20 }
+        })
+        const pixels = PNG.sync.read(await page.screenshot())
+        let matching = 0, sampled = 0
+        for (let y=probe.top; y<probe.bottom; y+=3) {
+          const offset=(y*pixels.width+probe.x)*4
+          if ([10,255,40].every((v,i) => Math.abs(pixels.data[offset+i]-v)<3)) matching++
+          sampled++
+        }
+        await dialog.evaluate((n,saved) => {
+          const field=n.querySelector('.modal-bleed-field')
+          field.style.background=saved.background
+          field.querySelector('.featured-work-scene').style.visibility=saved.visibility
+        },probe.saved)
+        results.modals.at(-1).hero.edgeCoverage=matching/sampled
+        assert.ok(matching/sampled>.8, `${id}: native scrollbar preserves the full-bleed edge`)
+        await dialog.locator('.modal-body').evaluate(n => { n.scrollTop=120 })
+        await page.waitForFunction(() => {
+          const field=document.querySelector('.modal-bleed-field').getBoundingClientRect()
+          const hero=document.querySelector('.modal-featured-hero').getBoundingClientRect()
+          return Math.abs(field.bottom-hero.bottom)<1
+        })
+        await dialog.locator('.modal-body').evaluate(n => { n.scrollTop=0 })
+        await page.waitForFunction(() => Math.abs(document.querySelector('.modal-bleed-field').getBoundingClientRect().top-document.querySelector('.modal-content').getBoundingClientRect().top-1)<1)
+      }
       if (check.overflow > 1 || check.badImages.length || check.radii.some(r => parseFloat(r) < 16) || check.closeSize.some(v => v < 44) || !check.title || check.glyphs.some(g => g.size !== '20px' || ['none','normal','""'].includes(g.content))) results.failures.push({ width, id, check })
       if ([375,1440].includes(width)) await page.screenshot({ path: `${output}/${id}-${width}.png` })
       if (width === 1440 && check.featured) {
@@ -128,6 +175,26 @@ try {
   await motion.getByRole('dialog').getByRole('button', { name: 'Pause motion' }).click()
   assert.ok(await motion.locator('.motion-control').evaluateAll(nodes => nodes.every(n => n.textContent.includes('Resume motion') && !n.hasAttribute('aria-pressed'))))
   assert.equal(await motion.locator('.modal .featured-work-anchor').evaluate(n => getComputedStyle(n).animationPlayState), 'paused')
+  const scrollBody=motion.locator('.modal-body')
+  const scrollBox=await scrollBody.boundingBox()
+  await motion.mouse.move(scrollBox.x+scrollBox.width/2,scrollBox.y+120)
+  await motion.mouse.wheel(0,180)
+  await motion.waitForFunction(() => document.querySelector('.modal-body').scrollTop>0)
+  await motion.waitForFunction(() => Math.abs(document.querySelector('.modal-bleed-field').getBoundingClientRect().bottom-document.querySelector('.modal-featured-hero').getBoundingClientRect().bottom)<1)
+  await motion.screenshot({path:`${output}/webmd-scrolled.png`})
+  await scrollBody.evaluate(n => {n.scrollTop=0})
+  await motion.waitForFunction(() => document.querySelector('.modal-body').scrollTop===0)
+  // Wait for the scroll listener and native thumb to paint at their reset
+  // position before grabbing it; scrollTop alone can lead the compositor.
+  await motion.waitForFunction(() => Math.abs(document.querySelector('.modal-bleed-field').getBoundingClientRect().top-document.querySelector('.modal-content').getBoundingClientRect().top-1)<1)
+  await motion.screenshot({path:`${output}/native-scrollbar-before-drag.png`})
+  await motion.mouse.move(scrollBox.x+scrollBox.width-5,scrollBox.y+18)
+  await motion.mouse.down()
+  await motion.mouse.move(scrollBox.x+scrollBox.width-5,scrollBox.y+85,{steps:8})
+  await motion.mouse.up()
+  await motion.waitForFunction(() => document.querySelector('.modal-body').scrollTop>0)
+  await motion.waitForFunction(() => Math.abs(document.querySelector('.modal-bleed-field').getBoundingClientRect().bottom-document.querySelector('.modal-featured-hero').getBoundingClientRect().bottom)<1)
+  results.nativeScrolling={wheel:true,scrollbarDrag:true,fieldAligned:true}
   await motion.keyboard.press('Escape')
   await motion.getByRole('dialog').waitFor({ state: 'hidden' })
   await motion.locator('[data-modal-trigger="marketing-auto"]').click()

@@ -136,6 +136,8 @@
   margin-right: auto;
   margin-left: auto;
 }
+/* Match the unlayered container rule so featured modal edges reach the gutter. */
+.modal-full-bleed.container, .modal-full-bleed .modal-body > .container { padding-inline: 0; }
 @media (min-width: 576px)  { .container { max-width: 540px; } }
 @media (min-width: 768px)  { .container { max-width: 720px; } }
 @media (min-width: 992px)  { .container { max-width: 960px; } }
@@ -1397,6 +1399,18 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 .modal-featured-hero .featured-system-node { width: 38px; height: 38px; font-size: 21px; border-radius: 11px; }
 .modal-featured-hero .featured-system { inset: 26px; width: auto; height: auto; }
 .modal-project-art .featured-work-logo { box-shadow: none; border-radius: 0; }
+.modal-content.modal-full-bleed { isolation: isolate; padding: 0; }
+.modal-bleed-field.featured-work-card { position: absolute; z-index: 0; inset: 0 0 auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; pointer-events: none; will-change: transform; }
+.modal-full-bleed > :is(.modal-header, .modal-footer) { position: relative; z-index: 2; background: #ffffff66; }
+.modal-full-bleed > .modal-body { z-index: 1; padding: 0; background: transparent; scrollbar-color: #46315099 transparent; scrollbar-width: thin; }
+.modal-full-bleed .modal-featured-hero { margin: 0; padding: clamp(1.25rem, 4cqi, 3rem); border: 0; border-radius: 0; background: transparent; }
+.modal-full-bleed .modal-study-content { padding: clamp(1rem, 3vw, 2.5rem); background: #faf9fc; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) .modal-full-bleed:has(.modal-featured-hero:hover) .modal-bleed-field:not(.motion-offscreen) .featured-work-interaction { transform: scale(1.065) rotate(1.5deg); }
+  html:not(.motion-paused):not(.motion-hidden) .modal-full-bleed:has(.modal-featured-hero:hover) .modal-bleed-field:not(.motion-offscreen) .featured-work-honeycomb { transform: rotate(14deg) scale(1.12); }
+  html:not(.motion-paused):not(.motion-hidden) .modal-full-bleed:has(.modal-featured-hero:hover) .modal-bleed-field:not(.motion-offscreen) .featured-work-honeycomb img { scale: calc(.8 + mod(var(--hex),3) * .17); rotate: calc((mod(var(--hex),3) - 1) * 18deg); }
+  html:not(.motion-paused):not(.motion-hidden) .modal-full-bleed:has(.modal-featured-hero:hover) .modal-bleed-field:not(.motion-offscreen) .featured-work-honeycomb img:nth-child(n + 13) { opacity: .65; }
+}
 .modal-badges { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin-bottom: 1.5rem; }
 .modal-badges:last-child { margin-bottom: 0; }
 .modal-badges .badge-work { display: inline-flex; align-items: baseline; gap: .45rem; margin: 0; white-space: normal; }

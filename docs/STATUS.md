@@ -1,5 +1,33 @@
 # Status
 
+## September 11, 2026: full bleed with a transparent native scrollbar
+
+Jacob's conditional full-bleed request is feasible and implemented for the five
+featured brand modals. A single branded field paints behind the entire shell,
+including the transparent native scrollbar track and frosted header/footer. It
+tracks the scrolling intro and measures its height after layout changes. The
+legacy container inset is removed; reading padding remains inside study content.
+Copy, source evidence, other modal layouts and motion controls are preserved.
+
+Same branch `codex/website-art-layout-20260910`, worktree `6fa6`; rollback is
+`c971e738b38fce8e3c0d8a84e55dccdd9886df30`. Build/export, TypeScript, targeted ESLint
+and diff checks passed. Development checked 42 modal/viewport combinations;
+production checked 70 across 320, 375, 768, 1100 and 1440px. All featured edges
+passed the visible native scrollbar pixel probe. Native wheel/drag and motion
+checks passed in a scoped rerun after fixing thumb repaint timing in the test.
+Aggregate evidence and the incomplete first run are retained in the report.
+
+See `docs/housekeeping-report-20260911.md`, "Follow-up: true full bleed through the
+native scrollbar", for the five-file inventory, evidence, contrast samples and
+browser limitations. No B edits. Windows Chromium verified; Firefox/WebKit and
+physical devices remain untested. The historical Exchange helper defect remains;
+fresh reads/manual fingerprint and a unique final inbox update preserve handoff.
+
+Current production-export preview: `http://localhost:3011/#work`, PID **56584**,
+serving this worktree's `out/`. Temporary dev preview on 3012 stopped. The final
+handoff records the local commit, clean tree and owned-lock release. No push, PR,
+merge or deployment; earlier larger imagery and Stage 5/6/7 work remain open.
+
 ## September 11, 2026: continuous featured modal heroes
 
 Jacob's latest annotation replaces the isolated artwork tile with a continuous

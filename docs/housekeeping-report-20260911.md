@@ -188,3 +188,62 @@ Current production-export preview supersedes the PID above: **36592**, serving
 this worktree's `out/` at `http://localhost:3011/#work`. The updated BumblebeeMD
 modal is left open in the review tab. Previous owned preview processes were
 stopped after exact command/path verification. No push, PR, merge or deployment.
+
+## Follow-up: true full bleed through the native scrollbar
+
+Jacob authorized this only if the right edge could remain continuous. It can:
+the five featured modal backgrounds now paint across the shell behind the native
+scroll viewport and translucent header/footer. A transparent native scrollbar
+track reveals that same field. The artwork is not duplicated or cropped at the
+gutter, and the scrollbar is not hidden or replaced with a custom control.
+
+The field follows the intro's scroll position; a ResizeObserver measures its
+height from the header and hero, including font/reflow changes. The callback ref
+cleans up its observer and scroll listener. The legacy container inset is removed
+for these modals; study content retains its reading padding. The original copy,
+images, other nine modal layouts, pause control and reduced motion are preserved.
+Bee hover scaling/rotation still applies across the full field.
+
+Production build/export (11 pages), TypeScript, targeted ESLint and diff checks
+passed. Development completed 42 modal/viewport combinations. Production completed
+70 layout combinations at 320, 375, 768, 1100 and 1440px, covering all fourteen
+modals. All 25 featured combinations had full-width header/body geometry, a real
+10px native gutter, correct glass styles, aligned field/hero bottoms and 100%
+coverage of sampled right-edge pixels in the diagnostic solid-field probe.
+Images, glyphs, overflow, close controls and focus return checks passed.
+
+The first drag check exposed Playwright's default scrollbar-hiding flag. The
+harness now disables it. A subsequent timing failure came from grabbing the thumb
+before the native compositor painted its reset position; awaiting the aligned
+field and a screenshot fixed the test. The scoped rerun passed wheel scrolling,
+native thumb dragging, field alignment, synchronized pause/resume, stable nonblank
+GIF freezing and live reduced-motion changes. The application build did not change
+between the layout run and this rerun. Aggregate checks validated both records;
+the earlier incomplete run remains available rather than being relabeled.
+
+Evidence (gitignored): `scripts/parity/shots/full-bleed/acceptance.json`, its source
+`results.json` and screenshots; `scripts/parity/shots/full-bleed-motion/results.json`;
+and `scripts/parity/shots/full-bleed-dev/`. Desktop in-app and phone/scrolled
+screenshots were visually reviewed. Featured body contrast samples: WebMD 8.56:1,
+DentalPlans 7.87:1, BumblebeeMD 11.52:1, Hydra 8.79:1, OPF 8.44:1. This is Windows
+Chromium acceptance, not every browser, physical device, animation frame or a full
+WCAG claim. Firefox/WebKit runtimes were absent; none were downloaded.
+
+Five changed files: `app/globals.css`, `components/ui/CaseStudyModal.tsx`,
+`scripts/parity/housekeeping-acceptance.mjs`, this report and `docs/STATUS.md`
+(written last). No B edits or copy changes. Same branch/worktree; rollback:
+`c971e738b38fce8e3c0d8a84e55dccdd9886df30`. Local commit is identified in the final
+handoff and Genesis event. Sol/medium was recommended; no controller switch,
+delegation, local inference or extra spending occurred.
+
+Fresh Exchange intake and checkpoint reads completed; latest direction event:
+`20260911T114858Z-a81decaec5b74bfbba93efdd1b47bf03`. The historical malformed Stage 3
+event still blocks the helper. Manual fingerprint at
+2026-09-11T12:01:12.032454+00:00:
+`c40fc90a966a8cbbe6468fac59459107ee6d172e5d5bd42065b7d0c0f06c87f8`.
+The unique final update carries the checkpoint; no shared coordinator files changed.
+
+Current export preview: `http://localhost:3011/#work`, PID **56584**, serving this
+worktree's `out/`. This supersedes the prior preview PID. The temporary development
+preview on 3012 is stopped. The full-bleed BumblebeeMD modal is open for review.
+No push, PR, merge or deployment. Earlier larger design/release work remains open.

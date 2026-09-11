@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useRef, type ReactNode } from 'react'
+import { Fragment, useCallback, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
@@ -85,6 +85,30 @@ function projectIcon(icon: string) {
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   const returnFocusRef = useRef<HTMLElement | null>(null)
+  const featured = !!project && ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'].includes(project.id)
+  // Paint outside the native scroll viewport so its transparent gutter cannot
+  // crop the artwork. Keep this one field aligned with the scrolling intro.
+  const bindFeaturedBody = useCallback((body: HTMLDivElement | null) => {
+    if (!body || !featured) return
+    const shell = body.parentElement!
+    const field = shell.querySelector<HTMLElement>('.modal-bleed-field')!
+    const header = shell.querySelector<HTMLElement>('.modal-header')!
+    const hero = body.querySelector<HTMLElement>('.modal-featured-hero')!
+    const scroll = () => { field.style.transform = `translateY(${-body.scrollTop}px)` }
+    const resize = () => {
+      field.style.height = `${header.getBoundingClientRect().height + hero.getBoundingClientRect().height}px`
+      scroll()
+    }
+    const observer = new ResizeObserver(resize)
+    observer.observe(header)
+    observer.observe(hero)
+    body.addEventListener('scroll', scroll, { passive: true })
+    resize()
+    return () => {
+      observer.disconnect()
+      body.removeEventListener('scroll', scroll)
+    }
+  }, [featured])
 
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -107,7 +131,12 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           }}
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
-            <div className="modal-content container" data-project-id={project?.id}>
+            <div className={cn('modal-content container', featured && 'modal-full-bleed')} data-project-id={project?.id}>
+              {featured && project && (
+                <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
+                  <FeaturedField projectId={project.id} />
+                </div>
+              )}
               <div className="modal-header">
                 <Dialog.Title asChild>
                   <h2 className="modal-title flex min-w-0 flex-1 items-center gap-3 pr-3">
@@ -134,7 +163,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                 </Dialog.Close>
               </div>
 
-              <div className="modal-body">
+              <div className="modal-body" ref={bindFeaturedBody}>
                 <div className="container">{project && <ModalContent project={project} />}</div>
               </div>
 
@@ -801,7 +830,6 @@ function ModalContent({ project }: { project: Project }) {
         className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
         data-motion-root={featured || undefined}
       >
-        {featured && <FeaturedField projectId={project.id} />}
         {project.brief.image && (
           <div className="modal-intro-art">
             {featured ? (
@@ -845,7 +873,9 @@ function ModalContent({ project }: { project: Project }) {
         </div>
       </div>
 
-      {renderMedia(project.media, project.contributions)}
+      {featured ? (
+        <div className="modal-study-content">{renderMedia(project.media, project.contributions)}</div>
+      ) : renderMedia(project.media, project.contributions)}
     </>
   )
 }

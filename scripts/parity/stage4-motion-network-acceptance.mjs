@@ -24,7 +24,7 @@ try {
     const read = (selector) => {
       const node = card.querySelector(selector)
       const style = getComputedStyle(node)
-      return { name: style.animationName, state: style.animationPlayState, transform: style.transform, filter: style.filter, strokeOpacity: style.strokeOpacity }
+      return { name: style.animationName, state: style.animationPlayState, transform: style.transform, cx: node.getAttribute('cx'), x1: node.getAttribute('x1') }
     }
     return {
       nodes: card.querySelectorAll('.thinking-network-node').length,
@@ -33,6 +33,7 @@ try {
       network: read('.thinking-connections'),
       node: read('.thinking-network-node'),
       line: read('.thinking-connections line'),
+      networkState: card.querySelector('.thinking-connections').dataset.networkState,
       overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     }
   })
@@ -40,8 +41,8 @@ try {
   const after = await callCenter.evaluate((card) => ({
     anchor: getComputedStyle(card.querySelector('.thinking-icon-anchor')).transform,
     network: getComputedStyle(card.querySelector('.thinking-connections')).transform,
-    node: getComputedStyle(card.querySelector('.thinking-network-node')).filter,
-    line: getComputedStyle(card.querySelector('.thinking-connections line')).strokeOpacity,
+    node: card.querySelector('.thinking-network-node').getAttribute('cx'),
+    line: card.querySelector('.thinking-connections line').getAttribute('x1'),
   }))
 
   assert.equal(before.nodes, 38)
@@ -49,13 +50,14 @@ try {
   assert.equal(before.overflow, 0)
   assert.deepEqual(
     [before.anchor.name, before.network.name, before.node.name, before.line.name],
-    ['anchor-idle', 'network-field-idle', 'network-node-pulse', 'connector-flow'],
+    ['anchor-idle', 'none', 'none', 'none'],
   )
   assert.ok([before.anchor.state, before.network.state, before.node.state, before.line.state].every((state) => state === 'running'))
   assert.notEqual(before.anchor.transform, after.anchor)
-  assert.notEqual(before.network.transform, after.network)
-  assert.notEqual(before.node.filter, after.node)
-  assert.notEqual(before.line.strokeOpacity, after.line)
+  assert.equal(before.networkState, 'running')
+  assert.notEqual(before.node.cx, after.node)
+  assert.notEqual(before.line.x1, after.line)
+  assert.equal(after.node, after.line, 'first connection remains attached to its node')
 
   await callCenter.hover()
   await desktop.waitForTimeout(100)

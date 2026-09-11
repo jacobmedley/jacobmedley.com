@@ -1,5 +1,44 @@
 # Status
 
+## September 10, 2026: Stage 4 artwork and Figma layout refinement
+
+Jacob's twelve artwork and layout refinements are complete on
+`codex/website-art-layout-20260910`, from
+`09c6125f6c25ad3091410905ba438180798f7d94`. The five featured cards follow the
+verified Figma frame's unequal widths and centered fifth card from 768px upward,
+with equal, content-driven row heights and a mobile stack. Lighter fields,
+outlined translucent identity circles, roomier frosted copy panels, the supplied
+byte-identical OPF icon, exposed DentalPlans flow icons, WebMD health rings,
+burgundy Hydra artwork and larger gold Bumblebee hexagons are implemented.
+
+Shared Full Stack artwork now includes irregular rays that resolve into spinning
+sunbeams on hover/focus, a gold network with projected depth and exactly attached
+connections and packets, deeper A/B layers, and a local CSS mouse blink. Motion
+respects pause, reduced motion, offscreen state and page visibility. Registered
+copy, claims, project data and canonical diagrams remain unchanged.
+
+Fourteen files comprise this checkpoint; the complete inventory, design decisions
+and verification evidence are in
+`docs/stage4-art-layout-checkpoint-20260910.md`. Checks passed: diff check,
+non-incremental TypeScript, targeted no-cache ESLint, production build/export,
+annotation acceptance, dashboard acceptance, motion/network acceptance, and both
+Stage 4 layout and refinement acceptance against the final production export.
+Layout coverage spans thirteen widths from 320 through 2560px; all passed without
+horizontal overflow. Browser visual review covered the final desktop and mobile
+layout and interactive artwork. Hidden-page behavior was simulated in automation;
+physical devices, Safari and Firefox remain untested.
+
+The static production preview runs at `http://localhost:3011/#work` from this
+worktree's `out` directory (verified PID 33696). Other previews were left alone.
+No local inference, additional spending, push, PR, merge or deployment occurred.
+The final commit and clean-tree/lock state are reported in the handoff. Rollback
+is the base commit above after checking ownership; do not reset or clean another
+session's work. Genesis received the unique changed-direction event; the final
+commit and verification are appended as a separate update at handoff. Its status
+helper remains blocked by a pre-existing inbox provenance error, so fresh source
+reads and a manually computed fingerprint provide the handoff context. Later
+sticky-navigation and release work remain separate.
+
 ## September 10, 2026: Stage 4 Full Stack motion and Call Center network follow-up
 
 Jacob's Full Stack motion and Call Center artwork comments are complete on

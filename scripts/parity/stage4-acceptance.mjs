@@ -18,7 +18,7 @@ function watch(page, label) {
 }
 
 try {
-  for (const width of [320, 375, 768, 974, 1131, 1191, 1200, 1440, 1729]) {
+  for (const width of [320, 375, 767, 768, 769, 974, 1131, 1191, 1200, 1440, 1729, 1920, 2560]) {
     const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
     watch(page, `responsive-${width}`)
     assert.equal((await page.goto(`${base}/`, { waitUntil: 'networkidle' })).status(), 200)
@@ -65,42 +65,55 @@ try {
       })),
       summaries: [...document.querySelectorAll('.featured-work-summary')].map(node => node.textContent.trim()),
       errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay')),
+      systemNodesVisible: [...document.querySelectorAll('.featured-system-node')].every(node => {
+        const box = node.getBoundingClientRect()
+        const card = node.closest('.featured-work-card')
+        const boundary = card.getBoundingClientRect()
+        const copy = card.querySelector('.featured-work-copy').getBoundingClientRect()
+        return box.left >= boundary.left && box.right <= boundary.right && box.top >= boundary.top && box.bottom <= boundary.bottom && (box.bottom <= copy.top || box.right <= copy.left)
+      }),
     }))
 
     results.widths[width] = state
     assert.equal(state.overflow, 0, `overflow at ${width}`)
     assert.equal(state.errorOverlay, false, `error overlay at ${width}`)
+    assert.equal(state.systemNodesVisible, true, `all DP system icons exposed at ${width}`)
     assert.deepEqual(state.cards.map(card => card.id), expectedIds)
     assert.ok(state.cards.every(card => card.radius === '32px'))
     assert.ok(state.cards.every(card => card.anchor.join('x') === '220x220'))
-    assert.ok(state.cards.every(card => {
-      if (width >= 1200 && ['webmd', 'bumblebeemd'].includes(card.id)) return card.columns === 1
-      if (width >= 1200 && ['dentalplans', 'hydra'].includes(card.id)) return card.columns === 2
-      return card.columns === (card.containerWidth < 680 ? 1 : 2)
-    }), `content breakpoint at ${width}`)
-    assert.ok(state.cards.every(card => card.copyBackground === 'rgba(255, 255, 255, 0.88)'))
-    assert.ok(state.cards.every(card => card.copyBlur.includes('blur(16px)')))
+    assert.ok(state.cards.every(card => card.columns === (card.containerWidth < 680 ? 1 : 2)), `content breakpoint at ${width}`)
+    assert.ok(state.cards.every(card => card.copyBackground === 'rgba(255, 255, 255, 0.78)'))
+    assert.ok(state.cards.every(card => card.copyBlur.includes('blur(30px)')))
     assert.ok(state.cards.every(card => card.copyInsideCard), `copy stays inside card at ${width}`)
     assert.deepEqual(state.logos.map(image => image.src), [
       '/assets/featured/webmd-logo-white.svg',
       '/assets/featured/dentalplans-icon.svg',
       '/assets/featured/bumblebeemd-icon.svg',
+      '/assets/featured/opf-icon-color.svg',
     ])
     assert.ok(state.logos.every(image => image.complete && image.natural[0] > 0 && image.natural[1] > 0))
-    assert.deepEqual(state.logos.map(image => image.rendered), [[173, 40], [132, 132], [112, 129]])
+    assert.deepEqual(state.logos.map(image => image.rendered), [[194, 45], [132, 132], [112, 129], [132, 124]])
     assert.ok(state.iconGlyphs.every(icon => !['none', 'normal', '""'].includes(icon.content) && icon.font.includes('Font Awesome') && icon.weight === '100'))
-    assert.deepEqual(state.iconGlyphs.map(icon => icon.className), ['fa-thin fa-hydra featured-work-icon', 'fa-thin fa-building-columns featured-work-icon'])
+    assert.deepEqual(state.iconGlyphs.map(icon => icon.className), ['fa-thin fa-hydra featured-work-icon'])
     assert.ok(state.reducedAnimations.every(name => name === 'none'))
     assert.ok(Math.max(...state.summaries.map(summary => summary.length)) - Math.min(...state.summaries.map(summary => summary.length)) <= 24)
     assert.ok(state.summaries.every(summary => !/retired/i.test(summary)))
-    if (width < 1200) assert.ok(state.separatorMargins.every(rule => rule.display !== 'none' && parseFloat(rule.top) <= 40 && parseFloat(rule.bottom) <= 40))
-    if (width >= 1200) {
+    if (width < 768) assert.ok(state.separatorMargins.every(rule => rule.display !== 'none' && parseFloat(rule.top) <= 40 && parseFloat(rule.bottom) <= 40))
+    if (width >= 768) {
       const [webmd, dentalplans, bumblebeemd, hydra, opfred] = state.cards
       assert.equal(state.separatorMargins.every(rule => rule.display === 'none'), true)
       assert.ok(webmd.box.left < dentalplans.box.left && webmd.box.top === dentalplans.box.top)
-      assert.ok(webmd.box.height > dentalplans.box.height * 1.7)
-      assert.ok(bumblebeemd.box.left > hydra.box.left && bumblebeemd.box.height > hydra.box.height * 1.7)
-      assert.ok(opfred.box.top > hydra.box.top && opfred.box.width > hydra.box.width * 1.8)
+      assert.equal(webmd.box.height, dentalplans.box.height)
+      assert.ok(bumblebeemd.box.left < hydra.box.left && bumblebeemd.box.top === hydra.box.top)
+      assert.equal(bumblebeemd.box.height, hydra.box.height)
+      const frameWidth = dentalplans.box.left + dentalplans.box.width - webmd.box.left
+      for (const [index, units] of [333, 246, 255, 324, 450].entries()) {
+        assert.ok(Math.abs(state.cards[index].box.width - frameWidth * units / 595) <= 3, `Figma width ${index} at ${width}`)
+      }
+      assert.equal(new Set(state.cards.map(card => card.box.width)).size, 5, `five unequal widths at ${width}`)
+      assert.ok(Math.max(...state.cards.map(card => card.box.height)) - Math.min(...state.cards.map(card => card.box.height)) <= 1, `equal Figma row heights at ${width}`)
+      assert.ok(opfred.box.top > hydra.box.top)
+      assert.ok(Math.abs(opfred.box.left + opfred.box.width / 2 - (webmd.box.left + frameWidth / 2)) <= 2)
     }
     if ([375, 1131, 1440, 1729].includes(width)) {
       await page.locator('#work .container').screenshot({ path: `${output}/work-${width}.png` })

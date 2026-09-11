@@ -1,4 +1,6 @@
-import type { CSSProperties } from 'react'
+'use client'
+
+import { useEffect, useRef } from 'react'
 
 type NetworkNode = readonly [x: number, y: number, size: number]
 
@@ -24,20 +26,131 @@ const connections = nodes.flatMap(([x, y], index) => nodes
   .map(({ nextIndex }) => [index, nextIndex] as const))
 
 export default function ThinkingConnections() {
+  const ref = useRef<SVGSVGElement>(null)
+
+  useEffect(() => {
+    const svg = ref.current
+    const root = svg?.closest<HTMLElement>('[data-motion-root]')
+    if (!svg || !root) return
+    const circles = [...svg.querySelectorAll<SVGCircleElement>('.thinking-network-node')]
+    const lines = [...svg.querySelectorAll('line')]
+    const packets = [...svg.querySelectorAll<SVGCircleElement>('.thinking-data-packet')]
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)')
+    const fine = matchMedia('(hover: hover) and (pointer: fine)')
+    let frame = 0
+    let last = 0
+    let elapsed = 0
+    let depth = 0
+    let pointer = false
+    let focused = false
+    let visible = false
+
+    const draw = () => {
+      // Project one 3D model. Edges, node centers and packets all consume these
+      // same projected vertices; no independently transformed HTML nodes.
+      const yaw = Math.sin(elapsed / 9000) * .08 + depth * .72
+      const pitch = Math.cos(elapsed / 11000) * .06 - depth * .36
+      const points = nodes.map(([x, y, size], index) => {
+        const z = Math.sin(index * 2.4) * (8 + depth * 22)
+        const px = x - 50
+        const py = y - 50
+        const rx = px * Math.cos(yaw) + z * Math.sin(yaw)
+        const rz = z * Math.cos(yaw) - px * Math.sin(yaw)
+        const ry = py * Math.cos(pitch) - rz * Math.sin(pitch)
+        const zz = py * Math.sin(pitch) + rz * Math.cos(pitch)
+        const perspective = 180 / (180 - zz - depth * 18)
+        return [50 + rx * perspective, 50 + ry * perspective, size / 8 * perspective]
+      })
+      circles.forEach((circle, i) => {
+        circle.setAttribute('cx', points[i][0].toFixed(3))
+        circle.setAttribute('cy', points[i][1].toFixed(3))
+        circle.setAttribute('r', points[i][2].toFixed(3))
+      })
+      lines.forEach((line, i) => {
+        const [from, to] = connections[i]
+        line.setAttribute('x1', points[from][0].toFixed(3))
+        line.setAttribute('y1', points[from][1].toFixed(3))
+        line.setAttribute('x2', points[to][0].toFixed(3))
+        line.setAttribute('y2', points[to][1].toFixed(3))
+      })
+      packets.forEach((packet, i) => {
+        const progress = ((elapsed + i * 2900) % 11000) / 1800
+        const [from, to] = connections[packetEdges[i]]
+        packet.setAttribute('cx', (points[from][0] + (points[to][0] - points[from][0]) * Math.min(progress, 1)).toFixed(3))
+        packet.setAttribute('cy', (points[from][1] + (points[to][1] - points[from][1]) * Math.min(progress, 1)).toFixed(3))
+        packet.setAttribute('opacity', progress < 1 ? String(Math.sin(progress * Math.PI)) : '0')
+      })
+    }
+    const tick = (now: number) => {
+      if (now - last >= 32) {
+        const delta = last ? Math.min(now - last, 64) : 0
+        last = now
+        elapsed += delta
+        depth += ((pointer || focused ? 1 : 0) - depth) * (1 - Math.exp(-delta / 130))
+        draw()
+      }
+      frame = requestAnimationFrame(tick)
+    }
+    const sync = () => {
+      cancelAnimationFrame(frame)
+      frame = 0
+      last = 0
+      const stopped = reduced.matches || document.hidden || !visible ||
+        document.documentElement.matches('.motion-paused, .motion-hidden') || root.classList.contains('motion-offscreen')
+      svg.dataset.networkState = stopped ? 'paused' : 'running'
+      if (reduced.matches) {
+        elapsed = 0
+        depth = 0
+        draw()
+      }
+      if (!stopped) frame = requestAnimationFrame(tick)
+    }
+    const enter = () => { pointer = fine.matches }
+    const leave = () => { pointer = false }
+    const focusIn = () => { focused = true }
+    const focusOut = (event: FocusEvent) => { focused = event.relatedTarget instanceof Node && root.contains(event.relatedTarget) }
+    const observer = new MutationObserver(sync)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] })
+    const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync() })
+    intersection.observe(root)
+    root.addEventListener('pointerenter', enter)
+    root.addEventListener('pointerleave', leave)
+    root.addEventListener('focusin', focusIn)
+    root.addEventListener('focusout', focusOut)
+    document.addEventListener('visibilitychange', sync)
+    reduced.addEventListener('change', sync)
+    draw()
+    sync()
+    return () => {
+      cancelAnimationFrame(frame)
+      observer.disconnect()
+      intersection.disconnect()
+      root.removeEventListener('pointerenter', enter)
+      root.removeEventListener('pointerleave', leave)
+      root.removeEventListener('focusin', focusIn)
+      root.removeEventListener('focusout', focusOut)
+      document.removeEventListener('visibilitychange', sync)
+      reduced.removeEventListener('change', sync)
+    }
+  }, [])
+
   return (
-    <>
-      <svg className="thinking-connections" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <svg ref={ref} className="thinking-connections" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         {connections.map(([from, to], index) => (
-          <line key={`${from}-${to}-${index}`} x1={nodes[from][0]} y1={nodes[from][1]} x2={nodes[to][0]} y2={nodes[to][1]} />
+          <line key={`${from}-${to}-${index}`} data-from={from} data-to={to} x1={nodes[from][0]} y1={nodes[from][1]} x2={nodes[to][0]} y2={nodes[to][1]} />
         ))}
-      </svg>
       {nodes.map(([x, y, size], index) => (
-        <span
-          className={`thinking-network-node thinking-network-node-${index % 3}`}
+        <circle
+          className="thinking-network-node"
           key={`${x}-${y}`}
-          style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, animationDelay: `${-((index % 9) * 0.7)}s` } as CSSProperties}
+          data-node={index}
+          cx={x} cy={y} r={size / 8}
         />
       ))}
-    </>
+      {packetEdges.map((edge) => <circle key={edge} className="thinking-data-packet" data-edge={edge} r=".65" opacity="0" />)}
+      </svg>
   )
 }
+
+const packetEdges = [6, 31, 59]

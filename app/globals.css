@@ -732,30 +732,23 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .featured-work-motif-3 { top: 60%; left: 12%; }
   .featured-work-motif-4 { top: 84%; left: 85%; }
 }
-@media (min-width: 1200px) {
+/* Figma 6:10: 595 units, 16-unit gutters, two offset pairs and centered fifth. */
+@media (min-width: 768px) {
   .featured-work-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-areas:
-      "webmd dentalplans"
-      "webmd bumblebeemd"
-      "hydra bumblebeemd"
-      "opfred opfred";
-    grid-template-rows: repeat(4, minmax(390px, auto));
-    gap: clamp(24px, 2.2vw, 36px);
+    grid-template-columns: repeat(595, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    row-gap: clamp(24px, 2.7vw, 44px);
+    align-items: stretch;
   }
   .featured-work-grid > .work-item { min-width: 0; padding-block: 0 !important; }
   .featured-work-grid > .work-separator { display: none; }
-  .work-item-webmd { grid-area: webmd; }
-  .work-item-dentalplans { grid-area: dentalplans; }
-  .work-item-bumblebeemd { grid-area: bumblebeemd; }
-  .work-item-hydra { grid-area: hydra; }
-  .work-item-opfred { grid-area: opfred; }
+  .work-item-webmd { grid-column: 1 / span 333; grid-row: 1; }
+  .work-item-dentalplans { grid-column: 350 / span 246; grid-row: 1; }
+  .work-item-bumblebeemd { grid-column: 1 / span 255; grid-row: 2; }
+  .work-item-hydra { grid-column: 272 / span 324; grid-row: 2; }
+  .work-item-opfred { grid-column: 1 / -1; grid-row: 3; width: calc(450 / 595 * 100%); justify-self: center; }
   .featured-work-grid .featured-work-card { height: 100%; }
-  .work-item-webmd .featured-work-card,
-  .work-item-bumblebeemd .featured-work-card { grid-template-columns: 1fr; grid-template-rows: minmax(320px, 1fr) auto; }
-  .work-item-dentalplans .featured-work-card,
-  .work-item-hydra .featured-work-card { grid-template-columns: minmax(220px, 40%) minmax(0, 60%); padding: 20px; }
 }
 @keyframes featured-work-drift { from { transform: translate(-14px, -6px) rotate(-1.5deg) scale(1.01); } to { transform: translate(18px, 10px) rotate(1.5deg) scale(1.04); } }
 @keyframes featured-work-plane-drift { from { transform: translate(-10px, 10px); } to { transform: translate(12px, -12px); } }
@@ -1043,6 +1036,130 @@ html.motion-hidden .featured-work-plane:nth-child(3),
 
 @media (min-width: 576px) and (max-width: 1199.98px) {
   .thinking-row .thinking-item-featured { flex: 0 0 auto; width: 100%; }
+}
+
+/* September refinement: open brand fields, glass and coordinated spatial art. */
+.featured-work-card {
+  --featured-light: #edf7fc;
+  --featured-mid: #b6d6e8;
+  --featured-dark: #6597b7;
+  --featured-ink: #285675;
+  --featured-angle: 120deg;
+  padding: 24px;
+  gap: 18px;
+  grid-template-columns: minmax(220px, 38%) minmax(0, 1fr);
+  background: linear-gradient(var(--featured-angle), var(--featured-light), var(--featured-mid) 58%, var(--featured-dark));
+}
+.featured-work-card-dentalplans { --featured-light: #f5faf1; --featured-mid: var(--color-third-light); --featured-dark: var(--color-third); --featured-ink: var(--color-third-dark); }
+.featured-work-card-bumblebeemd { --featured-light: #fffdf4; --featured-mid: #f5e8b3; --featured-dark: var(--color-pop-light); --featured-ink: #7f640a; }
+.featured-work-card-hydra { --featured-light: #fbf3f1; --featured-mid: #ddbfba; --featured-dark: var(--color-fourth-light); --featured-ink: var(--color-fourth-dark); }
+.featured-work-card-opfred { --featured-light: #f5f9f8; --featured-mid: #cadcde; --featured-dark: #8faeb8; --featured-ink: #31576a; }
+.featured-work-card .featured-work-scene { color: var(--featured-ink); }
+.featured-work-card-dentalplans .featured-work-scene { inset: 0; }
+.featured-work-card .featured-work-plane { border-color: #ffffffb3; background: linear-gradient(125deg, #ffffff40, color-mix(in srgb, var(--featured-ink) 13%, transparent)); box-shadow: 0 16px 30px #302a3506; }
+.featured-work-card .featured-work-anchor { background: #ffffff59; border: 2px solid #ffffffbc; box-shadow: 0 12px 30px #302a350b, inset 0 0 0 7px #ffffff19; backdrop-filter: blur(8px); }
+.featured-work-card-webmd .featured-work-anchor { background: #316b9899; border-color: #e9f7ffd9; }
+.featured-work-card-dentalplans .featured-work-anchor { background: #42664180; }
+.featured-work-logo-webmd { width: 194px; }
+.featured-work-logo-opf { width: 132px; }
+.featured-work-icon { color: var(--featured-ink); }
+.featured-work-copy {
+  gap: 18px;
+  justify-content: space-between;
+  padding: 36px;
+  background: rgba(255, 255, 255, .78);
+  -webkit-backdrop-filter: blur(30px) saturate(140%);
+  backdrop-filter: blur(30px) saturate(140%);
+  box-shadow: inset 0 1px 0 #ffffffdb, 0 8px 28px #302a3507;
+}
+.featured-work-copy .work-card-badges,
+.featured-work-copy .h2,
+.featured-work-copy .featured-work-subtitle,
+.featured-work-copy .featured-work-summary { margin: 0; }
+.featured-work-copy .h2 { overflow-wrap: anywhere; }
+.featured-work-heading { display: grid; gap: 12px; }
+.featured-work-copy .case-study-read { margin-top: 10px; }
+.featured-work-art { min-height: 280px; }
+.featured-work-motif { display: grid; place-items: center; width: 1em; height: 1em; font-size: 38px; opacity: .7; color: var(--featured-ink); }
+.featured-work-motif-1 { top: 10%; left: 11%; font-size: 48px; }
+.featured-work-motif-2 { top: 32%; left: 75%; font-size: 32px; }
+.featured-work-motif-3 { top: 68%; left: 16%; font-size: 28px; }
+.featured-work-motif-4 { top: 81%; left: 77%; font-size: 46px; }
+.featured-work-motif-5 { top: 8%; left: 54%; font-size: 23px; }
+.featured-work-motif-6 { top: 50%; left: 48%; font-size: 36px; }
+.featured-health-ring { position: absolute; inset: -35%; border: 1px solid currentColor; border-radius: 50%; animation: health-pulse 8s linear infinite; animation-delay: var(--pulse-delay); }
+.featured-health-ring-second { animation-delay: calc(var(--pulse-delay) - 4s); }
+@keyframes health-pulse { 0% { transform: scale(.7); opacity: 0; } 15% { opacity: .45; } 100% { transform: scale(3.4); opacity: 0; } }
+.featured-work-honeycomb { inset: 4% auto auto -7%; grid-template-columns: repeat(3, 150px); gap: 10px; width: 470px; opacity: .16; transform: rotate(-12deg); }
+.featured-work-honeycomb img { width: 150px; }
+.featured-system { position: absolute; inset: 36px auto 36px 24px; width: calc(38% - 40px); }
+.featured-system-links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.featured-system-links path { fill: none; stroke: currentColor; stroke-width: 1; stroke-opacity: .32; vector-effect: non-scaling-stroke; }
+.featured-system-node { position: absolute; display: grid; place-items: center; width: 54px; height: 54px; border: 1px solid #ffffffc4; border-radius: 15px; background: #ffffff52; color: var(--featured-ink); font-size: 28px; transform: translate(-50%, -50%); }
+.featured-system-links .featured-system-packet { stroke-width: 2.5; stroke-opacity: .9; stroke-dasharray: 3 197; animation: system-packet 9s linear infinite; }
+@keyframes system-packet { 0%, 15% { stroke-dashoffset: 3; opacity: 0; } 20% { opacity: .9; } 50% { stroke-dashoffset: -100; opacity: .9; } 55%, 100% { stroke-dashoffset: -100; opacity: 0; } }
+@container (max-width: 679px) {
+  .featured-work-card { --featured-angle: 165deg; grid-template-columns: 1fr; grid-template-rows: 280px 1fr; padding: 18px; gap: 16px; }
+  .featured-work-copy { padding: 30px; }
+  .featured-system { inset: 68px 30px auto; width: auto; height: 210px; }
+  .featured-work-copy .h2 { font-size: clamp(26px, 6.8cqi, 34px); }
+}
+@container (max-width: 340px) {
+  .featured-work-card { padding: 12px; }
+  .featured-work-copy { padding: 24px; }
+}
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .featured-work-copy { background: #f7f9fa; }
+}
+
+/* The SVG owns every projected vertex; CSS must never move its nodes apart. */
+.thinking-art-call-center-ux .thinking-geometry { color: #7f640a; }
+.thinking-art-call-center-ux .thinking-connections { animation: none; transform: none; }
+.thinking-connections .thinking-network-node { fill: #ffffff52; stroke: currentColor; stroke-width: 1; vector-effect: non-scaling-stroke; animation: none; translate: none; scale: none; filter: none; }
+.thinking-connections line { animation: none; stroke-opacity: .32; }
+.thinking-connections .thinking-data-packet { fill: currentColor; }
+.thinking-art-marketing-auto .thinking-geometry { animation: none !important; }
+.thinking-art-marketing-auto .thinking-geometry > i { display: none; }
+.personalization-rays { position: absolute; width: 0; height: 0; top: var(--art-center-y); left: 50%; animation: sunbeam-spin 32s linear infinite; animation-play-state: paused; }
+.personalization-rays > b { position: absolute; top: 0; left: 0; width: 270px; height: 1px; background: currentColor; color: #7f640a; opacity: .36; transform-origin: 0 0; transform: translate(var(--ray-x), var(--ray-y)) rotate(var(--ray-angle)); transition: transform 650ms cubic-bezier(.16, 1, .3, 1); }
+@keyframes sunbeam-spin { to { rotate: 360deg; } }
+.thinking-art-split-test .thinking-geometry { perspective: 650px; transform-style: preserve-3d; }
+.thinking-art-split-test .thinking-geometry > i { animation-name: depth-breathe; translate: 0 0 0; rotate: y 0deg; transition: translate 650ms cubic-bezier(.16, 1, .3, 1), rotate 650ms cubic-bezier(.16, 1, .3, 1), filter 650ms cubic-bezier(.16, 1, .3, 1); }
+@keyframes depth-breathe { from { opacity: .7; } to { opacity: 1; } }
+.thinking-art-roadmap .thinking-icon::before { display: inline-block; transform-origin: center; animation: mouse-blink 7.5s ease-in-out infinite; }
+@keyframes mouse-blink { 0%, 42%, 48%, 100% { opacity: 1; scale: 1; } 45% { opacity: .3; scale: 1 .94; } }
+/* Focus is independent of pointer capabilities; touch keeps its direct action. */
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .personalization-rays { animation-play-state: running; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .personalization-rays > b { transform: rotate(var(--ray-target)); }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .thinking-art-split-test .thinking-geometry > i,
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):focus-visible .thinking-geometry > i { animation: none; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .personalization-rays { animation-play-state: running; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .personalization-rays > b { transform: rotate(var(--ray-target)); }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .thinking-art-split-test .thinking-geometry > i,
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):hover .thinking-geometry > i { animation: none; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
+}
+html.motion-paused [data-motion-root] *::before,
+html.motion-hidden [data-motion-root] *::before,
+[data-motion-root].motion-offscreen *::before { animation-play-state: paused !important; }
+html.motion-paused .personalization-rays > b,
+html.motion-hidden .personalization-rays > b,
+.motion-offscreen .personalization-rays > b { transition: none; }
+html:is(.motion-paused, .motion-hidden) :is(.thinking-thumb-icon, .cs-icon-art) .thinking-geometry,
+[data-motion-root].motion-offscreen .thinking-geometry { transform: none !important; transition: none !important; }
+html:is(.motion-paused, .motion-hidden) .thinking-art-split-test .thinking-geometry > i,
+.motion-offscreen.thinking-art-split-test .thinking-geometry > i,
+.motion-offscreen .thinking-art-split-test .thinking-geometry > i { translate: none !important; rotate: none !important; scale: 1 !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .thinking-thumb-icon .thinking-icon-anchor { transform: translate(-50%, -50%) !important; }
+  .thinking-thumb-icon .thinking-icon, .thinking-thumb-icon .thinking-geometry { transform: none !important; }
+  .personalization-rays, .featured-health-ring, .featured-system-packet, .thinking-art-roadmap .thinking-icon::before { animation: none !important; }
+  .personalization-rays > b { transition: none; }
+  .featured-health-ring { opacity: .16; }
+  .featured-health-ring-second, .featured-system-packet, .thinking-data-packet { opacity: 0 !important; }
+  .thinking-art-split-test .thinking-geometry > i { translate: none !important; rotate: none !important; scale: 1 !important; filter: none !important; }
 }
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */

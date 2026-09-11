@@ -1,5 +1,9 @@
 # Status
 
+The enlarged reduced-motion status wraps to two lines at 320px. The narrow
+compact header now reserves font-relative vertical space for that full label,
+not only the shorter Pause motion state. Final boundary verification follows.
+
 Native-scrollbar contrast correction: rendered thumb/field samples on 57422f8
 fell below 3:1 for four featured themes (Hydra minimum 1.94:1). Use opaque
 existing body ink #302c38 for the thumb, preserving its native thin geometry

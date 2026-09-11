@@ -1,5 +1,10 @@
 # Status
 
+Development final checks: annotation and 59 contrast samples pass (minimum4.64:1).
+The original sticky script timed out before layout settled; font readiness plus
+two animation frames passes all original 320/375 assertions. That prerequisite
+is now explicit in the harness; no assertion was changed. Final export follows.
+
 Enlarged compact header correction: a font-relative 12em container rule places
 the narrow title row below the motion control. The original sticky assertions
 passed a focused 320/375px CSS probe, including 200% text. Final build follows.

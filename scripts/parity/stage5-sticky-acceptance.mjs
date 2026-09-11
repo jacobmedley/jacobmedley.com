@@ -22,6 +22,9 @@ try {
     const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'no-preference' })
     watchErrors(page)
     assert.equal((await page.goto(`${base}/`, { waitUntil: 'networkidle' })).status(), 200)
+    // Measure only after font metrics and the header ResizeObserver have settled.
+    await page.evaluate(() => document.fonts.ready)
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
     await page.evaluate(() => document.documentElement.style.scrollBehavior = 'auto')
     const expectedCompactHeight = width <= 575 ? 56 : 64
     const widthResult = {}
@@ -131,7 +134,10 @@ try {
   const page = await browser.newPage({ viewport: { width: 375, height: 812 }, reducedMotion: 'reduce' })
   watchErrors(page)
   assert.equal((await page.goto(`${base}/case-studies/`, { waitUntil: 'networkidle' })).status(), 200)
-  await page.evaluate(() => document.documentElement.style.scrollBehavior = 'auto')
+  // Measure only after font metrics and the header ResizeObserver have settled.
+    await page.evaluate(() => document.fonts.ready)
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+    await page.evaluate(() => document.documentElement.style.scrollBehavior = 'auto')
   await page.getByRole('link', { name: 'Explore the case studies', exact: true }).click()
   await page.waitForFunction(() => Math.abs(document.querySelector('.cs-browse-sticky')?.getBoundingClientRect().top ?? 100) < 2)
   const assembly = page.locator('.cs-browse-sticky')

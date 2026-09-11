@@ -1735,3 +1735,8 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 .waves-wrapper { overflow-x: clip; }
 .section-heading-inner { max-width: 100%; }
 .section-heading-title { min-width: 0; overflow-wrap: anywhere; }
+/* At enlarged text sizes, place narrow sticky titles below the motion control. */
+.section-heading-reserve { container-type: inline-size; }
+@container (max-width: 12em) {
+  .section-heading-reserve.is-compact .section-heading-surface { padding-right: 1rem; padding-top: calc(.75rem + 54px); }
+}

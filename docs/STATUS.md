@@ -1,5 +1,9 @@
 # Status
 
+Enlarged compact header correction: a font-relative 12em container rule places
+the narrow title row below the motion control. The original sticky assertions
+passed a focused 320/375px CSS probe, including 200% text. Final build follows.
+
 Final color correction: a2b25c5's expanded rendered sample found a Call Center
 badge at 4.36:1. Icon-card badge text now uses existing body ink #302c38.
 A new exact-head export and final matrix will supersede a2b25c5 evidence.

@@ -1,5 +1,10 @@
 # Status
 
+Candidate refinement: final-export probes on 101b83f found a 1191px hero wrap,
+12px enlarged Education heading overflow and 95px enlarged index overflow.
+Scoped font sizing, intrinsic-width and label wrapping corrections follow.
+The complete matrix will run on the resulting candidate; 101b83f is not accepted.
+
 ## September 11, 2026: independent acceptance candidate, not release-ready
 
 Independent Astra/medium acceptance started from 25c748bb93bf6b224c7f249a0b1ae9481c14d6c8

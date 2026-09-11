@@ -137,3 +137,9 @@ html { scroll-padding-top: var(--cs-scroll-padding, 0px); }
 @media (max-width: 575px) {
   .motion-control { top: 10px; right: 10px; min-height: 38px; padding-inline: 10px; }
 }
+/* Keep enlarged text inside intrinsic grid/flex tracks without hiding content. */
+.cs-index .cs-hero-heading, .cs-index .cs-featured > *, .cs-index .cs-stat > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.cs-index .cs-hero-heading h1 { overflow-wrap: anywhere; }
+.cs-index .cs-stat > strong { white-space: normal; }
+.cs-index .cs-section-heading, .cs-index .cs-stat-top { flex-wrap: wrap; }
+.cs-index .cs-section-heading > span { white-space: normal; }

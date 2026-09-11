@@ -422,3 +422,5 @@
 .cs-button-outline { background: transparent; color: var(--color-prime-dark); border: 1px solid currentColor; }
 .cs-button-outline:hover { background: var(--color-prime-dark); color: white; }
 .cs-hero-aside .cs-button { margin-top: 24px; white-space: normal; }
+/* Text enlargement may wrap action labels, including the shared footer link. */
+.cs-button { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }

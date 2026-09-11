@@ -104,3 +104,32 @@ Rollback for checkpoint A is `821e379`; use a reviewed revert after checking
 ownership rather than resetting shared history. Checkpoint B remains responsible
 for every imagery/consistency disposition in the release plan, including the
 existing 200% footer-control overflow. Independent acceptance remains separate.
+
+## Independent acceptance return, September 11, 2026
+
+ACC-B02 is release-blocking on final candidate
+`fcfe2722c9a62e823772a61f89815f528db76071`. The fixed global motion status does not
+reserve its actual dimensions in page navigation or sticky context. At 200% text,
+its reduced-motion label obscures the Full Stack title at 768px (only Designer
+remains visible) and overlaps headings at 1100px. The font-relative narrow helper
+fits at a 384px header container but switches back at 385px, where the overlap
+returns. Exact viewport/container pairs are 437/384 and 438/385 at root text 200%.
+The sweep also flags the standalone index and all six detail headers, including
+normal-size reduced-motion status. At enlarged text, it covers filter context and
+some filter buttons. This needs a deliberate shared placement/space-reservation
+solution for the longest status, pause/resume states and each route; raising one
+arbitrary breakpoint is insufficient. Preserve B46 labels and accessible state.
+
+Evidence: `scripts/parity/shots/acceptance-20260911/fcfe272-boundaries.json`,
+`fcfe272-header-overlap-768.png`, `fcfe272-motion-overlap-sweep.json` and the two
+`fcfe272-index-motion-overlap-*.png` files. The sweep has 90 route/viewport/state
+cases; 83 geometric intersections are flags, not 83 independently certified visual
+failures. Representative screenshots substantiate the obscured content. All six
+direct routes share the affected header. The original sticky suite passed finally,
+but it checks title fit, not enlarged status/title intersection. Earlier boundary
+timeouts remain in their logs; a focused 80-sample trace was stable. Do not treat
+those observations as a resolved root-cause diagnosis or weaken the assertions.
+
+The bounded acceptance fixes are retained. No new copy or B edit was introduced.
+Return to this checkpoint's design owner before release; see the independent
+acceptance report for every request group, exact source SHA and environment limits.

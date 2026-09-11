@@ -129,3 +129,10 @@ the old imagery suite as evidence of text-resize acceptance; it only measured ou
 fit. Independent acceptance fixed shared title/prose/legacy-grid wrapping but did
 not redesign these six new diagrams. See the final release acceptance matrix for
 exact revision and remaining coverage. No publication authorized by this return.
+
+Final acceptance candidate is `fcfe2722c9a62e823772a61f89815f528db76071`; ACC-B01
+remains open. The latest schematic evidence is prefixed `57422f8-enlarged-` in the
+same evidence directory. Subsequent application changes only affect native thumb
+ink and compact-header spacing; supporting-art geometry/data are unchanged.
+The final imagery suite passes normal-size outer-fit checks but does not detect
+this enlarged internal clipping. See `docs/release-acceptance-20260911.md`.

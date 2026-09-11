@@ -1,58 +1,53 @@
 # Status
 
-The enlarged reduced-motion status wraps to two lines at 320px. The narrow
-compact header now reserves font-relative vertical space for that full label,
-not only the shorter Pause motion state. Final boundary verification follows.
+## September 11, 2026: independent acceptance BLOCKED
 
-Native-scrollbar contrast correction: rendered thumb/field samples on 57422f8
-fell below 3:1 for four featured themes (Hydra minimum 1.94:1). Use opaque
-existing body ink #302c38 for the thumb, preserving its native thin geometry
-and transparent track. Recheck actual contrast, dragging and integrated export.
+Exact tested application: `fcfe2722c9a62e823772a61f89815f528db76071` on
+`codex/website-art-layout-20260910`, worktree `6fa6`. Fresh remote main remains
+`e6b3672f88e5847d84a854f45ae3d29ca8269952`. Jacob selected Astra / medium and local
+task metadata verified that selection. This final checkpoint changes documentation
+only; the tested application SHA is retained in the acceptance manifest.
 
-Development final checks: annotation and 59 contrast samples pass (minimum4.64:1).
-The original sticky script timed out before layout settled; font readiness plus
-two animation frames passes all original 320/375 assertions. That prerequisite
-is now explicit in the harness; no assertion was changed. Final export follows.
+All nine prescribed final export suites pass, as do the build, TypeScript,
+authored-source ESLint and whitespace checks. Whole-repository ESLint remains a
+recorded baseline failure: 328 errors/8,927 warnings in generated/archive content
+and next-env.d.ts. No assertions or lint rules were weakened. Font readiness and
+two layout frames were added before sticky measurements; earlier timeouts remain
+recorded, without claiming their root cause is resolved.
 
-Enlarged compact header correction: a font-relative 12em container rule places
-the narrow title row below the motion control. The original sticky assertions
-passed a focused 320/375px CSS probe, including 200% text. Final build follows.
+Release is blocked by two independently observed defects:
 
-Final color correction: a2b25c5's expanded rendered sample found a Call Center
-badge at 4.36:1. Icon-card badge text now uses existing body ink #302c38.
-A new exact-head export and final matrix will supersede a2b25c5 evidence.
+- ACC-B01: six replacement supporting schematics clip/overlap labels and steps at
+  200% text. Returned with measurements and screenshots to Sol checkpoint B.
+- ACC-B02: the fixed motion status obscures navigation/filter context and enlarged
+  sticky headings. A 90-case class sweep and exact boundary evidence are returned
+  to Sol checkpoint A. Passing suites do not detect all these intersections.
 
-Candidate refinement: final-export probes on 101b83f found a 1191px hero wrap,
-12px enlarged Education heading overflow and 95px enlarged index overflow.
-Scoped font sizing, intrinsic-width and label wrapping corrections follow.
-The complete matrix will run on the resulting candidate; 101b83f is not accepted.
+Actual hidden-tab transitions and browser UI 200% zoom remain unverified. Installed
+Chrome/Edge have scoped smoke evidence; Firefox control was unavailable, and no
+WebKit/physical-device or blanket WCAG certification is claimed. Local Node22
+must still be reconciled with the actual Node20 CI build before release acceptance.
 
-## September 11, 2026: independent acceptance candidate, not release-ready
+Bounded fixes improve wrapping, intrinsic grid widths, modal close targets,
+legacy diagrams, navigation/badge contrast, native scrollbar contrast and narrow
+header spacing. The opaque native thumb now measures at least 3.61:1 in the sampled
+fields while the track remains transparent. No copy, B edit, claim, original image,
+canonical story/diagram, external resume master or deployment workflow changed.
 
-Independent Astra/medium acceptance started from 25c748bb93bf6b224c7f249a0b1ae9481c14d6c8
-on codex/website-art-layout-20260910 in worktree 6fa6. Actual task metadata confirms
-gpt-6-astra / medium. Fresh remote main remains e6b3672.
+See [the acceptance matrix](release-acceptance-20260911.md) and its
+[hash-bound manifest](release-acceptance-20260911.json). They record exact commands,
+measurements, evidence paths, source/export hashes, prior-run provenance and limits.
+The full matrix ran on fcfe272; unaffected supplemental data retain their actual
+57422f8 SHA. No old evidence is relabeled as a new build pass.
 
-Bounded fixes wrap the homepage hero, navigation, modal titles/prose and legacy
-diagram labels; keep modal close targets at 44px; stack narrow modal icon grids;
-allow Full Stack captions to wrap; contain decorative wave overflow; and give the
-active Full Stack/Resume navigation dark text. No copy, B edit or source data change.
-Development all-modal checks pass at 320/375; further final export checks follow.
-Whole-repository ESLint fails in generated and archived files; authored-source lint
-and TypeScript pass. The initial 375px sticky timeout passed its focused rerun.
-
-Release remains blocked by ACC-B01: six new supporting schematics clip/overlap at
-200% text. A concrete return is appended to checkpoint B with local evidence.
-Firefox is installed but Computer Use stopped before navigation because URL policy
-is unsupported; no Firefox pass. Actual tab visibility was attempted in isolated
-Chromium but never became hidden; no native hidden-tab pass. Physical devices,
-WebKit, actual browser UI zoom and CI Node 20 are still unverified. This candidate
-checkpoint precedes the integrated export matrix; old labels do not accept it.
-
-Only this task's lock is held. The development preview is 3012; existing export
-3011 will be rebuilt after verified owned-process shutdown. No push, PR, merge,
-deployment, inference, browser download, paid fallback or reset. Recovery is
-25c748bb93bf6b224c7f249a0b1ae9481c14d6c8; preserve later work with reviewed reverts.
+Preview: `http://localhost:3011`, owned serve PID 59756, final export. Development
+3012 is stopped. Recovery starts at `25c748bb93bf6b224c7f249a0b1ae9481c14d6c8`;
+use reviewed reverts/isolated checkouts preserving subsequent work. STATUS was
+written last before this local documentation checkpoint. The closeout appends one
+unique Genesis update with the final commit and releases only this task's lock.
+Genesis coordinator files remain untouched; the historical malformed event is
+preserved. Local inference was zero. No push, PR, merge, deployment, download,
+paid fallback, extra spending or usage reset. Stop at this acceptance handoff.
 
 ## September 11, 2026: imagery and modal consistency complete
 

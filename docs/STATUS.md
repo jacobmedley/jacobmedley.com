@@ -1,5 +1,9 @@
 # Status
 
+Final color correction: a2b25c5's expanded rendered sample found a Call Center
+badge at 4.36:1. Icon-card badge text now uses existing body ink #302c38.
+A new exact-head export and final matrix will supersede a2b25c5 evidence.
+
 Candidate refinement: final-export probes on 101b83f found a 1191px hero wrap,
 12px enlarged Education heading overflow and 95px enlarged index overflow.
 Scoped font sizing, intrinsic-width and label wrapping corrections follow.

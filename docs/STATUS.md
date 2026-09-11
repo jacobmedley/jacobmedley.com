@@ -1,5 +1,38 @@
 # Status
 
+## September 11, 2026: remaining-work release plan and model prompts
+
+Jacob requested an efficient plan to finish the update and push it live, including
+paused work and Genesis assistance where qualified. This checkpoint is documents
+only. The application remains at `d7999d5dfe5f23b33b8e7a47d92d5f28a8818384` on
+`codex/website-art-layout-20260910`, worktree `6fa6`.
+
+Use `docs/release-plan-20260911.md` and `docs/release-prompts-20260911.md`.
+Four main prompts: Sol/medium finishes sticky headers and imagery/consistency in
+two local checkpoints; Astra/medium performs independent acceptance; Luna/medium
+packages/pushes the reviewed branch and opens its PR; a separately submitted
+Astra/high prompt authorizes merge, existing SiteGround deployment and public/cache
+verification. Existing finished cards, resume, motion and full-bleed modals remain.
+External resume masters stay with their owner and are included as a handoff item.
+
+Estimated remaining execution: 46–83k cloud input/output tokens including review
+and retries, not measured usage/savings. Optional Genesis coordinator prompt adds
+1–3k cloud overhead; baseline local jobs remain zero. Fresh Luna audit confirms
+desktop model availability but profile-root mismatch and uncertified worker-lane
+ownership block review of this worktree. Laptop inference hold remains. No runner
+repair, local inference, new model, reset or extra spending occurred.
+
+Fresh GitHub reads show main `e6b3672f88e5847d84a854f45ae3d29ca8269952`, PR #8
+merged and no open PRs. Main is an ancestor of the application checkpoint, which
+has 15 local commits after it. Recheck before publishing. Plan references, five
+prompts, seven harness paths, fences, links and diff checks passed. Application
+tests were not rerun for these three documentation files. STATUS was written last.
+
+Preview PID 56584 was reverified and left serving `out/` at
+`http://localhost:3011/#work`. The final handoff records the planning commit and
+clean tree/owned-lock release. No push, PR, merge or deployment in this task.
+Plan rollback: `d7999d5`; final Genesis update records the unique checkpoint.
+
 ## September 11, 2026: full bleed with a transparent native scrollbar
 
 Jacob's conditional full-bleed request is feasible and implemented for the five

@@ -1,5 +1,44 @@
 # Status
 
+## September 11, 2026: alternating horizontal cards and eighteen comments
+
+Jacob's eighteen browser comments and layout decision are complete on
+`codex/website-art-layout-20260910`, from `3707584691f05dde35619741db4c247d03a28c65`.
+The featured stories now alternate artwork left/right and size to their own copy.
+Below 820px card width they stack with centered artwork. This supersedes the
+previous Figma mosaic and equal-height rows. All five panels use the requested
+40% white / 3px glass; darker subtitle ink preserves readability.
+
+Circle enlargement and idle drift are restored, including continued A/B motion,
+floating Personalization lines and a drifting, attached Call Center network with
+default depth. Workshops animate more broadly; a denser maze replaces the mouse
+blink. DP has more connected nodes, Hydra depicts a design system, Bumblebee
+hexagons multiply/scale/rotate on rollover, and OPF uses the supplied white icon
+rendered dark with falling tree-derived leaves. Full-card modal actions, animated
+right arrows, rounded clipping and seamless wave joins are implemented.
+
+Sixteen changed files and all comment dispositions are listed in
+`docs/stage4-horizontal-cards-checkpoint-20260911.md`. No registered copy, claims,
+project data, source diagrams or public routes changed; no B edits were applied
+or skipped. TypeScript, targeted ESLint, diff check and production build/export
+passed. All six acceptance suites passed: annotation, dashboard, Stage 4 layout,
+motion/network, refinement and surfaces. Final layout coverage spans sixteen
+widths from 320 through 2560px, with zero overflow. All five cards pass edge,
+artwork, copy, Read and keyboard activation/focus-return checks. Five wave pixel
+samples, including fractional display scales, have zero seam delta. Sampled
+subtitle contrast ranges from 5.09:1 to 8.26:1 with the requested glass intact.
+
+The static preview runs at `http://localhost:3011/#work`, verified PID 53340,
+serving this worktree's final `out/`. Other sessions and previews are preserved.
+The local checkpoint commit and clean-tree/lock release are reported at handoff.
+Rollback is `3707584` after checking ownership. No push, PR, merge, deployment,
+local inference, new dependencies, usage reset or additional spending occurred.
+Genesis received the unique direction event; its final update records the commit
+and verification. The historical provenance error still blocks the helper;
+fresh direct reads and a matching manual fingerprint were used. Physical devices,
+Safari, Firefox and native hidden-tab transitions remain unverified. Later
+sticky-header and release stages remain separate.
+
 ## September 10, 2026: Stage 4 artwork and Figma layout refinement
 
 Jacob's twelve artwork and layout refinements are complete on

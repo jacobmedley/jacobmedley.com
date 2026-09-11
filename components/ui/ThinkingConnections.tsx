@@ -48,12 +48,12 @@ export default function ThinkingConnections() {
     const draw = () => {
       // Project one 3D model. Edges, node centers and packets all consume these
       // same projected vertices; no independently transformed HTML nodes.
-      const yaw = Math.sin(elapsed / 9000) * .08 + depth * .72
-      const pitch = Math.cos(elapsed / 11000) * .06 - depth * .36
+      const yaw = (1 - depth) * .24 + Math.sin(elapsed / 9000) * .12 + depth * .72
+      const pitch = (1 - depth) * -.14 + Math.cos(elapsed / 11000) * .09 - depth * .36
       const points = nodes.map(([x, y, size], index) => {
-        const z = Math.sin(index * 2.4) * (8 + depth * 22)
-        const px = x - 50
-        const py = y - 50
+        const z = Math.sin(index * 2.4) * (19 + depth * 11) + Math.sin(elapsed / 5300 + index * 1.7) * 3
+        const px = x - 50 + Math.sin(elapsed / 4200 + index * 2.1) * 2.6
+        const py = y - 50 + Math.cos(elapsed / 5100 + index * 1.6) * 2.2
         const rx = px * Math.cos(yaw) + z * Math.sin(yaw)
         const rz = z * Math.cos(yaw) - px * Math.sin(yaw)
         const ry = py * Math.cos(pitch) - rz * Math.sin(pitch)

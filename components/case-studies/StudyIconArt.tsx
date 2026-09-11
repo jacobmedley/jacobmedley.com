@@ -1,6 +1,7 @@
 // Uses the main site's geometric fields and shared 140px frosted focal anchor.
 import ThinkingConnections from '@/components/ui/ThinkingConnections'
 import PersonalizationRays from '@/components/ui/PersonalizationRays'
+import RoadmapMaze from '@/components/ui/RoadmapMaze'
 import type { CSSProperties } from 'react'
 const artwork: Record<string, { pattern: string; icon: string }> = {
   platform: { pattern: 'roadmap', icon: 'fa-layer-group' },
@@ -18,6 +19,7 @@ export default function StudyIconArt({ kind }: { kind: string }) {
       <div className="thinking-geometry">
         {art.pattern === 'call-center-ux' ? <ThinkingConnections /> : null}
         {art.pattern === 'marketing-auto' ? <PersonalizationRays /> : null}
+        {art.pattern === 'roadmap' ? <RoadmapMaze /> : null}
         {Array.from({ length: 12 }, (_, i) => <i key={i} style={{ '--layer': i } as CSSProperties} />)}
       </div>
       <div className="thinking-icon-anchor"><i className={`thinking-icon fa-thin ${art.icon}`} /></div>

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
 
-const base = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:3010'
+const base = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:3011'
 const output = 'scripts/parity/shots/stage4'
 const expectedIds = ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred']
 const results = { base, widths: {}, motion: {}, modal: {}, viva: {}, errors: [] }
@@ -18,7 +18,7 @@ function watch(page, label) {
 }
 
 try {
-  for (const width of [320, 375, 767, 768, 769, 974, 1131, 1191, 1200, 1440, 1729, 1920, 2560]) {
+  for (const width of [320, 375, 767, 768, 797, 819, 820, 900, 974, 1131, 1191, 1200, 1440, 1729, 1920, 2560]) {
     const page = await browser.newPage({ viewport: { width, height: 900 }, reducedMotion: 'reduce' })
     watch(page, `responsive-${width}`)
     assert.equal((await page.goto(`${base}/`, { waitUntil: 'networkidle' })).status(), 200)
@@ -41,6 +41,10 @@ try {
           anchor: [Math.round(anchor.width), Math.round(anchor.height)],
           copyBackground: copyStyle.backgroundColor,
           copyBlur: copyStyle.backdropFilter || copyStyle.webkitBackdropFilter,
+          artCenter: (() => { const a = card.querySelector('.featured-work-art').getBoundingClientRect(); return { x: a.x + a.width/2, y: a.y + a.height/2, width: a.width }; })(),
+          anchorCenter: { x: anchor.x + anchor.width/2, y: anchor.y + anchor.height/2 },
+          copyBox: { x: copyBox.x, y: copyBox.y, width: copyBox.width, height: copyBox.height },
+          hugging: Math.abs(cardBox.height - copyBox.height - 2 * parseFloat(cardStyle.paddingTop) - 2) < 2,
           copyInsideCard: copyBox.left >= cardBox.left && copyBox.right <= cardBox.right && copyBox.bottom <= cardBox.bottom,
           box: { left: Math.round(cardBox.left), top: Math.round(cardBox.top), width: Math.round(cardBox.width), height: Math.round(cardBox.height) },
         }
@@ -69,27 +73,26 @@ try {
         const box = node.getBoundingClientRect()
         const card = node.closest('.featured-work-card')
         const boundary = card.getBoundingClientRect()
-        const copy = card.querySelector('.featured-work-copy').getBoundingClientRect()
-        return box.left >= boundary.left && box.right <= boundary.right && box.top >= boundary.top && box.bottom <= boundary.bottom && (box.bottom <= copy.top || box.right <= copy.left)
+        return box.left >= boundary.left && box.right <= boundary.right && box.top >= boundary.top && box.bottom <= boundary.bottom
       }),
     }))
 
     results.widths[width] = state
     assert.equal(state.overflow, 0, `overflow at ${width}`)
     assert.equal(state.errorOverlay, false, `error overlay at ${width}`)
-    assert.equal(state.systemNodesVisible, true, `all DP system icons exposed at ${width}`)
+    assert.equal(state.systemNodesVisible, true, `all DP system icons contained at ${width}`)
     assert.deepEqual(state.cards.map(card => card.id), expectedIds)
     assert.ok(state.cards.every(card => card.radius === '32px'))
     assert.ok(state.cards.every(card => card.anchor.join('x') === '220x220'))
-    assert.ok(state.cards.every(card => card.columns === (card.containerWidth < 680 ? 1 : 2)), `content breakpoint at ${width}`)
-    assert.ok(state.cards.every(card => card.copyBackground === 'rgba(255, 255, 255, 0.78)'))
-    assert.ok(state.cards.every(card => card.copyBlur.includes('blur(30px)')))
+    assert.ok(state.cards.every(card => card.columns === (card.containerWidth < 820 ? 1 : 2)), `content breakpoint at ${width}`)
+    assert.ok(state.cards.every(card => card.copyBackground === 'rgba(255, 255, 255, 0.4)'))
+    assert.ok(state.cards.every(card => card.copyBlur.includes('blur(3px)')))
     assert.ok(state.cards.every(card => card.copyInsideCard), `copy stays inside card at ${width}`)
     assert.deepEqual(state.logos.map(image => image.src), [
       '/assets/featured/webmd-logo-white.svg',
       '/assets/featured/dentalplans-icon.svg',
       '/assets/featured/bumblebeemd-icon.svg',
-      '/assets/featured/opf-icon-color.svg',
+      '/assets/featured/opf-icon-white.svg',
     ])
     assert.ok(state.logos.every(image => image.complete && image.natural[0] > 0 && image.natural[1] > 0))
     assert.deepEqual(state.logos.map(image => image.rendered), [[194, 45], [132, 132], [112, 129], [132, 124]])
@@ -98,23 +101,18 @@ try {
     assert.ok(state.reducedAnimations.every(name => name === 'none'))
     assert.ok(Math.max(...state.summaries.map(summary => summary.length)) - Math.min(...state.summaries.map(summary => summary.length)) <= 24)
     assert.ok(state.summaries.every(summary => !/retired/i.test(summary)))
-    if (width < 768) assert.ok(state.separatorMargins.every(rule => rule.display !== 'none' && parseFloat(rule.top) <= 40 && parseFloat(rule.bottom) <= 40))
-    if (width >= 768) {
-      const [webmd, dentalplans, bumblebeemd, hydra, opfred] = state.cards
-      assert.equal(state.separatorMargins.every(rule => rule.display === 'none'), true)
-      assert.ok(webmd.box.left < dentalplans.box.left && webmd.box.top === dentalplans.box.top)
-      assert.equal(webmd.box.height, dentalplans.box.height)
-      assert.ok(bumblebeemd.box.left < hydra.box.left && bumblebeemd.box.top === hydra.box.top)
-      assert.equal(bumblebeemd.box.height, hydra.box.height)
-      const frameWidth = dentalplans.box.left + dentalplans.box.width - webmd.box.left
-      for (const [index, units] of [333, 246, 255, 324, 450].entries()) {
-        assert.ok(Math.abs(state.cards[index].box.width - frameWidth * units / 595) <= 3, `Figma width ${index} at ${width}`)
+    assert.ok(state.separatorMargins.every(rule => rule.display === 'none'))
+    const first = state.cards[0]
+    state.cards.forEach((card, i) => {
+      assert.equal(card.box.width, first.box.width)
+      assert.equal(card.box.left, first.box.left)
+      assert.ok(Math.abs(card.artCenter.x - card.anchorCenter.x) < 1 && Math.abs(card.artCenter.y - card.anchorCenter.y) < 1, `centered identity at ${width}`)
+      if (card.columns === 2) {
+        assert.ok(card.hugging, `card hugs copy at ${width}`)
+        assert.ok(i % 2 ? card.artCenter.x > card.copyBox.x + card.copyBox.width : card.artCenter.x < card.copyBox.x, `alternating artwork at ${width}`)
       }
-      assert.equal(new Set(state.cards.map(card => card.box.width)).size, 5, `five unequal widths at ${width}`)
-      assert.ok(Math.max(...state.cards.map(card => card.box.height)) - Math.min(...state.cards.map(card => card.box.height)) <= 1, `equal Figma row heights at ${width}`)
-      assert.ok(opfred.box.top > hydra.box.top)
-      assert.ok(Math.abs(opfred.box.left + opfred.box.width / 2 - (webmd.box.left + frameWidth / 2)) <= 2)
-    }
+      if (i) assert.ok(card.box.top > state.cards[i-1].box.top + state.cards[i-1].box.height)
+    })
     if ([375, 1131, 1440, 1729].includes(width)) {
       await page.locator('#work .container').screenshot({ path: `${output}/work-${width}.png` })
     }
@@ -130,11 +128,11 @@ try {
       node.style.width = `${width}px`
       return getComputedStyle(card).gridTemplateColumns.split(' ').length
     }
-    const result = { 679: read(679), 680: read(680) }
+    const result = { 819: read(819), 820: read(820) }
     node.style.removeProperty('width')
     return result
   })
-  assert.deepEqual(exact, { 679: 1, 680: 2 })
+  assert.deepEqual(exact, { 819: 1, 820: 2 })
 
   const viva = await breakpoint.locator('.thinking-art-viva .thinking-photo-image').evaluate(async node => {
     const style = getComputedStyle(node)
@@ -180,13 +178,13 @@ try {
     const style = getComputedStyle(node)
     return [style.outlineColor, style.outlineWidth, style.outlineOffset]
   })
-  assert.deepEqual(focusRing, ['rgb(100, 70, 114)', '3px', '4px'])
+  assert.deepEqual(focusRing, ['rgb(70, 49, 80)', '3px', '-5px'])
   await desktop.getByRole('button', { name: 'Pause motion' }).click()
   assert.equal(await desktop.locator('html').getAttribute('class').then(value => value?.includes('motion-paused')), true)
   assert.equal(await interaction.evaluate(node => getComputedStyle(node).transform), 'none')
   results.motion = { driftStart, driftLater, hoverTransform, focusTransform, focusRing }
 
-  const read = card.getByRole('button', { name: 'Read', exact: true })
+  const read = card.getByRole('button', { name: 'Open WebMD case study' })
   await read.click()
   await desktop.getByRole('dialog').waitFor()
   assert.match(await desktop.getByRole('dialog').innerText(), /WebMD/)
@@ -218,7 +216,7 @@ try {
   await touch.close()
 
   assert.deepEqual(results.errors, [])
-  console.log('Stage 4 acceptance passed: five responsive cards, exact 679/680 content breakpoint, verified brand assets, clean Viva crop, glass/focus, desktop/touch/reduced motion, and modal focus return.')
+  console.log('Stage 4 acceptance passed: five responsive cards, exact 819/820 content breakpoint, verified brand assets, clean Viva crop, glass/focus, desktop/touch/reduced motion, and modal focus return.')
 } finally {
   await writeFile(`${output}/results.json`, `${JSON.stringify(results, null, 2)}\n`)
   await browser.close()

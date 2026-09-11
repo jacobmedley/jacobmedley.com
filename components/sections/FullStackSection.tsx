@@ -8,6 +8,7 @@ import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
 import ThinkingConnections from '@/components/ui/ThinkingConnections'
 import PersonalizationRays from '@/components/ui/PersonalizationRays'
+import RoadmapMaze from '@/components/ui/RoadmapMaze'
 
 const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
@@ -97,6 +98,7 @@ export default function FullStackSection() {
                         <span className="thinking-geometry">
                           {project.id === 'call-center-ux' ? <ThinkingConnections /> : null}
                           {project.id === 'marketing-auto' ? <PersonalizationRays /> : null}
+                          {project.id === 'roadmap' ? <RoadmapMaze /> : null}
                           {Array.from({ length: 12 }, (_, index) => <i key={index} style={{ '--layer': index } as CSSProperties} />)}
                         </span>
                         <span className="thinking-icon-anchor">

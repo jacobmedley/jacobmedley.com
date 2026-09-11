@@ -732,24 +732,10 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .featured-work-motif-3 { top: 60%; left: 12%; }
   .featured-work-motif-4 { top: 84%; left: 85%; }
 }
-/* Figma 6:10: 595 units, 16-unit gutters, two offset pairs and centered fifth. */
-@media (min-width: 768px) {
-  .featured-work-grid {
-    display: grid;
-    grid-template-columns: repeat(595, minmax(0, 1fr));
-    grid-auto-rows: 1fr;
-    row-gap: clamp(24px, 2.7vw, 44px);
-    align-items: stretch;
-  }
-  .featured-work-grid > .work-item { min-width: 0; padding-block: 0 !important; }
-  .featured-work-grid > .work-separator { display: none; }
-  .work-item-webmd { grid-column: 1 / span 333; grid-row: 1; }
-  .work-item-dentalplans { grid-column: 350 / span 246; grid-row: 1; }
-  .work-item-bumblebeemd { grid-column: 1 / span 255; grid-row: 2; }
-  .work-item-hydra { grid-column: 272 / span 324; grid-row: 2; }
-  .work-item-opfred { grid-column: 1 / -1; grid-row: 3; width: calc(450 / 595 * 100%); justify-self: center; }
-  .featured-work-grid .featured-work-card { height: 100%; }
-}
+/* Each story sizes to its own copy; the art alternates beside it. */
+.featured-work-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(24px, 3vw, 44px); }
+.featured-work-grid > .work-item { min-width: 0; padding-block: 0 !important; }
+.featured-work-grid > .work-separator { display: none; }
 @keyframes featured-work-drift { from { transform: translate(-14px, -6px) rotate(-1.5deg) scale(1.01); } to { transform: translate(18px, 10px) rotate(1.5deg) scale(1.04); } }
 @keyframes featured-work-plane-drift { from { transform: translate(-10px, 10px); } to { transform: translate(12px, -12px); } }
 .modal-body i { color: inherit; }
@@ -1065,11 +1051,11 @@ html.motion-hidden .featured-work-plane:nth-child(3),
 .featured-work-icon { color: var(--featured-ink); }
 .featured-work-copy {
   gap: 18px;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 36px;
-  background: rgba(255, 255, 255, .78);
-  -webkit-backdrop-filter: blur(30px) saturate(140%);
-  backdrop-filter: blur(30px) saturate(140%);
+  background: rgba(255, 255, 255, .4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   box-shadow: inset 0 1px 0 #ffffffdb, 0 8px 28px #302a3507;
 }
 .featured-work-copy .work-card-badges,
@@ -1126,20 +1112,19 @@ html.motion-hidden .featured-work-plane:nth-child(3),
 .thinking-art-split-test .thinking-geometry { perspective: 650px; transform-style: preserve-3d; }
 .thinking-art-split-test .thinking-geometry > i { animation-name: depth-breathe; translate: 0 0 0; rotate: y 0deg; transition: translate 650ms cubic-bezier(.16, 1, .3, 1), rotate 650ms cubic-bezier(.16, 1, .3, 1), filter 650ms cubic-bezier(.16, 1, .3, 1); }
 @keyframes depth-breathe { from { opacity: .7; } to { opacity: 1; } }
-.thinking-art-roadmap .thinking-icon::before { display: inline-block; transform-origin: center; animation: mouse-blink 7.5s ease-in-out infinite; }
-@keyframes mouse-blink { 0%, 42%, 48%, 100% { opacity: 1; scale: 1; } 45% { opacity: .3; scale: 1 .94; } }
+
 /* Focus is independent of pointer capabilities; touch keeps its direct action. */
 @media (prefers-reduced-motion: no-preference) {
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .personalization-rays { animation-play-state: running; }
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .personalization-rays > b { transform: rotate(var(--ray-target)); }
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .thinking-art-split-test .thinking-geometry > i,
-  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):focus-visible .thinking-geometry > i { animation: none; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):focus-visible .thinking-geometry > i { animation: triangle-drift 12s ease-in-out infinite alternate; animation-play-state: running; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .personalization-rays { animation-play-state: running; }
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .personalization-rays > b { transform: rotate(var(--ray-target)); }
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .thinking-art-split-test .thinking-geometry > i,
-  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):hover .thinking-geometry > i { animation: none; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-split-test:not(.motion-offscreen):hover .thinking-geometry > i { animation: triangle-drift 12s ease-in-out infinite alternate; animation-play-state: running; translate: calc((var(--layer) - 5) * 9px) calc((var(--layer) - 5) * -5px) calc(200px - var(--layer) * 42px); rotate: y 34deg; scale: 1; filter: blur(calc(var(--layer) * .13px)); }
 }
 html.motion-paused [data-motion-root] *::before,
 html.motion-hidden [data-motion-root] *::before,
@@ -1163,6 +1148,113 @@ html:is(.motion-paused, .motion-hidden) .thinking-art-split-test .thinking-geome
 }
 
 /* ── Modal (Bootstrap compiled port, driven by Radix data-state) ── */
+/* September 11: content-sized stories, visible drift and sealed edges. */
+.featured-work-card { grid-template-columns: minmax(260px, .85fr) minmax(0, 1.15fr); grid-template-rows: auto; align-items: stretch; min-height: 0; padding: 24px; gap: 24px; }
+.featured-work-card-even { grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr); --featured-angle: 240deg; }
+.featured-work-card-even .featured-work-art { grid-column: 2; grid-row: 1; }
+.featured-work-card-even .featured-work-copy { grid-column: 1; grid-row: 1; }
+.featured-work-art { display: grid; place-items: center; min-height: 280px; padding: 24px; }
+.featured-work-copy { gap: 24px; }
+.featured-work-subtitle { color: #493e51; }
+.featured-work-copy .h2 { overflow-wrap: normal; word-break: normal; }
+.featured-work-summary { max-width: 56ch; }
+.featured-work-copy .case-study-read { margin-top: 0; }
+.featured-work-card .featured-work-anchor { animation: featured-anchor-float 10s ease-in-out infinite alternate; transition: transform 650ms cubic-bezier(.16,1,.3,1), scale 650ms cubic-bezier(.16,1,.3,1); }
+.featured-work-open { position: absolute; z-index: 5; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; border-radius: inherit; background: transparent; cursor: pointer; }
+.featured-work-open:focus-visible { outline: 3px solid #463150; outline-offset: -5px; }
+.featured-work-logo-opf { filter: brightness(0) saturate(100%); opacity: .78; }
+.featured-work-card-opfred { --featured-light: #f1f5f3; --featured-mid: #c9dcd5; --featured-dark: #91afa7; --featured-ink: #294c43; }
+.featured-system { inset: 28px 32px; width: auto; height: auto; }
+.featured-system-node { width: 46px; height: 46px; font-size: 25px; background: #ffffff38; }
+.featured-system-links path { stroke-opacity: .4; }
+.featured-work-honeycomb { inset: -20% -12%; width: auto; display: grid; grid-template-columns: repeat(6, 150px); gap: 12px; opacity: .19; transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+.featured-work-honeycomb img { transition: translate 1.2s cubic-bezier(.16,1,.3,1), scale 1.2s cubic-bezier(.16,1,.3,1), rotate 1.2s cubic-bezier(.16,1,.3,1), opacity 1.2s; }
+.featured-work-honeycomb img:nth-child(n + 13) { opacity: 0; }
+.featured-design-system { position: absolute; inset: 0; }
+.featured-design-system svg { width: 100%; height: 100%; }
+.design-tokens path, .design-components path { fill: none; stroke: currentColor; stroke-width: 3; opacity: .5; }
+.design-tokens > rect:nth-last-child(-n + 4) { fill: currentColor; opacity: .2; }
+.design-components { fill: #ffffff32; stroke: currentColor; stroke-width: 1; stroke-opacity: .4; animation: component-drift 14s ease-in-out infinite alternate; }
+.design-connectors { fill: none; stroke: currentColor; stroke-opacity: .35; stroke-width: 1; stroke-dasharray: 4 7; }
+.featured-leaves { position: absolute; inset: 0; overflow: hidden; }
+.featured-leaves > span { position: absolute; top: -15%; width: calc(18px + mod(var(--leaf), 4) * 8px); height: 48px; opacity: .28; animation: leaf-fall 25s linear infinite; }
+.featured-leaves svg { width: 100%; height: 100%; fill: currentColor; animation: leaf-sway 7s ease-in-out infinite alternate; animation-delay: calc(var(--leaf) * -1s); }
+@keyframes leaf-fall { from { top: -15%; translate: -30px 0; } to { top: 115%; translate: 65px 0; } }
+@keyframes leaf-sway { from { rotate: -35deg; } to { rotate: 60deg; } }
+@keyframes component-drift { from { translate: -9px 4px; } to { translate: 9px -7px; } }
+@keyframes featured-anchor-float { from { translate: -3px 3px; } to { translate: 4px -4px; } }
+@container (max-width: 819px) {
+  .featured-work-card, .featured-work-card-even { grid-template-columns: minmax(0,1fr); grid-template-rows: auto auto; padding: 18px; gap: 18px; --featured-angle: 165deg; }
+  .featured-work-card-even .featured-work-art, .featured-work-card-even .featured-work-copy { grid-column: auto; grid-row: auto; }
+  .featured-work-art { min-height: 280px; }
+  .featured-work-copy { padding: 30px; }
+  .featured-work-copy .h2 { font-size: clamp(28px, 5cqi, 36px); }
+  .featured-system { inset: 40px 30px; width: auto; height: auto; }
+  .featured-work-honeycomb { grid-template-columns: repeat(4,150px); }
+}
+@container (max-width: 380px) {
+  .featured-work-card { padding: 12px; gap: 12px; }
+  .featured-work-copy { padding: 22px; gap: 20px; }
+  .featured-work-art { min-height: 264px; padding: 12px; }
+  .featured-work-copy .h2 { font-size: 28px; }
+  .featured-system-node { width: 34px; height: 34px; font-size: 20px; border-radius: 10px; }
+}
+/* Individual translate/scale keep idle drift independent of hover transforms. */
+.thinking-thumb-icon .thinking-icon-anchor, .cs-icon-art .thinking-icon-anchor { animation: focal-float 10s ease-in-out infinite alternate; transition: transform 650ms cubic-bezier(.16,1,.3,1), scale 650ms cubic-bezier(.16,1,.3,1); }
+.thinking-icon-anchor { scale: 1; }
+.thinking-icon { transition: transform 650ms cubic-bezier(.16,1,.3,1), scale 650ms cubic-bezier(.16,1,.3,1); }
+@keyframes focal-float { from { translate: -3px 3px; } to { translate: 4px -4px; } }
+.personalization-rays > b { animation: ray-float 11s ease-in-out infinite alternate; animation-delay: calc(var(--ray-index) * -1.4s); }
+@keyframes ray-float { from { translate: -9px 6px; } to { translate: 11px -8px; } }
+.thinking-art-split-test .thinking-geometry > i { animation: triangle-drift 12s ease-in-out infinite alternate; }
+@keyframes triangle-drift { from { transform: translate(-50%,-50%) rotate(calc(var(--layer) * 14deg - 4deg)); } to { transform: translate(-50%,-50%) rotate(calc(var(--layer) * 14deg + 4deg)); } }
+.thinking-art-workshops .thinking-geometry { perspective: 600px; }
+.thinking-art-workshops .thinking-geometry > i { animation: workshop-ripple 10s ease-in-out infinite alternate; animation-delay: calc(var(--layer) * -.9s); transition: rotate 950ms cubic-bezier(.16,1,.3,1); }
+@keyframes workshop-ripple { from { scale: .8; translate: -8px 8px; opacity: .45; } to { scale: 1.2; translate: 8px -10px; opacity: 1; } }
+.thinking-art-roadmap .thinking-geometry > i { display: none; }
+.roadmap-maze { position: absolute; inset: 0; width: 100%; height: calc(100% - 60px); fill: none; stroke: currentColor; color: #7f640a; stroke-opacity: .4; stroke-width: 1; }
+.roadmap-maze path { vector-effect: non-scaling-stroke; }
+.cs-icon-art .roadmap-maze { color: var(--cs-accent); height: 100%; }
+.thinking-thumb { clip-path: inset(0 round 2rem); }
+.thinking-panel { border-radius: 0 0 2rem 2rem; }
+/* Overlap rasterized SVG edges at fractional viewport heights. */
+.waves { display: block; height: calc(10vh + 2px); translate: 0 1px; }
+@media (min-width: 768px) { .waves { height: calc(22vh + 2px); } }
+.fa-arrow-right { transition: translate 350ms cubic-bezier(.16,1,.3,1); }
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within :is(.thinking-icon-anchor,.featured-work-anchor) { transform: scale(1.16); animation-play-state: running; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .thinking-icon-anchor { transform: translate(-50%,-50%) scale(1.16); }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .personalization-rays > b { animation: none; translate: 0 0; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .thinking-icon { scale: 1.07; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within .thinking-art-workshops .thinking-geometry > i,
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-workshops:not(.motion-offscreen):focus-visible .thinking-geometry > i { rotate: x 48deg; animation-play-state: running; }
+  :is(a,button,.featured-work-card):focus-within .fa-arrow-right { translate: 5px 0; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover :is(.thinking-icon-anchor,.featured-work-anchor) { transform: scale(1.16); animation-play-state: running; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .thinking-icon-anchor { transform: translate(-50%,-50%) scale(1.16); }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .thinking-icon { scale: 1.07; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .personalization-rays > b { animation: none; translate: 0 0; }
+  html:not(.motion-paused):not(.motion-hidden) .featured-work-card:not(.motion-offscreen):is(:hover,:focus-within) .featured-work-honeycomb { transform: rotate(14deg) scale(1.12); }
+  html:not(.motion-paused):not(.motion-hidden) .featured-work-card:not(.motion-offscreen):is(:hover,:focus-within) .featured-work-honeycomb img { scale: calc(.8 + mod(var(--hex),3) * .17); rotate: calc((mod(var(--hex),3) - 1) * 18deg); }
+  html:not(.motion-paused):not(.motion-hidden) .featured-work-card:not(.motion-offscreen):is(:hover,:focus-within) .featured-work-honeycomb img:nth-child(n + 13) { opacity: .65; }
+  html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):hover .thinking-art-workshops .thinking-geometry > i,
+  html:not(.motion-paused):not(.motion-hidden) .thinking-art-workshops:not(.motion-offscreen):hover .thinking-geometry > i { rotate: x 48deg; animation-play-state: running; }
+  :is(a,button,.featured-work-card):hover .fa-arrow-right { translate: 5px 0; }
+}
+html:is(.motion-paused,.motion-hidden) :is(.thinking-icon-anchor,.featured-work-anchor,.thinking-icon,.featured-work-honeycomb img),
+.motion-offscreen :is(.thinking-icon-anchor,.featured-work-anchor,.thinking-icon,.featured-work-honeycomb img) { scale: 1 !important; transition: none !important; }
+html:is(.motion-paused,.motion-hidden) .thinking-icon-anchor, .motion-offscreen .thinking-icon-anchor { transform: translate(-50%,-50%) !important; }
+html:is(.motion-paused,.motion-hidden) .featured-work-anchor, .motion-offscreen .featured-work-anchor { transform: none !important; }
+html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .personalization-rays > b, .featured-work-anchor, .featured-leaves *, .design-components { animation: none !important; }
+  .thinking-icon-anchor, .thinking-icon, .featured-work-anchor, .featured-work-honeycomb img { scale: 1 !important; translate: none !important; rotate: none !important; }
+  .featured-work-honeycomb, .thinking-art-workshops .thinking-geometry > i { rotate: none !important; transition: none !important; }
+  .fa-arrow-right { translate: none !important; transition: none !important; }
+  .featured-leaves > span { top: calc(mod(var(--leaf) * 23, 100) * 1%); }
+}
+
 .modal {
   position: fixed;
   top: 0;

@@ -149,7 +149,7 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.heroButtonSize.join(',') !== '48,48' || result.heroButtonBorderWidth !== '0px' ||
   result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 || result.iconAnchorSizes.join(',') !== '140x140' ||
   result.personalizationLines !== 12 || result.personaRings !== 12 ||
-  result.geometryPieceCounts.join(',') !== '12,13,13,12,12,12' || result.callCenterNetworkNodes !== 38 || result.callCenterNetworkLines < 60 || result.thinkingBadgeStyles.length !== 1 ||
+  result.geometryPieceCounts.join(',') !== '12,13,13,12,13,12' || result.callCenterNetworkNodes !== 38 || result.callCenterNetworkLines < 60 || result.thinkingBadgeStyles.length !== 1 ||
   result.selectedSectionTitle !== 'Full Stack Designer' ||
   result.thinkingCards.filter((card) => card.kind === 'icon').length !== 6 ||
   result.thinkingCards.filter((card) => card.kind === 'photo').map((card) => card.id).join(',') !== 'wrong,reveal,viva' ||
@@ -164,7 +164,7 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
 )) || Object.values(results.caseStudies).some((result) => (
   result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || !result.iconClasses?.includes('fa-chevron-down')
 )) || results.mobileMotion.status !== 200 || !results.mobileMotion.hoverNone || !results.mobileMotion.pointerCoarse ||
-results.mobileMotion.anchorAnimation !== 'thinking-dolly-anchor-mobile' ||
+results.mobileMotion.anchorAnimation !== 'focal-float' ||
 results.mobileMotion.fieldAnimation !== 'thinking-dolly-field-mobile'
 
 await writeFile(path.join(outputDir, 'results.json'), `${JSON.stringify(results, null, 2)}\n`)

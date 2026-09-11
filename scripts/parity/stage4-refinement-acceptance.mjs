@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
+import { PNG } from 'pngjs'
 import { chromium } from 'playwright'
 
 const base = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:3011'
@@ -107,6 +108,9 @@ try {
   await rayCard.scrollIntoViewIfNeeded()
   await page.mouse.move(0, 0)
   const rays = rayCard.locator('.personalization-rays')
+  const floatStart = await rays.locator('b').first().evaluate(n => getComputedStyle(n).translate)
+  await page.waitForTimeout(900)
+  assert.notEqual(await rays.locator('b').first().evaluate(n => getComputedStyle(n).translate), floatStart, 'rays drift at rest')
   const scatter = await rays.locator('b').evaluateAll(nodes => nodes.map(n => getComputedStyle(n).transform))
   await rayCard.hover()
   await page.waitForTimeout(750)
@@ -133,10 +137,45 @@ try {
   await page.waitForTimeout(750)
   const layers = await ab.locator('.thinking-geometry > i').evaluateAll(nodes => nodes.map(n => getComputedStyle(n).translate))
   assert.ok(layers.some(v => v.endsWith('200px')) && layers.some(v => v.endsWith('-262px')))
+  const triangle = ab.locator('.thinking-geometry > i').first()
+  const settled = await triangle.evaluate(n => getComputedStyle(n).transform)
+  await page.waitForTimeout(1100)
+  assert.notEqual(await triangle.evaluate(n => getComputedStyle(n).transform), settled, 'triangles keep moving after the depth transition')
+  const anchorScale = await ab.locator('.thinking-icon-anchor').evaluate(n => new DOMMatrix(getComputedStyle(n).transform).a)
+  assert.equal(anchorScale, 1.16, 'full-stack circle enlarges')
+  const floatA = await ab.locator('.thinking-icon-anchor').evaluate(n => getComputedStyle(n).translate)
+  await page.waitForTimeout(900)
+  assert.notEqual(await ab.locator('.thinking-icon-anchor').evaluate(n => getComputedStyle(n).translate), floatA, 'hover circle continues floating')
   await ab.screenshot({ path: `${output}/ab-depth-hover.png` })
+  const workshop = page.locator('.thinking-thumb.thinking-art-workshops')
+  await workshop.hover()
+  await page.waitForTimeout(1100)
+  const ring = workshop.locator('.thinking-geometry > i').first()
+  assert.equal(await ring.evaluate(n => getComputedStyle(n).rotate), 'x 48deg')
+  const ripple = await ring.evaluate(n => getComputedStyle(n).scale)
+  await page.waitForTimeout(900)
+  assert.notEqual(await ring.evaluate(n => getComputedStyle(n).scale), ripple)
+  assert.equal(await page.locator('.thinking-thumb .roadmap-maze path').count(), 18)
+  const bee = page.locator('.featured-work-card-bumblebeemd')
+  await bee.hover()
+  await page.waitForTimeout(1400)
+  assert.equal(await bee.locator('.featured-work-anchor').evaluate(n => new DOMMatrix(getComputedStyle(n).transform).a), 1.16)
+  assert.equal(await bee.locator('.featured-work-honeycomb img').nth(15).evaluate(n => getComputedStyle(n).opacity), '0.65')
+  assert.notEqual(await bee.locator('.featured-work-honeycomb img').first().evaluate(n => getComputedStyle(n).rotate), 'none')
+  assert.equal(await bee.locator('.fa-arrow-right').evaluate(n => getComputedStyle(n).translate), '5px')
+  await bee.screenshot({ path: `${output}/bee-hover.png` })
+  const opf = page.locator('.featured-work-card-opfred')
+  await opf.scrollIntoViewIfNeeded()
+  const leaf = opf.locator('.featured-leaves > span').nth(5)
+  const leafStart = await leaf.evaluate(n => getComputedStyle(n).top)
+  await page.waitForTimeout(900)
+  assert.notEqual(await leaf.evaluate(n => getComputedStyle(n).top), leafStart, 'leaves fall slowly')
+  assert.equal(await opf.locator('.featured-leaves > span').count(), 16)
+  assert.ok((await opf.locator('.featured-work-logo-opf').getAttribute('src')).endsWith('opf-icon-white.svg'))
+  assert.equal(await page.locator('.featured-design-system .design-components rect').count(), 7)
   const mouse = page.locator('.thinking-thumb.thinking-art-roadmap .thinking-icon')
   await mouse.scrollIntoViewIfNeeded()
-  assert.equal(await mouse.evaluate(n => getComputedStyle(n, '::before').animationName), 'mouse-blink')
+  assert.equal(await mouse.evaluate(n => getComputedStyle(n, '::before').animationName), 'none')
   await page.getByRole('button', { name: 'Pause motion', exact: true }).click()
   assert.equal(await mouse.evaluate(n => getComputedStyle(n, '::before').animationPlayState), 'paused')
   await page.getByRole('button', { name: 'Resume motion', exact: true }).click()
@@ -149,10 +188,10 @@ try {
     palettes: [...document.querySelectorAll('.featured-work-card')].map(n => [n.dataset.projectId, getComputedStyle(n).getPropertyValue('--featured-ink').trim()]),
   }))
   assert.equal(results.artwork.healthIcons.length, 6)
-  assert.equal(results.artwork.systemIcons.length, 4)
+  assert.equal(results.artwork.systemIcons.length, 12)
   assert.ok([...results.artwork.systemIcons, ...results.artwork.healthIcons.map(n => n.glyph)].every(v => !['none', 'normal', '""'].includes(v)))
   assert.ok(new Set(results.artwork.healthIcons.map(n => n.size)).size > 3)
-  assert.equal(results.artwork.hexes, 9)
+  assert.equal(results.artwork.hexes, 24)
   assert.equal(results.artwork.hexWidth, '150px')
   const system = page.locator('.featured-work-card-dentalplans')
   await system.scrollIntoViewIfNeeded()
@@ -161,7 +200,7 @@ try {
   const systemAlignment = await system.evaluate(card => {
     const svg = card.querySelector('.featured-system-links')
     const nodes = [...card.querySelectorAll('.featured-system-node')].map(n => n.getBoundingClientRect())
-    const edges = [[0, 1], [0, 2], [1, 3], [2, 3], [0, 3]]
+    const edges = [...svg.querySelectorAll('g')].map(g => [Number(g.dataset.from), Number(g.dataset.to)])
     return [...svg.querySelectorAll('g > path:first-child')].map((path, i) => {
       const start = path.getPointAtLength(0).matrixTransform(path.getScreenCTM())
       const end = path.getPointAtLength(path.getTotalLength()).matrixTransform(path.getScreenCTM())
@@ -174,14 +213,24 @@ try {
   assert.ok(results.artwork.palettes.some(([id, ink]) => id === 'dentalplans' && ink === '#426641'))
   assert.ok(results.artwork.palettes.some(([id, ink]) => id === 'hydra' && ink === '#582323'))
   const luminance = rgb => rgb.map(n => n / 255).map(n => n <= .04045 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4).reduce((a, n, i) => a + n * [.2126, .7152, .0722][i], 0)
-  const inks = await page.locator('.featured-work-copy').first().evaluate(n => [...n.querySelectorAll('h4,p,button,.work-card-badges span')].map(e => ({ text: e.textContent.slice(0, 28), color: getComputedStyle(e).color })))
-  for (const ink of inks) {
-    const rgb = ink.color.match(/[\d.]+/g).slice(0, 3).map(Number)
-    // 78% white over pure black is the darkest possible glass composite.
-    const ratio = (luminance([198.9, 198.9, 198.9]) + .05) / (luminance(rgb) + .05)
-    if (rgb.every(v => v === 255)) continue // filled Read button has its own dark backing
-    assert.ok(ratio >= 4.5, `${ink.text}: contrast ${ratio}`)
-    results.contrast[ink.text] = ratio
+  await page.locator('.motion-control').evaluate(n => n.style.visibility = 'hidden')
+  // Sample the actual light fields beneath text with glyphs temporarily hidden.
+  // Keep the requested .4 glass intact, including its real blurred diagram layers.
+  for (const copy of await page.locator('.featured-work-copy').all()) {
+    await copy.scrollIntoViewIfNeeded()
+    const colors = await copy.locator('h4,p,.work-card-badges span').evaluateAll(nodes => nodes.map(n => getComputedStyle(n).color))
+    await copy.evaluate(n => [...n.children].forEach(c => c.style.visibility = 'hidden'))
+    const png = PNG.sync.read(await copy.screenshot({path:`${output}/glass-${await copy.locator('h4').textContent()}.png`}))
+    let min = 1
+    for (let y = 24; y < png.height - 24; y += 3) for (let x = 24; x < png.width - 24; x += 3) {
+      const i = (y * png.width + x) * 4
+      const lum = luminance([...png.data.subarray(i, i + 3)])
+      min = Math.min(min, lum)
+    }
+    await copy.evaluate(n => [...n.children].forEach(c => c.style.removeProperty('visibility')))
+    const ratios = colors.map(color => (min + .05) / (luminance(color.match(/[\d.]+/g).slice(0,3).map(Number)) + .05))
+    assert.ok(ratios.every(r => r >= 4.5), `actual glass contrast: ${ratios}`)
+    results.contrast[await copy.locator('h4').innerText()] = Math.min(...ratios)
   }
   await page.close()
 

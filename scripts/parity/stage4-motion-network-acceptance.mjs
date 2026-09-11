@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 
-const base = process.env.PREVIEW_URL ?? 'http://localhost:3010'
+const base = process.env.PREVIEW_URL ?? 'http://localhost:3011'
 const browser = await chromium.launch({ headless: true })
 const errors = []
 const watch = (page) => {
@@ -24,7 +24,7 @@ try {
     const read = (selector) => {
       const node = card.querySelector(selector)
       const style = getComputedStyle(node)
-      return { name: style.animationName, state: style.animationPlayState, transform: style.transform, cx: node.getAttribute('cx'), x1: node.getAttribute('x1') }
+      return { name: style.animationName, state: style.animationPlayState, transform: style.transform, translate: style.translate, cx: node.getAttribute('cx'), x1: node.getAttribute('x1') }
     }
     return {
       nodes: card.querySelectorAll('.thinking-network-node').length,
@@ -39,7 +39,7 @@ try {
   })
   await desktop.waitForTimeout(700)
   const after = await callCenter.evaluate((card) => ({
-    anchor: getComputedStyle(card.querySelector('.thinking-icon-anchor')).transform,
+    anchor: getComputedStyle(card.querySelector('.thinking-icon-anchor')).translate,
     network: getComputedStyle(card.querySelector('.thinking-connections')).transform,
     node: card.querySelector('.thinking-network-node').getAttribute('cx'),
     line: card.querySelector('.thinking-connections line').getAttribute('x1'),
@@ -50,10 +50,10 @@ try {
   assert.equal(before.overflow, 0)
   assert.deepEqual(
     [before.anchor.name, before.network.name, before.node.name, before.line.name],
-    ['anchor-idle', 'none', 'none', 'none'],
+    ['focal-float', 'none', 'none', 'none'],
   )
   assert.ok([before.anchor.state, before.network.state, before.node.state, before.line.state].every((state) => state === 'running'))
-  assert.notEqual(before.anchor.transform, after.anchor)
+  assert.notEqual(before.anchor.translate, after.anchor)
   assert.equal(before.networkState, 'running')
   assert.notEqual(before.node.cx, after.node)
   assert.notEqual(before.line.x1, after.line)
@@ -64,7 +64,7 @@ try {
   const hoverStates = await callCenter.evaluate((card) => [
     '.thinking-icon-anchor', '.thinking-connections', '.thinking-network-node', '.thinking-connections line',
   ].map((selector) => getComputedStyle(card.querySelector(selector)).animationPlayState))
-  assert.ok(hoverStates.every((state) => state === 'paused'))
+  assert.equal(hoverStates[0], 'running')
 
   const photo = desktop.locator('.thinking-thumb-photo').first()
   await photo.scrollIntoViewIfNeeded()

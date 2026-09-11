@@ -1,5 +1,40 @@
 # Status
 
+## September 11, 2026: Stage 5 sticky headings complete
+
+Checkpoint A completes the original Stage 5 homepage and standalone sticky
+specification on `codex/website-art-layout-20260910` from planning checkpoint
+`821e379` and application baseline `d7999d5`. Case Studies, Full Stack Designer,
+Resume and Education retain their single expanded semantic headings, then become
+measured frosted inline icon/title surfaces at their owning boundaries. Education's
+short wrapper is removed. Narrow headings wrap within the area unobscured by the
+fixed motion control; no title/control collision remains.
+
+The standalone index now has one measured outcomes/stories context plus discipline
+filter assembly. It changes context at the story boundary, updates both filtered
+collections without returning to the hero, protects anchors/focus with the measured
+114px stack and yields before the through-line while keeping a focused filter
+visible. Source headings, result announcements, public routes and canonical data
+are preserved.
+
+Production build/export, TypeScript, targeted ESLint and diff checks passed.
+The new Stage 5 suite passed the final export at 320, 375, 768, 1100 and 1440px:
+four forward/backward crossings, minimum/wrapped heights, no pileup, modal
+layering and focus return, reduced motion, mobile-control separation and 200% sticky
+text fit. The updated dashboard suite passed 11 widths, filters, touch/keyboard,
+motion and all six direct stories. Windows Chromium visuals were reviewed; no
+Firefox/WebKit/physical-device or full-WCAG claim. Existing whole-page 200% overflow
+outside the new sticky surfaces is retained for checkpoint B's consistency sweep.
+
+Detailed evidence, file inventory and the initial served-`out` `ENOTEMPTY`
+disposition are in `docs/stage5-sticky-checkpoint-20260911.md`. Static preview PID
+38296 serves the final `out/` at `http://localhost:3011/#work`; temporary dev 3012
+is stopped. Node 22.11.0 was used locally; CI Node 20 remains for release review.
+No copy/B edit, asset, claim, inference, push, PR, merge or deployment. Genesis
+eligibility remained blocked, so local workload was zero. The final checkpoint
+commit and unique Exchange update follow this STATUS-last write. Rollback is
+`821e379`; checkpoint B imagery/consistency work and independent acceptance remain.
+
 ## September 11, 2026: remaining-work release plan and model prompts
 
 Jacob requested an efficient plan to finish the update and push it live, including

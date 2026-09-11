@@ -71,17 +71,13 @@ export default function EducationSection() {
     <section className="bg-fourth-dark bg-gradient-bs text-white">
       <div className="content py-12">
         <div className="container">
-          <div className="row">
-            <div className="col-24 md:text-center mb-12">
-              <SectionHeader
-                title="Education"
-                icon="fa-thin fa-brain-circuit"
-                iconClassName="text-fourth-light"
-                titleClassName="text-fourth-light"
-                light
-              />
-            </div>
-          </div>
+          <SectionHeader
+            title="Education"
+            icon="fa-thin fa-brain-circuit"
+            iconClassName="text-fourth-light"
+            titleClassName="text-fourth-light"
+            light
+          />
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 text-center">
             {educationItems.map((item, i) => (

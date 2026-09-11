@@ -44,7 +44,7 @@ try {
       motion: [...document.querySelectorAll('.cs-icon-art .thinking-icon-anchor')].map(node => getComputedStyle(node).animationName),
       frame: getComputedStyle(document.querySelector('.cs-outcome-card:last-child')).display,
       outcomeWidths: [...document.querySelectorAll('.cs-outcome-card')].map(node => node.getBoundingClientRect().width),
-      hero: Object.fromEntries(['.cs-hero-heading', '.cs-index-hero h1', '.cs-hero-heading > .cs-button', '.cs-career', '.cs-index-hero', '.cs-filter-bar'].map(selector => {
+      hero: Object.fromEntries(['.cs-hero-heading', '.cs-index-hero h1', '.cs-hero-heading > .cs-button', '.cs-career', '.cs-index-hero', '.cs-browse-sticky'].map(selector => {
         const { left, right, top, bottom } = document.querySelector(selector).getBoundingClientRect()
         return [selector, { left, right, top, bottom }]
       })),
@@ -60,7 +60,7 @@ try {
     assert.deepEqual(state.stats, expectedStats)
     assert.ok(state.statTextFits, `career text fits at ${width}`)
     assert.ok(state.hero['.cs-hero-heading > .cs-button'].top > state.hero['.cs-index-hero h1'].bottom, 'CTA beneath headline')
-    assert.ok(Math.abs(state.hero['.cs-index-hero'].bottom - state.hero['.cs-filter-bar'].top) < 2, 'filters directly below hero')
+    assert.ok(Math.abs(state.hero['.cs-index-hero'].bottom - state.hero['.cs-browse-sticky'].top) < 2, 'browse assembly directly below hero')
     if (width >= 1100) assert.ok(state.hero['.cs-career'].left >= state.hero['.cs-hero-heading'].right, 'career stats right of intro')
     else assert.ok(state.hero['.cs-career'].top >= state.hero['.cs-hero-heading'].bottom, 'career stats stack below intro')
     assert.match(await page.locator('.cs-stat.cs-theme-gold').innerText(), /Finance Attributed[\s\S]*47%[\s\S]*of company revenue growth in one measured year[\s\S]*Share of that year's growth increment\./)
@@ -79,7 +79,7 @@ try {
     if ([375, 974, 1196].includes(width)) await page.locator('.cs-outcome-grid').screenshot({ path: `${output}/outcomes-${width}.png` })
     await page.getByRole('link', { name: 'Explore the case studies', exact: true }).click()
     await page.evaluate(() => window.scrollBy(0, 300))
-    assert.ok(Math.abs(await page.locator('.cs-filter-bar').evaluate(node => node.getBoundingClientRect().top)) < 2, 'filters stay at viewport top')
+    assert.ok(Math.abs(await page.locator('.cs-browse-sticky').evaluate(node => node.getBoundingClientRect().top)) < 2, 'browse assembly stays at viewport top')
     for (const category of ['Product', 'Systems', 'UX Research', 'Leadership', 'Brand', 'All Work']) {
       await page.getByRole('button', { name: category, exact: true }).click()
       const expected = copy.studies.filter(study => category === 'All Work' || study.tags.includes(category))
@@ -94,11 +94,20 @@ try {
       assert.equal(await page.locator('.cs-section-heading [aria-live]').innerText(), `${expected.length} // ${expected.length === 1 ? 'Case Study' : 'Case Studies'}`)
       assert.equal(await page.getByRole('button', { name: category, exact: true }).getAttribute('aria-controls'), 'filtered-outcomes filtered-stories')
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth), 0)
-      const filterPosition = await page.locator('.cs-filter-bar').evaluate(node => {
+      const filterPosition = await page.locator('.cs-browse-sticky').evaluate(node => {
         const style = getComputedStyle(node)
         return { position: style.position, top: style.top }
       })
       assert.deepEqual(filterPosition, { position: 'sticky', top: '0px' }, `sticky contract after ${category} at ${width}px`)
+      const measuredStack = await page.locator('.cs-browse-sticky').evaluate(node => ({
+        height: Math.ceil(node.getBoundingClientRect().height),
+        contextHeight: Math.ceil(node.querySelector('.cs-browse-context').getBoundingClientRect().height),
+        filterHeight: Math.ceil(node.querySelector('.cs-filter-bar').getBoundingClientRect().height),
+        scrollPadding: Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop),
+      }))
+      assert.ok(measuredStack.contextHeight >= 48, `context target at ${width}px`)
+      assert.ok(measuredStack.filterHeight >= 64, `filter target at ${width}px`)
+      assert.equal(measuredStack.scrollPadding, measuredStack.height, `measured scroll padding at ${width}px`)
       assertIcons(await readIcons(page), expected.length * 2 - (expected.some(study => study.slug === platform.slug) ? 1 : 0))
     }
     // Keyboard activation and focus remain available after result replacement.

@@ -1,6 +1,7 @@
 /* Index-only extensions of the main site's focal icon cards. Detail diagrams
    retain their explanatory layout. No viewport-sized grid assumptions. */
 .cs-index { position: relative; isolation: isolate; }
+html { scroll-padding-top: var(--cs-scroll-padding, 0px); }
 .cs-index::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background:
@@ -34,11 +35,20 @@
 .cs-stat-label { font-size: 14px; line-height: 1.45; max-width: 165px; padding-right: 12px; }
 .cs-stat-note { margin-top: 8px; padding-right: 12px; font-size: 14px; line-height: 1.45; }
 .cs-stat > .cs-arrow { position: absolute; right: 18px; bottom: 20px; }
-.cs-index .cs-filter-bar { position: sticky; top: 0; z-index: 20; padding-block: 14px; margin-bottom: 32px; background: #faf9f7e6; border-block: 1px solid #ded9e0cc; -webkit-backdrop-filter: blur(24px) saturate(115%); backdrop-filter: blur(24px) saturate(115%); }
+.cs-index .cs-browse { --cs-browse-sticky-height: 112px; position: relative; }
+.cs-index .cs-browse-sticky { position: sticky; top: 0; z-index: 30; margin-bottom: 32px; background: #faf9f7e6; border-block: 1px solid #ded9e0cc; -webkit-backdrop-filter: blur(24px) saturate(115%); backdrop-filter: blur(24px) saturate(115%); transition: transform 350ms cubic-bezier(.16, 1, .3, 1); }
+.cs-index .cs-browse-sticky.is-yielded { transform: translateY(-100%); }
+.cs-index .cs-browse-context { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #ded9e099; color: var(--cs-ink); font-size: 14px; line-height: 1.4; letter-spacing: .03em; }
+.cs-index .cs-browse-context > span { display: block; width: 100%; padding-block: 12px; }
+.cs-index .cs-filter-bar { min-height: 64px; padding-block: 9px; }
 .cs-index .cs-filter-bar .cs-filters { margin-block: 0; gap: 8px; }
 .cs-index .cs-filters button { min-height: 44px; }
 .cs-index .cs-filters button:focus-visible { outline-offset: 2px; }
-.cs-index .cs-filter-bar:target { scroll-margin-top: 0; }
+.cs-index .cs-browse-sticky:target { scroll-margin-top: calc(var(--cs-browse-sticky-height) * -1); }
+.cs-index :is(#filtered-outcomes, #filtered-stories) { scroll-margin-top: 16px; }
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .cs-index .cs-browse-sticky { background: #faf9f7; }
+}
 .cs-index .cs-featured { border-radius: 32px; background: #e8e1ec88; }
 .cs-index .cs-featured-art { background: linear-gradient(140deg, #ffffff70, #e8e1ecaa); }
 .cs-index .cs-featured-copy { background: linear-gradient(130deg, #ffffff8c, #e8e1ec88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
@@ -105,7 +115,8 @@
   .cs-stat { min-height: 190px; }
   .cs-stat > strong { font-size: clamp(36px, 11vw, 42px); }
   .cs-stat-top i { display: inline; font-size: 19px; }
-  .cs-index .cs-filter-bar { padding-block: 10px; }
+  .cs-index .cs-filter-bar { padding-block: 5px; }
+  .cs-index .cs-browse-context > span { padding: 10px 190px 10px 20px; }
   .cs-index .cs-filters { flex-wrap: nowrap; overflow-x: auto; padding: 5px; scrollbar-width: thin; }
   .cs-index .cs-filters button { flex-shrink: 0; font-size: 14px; min-height: 44px; }
   .cs-index .cs-outcome-card, .cs-index .cs-outcome-card:nth-last-child(-n + 2), .cs-index .cs-outcome-card:last-child:nth-child(odd) { grid-column: 1 / -1; display: flex; }
@@ -117,6 +128,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .cs-index::before { animation: none; }
+  .cs-index .cs-browse-sticky { transition: none; }
   .cs-index .cs-stat, .cs-index .cs-icon-card { transition: none; }
   .cs-index .cs-icon-card .thinking-icon-anchor { transform: translate(-50%, -50%); }
   .cs-index .cs-icon-card .thinking-icon, .cs-index .cs-icon-card .thinking-geometry { transform: none; }

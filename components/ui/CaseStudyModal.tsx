@@ -465,7 +465,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       return (
         <div
           className={cn(
-            'row text-center',
+            'row text-center modal-icon-grid',
             `row-cols-${block.cols ?? 2}`,
             block.colsLg && `row-cols-lg-${block.colsLg}`
           )}

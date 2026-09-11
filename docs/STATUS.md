@@ -1,5 +1,32 @@
 # Status
 
+## September 11, 2026: independent acceptance candidate, not release-ready
+
+Independent Astra/medium acceptance started from 25c748bb93bf6b224c7f249a0b1ae9481c14d6c8
+on codex/website-art-layout-20260910 in worktree 6fa6. Actual task metadata confirms
+gpt-6-astra / medium. Fresh remote main remains e6b3672.
+
+Bounded fixes wrap the homepage hero, navigation, modal titles/prose and legacy
+diagram labels; keep modal close targets at 44px; stack narrow modal icon grids;
+allow Full Stack captions to wrap; contain decorative wave overflow; and give the
+active Full Stack/Resume navigation dark text. No copy, B edit or source data change.
+Development all-modal checks pass at 320/375; further final export checks follow.
+Whole-repository ESLint fails in generated and archived files; authored-source lint
+and TypeScript pass. The initial 375px sticky timeout passed its focused rerun.
+
+Release remains blocked by ACC-B01: six new supporting schematics clip/overlap at
+200% text. A concrete return is appended to checkpoint B with local evidence.
+Firefox is installed but Computer Use stopped before navigation because URL policy
+is unsupported; no Firefox pass. Actual tab visibility was attempted in isolated
+Chromium but never became hidden; no native hidden-tab pass. Physical devices,
+WebKit, actual browser UI zoom and CI Node 20 are still unverified. This candidate
+checkpoint precedes the integrated export matrix; old labels do not accept it.
+
+Only this task's lock is held. The development preview is 3012; existing export
+3011 will be rebuilt after verified owned-process shutdown. No push, PR, merge,
+deployment, inference, browser download, paid fallback or reset. Recovery is
+25c748bb93bf6b224c7f249a0b1ae9481c14d6c8; preserve later work with reviewed reverts.
+
 ## September 11, 2026: imagery and modal consistency complete
 
 Checkpoint B completes every remaining visual disposition in

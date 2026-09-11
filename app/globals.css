@@ -1702,3 +1702,34 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 @media (prefers-reduced-motion: reduce) {
   .hero-case-studies-link i { animation: none; }
 }
+/* Acceptance: long labels and enlarged text must remain inside reading surfaces. */
+#hi .hero-title { white-space: normal; overflow-wrap: anywhere; }
+#resume li, .thinking-copy, .modal-body { overflow-wrap: anywhere; }
+.thinking-panel { flex-wrap: wrap; }
+.modal-title { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.modal-title > span { min-width: 0; }
+.modal-header .btn-close-modal { flex: 0 0 44px; width: 44px; height: 44px; }
+.modal-body { min-width: 0; min-height: 0; }
+.modal-intro { grid-template-columns: minmax(0, 1fr); }
+.modal .progress-bar { white-space: normal; overflow-wrap: anywhere; }
+.modal .progress-bar > strong { min-width: 0; }
+.modal .result { overflow-wrap: anywhere; }
+@container (min-width: 900px) {
+  .modal-intro { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+}
+@media (max-width: 575px) {
+  .modal-intro-copy { padding: 16px; }
+  .modal-body { padding: 16px; }
+  .modal-full-bleed > .modal-body { padding: 0; }
+}
+#the-menu.the-menu .btn { white-space: normal; overflow-wrap: anywhere; }
+#the-menu.the-menu .btn.results.active { color: #1b1502; }
+#the-menu.the-menu .btn.resume.active { color: #0b110b; }
+@media (max-width: 575px) {
+  .modal-title { gap: 8px; padding-right: 8px; }
+}
+@container (max-width: 28rem) {
+  .modal-icon-grid > .col { width: 100%; }
+}
+/* Decorative wave geometry may extend beyond its SVG viewBox, not the page. */
+.waves-wrapper { overflow-x: clip; }

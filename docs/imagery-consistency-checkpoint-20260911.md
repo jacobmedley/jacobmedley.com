@@ -113,3 +113,19 @@ implementation.
 Rollback for checkpoint B is checkpoint A commit `5d312dc`; use a reviewed revert
 instead of resetting shared history. External resume masters, standalone-dashboard
 publication links and shared Genesis coordinator files were not edited.
+
+## Independent acceptance return, September 11, 2026
+
+ACC-B01 is release-blocking on checkpoint B and remains open for Sol. At 320px
+with root text enlarged to 200%, all six new supporting schematics lose visible
+content: a 264px central hub is clipped by a 212px-wide frame, and flow steps extend
+below the fixed 280px height. The evidence includes enlarged-dental-platform.png,
+enlarged-dental-mvp-one.png and enlarged-art.json under
+scripts/parity/shots/acceptance-20260911/. The first rendering of a hub already
+places overlapping orbit labels under its central circle. This needs a deliberate
+small-container/large-text composition that preserves every label and relationship,
+with content-driven height. Keep B47, source narrative and originals. Do not mark
+the old imagery suite as evidence of text-resize acceptance; it only measured outer
+fit. Independent acceptance fixed shared title/prose/legacy-grid wrapping but did
+not redesign these six new diagrams. See the final release acceptance matrix for
+exact revision and remaining coverage. No publication authorized by this return.

@@ -807,9 +807,17 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-thumb-photo:hover { transform: none; }
 .thinking-thumb-photo:hover .thinking-media,
 .thinking-thumb-photo:focus-visible .thinking-media { transform: scale(1.1); transition-duration: 5.5s; transition-timing-function: cubic-bezier(.18, .72, .3, 1); }
-.thinking-photo-image { animation: photo-idle 11s ease-in-out infinite alternate; transition: transform .55s cubic-bezier(.16, 1, .3, 1); }
+.thinking-photo-image { animation: photo-idle 10s ease-in-out infinite alternate; transition: transform .55s cubic-bezier(.16, 1, .3, 1); }
+.thinking-item:nth-child(3n + 2) .thinking-photo-image,
+.thinking-item:nth-child(3n + 2) .thinking-icon-anchor,
+.thinking-item:nth-child(3n + 2) .thinking-icon,
+.thinking-item:nth-child(3n + 2) .thinking-geometry > i { animation-delay: -3s; }
+.thinking-item:nth-child(3n) .thinking-photo-image,
+.thinking-item:nth-child(3n) .thinking-icon-anchor,
+.thinking-item:nth-child(3n) .thinking-icon,
+.thinking-item:nth-child(3n) .thinking-geometry > i { animation-delay: -6s; }
 .thinking-thumb-photo:hover .thinking-photo-image,
-.thinking-thumb-photo:focus-visible .thinking-photo-image { animation-play-state: paused; transform: scale(1.035); }
+.thinking-thumb-photo:focus-visible .thinking-photo-image { animation-play-state: paused; transform: scale(1.075); }
 .thinking-media-icon { --art-center-y: calc(50% - 47px); display: grid; place-items: center; padding-bottom: 94px; background: linear-gradient(135deg, #fffdf8 0%, #f1e8cb 100%); }
 .thinking-icon-anchor { position: absolute; z-index: 2; top: var(--art-center-y); left: 50%; display: grid; place-items: center; width: var(--thinking-anchor-size); height: var(--thinking-anchor-size); border: 1px solid rgba(127, 100, 10, .48); border-radius: 50%; background: rgba(255, 255, 255, .46); -webkit-backdrop-filter: blur(10px) saturate(120%); backdrop-filter: blur(10px) saturate(120%); transform: translate(-50%, -50%); transform-origin: center; transition: transform var(--thinking-anchor-transition) cubic-bezier(.2, .8, .2, 1), box-shadow var(--thinking-anchor-transition) ease; will-change: transform; }
 .thinking-icon { font-size: var(--thinking-icon-size); color: #7f640a; transition: transform var(--thinking-anchor-transition) cubic-bezier(.2, .8, .2, 1); }
@@ -820,8 +828,13 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-thumb-icon .thinking-geometry > i { animation: geometry-idle 8s ease-in-out infinite alternate; }
 .thinking-art-marketing-auto .thinking-geometry { animation: personalization-rotate 30s linear infinite; }
 .thinking-art-marketing-auto .thinking-geometry > i { animation-duration: 7s; }
-.thinking-connections { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.thinking-connections line { vector-effect: non-scaling-stroke; stroke: currentColor; stroke-width: .7; stroke-opacity: .32; stroke-dasharray: 5 8; animation: connector-flow 5s linear infinite; }
+.thinking-connections { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; animation: network-field-idle 14s ease-in-out infinite alternate; }
+.thinking-connections line { vector-effect: non-scaling-stroke; stroke: currentColor; stroke-width: .65; stroke-opacity: .28; animation: connector-flow 6s ease-in-out infinite alternate; }
+.thinking-connections line:nth-child(3n + 2) { animation-delay: -2s; }
+.thinking-connections line:nth-child(3n) { animation-delay: -4s; }
+.thinking-network-node { position: absolute; z-index: 1; aspect-ratio: 1; border: 1.5px solid currentColor; border-radius: 50%; background: rgba(255, 255, 255, .72); box-shadow: 0 0 0 3px rgba(127, 100, 10, .12), inset 0 0 0 2px rgba(127, 100, 10, .16); translate: -50% -50%; animation: network-node-pulse 7s ease-in-out infinite alternate; }
+.thinking-network-node-1 { opacity: .62; scale: .86; }
+.thinking-network-node-2 { background: currentColor; opacity: .82; box-shadow: 0 0 0 3px rgba(255, 255, 255, .72), 0 0 0 5px rgba(127, 100, 10, .16); }
 
 /* Experimentation: a blurred focal lens over a rotating, expanding triangle fractal. */
 .thinking-art-split-test { --thinking-icon-size: 56px; }
@@ -835,22 +848,8 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 .thinking-art-split-test .thinking-geometry > i:nth-child(7) { width: 482px; background: rgba(127, 100, 10, .035); transform: translate(-50%, -50%) rotate(87deg); }
 .thinking-art-split-test .thinking-geometry > i:nth-child(8) { width: 562px; background: rgba(127, 100, 10, .022); transform: translate(-50%, -50%) rotate(105deg); }
 
-/* Service availability: mixed empty, partial, and filled signals radiate from the anchor. */
-.thinking-art-call-center-ux .thinking-geometry > i { display: block; width: 13px; height: 13px; border-width: 1px; border-radius: 50%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3n) { background: rgba(127, 100, 10, .65); }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3n + 2) { background: rgba(127, 100, 10, .22); }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(1) { top: 18%; left: 20%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(2) { top: 11%; left: 37%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(3) { top: 8%; left: 59%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(4) { top: 17%; left: 78%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(5) { top: 34%; left: 12%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(6) { top: 31%; left: 31%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(7) { top: 30%; left: 68%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(8) { top: 36%; left: 85%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(9) { top: 52%; left: 20%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(10) { top: 59%; left: 38%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(11) { top: 57%; left: 62%; }
-.thinking-art-call-center-ux .thinking-geometry > i:nth-child(12) { top: 50%; left: 79%; }
+/* Service availability: a dense connected-node field behind the central anchor. */
+.thinking-art-call-center-ux .thinking-geometry > i { display: none; }
 
 /* Personalization: layered action lines converge like a warp-speed field. */
 .thinking-art-marketing-auto .thinking-geometry > i { display: block; width: 96px; height: 1px; border-top-width: 1px; }
@@ -924,10 +923,16 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .thinking-thumb-icon:hover .thinking-icon,
   .thinking-thumb-icon:hover .thinking-geometry,
   .thinking-thumb-icon:hover .thinking-geometry > i,
+  .thinking-thumb-icon:hover .thinking-connections,
+  .thinking-thumb-icon:hover .thinking-connections line,
+  .thinking-thumb-icon:hover .thinking-network-node,
   .thinking-thumb-icon:focus-visible .thinking-icon-anchor,
   .thinking-thumb-icon:focus-visible .thinking-icon,
   .thinking-thumb-icon:focus-visible .thinking-geometry,
-  .thinking-thumb-icon:focus-visible .thinking-geometry > i { animation-play-state: paused; }
+  .thinking-thumb-icon:focus-visible .thinking-geometry > i,
+  .thinking-thumb-icon:focus-visible .thinking-connections,
+  .thinking-thumb-icon:focus-visible .thinking-connections line,
+  .thinking-thumb-icon:focus-visible .thinking-network-node { animation-play-state: paused; }
   .thinking-thumb-icon:hover .thinking-icon-anchor,
   .thinking-thumb-icon:focus-visible .thinking-icon-anchor { transform: translate(-50%, -50%) scale(var(--thinking-hover-anchor-scale)); box-shadow: 0 18px 38px rgba(91, 70, 8, .14); }
   .thinking-thumb-icon:hover .thinking-icon,
@@ -950,12 +955,14 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   .thinking-thumb-icon .thinking-geometry > i:nth-child(3n) { animation: thinking-depth-far-mobile var(--thinking-mobile-far-duration) ease-in-out infinite; }
 }
 @keyframes featured-image-idle { from { transform: scale(1); } to { transform: scale(1.018); } }
-@keyframes photo-idle { from { transform: scale(1); } to { transform: scale(1.025); } }
-@keyframes anchor-idle { from { transform: translate(-50%, -50%) scale(1); } to { transform: translate(-50%, -50%) scale(1.035); } }
-@keyframes icon-idle { from { transform: scale(1); } to { transform: scale(1.025); } }
-@keyframes geometry-idle { from { translate: 0 0; scale: 1; opacity: .88; } to { translate: 2px -3px; scale: 1.025; opacity: 1; } }
+@keyframes photo-idle { from { transform: scale(1.015) translate3d(-.6%, 0, 0); } to { transform: scale(1.065) translate3d(.8%, -.7%, 0); } }
+@keyframes anchor-idle { from { transform: translate(-50%, -50%) scale(1); } to { transform: translate(-50%, -50%) scale(1.065); } }
+@keyframes icon-idle { from { transform: scale(.98) rotate(-1deg); } to { transform: scale(1.055) rotate(1deg); } }
+@keyframes geometry-idle { from { translate: -3px 2px; scale: .97; opacity: .78; } to { translate: 6px -7px; scale: 1.065; opacity: 1; } }
 @keyframes personalization-rotate { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
-@keyframes connector-flow { to { stroke-dashoffset: -26; } }
+@keyframes connector-flow { from { stroke-opacity: .18; } to { stroke-opacity: .46; } }
+@keyframes network-field-idle { from { transform: scale(1.01) translate3d(-.8%, .5%, 0); opacity: .74; } to { transform: scale(1.075) translate3d(.9%, -.8%, 0); opacity: 1; } }
+@keyframes network-node-pulse { from { filter: blur(0); } to { filter: blur(.35px); scale: 1.12; } }
 .motion-control { position: fixed; z-index: 960; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 8px 12px; border: 1px solid rgba(70, 49, 80, .28); border-radius: 999px; background: rgba(255, 255, 255, .88); color: #463150; box-shadow: 0 8px 24px rgba(48, 42, 53, .12); font: inherit; font-size: .8rem; cursor: pointer; backdrop-filter: blur(12px) saturate(120%); }
 .motion-control:hover, .motion-control:focus-visible { background: #fff; box-shadow: 0 10px 28px rgba(48, 42, 53, .18); }
 .motion-control span { font-size: .75rem; line-height: 1; }
@@ -1016,7 +1023,9 @@ html.motion-hidden .featured-work-plane:nth-child(3),
   .thinking-icon-anchor,
   .thinking-icon,
   .thinking-geometry,
-  .thinking-geometry > i { animation: none !important; transition-duration: .01ms !important; }
+  .thinking-geometry > i,
+  .thinking-connections,
+  .thinking-network-node { animation: none !important; transition-duration: .01ms !important; }
   .work-image, .thinking-photo-image { animation: none !important; }
   .thinking-connections line { animation: none !important; }
   .featured-work-interaction,

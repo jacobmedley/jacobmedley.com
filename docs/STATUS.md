@@ -1,5 +1,33 @@
 # Status
 
+## September 10, 2026: Stage 4 Full Stack motion and Call Center network follow-up
+
+Jacob's Full Stack motion and Call Center artwork comments are complete on
+`codex/website-refinement-stage1-20260909`, from `a9367f2`. All nine Full Stack
+cards now have more perceptible, staggered in-view idle motion while retaining
+Stage 3 pause, offscreen, hidden-tab, hover/focus and reduced-motion behavior.
+Text, badges, panels and hit areas remain stationary.
+
+The shared Call Center artwork now renders a deterministic field of 38 varied
+ring/filled nodes and 80 solid connections based on Jacob's supplied pattern
+reference. It appears on both the homepage card and standalone case-study surface,
+using each surface's existing palette. No visible copy, registered claims, source
+links or canonical diagrams changed.
+
+Changed files: `app/globals.css`, `app/case-studies/dashboard.css`,
+`components/ui/ThinkingConnections.tsx`, `scripts/parity/annotation-acceptance.mjs`,
+the new `scripts/parity/stage4-motion-network-acceptance.mjs`, and
+`docs/stage4-motion-network-checkpoint-20260910.md`.
+
+Checks passed: diff check, non-incremental TypeScript, targeted no-cache ESLint,
+focused normal/reduced-motion network acceptance, homepage annotation acceptance,
+Stage 4 featured-card acceptance and standalone dashboard acceptance. Browser
+review confirmed the Full Stack first row and zero horizontal overflow. The local
+preview is `http://localhost:3010/#full-stack`. No inference, push, PR, merge or
+deployment occurred. The local checkpoint containing this entry is reported in
+the handoff. Rollback is `a9367f2` after checking ownership; do not reset or clean
+the worktree.
+
 ## September 9, 2026: Stage 4 browser comments complete
 
 The seven browser comments following Stage 4 are complete on

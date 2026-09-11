@@ -77,10 +77,12 @@ for (const width of [375, 768, 974, 1191, 1200, 1440]) {
       }),
       iconAnchors: document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor').length,
       iconAnchorSizes: [...new Set([...document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor')].map((node) => {
-        const box = node.getBoundingClientRect()
-        return `${Math.round(box.width)}x${Math.round(box.height)}`
+        const style = getComputedStyle(node)
+        return `${Math.round(Number.parseFloat(style.width))}x${Math.round(Number.parseFloat(style.height))}`
       }))],
       geometryPieceCounts: [...document.querySelectorAll('.thinking-thumb-icon .thinking-geometry')].map((node) => node.children.length),
+      callCenterNetworkNodes: document.querySelectorAll('.thinking-art-call-center-ux .thinking-network-node').length,
+      callCenterNetworkLines: document.querySelectorAll('.thinking-art-call-center-ux .thinking-connections line').length,
       personalizationLines: [...document.querySelectorAll('.thinking-art-marketing-auto .thinking-geometry > i')].filter((node) => getComputedStyle(node).display !== 'none').length,
       personaRings: [...document.querySelectorAll('.thinking-art-personas .thinking-geometry > i')].filter((node) => getComputedStyle(node).display !== 'none').length,
       thinkingBadgeStyles: [...new Set(thinkingBadges.map((badge) => {
@@ -147,7 +149,7 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.heroButtonSize.join(',') !== '48,48' || result.heroButtonBorderWidth !== '0px' ||
   result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 || result.iconAnchorSizes.join(',') !== '140x140' ||
   result.personalizationLines !== 12 || result.personaRings !== 12 ||
-  result.geometryPieceCounts.join(',') !== '12,13,12,12,12,12' || result.thinkingBadgeStyles.length !== 1 ||
+  result.geometryPieceCounts.join(',') !== '12,51,12,12,12,12' || result.callCenterNetworkNodes !== 38 || result.callCenterNetworkLines < 60 || result.thinkingBadgeStyles.length !== 1 ||
   result.selectedSectionTitle !== 'Full Stack Designer' ||
   result.thinkingCards.filter((card) => card.kind === 'icon').length !== 6 ||
   result.thinkingCards.filter((card) => card.kind === 'photo').map((card) => card.id).join(',') !== 'wrong,reveal,viva' ||

@@ -1708,3 +1708,48 @@ and do not also expose toggle-button `aria-pressed` semantics. With an OS reduce
 motion preference, show the noninteractive status `Motion off: reduced motion`.
 The preference cannot be overridden here. This supersedes B42's proposed labels
 while implementing its action/state and reduced-motion distinction.
+
+## B47. Source-backed supporting imagery [APPLIED]
+
+Source: the September 11 release plan and its requirement to replace unresolved
+supporting cartoons with restrained, source-backed visual explanations. Scope is
+limited to the DentalPlans, Hydra, A/B testing, Personas and Personalization modal
+imagery named in `docs/release-plan-20260911.md`. This entry authorizes supporting
+diagram labels and accurate alternative text; it does not change project claims,
+measurements, titles, summaries or narrative prose.
+
+- DentalPlans platform diagram labels: `Shared Platform`, `Product Data`,
+  `Search & API`, `Promotions`, and `Deployment`. Alt text: `Shared ecommerce
+  platform connecting product data, search and APIs, promotions, and deployment.`
+- DentalPlans iteration one labels: `MVP 01`, `WordPress`, `Bootstrap`,
+  `Product`, and `Cart`. Alt text: `First MVP joining a WordPress storefront,
+  Bootstrap interface, product details, and cart.`
+- DentalPlans iteration two labels: `MVP 02`, `Two Brands`, `Shared Product
+  Data`, and `Shared Cart`. Alt text: `Second MVP connecting two branded
+  storefronts to shared product data and cart.`
+- DentalPlans iteration three labels: `MVP 03`, `Patterns`, `Components`,
+  `Microservices`, and `Properties`. Alt text: `Third MVP carrying shared
+  patterns and components through microservices to multiple properties.`
+- DentalPlans iteration four labels: `MVP 04`, `ZIP`, `Results`, and `Dentist
+  Profile`. Alt text: `Fourth MVP flow from ZIP search to results and a dentist
+  profile.`
+- Hydra supporting diagram labels: `Shared Vocabulary`, `Patterns`,
+  `Components`, `Brands`, and `Technology Stacks`. Alt text: `Hydra connecting
+  shared interface patterns and components across brands and technology stacks.`
+- The A/B testing lead uses the existing control and winning WebMD homepage
+  screenshots. Alt text: `WebMD homepage control` and `WebMD homepage, winning
+  variant V1`.
+- The Personas lead uses the existing source persona artifact. Alt text:
+  `Frugal Francine persona card with demographics, motivations, preferences,
+  channels, and reasons to buy.` The later duplicate presentation of that artifact
+  may be removed; its surrounding case-study narrative stays unchanged.
+- Retain the Personalization automation GIF and its existing static frame. The
+  registered alt remains `Animated walkthrough of the marketing automation
+  workflow`; the static frame remains decorative because it is the paused rendering
+  of the same content.
+
+The diagram labels above are explanatory interface copy derived only from the
+adjacent registered project narrative. They are not presented as original project
+artifacts or as new evidence. The five replaced DentalPlans cartoon files and the
+Hydra fantasy illustration remain in the repository as preserved originals but are
+removed from rendered project data.

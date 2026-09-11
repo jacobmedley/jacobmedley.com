@@ -120,6 +120,20 @@ export interface IconGridBlock {
   colsLg?: number // row-cols-lg-N, optional
 }
 
+export type SupportingArtKind =
+  | 'dental-platform'
+  | 'dental-mvp-one'
+  | 'dental-mvp-two'
+  | 'dental-mvp-three'
+  | 'dental-mvp-four'
+  | 'hydra'
+
+export interface SupportingArtBlock {
+  type: 'supporting-art'
+  kind: SupportingArtKind
+  alt: string
+}
+
 export type ProjectMedia =
   | {
       type: 'heading'
@@ -158,6 +172,7 @@ export type ProjectMedia =
   | ProgressDiagramBlock
   | SplitRowBlock
   | IconGridBlock
+  | SupportingArtBlock
   | { type: 'contributions' } // zero-config marker: renders project.contributions inline in media[]
 
 export interface ProjectBadge {
@@ -188,7 +203,7 @@ export interface Project {
   icon?: string // FA icon for work thumbs
   thumb?: ProjectImage // visual-design thumb background
   cardImage?: ProjectImage // feature-card image
-  brief: { image?: ProjectImage; paragraphs: string[] }
+  brief: { image?: ProjectImage; images?: ProjectImage[]; paragraphs: string[] }
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
   // Legacy ships two intro-row shapes. 'wide' (default) = plain `.row` with
   // image col-xl-10 / text col-xl-14. 'narrow' = `.row.justify-content-center`
@@ -506,7 +521,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle', bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform connecting product data, search and APIs, promotions, and deployment.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -530,7 +545,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: 'DentalPlans partner site MVP, iteration one', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'First MVP joining a WordPress storefront, Bootstrap interface, product details, and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -559,7 +574,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: 'DentalPlans partner site MVP, iteration two', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Second MVP connecting two branded storefronts to shared product data and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -580,7 +595,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: 'DentalPlans partner site MVP, iteration three', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Third MVP carrying shared patterns and components through microservices to multiple properties.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -600,7 +615,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: 'DentalPlans partner site MVP, iteration four', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Fourth MVP flow from ZIP search to results and a dentist profile.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -878,7 +893,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Why Hydra?' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra", shape: 'circle' }],
+        left: [{ type: 'supporting-art', kind: 'hydra', alt: 'Hydra connecting shared interface patterns and components across brands and technology stacks.' }],
         right: [
           {
             type: 'text',
@@ -1014,7 +1029,10 @@ export const projects: Project[] = [
     briefHeading: 'Never Stop Testing!',
     briefVariant: 'narrow',
     brief: {
-      image: { src: '/images/work/split01-modal/thumb.png', alt: '' },
+      images: [
+        { src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage control' },
+        { src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, winning variant V1' }
+      ],
       paragraphs: [
         'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
         "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
@@ -1398,7 +1416,7 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/kitchen-sink/persona-one.webp', alt: 'Example persona card for Frugal Francine' },
+      image: { src: '/images/work/kitchen-sink/Persona-Cards.png', alt: 'Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy.' },
       paragraphs: [
         'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
       ]
@@ -1409,14 +1427,7 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
     ],
     technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],
-    media: [
-      { type: 'heading', text: 'Example Persona' },
-      {
-        type: 'image',
-        src: '/images/work/kitchen-sink/Persona-Cards.png',
-        alt: 'Content Strategy'
-      }
-    ]
+    media: []
   },
   {
     id: 'reveal',

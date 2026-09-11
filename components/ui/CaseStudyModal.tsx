@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
 import { MotionToggle } from './MotionControls'
 import AnimatedStudyImage from './AnimatedStudyImage'
+import StudySupportingArt from './StudySupportingArt'
 import {
   type Project,
   type ProjectMedia,
@@ -328,6 +329,8 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       return <StyledListContent block={block} />
     case 'card':
       return <CardContent block={block} />
+    case 'supporting-art':
+      return <StudySupportingArt kind={block.kind} alt={block.alt} />
     default:
       return <MediaBlock block={block} />
   }
@@ -367,9 +370,10 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
         </div>
       )
     case 'image':
+    case 'supporting-art':
       return (
         <div className="row mb-6 justify-center">
-          <div className={block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
+          <div className={block.type === 'image' && block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
             <BlockContent block={block} />
           </div>
         </div>
@@ -830,7 +834,7 @@ function ModalContent({ project }: { project: Project }) {
         className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
         data-motion-root={featured || undefined}
       >
-        {project.brief.image && (
+        {(project.brief.image || project.brief.images) && (
           <div className="modal-intro-art">
             {featured ? (
               <div className="modal-project-art" aria-hidden="true">
@@ -838,14 +842,20 @@ function ModalContent({ project }: { project: Project }) {
                   <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
                 </div>
               </div>
-            ) : project.brief.image.src.endsWith('.gif') ? (
-              <AnimatedStudyImage src={project.brief.image.src} alt={project.brief.image.alt} />
+            ) : project.brief.images ? (
+              <div className="modal-brief-compare">
+                {project.brief.images.map((image) => (
+                  <img key={image.src} loading="lazy" className="img-fluid modal-brief-image" src={image.src} alt={image.alt} />
+                ))}
+              </div>
+            ) : project.brief.image!.src.endsWith('.gif') ? (
+              <AnimatedStudyImage src={project.brief.image!.src} alt={project.brief.image!.alt} />
             ) : (
               <img
                 loading="lazy"
                 className="img-fluid modal-brief-image"
-                src={project.brief.image.src}
-                alt={project.brief.image.alt}
+                src={project.brief.image!.src}
+                alt={project.brief.image!.alt}
               />
             )}
           </div>

@@ -1,5 +1,60 @@
 # Status
 
+## September 11, 2026: imagery and modal consistency complete
+
+Checkpoint B completes every remaining visual disposition in
+`docs/release-plan-20260911.md` on `codex/website-art-layout-20260910`, following
+checkpoint A `5d312dc`. Five DentalPlans presentation cartoons and Hydra's fantasy
+illustration are replaced in rendered data by six restrained, responsive schematics
+derived only from their adjacent source narrative. The A/B lead now shows the
+existing WebMD control/winner screenshots. Personas now leads with one copy of the
+existing Frugal Francine source artifact and accurate B47 alt text. Original files
+remain untouched.
+
+The Personalization automation GIF and its static pause frame are explicitly
+retained as the documented workflow because they carry meaningful process evidence
+and the required pause/reduced-motion behavior. Its supporting screenshots remain.
+B47 was registered before implementation and is now applied. No result, metric,
+role, project prose, title, summary, public route or canonical standalone diagram
+changed. Image generation was unnecessary.
+
+The shared modal media, badge, rule, button, arrow and corner sweep passed all 14
+modals. Supporting flows respond to their own container, including the 1100px split
+edge. The Education contact button now wraps within the viewport at 200% text; the
+focused result still records four pixels of pre-existing 320px page scroll width
+from transformed wave SVG geometry, not the button. Completed cards, modal
+full-bleed/native-scrollbar field, glass header/footer, resume, sticky navigation,
+motion controls, focus behavior and historic source screenshots are preserved.
+
+The final production build compiled, type-checked, generated 11 static pages and
+exported two route groups. Final `localhost:3011` runs passed annotation acceptance;
+the 11-width dashboard suite; all four Stage 4 card/motion/refinement/surface suites;
+housekeeping across 70 modal/viewport combinations and seven resume widths; Stage 5
+sticky acceptance; and the new five-width imagery suite. TypeScript, targeted ESLint
+and `git diff --check` also passed. An initial `127.0.0.1` invocation was rejected by
+the external icon kit and was not counted; the canonical-origin rerun was clean. The
+refinement sampler now isolates card glass from checkpoint A's sticky overlay.
+
+Detailed per-item provenance, retained/replaced inventory, failed-first-run
+dispositions and verification boundaries are in
+`docs/imagery-consistency-checkpoint-20260911.md`. Windows Chromium and Node 22.11.0
+were used; Firefox, WebKit, physical-device and full-WCAG coverage are not claimed,
+and CI Node 20 remains for release review. Final export preview PID 7888 serves this
+worktree at `http://localhost:3011/#work`; temporary development preview 3012 is
+stopped.
+
+The site has no public PDF/DOCX resume download or file under `public/`; its links
+target the in-page Resume. External Word v1r9, Principal IC v1r1, Design Systems
+v1r1 and designed PDF v2r3 remain assigned to the resume workstream and were not
+edited or claimed current by this checkpoint. Genesis review stayed ineligible due
+the profile-root mismatch, uncertified persistent lane ownership and laptop hold;
+local workload was zero, with no paid fallback, reset, download or runner repair.
+
+Rollback for checkpoint B is `5d312dc`; use a reviewed revert rather than resetting
+shared history. The final local commit and unique Exchange update follow this
+STATUS-last write. Independent acceptance, push, PR, merge and deployment remain
+intentionally unstarted.
+
 ## September 11, 2026: Stage 5 sticky headings complete
 
 Checkpoint A completes the original Stage 5 homepage and standalone sticky

@@ -214,6 +214,10 @@ try {
   assert.ok(results.artwork.palettes.some(([id, ink]) => id === 'hydra' && ink === '#582323'))
   const luminance = rgb => rgb.map(n => n / 255).map(n => n <= .04045 ? n / 12.92 : ((n + .055) / 1.055) ** 2.4).reduce((a, n, i) => a + n * [.2126, .7152, .0722][i], 0)
   await page.locator('.motion-control').evaluate(n => n.style.visibility = 'hidden')
+  // Stage 5's sticky section navigation may overlap an element screenshot
+  // after scrollIntoView. Hide it while this probe samples only the card's
+  // own glass field; sticky layering is covered by stage5 acceptance.
+  await page.locator('.section-heading-reserve').evaluateAll(nodes => nodes.forEach(n => { n.style.visibility = 'hidden' }))
   // Sample the actual light fields beneath text with glyphs temporarily hidden.
   // Keep the requested .4 glass intact, including its real blurred diagram layers.
   for (const copy of await page.locator('.featured-work-copy').all()) {

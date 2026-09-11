@@ -140,3 +140,51 @@ serving this worktree's `out/`. Temporary development preview PID **4056**, port
 3012, is stopped after acceptance. Other previews/worktrees are preserved.
 Clean committed tree and owned-lock release are verified at final handoff.
 **No push, PR, merge or deployment.**
+
+## Follow-up: continuous modal heroes
+
+Jacob's subsequent BumblebeeMD annotation supersedes the separate artwork tile
+from `308993598e5e496a6e2d21fffeecad62ba316e84`. The five featured brand modals
+(WebMD, DentalPlans, BumblebeeMD, Hydra and One Park Financial) now carry their
+card's branded field and motion across the entire intro. The logo sits on the
+left and the original brief, contributions and technologies sit in a right-side
+glass panel. Below the 900px modal-container breakpoint, both stack over the same
+field. The panel uses 40% white and 3px backdrop blur. Copy and evidence remain
+unchanged; the other nine modal intros retain their existing layouts.
+
+The production check caught the CSS optimizer dropping the standard blur
+declaration when it preceded its WebKit version. Corrected declaration order
+restores computed `blur(3px)` in the hero and shared modal header/footer.
+
+Verification: production build/export (11 pages), TypeScript, targeted ESLint and
+diff checks passed. The extended housekeeping harness passed 42 modal/viewport
+combinations at 375, 1100 and 1440px, plus three resume widths. It checks the field
+covering the hero, right-side/stacked placement, actual glass/blur styles, images,
+glyphs, overflow, keyboard close/focus return and synchronized motion controls.
+Pause/resume, a stable nonblank frozen GIF and live reduced-motion preference
+changes passed. No page errors or recorded failures. Desktop in-app and saved
+phone screenshots were visually reviewed. Evidence:
+`scripts/parity/shots/modal-hero/` (gitignored).
+
+Sampled featured-hero body contrast: WebMD **8.56:1**, DentalPlans **8.03:1**,
+BumblebeeMD **11.52:1**, Hydra **8.68:1**, One Park Financial **9.72:1**.
+These are rendered samples, not every animation frame or a full accessibility
+claim. The earlier six regression suites were not repeated for this scoped
+follow-up; browser/device limitations and larger review items above remain open.
+
+Five changed files: `components/ui/CaseStudyModal.tsx`, `app/globals.css`,
+`scripts/parity/housekeeping-acceptance.mjs`, this report and `docs/STATUS.md`
+(written last). Same branch/worktree; rollback is `3089935`. The follow-up commit
+is identified in the final handoff and unique Genesis update. No delegation or
+local inference was needed for this change.
+
+Fresh Exchange records were read. The historical malformed Stage 3 event still
+prevents the status helper from completing; it was preserved. Manual matching
+fingerprint at 2026-09-11T06:32:30.519591+00:00:
+`359fc0f29335557414041c1de5ef309b04f57619e7c9a9d04a20b2309e6d5c43`.
+Direction event: `20260911T062329Z-a4c804eaf91e4fceacf5bbe92db3d936`.
+
+Current production-export preview supersedes the PID above: **36592**, serving
+this worktree's `out/` at `http://localhost:3011/#work`. The updated BumblebeeMD
+modal is left open in the review tab. Previous owned preview processes were
+stopped after exact command/path verification. No push, PR, merge or deployment.

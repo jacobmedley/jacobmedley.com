@@ -1,5 +1,32 @@
 # Status
 
+## September 11, 2026: continuous featured modal heroes
+
+Jacob's latest annotation replaces the isolated artwork tile with a continuous
+branded, animated background across each featured modal intro. WebMD, DentalPlans,
+BumblebeeMD, Hydra and One Park Financial have left-side artwork and a right-side
+40% white / 3px blur panel containing the original brief and badges. Narrow
+containers stack over the same field. No copy or source evidence changed.
+
+Implemented on `codex/website-art-layout-20260910`, worktree `6fa6`, from rollback
+`308993598e5e496a6e2d21fffeecad62ba316e84`. Build/export, TypeScript, targeted ESLint
+and diff checks passed. Extended acceptance passed 42 modal/viewport combinations
+at 375, 1100 and 1440px, including field coverage, computed glass, placement,
+overflow, images, glyphs, focus return and motion. Sampled hero body contrast ranges
+from 8.03:1 to 11.52:1. Desktop and phone visuals reviewed; no full WCAG claim.
+
+Five-file inventory, measured results, prior suite limitations, Exchange event and
+remaining larger work are in `docs/housekeeping-report-20260911.md`, under
+"Follow-up: continuous modal heroes". The historical malformed Exchange event
+still prevents its helper from completing; fresh manual reads/fingerprint and a
+unique final update preserve the handoff. No shared coordinator files changed.
+
+Production export preview: `http://localhost:3011/#work`, PID **36592**, serving
+this worktree's `out/`. This supersedes the prior preview PID below. The final
+handoff records the local commit and verifies clean state/owned-lock release.
+No push, PR, merge or deployment. Bigger imagery, Stage 5 and full Stage 6/7 work
+remain at the earlier review checkpoint.
+
 ## September 11, 2026: overnight resume and modal housekeeping
 
 Jacob's latest request prioritizes the website resume, all-modal consistency and

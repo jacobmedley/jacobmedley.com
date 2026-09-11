@@ -797,12 +797,15 @@ function ModalContent({ project }: { project: Project }) {
   const featured = ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'].includes(project.id)
   return (
     <>
-      <div className="modal-intro">
+      <div
+        className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
+        data-motion-root={featured || undefined}
+      >
+        {featured && <FeaturedField projectId={project.id} />}
         {project.brief.image && (
           <div className="modal-intro-art">
             {featured ? (
-              <div className={`modal-project-art featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
-                <FeaturedField projectId={project.id} />
+              <div className="modal-project-art" aria-hidden="true">
                 <div className="featured-work-art">
                   <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
                 </div>

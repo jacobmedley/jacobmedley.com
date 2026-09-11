@@ -70,7 +70,25 @@ try {
         const icons = [...body.querySelectorAll('.modal-badges i')]
         const close = n.querySelector('.modal-header button').getBoundingClientRect()
         const glyphs = icons.map(i => ({ size: getComputedStyle(i).fontSize, color: getComputedStyle(i).color, content: getComputedStyle(i,'::before').content }))
+        const hero = n.querySelector('.modal-featured-hero')
+        let heroCheck = null
+        if (hero) {
+          const scene = hero.querySelector(':scope > .featured-work-scene').getBoundingClientRect()
+          const bounds = hero.getBoundingClientRect()
+          const copy = hero.querySelector(':scope > .modal-intro-copy')
+          const art = hero.querySelector(':scope > .modal-intro-art').getBoundingClientRect()
+          const copyBounds = copy.getBoundingClientRect()
+          const columns = getComputedStyle(hero).gridTemplateColumns.split(' ').length
+          heroCheck = {
+            fullField: scene.left <= bounds.left+1 && scene.right >= bounds.right-1 && scene.top <= bounds.top+1 && scene.bottom >= bounds.bottom-1,
+            glass: getComputedStyle(copy).backgroundColor,
+            blur: getComputedStyle(copy).backdropFilter,
+            columns,
+            placement: columns === 2 ? copyBounds.left >= art.right : copyBounds.top >= art.bottom,
+          }
+        }
         return {
+          hero: heroCheck,
           overflow: Math.max(0, body.scrollWidth - body.clientWidth),
           badImages: images.filter(i => !i.complete || i.naturalWidth === 0).map(i=>i.getAttribute('src')),
           radii: [...new Set(images.map(i => getComputedStyle(i).borderRadius))],
@@ -83,10 +101,13 @@ try {
         }
       })
       results.modals.push({ width, id, ...check })
+      if (check.featured) assert.ok(check.hero?.fullField && check.hero.placement && check.hero.glass === 'rgba(255, 255, 255, 0.4)' && check.hero.blur === 'blur(3px)', `${id}: continuous field and glass hero`)
       if (check.overflow > 1 || check.badImages.length || check.radii.some(r => parseFloat(r) < 16) || check.closeSize.some(v => v < 44) || !check.title || check.glyphs.some(g => g.size !== '20px' || ['none','normal','""'].includes(g.content))) results.failures.push({ width, id, check })
       if ([375,1440].includes(width)) await page.screenshot({ path: `${output}/${id}-${width}.png` })
+      if (width === 1440 && check.featured) {
+        results.contrast[`modal-${id}`] = await sampleContrast(dialog.locator('.modal-intro-copy > p').first())
+      }
       if (width === 1440 && id === 'webmd') {
-        results.contrast.modalBody = await sampleContrast(dialog.locator('.modal-intro-copy > p').first())
         results.contrast.closeButton = await sampleContrast(dialog.locator('.modal-footer .btn-close-modal'))
       }
       await page.keyboard.press('Tab')

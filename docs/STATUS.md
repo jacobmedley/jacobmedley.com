@@ -1,5 +1,50 @@
 # Status
 
+## September 12, 2026: editable Figma source complete and dev restored
+
+Jacob selected `Medley In Design` on Full/Pro as the standing owner for Figma
+artifacts. The editable Call Center XD source is
+`https://www.figma.com/design/X9tbhBL2oYEBxwcYEKr5UT`. Its Cover, Foundations,
+Components and Wireframes pages include 28 scoped variables, shared text and
+effect styles, a reusable `Call Center State` component set with Open, Busy and
+Closed variants, a five-step availability flow built from editable vectors, and
+desktop and 375px mobile assemblies. Manrope is the documented Figma fallback
+because the site's primary `urw-form` face was unavailable in the connected font
+inventory.
+
+The final Figma audit found six linked state-card instances, no unnamed nodes and
+no active placeholders. Visual review confirmed equal flow-card distribution,
+centered large icons, proportional card padding, readable semantic state tints,
+Title Case labels, uncropped content and the intended one-column mobile order.
+During construction, validation caught and corrected an inherited white text
+fill, opaque backgrounds where light state tints were intended, one exact blank
+duplicate row from a failed outer call and one completed-section placeholder.
+
+The local development failure was a stale same-worktree Next.js parent/child
+pair returning the framework 404. Only those verified processes were stopped;
+the project was restarted with Turbopack on `http://localhost:3012/`. A direct
+request to `/` returned HTTP 200 and the expected `Jacob Medley, Product & Design
+Leader` title, and the in-app browser rendered the page and Call Center XD modal.
+The restored preview remains running for Jacob.
+
+The website implementation remains in recovery commit `a0c992b`; this
+continuation records the Figma source, QA evidence and restored-preview state.
+`reveal-clear-01.jpg` remains untouched until Jacob supplies or approves a
+corrected source. No push, PR, merge, deployment, dependency change, paid
+fallback or additional spending occurred.
+
+Model report: GPT-6 Astra at high reasoning was the only model used for this
+continuation; there was no silent model switch, subagent run or local-model
+inference. The task stayed in the ambiguous design/recovery class for which
+Astra/high was selected. Exact token and billing telemetry is unavailable in
+this task, so usage is reported as an estimate rather than a measured charge:
+approximately 45,000-75,000 cloud tokens across implementation, visual QA,
+Figma construction, retries and documentation, with 0 local-inference tokens.
+Deterministic shell, browser and Figma inspection is estimated to have avoided
+roughly 15,000-30,000 additional cloud tokens; that is an avoided-work estimate,
+not measured savings, and it does not imply that local tools eliminate cloud
+orchestration cost.
+
 ## September 12, 2026: Resume timeline and modal-comment continuation
 
 Jacob's Astra/high continuation is implemented locally from recovery commit

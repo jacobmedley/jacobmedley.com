@@ -54,10 +54,25 @@ does not authorize a push, PR, merge or deployment.
 
 ## Figma dependency
 
-The editable call-center wireframe source is pending a plan choice. The Figma
-account exposes two destinations: `Jacob Medley's team` on a Starter plan and
-`Medley In Design` on a Full/Pro plan. The latter is recommended. No file was
-created without the required ownership choice.
+Resolved September 12: Jacob selected `Medley In Design` on Full/Pro as the
+standing owner for Figma artifacts. The editable call-center source is
+`https://www.figma.com/design/X9tbhBL2oYEBxwcYEKr5UT`. It contains source-derived
+foundations, a reusable three-variant availability-state component, editable
+five-step flow vectors, and desktop and 375px mobile assemblies. Manrope is used
+as the site's declared fallback because `urw-form` was unavailable in the
+connected Figma font inventory.
+
+## Continuation outcome
+
+Resume is now the registered expandable five-entry timeline described by the
+handoff. The later browser comments also removed all visible motion controls,
+the A/B leading divider and the two selected follow-up images; tightened and
+rebalanced the call-center schematic; centered shared icon circles; added the
+reviewed contextual Title Case icon-and-rule heading treatment; padded the Wrong
+mark; and moved Reveal concept cards below the hero with brand-color variance.
+Recovery commit `a0c992b` contains that implementation. The current development
+preview was subsequently restored at `http://localhost:3012/` after a verified
+stale same-worktree Next.js process was returning the framework 404.
 
 ## Verification
 

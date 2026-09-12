@@ -76,8 +76,10 @@ and 1875 CSS pixels.
   or forced-uppercase declaration.
 - `npm run build`: not accepted in this pass. Next.js reached optimized-build
   startup, then the active development preview's `.next/trace` handle returned
-  Windows `EPERM`. The user-owned preview process was not stopped. TypeScript,
-  lint, whitespace and live-browser verification are the accepted evidence.
+  Windows `EPERM`. A later continuation confirmed that stale same-worktree
+  preview was returning the Next.js 404, stopped only its verified parent and
+  child processes, and restarted the project successfully on port 3012. An HTTP
+  request to `/` then returned 200 with the expected portfolio title.
 
 ## Copy and asset fidelity
 
@@ -86,14 +88,29 @@ unchanged. B50–B52 register the disclosure label and the browser-authorized
 presentation changes. `reveal-clear-01.jpg` is unchanged; its replacement remains
 blocked until Jacob supplies or approves a corrected source.
 
-## Open dependency
+## Editable Figma source
 
-The editable call-center Figma source still needs an owner. Figma exposes
-`Medley In Design` (Full/Pro, recommended) and `Jacob Medley's team` (Starter).
-No plan was guessed and no file was created without Jacob's selection.
+Jacob selected `Medley In Design` (Full/Pro) as the standing Figma owner. The
+editable source is:
+
+`https://www.figma.com/design/X9tbhBL2oYEBxwcYEKr5UT`
+
+The file contains Cover, Foundations, Components and Wireframes pages. Its
+`Call Center State` component set has Open, Busy and Closed variants plus
+editable Brand, Status, Status message, Offer and Action properties. Desktop
+and 375px mobile assemblies use six component instances rather than detached
+copies. The five availability steps are editable vectors and text.
+
+Figma validation found and corrected an inherited white status-copy fill, solid
+state backgrounds where 9% tints were intended, one exact duplicate blank row
+from a failed outer call, and one completed-section placeholder. The final
+audit found no unnamed nodes or active placeholders. All 39 wireframe text
+layers use Manrope, the site's declared fallback because `urw-form` was not
+available in Figma. Final screenshots show equal flow cards, centered icons,
+readable state tints, uncropped content and one-column mobile ordering.
 
 ## Result
 
-The implemented website scope passes the available acceptance evidence. The
-larger handoff remains blocked only on the Figma plan choice and the separately
-deferred Reveal source replacement.
+The implemented website scope and editable call-center Figma handoff pass the
+available acceptance evidence. Only the separately deferred Reveal source
+replacement remains open.

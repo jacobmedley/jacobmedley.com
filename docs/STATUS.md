@@ -1,5 +1,70 @@
 # Status
 
+## September 12, 2026: mechanical visual system and supplied brand assets
+
+The authorized continuation is complete in the isolated 4b5e worktree on
+`codex/website-visual-system-20260912`, from rollback baseline `9508686`.
+The recovery commit containing this status is the implementation checkpoint;
+its exact ID is recorded in the subsequent Genesis Exchange completion event.
+
+Shared nested surfaces are shadow-free, icons scale proportionally, section
+plaques are circular and themed, and contribution/technology groups retain
+their meaning with distinct technology badges. Icon thumbnails and modal fields
+share project gradients. Reveal uses its two registered section headings and
+Roadmap's standalone post-hero image is removed. Original source images remain.
+
+Resume uses five real employer marks, tighter company/title spacing, faded
+edges, four icon-left leadership cards and native More/Less disclosures with
+reversible height transitions. The hero now uses one finite mechanical clock
+with measured role widths, staged braces and a settled ending. Hydra uses an
+editable SVG component schematic and Jacob's supplied mark. B53 is APPLIED;
+every employment and leadership string matches the baseline exactly.
+
+The four new files in `public/assets/references` are byte-identical copies of
+Jacob's HEC, MOA, Bluegreen and Hydra SVGs. Changed implementation files are
+`app/{globals.css,visual-system.css,layout.tsx}`, FullStackSection, HeroSection,
+ResumeSection, CaseStudyModal, FeaturedArtwork, KineticHeroIdentity,
+ExperienceDisclosure, MotionControls and `lib/data/projects.ts`. Documentation
+changes include the copy register, implementation record, design QA and compact
+JSON evidence; the focused browser acceptance adapter is in scripts/parity.
+
+Verification: TypeScript, ESLint, production build (11 static pages), source
+fidelity and git whitespace checks passed. Eight layout settings cover six
+widths (320, 375, 768, 992, 1440, 1875) plus 200% text at 320/992. All 112 modal
+cases passed; minimum technology text contrast is 5.35:1. Keyboard disclosure,
+focus return, rapid reversal, reduced motion, offscreen suspension, sampled
+intro/role states and settled resize passed. The enlarged 320px intro has zero
+page overflow at eight sampled phases. Validation repaired brace intersection,
+invisible-tail overflow, settled replay after resize and fragmented mobile nav
+labels. Detailed evidence and limits are in `design-qa.md` and
+`docs/reviews/visual-system-20260912.json`.
+
+The production preview is running at `http://localhost:3013/`, verified HTTP
+200, node PID 45600 rooted in this worktree's `out/`. The separate 6fa6 preview
+on 3012 was preserved. This checkpoint is local only: no push, PR, merge or
+deployment occurred. The owned tree lock is released after the recovery commit
+and Exchange update; final clean-tree confirmation is in the task handoff.
+
+Fresh Exchange acceptance read: 2026-09-12T22:16:26Z, rechecked 22:19:06Z,
+fingerprint `fd668551ec6481d1b7c8f154dae327b9d07704dc39bdbfcb2e8067fd63c75ab2`,
+no sync conflicts. The newer model-inventory update does not overlap website
+work. The helper's earlier historical-metadata failure was repaired by its
+owning coordinator. A unique completion event follows this commit; shared
+CURRENT/workstream pointer reconciliation remains coordinator-owned.
+
+Unresolved scope: `reveal-clear-01.jpg` still awaits a corrected supplied or
+approved replacement. Verification limits: native background-tab visibility,
+actual screen-reader behavior and Firefox/WebKit are unverified. The synthetic
+hidden-document check restored its temporary override. No requested visual
+implementation item remains open.
+
+Model report: selected GPT-6 Astra/high; no model switch, subagents, local
+inference, paid fallback or additional spending. Exact token telemetry is
+unavailable. Estimated cloud usage is 45,000-65,000 tokens including retries and
+review, with zero local-inference tokens. Estimated avoided extraction/review
+work is 10,000-20,000 cloud tokens, unmeasured and not a claim of savings or
+eliminated cloud orchestration cost.
+
 ## September 12, 2026: editable Figma source complete and dev restored
 
 Jacob selected `Medley In Design` on Full/Pro as the standing owner for Figma

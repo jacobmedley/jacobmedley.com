@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B48. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B53. All APPLIED unless marked otherwise.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
 The September 8 annotation plan is historical; later applied edits govern the site.
@@ -1833,3 +1833,24 @@ Team Workshops brief image from their post-hero slots while preserving their sou
 files and registered narrative. Move Reveal's three existing concept cards below
 the hero without changing their labels or bodies. These are presentation changes;
 no employment fact, project sentence, metric, title or source asset is revised.
+
+## B53. September 12 mechanical visual-system continuation [APPLIED]
+
+Source: Jacob's nineteen-item continuation request in task 01a0978b, followed
+by approval of its continuation branch and explicit selection of Roadmap for
+the standalone follow-up image removal. Supersedes B49/B50 only as listed here.
+
+- Visible hero name: `Jacob Medley`, without decorative slashes.
+- Mechanical role sequence: `Product`, `UX`, `Systems`, `IdX`, `Human`, paired
+  with `+ Design`. Preserve `IdX` exactly as Jacob supplied it.
+- Keep the registered closing line: `Let's Design and Build Something Great Together!`
+- First Reveal concept section: `The thinking behind the idea`, brain icon.
+- Later Reveal image section: `Visual expression of the concept`, visual-design icon.
+- Resume disclosures: `More` when closed, `Less` when open. Accessible contextual
+  naming may append the unchanged employer string after either label.
+- Remove visible `Contributions:` and `Technologies:` headings globally; retain
+  semantic group names, the faded contribution divider and all category/badge text.
+- Remove the rendered Roadmap standalone post-hero image. Preserve its source.
+
+No employment title, period, location, metric, paragraph, leadership sentence,
+project narrative or other source asset changes are authorized by this entry.

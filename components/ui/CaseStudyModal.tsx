@@ -131,7 +131,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           }}
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
-            <div className={cn('modal-content container', featured && 'modal-full-bleed')} data-project-id={project?.id}>
+            <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`)} data-project-id={project?.id}>
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
                   <ModalHeroField project={project} />
@@ -182,9 +182,9 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
   )
 }
 
-function BadgeList({ badges }: { badges: ProjectBadge[] }) {
+function BadgeList({ badges, technology = false }: { badges: ProjectBadge[]; technology?: boolean }) {
   return (
-    <div className="modal-badges">
+    <div className={cn('modal-badges', technology && 'modal-badges-technologies')} role="group" aria-label={technology ? 'Technologies' : 'Contributions'}>
       {badges.map((b) => (
         <span key={b.label} className="badge-work">
           <i className={projectIcon(b.icon)} aria-hidden="true" /> {b.label}
@@ -201,7 +201,6 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
   if (contributions.length === 0) return null
   return (
     <>
-      <h4>Contributions:</h4>
       <hr className="solid-center" />
       <BadgeList badges={contributions} />
     </>
@@ -209,7 +208,7 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
 }
 
 const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'])
-const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'roadmap', 'personas'])
+const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'personas'])
 
 function ModalHeroField({ project }: { project: Project }) {
   if (ORIGINAL_FEATURED_IDS.has(project.id)) return <FeaturedField projectId={project.id} />
@@ -307,7 +306,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
-      if (block.treatment === 'section') {
+      if (block.treatment === 'section' || block.icon) {
         return (
           <>
             <div className="modal-section-heading">
@@ -987,9 +986,7 @@ function ModalContent({ project }: { project: Project }) {
 
           {project.technologies.length > 0 && (
             <>
-              <h4 className="mt-6">Technologies:</h4>
-              <hr className="solid-center" />
-              <BadgeList badges={project.technologies} />
+              <BadgeList badges={project.technologies} technology />
             </>
           )}
         </div>
@@ -1000,7 +997,7 @@ function ModalContent({ project }: { project: Project }) {
           {project.heroCards && (
             <div className={`modal-hero-cards featured-work-card-${project.id}`}>
               <div className="modal-section-heading">
-                <span><i className="fa-thin fa-lightbulb-on" aria-hidden="true" /></span>
+                <span><i className={project.heroCardsIcon ?? 'fa-thin fa-lightbulb-on'} aria-hidden="true" /></span>
                 <h4>{project.heroCardsHeading ?? 'Highlights'}</h4>
               </div>
               <hr className="solid-center rule-heading" />

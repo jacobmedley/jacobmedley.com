@@ -689,33 +689,6 @@ hr.solid-center.rule-heading,
   .modal-project-icon-anchor i { font-size: 7.5rem; }
 }
 
-#hi .h-jakeicon { opacity: 0; animation: hero-mark-in 450ms ease-out 120ms forwards; }
-.kinetic-identity { position: relative; min-height: 10.5rem; }
-.kinetic-identity .hero-title { min-height: 1.2em; margin-bottom: .35rem; font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
-.kinetic-role { display: flex; min-height: 1.5em; align-items: baseline; justify-content: center; margin: 0; color: var(--color-prime); font-size: clamp(1.45rem, 3vw, 2.4rem); line-height: 1.25; white-space: nowrap; }
-.kinetic-word { display: inline-block; min-width: 11ch; text-align: left; font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
-.kinetic-brace { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
-.kinetic-plus { display: inline-block; margin-inline: .18em; animation: kinetic-bolt 600ms cubic-bezier(.2,.8,.2,1) 1.25s both; }
-.kinetic-closing { margin: .85rem 0 0; opacity: 0; transform: translateY(5px); transition: opacity 300ms ease, transform 300ms ease; }
-.kinetic-closing.is-visible { opacity: 1; transform: none; }
-.kinetic-caret { display: inline-block; width: .08em; height: .9em; margin-left: .1em; background: currentColor; animation: kinetic-caret 700ms steps(1) infinite; }
-.hero-rule-wrap { width: 25%; margin-inline: auto; padding-block: var(--rule-gap-heading); }
-@media (max-width: 575px) {
-  #hi { overflow-x: clip; }
-  .kinetic-role { flex-wrap: wrap; white-space: normal; }
-  .kinetic-word { min-width: 0; overflow-wrap: anywhere; }
-}
-@keyframes hero-mark-in { to { opacity: 1; } }
-@keyframes kinetic-bolt { from { transform: rotate(0); } to { transform: rotate(720deg); } }
-@keyframes kinetic-caret { 50% { opacity: 0; } }
-
-html:is(.motion-paused,.motion-hidden) .hero-case-studies-link i,
-.motion-offscreen .hero-case-studies-link i { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) {
-  #hi .h-jakeicon { opacity: 1; animation: none; }
-  .kinetic-plus, .kinetic-caret, .hero-case-studies-link i { animation: none; }
-  .kinetic-closing { opacity: 1; transform: none; transition: none; }
-}
 .portfolio-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 .portfolio-badges > span { display: inline-flex; align-items: center; min-height: 25px; padding: 4px 9px; border: 1px solid currentColor; border-radius: 999px; font-size: .68rem; font-weight: 300; line-height: 1; letter-spacing: .02em; }
 .portfolio-badges-compact { gap: 4px; margin-bottom: 5px; }

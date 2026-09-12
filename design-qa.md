@@ -1,4 +1,53 @@
-# Design QA, September 12 visual-system continuation
+# Design QA
+
+## September 12 mechanical visual-system acceptance (4b5e)
+
+Source: Jacob's nineteen-item continuation, B53, his Roadmap clarification and
+four supplied SVGs. Implementation details and durable rules are recorded in
+`docs/visual-system-implementation-20260912.md`. This entry supersedes the earlier
+Read more wording and the earlier build limitation below. Historical Figma work
+and screenshots remain evidence for their original scope.
+
+The final production export at `http://localhost:3013/` passed 320, 375, 768, 992,
+1440 and 1875px layouts plus 200% text at 320 and 992px. All 14 modals passed at
+all eight settings (112 cases): content bounds, circular plaques, shadow-free
+nested surfaces, semantic contribution/technology grouping, removed visible
+group headings, badge contrast and Escape focus return. Roadmap has no standalone
+post-hero image; Reveal has both newly registered section headings.
+
+Resume retains five semantic entries and four leadership items, uses all five
+real employer marks, and opens/closes through native Enter/Space activation.
+Focus remains on the summary, More changes to Less, and the control remains
+below the expanded content. Rapid reversal and reduced-motion behavior passed.
+An AST comparison found every employment and leadership string unchanged from
+`9508686`; the four supplied SVG copies are byte-identical and original images
+are unchanged.
+
+Hero checks covered exact desktop type targets, role order, separated braces,
+offscreen clock suspension/resumption, a sampled 65-second ending, persistence
+after settled resize, and a complete reduced-motion static composition. Eight
+intro phases at 320px with 200% text had zero page overflow. Technology badge
+contrast was at least 5.35:1. Reviewed screenshots include enlarged mobile hero,
+wide Hydra, narrow Reveal and open Resume. Local screenshots and full browser
+results are under `scripts/parity/shots/visual-system-20260912/`; a compact durable
+report is committed as `docs/reviews/visual-system-20260912.json`.
+
+Validation caught and fixed: intersecting rotated braces, invisible intro tail
+content producing enlarged-text overflow, a settled timeline replaying on resize,
+and mobile navigation words fragmenting at enlarged text. An early export failed
+with Windows EBUSY because this session's static server held `out/`; stopping
+only its verified process allowed the final build to pass. The separate 3012
+preview was preserved. TypeScript, ESLint, production export and git diff checks
+all pass. There are no unresolved failures in the final acceptance matrix.
+
+Limits: accessibility-tree and keyboard checks are not an actual screen-reader
+session. Chromium in-app tabs remain document-visible, so hidden-document
+suspension was tested with a temporary document.hidden override and synthetic
+visibilitychange event, then restored; native background-tab suspension remains
+unverified. Firefox/WebKit were not exercised. The separately deferred
+`reveal-clear-01.jpg` replacement remains open. No push or deployment occurred.
+
+## Earlier September 12 visual-system continuation
 
 ## Source and scope
 

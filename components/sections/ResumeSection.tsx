@@ -1,13 +1,17 @@
 import WaveSeparator from '@/components/ui/WaveSeparator'
 import SectionHeader from '@/components/ui/SectionHeader'
+import ExperienceDisclosure from '@/components/ui/ExperienceDisclosure'
+import type { CSSProperties } from 'react'
 
 const leadershipLeft = [
   {
     title: 'AI Product Design',
+    icon: 'fa-thin fa-brain',
     body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
   },
   {
     title: 'Design Systems',
+    icon: 'fa-thin fa-layer-group',
     body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
 ]
@@ -15,10 +19,12 @@ const leadershipLeft = [
 const leadershipRight = [
   {
     title: 'Business Outcomes',
+    icon: 'fa-thin fa-chart-line',
     body: 'Systems work with numbers attached: 47% of company revenue growth in a single measured year, and a 66% reduction in launch time per property.',
   },
   {
     title: 'Conversion and Experimentation',
+    icon: 'fa-thin fa-flask',
     body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
   },
 ]
@@ -34,7 +40,7 @@ type ExperienceEntry = {
   company: string
   roles: ExperienceRole[]
   paragraphs: string[]
-  icon: string
+  logo: string
   tone: string
   highlighted?: boolean
 }
@@ -43,7 +49,7 @@ type ExperienceEntry = {
 const experience: ExperienceEntry[] = [
   {
     company: 'Health-E Commerce, New York, NY (Remote)',
-    icon: 'fa-thin fa-heart-pulse',
+    logo: '/assets/references/hec-icon.svg',
     tone: 'health',
     highlighted: true,
     roles: [
@@ -58,7 +64,7 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
-    icon: 'fa-thin fa-messages',
+    logo: '/assets/references/moa-icon.svg',
     tone: 'mutual',
     roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
@@ -70,7 +76,7 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'One Park Financial, Coconut Grove, FL',
-    icon: 'fa-thin fa-layer-group',
+    logo: '/assets/featured/opf-icon-color.svg',
     tone: 'one-park',
     roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
@@ -82,7 +88,7 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'DentalPlans.com, Plantation, FL',
-    icon: 'fa-thin fa-cart-shopping',
+    logo: '/assets/featured/dentalplans-icon.svg',
     tone: 'dentalplans',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
@@ -92,7 +98,7 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Bluegreen Vacations, Boca Raton, FL',
-    icon: 'fa-thin fa-signs-post',
+    logo: '/assets/references/blue-green-dots.svg',
     tone: 'bluegreen',
     roles: [{ title: 'Senior Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
@@ -155,7 +161,7 @@ export default function ResumeSection() {
               <ul className="resume-leadership-grid">
                 {[leadershipLeft[0], leadershipLeft[1], leadershipRight[0], leadershipRight[1]].map((item) => (
                   <li key={item.title}>
-                    <i className="fa-thin fa-angle-right" aria-hidden="true" />
+                    <span className="resume-value-icon" aria-hidden="true"><i className={item.icon} /></span>
                     <div><strong>{item.title}:</strong> {item.body}</div>
                   </li>
                 ))}
@@ -183,7 +189,7 @@ export default function ResumeSection() {
                 {experience.map((job) => (
                   <li className={`resume-timeline-entry resume-timeline-entry-${job.tone}${job.highlighted ? ' is-highlighted' : ''}`} key={job.company}>
                     <span className="resume-timeline-marker" aria-hidden="true">
-                      <i className={job.icon} />
+                      <span className="resume-brand-logo" style={{ '--resume-logo': `url("${job.logo}")` } as CSSProperties} />
                     </span>
                     <article className="resume-experience-card">
                       <header className="resume-experience-header">
@@ -197,15 +203,9 @@ export default function ResumeSection() {
                           ))}
                         </div>
                       </header>
-                      <details className="resume-experience-details">
-                        <summary role="button">
-                          <span>Read more</span>
-                          <i className="fa-thin fa-chevron-down" aria-hidden="true" />
-                        </summary>
-                        <div className="resume-experience-copy">
-                          {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                        </div>
-                      </details>
+                      <ExperienceDisclosure company={job.company}>
+                        {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                      </ExperienceDisclosure>
                     </article>
                   </li>
                 ))}

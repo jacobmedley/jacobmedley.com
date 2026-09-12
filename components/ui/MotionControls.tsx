@@ -38,6 +38,7 @@ export default function MotionControls() {
     }))
     mutations.observe(document.body, { childList: true, subtree: true })
     const onVisibilityChange = () => document.documentElement.classList.toggle('motion-hidden', document.hidden)
+    onVisibilityChange()
     document.addEventListener('visibilitychange', onVisibilityChange)
     return () => { observer?.disconnect(); mutations.disconnect(); document.removeEventListener('visibilitychange', onVisibilityChange); document.documentElement.classList.remove('motion-hidden') }
   }, [])

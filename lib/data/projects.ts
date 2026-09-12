@@ -227,6 +227,7 @@ export interface Project {
   heroMedia?: ProjectMedia[] // supporting prose/lists that belong inside the hero copy panel
   heroCards?: StyledListItem[] // full-width concept/information cards in the top hero
   heroCardsHeading?: string
+  heroCardsIcon?: string
   media: ProjectMedia[] // preserves the legacy modal section order
 }
 
@@ -1426,7 +1427,8 @@ export const projects: Project[] = [
     ],
     inlineContributions: true,
     technologies: [],
-    heroCardsHeading: 'Concepts',
+    heroCardsHeading: 'The thinking behind the idea',
+    heroCardsIcon: 'fa-thin fa-brain',
     heroCards: [
       {
         icon: 'fa-thin fa-lightbulb-on',
@@ -1452,7 +1454,7 @@ export const projects: Project[] = [
       { type: 'contributions' },
     ],
     media: [
-      { type: 'heading', text: 'Concepts' },
+      { type: 'heading', text: 'Visual expression of the concept', level: 4, icon: 'fa-thin fa-fill-drip', treatment: 'section' },
       {
         type: 'image-row',
         images: [

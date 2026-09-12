@@ -12,6 +12,7 @@ const FEATURED_ICONS: Record<string, string[]> = {
 }
 
 export function FeaturedAnchor({ projectId }: { projectId: string }) {
+  if (projectId === 'hydra') return <span className="featured-hydra-mark" aria-hidden="true" />
   if (projectId === 'opfred') {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- byte-verified supplied OPF icon
@@ -57,11 +58,7 @@ export function FeaturedAnchor({ projectId }: { projectId: string }) {
     )
   }
 
-  const icon = projectId === 'hydra'
-    ? 'fa-thin fa-hydra'
-    : 'fa-thin fa-building-columns'
-
-  return <i className={`${icon} featured-work-icon`} aria-hidden="true" />
+  return <i className="fa-thin fa-building-columns featured-work-icon" aria-hidden="true" />
 }
 
 export function FeaturedField({ projectId }: { projectId: string }) {
@@ -112,24 +109,25 @@ const systemEdges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[7,8],[8,9]
 
 function DesignSystem() {
   const gridId = useId()
-  return <div className="featured-design-system">
+  return <div className="featured-design-system hydra-schematic">
     <svg viewBox="0 0 1000 440" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id={gridId} width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="currentColor" strokeOpacity=".1" /></pattern></defs>
+      <defs><pattern id={gridId} width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="currentColor" strokeOpacity=".08" /></pattern></defs>
       <rect width="1000" height="440" fill={`url(#${gridId})`} />
-      <g className="design-tokens">
-        {[0,1,2,3,4,5].map(i => <rect key={i} x={42+i*58} y="40" width="42" height="42" rx={i*3+2} fill="currentColor" opacity={.12+i*.1} />)}
-        <path d="M60 108H342M60 125H244M60 142H294" />
-        {[0,1,2,3].map(i => <rect key={i} x={62+i*82} y="316" width="64" height={12+i*8} rx="5" />)}
+      <g className="hydra-connectors"><path d="M122 110H230V220H338M122 330H230V220M506 220H582M750 220H820V110H884M820 220V330H884" /></g>
+      <g className="hydra-palette">
+        {[0, 1, 2, 3].map(i => <rect key={i} x={50 + i * 42} y="42" width="28" height="12" rx="3" opacity={.2 + i * .2} />)}
       </g>
-      <g className="design-components">
-        <rect x="426" y="44" width="232" height="154" rx="20" />
-        <circle cx="460" cy="78" r="12" /><path d="M488 72H628M488 84H582M452 112H628M452 128H606" />
-        <rect x="452" y="148" width="86" height="26" rx="13" />
-        <rect x="712" y="66" width="228" height="68" rx="14" /><path d="M736 92H858M736 109H816" /><circle cx="902" cy="100" r="12" />
-        <rect x="694" y="202" width="244" height="176" rx="20" /><rect x="714" y="222" width="76" height="132" rx="10" /><path d="M812 238H912M812 258H886M812 298H906M812 320H875" />
-        <rect x="438" y="248" width="194" height="104" rx="18" /><path d="M460 274H590M460 292H572" /><rect x="460" y="312" width="60" height="20" rx="10" />
-      </g>
-      <g className="design-connectors"><path d="M344 62H390V120H426M344 338H398V300H438M658 120H686V100H712M632 300H694" /></g>
+      {[{x: 40, y: 76}, {x: 40, y: 282}, {x: 338, y: 144}, {x: 582, y: 144}, {x: 842, y: 76}, {x: 842, y: 282}].map(({x, y}, i) => (
+        <g key={i} transform={`translate(${x} ${y})`}>
+          <g className="hydra-component" style={{ '--component-index': i } as CSSProperties}>
+            <rect className="hydra-component-surface" width="146" height="112" rx="16" />
+            <rect className="hydra-component-control" x="16" y="17" width="24" height="24" rx="6" />
+            <path className="hydra-component-lines" d="M52 24H127M52 34H107M16 57H125M16 67H101" />
+            <rect className="hydra-component-button" x="16" y="82" width="75" height="16" rx="8" />
+            <path className="hydra-button-line" d="M28 90H76" />
+          </g>
+        </g>
+      ))}
     </svg>
   </div>
 }

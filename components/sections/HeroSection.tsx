@@ -11,10 +11,6 @@ export default function HeroSection() {
         <div className="container">
           <div className="row text-center justify-center row-content">
             <div className="col-24 col-lg-14 self-center">
-              <p className="display-12 font-bold text-prime mb-0 h-jakeicon">
-                <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
-              </p>
-
               <KineticHeroIdentity />
 
               <div className="hero-rule-wrap">

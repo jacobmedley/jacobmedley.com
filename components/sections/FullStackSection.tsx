@@ -82,6 +82,7 @@ export default function FullStackSection() {
                     'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
                     project.thumb ? 'thinking-thumb-photo' : 'thinking-thumb-icon',
                     `thinking-art-${project.id}`,
+                    `featured-work-card-${project.id}`,
                   )}
                   data-motion-root
                   onClick={() => setActiveId(project.id)}

@@ -1776,3 +1776,29 @@ The revised slogan is Jacob's direct surface-specific wording for this Resume
 section. It intentionally differs from the earlier reusable slogan recorded in
 B45 and `docs/voice-and-tone.md`; do not propagate it to other surfaces without a
 new direct instruction.
+
+## B49. September 12 visual-system and kinetic-hero labels [APPROVED]
+
+Source: Jacob's September 12 browser comments 1, 4, 5, 6, 8, 14 and 15. This
+entry authorizes the short interface labels needed for the approved card,
+schematic and kinetic-type treatments. It does not revise case-study narrative,
+employment history, measurements or source evidence.
+
+- Homepage semantic H1: `Jacob Medley`.
+- Kinetic identity sequence: `Product`, `UX`, `Systems`, `Service`, `Motion`,
+  `Interaction`, `Human`. The visible construction is `{ Product } + Design`
+  with the role word changing in that order. `Interaction` corrects the typo in
+  the browser annotation without changing its meaning.
+- Kinetic closing line: `Let's Design and Build Something Great Together!`
+- A/B Testing contributions: `Strategy`, `Analysis`, `UX`, `Planning`,
+  `Implementation`.
+- A/B Testing technologies: `Adobe Target`, `WordPress`. Adobe's current product
+  documentation confirms the name remains Adobe Target as of September 12, 2026.
+- Call-center schematic labels: `Site`, `Status Check · 5 min`, `Call Center API`,
+  `State Response`, `Open`, `Busy`, `Closed`, `Message + Offer`. These labels
+  compress the existing registered narrative: the API checks availability every
+  five minutes, returns a state, and changes site messaging and the offer.
+- Reveal concept-card heading: `Concepts`.
+
+The source crop for `reveal-clear-01.jpg` remains unchanged and is recorded as a
+required source-image replacement in the September 12 handoff document.

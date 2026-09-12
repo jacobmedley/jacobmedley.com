@@ -18,6 +18,7 @@ export interface ProjectMetric {
 export type BrandToken = 'prime' | 'second' | 'third' | 'fourth' | 'fifth' | 'pop'
 
 export interface StyledListItem {
+  icon?: string
   label?: string
   body?: string
   bg?: BrandToken // per-item tint at 25% opacity; omit for a plain item
@@ -127,6 +128,7 @@ export type SupportingArtKind =
   | 'dental-mvp-three'
   | 'dental-mvp-four'
   | 'hydra'
+  | 'call-center'
 
 export interface SupportingArtBlock {
   type: 'supporting-art'
@@ -173,6 +175,7 @@ export type ProjectMedia =
   | SplitRowBlock
   | IconGridBlock
   | SupportingArtBlock
+  | { type: 'call-center-states' }
   | { type: 'contributions' } // zero-config marker: renders project.contributions inline in media[]
 
 export interface ProjectBadge {
@@ -203,6 +206,7 @@ export interface Project {
   icon?: string // FA icon for work thumbs
   thumb?: ProjectImage // visual-design thumb background
   cardImage?: ProjectImage // feature-card image
+  heroBrandImage?: ProjectImage // brand asset used by a modal hero instead of the thumbnail
   brief: { image?: ProjectImage; images?: ProjectImage[]; paragraphs: string[] }
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
   briefLabels?: string[] // brief paragraphs rendered as standalone emphasized labels
@@ -220,6 +224,8 @@ export interface Project {
   inlineContributions?: boolean
   technologies: ProjectBadge[]
   heroMedia?: ProjectMedia[] // supporting prose/lists that belong inside the hero copy panel
+  heroCards?: StyledListItem[] // full-width concept/information cards in the top hero
+  heroCardsHeading?: string
   media: ProjectMedia[] // preserves the legacy modal section order
 }
 
@@ -1041,8 +1047,17 @@ export const projects: Project[] = [
         'Testing ran as a standing partnership with product marketing. They owned hypothesis and traffic, I owned the variant and the read.'
       ]
     },
-    contributions: [],
-    technologies: [],
+    contributions: [
+      { icon: 'fa-thin fa-chess', label: 'Strategy' },
+      { icon: 'fa-thin fa-chart-mixed', label: 'Analysis' },
+      { icon: 'fa-thin fa-user-check', label: 'UX' },
+      { icon: 'fa-thin fa-list-check', label: 'Planning' },
+      { icon: 'fa-thin fa-code', label: 'Implementation' }
+    ],
+    technologies: [
+      { icon: 'fa-thin fa-bullseye-arrow', label: 'Adobe Target' },
+      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' }
+    ],
     media: [
       { type: 'divider' },
       {
@@ -1168,51 +1183,7 @@ export const projects: Project[] = [
         type: 'text',
         text: 'Our API checked the status of the call center every five minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'
       },
-      { type: 'text', text: 'Call Center Status: Green' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-green.png',
-            alt: 'Site header showing call center open and available, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-green.png',
-            alt: 'Site header showing call center open and available, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      },
-      { type: 'text', text: 'Call Center Status: Closed' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-closed.png',
-            alt: 'Site header showing call center closed, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Site header showing call center at high call volume, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      },
-      { type: 'text', text: 'Call Center Status: Busy' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-busy.png',
-            alt: 'Site header showing call center at high call volume, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Site header showing call center at high call volume, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      }
+      { type: 'call-center-states' }
     ]
   },
   {
@@ -1455,25 +1426,25 @@ export const projects: Project[] = [
     ],
     inlineContributions: true,
     technologies: [],
-    heroMedia: [
-      { type: 'text', text: 'My Concepts:' },
+    heroCardsHeading: 'Concepts',
+    heroCards: [
       {
-        type: 'styled-list',
-        items: [
-          {
-            label: "Yup, It's That Clear:",
-            body: 'This concept emphasized the transparency and subtlety of the aligners.'
-          },
-          {
-            label: "So Clear, Like It's Not Even There:",
-            body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
-          },
-          {
-            label: 'OMG, Your Aligner Is Showing:',
-            body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
-          }
-        ]
+        icon: 'fa-thin fa-lightbulb-on',
+        label: "Yup, It's That Clear:",
+        body: 'This concept emphasized the transparency and subtlety of the aligners.'
       },
+      {
+        icon: 'fa-thin fa-lightbulb-on',
+        label: "So Clear, Like It's Not Even There:",
+        body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
+      },
+      {
+        icon: 'fa-thin fa-lightbulb-on',
+        label: 'OMG, Your Aligner Is Showing:',
+        body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
+      }
+    ],
+    heroMedia: [
       {
         type: 'text',
         text: 'Each concept had to sit inside one overarching campaign theme while standing on its own in a paid placement. The through-line was simple: the choice of Reveal Clear Aligners was, itself, clear.'
@@ -1618,6 +1589,7 @@ export const projects: Project[] = [
     order: 14,
     title: 'Wrong',
     thumb: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: 'The Wrong campaign portrait' },
+    heroBrandImage: { src: '/assets/featured/dentalplans-icon.svg', alt: 'DentalPlans.com' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
     summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
@@ -1642,14 +1614,17 @@ export const projects: Project[] = [
         type: 'styled-list',
         items: [
           {
+            icon: 'fa-thin fa-eye',
             label: 'Visual Approach:',
             body: 'We aimed for a visually striking look, using bold and aggressive headlines.'
           },
           {
+            icon: 'fa-thin fa-people-group',
             label: 'Inclusivity:',
             body: 'Ensured the campaign was diverse and inclusive, representing various age groups and ethnic backgrounds.'
           },
           {
+            icon: 'fa-thin fa-flag-checkered',
             label: 'Execution:',
             body: 'Below is the final landing page and hero variants used for conversion rate optimization.'
           }

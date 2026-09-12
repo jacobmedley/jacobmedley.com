@@ -1,4 +1,5 @@
 import WaveSeparator from '@/components/ui/WaveSeparator'
+import KineticHeroIdentity from '@/components/ui/KineticHeroIdentity'
 
 /**
  * Ports legacy #hi structure (components/section-hi.html) 1:1.
@@ -14,27 +15,11 @@ export default function HeroSection() {
                 <i className="fa-kit fa-jm-icon-full font-normal" aria-hidden="true" />
               </p>
 
-              {/* Only one span is in the render tree at a time — `hidden` is
-                  display:none, which assistive tech skips, so no aria needed. */}
-              <h1 className="display-4 hero-title text-prime mt-0">
-                <span className="sm:hidden">Hi,</span>
-                <span className="hidden sm:inline">Hello,</span> I&apos;m Jacob Medley.
-              </h1>
-              <h2 className="display-2 text-prime">Product &amp; Design Leader</h2>
+              <KineticHeroIdentity />
 
-              <div className="py-3 w-1/4 mx-auto">
-                <hr className="solid-center" />
+              <div className="hero-rule-wrap">
+                <hr className="solid-center rule-heading" />
               </div>
-
-              <p className="display-1">
-                I believe there&rsquo;s always a better way, together we can find it. In this
-                portfolio, you&rsquo;ll see highlights from my design journey so far.
-                <span className="hidden sm:inline">
-                  {' '}
-                  By collaborating with cross-functional teams and applying a creative, scrappy
-                  approach, I help scale products, create value, and drive business results.
-                </span>
-              </p>
 
               <a className="btn action-label mt-4 mb-4 hero-case-studies-link" href="#work" aria-label="Explore the case studies">
                 <span className="sr-only">Explore the case studies</span>

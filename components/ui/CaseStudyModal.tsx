@@ -215,7 +215,7 @@ const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'marketing-auto', 'worksho
 
 function ModalHeroField({ project }: { project: Project }) {
   if (ORIGINAL_FEATURED_IDS.has(project.id)) return <FeaturedField projectId={project.id} />
-  if (project.id === 'reveal' || project.id === 'viva') {
+  if (project.id === 'reveal' || project.id === 'viva' || project.heroBrandImage) {
     return (
       <div className="modal-card-field modal-card-field-brand">
         <span className="modal-card-field-brand-glow" />
@@ -242,6 +242,13 @@ function ModalHeroField({ project }: { project: Project }) {
 function BriefFollowup({ project }: { project: Project }) {
   const image = project.brief.image
   if (!image || !BRIEF_FOLLOWUP_IDS.has(project.id)) return null
+  if (project.id === 'call-center-ux') {
+    return (
+      <div className="modal-hero-followup">
+        <StudySupportingArt kind="call-center" alt="Site availability flow from status check through the call center API to a state-based message and offer." />
+      </div>
+    )
+  }
   return (
     <div className="modal-hero-followup">
       {image.src.endsWith('.gif') ? (
@@ -375,6 +382,8 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       return <CardContent block={block} />
     case 'supporting-art':
       return <StudySupportingArt kind={block.kind} alt={block.alt} />
+    case 'call-center-states':
+      return <CallCenterStateWireframes />
     default:
       return <MediaBlock block={block} />
   }
@@ -406,6 +415,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
     case 'list':
     case 'styled-list':
     case 'card':
+    case 'call-center-states':
       return (
         <div className="row">
           <div className="col-24">
@@ -474,32 +484,32 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       )
     case 'metric-grid':
       return (
-        <div className="row">
+        <section className="modal-data-panel">
           <div className="col-24 mt-5">
             <h4>{block.heading}</h4>
-            <hr className="solid-center my-5" />
+            <hr className="solid-center rule-heading" />
           </div>
-          <div className="col-24 col-lg-16 self-center">
-            <div className="row row-cols-2 text-center justify-center g-3">
+          <div className="modal-data-grid">
+            <div className="modal-metric-grid">
               {block.metrics.map((metric) => (
                 <MetricStat key={metric.label} metric={metric} />
               ))}
             </div>
+            <div className="modal-value-card">
+              <h5 className="mb-3">{block.valueCreated.heading}</h5>
+              <ul className="fa-ul">
+                {block.valueCreated.items.map((item) => (
+                  <li key={item} className="mb-4">
+                    <span className="fa-li">
+                      <i className="fa-thin fa-angle-right" aria-hidden="true" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="col-24 col-lg-8 self-center">
-            <h5 className="mb-3">{block.valueCreated.heading}</h5>
-            <ul className="fa-ul">
-              {block.valueCreated.items.map((item) => (
-                <li key={item} className="mb-4">
-                  <span className="fa-li">
-                    <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        </section>
       )
     case 'progress-diagram':
       return <ProgressDiagram block={block} />
@@ -790,11 +800,14 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
   if (!rich) {
     return (
-      <ul className="list-disc pl-6">
+      <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
-          <li key={i}>
-            {item.label && <strong>{item.label} </strong>}
-            {item.body}
+          <li key={i} className="modal-info-card">
+            <i className={item.icon ?? 'fa-thin fa-circle-info'} aria-hidden="true" />
+            <span>
+              {item.label && <strong>{item.label} </strong>}
+              {item.body}
+            </span>
           </li>
         ))}
       </ul>
@@ -855,7 +868,7 @@ function CardContent({ block }: { block: CardBlock }) {
 
 function MetricStat({ metric }: { metric: ProjectMetric }) {
   return (
-    <div className="col">
+    <div className="modal-metric-card">
       <h4 className="result mb-0 display-5 fw-bolder">
         {metric.value}
         <small>
@@ -867,6 +880,41 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
       </h4>
       <p className="result-label mt-0">{metric.label}</p>
     </div>
+  )
+}
+
+const CALL_CENTER_STATES = [
+  { label: 'Open', icon: 'fa-thin fa-phone-volume', action: 'Call now', tone: 'open' },
+  { label: 'Busy', icon: 'fa-thin fa-clock', action: 'Wait times are high', tone: 'busy' },
+  { label: 'Closed', icon: 'fa-thin fa-moon', action: 'Use the online offer', tone: 'closed' }
+] as const
+
+function CallCenterStateWireframes() {
+  return (
+    <section className="call-center-wireframes" aria-labelledby="call-center-wireframes-title">
+      <div className="call-center-wireframes-heading">
+        <i className="fa-thin fa-window" aria-hidden="true" />
+        <h4 id="call-center-wireframes-title">Responsive site states</h4>
+      </div>
+      <div className="call-center-wireframes-grid">
+        {CALL_CENTER_STATES.map((state) => (
+          <article className={`call-center-wireframe is-${state.tone}`} key={state.label}>
+            <header>
+              <span className="wireframe-brand">DentalPlans.com</span>
+              <i className="fa-thin fa-bars" aria-hidden="true" />
+            </header>
+            <div className="wireframe-status">
+              <i className={state.icon} aria-hidden="true" />
+              <span><b>{state.label}</b><small>{state.action}</small></span>
+            </div>
+            <div className="wireframe-promo">
+              <span>Dental savings plans</span>
+              <span className="wireframe-action">View plans</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   )
 }
 
@@ -887,9 +935,9 @@ function ModalContent({ project }: { project: Project }) {
                   <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
                 </div>
               </div>
-            ) : (project.id === 'reveal' || project.id === 'viva') && project.brief.image ? (
+            ) : (project.id === 'reveal' || project.id === 'viva' || project.heroBrandImage) && (project.heroBrandImage || project.brief.image) ? (
               <div className="modal-project-art modal-project-art-brand" aria-hidden="true">
-                <img src={project.brief.image.src} alt="" />
+                <img src={(project.heroBrandImage ?? project.brief.image)!.src} alt="" />
               </div>
             ) : project.thumb ? (
               <div className="modal-project-art modal-project-art-photo" aria-hidden="true" />
@@ -931,6 +979,12 @@ function ModalContent({ project }: { project: Project }) {
             </>
           )}
         </div>
+        {project.heroCards && (
+          <div className="modal-hero-cards">
+            <h4>{project.heroCardsHeading ?? 'Highlights'}</h4>
+            <StyledListContent block={{ type: 'styled-list', items: project.heroCards }} />
+          </div>
+        )}
       </div>
 
       {featured ? (

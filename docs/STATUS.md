@@ -1,5 +1,58 @@
 # Status
 
+## September 12, 2026: visual-system wave implemented, Figma handoff pending
+
+Jacob's browser comments 1 through 15 are implemented locally from base
+`2fe3738` on `codex/website-art-layout-20260910`, except the two items he
+explicitly reserved for later work. Reveal concepts now sit in three icon-led
+hero cards; plain modal information uses a shared card grammar; Wrong uses the
+supplied DentalPlans vector mark and campaign palette; DentalPlans results use
+metric cards; supporting diagrams reflow as labeled icon cards; and the
+call-center PowerPoint-style image and six screenshots are replaced in the
+rendered experience by a five-layer schematic and three responsive state
+wireframes. Non-featured icon heroes scale to a 320px circle and roughly 120px
+glyph on wide screens. Work summaries use 130% line height and a three-line
+ellipsis clamp. A/B Testing now carries the registered contribution and
+technology taxonomy, including the currently verified Adobe Target name.
+
+The homepage now exposes one semantic H1, `Jacob Medley`, through a one-run code
+typing treatment. The mark fades in, the name types once, seven role words cycle
+inside stable braces, the plus makes one 720-degree turn, and the final sentence
+appears on Human. A local pause control is present only while the sequence is
+running. Reduced motion receives a complete static composition. Modal rules use
+the global fade and contextual spacing tokens distinguish heading, subsection
+and major-section separations.
+
+Browser checks passed at the default 1875 by 992 view and a 375px mobile view for
+the hero, A/B modal, Reveal cards, Wrong brand hero, DentalPlans result cards,
+call-center flow and all three state cards. The first mobile call-center pass
+found a clipped fifth layer and the first desktop pass found arrow glyphs taking
+grid cells; both were fixed and rechecked. No horizontal overflow or browser
+console errors remained. Reduced-motion and one-second pause behavior passed.
+TypeScript, authored-source ESLint and `git diff --check` pass. Repository
+Playwright suites remain unavailable in this sandbox because Chromium launch
+returns `spawn EPERM`. `next build` reached compilation but gave no additional
+output within 90 seconds while the dev preview was active, so it was stopped.
+
+`docs/visual-system-checkpoint-20260912.md` holds the full request mapping,
+verification record and Astra/high continuation prompt. `design-qa.md` records
+the visual comparison and remains blocked only on the editable Figma artifact
+and filesystem-backed captures. Figma exposes two possible owners, `Jacob
+Medley's team` on Starter and `Medley In Design` on Full/Pro; no destination was
+guessed. Browser comment 2 remains a source-image replacement for the bad Reveal
+crop. Browser comment 9 remains the immediate next design wave: an expandable
+Resume work-history timeline. Neither was executed.
+
+Changed source surfaces are `app/globals.css`, `components/sections/HeroSection.tsx`,
+`components/ui/KineticHeroIdentity.tsx`, `components/ui/CaseStudyModal.tsx`,
+`components/ui/StudySupportingArt.tsx`, and `lib/data/projects.ts`. Documentation
+changes are B49 in `docs/copy-register.md`, the governance log, the visual-system
+checkpoint and `design-qa.md`. The active preview remains
+`http://localhost:3012/`; its pre-existing process was not stopped. No push, PR,
+merge or deployment occurred. Rollback is base commit `2fe3738`. STATUS was
+written last; the local recovery commit and a final UUID-named Genesis update
+follow this record.
+
 ## September 11, 2026: Reveal and Wrong browser follow-up complete
 
 Jacob's two follow-up browser comments are implemented locally after aesthetic

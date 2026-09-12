@@ -36,7 +36,7 @@ html { scroll-padding-top: var(--cs-scroll-padding, 0px); }
 .cs-stat-note { margin-top: 8px; padding-right: 12px; font-size: 14px; line-height: 1.45; }
 .cs-stat > .cs-arrow { position: absolute; right: 18px; bottom: 20px; }
 .cs-index .cs-browse { --cs-browse-sticky-height: 112px; position: relative; }
-.cs-index .cs-browse-sticky { position: sticky; top: 0; z-index: 30; margin-bottom: 32px; background: #faf9f7e6; border-block: 1px solid #ded9e0cc; -webkit-backdrop-filter: blur(24px) saturate(115%); backdrop-filter: blur(24px) saturate(115%); transition: transform 350ms cubic-bezier(.16, 1, .3, 1); }
+.cs-index .cs-browse-sticky { position: relative; top: auto; z-index: auto; margin-bottom: 32px; background: #faf9f7e6; border-block: 1px solid #ded9e0cc; -webkit-backdrop-filter: blur(24px) saturate(115%); backdrop-filter: blur(24px) saturate(115%); transition: transform 350ms cubic-bezier(.16, 1, .3, 1); }
 .cs-index .cs-browse-sticky.is-yielded { transform: translateY(-100%); }
 .cs-index .cs-browse-context { display: flex; align-items: center; min-height: 48px; border-bottom: 1px solid #ded9e099; color: var(--cs-ink); font-size: 14px; line-height: 1.4; letter-spacing: .03em; }
 .cs-index .cs-browse-context > span { display: block; width: 100%; padding-block: 12px; }

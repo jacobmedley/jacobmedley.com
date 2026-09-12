@@ -86,7 +86,7 @@ function projectIcon(icon: string) {
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   const returnFocusRef = useRef<HTMLElement | null>(null)
-  const featured = !!project && ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'].includes(project.id)
+  const featured = !!project
   // Paint outside the native scroll viewport so its transparent gutter cannot
   // crop the artwork. Keep this one field aligned with the scrolling intro.
   const bindFeaturedBody = useCallback((body: HTMLDivElement | null) => {
@@ -135,7 +135,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
             <div className={cn('modal-content container', featured && 'modal-full-bleed')} data-project-id={project?.id}>
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
-                  <FeaturedField projectId={project.id} />
+                  <ModalHeroField project={project} />
                 </div>
               )}
               <div className="modal-header">
@@ -207,6 +207,50 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
       <hr className="solid-center" />
       <BadgeList badges={contributions} />
     </>
+  )
+}
+
+const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'])
+const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'marketing-auto', 'workshops', 'roadmap', 'personas'])
+
+function ModalHeroField({ project }: { project: Project }) {
+  if (ORIGINAL_FEATURED_IDS.has(project.id)) return <FeaturedField projectId={project.id} />
+  if (project.id === 'reveal' || project.id === 'viva') {
+    return (
+      <div className="modal-card-field modal-card-field-brand">
+        <span className="modal-card-field-brand-glow" />
+      </div>
+    )
+  }
+  if (project.thumb) {
+    return (
+      <div className="modal-card-field modal-card-field-photo">
+        {/* eslint-disable-next-line @next/next/no-img-element -- existing case-study card asset */}
+        <img src={project.thumb.src} alt="" />
+      </div>
+    )
+  }
+  return (
+    <div className="modal-card-field modal-card-field-icon">
+      <span className="modal-card-field-ring modal-card-field-ring-one" />
+      <span className="modal-card-field-ring modal-card-field-ring-two" />
+      <i className={project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} />
+    </div>
+  )
+}
+
+function BriefFollowup({ project }: { project: Project }) {
+  const image = project.brief.image
+  if (!image || !BRIEF_FOLLOWUP_IDS.has(project.id)) return null
+  return (
+    <div className="modal-hero-followup">
+      {image.src.endsWith('.gif') ? (
+        <AnimatedStudyImage src={image.src} alt={image.alt} />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset
+        <img loading="lazy" className="img-fluid" src={image.src} alt={image.alt} />
+      )}
+    </div>
   )
 }
 
@@ -827,7 +871,8 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
 }
 
 function ModalContent({ project }: { project: Project }) {
-  const featured = ['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'].includes(project.id)
+  const featured = true
+  const originalFeatured = ORIGINAL_FEATURED_IDS.has(project.id)
   return (
     <>
       <div
@@ -836,27 +881,24 @@ function ModalContent({ project }: { project: Project }) {
       >
         {(project.brief.image || project.brief.images) && (
           <div className="modal-intro-art">
-            {featured ? (
+            {originalFeatured ? (
               <div className="modal-project-art" aria-hidden="true">
                 <div className="featured-work-art">
                   <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
                 </div>
               </div>
-            ) : project.brief.images ? (
-              <div className="modal-brief-compare">
-                {project.brief.images.map((image) => (
-                  <img key={image.src} loading="lazy" className="img-fluid modal-brief-image" src={image.src} alt={image.alt} />
-                ))}
+            ) : (project.id === 'reveal' || project.id === 'viva') && project.brief.image ? (
+              <div className="modal-project-art modal-project-art-brand" aria-hidden="true">
+                <img src={project.brief.image.src} alt="" />
               </div>
-            ) : project.brief.image!.src.endsWith('.gif') ? (
-              <AnimatedStudyImage src={project.brief.image!.src} alt={project.brief.image!.alt} />
+            ) : project.thumb ? (
+              <div className="modal-project-art modal-project-art-photo" aria-hidden="true" />
             ) : (
-              <img
-                loading="lazy"
-                className="img-fluid modal-brief-image"
-                src={project.brief.image!.src}
-                alt={project.brief.image!.alt}
-              />
+              <div className="modal-project-art modal-project-art-icon" aria-hidden="true">
+                <span className="modal-project-icon-anchor">
+                  <i className={project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} />
+                </span>
+              </div>
             )}
           </div>
         )}
@@ -884,7 +926,10 @@ function ModalContent({ project }: { project: Project }) {
       </div>
 
       {featured ? (
-        <div className="modal-study-content">{renderMedia(project.media, project.contributions)}</div>
+        <div className="modal-study-content">
+          <BriefFollowup project={project} />
+          {renderMedia(project.media, project.contributions)}
+        </div>
       ) : renderMedia(project.media, project.contributions)}
     </>
   )

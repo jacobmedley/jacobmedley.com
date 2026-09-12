@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B46. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B48. All APPLIED unless marked otherwise.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
 The September 8 annotation plan is historical; later applied edits govern the site.
@@ -1753,3 +1753,26 @@ adjacent registered project narrative. They are not presented as original projec
 artifacts or as new evidence. The five replaced DentalPlans cartoon files and the
 Hydra fantasy illustration remain in the repository as preserved originals but are
 removed from rendered project data.
+
+## B48. September 11 aesthetic copy refinements [APPLIED]
+
+Source: Jacob's September 11 browser comments 2–4, 8, 33 and 34. This entry
+supersedes B45 only where the exact Resume headline, slogan and visible leadership
+set differ. It does not change employment history, project claims, measurements,
+source evidence or external resume masters.
+
+- Resume belief headline: `One belief...`
+- Resume belief slogan: `There is always a better way, together we will find it.`
+- Remove the visible `Research and Measurement` leadership item. Retain the four
+  remaining items in this order and two-column pairing: AI Product Design / Design
+  Systems in the first column; Business Outcomes / Conversion and Experimentation
+  in the second column. Their wording is unchanged and explicitly flagged for a
+  later Jacob copy review.
+- In the Hydra study, remove the redundant standalone `The Problem` heading. In
+  the following narrative column, use `The Problem` as the H3 and `Severe UI
+  Fragmentation` as the H4 before the existing prose.
+
+The revised slogan is Jacob's direct surface-specific wording for this Resume
+section. It intentionally differs from the earlier reusable slogan recorded in
+B45 and `docs/voice-and-tone.md`; do not propagate it to other surfaces without a
+new direct instruction.

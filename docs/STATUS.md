@@ -1,5 +1,44 @@
 # Status
 
+## September 11, 2026: browser-comment aesthetic checkpoint complete
+
+Jacob's browser comments 1–34 are implemented locally on
+`codex/website-art-layout-20260910`, starting from documentation checkpoint
+`12fb8c0` and application candidate `fcfe272`. The Resume copy and leadership
+layout are revised under registered copy batch B48; all fourteen modal intros now
+use card-connected full-bleed fields; the A/B comparison is removed; the Persona
+artifact moves below its hero; Reveal, Viva and Wrong use their exact existing
+brand/card assets; Viva images receive a 24px white mat; and Hydra begins with H3
+`The Problem` followed by H4 `Severe UI Fragmentation`.
+
+The visible motion controls are hidden while their state code remains for the
+requested later refactor. Sticky section headings are disabled while semantic
+headings remain in normal flow. Modal glass, Close controls, header-mark sizing,
+icon ink and glow treatments match the annotated properties. No image generation
+was needed because the existing Wrong card portrait is already text-free and exact.
+
+The final static export at `http://localhost:3011/#full-stack`, owned by serve PID
+41964, passed the new aesthetic suite across Resume breakpoints, all fourteen
+modals, exact assets, color/blur properties, 40/48/58px header marks, targeted
+contrast (minimum sampled ratio 8.31:1), root-font 200% hero fitting, normal and
+reduced motion, and standalone browse behavior. Production build, TypeScript,
+authored-source ESLint, whitespace, the annotation suite and the Stage 4 surface
+suite also passed. Two initial build attempts encountered verified same-worktree
+preview locks; only those exact processes were stopped and the clean rerun passed.
+
+ACC-B02's visible collision mechanism is addressed in this build and passed
+targeted checks, but the independent acceptance report remains historically
+blocked pending a separate review of this checkpoint. ACC-B01 remains open: six
+lower-page supporting schematics can still clip internally at small-container 200%
+text. Browser UI 200% zoom, a native hidden-tab transition, Firefox, WebKit,
+physical devices, full WCAG certification and Node 20 CI remain unverified.
+
+See `docs/aesthetic-checkpoint-20260911.md` for the full mapping, measurements,
+verification boundaries and recovery instructions. No push, PR, merge, deployment,
+dependency change, paid fallback, extra spending or usage reset occurred. STATUS
+was written last before the local recovery commit; a unique Genesis completion
+event follows that commit, and only this task's lock is then released.
+
 ## September 11, 2026: independent acceptance BLOCKED
 
 Exact tested application: `fcfe2722c9a62e823772a61f89815f528db76071` on

@@ -769,11 +769,11 @@ export const projects: Project[] = [
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
-      { type: 'heading', text: 'The Problem' },
       {
         type: 'split-row',
         left: [
-          { type: 'heading', text: 'The user experience was fragmented.' },
+          { type: 'heading', text: 'The Problem', level: 3 },
+          { type: 'heading', text: 'Severe UI Fragmentation', level: 4 },
           {
             type: 'text',
             text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
@@ -1541,7 +1541,8 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare logo, inline lockup', flush: true }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        vAlign: 'center'
       },
       { type: 'heading', text: 'Color Study' },
       {

@@ -10,10 +10,6 @@ const leadershipLeft = [
     title: 'Design Systems',
     body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
-  {
-    title: 'Research and Measurement',
-    body: 'Set a usability testing practice at ten participants per round and a HEART-based KPI framework, so design decisions rested on evidence and outcomes had a number to move.',
-  },
 ]
 
 const leadershipRight = [
@@ -137,13 +133,13 @@ export default function ResumeSection() {
           <div className="row">
             <div className="col-24">
               <div className="resume-belief">
-                <h3>Twenty years. One belief.</h3>
-                <p className="resume-belief-slogan">I believe there&apos;s always a better way, together we can find it.</p>
+                <h3>One belief...</h3>
+                <p className="resume-belief-slogan">There is always a better way, together we will find it.</p>
                 <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
               <hr className="solid-center resume-belief-divider" />
               <ul className="resume-leadership-grid">
-                {[leadershipLeft[0], leadershipRight[0], leadershipLeft[1], leadershipRight[1], leadershipLeft[2]].map((item) => (
+                {[leadershipLeft[0], leadershipLeft[1], leadershipRight[0], leadershipRight[1]].map((item) => (
                   <li key={item.title}>
                     <i className="fa-thin fa-angle-right" aria-hidden="true" />
                     <div><strong>{item.title}:</strong> {item.body}</div>

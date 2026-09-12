@@ -1802,3 +1802,34 @@ employment history, measurements or source evidence.
 
 The source crop for `reveal-clear-01.jpg` remains unchanged and is recorded as a
 required source-image replacement in the September 12 handoff document.
+
+## B50. September 12 Resume timeline disclosure [APPROVED]
+
+Source: Jacob's direct September 12 continuation request. This entry authorizes
+the `Read more` interface label for the expandable work-history timeline. It does
+not revise employment history, job titles, dates, locations, metrics, narrative
+sentences, leadership copy or external resume masters.
+
+- Work-history disclosure label: `Read more`.
+- All timeline entries are closed by default. One entry may receive visual
+  emphasis without adding a factual label or changing its text.
+
+## B51. No all-caps display treatment [APPROVED]
+
+Source: Jacob's September 12 call-center browser comment. Ordinary headings,
+eyebrows, badges and labels use title or sentence case across the site. Standard
+acronyms and proper names retain their registered spelling. This is a typographic
+rule and does not authorize rewriting narrative copy.
+
+The call-center example uses the recommended contextual section treatment: a
+restrained Font Awesome icon, a title-case heading and the established faded rule.
+It is the first reviewed example, not authorization for a blind modal-wide sweep.
+
+## B52. September 12 modal presentation follow-up [APPROVED]
+
+Source: Jacob's later September 12 browser comments. Remove visible motion-pause
+controls everywhere. Remove the rendered Data-Driven Personalization brief GIF and
+Team Workshops brief image from their post-hero slots while preserving their source
+files and registered narrative. Move Reveal's three existing concept cards below
+the hero without changing their labels or bodies. These are presentation changes;
+no employment fact, project sentence, metric, title or source asset is revised.

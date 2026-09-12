@@ -142,6 +142,7 @@ export type ProjectMedia =
       text: string
       level?: 2 | 3 | 4 | 5
       icon?: string
+      treatment?: 'section'
       // legacy's `hr.my-5 -> icon -> h2 -> hr.my-5` section-break pattern
       // (col gets text-center, leading hr added, trailing hr gets my-12,
       // the usual mt-12 dropped since the leading hr supplies the gap)
@@ -1059,7 +1060,6 @@ export const projects: Project[] = [
       { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' }
     ],
     media: [
-      { type: 'divider' },
       {
         type: 'split-row',
         reverse: true,
@@ -1178,7 +1178,7 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Target' }
     ],
     media: [
-      { type: 'heading', text: 'Messaging and State Change' },
+      { type: 'heading', text: 'Messaging and State Change', level: 4, icon: 'fa-thin fa-message-lines', treatment: 'section' },
       {
         type: 'text',
         text: 'Our API checked the status of the call center every five minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'

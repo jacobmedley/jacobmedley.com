@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { MotionToggle, useMotionPaused, useReducedMotion } from './MotionControls'
+import { useMotionPaused, useReducedMotion } from './MotionControls'
 
 const ROLES = ['Product', 'UX', 'Systems', 'Service', 'Motion', 'Interaction', 'Human'] as const
 const NAME = '// Jacob Medley //'
@@ -73,7 +73,6 @@ export default function KineticHeroIdentity() {
         <span aria-hidden="true">Design</span>
       </p>
       <p className={`kinetic-closing${complete ? ' is-visible' : ''}`}>Let&apos;s Design and Build Something Great Together!</p>
-      {!staticMode && !complete && <MotionToggle className="hero-motion-control" />}
     </div>
   )
 }

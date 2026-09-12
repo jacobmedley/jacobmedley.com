@@ -4,7 +4,6 @@ import { Fragment, useCallback, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
-import { MotionToggle } from './MotionControls'
 import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
 import {
@@ -169,7 +168,6 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
               </div>
 
               <div className="modal-footer">
-                <MotionToggle className="modal-motion-control" />
                 <Dialog.Close asChild>
                   <button type="button" className="btn btn-prime btn-lg rounded-full btn-close-modal">
                     Close
@@ -211,7 +209,7 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
 }
 
 const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'])
-const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'marketing-auto', 'workshops', 'roadmap', 'personas'])
+const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'roadmap', 'personas'])
 
 function ModalHeroField({ project }: { project: Project }) {
   if (ORIGINAL_FEATURED_IDS.has(project.id)) return <FeaturedField projectId={project.id} />
@@ -309,6 +307,17 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      if (block.treatment === 'section') {
+        return (
+          <>
+            <div className="modal-section-heading">
+              {block.icon && <span><i className={block.icon} aria-hidden="true" /></span>}
+              <Tag>{block.text}</Tag>
+            </div>
+            <hr className="solid-center rule-heading" />
+          </>
+        )
+      }
       return (
         <>
           {block.sectionDivider && <hr className="solid-center my-12" />}
@@ -803,7 +812,9 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
       <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
           <li key={i} className="modal-info-card">
-            <i className={item.icon ?? 'fa-thin fa-circle-info'} aria-hidden="true" />
+            <span className="modal-info-card-icon" aria-hidden="true">
+              <i className={item.icon ?? 'fa-thin fa-circle-info'} />
+            </span>
             <span>
               {item.label && <strong>{item.label} </strong>}
               {item.body}
@@ -893,8 +904,11 @@ function CallCenterStateWireframes() {
   return (
     <section className="call-center-wireframes" aria-labelledby="call-center-wireframes-title">
       <div className="call-center-wireframes-heading">
-        <i className="fa-thin fa-window" aria-hidden="true" />
-        <h4 id="call-center-wireframes-title">Responsive site states</h4>
+        <div className="modal-section-heading">
+          <span><i className="fa-thin fa-window" aria-hidden="true" /></span>
+          <h4 id="call-center-wireframes-title">Responsive site states</h4>
+        </div>
+        <hr className="solid-center rule-heading" />
       </div>
       <div className="call-center-wireframes-grid">
         {CALL_CENTER_STATES.map((state) => (
@@ -904,7 +918,7 @@ function CallCenterStateWireframes() {
               <i className="fa-thin fa-bars" aria-hidden="true" />
             </header>
             <div className="wireframe-status">
-              <i className={state.icon} aria-hidden="true" />
+              <span className="wireframe-state-icon" aria-hidden="true"><i className={state.icon} /></span>
               <span><b>{state.label}</b><small>{state.action}</small></span>
             </div>
             <div className="wireframe-promo">
@@ -979,16 +993,20 @@ function ModalContent({ project }: { project: Project }) {
             </>
           )}
         </div>
-        {project.heroCards && (
-          <div className="modal-hero-cards">
-            <h4>{project.heroCardsHeading ?? 'Highlights'}</h4>
-            <StyledListContent block={{ type: 'styled-list', items: project.heroCards }} />
-          </div>
-        )}
       </div>
 
       {featured ? (
         <div className="modal-study-content">
+          {project.heroCards && (
+            <div className={`modal-hero-cards featured-work-card-${project.id}`}>
+              <div className="modal-section-heading">
+                <span><i className="fa-thin fa-lightbulb-on" aria-hidden="true" /></span>
+                <h4>{project.heroCardsHeading ?? 'Highlights'}</h4>
+              </div>
+              <hr className="solid-center rule-heading" />
+              <StyledListContent block={{ type: 'styled-list', items: project.heroCards }} />
+            </div>
+          )}
           <BriefFollowup project={project} />
           {renderMedia(project.media, project.contributions)}
         </div>

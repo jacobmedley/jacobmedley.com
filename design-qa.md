@@ -1,91 +1,99 @@
-# Design QA, September 12 visual-system wave
+# Design QA, September 12 visual-system continuation
 
-**Source visual truth**
+## Source and scope
 
-Jacob's browser-comment screenshots 1 through 15 in the September 12 task. The
-source evidence is conversation-bound and has no repository filesystem path.
+The source of truth is Jacob's September 12 browser-comment evidence plus
+`docs/visual-system-checkpoint-20260912.md`. The selected-page screenshots are
+conversation evidence and do not have repository paths. The implementation was
+reviewed at `http://localhost:3012/` in the Codex in-app browser.
 
-**Rendered implementation**
+This continuation covers the Resume timeline and the later modal notes: remove
+the global motion controls, remove the A/B divider, tighten and rebalance the
+call-center flow, enlarge its icons, align icon circles, apply a contextual
+section-heading treatment, add space around the Wrong mark, remove the two
+specified post-hero images, and move Reveal's concept cards below its hero.
 
-`http://localhost:3012/` in the Codex in-app browser. Browser-rendered captures
-were inspected in-session for the desktop hero, mobile hero, A/B Testing modal,
-Reveal modal, Wrong modal, DentalPlans metric cards, call-center desktop
-schematic, mobile schematic and mobile state cards. The browser returned image
-evidence to the task but its sandbox did not permit persisting those bytes into
-the repository, so there is no filesystem screenshot path.
+## Accepted design rules
 
-**Viewport and normalization**
+- Resume uses a faded vertical rule, project-color icon cards and restrained
+  spacing. Health-E Commerce is the single highlighted entry.
+- Every employment entry stays skimmable when closed. Native `details` and
+  `summary` expose longer registered copy through a `Read more` button.
+- Contextual modal section titles use a circular icon plaque, Title Case text
+  and a faded rule. This is the reviewed example for broader hierarchy work,
+  not an automatic treatment for every heading.
+- Display treatments never force all caps. Standard acronyms remain unchanged.
+- Motion pause/resume controls are not rendered anywhere. Reduced-motion,
+  offscreen and hidden-document protections remain active.
+- Call-center flow cards hug their content with proportional padding, use equal
+  tracks on wider containers, reorder to one column on narrow containers and
+  use icons four times the former size.
 
-- Desktop: 1875 by 992 CSS pixels, browser density unchanged.
-- Mobile: requested 375 by 812; browser content measured 360 by 812 in one
-  capture because of its visible scrollbar/chrome allocation. Document
-  `scrollWidth` equaled `clientWidth` at 360, so there was no page overflow.
-- Source and implementation density could not be normalized as files because
-  the source screenshots and browser captures were not available as local
-  image files. Comparisons therefore used the visible, same-state evidence in
-  the task rather than pixel-diff scoring.
+## Responsive and accessibility verification
 
-**Primary interactions and diagnostics**
+The Resume and call-center surfaces were exercised at 320, 375, 768, 992, 1440
+and 1875 CSS pixels.
 
-- Opened and closed representative modals.
-- Verified three Reveal cards, five A/B contribution badges, two technology
-  badges, four DentalPlans metric cards, one Value Created card, one call-center
-  schematic and three responsive state cards in the DOM.
-- Verified one semantic H1 named Jacob Medley.
-- Verified the role sequence completed on Human and revealed the closing line.
-- Verified a one-second pause held the role text unchanged.
-- Emulated reduced motion. The static `{ Product } + Design` composition and
-  closing line were visible and the temporary hero motion control was absent.
-- Checked browser warnings and errors. None were reported.
+- Resume: five semantic ordered-list entries, one highlighted entry, five
+  closed disclosures and no horizontal overflow at every width.
+- Keyboard: Enter opens a focused `Read more` disclosure; Space closes it; focus
+  remains on the summary control in both directions.
+- Screen-reader semantics: `Experience` labels the ordered list; each entry is
+  an article; every summary is exposed as a button named `Read more`.
+- 200% text: 320px Resume and call-center checks retained zero page, section,
+  content and card overflow. The mobile kinetic hero was allowed to wrap so it
+  no longer created page-level overflow at that setting.
+- Reduced motion: the animated modal field computed to no animation and no
+  visible motion control existed. The newer global no-control rule supersedes
+  the earlier pause/resume-control acceptance item.
+- Modal focus return: Escape closed representative modals and restored focus to
+  the invoking project control.
+- Call center: one flow column at 320/375; five equal columns from 768 upward.
+  All five icons compute to 80px and all flow/card bounds remain inside the
+  modal at every tested width.
 
-**Findings and comparison history**
+## Modal-comment verification
 
-- P2, call-center mobile schematic: the fifth Message + Offer layer was clipped
-  in the first 375px comparison. The narrow-container height was raised from
-  310px to 390px. The second browser capture showed the complete fifth card and
-  the following section with no overlap.
-- P2, call-center desktop schematic: inherited arrow glyphs occupied grid cells
-  and broke the intended five-layer row. The arrow selector was strengthened so
-  the card grid owns placement. The mobile recheck showed a balanced 2, 2, 1
-  layout; desktop is five columns.
-- P3, Reveal source image: `reveal-clear-01.jpg` remains badly cropped. Jacob
-  explicitly requested a note and source replacement, not a CSS workaround.
-- P3, Figma provenance: the rendered call-center wireframes are complete, but
-  their editable Figma source is pending Jacob's team-plan selection.
+- A/B Testing begins directly with content; the redundant leading divider is
+  gone.
+- Call-center availability and responsive-state icon circles are centered.
+- `Messaging and State Change` and `Responsive site states` share the accepted
+  contextual heading treatment.
+- Wrong's hero mark has 56px padding at the 1875px review width.
+- Data-Driven Personalization and Team Workshops no longer render their selected
+  post-hero images. Source files are retained.
+- Reveal's three concept cards now follow the hero, use the shared information
+  card construction and carry three related brand-tinted surfaces. Their icon
+  circles are centered.
+- No rendered modal inspected in this pass had horizontal overflow.
 
-**Required fidelity surfaces**
+## Deterministic checks
 
-- Fonts and typography: the existing brand family is retained for content.
-  Kinetic punctuation and role text use a system monospace stack. Featured
-  summaries now use 1.3 line height and three-line truncation.
-- Spacing and layout rhythm: title, subsection and major-divider roles use 12px,
-  24px and responsive 32px to 48px intervals. Information and metric cards use
-  shared 16px gaps and responsive internal padding.
-- Colors and tokens: all modal fields inherit project variables. Wrong adds the
-  campaign's teal, orange and deep-blue relationship. State cards use semantic
-  green, amber and muted purple.
-- Image quality and assets: Reveal and Wrong use existing source assets. The
-  supplied DentalPlans SVG is used directly. The bad Reveal crop is deferred at
-  source as instructed. No replacement logo or decorative SVG was fabricated.
-- Copy and content: B49 was registered before implementation. Existing case-study
-  prose and metrics are unchanged.
+- `npx tsc --noEmit --incremental false`: pass.
+- `npx eslint app components hooks lib scripts --no-cache`: pass.
+- `git diff --check`: pass.
+- Authored source contains no `MotionToggle`, hero/modal motion-control selector
+  or forced-uppercase declaration.
+- `npm run build`: not accepted in this pass. Next.js reached optimized-build
+  startup, then the active development preview's `.next/trace` handle returned
+  Windows `EPERM`. The user-owned preview process was not stopped. TypeScript,
+  lint, whitespace and live-browser verification are the accepted evidence.
 
-**Open questions**
+## Copy and asset fidelity
 
-- Which Figma plan should own the editable call-center wireframe file?
-- When will the corrected Reveal source crop be available?
+Employment company names, titles, dates, metrics and paragraph strings are
+unchanged. B50–B52 register the disclosure label and the browser-authorized
+presentation changes. `reveal-clear-01.jpg` is unchanged; its replacement remains
+blocked until Jacob supplies or approves a corrected source.
 
-**Implementation checklist**
+## Open dependency
 
-- Create and link the editable Figma source after the plan choice.
-- Replace and recheck the Reveal source image after Jacob provides it.
-- Run the higher-level Resume timeline handoff as a separate wave.
+The editable call-center Figma source still needs an owner. Figma exposes
+`Medley In Design` (Full/Pro, recommended) and `Jacob Medley's team` (Starter).
+No plan was guessed and no file was created without Jacob's selection.
 
-**Final result**
+## Result
 
-blocked
-
-The rendered site changes pass the browser comparison after the two call-center
-fixes. Product Design handoff remains blocked because the required editable Figma
-artifact and filesystem-backed comparison captures cannot be completed until
-the Figma plan is chosen.
+The implemented website scope passes the available acceptance evidence. The
+larger handoff remains blocked only on the Figma plan choice and the separately
+deferred Reveal source replacement.

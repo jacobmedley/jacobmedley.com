@@ -39,7 +39,7 @@ export default function StudySupportingArt({ kind, alt }: { kind: SupportingArtK
   const hub = Boolean(art.center)
 
   return (
-    <div className={`study-supporting-art study-supporting-art-${hub ? 'hub' : 'flow'}`} role="img" aria-label={alt} data-supporting-art={kind}>
+    <div className={`study-supporting-art study-supporting-art-is-${hub ? 'hub' : 'flow'}`} role="img" aria-label={alt} data-supporting-art={kind}>
       <div className="study-supporting-art-grid" aria-hidden="true" />
       <p className="study-supporting-art-eyebrow" aria-hidden="true">{art.eyebrow}</p>
       <div className="study-supporting-art-diagram" aria-hidden="true">

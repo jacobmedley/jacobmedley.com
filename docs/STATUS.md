@@ -1,5 +1,70 @@
 # Status
 
+## September 12, 2026: Resume timeline and modal-comment continuation
+
+Jacob's Astra/high continuation is implemented locally from recovery commit
+`13b9bd8` on `codex/website-art-layout-20260910`. Resume is now a five-entry
+semantic work-history timeline using the established icon-card, faded-rule,
+spacing and project-color language. Health-E Commerce is the single highlighted
+entry. Every entry is closed and skimmable by default; its complete registered
+prose opens through a native `details`/`summary` control named `Read more`.
+Company names, roles, dates, metrics and paragraph strings are unchanged. B50
+registers the disclosure and visual-highlight authorization.
+
+The later browser comments are also implemented. The redundant first A/B divider
+and every visible motion pause control are gone. The call-center schematic now
+hugs its content, uses equal wide-screen tracks, one-column narrow reflow, 80px
+icons, centered state icons and Title Case rather than forced all caps. The
+accepted contextual modal-section example combines an icon plaque, Title Case
+heading and faded rule; it is applied to `Messaging and State Change` and
+`Responsive site states`, not indiscriminately to every heading. Modal information
+icon circles are centered. Wrong's hero mark has responsive additional padding.
+The selected Data-Driven Personalization and Team Workshops follow-up images no
+longer render, while their source assets remain. Reveal's three concept cards now
+follow its hero in the shared card construction with related brand-tinted
+surfaces. B51 and B52 register these presentation changes. The authored visual
+rule now explicitly prohibits forced all-caps treatments while preserving standard
+acronyms.
+
+Live-browser acceptance covered 320, 375, 768, 992, 1440 and 1875 CSS pixels for
+Resume and call-center surfaces. Resume retained five entries, one highlight,
+five closed disclosures and zero horizontal overflow at every width. Enter/Space
+opened and closed a focused disclosure with focus retained; the ordered list,
+articles and summary-button names were exposed semantically. At 320px and 200%
+text, Resume, its mobile hero, call-center content and cards remained within the
+viewport. Call-center cards were one column at 320/375 and five equal columns at
+768 and above. Reduced motion disabled the animated field, no motion control was
+present, and Escape restored focus to the invoking modal control. The later
+global no-control direction supersedes the earlier pause/resume-control test;
+reduced-motion, offscreen and hidden-document protections remain.
+
+TypeScript, authored-source ESLint and `git diff --check` pass. Authored source
+contains no remaining `MotionToggle`, hero/modal motion-control selector or
+forced-uppercase declaration. `npm run build` reached optimized-build startup,
+then Windows returned `EPERM` for the active development preview's `.next/trace`
+handle. That user-owned preview was not stopped, so the build is not claimed as
+passing; live-browser, type, lint and whitespace checks are the accepted evidence.
+The historical Fast Refresh warnings seen in the browser log predate the corrected
+imports; current type and lint checks pass.
+
+`design-qa.md` contains the full acceptance record. The Reveal source file
+`reveal-clear-01.jpg` is untouched and still requires a corrected source supplied
+or approved by Jacob. Figma still exposes two possible owners for the editable
+call-center source: `Medley In Design` on Full/Pro and `Jacob Medley's team` on
+Starter. No owner was guessed and no file was created without Jacob's answer.
+The website implementation is ready; those two source-provenance dependencies
+remain open.
+
+Changed application surfaces are `app/globals.css`,
+`app/case-studies/case-studies.css`, `components/sections/ResumeSection.tsx`,
+`components/ui/CaseStudyModal.tsx`, `components/ui/KineticHeroIdentity.tsx`,
+`components/ui/MotionControls.tsx`, `components/ui/StudySupportingArt.tsx` and
+`lib/data/projects.ts`. Documentation changes are B50-B52 in
+`docs/copy-register.md`, the all-caps rule in `docs/jacob-style.md`, this status
+and `design-qa.md`. No push, PR, merge, deployment, dependency change, paid
+fallback or additional spending occurred. STATUS was written last before the
+local recovery checkpoint; a unique Genesis completion update follows it.
+
 ## September 12, 2026: visual-system wave implemented, Figma handoff pending
 
 Jacob's browser comments 1 through 15 are implemented locally from base

@@ -2,10 +2,6 @@
 
 import { useEffect, useSyncExternalStore } from 'react'
 
-let paused = false
-const listeners = new Set<() => void>()
-const subscribe = (listener: () => void) => { listeners.add(listener); return () => { listeners.delete(listener) } }
-const getSnapshot = () => paused
 const getServerSnapshot = () => false
 const subscribeReduced = (listener: () => void) => {
   const query = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -19,23 +15,11 @@ export function useReducedMotion() {
 }
 
 export function useMotionPaused() {
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
-}
-
-export function MotionToggle({ className = '' }: { className?: string }) {
-  const isPaused = useMotionPaused()
-  const reduced = useReducedMotion()
-  if (reduced) return <span className={`motion-control motion-status ${className}`}>Motion off: reduced motion</span>
-  return <button type="button" className={`motion-control ${className}`} onClick={() => {
-    paused = !paused
-    document.documentElement.classList.toggle('motion-paused', paused)
-    listeners.forEach(listener => listener())
-  }}><span aria-hidden="true">{isPaused ? '▶' : 'Ⅱ'}</span>{isPaused ? 'Resume motion' : 'Pause motion'}</button>
+  return false
 }
 
 export default function MotionControls() {
   useEffect(() => {
-    document.documentElement.classList.toggle('motion-paused', paused)
     const observer = 'IntersectionObserver' in window
       ? new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting)), { threshold: 0.01 })
       : null
@@ -55,8 +39,8 @@ export default function MotionControls() {
     mutations.observe(document.body, { childList: true, subtree: true })
     const onVisibilityChange = () => document.documentElement.classList.toggle('motion-hidden', document.hidden)
     document.addEventListener('visibilitychange', onVisibilityChange)
-    return () => { observer?.disconnect(); mutations.disconnect(); document.removeEventListener('visibilitychange', onVisibilityChange); document.documentElement.classList.remove('motion-paused', 'motion-hidden') }
+    return () => { observer?.disconnect(); mutations.disconnect(); document.removeEventListener('visibilitychange', onVisibilityChange); document.documentElement.classList.remove('motion-hidden') }
   }, [])
 
-  return <MotionToggle />
+  return null
 }

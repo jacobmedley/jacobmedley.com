@@ -34,12 +34,18 @@ type ExperienceEntry = {
   company: string
   roles: ExperienceRole[]
   paragraphs: string[]
+  icon: string
+  tone: string
+  highlighted?: boolean
 }
 
 // Text ported verbatim from components/section-resume.html
 const experience: ExperienceEntry[] = [
   {
     company: 'Health-E Commerce, New York, NY (Remote)',
+    icon: 'fa-thin fa-heart-pulse',
+    tone: 'health',
+    highlighted: true,
     roles: [
       { title: 'Director of User and Experience Design', period: 'Feb 2026 to Present' },
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
@@ -52,6 +58,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
+    icon: 'fa-thin fa-messages',
+    tone: 'mutual',
     roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
       'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
@@ -62,6 +70,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'One Park Financial, Coconut Grove, FL',
+    icon: 'fa-thin fa-layer-group',
+    tone: 'one-park',
     roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
       'Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.',
@@ -72,6 +82,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'DentalPlans.com, Plantation, FL',
+    icon: 'fa-thin fa-cart-shopping',
+    tone: 'dentalplans',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
       'The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. Cloning it was the obvious path, so I brought a roadmap instead: token-based theming, scheduled multi-phase promotions, one source of truth for products and providers, and one-button deploys per environment. Launch time for a fully branded property fell from six weeks to two. Five properties ran on it. Two people built and maintained the platform, and four experience designers covered every property on it.',
@@ -80,6 +92,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Bluegreen Vacations, Boca Raton, FL',
+    icon: 'fa-thin fa-signs-post',
+    tone: 'bluegreen',
     roles: [{ title: 'Senior Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
       'I evaluated the digital signage platforms and designed the integration that connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress in the middle as the authoring surface. Learning how each system expected to be fed, then designing a path through all four, was most of the work.',
@@ -164,34 +178,38 @@ export default function ResumeSection() {
 
           <div className="row">
             <div className="col-lg-16">
-              <h3 className="mb-6">Experience</h3>
-              <div className="row">
-                <div className="col-24">
-                  {experience.map((job, i) => (
-                    <div key={job.company}>
-                      <p>
-                        <strong>{job.roles[0].title}</strong>
-                        <br />
-                        {job.company}
-                        <br />
-                        <em>{job.roles[0].period}</em>
-                        {job.roles.slice(1).map((role) => (
-                          <span key={role.title}>
-                            <br />
-                            <strong>{role.title}</strong>
-                            <br />
-                            <em>{role.period}</em>
-                          </span>
-                        ))}
-                      </p>
-                      {job.paragraphs.map((p, j) => (
-                        <p key={j}>{p}</p>
-                      ))}
-                      {i < experience.length - 1 && <hr className="solid-center my-12" />}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
+              <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
+                {experience.map((job) => (
+                  <li className={`resume-timeline-entry resume-timeline-entry-${job.tone}${job.highlighted ? ' is-highlighted' : ''}`} key={job.company}>
+                    <span className="resume-timeline-marker" aria-hidden="true">
+                      <i className={job.icon} />
+                    </span>
+                    <article className="resume-experience-card">
+                      <header className="resume-experience-header">
+                        <p className="resume-experience-company">{job.company}</p>
+                        <div className="resume-experience-roles">
+                          {job.roles.map((role) => (
+                            <p key={role.title}>
+                              <strong>{role.title}</strong>
+                              <em>{role.period}</em>
+                            </p>
+                          ))}
+                        </div>
+                      </header>
+                      <details className="resume-experience-details">
+                        <summary role="button">
+                          <span>Read more</span>
+                          <i className="fa-thin fa-chevron-down" aria-hidden="true" />
+                        </summary>
+                        <div className="resume-experience-copy">
+                          {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        </div>
+                      </details>
+                    </article>
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div className="col-lg-8">

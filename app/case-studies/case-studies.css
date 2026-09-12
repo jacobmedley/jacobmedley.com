@@ -66,7 +66,7 @@
 .cs-outcome-card:nth-last-child(-n + 2) { grid-column: span 3; }
 .cs-outcome-card:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(48, 41, 54, .1); }
 .cs-outcome-card > .cs-badges { margin-bottom: 22px; }
-.cs-outcome-type { color: var(--cs-muted); font-size: 14px; line-height: 1.45; font-weight: 400; letter-spacing: .03em; text-transform: uppercase; }
+.cs-outcome-type { color: var(--cs-muted); font-size: 14px; line-height: 1.45; font-weight: 400; letter-spacing: .03em; }
 .cs-outcome-card > strong { margin-top: 9px; color: var(--cs-accent); font-size: 25px; line-height: 1.08; font-weight: 500; letter-spacing: -.5px; }
 .cs-outcome-label { margin-top: 5px; color: var(--cs-muted); font-size: 12px; line-height: 1.45; }
 .cs-outcome-card > p { margin-top: 20px; color: var(--cs-muted); font-size: 13px; line-height: 1.55; }

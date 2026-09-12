@@ -35,6 +35,10 @@ hypothesis and traffic, I owned the variant and the read."
 
 **No em dashes. Ever.** Period, comma, or colon.
 
+**No all-caps typographic treatments.** Headings, eyebrows, badges, and labels use
+title or sentence case. Preserve conventional acronyms such as API, UX, HTML, and
+MVP; the rule is against styling ordinary words as capitals, not changing names.
+
 **No repeated adjective inside a single piece.** If a word has done its job once, find
 another.
 

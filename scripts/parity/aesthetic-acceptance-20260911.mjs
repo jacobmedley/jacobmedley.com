@@ -84,6 +84,9 @@ for (const id of projectIds) {
     const footerClose = css('.modal-footer .btn-close-modal')
     const badgeIcon = node.querySelector('.modal-badges i')
     const fieldPhoto = node.querySelector('.modal-card-field-photo img')
+    const wrongCampaignLabel = projectId === 'wrong'
+      ? [...node.querySelectorAll('.modal-intro-copy p')].find((item) => item.textContent.trim() === 'Campaign Concept:')?.querySelector('strong')
+      : null
     return {
       fullBleed: node.querySelector('.modal-content').classList.contains('modal-full-bleed'),
       field: Boolean(node.querySelector('.modal-bleed-field')),
@@ -99,6 +102,9 @@ for (const id of projectIds) {
       followupSrc: node.querySelector('.modal-hero-followup img')?.getAttribute('src') ?? null,
       fieldPhotoSrc: fieldPhoto?.getAttribute('src') ?? null,
       brandLogoSrc: node.querySelector('.modal-project-art-brand img')?.getAttribute('src') ?? null,
+      revealHeroConcepts: projectId === 'reveal' ? node.querySelector('.modal-intro-copy .modal-intro-support')?.textContent ?? '' : null,
+      revealStudyConcepts: projectId === 'reveal' ? node.querySelector('.modal-study-content')?.textContent ?? '' : null,
+      wrongCampaignWeight: wrongCampaignLabel ? getComputedStyle(wrongCampaignLabel).fontWeight : null,
       hydraHeadings: projectId === 'hydra' ? [...node.querySelectorAll('.modal-study-content h3, .modal-study-content h4')].slice(0, 2).map((item) => [item.tagName, item.textContent.trim()]) : null,
       vivaMats: projectId === 'viva' ? [...node.querySelectorAll('.modal-study-content img.img-fluid')].map((item) => {
         const style = getComputedStyle(item)
@@ -125,8 +131,17 @@ for (const id of projectIds) {
   assert.ok(state.bodyOverflow <= 2, `${id} body overflow`)
   if (id === 'split-test') assert.equal(state.followupSrc, null, 'A/B lead comparison removed')
   if (id === 'personas') assert.equal(state.followupSrc, '/images/work/kitchen-sink/Persona-Cards.png')
-  if (id === 'wrong') assert.equal(state.fieldPhotoSrc, '/images/work/kitchen-sink/wrong-cover.jpg')
-  if (id === 'reveal') assert.equal(state.brandLogoSrc, '/images/work/kitchen-sink/reveal-cover.jpg')
+  if (id === 'wrong') {
+    assert.equal(state.fieldPhotoSrc, '/images/work/kitchen-sink/wrong-cover.jpg')
+    assert.ok(Number(state.wrongCampaignWeight) >= 700, 'Wrong Campaign Concept label is bold')
+  }
+  if (id === 'reveal') {
+    assert.equal(state.brandLogoSrc, '/images/work/kitchen-sink/reveal-cover.jpg')
+    assert.match(state.revealHeroConcepts, /My Concepts:/)
+    assert.match(state.revealHeroConcepts, /Creative Concepting/)
+    assert.doesNotMatch(state.revealStudyConcepts, /My Concepts:/)
+    assert.doesNotMatch(state.revealStudyConcepts, /Creative Concepting/)
+  }
   if (id === 'viva') {
     assert.equal(state.brandLogoSrc, '/images/work/viva-modal/brief.png')
     assert.ok(state.vivaMats.length > 0)

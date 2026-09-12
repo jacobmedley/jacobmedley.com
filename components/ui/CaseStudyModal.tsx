@@ -908,9 +908,17 @@ function ModalContent({ project }: { project: Project }) {
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>
               <hr className="solid-center" />
               {project.brief.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{withInlineLinks(p)}</p>
+                <p key={p.slice(0, 40)}>
+                  {project.briefLabels?.includes(p) ? <strong>{withInlineLinks(p)}</strong> : withInlineLinks(p)}
+                </p>
               ))}
             </>
+          )}
+
+          {project.heroMedia && (
+            <div className="modal-intro-support">
+              {renderMedia(project.heroMedia, project.contributions)}
+            </div>
           )}
 
           {!project.inlineContributions && <ContributionsSection contributions={project.contributions} />}

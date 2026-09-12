@@ -1,5 +1,29 @@
 # Status
 
+## September 11, 2026: Reveal and Wrong browser follow-up complete
+
+Jacob's two follow-up browser comments are implemented locally after aesthetic
+checkpoint `409d24d`. Reveal's `My Concepts` narrative and Contributions row now
+render inside the full-bleed hero copy panel; the study body begins with its
+`Concepts` image section. Wrong's existing `Campaign Concept:` label now renders
+with semantic strong emphasis. No written copy, source asset or other modal content
+changed, so no new B edit was required.
+
+The production export rebuilt successfully. TypeScript, focused authored-source
+ESLint and `git diff --check` passed. The updated aesthetic acceptance suite passed
+three Resume widths and all fourteen modal treatments at `localhost:3011`; its new
+assertions verify Reveal's content and contributions exist only in the hero panel
+and Wrong's label computes at a bold weight. Fresh rendered screenshots of both
+modals were visually reviewed. The first browser invocation used the suite's 3012
+development default and returned connection refused; the corrected production
+preview invocation passed and is the accepted run.
+
+Static preview `http://localhost:3011/#hi` is running from this worktree's rebuilt
+`out/` under serve PID 13992. Existing ACC-B01 and independent acceptance limits
+remain unchanged. No push, PR, merge or deployment occurred. STATUS was written
+last before the local recovery commit; the Genesis completion event follows that
+commit, then only this task's lock is released.
+
 ## September 11, 2026: browser-comment aesthetic checkpoint complete
 
 Jacob's browser comments 1–34 are implemented locally on

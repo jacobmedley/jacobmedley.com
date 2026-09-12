@@ -205,6 +205,7 @@ export interface Project {
   cardImage?: ProjectImage // feature-card image
   brief: { image?: ProjectImage; images?: ProjectImage[]; paragraphs: string[] }
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
+  briefLabels?: string[] // brief paragraphs rendered as standalone emphasized labels
   // Legacy ships two intro-row shapes. 'wide' (default) = plain `.row` with
   // image col-xl-10 / text col-xl-14. 'narrow' = `.row.justify-content-center`
   // with image col-24 col-xl-8 / text col-xl-10. Legacy used col-20 at the base
@@ -218,6 +219,7 @@ export interface Project {
   // render them at the correct position instead.
   inlineContributions?: boolean
   technologies: ProjectBadge[]
+  heroMedia?: ProjectMedia[] // supporting prose/lists that belong inside the hero copy panel
   media: ProjectMedia[] // preserves the legacy modal section order
 }
 
@@ -1453,7 +1455,7 @@ export const projects: Project[] = [
     ],
     inlineContributions: true,
     technologies: [],
-    media: [
+    heroMedia: [
       { type: 'text', text: 'My Concepts:' },
       {
         type: 'styled-list',
@@ -1477,6 +1479,8 @@ export const projects: Project[] = [
         text: 'Each concept had to sit inside one overarching campaign theme while standing on its own in a paid placement. The through-line was simple: the choice of Reveal Clear Aligners was, itself, clear.'
       },
       { type: 'contributions' },
+    ],
+    media: [
       { type: 'heading', text: 'Concepts' },
       {
         type: 'image-row',
@@ -1625,6 +1629,7 @@ export const projects: Project[] = [
         'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
       ]
     },
+    briefLabels: ['Campaign Concept:'],
     contributions: [
       { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },

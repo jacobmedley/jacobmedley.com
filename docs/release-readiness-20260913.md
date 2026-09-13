@@ -1,5 +1,39 @@
 # Release readiness — September 13, 2026
 
+## Production closeout
+
+**LIVE and verified.** PR #9 merged at 14:50:02 UTC into production commit
+`64c95cf3682201291b4ec719dda9bd4534b31d8b`. The unchanged SiteGround workflow
+[completed successfully](https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763809915)
+at 14:52:44 UTC. Visitor-facing version: **v12.152**.
+
+Normal, non-cache-bypassed HTTP verification returned 200 for all eight public
+site routes, both protected legacy pages, all 117 active image/artwork URLs
+(104 `/images` and 13 `/assets` references), and ten homepage Next script/style
+assets. All 117 image/artwork response bodies match the independently downloaded
+Ubuntu PR artifact by SHA-256. Homepage cache is MISS, Last-Modified
+14:52:35 UTC, consistent with this deploy; no cache purge was necessary.
+The legacy response-times page keeps its July 18, 2024 modification date.
+
+A normal Chrome reload showed the new Jacob Medley hero. The settled WebMD modal
+rendered, all 16 modal images decoded (including the identity and logo), Systems
+filter selected successfully, and the live platform story had its expected H1
+and no horizontal overflow. Original preview 3013/PID14284 remains HTTP 200;
+the isolated preview 8090/PID50116 was stopped after checking its full command.
+
+The initial live-check script compared Linux SVG/XML/manifest responses against
+a Windows artifact and misparsed five HTML-escaped references. Those exploratory
+failures were corrected by decoding HTML entities and using the actual Ubuntu
+artifact. The corrected inventory has zero failures; the first result is retained
+as test-harness provenance, not reported as a production defect.
+
+Final PR head `f1a61ef` also passed Ubuntu run
+https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763751363.
+Raw deployment logs, normal-response headers, hashes, screenshots and live
+browser observations are in this task's local `release` evidence directory.
+Rollback remains `e6b3672`. The final closeout commit changes documentation only
+and uses `[skip ci]` to avoid rebuilding and uploading an identical application.
+
 **Ready for the authorized production release.** This disposition supersedes the
 historical blocked release disposition in `release-acceptance-20260913.md`.
 Jacob explicitly requested unblocking and publishing the site, with WCAG 2.0 AA

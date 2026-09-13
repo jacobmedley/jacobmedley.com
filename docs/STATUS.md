@@ -1,5 +1,39 @@
 # Status
 
+## September 13, 2026: LIVE — v12.152, production 64c95cf
+
+PR #9 merged and SiteGround deployment 34763809915 completed successfully at
+14:52:44 UTC. Normal browser reload shows the new site. All eight public site
+routes and both protected legacy pages return 200. All 117 active image/artwork
+URLs match the Ubuntu artifact byte-for-byte, and all ten homepage Next assets
+return 200. Homepage cache MISS and Last-Modified 14:52:35 match this deployment;
+no purge was needed. WebMD modal images, live index filtering and story navigation
+were inspected successfully. See release-readiness-20260913.md and
+reviews/release-live-20260913.json for final evidence.
+
+ACC-B03, native visibility ACC-V01, native 200% zoom ACC-V02 and actual Ubuntu
+build coverage are resolved for this release. Online dependency audit is zero
+on the patched graph. WCAG 2.0 AA remains the target; broader browser/device,
+screen-reader and full criterion-by-criterion conformance review are follow-up
+coverage, not claimed complete. No copy B edit was applied or skipped here.
+
+Deployment/source commit: 64c95cf3682201291b4ec719dda9bd4534b31d8b.
+Rollback: e6b3672f88e5847d84a854f45ae3d29ca8269952. This final documentation-only
+closeout uses [skip ci] to avoid an identical rebuild/upload. Release branch is
+codex/website-visual-system-20260912; final commit is recorded in Genesis.
+Original dirty checkout and other worktrees are preserved. Owned lock is released
+at closeout. Existing preview3013/PID14284 remains 200; temporary8090/PID50116
+and acceptance tabs are closed. Live homepage is left available in Chrome.
+
+Genesis requests for multi-model routing and fresh-chat continuation were
+recorded as separate enhancement requests; no implementation or peer adoption
+is claimed. Jacob's consumption-aware stop preference was persisted in the
+local cross-project Codex AGENTS.md. Selected cloud configuration was retained;
+no local inference, paid fallback, usage reset or additional spending. Exact
+cloud token/cost/environmental telemetry is unavailable; no measured savings
+claim is made. Observed account weekly usage moved from35% to38% at the release
+checkpoint and is shared with other tasks.
+
 ## September 13, 2026: Native acceptance and Ubuntu CI passed; publication authorized
 
 Ready to publish PR #9, application/build checkpoint 0dce63f. Native Chrome

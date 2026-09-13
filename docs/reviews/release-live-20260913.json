@@ -1,0 +1,28 @@
+{
+  "deployedCommit": "64c95cf3682201291b4ec719dda9bd4534b31d8b",
+  "version": "v12.152",
+  "run": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763809915",
+  "verifiedUtc": "2026-09-13T14:56:00Z",
+  "inventory": {
+    "routes": 10,
+    "assets": 117,
+    "nextAssets": 10,
+    "newHero": true,
+    "failed": []
+  },
+  "imageReferences": 104,
+  "artworkReferences": 13,
+  "allImageArtworkSha256MatchUbuntu": true,
+  "homeHeaders": "HTTP/1.1 200 OK\nServer: nginx\nDate: Sun, 13 Sep 2026 14:54:10 GMT\nContent-Type: text/html\nContent-Length: 137721\nConnection: keep-alive\nVary: Accept-Encoding\nLast-Modified: Sun, 13 Sep 2026 14:52:35 GMT\nETag: \"219f9-65b5e77d3f134\"\nAccept-Ranges: bytes\nX-Httpd: 1\nCache-Control: no-cache, must-revalidate\nHost-Header: 6b7412fb82ca5edfd0917e3957f05d89\nX-Proxy-Cache: MISS\nX-Proxy-Cache-Info: 0 NC:000000 UP:\n\n",
+  "legacy": [
+    {
+      "path": "/musings/",
+      "status": "200"
+    },
+    {
+      "path": "/interaction-design-concepts/response-times/",
+      "status": "200"
+    }
+  ],
+  "rollback": "e6b3672f88e5847d84a854f45ae3d29ca8269952"
+}

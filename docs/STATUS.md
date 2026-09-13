@@ -1,5 +1,78 @@
 # Status
 
+## September 12, 2026: browser refinements 1-25 complete
+
+All 25 browser comments are implemented locally in worktree 4b5e on
+`codex/website-visual-system-20260912`, from rollback baseline `869e5cd`.
+The recovery commit containing this entry is the implementation checkpoint;
+its exact ID follows in the append-only Genesis completion event.
+
+Hero now starts with only the mark and a stacked horizontal brace pair over
+the hidden name. The braces rotate/expand, reveal the name and move to the roles.
+The first five roles change every second, later changes every three seconds.
+After the first cycle the braces reveal the closing line and exit; the line
+remains. Role weight increased, plus alignment was reviewed, and the clock
+settles at 39 seconds without replay on resize.
+
+Shared surfaces have lighter, more spacious icon plaques, larger icon/content
+gaps, tighter paragraph rhythm, stronger gradients and fading corner strokes.
+Modal heroes have static white waves and reduced transition spacing. The first
+section has no inherited top margin; title/rule/content gaps measure equally.
+B54 removes rendered technologies and curates four or fewer contribution pills
+per project. It is APPLIED. Underlying technology data and project narrative
+remain unchanged.
+
+The six icon thumbnails and modal fields share their geometry; all requested
+fields move in actual time samples. Icon breathing periods differ per card.
+Hydra has fewer floating UI controls and a larger, thicker mark. Resume replaces
+the timeline with internal-logo cards, equal columns from 992px, whole-card
+toggle, a top-right chevron, slower reversible disclosures and a smaller indented
+prior Health-E role. Leadership cards use larger titles, faded rules and 42px
+vertical / 32px horizontal wide padding. Education uses varied tints and a
+mosaic that restacks at 600/1200px while keeping content and focus order intact.
+Narrow headers let long or enlarged text wrap around their icons.
+
+MOA uses the updated knockout SVG from Jacob's reference folder byte-for-byte.
+Employment/leadership strings, education data, certificate links and all project
+data outside contribution labels match their baselines. Original images remain.
+
+Verification: TypeScript, ESLint, production export (11 static pages), source
+fidelity and whitespace checks pass. Seven normal widths plus 200% text at
+320/992 cover 126 modal cases with zero failures. Tests cover card/keyboard
+activation, focus return, circular plaques, pill limits, overflow, twelve hero
+phases per setting, actual field movement, reduced motion, offscreen suspension,
+rapid disclosure reversal and settled resize. Final export settings were
+rechecked, then the last spacing/color corrections were checked separately.
+Main icon contrast measures 7:1 to 8.3:1. Detailed scope, failures repaired and
+verification limits are in `docs/browser-refinements-20260912.md`, `design-qa.md`
+and `docs/reviews/browser-refinements-20260912.json`.
+
+Changed files: app/visual-system.css; EducationSection, FullStackSection and
+ResumeSection; CaseStudyModal, ExperienceDisclosure, FeaturedArtwork,
+KineticHeroIdentity and new ProjectGeometry; lib/data/projects.ts; supplied
+moa-icon.svg; the focused acceptance script; copy register, QA, plan, JSON
+evidence and this status file. No unrelated checkout was changed.
+
+Preview: HTTP 200 at `http://localhost:3013/`, node PID 33804 rooted in this
+worktree's out directory. Existing port 3012 remains running (PID 25972) and
+untouched. No push, PR, merge or deployment. The owned lock is released after
+the recovery commit and Exchange update; final clean-tree verification follows.
+
+Exchange refreshed through 2026-09-13T00:10:57Z, fingerprint
+`5875315e908316ba30b5c395ed56dacaf3742f537800238e4f1d36e8e5b6f51c`, no conflicts.
+Direction event: `20260912T234321Z-223f8295be494d0d90334a7096f319b7`. Completion
+uses the final commit ID; shared CURRENT and workstream reconciliation remains
+coordinator-owned. No remote acknowledgement is asserted.
+
+Next phase: broader marketing copy rewrite after this visual pass. Reveal's
+corrected source image remains separately deferred. No actual screen-reader,
+native background-tab or Firefox/WebKit verification is claimed.
+
+Model: selected GPT-6 Astra/high, no switch or subagents. Estimated cloud usage
+35,000-55,000 tokens including retries and review; exact telemetry unavailable.
+Zero local inference, paid fallback or additional spending. Estimated avoided
+extraction/review work is 8,000-15,000 cloud tokens, unmeasured rather than savings.
+
 ## September 12, 2026: mechanical visual system and supplied brand assets
 
 The authorized continuation is complete in the isolated 4b5e worktree on

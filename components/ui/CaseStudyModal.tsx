@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
 import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
+import ProjectGeometry from './ProjectGeometry'
 import {
   type Project,
   type ProjectMedia,
@@ -131,10 +132,11 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           }}
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
-            <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`)} data-project-id={project?.id}>
+            <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`, project && !project.thumb && !ORIGINAL_FEATURED_IDS.has(project.id) && 'modal-theme-thinking')} data-project-id={project?.id}>
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
                   <ModalHeroField project={project} />
+                  <svg className="modal-hero-wave" viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0 48C240 4 400 4 640 40S1100 74 1440 24V72H0Z" /></svg>
                 </div>
               )}
               <div className="modal-header">
@@ -182,9 +184,9 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
   )
 }
 
-function BadgeList({ badges, technology = false }: { badges: ProjectBadge[]; technology?: boolean }) {
+function BadgeList({ badges }: { badges: ProjectBadge[] }) {
   return (
-    <div className={cn('modal-badges', technology && 'modal-badges-technologies')} role="group" aria-label={technology ? 'Technologies' : 'Contributions'}>
+    <div className="modal-badges" role="group" aria-label="Contributions">
       {badges.map((b) => (
         <span key={b.label} className="badge-work">
           <i className={projectIcon(b.icon)} aria-hidden="true" /> {b.label}
@@ -228,10 +230,8 @@ function ModalHeroField({ project }: { project: Project }) {
     )
   }
   return (
-    <div className="modal-card-field modal-card-field-icon">
-      <span className="modal-card-field-ring modal-card-field-ring-one" />
-      <span className="modal-card-field-ring modal-card-field-ring-two" />
-      <i className={project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} />
+    <div className={`modal-card-field modal-card-field-icon thinking-art-${project.id}`}>
+      <ProjectGeometry projectId={project.id} />
     </div>
   )
 }
@@ -984,11 +984,6 @@ function ModalContent({ project }: { project: Project }) {
 
           {!project.inlineContributions && <ContributionsSection contributions={project.contributions} />}
 
-          {project.technologies.length > 0 && (
-            <>
-              <BadgeList badges={project.technologies} technology />
-            </>
-          )}
         </div>
       </div>
 

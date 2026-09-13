@@ -1,4 +1,4 @@
-import { useId, type CSSProperties } from 'react'
+import { type CSSProperties } from 'react'
 
 const FEATURED_ICONS: Record<string, string[]> = {
   webmd: [
@@ -108,23 +108,23 @@ const systemNodes = [
 const systemEdges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[7,8],[8,9],[9,10],[10,11],[11,4],[1,6],[2,5],[5,10],[6,9],[0,6],[3,5],[5,11]]
 
 function DesignSystem() {
-  const gridId = useId()
   return <div className="featured-design-system hydra-schematic">
     <svg viewBox="0 0 1000 440" preserveAspectRatio="xMidYMid slice">
-      <defs><pattern id={gridId} width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="currentColor" strokeOpacity=".08" /></pattern></defs>
-      <rect width="1000" height="440" fill={`url(#${gridId})`} />
-      <g className="hydra-connectors"><path d="M122 110H230V220H338M122 330H230V220M506 220H582M750 220H820V110H884M820 220V330H884" /></g>
-      <g className="hydra-palette">
-        {[0, 1, 2, 3].map(i => <rect key={i} x={50 + i * 42} y="42" width="28" height="12" rx="3" opacity={.2 + i * .2} />)}
-      </g>
-      {[{x: 40, y: 76}, {x: 40, y: 282}, {x: 338, y: 144}, {x: 582, y: 144}, {x: 842, y: 76}, {x: 842, y: 282}].map(({x, y}, i) => (
+      {[{x:90,y:70},{x:680,y:38},{x:170,y:285},{x:710,y:280}].map(({x,y},i) => (
         <g key={i} transform={`translate(${x} ${y})`}>
           <g className="hydra-component" style={{ '--component-index': i } as CSSProperties}>
-            <rect className="hydra-component-surface" width="146" height="112" rx="16" />
-            <rect className="hydra-component-control" x="16" y="17" width="24" height="24" rx="6" />
-            <path className="hydra-component-lines" d="M52 24H127M52 34H107M16 57H125M16 67H101" />
-            <rect className="hydra-component-button" x="16" y="82" width="75" height="16" rx="8" />
-            <path className="hydra-button-line" d="M28 90H76" />
+            {i < 2 ? <>
+              <rect className="hydra-sheet-outline" width="215" height="145" rx="12" />
+              <path className="hydra-component-lines" d="M20 25H105M20 57H192M20 67H146" />
+              <rect className="hydra-input" x="20" y="82" width="175" height="37" rx="5" />
+              <path className="hydra-component-lines" d="M32 100H85" />
+              <circle className="hydra-control-dot" cx="179" cy="100" r="5" />
+            </> : <>
+              <rect className="hydra-component-button" width="128" height="43" rx="9" />
+              <path className="hydra-button-line" d="M26 22H101" />
+              <rect className="hydra-toggle" x="148" y="8" width="52" height="28" rx="14" />
+              <circle className="hydra-toggle-thumb" cx="162" cy="22" r="9" />
+            </>}
           </g>
         </g>
       ))}

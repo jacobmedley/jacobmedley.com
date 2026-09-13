@@ -1,0 +1,1290 @@
+{
+  "observedUtc": "2026-09-13T00:10:53.735998+00:00",
+  "baseline": "869e5cd254ddf84a6729055a5ffdd3057074bee2",
+  "branch": "codex/website-visual-system-20260912",
+  "scope": "Browser comments 1-25; B54",
+  "settings": [
+    {
+      "width": 320,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 375,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 768,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 992,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 1875,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 992,
+      "textScale": 2,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    },
+    {
+      "width": 1706,
+      "textScale": 1,
+      "overflow": 0,
+      "balancedColumns": true,
+      "noTimeline": true,
+      "wholeCardAndKeyboard": "pass",
+      "educationCount": 10
+    }
+  ],
+  "modalCases": 126,
+  "modalChecks": [
+    "maximum four contribution pills",
+    "no technology badges",
+    "borderless pills",
+    "static wave",
+    "circular plaques",
+    "no horizontal overflow",
+    "Escape focus return"
+  ],
+  "hero": [
+    {
+      "width": 320,
+      "scale": 2,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 992,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 1706,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 1875,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    },
+    {
+      "width": 992,
+      "scale": 2,
+      "frames": [
+        {
+          "time": 400,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 1050,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 2300,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 3100,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 4400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 5400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 6400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IdX"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 7400,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "0",
+          "braces": "1"
+        },
+        {
+          "time": 9000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "1"
+        },
+        {
+          "time": 10500,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 12000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": "1",
+          "braces": "0"
+        },
+        {
+          "time": 39000,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": "1",
+          "braces": "0"
+        }
+      ]
+    }
+  ],
+  "motion": {
+    "iconPeriods": [
+      "8.7s",
+      "11.3s",
+      "9.4s",
+      "11.3s",
+      "12.1s",
+      "9.4s"
+    ],
+    "fields": [
+      {
+        "id": "hydra",
+        "moving": true
+      },
+      {
+        "id": "split-test",
+        "moving": true
+      },
+      {
+        "id": "call-center-ux",
+        "moving": true
+      },
+      {
+        "id": "marketing-auto",
+        "moving": true
+      },
+      {
+        "id": "workshops",
+        "moving": true
+      },
+      {
+        "id": "roadmap",
+        "moving": true
+      }
+    ],
+    "reduced": {
+      "state": "static",
+      "count": 0,
+      "closing": "1"
+    },
+    "offscreenUnchanged": true,
+    "rapidReversal": {
+      "open": true,
+      "focus": "SUMMARY"
+    },
+    "settledResize": true,
+    "reducedFieldRunning": 0
+  },
+  "spacing": {
+    "firstRowMargin": "0px",
+    "bodyPadding": "20px",
+    "titleToRule": 19.609375,
+    "ruleToContent": 19.609375
+  },
+  "headlineIconContrast": [
+    {
+      "section": "work",
+      "ratio": 7
+    },
+    {
+      "section": "full-stack",
+      "ratio": 7.63
+    },
+    {
+      "section": "resume",
+      "ratio": 8.3
+    },
+    {
+      "section": "education",
+      "ratio": 7.37
+    }
+  ],
+  "source": {
+    "copy": "exact match to 9508686",
+    "originalImages": "unchanged",
+    "newAssets": "four byte-identical supplied SVGs"
+  },
+  "preservedData": [
+    "Education array exactly equals 869e5cd",
+    "All project data outside contribution labels exactly equals 869e5cd",
+    "Original images unchanged"
+  ],
+  "checks": {
+    "tsc": "pass",
+    "eslint": "pass",
+    "productionBuild": "pass: 11 static pages",
+    "diffCheck": "pass"
+  },
+  "finalExportRecheck": [
+    "320/200%",
+    "992/200%",
+    "1706/100%"
+  ],
+  "laterTargetedChecks": "First-section margin specificity and headline icon colors checked after subsequent successful exports",
+  "failures": [],
+  "limits": [
+    "No actual screen-reader session",
+    "Native background-tab visibility not verified",
+    "Firefox and WebKit not tested"
+  ],
+  "preview": "http://localhost:3013/",
+  "previewPid": 33804,
+  "deployment": "none",
+  "rollback": "869e5cd",
+  "moaSvg": {
+    "source": "C:/dev/jacobmedley.com/public/assets/references/moa/moa-icon.svg",
+    "sha256": "c37692ad1ddd4b3ea5ef00ac027120bf7e1b75be5cd7357e27fecfff9e8487e9",
+    "byteIdentical": true
+  }
+}

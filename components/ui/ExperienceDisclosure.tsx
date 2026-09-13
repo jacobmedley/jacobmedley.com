@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react'
 import { useReducedMotion } from './MotionControls'
 
 /** Native details remains the semantic owner. Only its content height is animated. */
-export default function ExperienceDisclosure({ company, children }: { company: string; children: ReactNode }) {
+export default function ExperienceDisclosure({ company, header, children }: { company: string; header: ReactNode; children: ReactNode }) {
   const detailsRef = useRef<HTMLDetailsElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const animationRef = useRef<Animation | null>(null)
@@ -36,7 +36,7 @@ export default function ExperienceDisclosure({ company, children }: { company: s
     }
     const animation = content.animate(
       [{ height: `${start}px`, opacity: start === 0 ? 0 : 1 }, { height: `${opening ? content.scrollHeight : 0}px`, opacity: opening ? 1 : 0 }],
-      { duration: 360, easing: 'cubic-bezier(.22,.75,.2,1)' },
+      { duration: opening ? 620 : 540, easing: opening ? 'cubic-bezier(.16,1,.3,1)' : 'cubic-bezier(.4,0,.7,.2)' },
     )
     animationRef.current = animation
     animation.onfinish = () => {
@@ -46,6 +46,13 @@ export default function ExperienceDisclosure({ company, children }: { company: s
   }
 
   return (
+    <article className="resume-experience-card" onClick={event => {
+      if ((event.target as HTMLElement).closest('a,button,input,select,textarea,summary') || window.getSelection()?.toString()) return
+      const summary = detailsRef.current?.querySelector('summary')
+      summary?.focus({ preventScroll: true })
+      summary?.click()
+    }}>
+      {header}
     <details ref={detailsRef} className="resume-experience-details" data-expanded={expanded} onToggle={() => {
       // Also support native/scripted activation outside the enhanced click path.
       if (!animationRef.current) {
@@ -55,11 +62,12 @@ export default function ExperienceDisclosure({ company, children }: { company: s
     }}>
       <summary onClick={(event) => { event.preventDefault(); toggle() }}>
         <span>{expanded ? 'Less' : 'More'}<span className="sr-only"> about {company}</span></span>
-        <span className="resume-disclosure-plus" aria-hidden="true">+</span>
+        <i className="fa-thin fa-chevron-down resume-disclosure-chevron" aria-hidden="true" />
       </summary>
       <div ref={contentRef} className="resume-experience-content">
         <div className="resume-experience-copy">{children}</div>
       </div>
     </details>
+    </article>
   )
 }

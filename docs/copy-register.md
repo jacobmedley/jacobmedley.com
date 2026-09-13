@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B53. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B54. All APPLIED unless marked otherwise.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
 The September 8 annotation plan is historical; later applied edits govern the site.
@@ -1854,3 +1854,31 @@ the standalone follow-up image removal. Supersedes B49/B50 only as listed here.
 
 No employment title, period, location, metric, paragraph, leadership sentence,
 project narrative or other source asset changes are authorized by this entry.
+
+## B54. Browser refinement contribution labels [APPLIED]
+
+Source: Jacob's September 12 comments 3 and 16 authorize a maximum of four
+modern product/UX contribution labels per project and removal of rendered
+technology badges. These labels summarize existing contributions, not new work.
+Underlying technologies remain historical data. Broader copy rewriting is
+deferred until all visual refinements are complete (comment 17).
+
+| Project | Contribution labels in display order |
+|---|---|
+| webmd | Product Design; Design Leadership; Prototyping; Usability Testing |
+| dentalplans | Product Ownership; Design Systems; UX & UI Design; Front-end Development |
+| bumblebeemd | Product Design; Design Leadership; Prototyping; Usability Testing |
+| hydra | Design Systems; Design Leadership; Systems Analysis; UI Engineering |
+| opfred | Product Design; User Research; Prototyping; Design Leadership |
+| split-test | Experimentation; UX Strategy; Data Analysis; Implementation |
+| call-center-ux | Project Leadership |
+| marketing-auto | UX & UI Design; Responsive Design; Design Leadership; Integration Strategy |
+| workshops | Workshop Facilitation |
+| roadmap | UX Roadmapping |
+| personas | Project Collaboration; Visual Design |
+| reveal | Concept Development; Collaboration; Visual Design |
+| viva | Concept Development; Collaboration; Visual Design |
+| wrong | Design Leadership; Collaboration; Visual Design |
+
+Hero name, role spellings and closing line remain as registered in B53. Resume
+facts, dates, company names, narrative, leadership and education text are unchanged.

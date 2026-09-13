@@ -1,5 +1,23 @@
 # Design QA
 
+## September 12 browser comments 1-25
+
+The current acceptance record is `docs/browser-refinements-20260912.md`, with
+compact evidence in `docs/reviews/browser-refinements-20260912.json` and the
+reusable in-app adapter `scripts/parity/browser-refinements-20260912.mjs`.
+This pass supersedes B53's technology badge display, Resume timeline/plus,
+hero cadence and temporary closing line. B54 governs the curated contribution
+labels. Seven normal widths plus two enlarged-text settings passed all 126
+modal cases. Actual animation samples, keyboard/full-card activation, reduced
+motion, offscreen suspension and settled resize passed. Source facts and
+narrative are preserved; the updated supplied MOA knockout is in use.
+
+All 25 visual notes are applied. The full marketing copy rewrite is a later
+phase. The earlier deferred Reveal source replacement remains open. Actual
+screen-reader, native background-tab, Firefox and WebKit verification remain
+outside the available acceptance evidence. This is a local recovery checkpoint,
+not a deployment.
+
 ## September 12 mechanical visual-system acceptance (4b5e)
 
 Source: Jacob's nineteen-item continuation, B53, his Roadmap clarification and

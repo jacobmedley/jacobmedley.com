@@ -1,14 +1,12 @@
 'use client'
 
-import { useState, type CSSProperties } from 'react'
+import { useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import { cn } from '@/lib/utils'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
-import ThinkingConnections from '@/components/ui/ThinkingConnections'
-import PersonalizationRays from '@/components/ui/PersonalizationRays'
-import RoadmapMaze from '@/components/ui/RoadmapMaze'
+import ProjectGeometry from '@/components/ui/ProjectGeometry'
 
 const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
@@ -96,12 +94,7 @@ export default function FullStackSection() {
                       <span className="thinking-photo-image" style={{ backgroundImage: `url(${project.thumb.src})` }} />
                     ) : (
                       <>
-                        <span className="thinking-geometry">
-                          {project.id === 'call-center-ux' ? <ThinkingConnections /> : null}
-                          {project.id === 'marketing-auto' ? <PersonalizationRays /> : null}
-                          {project.id === 'roadmap' ? <RoadmapMaze /> : null}
-                          {Array.from({ length: 12 }, (_, index) => <i key={index} style={{ '--layer': index } as CSSProperties} />)}
-                        </span>
+                        <ProjectGeometry projectId={project.id} />
                         <span className="thinking-icon-anchor">
                           <i className={`${project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
                         </span>

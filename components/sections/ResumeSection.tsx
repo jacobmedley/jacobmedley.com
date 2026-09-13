@@ -162,7 +162,7 @@ export default function ResumeSection() {
                 {[leadershipLeft[0], leadershipLeft[1], leadershipRight[0], leadershipRight[1]].map((item) => (
                   <li key={item.title}>
                     <span className="resume-value-icon" aria-hidden="true"><i className={item.icon} /></span>
-                    <div><strong>{item.title}:</strong> {item.body}</div>
+                    <div><h4>{item.title}</h4><hr className="solid-center" /><p>{item.body}</p></div>
                   </li>
                 ))}
               </ul>
@@ -182,37 +182,37 @@ export default function ResumeSection() {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-lg-16">
+          <div className="row resume-columns">
+            <div className="col-24 col-lg-12">
               <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
               <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
                 {experience.map((job) => (
                   <li className={`resume-timeline-entry resume-timeline-entry-${job.tone}${job.highlighted ? ' is-highlighted' : ''}`} key={job.company}>
-                    <span className="resume-timeline-marker" aria-hidden="true">
-                      <span className="resume-brand-logo" style={{ '--resume-logo': `url("${job.logo}")` } as CSSProperties} />
-                    </span>
-                    <article className="resume-experience-card">
+                    <ExperienceDisclosure company={job.company} header={
                       <header className="resume-experience-header">
-                        <p className="resume-experience-company">{job.company}</p>
-                        <div className="resume-experience-roles">
-                          {job.roles.map((role) => (
-                            <p key={role.title}>
-                              <strong>{role.title}</strong>
-                              <em>{role.period}</em>
-                            </p>
-                          ))}
+                        <span className="resume-company-mark" aria-hidden="true">
+                          <span className="resume-brand-logo" style={{ '--resume-logo': `url("${job.logo}")` } as CSSProperties} />
+                        </span>
+                        <div className="resume-job-heading">
+                          <p className="resume-experience-company">{job.company}</p>
+                          <div className="resume-experience-roles">
+                            {job.roles.map((role, index) => (
+                              <p key={role.title} className={index > 0 ? 'resume-prior-role' : undefined}>
+                                <strong>{role.title}</strong><em>{role.period}</em>
+                              </p>
+                            ))}
+                          </div>
                         </div>
                       </header>
-                      <ExperienceDisclosure company={job.company}>
-                        {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                      </ExperienceDisclosure>
-                    </article>
+                    }>
+                      {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </ExperienceDisclosure>
                   </li>
                 ))}
               </ol>
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-24 col-lg-12 resume-expertise">
               <div className="row">
                 <div className="col-24">
                   <h3 className="mb-6">Expertise</h3>

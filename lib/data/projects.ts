@@ -250,14 +250,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-user-chart', label: 'User Testing' },
-      { icon: 'fa-thin fa-vial', label: 'A/B Testing' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -377,10 +373,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Owner' },
-      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' }
+      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Ownership' },
+      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
+      { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Development' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -663,13 +659,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-user-chart', label: 'User Testing' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -766,11 +759,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Analysis' },
-      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'System Dev' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' }
+      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Systems Analysis' },
+      { icon: 'fa-thin fa-laptop-code', label: 'UI Engineering' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -939,12 +931,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -1050,11 +1040,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-chess', label: 'Strategy' },
-      { icon: 'fa-thin fa-chart-mixed', label: 'Analysis' },
-      { icon: 'fa-thin fa-user-check', label: 'UX' },
-      { icon: 'fa-thin fa-list-check', label: 'Planning' },
-      { icon: 'fa-thin fa-code', label: 'Implementation' }
+      { icon: 'fa-thin fa-flask', label: 'Experimentation' },
+      { icon: 'fa-thin fa-chess', label: 'UX Strategy' },
+      { icon: 'fa-thin fa-chart-mixed', label: 'Data Analysis' },
+      { icon: 'fa-thin fa-code', label: 'Implementation' },
     ],
     technologies: [
       { icon: 'fa-thin fa-bullseye-arrow', label: 'Adobe Target' },
@@ -1170,7 +1159,9 @@ export const projects: Project[] = [
         'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
       ]
     },
-    contributions: [ { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' } ],
+    contributions: [
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Leadership' },
+    ],
     technologies: [
       {
         icon: 'fa-thin fa-project-diagram',
@@ -1205,12 +1196,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
       { icon: 'fa-thin fa-phone-laptop', label: 'Responsive Design' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' }
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -1262,7 +1251,9 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Solving the Right Problems',
-    contributions: [{ icon: 'fa-thin fa-lightbulb-on', label: 'Facilitator' }],
+    contributions: [
+      { icon: 'fa-thin fa-lightbulb', label: 'Workshop Facilitation' },
+    ],
     technologies: [
       { icon: 'fa-thin fa-chalkboard', label: 'Whiteboard' },
       { icon: 'fa-thin fa-marker', label: 'Dry Erase Markers' },
@@ -1311,7 +1302,9 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Are we there yet?',
-    contributions: [{ icon: 'fa-thin fa-mouse-field', label: 'Roadmap Planning' }],
+    contributions: [
+      { icon: 'fa-thin fa-map', label: 'UX Roadmapping' },
+    ],
     technologies: [{ icon: 'fa-thin fa-chalkboard', label: 'Lucidchart' }],
     media: [
       { type: 'heading', text: 'Example UX Roadmap: obfuscated for client protection' },
@@ -1397,8 +1390,8 @@ export const projects: Project[] = [
     },
     briefHeading: 'What Frugal Francine Taught Us',
     contributions: [
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Co-Project Lead' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-handshake', label: 'Project Collaboration' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],
     media: []
@@ -1421,9 +1414,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     inlineContributions: true,
     technologies: [],
@@ -1502,9 +1495,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [],
     media: [
@@ -1605,9 +1598,9 @@ export const projects: Project[] = [
     },
     briefLabels: ['Campaign Concept:'],
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [],
     media: [

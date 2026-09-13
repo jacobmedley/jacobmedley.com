@@ -1,7 +1,7 @@
 /* September 12 system: nested surfaces, theme plaques and finite mechanical motion. */
 :root {
   --nested-icon-size: clamp(2rem, 2.1rem + .8vw, 3rem);
-  --nested-icon-gap: clamp(.5rem, .8vw, .75rem);
+  --nested-icon-gap: clamp(1rem, 1.5vw, 1.5rem);
   --hero-name-size: clamp(1.8rem, 1.2rem + 1.856vw, 3.375rem);
   --hero-role-size: clamp(1.65rem, .5rem + 2.742vw, 3.7125rem);
   --hero-cta-size: clamp(1rem, .85rem + .6614vw, 1.625rem);
@@ -25,14 +25,14 @@
 #work { --section-ink: #285675; --section-tint: #d7e7f0; }
 #full-stack { --section-ink: #67461c; --section-tint: #f2e4c6; }
 #resume { --section-ink: #354d32; --section-tint: #dce8d2; }
-#education { --section-ink: #f7e6df; --section-tint: #745e62; }
+#education { --section-ink: #65424b; --section-tint: #e7d6dc; }
 .section-heading-icon {
   display: grid; place-items: center; width: clamp(4.5rem, 7vw, 5.5rem); aspect-ratio: 1;
   border-radius: 50%; color: var(--section-ink, var(--color-prime));
   background: var(--section-tint, #e7ddeb); border: 1px solid #ffffff55;
 }
 .section-heading-icon i, .section-heading-reserve.is-compact .section-heading-icon i {
-  color: inherit !important; font-size: var(--nested-icon-size); line-height: 1;
+  color: var(--section-ink, var(--color-prime)) !important; font-size: var(--nested-icon-size); line-height: 1;
 }
 .modal-section-heading > span {
   width: calc(var(--nested-icon-size) + 1rem); height: auto; aspect-ratio: 1;
@@ -142,4 +142,145 @@
   .resume-disclosure-plus { transition: none; }
   .modal-bleed-field.featured-work-card, .hydra-schematic, .hydra-schematic * { animation: none !important; }
   .hero-case-studies-link i { animation: none; }
+}
+
+/* Browser refinement: shared spacing and surfaces, fluid rather than viewport snapshots. */
+:root { --card-pad-y: clamp(1.4rem, 2.5vw, 2.625rem); --card-pad-x: clamp(1.25rem, 2vw, 2rem); --section-rhythm: clamp(2rem, 4cqi, 3.5rem); --heading-rhythm: clamp(.85rem, 1.5cqi, 1.25rem); }
+p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line-height: 1.5; }
+.section-heading-icon { width: clamp(5.5rem, 8vw, 7rem); background: color-mix(in srgb, var(--section-tint, #e7ddeb) 48%, white); }
+.modal-section-heading { gap: var(--nested-icon-gap); }
+.modal-section-heading > span { width: calc(var(--nested-icon-size) + 2rem); flex-basis: calc(var(--nested-icon-size) + 2rem); background: color-mix(in srgb, var(--featured-mid, #ddcdec) 12%, white); }
+.modal-info-card { column-gap: var(--nested-icon-gap); }
+.modal-intro-copy h3 { font-size: clamp(1.4rem, 2.4cqi, 1.85rem); }
+.modal-intro-copy > hr.solid-center, .modal-study-content :is(h2,h3,h4,h5,h6,.modal-section-heading) + hr.solid-center { margin-block: var(--heading-rhythm); }
+.modal-study-content hr.solid-center + :is(p,ul,div) { margin-top: 0; }
+.modal-study-content :is(h2,h3,h4,h5,h6) { line-height: 1.25; }
+.modal-study-content > :is(section,.modal-media-split,.modal-hero-cards) + :is(section,.modal-media-split,.modal-hero-cards) { margin-top: var(--section-rhythm); }
+.modal-badges { gap: .6rem; }
+.modal-badges:not(.modal-badges-technologies) .badge-work { padding: .48rem .85rem; border: 0; border-radius: 999px; color: var(--featured-ink, #302a38); background: #ffffff8f; line-height: 1.35; }
+.modal-hero-wave { position: absolute; z-index: 5; left: 0; bottom: -1px; width: 100%; height: clamp(24px, 3vw, 48px); fill: #faf9fc; animation: none; }
+.modal-full-bleed .modal-featured-hero { padding-bottom: clamp(2rem, 4cqi, 3rem); }
+.modal-full-bleed .modal-study-content { padding-top: clamp(.5rem, 1.5vw, 1.25rem); }
+.modal-study-content > :first-child { margin-top: 0; }
+.modal-data-panel { background: linear-gradient(135deg, color-mix(in srgb, var(--featured-mid, #ddcdec) 38%, white), #ffffffc9 52%, color-mix(in srgb, var(--featured-mid, #ddcdec) 58%, white)); }
+.modal-metric-card, .modal-value-card, .modal-info-card { position: relative; isolation: isolate; }
+.modal-metric-card::after, .modal-value-card::after, .modal-info-card::after {
+  content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(135deg, transparent 12%, color-mix(in srgb, var(--featured-ink, #4f3864) 30%, transparent) 47%, transparent 88%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;
+}
+
+/* Four leadership surfaces and an even two-column Resume layout. */
+.resume-leadership-grid > li { padding: var(--card-pad-y) var(--card-pad-x); gap: var(--nested-icon-gap); background: linear-gradient(125deg, #ffffffd9, color-mix(in srgb, var(--resume-ink) 15%, white)); }
+.resume-leadership-grid h4 { margin: 0; color: var(--resume-ink); font-size: clamp(1.2rem, 1.5vw, 1.5rem); font-weight: 500; line-height: 1.25; }
+.resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
+.resume-leadership-grid p { margin: 0; }
+.row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; }
+.resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
+.resume-timeline::before { content: none; }
+.resume-timeline-entry { padding-left: 0; }
+.resume-timeline-entry + .resume-timeline-entry { margin-top: 1.5rem; }
+.resume-experience-card { cursor: pointer; }
+.resume-experience-card:focus-within { outline: 2px solid var(--resume-ink); outline-offset: 3px; }
+.resume-experience-header { grid-template-columns: 3rem minmax(0,1fr); gap: var(--nested-icon-gap); padding: var(--card-pad-y) var(--card-pad-x) 1rem; align-items: start; }
+.resume-company-mark { display: grid; width: 3rem; height: 3rem; place-items: center; }
+.resume-brand-logo { width: 100%; height: 100%; }
+.resume-job-heading { min-width: 0; padding-right: 1rem; }
+.resume-experience-company { margin-bottom: .55rem; }
+.resume-experience-roles { gap: .45rem; }
+.resume-experience-roles p { grid-template-columns: minmax(0,1fr); gap: .2rem; }
+.resume-experience-roles strong { font-size: clamp(1.05rem, 1.35vw, 1.25rem); }
+.resume-experience-roles em { white-space: normal; font-size: .8rem; }
+.resume-experience-roles .resume-prior-role { position: relative; padding-left: 1.25rem; margin-top: .35rem; }
+.resume-prior-role::before { content: ''; position: absolute; top: .05rem; left: .2rem; width: .65rem; height: .65rem; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; opacity: .4; }
+.resume-experience-roles .resume-prior-role strong { font-size: .95rem; }
+.resume-experience-details, .resume-experience-details summary { position: static; }
+.resume-experience-details summary { padding: .75rem var(--card-pad-x) 1.15rem; }
+.resume-experience-details summary::before { content: none; }
+.resume-experience-details summary:hover { background: transparent; }
+.resume-experience-details .resume-disclosure-chevron { position: absolute; top: 1rem; right: 1rem; width: 1.5rem; text-align: center; font-size: 1rem; transition: rotate 620ms cubic-bezier(.16,1,.3,1); }
+.resume-experience-details[data-expanded='true'] .resume-disclosure-chevron { rotate: 180deg; }
+.resume-experience-details[data-expanded='false'] .resume-disclosure-chevron { rotate: 0deg; }
+.resume-experience-copy { padding: .5rem var(--card-pad-x) 1rem; }
+@media (min-width: 992px) { .row.resume-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,5vw,5rem); } .resume-expertise .fa-ul { columns: 2; column-gap: 2rem; } .resume-expertise li { break-inside: avoid; } }
+@media (max-width: 575px) { .resume-experience-header { grid-template-columns: 2.25rem minmax(0,1fr); gap: 1rem; } .resume-company-mark { width: 2.25rem; height: 2.25rem; } }
+
+/* Stable varied tones and spans keep reading order intact as the mosaic restacks. */
+.education-mosaic { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.2rem; }
+.education-card { --edu-tone: #dfc4bf; display: flex; flex-direction: column; position: relative; gap: 1rem; min-width: 0; padding: var(--card-pad-y) var(--card-pad-x); color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone)); }
+.education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
+.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: 1rem; align-items: start; }
+.education-card header > i { font-size: 2rem; line-height: 1.2; }
+.education-card h4 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
+.education-card h4, .education-card p { overflow-wrap: anywhere; }
+.education-card p { margin: 0; }
+.education-card hr { width: 100%; margin: auto 0 0; }
+.education-card a { align-self: start; color: inherit; padding: .3rem 0; }
+@media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } .education-card:first-child { grid-column: span 2; } }
+@media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(12,minmax(0,1fr)); } .education-card { grid-column: span 3; } .education-card:first-child { grid-column: span 6; } .education-card:nth-child(n+4):nth-child(-n+6) { grid-column: span 4; } }
+
+/* The same warm geometry runs in both surfaces; independent periods avoid lockstep. */
+.modal-theme-thinking, .modal-theme-thinking .modal-bleed-field, .modal-theme-thinking .modal-featured-hero { --featured-light: #f8f7ee; --featured-mid: #e7dfb9; --featured-dark: #d6ca8e; --featured-ink: #695512; }
+.modal-theme-thinking .modal-card-field { color: #7f640a; --art-center-y: 50%; }
+.modal-theme-thinking .project-geometry { inset: 0; height: 100%; transform: none; }
+.modal-theme-thinking .personalization-rays, .modal-theme-thinking .roadmap-maze { height: 100%; }
+.modal-theme-thinking .project-geometry-split-test > i, .modal-theme-thinking .project-geometry-workshops > i { left: 50%; top: 50%; }
+.project-geometry { --art-center-y: 43%; }
+.project-geometry-roadmap > i { border-radius: 50%; border: 1px solid #7f640a18; inset: auto !important; left: 50% !important; top: 43% !important; width: calc(140px + var(--layer)*60px) !important; height: auto !important; aspect-ratio: 1; transform: translate(-50%,-50%); }
+.project-geometry-roadmap .roadmap-maze path { stroke-dasharray: 28 5; animation: maze-travel 7s linear infinite; }
+@keyframes maze-travel { to { stroke-dashoffset: -66; } }
+.project-geometry-workshops > i, .project-geometry-roadmap > i { animation: geometry-breathe calc(8s + var(--layer)*.8s) ease-in-out infinite alternate !important; animation-delay: calc(var(--layer)*-.9s) !important; }
+@keyframes geometry-breathe { from { scale: .92; opacity: .65; } to { scale: 1.13; opacity: 1; } }
+.thinking-item { --icon-period: 8.7s; --icon-offset: -1.3s; }
+.thinking-item:nth-child(2n) { --icon-period: 11.3s; --icon-offset: -4.8s; }
+.thinking-item:nth-child(3n) { --icon-period: 9.4s; --icon-offset: -2.7s; }
+.thinking-item:nth-child(5n) { --icon-period: 12.1s; --icon-offset: -6.2s; }
+.thinking-thumb-icon .thinking-icon, .modal-project-icon-anchor > i { animation: icon-breathe var(--icon-period, 10.7s) ease-in-out var(--icon-offset,-3.7s) infinite alternate !important; }
+@keyframes icon-breathe { from { scale: .94; } to { scale: 1.12; } }
+html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-geometry,.project-geometry > i,.thinking-icon) { animation-play-state: running !important; }
+
+/* A sparse UI sheet: independently floating controls and changing button states. */
+.featured-hydra-mark { width: clamp(7rem,10vw,10rem); filter: drop-shadow(.45px 0 currentColor) drop-shadow(-.45px 0 currentColor); }
+.hydra-schematic { animation: hydra-theme 18s ease-in-out infinite; }
+.hydra-component { animation: hydra-float calc(7s + var(--component-index)*1.6s) ease-in-out infinite alternate; animation-delay: calc(var(--component-index)*-1.7s); }
+.hydra-sheet-outline { fill: #ffffff12; stroke: currentColor; stroke-width: 1.3; opacity: .52; }
+.hydra-input, .hydra-toggle { fill: #ffffff24; stroke: currentColor; stroke-width: 1; opacity: .6; }
+.hydra-component-lines { stroke-width: 1.4; opacity: .5; }
+.hydra-control-dot, .hydra-toggle-thumb { fill: currentColor; opacity: .5; }
+.hydra-toggle-thumb { animation: hydra-toggle-state 6s ease-in-out infinite alternate; }
+.hydra-component-button { animation: hydra-button-state 5s ease-in-out infinite alternate; fill: currentColor; opacity: .22; }
+.hydra-button-line { stroke: currentColor; opacity: .6; }
+@keyframes hydra-float { from { transform: translate(-8px,-10px) rotate(-2deg); } to { transform: translate(12px,14px) rotate(2deg); } }
+@keyframes hydra-toggle-state { 0%,35% { translate: 0; } 65%,100% { translate: 24px; } }
+@keyframes hydra-button-state { 0%,25% { opacity: .12; rx: 6px; } 65%,100% { opacity: .4; rx: 18px; } }
+
+.kinetic-word, .kinetic-design { font-weight: 500; }
+.kinetic-mechanism-motion { position: absolute; top: 0; left: 50%; width: 0; pointer-events: none; font-size: var(--hero-role-size); line-height: 1.25; color: var(--color-prime); }
+.kinetic-mechanism { position: absolute; top: 0; left: 0; height: 1.3em; transform: translateX(-50%); }
+.kinetic-mechanism { max-width: calc(100cqi - 1em); }
+.kinetic-identity[data-hero-state='static'] .kinetic-mechanism-motion { display: none; }
+.kinetic-closing { min-height: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .resume-experience-details .resume-disclosure-chevron { transition: none; }
+  .project-geometry, .project-geometry *, .thinking-thumb-icon .thinking-icon, .modal-project-icon-anchor > i, .hydra-schematic, .hydra-schematic * { animation: none !important; }
+}
+
+
+.modal-study-content > .row:has(> div > :is(h2,h3,h4,h5,.modal-section-heading)) { margin-top: var(--section-rhythm); }
+.modal-study-content > .row:has(> div > :is(h2,h3,h4,h5,.modal-section-heading)) > div { margin-top: 0; }
+.modal-study-content > :first-child, .modal-study-content > .row:first-child > div { margin-top: 0; }
+.modal-full-bleed .modal-study-content > .row:first-child { margin-top: 0; }
+.modal-study-content :is(h2,h3,h4,h5) { margin-bottom: 0; }
+@media (min-width: 992px) {
+  .modal-theme-thinking .personalization-rays { left: 25%; }
+  .modal-theme-thinking .project-geometry-workshops > i, .modal-theme-thinking .project-geometry-split-test > i, .modal-theme-thinking .project-geometry-roadmap > i { left: 25% !important; }
+}
+@media (max-width: 575px) {
+  .resume-experience-card, .education-card { --card-pad-x: 20px; }
+  .resume-experience-header { display: flow-root; }
+  .resume-company-mark { float: left; margin: 0 1rem .5rem 0; }
+  .resume-job-heading { padding-right: 0; }
+  .resume-experience-roles { clear: both; padding-top: .35rem; }
+  .education-card header { display: flow-root; }
+  .education-card header > i { float: left; margin: 0 .65rem .3rem 0; }
 }

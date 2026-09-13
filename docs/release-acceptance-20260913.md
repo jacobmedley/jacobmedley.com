@@ -1,5 +1,21 @@
 # Independent final acceptance, September 13, 2026
 
+## ACC-B03 resolution addendum
+
+ACC-B03 was resolved locally in application commit
+`5c4efc9958d4baf6d9a619cf4c838fcc76d37872`. The clean Windows Node 20
+artifact now contains a self-contained 288-file `out/images` tree, byte-matched
+to tracked `images/`, and all 104 `/images` references emitted by the production
+application resolve with exact path casing. See
+`docs/acc-b03-resolution-20260913.md` and
+`docs/reviews/acc-b03-resolution-20260913.json` for the bounded rerun.
+
+This addendum closes only ACC-B03. Ubuntu GitHub Actions did not run because the
+authorized work excluded a push, and this machine has neither Docker nor an
+installed WSL distribution. ACC-V01 native visibility and ACC-V02 native browser
+zoom coverage remain unavailable, along with the other limitations below. No PR,
+merge, deployment, or overall publication approval is implied.
+
 **BLOCKED. Do not package, push, merge or deploy this candidate.**
 
 ACC-B03 is a reproduced release-artifact defect: the clean Node 20 export omits

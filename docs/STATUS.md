@@ -1,5 +1,55 @@
 # Status
 
+## September 13, 2026: ACC-B03 resolved locally; release coverage remains open
+
+ACC-B03 is fixed in application commit
+`5c4efc9958d4baf6d9a619cf4c838fcc76d37872` on
+`codex/website-visual-system-20260912`. Production `npm run build` now replaces
+generated `out/images` with real copies from tracked `images/` and immediately
+verifies the complete tree by path and SHA-256 plus every `/images` reference
+emitted by the application. The ignored `public/images` development junction,
+source image contents, accepted `/images` URLs, design and copy are unchanged.
+
+The immutable application commit was exported to a fresh archive with no
+`public/images`, prior output or installed dependencies. Windows Node 20.20.2 and
+npm 10.9.9 `npm ci`, production build, separate TypeScript and authored ESLint
+checks passed. The clean export contains 288 source-matched image files and all
+104 active production references. A negative control removed the rendered WebMD
+desktop modal image; the verifier failed on that exact omission and passed after
+restoration. This separates active application URLs from the earlier 117-entry
+inventory, which also included unused historical media.
+
+The clean export itself was served separately at 8090 for browser inspection.
+The homepage media card rendered, the modal identity SVG loaded, and all 14 WebMD
+case-study images completed with nonzero natural dimensions. The representative
+1183×2237 desktop image was visually inspected. The standalone platform story
+also loaded; it is an authored HTML/CSS reconstruction with no image elements.
+The temporary clean server and browser tab were closed. The normal rebuilt static
+preview is restored at http://localhost:3013/ under PID 14284 and returns HTTP 200.
+
+Ubuntu CI was not run: pushing was outside authorization, Docker is unavailable
+and WSL is not installed on this host. This Windows result is not labeled as an
+Ubuntu result. ACC-V01 native visibility and ACC-V02 native browser-chrome 200%
+zoom coverage remain unavailable. Firefox, WebKit, physical-device and
+screen-reader coverage also remain open, and the unchanged dependency audit still
+reports six high and one critical finding without exploitability triage. ACC-B03
+resolution alone does not authorize publication.
+
+Detailed evidence: `docs/acc-b03-resolution-20260913.md` and
+`docs/reviews/acc-b03-resolution-20260913.json`; the independent acceptance report
+has a bounded resolution addendum while preserving its historical blocked result.
+SiteGround, its destination and `dangerous-clean-slate: false` are unchanged. No
+push, PR, merge or deployment occurred. Production rollback remains `e6b3672`;
+local pre-fix checkpoint is `47f1aff`. A local documentation recovery commit
+follows this STATUS-last update, then the owned lock is released and the exact
+commit is appended to Genesis. Shared pointers remain coordinator-owned and no
+peer acknowledgement is claimed.
+
+Genesis was freshly checked at 2026-09-13T14:06:33Z, fingerprint
+`4cb06134d4b2fdde0eee984a170bc1b1784318d5ef4ac5f6f0c228849bcc95fd`, with no
+reported conflicts. Direction event:
+`20260913T133741Z-f60f49ed9eea4f4cbd0ac2aa1b3842c2`.
+
 ## September 13, 2026: Final acceptance recheck remains BLOCKED
 
 Rechecked repository checkpoint `5245ed676038dbad0d575294567cd144c92d05e0`

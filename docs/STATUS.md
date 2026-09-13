@@ -1,5 +1,39 @@
 # Status
 
+## September 13, 2026: Final acceptance recheck remains BLOCKED
+
+Rechecked repository checkpoint `5245ed676038dbad0d575294567cd144c92d05e0`
+on `codex/website-visual-system-20260912` in worktree 4b5e. Fresh remote main
+remains `e6b3672f88e5847d84a854f45ae3d29ca8269952`. The delta from previously
+tested `c788fa9` is documentation only; application SHA remains `40377c4`.
+
+ACC-B03 still applies. Fresh filesystem inspection confirms that the retained
+clean Node 20 artifact has out/index.html and source images/, but no out/images.
+The local public/images junction is ignored; package.json runs setup only for
+development, while the preserved SiteGround workflow invokes npm ci and build.
+No asset-preparation fix has landed. Packaging stops on this confirmed blocker.
+
+The full main-to-candidate acceptance, Node 20 build and browser evidence in
+docs/release-acceptance-20260913.md remain applicable to identical application
+source. They were reviewed, not rerun or relabeled as new tests in this recheck.
+ACC-B01/B02 retain their resolved dispositions. Native visibility and native
+200% browser zoom remain unavailable required coverage; Ubuntu CI, other browser
+engines/devices and dependency-audit triage remain limitations. Recheck the clean
+artifact and affected browser coverage after production image preparation is fixed.
+
+Fresh remote branch lookup and PR query found no implementation branch or PR.
+PR URL/head/base: none. No push, PR, merge or deployment. Production rollback:
+e6b3672; local pre-recheck checkpoint: 5245ed6. This recheck changes only STATUS;
+no source, dependency, copy/B edit, workflow or service changes. The existing
+3013 preview was inspected without restarting it. Deferred copy, BumblebeeMD,
+Reveal source replacement and dormant-style cleanup remain unchanged.
+
+Genesis freshly read and checked at 2026-09-13T13:11:20Z, fingerprint
+f99ba67e1737bccc3a8abe1ebb88b7ecb8afb1031de904cf8986bca7dac114f9, no conflicts.
+A unique completion update records the recheck commit. Shared pointers remain
+coordinator-owned; no peer acknowledgement claimed. STATUS is written last,
+followed by a local documentation checkpoint and release of the owned lock.
+
 ## September 13, 2026: Independent final acceptance BLOCKED
 
 This supersedes the readiness suggestion below. Tested repository SHA:

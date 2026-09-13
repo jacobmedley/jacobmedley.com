@@ -1,5 +1,13 @@
 # Independent final acceptance, September 13, 2026
 
+## Superseding publication review
+
+The later authorized release continuation closes native visibility, native 200%
+zoom and actual Ubuntu CI coverage, and updates dependencies after an online
+audit reproduced the historical findings. See `release-readiness-20260913.md`
+for the current **ready for release** disposition and exact evidence. Everything
+below is the preserved historical independent review, not the current release gate.
+
 ## ACC-B03 resolution addendum
 
 ACC-B03 was resolved locally in application commit

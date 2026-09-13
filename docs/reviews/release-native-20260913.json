@@ -1,0 +1,593 @@
+{
+  "applicationCommit": "0dce63f0c1dfb1bf60ee9417b696d0fd2e5c2388",
+  "browser": "Native Chrome on Windows",
+  "focusEmulationDisabled": true,
+  "hero": {
+    "visible": {
+      "hidden": false,
+      "at": 1375.7999999821186,
+      "scrollY": 0,
+      "events": [],
+      "state": "running",
+      "animations": [
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "running"
+        }
+      ]
+    },
+    "hidden1": {
+      "hidden": true,
+      "at": 1417.0999999940395,
+      "scrollY": 0,
+      "events": [
+        {
+          "trusted": true,
+          "hidden": true,
+          "at": 1383.699999988079
+        }
+      ],
+      "state": "paused",
+      "animations": [
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        }
+      ]
+    },
+    "hidden2": {
+      "hidden": true,
+      "at": 22480.79999998212,
+      "scrollY": 0,
+      "events": [
+        {
+          "trusted": true,
+          "hidden": true,
+          "at": 1383.699999988079
+        }
+      ],
+      "state": "paused",
+      "animations": [
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        },
+        {
+          "time": 1184.298999985574,
+          "state": "paused"
+        }
+      ]
+    },
+    "resumed": {
+      "hidden": false,
+      "at": 23033.399999976158,
+      "scrollY": 0,
+      "events": [
+        {
+          "trusted": true,
+          "hidden": true,
+          "at": 1383.699999988079
+        },
+        {
+          "trusted": true,
+          "hidden": false,
+          "at": 22495
+        }
+      ],
+      "state": "running",
+      "animations": [
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        },
+        {
+          "time": 1684.7109999887984,
+          "state": "running"
+        }
+      ]
+    }
+  },
+  "demo": {
+    "visible": {
+      "hidden": false,
+      "at": 924.5,
+      "state": "ready",
+      "changes": []
+    },
+    "hidden1": {
+      "hidden": true,
+      "at": 982.9000000059605,
+      "state": "ready",
+      "changes": []
+    },
+    "hidden2": {
+      "hidden": true,
+      "at": 23636.09999999404,
+      "state": "ready",
+      "changes": []
+    },
+    "resumed": {
+      "hidden": false,
+      "at": 33328.69999998808,
+      "state": "busy",
+      "changes": [
+        {
+          "at": 28673.90000000596,
+          "state": "busy",
+          "hidden": false
+        }
+      ]
+    }
+  },
+  "nativeZoom": {
+    "result": {
+      "type": "string",
+      "value": "{\"innerWidth\":636,\"innerHeight\":413,\"devicePixelRatio\":2,\"visualScale\":1,\"overflow\":0}"
+    }
+  },
+  "zoomModals": [
+    {
+      "name": "Open WebMD case study",
+      "title": "WebMD",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Open DentalPlans.com case study",
+      "title": "Product Framework and Design System",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Open BumblebeeMD case study",
+      "title": "BumblebeeMD",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Open Hydra case study",
+      "title": "Hydra Design System",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Open One Park Financial case study",
+      "title": "One Park Financial",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Experimentation A/B Testing",
+      "title": "A/B Testing",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Service Experience Call Center XD",
+      "title": "Call Center XD",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Personalization Data-Driven Personalization",
+      "title": "Data-Driven Personalization",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Facilitation Team Workshops",
+      "title": "Team Workshops",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Planning UX Roadmaps",
+      "title": "UX Roadmaps",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Research Synthesis Personas",
+      "title": "Personas",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Wrong Campaign Modular Experience for Growth",
+      "title": "The Wrong Campaign",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Reveal Campaign The Choice Is Clear",
+      "title": "Reveal Aligners",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    },
+    {
+      "name": "Disciplines Viva Brand Viva Medicare",
+      "title": "Viva Medicare",
+      "width": 636,
+      "dpr": 2,
+      "dialogOverflow": 0,
+      "bodyOverflow": 0
+    }
+  ],
+  "zoomRoutes": [
+    {
+      "path": "/case-studies/",
+      "h1": "The thinkingbehind the work.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/a-checkout-decision-with-receipts/",
+      "h1": "Four documents, one checkout, zero agreement.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/building-a-design-function/",
+      "h1": "Building the function that was not there.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/navigation-beyond-opinion/",
+      "h1": "Navigation decisions were being made on taste.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/one-customer-journey/",
+      "h1": "Four executives, four different customer journeys.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/one-platform-five-properties/",
+      "h1": "The alternative to five sites was five teams.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    },
+    {
+      "path": "/case-studies/tokens-before-pages/",
+      "h1": "Tokens before surface area.",
+      "h1Count": 1,
+      "width": 636,
+      "dpr": 2,
+      "overflow": 0
+    }
+  ],
+  "focusReturn": {
+    "activeLabel": null,
+    "activeText": "ProductService ExperienceCall Center XD"
+  },
+  "reducedMotion": {
+    "reduced": true,
+    "state": "static",
+    "animations": 0
+  },
+  "limitations": [
+    "Representative native Chrome coverage; no Firefox/WebKit/physical device/screen reader certification",
+    "At 200% a tall demo can remain auto-paused by its viewport intersection threshold; manual state controls work."
+  ]
+}

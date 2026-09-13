@@ -1,5 +1,35 @@
 # Status
 
+## September 13, 2026: Native acceptance and Ubuntu CI passed; publication authorized
+
+Ready to publish PR #9, application/build checkpoint 0dce63f. Native Chrome
+200% zoom passed all 14 modals and eight public routes without horizontal
+overflow. Real hidden/visible transitions pause/resume the hero and demo;
+reduced motion and modal focus return passed. Fresh Windows Node 20 archive
+and actual Ubuntu Node 20 CI passed, including all 288 image hashes and
+104 active image references. The new PR workflow verifies without deploying.
+
+Online audits reproduced the older seven findings despite the prior offline
+zero result. Dependencies are now patched within Next 15 (15.5.25), with
+PostCSS 8.5.28 overridden for Next and compatible transitive updates. Final
+online audits are zero on Windows and Ubuntu. No application copy, component,
+CSS or original image changed in this release continuation.
+
+WCAG 2.0 AA is the target; 200% resizing was retained and tested. Broader
+browser/device/screen-reader and full conformance certification remain follow-up
+coverage. See release-readiness-20260913.md and reviews/release-native-20260913.json.
+Jacob explicitly authorized getting this release live. Existing SiteGround FTP
+workflow and protected directories are preserved. Main/rollback is e6b3672.
+Deployment has not yet run at this documentation checkpoint.
+
+Worktree 4b5e owns the release lock on codex/website-visual-system-20260912;
+original dirty checkout and other worktrees are untouched. Preview3013 remains
+PID14284; isolated final-artifact preview8090 is PID50116. Two requested Genesis
+enhancements are recorded for consumption-aware model routing and fresh-chat
+continuation; no implementation or remote acknowledgement is claimed. The
+current selected cloud configuration continues; deterministic tools did the
+checks, no local inference, paid fallback, resets or additional spending.
+
 ## September 13, 2026: ACC-B03 resolved locally; release coverage remains open
 
 ACC-B03 is fixed in application commit

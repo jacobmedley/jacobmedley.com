@@ -1,8 +1,13 @@
 'use client'
 
-import { Fragment, useRef, type ReactNode } from 'react'
+import { Fragment, useCallback, useRef, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
+import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
+import AnimatedStudyImage from './AnimatedStudyImage'
+import StudySupportingArt from './StudySupportingArt'
+import ProjectGeometry from './ProjectGeometry'
+import CallCenterDemo from './CallCenterDemo'
 import {
   type Project,
   type ProjectMedia,
@@ -61,6 +66,18 @@ interface CaseStudyModalProps {
   onOpenChange: (open: boolean) => void
 }
 
+// The installed kit supplies thin icons but omits these brand glyphs.
+// Technology names remain explicit; use the site's available visual vocabulary.
+function projectIcon(icon: string) {
+  const alternatives: Record<string, string> = {
+    'fa-brands fa-wordpress-simple': 'fa-thin fa-browser',
+    'fa-brands fa-bootstrap': 'fa-thin fa-layer-group',
+    'fa-brands fa-git-alt': 'fa-thin fa-code-branch',
+    'fa-brands fa-laravel': 'fa-thin fa-code',
+  }
+  return alternatives[icon] ?? icon
+}
+
 /**
  * Legacy Bootstrap modal (components/modal-*.html): fullscreen dialog
  * with container-width content, blur behind the modal viewport, fade +
@@ -70,6 +87,30 @@ interface CaseStudyModalProps {
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   const returnFocusRef = useRef<HTMLElement | null>(null)
+  const featured = !!project
+  // Paint outside the native scroll viewport so its transparent gutter cannot
+  // crop the artwork. Keep this one field aligned with the scrolling intro.
+  const bindFeaturedBody = useCallback((body: HTMLDivElement | null) => {
+    if (!body || !featured) return
+    const shell = body.parentElement!
+    const field = shell.querySelector<HTMLElement>('.modal-bleed-field')!
+    const header = shell.querySelector<HTMLElement>('.modal-header')!
+    const hero = body.querySelector<HTMLElement>('.modal-featured-hero')!
+    const scroll = () => { field.style.transform = `translateY(${-body.scrollTop}px)` }
+    const resize = () => {
+      field.style.height = `${header.getBoundingClientRect().height + hero.getBoundingClientRect().height}px`
+      scroll()
+    }
+    const observer = new ResizeObserver(resize)
+    observer.observe(header)
+    observer.observe(hero)
+    body.addEventListener('scroll', scroll, { passive: true })
+    resize()
+    return () => {
+      observer.disconnect()
+      body.removeEventListener('scroll', scroll)
+    }
+  }, [featured])
 
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -92,7 +133,12 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           }}
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
-            <div className="modal-content container rounded-lg">
+            <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`, project && !project.thumb && !ORIGINAL_FEATURED_IDS.has(project.id) && 'modal-theme-thinking')} data-project-id={project?.id}>
+              {featured && project && (
+                <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
+                  <ModalHeroField project={project} />
+                </div>
+              )}
               <div className="modal-header">
                 <Dialog.Title asChild>
                   <h2 className="modal-title flex min-w-0 flex-1 items-center gap-3 pr-3">
@@ -100,7 +146,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                     <img
                       loading="lazy"
                       src="/images/brand/SVG/jm-icon-full-brand-prime.svg"
-                      alt="Jacob Medley | UX UI Designer"
+                      alt=""
                       height={58}
                       width={58}
                       className="shrink-0"
@@ -119,7 +165,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                 </Dialog.Close>
               </div>
 
-              <div className="modal-body">
+              <div className="modal-body" ref={bindFeaturedBody}>
                 <div className="container">{project && <ModalContent project={project} />}</div>
               </div>
 
@@ -140,13 +186,13 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
 
 function BadgeList({ badges }: { badges: ProjectBadge[] }) {
   return (
-    <>
+    <div className="modal-badges" role="group" aria-label="Contributions">
       {badges.map((b) => (
         <span key={b.label} className="badge-work">
-          <i className={b.icon} aria-hidden="true" /> {b.label}
+          <i className={projectIcon(b.icon)} aria-hidden="true" /> {b.label}
         </span>
       ))}
-    </>
+    </div>
   )
 }
 
@@ -157,10 +203,58 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
   if (contributions.length === 0) return null
   return (
     <>
-      <h4>Contributions:</h4>
       <hr className="solid-center" />
       <BadgeList badges={contributions} />
     </>
+  )
+}
+
+const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'])
+const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'personas'])
+
+function ModalHeroField({ project }: { project: Project }) {
+  if (ORIGINAL_FEATURED_IDS.has(project.id)) return <FeaturedField projectId={project.id} />
+  if (project.id === 'reveal' || project.id === 'viva' || project.heroBrandImage) {
+    return (
+      <div className="modal-card-field modal-card-field-brand">
+        <span className="modal-card-field-brand-glow" />
+      </div>
+    )
+  }
+  if (project.thumb) {
+    return (
+      <div className="modal-card-field modal-card-field-photo">
+        {/* eslint-disable-next-line @next/next/no-img-element -- existing case-study card asset */}
+        <img src={project.thumb.src} alt="" />
+      </div>
+    )
+  }
+  return (
+    <div className={`modal-card-field modal-card-field-icon thinking-art-${project.id}`}>
+      <ProjectGeometry projectId={project.id} />
+    </div>
+  )
+}
+
+function BriefFollowup({ project }: { project: Project }) {
+  const image = project.brief.image
+  if (!image || !BRIEF_FOLLOWUP_IDS.has(project.id)) return null
+  if (project.id === 'call-center-ux') {
+    return (
+      <div className="modal-hero-followup">
+        <StudySupportingArt kind="call-center" alt="Site availability flow from status check through the call center API to a state-based message and offer." />
+      </div>
+    )
+  }
+  return (
+    <div className="modal-hero-followup">
+      {image.src.endsWith('.gif') ? (
+        <AnimatedStudyImage src={image.src} alt={image.alt} />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset
+        <img loading="lazy" className="img-fluid" src={image.src} alt={image.alt} />
+      )}
+    </div>
   )
 }
 
@@ -212,6 +306,17 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      if (block.treatment === 'section' || block.icon) {
+        return (
+          <>
+            <div className="modal-section-heading">
+              {block.icon && <span><i className={block.icon} aria-hidden="true" /></span>}
+              <Tag>{block.text}</Tag>
+            </div>
+            <hr className="solid-center rule-heading" />
+          </>
+        )
+      }
       return (
         <>
           {block.sectionDivider && <hr className="solid-center my-12" />}
@@ -283,6 +388,10 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       return <StyledListContent block={block} />
     case 'card':
       return <CardContent block={block} />
+    case 'supporting-art':
+      return <StudySupportingArt kind={block.kind} alt={block.alt} />
+    case 'call-center-states':
+      return <CallCenterDemo />
     default:
       return <MediaBlock block={block} />
   }
@@ -314,6 +423,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
     case 'list':
     case 'styled-list':
     case 'card':
+    case 'call-center-states':
       return (
         <div className="row">
           <div className="col-24">
@@ -322,9 +432,10 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
         </div>
       )
     case 'image':
+    case 'supporting-art':
       return (
         <div className="row mb-6 justify-center">
-          <div className={block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
+          <div className={block.type === 'image' && block.span ? `col-24 col-lg-${block.span}` : 'col-24'}>
             <BlockContent block={block} />
           </div>
         </div>
@@ -381,32 +492,32 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       )
     case 'metric-grid':
       return (
-        <div className="row">
+        <section className="modal-data-panel">
           <div className="col-24 mt-5">
             <h4>{block.heading}</h4>
-            <hr className="solid-center my-5" />
+            <hr className="solid-center rule-heading" />
           </div>
-          <div className="col-24 col-lg-16 self-center">
-            <div className="row row-cols-2 text-center justify-center g-3">
+          <div className="modal-data-grid">
+            <div className="modal-metric-grid">
               {block.metrics.map((metric) => (
                 <MetricStat key={metric.label} metric={metric} />
               ))}
             </div>
+            <div className="modal-value-card">
+              <h5 className="mb-3">{block.valueCreated.heading}</h5>
+              <ul className="fa-ul">
+                {block.valueCreated.items.map((item) => (
+                  <li key={item} className="mb-4">
+                    <span className="fa-li">
+                      <i className="fa-thin fa-angle-right" aria-hidden="true" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="col-24 col-lg-8 self-center">
-            <h5 className="mb-3">{block.valueCreated.heading}</h5>
-            <ul className="fa-ul">
-              {block.valueCreated.items.map((item) => (
-                <li key={item} className="mb-4">
-                  <span className="fa-li">
-                    <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        </section>
       )
     case 'progress-diagram':
       return <ProgressDiagram block={block} />
@@ -416,7 +527,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       return (
         <div
           className={cn(
-            'row text-center',
+            'row text-center modal-icon-grid',
             `row-cols-${block.cols ?? 2}`,
             block.colsLg && `row-cols-lg-${block.colsLg}`
           )}
@@ -631,7 +742,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full">
+    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
           'progress-bar w-full',
@@ -650,7 +761,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
               <strong>
                 {cell.icon && (
                   <>
-                    <i className={`${cell.icon} fa-xl`} aria-hidden="true" /> <br />
+                    <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" /> <br />
                   </>
                 )}
                 {cell.label}
@@ -675,7 +786,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
           <strong className={cn('font-bold', cell.padY === 5 ? 'py-12' : 'py-6')}>
             {cell.icon && (
               <>
-                <i className={`${cell.icon} fa-xl`} aria-hidden="true" />
+                <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" />
                 <br />
               </>
             )}
@@ -697,11 +808,16 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
   if (!rich) {
     return (
-      <ul className="list-disc pl-6">
+      <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
-          <li key={i}>
-            {item.label && <strong>{item.label} </strong>}
-            {item.body}
+          <li key={i} className="modal-info-card">
+            <span className="modal-info-card-icon" aria-hidden="true">
+              <i className={item.icon ?? 'fa-thin fa-circle-info'} />
+            </span>
+            <span>
+              {item.label && <strong>{item.label} </strong>}
+              {item.body}
+            </span>
           </li>
         ))}
       </ul>
@@ -762,7 +878,7 @@ function CardContent({ block }: { block: CardBlock }) {
 
 function MetricStat({ metric }: { metric: ProjectMetric }) {
   return (
-    <div className="col">
+    <div className="modal-metric-card">
       <h4 className="result mb-0 display-5 fw-bolder">
         {metric.value}
         <small>
@@ -778,60 +894,77 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
 }
 
 function ModalContent({ project }: { project: Project }) {
+  const featured = true
+  const originalFeatured = ORIGINAL_FEATURED_IDS.has(project.id)
   return (
     <>
-      {/* Intro row: circular brief image + Project Brief / Contributions / Technologies */}
-      <div className={cn('row mb-6', project.briefVariant === 'narrow' && 'justify-center')}>
-        {project.brief.image && (
-          <div
-            className={cn(
-              'self-center text-center',
-              project.briefVariant === 'narrow'
-                ? 'col-24 col-lg-12 col-xl-8'
-                : 'col-24 col-lg-12 col-xl-10'
+      <div
+        className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
+        data-motion-root={featured || undefined}
+      >
+        {(project.brief.image || project.brief.images) && (
+          <div className="modal-intro-art">
+            {originalFeatured ? (
+              <div className="modal-project-art" aria-hidden="true">
+                <div className="featured-work-art">
+                  <span className="featured-work-anchor"><FeaturedAnchor projectId={project.id} /></span>
+                </div>
+              </div>
+            ) : (project.id === 'reveal' || project.id === 'viva' || project.heroBrandImage) && (project.heroBrandImage || project.brief.image) ? (
+              <div className="modal-project-art modal-project-art-brand" aria-hidden="true">
+                <img src={(project.heroBrandImage ?? project.brief.image)!.src} alt="" />
+              </div>
+            ) : project.thumb ? (
+              <div className="modal-project-art modal-project-art-photo" aria-hidden="true" />
+            ) : (
+              <div className="modal-project-art modal-project-art-icon" aria-hidden="true">
+                <span className="modal-project-icon-anchor">
+                  <i className={project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} />
+                </span>
+              </div>
             )}
-          >
-            <p>
-              <img
-                loading="lazy"
-                className="img-fluid shadow-[var(--shadow-bs-lg)] border border-white rounded-full"
-                src={project.brief.image.src}
-                alt={project.brief.image.alt}
-              />
-            </p>
           </div>
         )}
-        <div
-          className={cn(
-            'self-center',
-            project.briefVariant === 'narrow'
-              ? 'col-24 col-lg-12 col-xl-10'
-              : 'col-24 col-lg-12 col-xl-14'
-          )}
-        >
+        <div className="modal-intro-copy">
           {project.brief.paragraphs.length > 0 && (
             <>
               <h3>{project.briefHeading ?? 'Project Brief:'}</h3>
               <hr className="solid-center" />
               {project.brief.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{withInlineLinks(p)}</p>
+                <p key={p.slice(0, 40)}>
+                  {project.briefLabels?.includes(p) ? <strong>{withInlineLinks(p)}</strong> : withInlineLinks(p)}
+                </p>
               ))}
             </>
           )}
 
+          {project.heroMedia && (
+            <div className="modal-intro-support">
+              {renderMedia(project.heroMedia, project.contributions)}
+            </div>
+          )}
+
           {!project.inlineContributions && <ContributionsSection contributions={project.contributions} />}
 
-          {project.technologies.length > 0 && (
-            <>
-              <h4 className="mt-6">Technologies:</h4>
-              <hr className="solid-center" />
-              <BadgeList badges={project.technologies} />
-            </>
-          )}
         </div>
       </div>
 
-      {renderMedia(project.media, project.contributions)}
+      {featured ? (
+        <div className="modal-study-content">
+          {project.heroCards && (
+            <div className={`modal-hero-cards featured-work-card-${project.id}`}>
+              <div className="modal-section-heading">
+                <span><i className={project.heroCardsIcon ?? 'fa-thin fa-lightbulb-on'} aria-hidden="true" /></span>
+                <h4>{project.heroCardsHeading ?? 'Highlights'}</h4>
+              </div>
+              <hr className="solid-center rule-heading" />
+              <StyledListContent block={{ type: 'styled-list', items: project.heroCards }} />
+            </div>
+          )}
+          <BriefFollowup project={project} />
+          {renderMedia(project.media, project.contributions)}
+        </div>
+      ) : renderMedia(project.media, project.contributions)}
     </>
   )
 }
@@ -847,6 +980,18 @@ function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
   const nodes: ReactNode[] = []
   for (let i = 0; i < media.length; i++) {
     const [b0, b1, b2, b3] = [media[i], media[i + 1], media[i + 2], media[i + 3]]
+    if (b0.type === 'heading' && b0.icon) {
+      let end = i + 1
+      while (end < media.length && !['heading', 'divider', 'contributions', 'call-center-states'].includes(media[end].type)) end++
+      nodes.push(
+        <section className="modal-content-section" key={i}>
+          <BlockContent block={b0} />
+          <div className="modal-section-content">{renderMedia(media.slice(i + 1, end), contributions)}</div>
+        </section>
+      )
+      i = end - 1
+      continue
+    }
     if (b0.type === 'contributions') {
       nodes.push(
         <div className="row" key={i}>

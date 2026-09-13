@@ -1,8 +1,15 @@
 # JacobMedley.com: brand alignment and results dashboard
 
-## Current approval and implementation status
+The four-wave plan below is historical. Current follow-up work is governed by
+[the September 8 seven-stage plan](website-refinement-plan-20260908.md) and its
+[annotation register](annotation-review-20260908.md). Jacob's latest request is
+documentation only. PR #8 has since merged and its deployment workflow succeeded;
+the dashboard refinement remains locally verified and uncommitted. See
+[STATUS](STATUS.md) for current branch, release and handoff state.
 
-Approved by Jacob on September 6, 2026. This repository copy is the website workstream's owning plan. The proposal language below is preserved as historical context and does not mean approval is still pending.
+## Historical approval and implementation status
+
+Approved by Jacob on September 6, 2026. This repository copy owns the historical four-wave work. The proposal language below is preserved as historical context and does not mean approval is still pending.
 
 - Recovery checkpoint: `b8aac95d`, tagged `checkpoint/portfolio-before-brand-wave-20260906`.
 - Wave 1 implementation and responsive acceptance are complete; see `docs/wave-1-browser-acceptance.md`.
@@ -10,7 +17,7 @@ Approved by Jacob on September 6, 2026. This repository copy is the website work
 - Wave 3 taxonomy alignment is complete; see `docs/wave-3-taxonomy-checkpoint.md`.
 - Wave 4's sourced outcomes dashboard is complete; see `docs/wave-4-outcomes-checkpoint.md`.
 - Final local acceptance is complete; see `docs/final-brand-wave-acceptance.md`.
-- Publication and remote push: not authorized.
+- Publication and remote push: not authorized at this historical planning checkpoint; later publication is recorded in STATUS.md.
 - Claims and resume terminology: use only current repository sources and located resume masters. Missing sources remain blockers, never invitations to infer.
 
 ## Historical proposal text (preserved)

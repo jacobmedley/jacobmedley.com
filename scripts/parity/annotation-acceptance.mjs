@@ -55,7 +55,10 @@ for (const width of [375, 768, 974, 1191, 1200, 1440]) {
       readButtonSizes: [...new Set(readButtons.map((button) => getComputedStyle(button).fontSize))],
       fullStackNav: document.querySelector('#the-menu a[href="#full-stack"]')?.textContent.trim(),
       wrongPosition: getComputedStyle(document.querySelector('.thinking-art-wrong .thinking-photo-image')).backgroundPosition,
-      clippedWorkImages: document.querySelectorAll('.work-image-frame > .work-image').length,
+      clippedWorkCards: [...document.querySelectorAll('.featured-work-card')].filter((card) => {
+        const style = getComputedStyle(card)
+        return style.overflow === 'hidden' && style.borderRadius === '32px'
+      }).length,
       readButtonLabels: [...new Set(readButtons.map((button) => button.textContent.trim()))],
       readButtonPaddings: [...new Set(readButtons.map((button) => {
         const style = getComputedStyle(button)
@@ -74,11 +77,13 @@ for (const width of [375, 768, 974, 1191, 1200, 1440]) {
       }),
       iconAnchors: document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor').length,
       iconAnchorSizes: [...new Set([...document.querySelectorAll('.thinking-thumb-icon .thinking-icon-anchor')].map((node) => {
-        const box = node.getBoundingClientRect()
-        return `${Math.round(box.width)}x${Math.round(box.height)}`
+        const style = getComputedStyle(node)
+        return `${Math.round(Number.parseFloat(style.width))}x${Math.round(Number.parseFloat(style.height))}`
       }))],
       geometryPieceCounts: [...document.querySelectorAll('.thinking-thumb-icon .thinking-geometry')].map((node) => node.children.length),
-      personalizationLines: [...document.querySelectorAll('.thinking-art-marketing-auto .thinking-geometry > i')].filter((node) => getComputedStyle(node).display !== 'none').length,
+      callCenterNetworkNodes: document.querySelectorAll('.thinking-art-call-center-ux .thinking-network-node').length,
+      callCenterNetworkLines: document.querySelectorAll('.thinking-art-call-center-ux .thinking-connections line').length,
+      personalizationLines: document.querySelectorAll('.thinking-art-marketing-auto .personalization-rays > b').length,
       personaRings: [...document.querySelectorAll('.thinking-art-personas .thinking-geometry > i')].filter((node) => getComputedStyle(node).display !== 'none').length,
       thinkingBadgeStyles: [...new Set(thinkingBadges.map((badge) => {
         const style = getComputedStyle(badge)
@@ -138,13 +143,13 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
   result.summaryLabels !== 0 || result.workBadgeGroups !== result.workItems ||
   result.readButtonWeights.some((weight) => weight !== '300') ||
   result.readButtonSizes.join(',') !== '18px' || result.fullStackNav !== 'Full Stack' ||
-  result.wrongPosition !== '50% 35%' || result.clippedWorkImages !== result.workItems ||
+  result.wrongPosition !== '50% 35%' || result.clippedWorkCards !== result.workItems ||
   result.readButtonLabels.join(',') !== 'Read' ||
   result.readButtonPaddings.join(',') !== '8px|26px|8px|26px' ||
   result.heroButtonSize.join(',') !== '48,48' || result.heroButtonBorderWidth !== '0px' ||
   result.mainCaseStudyRouteLinks !== 0 || result.iconAnchors !== 6 || result.iconAnchorSizes.join(',') !== '140x140' ||
   result.personalizationLines !== 12 || result.personaRings !== 12 ||
-  result.geometryPieceCounts.some((count) => count !== 12) || result.thinkingBadgeStyles.length !== 1 ||
+  result.geometryPieceCounts.join(',') !== '12,13,13,12,13,12' || result.callCenterNetworkNodes !== 38 || result.callCenterNetworkLines < 60 || result.thinkingBadgeStyles.length !== 1 ||
   result.selectedSectionTitle !== 'Full Stack Designer' ||
   result.thinkingCards.filter((card) => card.kind === 'icon').length !== 6 ||
   result.thinkingCards.filter((card) => card.kind === 'photo').map((card) => card.id).join(',') !== 'wrong,reveal,viva' ||
@@ -159,7 +164,7 @@ const failed = results.errors.length > 0 || Object.entries(results.home).some(([
 )) || Object.values(results.caseStudies).some((result) => (
   result.status !== 200 || result.overflowPx !== 0 || result.errorOverlay || !result.iconClasses?.includes('fa-chevron-down')
 )) || results.mobileMotion.status !== 200 || !results.mobileMotion.hoverNone || !results.mobileMotion.pointerCoarse ||
-results.mobileMotion.anchorAnimation !== 'thinking-dolly-anchor-mobile' ||
+results.mobileMotion.anchorAnimation !== 'focal-float' ||
 results.mobileMotion.fieldAnimation !== 'thinking-dolly-field-mobile'
 
 await writeFile(path.join(outputDir, 'results.json'), `${JSON.stringify(results, null, 2)}\n`)

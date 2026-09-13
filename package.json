@@ -5,7 +5,8 @@
   "scripts": {
     "setup": "node scripts/setup-dev.mjs",
     "dev": "npm run setup && next dev --turbopack",
-    "build": "next build",
+    "build": "next build && node scripts/prepare-production-assets.mjs && node scripts/verify-export-assets.mjs",
+    "verify:export-assets": "node scripts/verify-export-assets.mjs",
     "start": "next start",
     "lint": "next lint",
     "parity:setup-legacy": "node scripts/parity/setup-legacy.mjs",
@@ -23,6 +24,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.28"
+    }
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",

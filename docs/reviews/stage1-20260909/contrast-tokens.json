@@ -1,0 +1,12 @@
+{
+  "method": "sRGB relative luminance; white alpha .85 composited over black; no browser blend/filter sampling",
+  "ratios": {
+    "#302c38": 9.618,
+    "#594c62": 5.633,
+    "#18394d": 8.573,
+    "#394d5d": 6.2,
+    "#644672": 5.578,
+    "white-on-button-214b65": 9.296
+  },
+  "limitation": "Supporting token calculation only; actual composited text/focus/selected-state contrast is later-stage acceptance."
+}

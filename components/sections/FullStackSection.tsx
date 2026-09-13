@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import SectionHeader from '@/components/ui/SectionHeader'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
 import WaveSeparator from '@/components/ui/WaveSeparator'
+import ProjectGeometry from '@/components/ui/ProjectGeometry'
 
 const fullStackProjects = projects
   .filter((p) => p.visible && p.section === 'work' && p.display === 'thumb')
@@ -55,7 +56,7 @@ export default function FullStackSection() {
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
-              <p className="display-1">
+              <p className="display-1 full-stack-intro">
                 Here are some examples showcasing the diverse skill sets and methods I&rsquo;ve
                 used to create better user experiences and business outcomes.
               </p>
@@ -79,7 +80,9 @@ export default function FullStackSection() {
                     'btn thinking-thumb relative overflow-hidden shadow-[var(--shadow-bs-lg)]',
                     project.thumb ? 'thinking-thumb-photo' : 'thinking-thumb-icon',
                     `thinking-art-${project.id}`,
+                    `featured-work-card-${project.id}`,
                   )}
+                  data-motion-root
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
@@ -91,9 +94,7 @@ export default function FullStackSection() {
                       <span className="thinking-photo-image" style={{ backgroundImage: `url(${project.thumb.src})` }} />
                     ) : (
                       <>
-                        <span className="thinking-geometry">
-                          {Array.from({ length: 12 }, (_, index) => <i key={index} />)}
-                        </span>
+                        <ProjectGeometry projectId={project.id} />
                         <span className="thinking-icon-anchor">
                           <i className={`${project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} thinking-icon`} />
                         </span>

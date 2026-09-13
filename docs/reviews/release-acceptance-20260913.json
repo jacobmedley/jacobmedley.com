@@ -1,0 +1,1076 @@
+{
+  "testedSha": "c788fa9dfe1d02f7f69047d0627cac1760ba0f6d",
+  "applicationSha": "40377c4746e9262a3524aeef0d05a3ab6f546fb6",
+  "freshMain": "e6b3672f88e5847d84a854f45ae3d29ca8269952",
+  "browserExport": "http://localhost:3013/",
+  "scope": "Independent browser observations on existing Node22 export; clean Node20 build findings recorded separately",
+  "modals375": [
+    {
+      "id": "webmd",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "WebMD",
+      "focus": "webmd"
+    },
+    {
+      "id": "dentalplans",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Product Framework and Design System",
+      "focus": "dentalplans"
+    },
+    {
+      "id": "bumblebeemd",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "BumblebeeMD",
+      "focus": "bumblebeemd"
+    },
+    {
+      "id": "hydra",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Hydra Design System",
+      "focus": "hydra"
+    },
+    {
+      "id": "opfred",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "One Park Financial",
+      "focus": "opfred"
+    },
+    {
+      "id": "split-test",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "A/B Testing",
+      "focus": "split-test"
+    },
+    {
+      "id": "call-center-ux",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Call Center XD",
+      "focus": "call-center-ux"
+    },
+    {
+      "id": "marketing-auto",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Data-Driven Personalization",
+      "focus": "marketing-auto"
+    },
+    {
+      "id": "workshops",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Team Workshops",
+      "focus": "workshops"
+    },
+    {
+      "id": "roadmap",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "UX Roadmaps",
+      "focus": "roadmap"
+    },
+    {
+      "id": "personas",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Personas",
+      "focus": "personas"
+    },
+    {
+      "id": "wrong",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "The Wrong Campaign",
+      "focus": "wrong"
+    },
+    {
+      "id": "reveal",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Reveal Aligners",
+      "focus": "reveal"
+    },
+    {
+      "id": "viva",
+      "broken": [],
+      "links": [],
+      "overflow": 0,
+      "title": "Viva Medicare",
+      "focus": "viva"
+    }
+  ],
+  "schematicSweep": [
+    {
+      "width": 375,
+      "art": [
+        {
+          "escaped": [],
+          "h": 431.9375,
+          "kind": "dental-platform",
+          "w": 315
+        },
+        {
+          "escaped": [],
+          "h": 562.1875,
+          "kind": "dental-mvp-one",
+          "w": 315
+        },
+        {
+          "escaped": [],
+          "h": 427.640625,
+          "kind": "dental-mvp-two",
+          "w": 315
+        },
+        {
+          "escaped": [],
+          "h": 562.1875,
+          "kind": "dental-mvp-three",
+          "w": 315
+        },
+        {
+          "escaped": [],
+          "h": 427.640625,
+          "kind": "dental-mvp-four",
+          "w": 315
+        }
+      ]
+    },
+    {
+      "width": 438,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 378
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 378
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 378
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 378
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-four",
+          "w": 378
+        }
+      ]
+    },
+    {
+      "width": 439,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 379
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 379
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 379
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 379
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-four",
+          "w": 379
+        }
+      ]
+    },
+    {
+      "width": 500,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 440
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 440
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 440
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 440
+        },
+        {
+          "escaped": [],
+          "h": 280.00048828125,
+          "kind": "dental-mvp-four",
+          "w": 440
+        }
+      ]
+    },
+    {
+      "width": 575,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 512.5
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 512.5
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 512.5
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 512.5
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-four",
+          "w": 512.5
+        }
+      ]
+    },
+    {
+      "width": 576,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 493.46875
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 397.46875
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 493.46875
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 493.46875
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-four",
+          "w": 493.46875
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "art": [
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-platform",
+          "w": 661.9375
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-one",
+          "w": 565.9375
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-two",
+          "w": 661.9375
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-three",
+          "w": 661.9375
+        },
+        {
+          "escaped": [],
+          "h": 280,
+          "kind": "dental-mvp-four",
+          "w": 661.9375
+        }
+      ]
+    },
+    {
+      "width": 1100,
+      "art": [
+        {
+          "escaped": [],
+          "h": 374,
+          "kind": "dental-platform",
+          "w": 431.40625
+        },
+        {
+          "escaped": [],
+          "h": 374,
+          "kind": "dental-mvp-one",
+          "w": 383.40625
+        },
+        {
+          "escaped": [],
+          "h": 374,
+          "kind": "dental-mvp-two",
+          "w": 431.40625
+        },
+        {
+          "escaped": [],
+          "h": 374,
+          "kind": "dental-mvp-three",
+          "w": 431.40625
+        },
+        {
+          "escaped": [],
+          "h": 374,
+          "kind": "dental-mvp-four",
+          "w": 431.40625
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "art": [
+        {
+          "escaped": [],
+          "h": 390,
+          "kind": "dental-platform",
+          "w": 500.46875
+        },
+        {
+          "escaped": [],
+          "h": 390,
+          "kind": "dental-mvp-one",
+          "w": 460.46875
+        },
+        {
+          "escaped": [],
+          "h": 390,
+          "kind": "dental-mvp-two",
+          "w": 500.46875
+        },
+        {
+          "escaped": [],
+          "h": 390,
+          "kind": "dental-mvp-three",
+          "w": 500.46875
+        },
+        {
+          "escaped": [],
+          "h": 390,
+          "kind": "dental-mvp-four",
+          "w": 500.46875
+        }
+      ]
+    }
+  ],
+  "demo": [
+    {
+      "banner": "Our team is ready. Call for help choosing a plan.",
+      "header": "Ready to help",
+      "hero": "Find your dental savings plan.Talk to our team or explore plans online.",
+      "offer": "No offer. Phone support is available.",
+      "state": "ready"
+    },
+    {
+      "banner": "Skip the wait. Save 15% online only.",
+      "header": "High call volume",
+      "hero": "Keep smiling. Skip the wait.Our team is busy. Buy online and save 15%.",
+      "offer": "15% off online only.",
+      "state": "busy"
+    },
+    {
+      "banner": "We are closed. Save 10% when you buy online.",
+      "header": "Call center closed",
+      "hero": "Your next step is online.Explore dental savings plans and save 10% online.",
+      "offer": "10% off online.",
+      "state": "closed"
+    }
+  ],
+  "filters": [
+    {
+      "active": "All Work",
+      "tags": [
+        [
+          "Systems",
+          "Product"
+        ],
+        [
+          "Leadership",
+          "Systems"
+        ],
+        [
+          "UX Research",
+          "Leadership"
+        ],
+        [
+          "UX Research",
+          "Product"
+        ],
+        [
+          "Systems",
+          "Brand"
+        ],
+        [
+          "Product",
+          "Leadership"
+        ]
+      ]
+    },
+    {
+      "active": "Product",
+      "tags": [
+        [
+          "Systems",
+          "Product"
+        ],
+        [
+          "UX Research",
+          "Product"
+        ],
+        [
+          "Product",
+          "Leadership"
+        ]
+      ]
+    },
+    {
+      "active": "Systems",
+      "tags": [
+        [
+          "Systems",
+          "Product"
+        ],
+        [
+          "Leadership",
+          "Systems"
+        ],
+        [
+          "Systems",
+          "Brand"
+        ]
+      ]
+    },
+    {
+      "active": "UX Research",
+      "tags": [
+        [
+          "UX Research",
+          "Leadership"
+        ],
+        [
+          "UX Research",
+          "Product"
+        ]
+      ]
+    },
+    {
+      "active": "Leadership",
+      "tags": [
+        [
+          "Leadership",
+          "Systems"
+        ],
+        [
+          "UX Research",
+          "Leadership"
+        ],
+        [
+          "Product",
+          "Leadership"
+        ]
+      ]
+    },
+    {
+      "active": "Brand",
+      "tags": [
+        [
+          "Systems",
+          "Brand"
+        ]
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "url": "http://localhost:3013/case-studies/one-platform-five-properties/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/building-a-design-function/",
+      "overflow": 0,
+      "title": "One platform. Five properties. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/building-a-design-function/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/one-customer-journey/",
+      "overflow": 0,
+      "title": "A design practice built to last. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/one-customer-journey/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/navigation-beyond-opinion/",
+      "overflow": 0,
+      "title": "One customer. A shared journey. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/navigation-beyond-opinion/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/tokens-before-pages/",
+      "overflow": 0,
+      "title": "Let the customer find the way. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/tokens-before-pages/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/a-checkout-decision-with-receipts/",
+      "overflow": 0,
+      "title": "Build the foundation before the pages. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/a-checkout-decision-with-receipts/",
+      "width": 375,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/one-platform-five-properties/",
+      "overflow": 0,
+      "title": "A checkout decision with receipts. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/one-platform-five-properties/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/building-a-design-function/",
+      "overflow": 0,
+      "title": "One platform. Five properties. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/building-a-design-function/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/one-customer-journey/",
+      "overflow": 0,
+      "title": "A design practice built to last. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/one-customer-journey/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/navigation-beyond-opinion/",
+      "overflow": 0,
+      "title": "One customer. A shared journey. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/navigation-beyond-opinion/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/tokens-before-pages/",
+      "overflow": 0,
+      "title": "Let the customer find the way. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/tokens-before-pages/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/a-checkout-decision-with-receipts/",
+      "overflow": 0,
+      "title": "Build the foundation before the pages. | Jacob Medley"
+    },
+    {
+      "url": "http://localhost:3013/case-studies/a-checkout-decision-with-receipts/",
+      "width": 1440,
+      "anchors": [
+        {
+          "href": "#problem",
+          "target": true
+        },
+        {
+          "href": "#approach",
+          "target": true
+        },
+        {
+          "href": "#solution",
+          "target": true
+        },
+        {
+          "href": "#results",
+          "target": true
+        }
+      ],
+      "back": "/case-studies/",
+      "h1": 1,
+      "next": "/case-studies/one-platform-five-properties/",
+      "overflow": 0,
+      "title": "A checkout decision with receipts. | Jacob Medley"
+    }
+  ],
+  "visibility": {
+    "before": {
+      "hidden": false,
+      "state": "visible"
+    },
+    "afterOtherTab": {
+      "hidden": false,
+      "state": "visible"
+    },
+    "covered": false
+  },
+  "keyboardTrap": {
+    "steps": 25,
+    "inside": true
+  },
+  "limitations": [
+    "No native browser-chrome zoom",
+    "No actual hidden-tab transition",
+    "No Firefox/WebKit/physical device run",
+    "No deployed candidate verification"
+  ],
+  "node20": {
+    "node": "20.20.2",
+    "npm": "10.9.9",
+    "platform": "Windows; not the Ubuntu GitHub runner",
+    "cleanSource": "C:\\Users\\jacob\\AppData\\Local\\Temp\\jacobmedley-acceptance-c788fa9-20260913\\source",
+    "ciInstall": "npm ci",
+    "ciBuild": "npm run build",
+    "installExit": 0,
+    "buildExit": 0,
+    "staticPageGeneration": 11,
+    "htmlFileCount": 10,
+    "publicImagesExists": false,
+    "exportImagesExists": false,
+    "sourceAssetReferences": 117,
+    "missingSourceAssetReferences": [
+      "/images/brand/SVG/jm-icon-full-brand-prime.svg",
+      "/images/icons/apple-touch-icon.png",
+      "/images/icons/browserconfig.xml",
+      "/images/icons/favicon-16x16.png",
+      "/images/icons/favicon-32x32.png",
+      "/images/icons/favicon.ico",
+      "/images/icons/safari-pinned-tab.svg",
+      "/images/icons/site.webmanifest",
+      "/images/work/BMD-HM.png",
+      "/images/work/WebMD-HM.png",
+      "/images/work/bmd-modal/brief.png",
+      "/images/work/bmd-modal/buttons.png",
+      "/images/work/bmd-modal/buy-box.png",
+      "/images/work/bmd-modal/content-dt.png",
+      "/images/work/bmd-modal/content-mb.png",
+      "/images/work/bmd-modal/family.png",
+      "/images/work/bmd-modal/gran-ma-w.png",
+      "/images/work/bmd-modal/home-dt.png",
+      "/images/work/bmd-modal/home-mb.png",
+      "/images/work/bmd-modal/home-wf-dt.png",
+      "/images/work/bmd-modal/home-wf-mb.png",
+      "/images/work/bmd-modal/icons-01.png",
+      "/images/work/bmd-modal/icons-02.png",
+      "/images/work/bmd-modal/images.png",
+      "/images/work/bmd-modal/inputs.png",
+      "/images/work/ccux-modal/flow.png",
+      "/images/work/dpprod-modal/brief.png",
+      "/images/work/dpprod-modal/dpprod-hm.png",
+      "/images/work/hydra/brief.png",
+      "/images/work/hydra/error-01.png",
+      "/images/work/hydra/error-02.png",
+      "/images/work/hydra/hydra-hm.png",
+      "/images/work/hydra/hydra-ui-01.png",
+      "/images/work/hydra/hydra-ui-02.png",
+      "/images/work/hydra/ui-rag.png",
+      "/images/work/kitchen-sink/Persona-Cards.png",
+      "/images/work/kitchen-sink/reveal-clear-01.jpg",
+      "/images/work/kitchen-sink/reveal-clear-02.jpg",
+      "/images/work/kitchen-sink/reveal-cover.jpg",
+      "/images/work/kitchen-sink/reveal-cover.png",
+      "/images/work/kitchen-sink/reveal-omg-01.jpg",
+      "/images/work/kitchen-sink/wrong-cover.jpg",
+      "/images/work/kitchen-sink/wrong-full-lp.jpg",
+      "/images/work/kitchen-sink/wrong-hero-family.jpg",
+      "/images/work/kitchen-sink/wrong-hero-hip-lady.jpg",
+      "/images/work/kitchen-sink/wrong-hero-hip-senior.jpg",
+      "/images/work/kitchen-sink/wrong-hero-kid.jpg",
+      "/images/work/kitchen-sink/wrong-hero-senior-couple.jpg",
+      "/images/work/kitchen-sink/wrong-hero-senior-single.jpg",
+      "/images/work/ma-modal/automation.gif",
+      "/images/work/ma-modal/ma-36.png",
+      "/images/work/ma-modal/ma-3b.png",
+      "/images/work/opf-modal/about-us-before.png",
+      "/images/work/opf-modal/about.png",
+      "/images/work/opf-modal/brief-2.png",
+      "/images/work/opf-modal/brief-befor.png",
+      "/images/work/opf-modal/brief.png",
+      "/images/work/opf-modal/hiw-before.png",
+      "/images/work/opf-modal/hiw.png",
+      "/images/work/opf-modal/home-dt.png",
+      "/images/work/opf-modal/home-mb.png",
+      "/images/work/opf-modal/mod-proc-after.png",
+      "/images/work/opf-modal/mod-proc-before.png",
+      "/images/work/roadmap/l-chart.jpg",
+      "/images/work/roadmap/rm.jpg",
+      "/images/work/split01-modal/sc-control.png",
+      "/images/work/split01-modal/sc-thumb.png",
+      "/images/work/split01-modal/sc-winner.png",
+      "/images/work/split01-modal/web-md-thumb.png",
+      "/images/work/viva-modal/brief.png",
+      "/images/work/viva-modal/buttons.png",
+      "/images/work/viva-modal/colors.png",
+      "/images/work/viva-modal/hero-1.png",
+      "/images/work/viva-modal/hero-2.png",
+      "/images/work/viva-modal/inputs.png",
+      "/images/work/viva-modal/logo-design-inline.png",
+      "/images/work/viva-modal/logo-design-stack.png",
+      "/images/work/viva-modal/nav.png",
+      "/images/work/viva-modal/vs-1.png",
+      "/images/work/viva-modal/vs-2.png",
+      "/images/work/viva-modal/vs-3.png",
+      "/images/work/webmd-modal/brief-2.png",
+      "/images/work/webmd-modal/cart-dt.png",
+      "/images/work/webmd-modal/cart-mb.png",
+      "/images/work/webmd-modal/control.png",
+      "/images/work/webmd-modal/dentist-profile-dt.png",
+      "/images/work/webmd-modal/dentist-profile-mb.png",
+      "/images/work/webmd-modal/dentist-search-dt.png",
+      "/images/work/webmd-modal/dentist-search-mb.png",
+      "/images/work/webmd-modal/home-dt.png",
+      "/images/work/webmd-modal/home-mb.png",
+      "/images/work/webmd-modal/plan-compare-dt.png",
+      "/images/work/webmd-modal/plan-compare-mb.png",
+      "/images/work/webmd-modal/plan-details-dt.png",
+      "/images/work/webmd-modal/plan-details-mb.png",
+      "/images/work/webmd-modal/plan-search-dt.png",
+      "/images/work/webmd-modal/plan-search-mb.png",
+      "/images/work/webmd-modal/v2.png",
+      "/images/work/webmd-modal/v3.png",
+      "/images/work/webmd-modal/winner.png",
+      "/images/work/workshop/cover-02.jpg",
+      "/images/work/workshop/cover.jpg",
+      "/images/work/workshop/ideas.jpg",
+      "/images/work/workshop/planning.jpg"
+    ],
+    "finding": "ACC-B03",
+    "note": "Source-reference inventory includes unused historical media. Rendered favicons, modal identity and WebMD homepage images are confirmed members of the missing set."
+  },
+  "preservation": {
+    "originalImageFilesComparedToMain": 288,
+    "changedOriginalImages": [],
+    "protectedUnchanged": [
+      "docs/case-study-site-copy.json",
+      "lib/data/case-studies.ts",
+      "components/case-studies/StudyVisual.tsx",
+      ".github/workflows/deploy.yml",
+      "package.json",
+      "package-lock.json",
+      "next.config.ts"
+    ]
+  },
+  "checks": {
+    "typescriptExit": 0,
+    "authoredEslintExit": 0,
+    "diffCheckExit": 0,
+    "localAssetHTTP200": 117,
+    "publicRoutesHTTP200": 8,
+    "allExportHTMLMissingLocalRefs": [],
+    "allExportHTMLDuplicateIds": [],
+    "allExportHTMLMissingImageAltAttributes": [],
+    "browserWarningsAndErrors": 0,
+    "npmAuditReported": {
+      "high": 6,
+      "critical": 1,
+      "total": 7,
+      "status": "Existing dependency graph; exploitation not assessed; no dependency changes"
+    }
+  },
+  "verdict": "BLOCKED",
+  "pr": {
+    "url": null,
+    "head": null,
+    "base": null,
+    "intendedHead": "codex/website-visual-system-20260912",
+    "intendedBase": "main",
+    "remoteBranchExists": false,
+    "pushPerformed": false
+  },
+  "rollback": "e6b3672f88e5847d84a854f45ae3d29ca8269952"
+}

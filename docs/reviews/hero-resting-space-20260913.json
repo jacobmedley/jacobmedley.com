@@ -1,0 +1,352 @@
+{
+  "settings": [
+    {
+      "width": 1706,
+      "textScale": 1,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0390625,
+      "nameRestGap": 43.8203125,
+      "ProductRestGap": 24.7109375,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "54.7785px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "54.7785px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 992,
+      "textScale": 1,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0234375,
+      "nameRestGap": 28.15625,
+      "ProductRestGap": 15.7421875,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "35.2006px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "35.2006px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 768,
+      "textScale": 1,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0234375,
+      "nameRestGap": 23.25,
+      "ProductRestGap": 13.09375,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "29.0586px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "29.0586px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 375,
+      "textScale": 1,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0234375,
+      "nameRestGap": 21.125,
+      "ProductRestGap": 11.6875,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "26.4px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "26.4px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 320,
+      "textScale": 1,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0234375,
+      "nameRestGap": 21.125,
+      "ProductRestGap": 11.6875,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "26.4px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "26.4px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "frames": 40,
+      "maxRevealEdgeError": 0.015625,
+      "nameRestGap": 0.1875,
+      "ProductRestGap": 23.8671875,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "52.8px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "52.8px",
+        "weight": "600"
+      }
+    },
+    {
+      "width": 992,
+      "textScale": 2,
+      "frames": 40,
+      "maxRevealEdgeError": 0.0234375,
+      "nameRestGap": 0.234375,
+      "ProductRestGap": 23.8671875,
+      "overflow": 0,
+      "finalWord": [
+        "Product"
+      ],
+      "braceType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "52.8px",
+        "weight": "600",
+        "opacity": "1"
+      },
+      "designType": {
+        "font": "urw-form, Manrope, sans-serif",
+        "size": "52.8px",
+        "weight": "600"
+      }
+    }
+  ],
+  "failures": [],
+  "playback": {
+    "state": "settled",
+    "words": [
+      "Product"
+    ],
+    "tracks": [
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      }
+    ]
+  },
+  "resize": {
+    "state": "settled",
+    "tracks": [
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      }
+    ],
+    "words": [
+      "Product"
+    ]
+  },
+  "reduced": {
+    "state": "static",
+    "tracks": 0,
+    "braces": [
+      {
+        "display": "block",
+        "weight": "600"
+      },
+      {
+        "display": "block",
+        "weight": "600"
+      }
+    ],
+    "word": [
+      "Product"
+    ]
+  },
+  "recorderLimitation": "Two long CDP recording calls timed out. Natural end state was inspected afterward; no complete live frame recording is claimed."
+}

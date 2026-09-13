@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 interface SectionHeaderProps {
@@ -25,14 +28,63 @@ export default function SectionHeader({
   iconClassName,
   light = false,
 }: SectionHeaderProps) {
+  const sentinelRef = useRef<HTMLSpanElement>(null)
+  const reserveRef = useRef<HTMLDivElement>(null)
+  const surfaceRef = useRef<HTMLDivElement>(null)
+  const [compact, setCompact] = useState(false)
+
+  useLayoutEffect(() => {
+    const reserve = reserveRef.current
+    const surface = surfaceRef.current
+    if (!reserve || !surface) return
+
+    const measure = () => {
+      if (!reserve.classList.contains('is-compact')) {
+        reserve.style.setProperty('--section-heading-expanded-height', `${Math.ceil(surface.getBoundingClientRect().height)}px`)
+      }
+    }
+
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(surface)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current
+    if (!sentinel) return
+
+    let frame = 0
+    const update = () => {
+      frame = 0
+      const topInset = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--safe-area-top')) || 0
+      setCompact(sentinel.getBoundingClientRect().top <= topInset)
+    }
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    return () => {
+      window.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      if (frame) cancelAnimationFrame(frame)
+    }
+  }, [])
+
   return (
     <>
-      <div className={cn('row text-center justify-center', className)}>
-        <div className="col-24 self-center">
-          <p className="section-heading-icon">
-            <i className={cn(icon, iconClassName)} aria-hidden="true" />
-          </p>
-          <h3 className={cn('section-heading-title', titleClassName)}>{title}</h3>
+      <span ref={sentinelRef} className="section-heading-sentinel" aria-hidden="true" />
+      <div ref={reserveRef} className={cn('section-heading-reserve', compact && 'is-compact')}>
+        <div ref={surfaceRef} className={cn('section-heading-surface', className)}>
+          <div className="section-heading-inner">
+            <p className="section-heading-icon">
+              <i className={cn(icon, iconClassName)} aria-hidden="true" />
+            </p>
+            <h3 className={cn('section-heading-title', titleClassName)}>{title}</h3>
+          </div>
         </div>
       </div>
       <div className="row text-center justify-center">

@@ -1,0 +1,162 @@
+{
+  "settings": [
+    {
+      "width": 1706,
+      "textScale": 1,
+      "frames": 43,
+      "maxRevealEdgeError": 0.007562499999949068,
+      "settledNameGap": 2.2890625,
+      "settledProductGap": 2.2421875,
+      "maxOverflow": 0
+    },
+    {
+      "width": 992,
+      "textScale": 1,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015149999999948704,
+      "settledNameGap": 1.4765625,
+      "settledProductGap": 1.3203125,
+      "maxOverflow": 0
+    },
+    {
+      "width": 768,
+      "textScale": 1,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015375000000005912,
+      "settledNameGap": 1.234375,
+      "settledProductGap": 1.171875,
+      "maxOverflow": 0
+    },
+    {
+      "width": 375,
+      "textScale": 1,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015249999999994657,
+      "settledNameGap": 1.1171875,
+      "settledProductGap": 0.8671875,
+      "maxOverflow": 0
+    },
+    {
+      "width": 320,
+      "textScale": 1,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015249999999994657,
+      "settledNameGap": 1.1171875,
+      "settledProductGap": 0.8671875,
+      "maxOverflow": 0
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015312499999993179,
+      "settledNameGap": 0.2578125,
+      "settledProductGap": 2.2265625,
+      "maxOverflow": 0
+    },
+    {
+      "width": 992,
+      "textScale": 2,
+      "frames": 43,
+      "maxRevealEdgeError": 0.015312499999936335,
+      "settledNameGap": 0.3359375,
+      "settledProductGap": 2.2265625,
+      "maxOverflow": 0
+    }
+  ],
+  "failures": [],
+  "live": [
+    {
+      "selector": ".hero-name",
+      "samples": 54,
+      "maxEdgeError": 0.00825000000008913
+    },
+    {
+      "selector": ".kinetic-word",
+      "samples": 20,
+      "maxEdgeError": 0.007875000000012733
+    }
+  ],
+  "reduced": {
+    "state": "static",
+    "animations": 0,
+    "nameMask": "none",
+    "braces": [
+      "block",
+      "block"
+    ]
+  },
+  "settled": {
+    "state": "settled",
+    "animations": [
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      },
+      {
+        "state": "finished",
+        "time": 39000
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "finding": "ACC-B03",
+  "disposition": "resolved-locally",
+  "testedApplicationSha": "5c4efc9958d4baf6d9a619cf4c838fcc76d37872",
+  "branch": "codex/website-visual-system-20260912",
+  "rootCause": "The clean production build had no public/images junction and no production step copied tracked images/ into out/images.",
+  "fix": {
+    "buildCommand": "next build && node scripts/prepare-production-assets.mjs && node scripts/verify-export-assets.mjs",
+    "source": "images",
+    "destination": "out/images",
+    "preservesPublicImagesJunction": true,
+    "preservesSourceContents": true,
+    "siteGroundWorkflowChanged": false,
+    "dangerousCleanSlate": false
+  },
+  "windows": {
+    "executed": true,
+    "node": "20.20.2",
+    "npm": "10.9.9",
+    "cleanArchive": "C:\\Users\\jacob\\AppData\\Local\\Temp\\jacobmedley-acc-b03-080862a1ccaa4ce0be226f99244a3a39",
+    "publicImagesExistsBeforeBuild": false,
+    "installExit": 0,
+    "buildExit": 0,
+    "staticPages": 11,
+    "exportImagesIsLink": false,
+    "exportedImageFiles": 288,
+    "sourceMatchedFiles": 288,
+    "activeProductionImageReferences": 104,
+    "missingActiveReferences": [],
+    "typescriptExit": 0,
+    "authoredEslintExit": 0,
+    "negativeControl": {
+      "removedReference": "/images/work/webmd-modal/home-dt.png",
+      "verifierFailed": true,
+      "restoredVerifierExit": 0
+    }
+  },
+  "browserFromCleanExport": {
+    "url": "http://localhost:8090/",
+    "serverStoppedAfterInspection": true,
+    "homepageMedia": "/images/work/kitchen-sink/wrong-cover.jpg",
+    "modalIdentity": {
+      "url": "/images/brand/SVG/jm-icon-full-brand-prime.svg",
+      "naturalWidth": 150,
+      "naturalHeight": 150
+    },
+    "webmdCaseStudyImages": {
+      "count": 14,
+      "broken": [],
+      "representative": {
+        "url": "/images/work/webmd-modal/home-dt.png",
+        "naturalWidth": 1183,
+        "naturalHeight": 2237
+      }
+    },
+    "standaloneStory": {
+      "url": "/case-studies/one-platform-five-properties/",
+      "loaded": true,
+      "imageElements": 0,
+      "note": "The story is an authored HTML/CSS reconstruction."
+    }
+  },
+  "ubuntu": {
+    "executed": false,
+    "githubActionsExecuted": false,
+    "reason": "No push was authorized; Docker is unavailable and WSL is not installed on the verification host."
+  },
+  "unchangedLimitations": [
+    "ACC-V01 native visibility transition coverage",
+    "ACC-V02 native browser-chrome 200% zoom coverage",
+    "No fresh Firefox or WebKit run",
+    "No fresh physical-device or screen-reader run",
+    "Six high and one critical dependency audit findings remain untriaged"
+  ],
+  "publication": {
+    "push": false,
+    "pullRequest": false,
+    "merge": false,
+    "deployment": false,
+    "overallApproval": false
+  },
+  "rollback": {
+    "production": "e6b3672f88e5847d84a854f45ae3d29ca8269952",
+    "localPreFix": "47f1aff7689eeb9e688af1e8058d197d017fec31"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "observedUTC": "2026-09-09T07:55:00Z",
+  "main": "e6b3672f88e5847d84a854f45ae3d29ca8269952",
+  "pr8": {
+    "state": "MERGED",
+    "mergedAt": "2026-09-08T23:28:27Z"
+  },
+  "stage1BranchPRs": [],
+  "method": "Read-only gh API and pr commands; no mutation",
+  "observationTimePrecision": "Minute-level checkpoint marker"
+}

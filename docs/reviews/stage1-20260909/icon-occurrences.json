@@ -1,0 +1,1803 @@
+[
+  {
+    "path": "app/case-studies/page.tsx",
+    "line": 23,
+    "glyphs": [
+      "fa-thin",
+      "fa-chevron-down"
+    ],
+    "source": "<a className=\"cs-button cs-button-outline\" href=\"#selected-work\">Explore the case studies <i className=\"fa-thin fa-chevron-down\" aria-hidden=\"true\" /></a>"
+  },
+  {
+    "path": "app/case-studies/[slug]/page.tsx",
+    "line": 33,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-left"
+    ],
+    "source": "<Link href=\"/case-studies/\" className=\"cs-back-link\"><i className=\"fa-thin fa-arrow-left\" aria-hidden=\"true\" /> All case studies</Link>"
+  },
+  {
+    "path": "components/case-studies/Arrow.tsx",
+    "line": 2,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-up-right-from-square",
+      "fa-arrow-right"
+    ],
+    "source": "return <i className={`cs-arrow fa-thin ${external ? 'fa-arrow-up-right-from-square' : 'fa-arrow-right'}`} aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 8,
+    "glyphs": [
+      "fa-layer-group"
+    ],
+    "source": "{ ...platform.proof[1], eyebrow: 'Shared Foundation', theme: 'sage', icon: 'fa-layer-group' },"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 9,
+    "glyphs": [
+      "fa-chart-line"
+    ],
+    "source": "{ ...platform.proof[2], eyebrow: 'Finance Attributed', theme: 'gold', icon: 'fa-chart-line', note: \"Share of that year's growth increment.\" },"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 10,
+    "glyphs": [
+      "fa-stopwatch"
+    ],
+    "source": "{ ...platform.proof[0], eyebrow: 'Launch Cycle', theme: 'slate', icon: 'fa-stopwatch' },"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 17,
+    "glyphs": [
+      "fa-thin",
+      "fa-compass-drafting"
+    ],
+    "source": "<span className=\"cs-stat-top\">Experience <i className=\"fa-thin fa-compass-drafting\" aria-hidden=\"true\" /></span>"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 18,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-up-right-from-square"
+    ],
+    "source": "<strong>20</strong><span className=\"cs-stat-label\">Years in design</span><i className=\"cs-arrow fa-thin fa-arrow-up-right-from-square\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/case-studies/CareerStats.tsx",
+    "line": 22,
+    "glyphs": [
+      "fa-thin"
+    ],
+    "source": "<span className=\"cs-stat-top\">{metric.eyebrow}<i className={`fa-thin ${metric.icon}`} aria-hidden=\"true\" /></span>"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 3,
+    "glyphs": [
+      "fa-layer-group"
+    ],
+    "source": "platform: { pattern: 'roadmap', icon: 'fa-layer-group' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 4,
+    "glyphs": [
+      "fa-lightbulb"
+    ],
+    "source": "practice: { pattern: 'workshops', icon: 'fa-lightbulb' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 5,
+    "glyphs": [
+      "fa-headset"
+    ],
+    "source": "journey: { pattern: 'call-center-ux', icon: 'fa-headset' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 6,
+    "glyphs": [
+      "fa-bullseye-arrow"
+    ],
+    "source": "navigation: { pattern: 'marketing-auto', icon: 'fa-bullseye-arrow' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 7,
+    "glyphs": [
+      "fa-swatchbook"
+    ],
+    "source": "tokens: { pattern: 'split-test', icon: 'fa-swatchbook' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 8,
+    "glyphs": [
+      "fa-file-check"
+    ],
+    "source": "decision: { pattern: 'personas', icon: 'fa-file-check' },"
+  },
+  {
+    "path": "components/case-studies/StudyIconArt.tsx",
+    "line": 16,
+    "glyphs": [
+      "fa-thin"
+    ],
+    "source": "<div className=\"thinking-icon-anchor\"><i className={`thinking-icon fa-thin ${art.icon}`} /></div>"
+  },
+  {
+    "path": "components/case-studies/StudyShell.tsx",
+    "line": 9,
+    "glyphs": [
+      "fa-kit",
+      "fa-jm-icon-full"
+    ],
+    "source": "<a href=\"/\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"cs-wordmark\" aria-label=\"Jacob Medley, home (opens in a new tab)\"><i className=\"cs-brand-icon fa-kit fa-jm-icon-full font-normal\" aria-hidden=\"true\" /><span>Jacob Medley<small>Product &amp; Design Leader <Arrow external /></small></span></a>"
+  },
+  {
+    "path": "components/case-studies/StudyShell.tsx",
+    "line": 21,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-up"
+    ],
+    "source": "<div className=\"cs-footer-bottom\"><a href=\"/\" className=\"action-label\" target=\"_blank\" rel=\"noopener noreferrer\">Jacob Medley <span>{'//'} Product &amp; Design Leader</span><Arrow external /><span className=\"sr-only\"> (opens in a new tab)</span></a><a href=\"#top\" className=\"action-label\">Back to top <i className=\"fa-thin fa-arrow-up\" aria-hidden=\"true\" /></a></div>"
+  },
+  {
+    "path": "components/case-studies/StudyVisual.tsx",
+    "line": 42,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-turn-down"
+    ],
+    "source": "<div className=\"cs-handoff\"><i className=\"fa-thin fa-arrow-turn-down\" aria-hidden=\"true\" /> The gaps between teams are part of the experience.</div>"
+  },
+  {
+    "path": "components/case-studies/StudyVisual.tsx",
+    "line": 77,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-down"
+    ],
+    "source": "<div className=\"cs-decision-arrow\"><i className=\"fa-thin fa-arrow-down\" aria-hidden=\"true\" /></div>"
+  },
+  {
+    "path": "components/case-studies/StudyVisual.tsx",
+    "line": 78,
+    "glyphs": [
+      "fa-thin",
+      "fa-check"
+    ],
+    "source": "<div className=\"cs-record\"><span className=\"cs-record-check\"><i className=\"fa-thin fa-check\" aria-hidden=\"true\" /></span><div><small>Experience Decision</small><strong>One combined price</strong><span>Reasoning recorded. Sources attached.</span></div></div>"
+  },
+  {
+    "path": "components/sections/CaseStudiesSection.tsx",
+    "line": 28,
+    "glyphs": [
+      "fa-thin",
+      "fa-briefcase"
+    ],
+    "source": "icon=\"fa-thin fa-briefcase\""
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 6,
+    "glyphs": [
+      "fa-thin",
+      "fa-graduation-cap"
+    ],
+    "source": "icon: 'fa-thin fa-graduation-cap',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 12,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 18,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 24,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 30,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 36,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 42,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 48,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 54,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 60,
+    "glyphs": [
+      "fa-thin",
+      "fa-file-certificate"
+    ],
+    "source": "icon: 'fa-thin fa-file-certificate',"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 78,
+    "glyphs": [
+      "fa-thin",
+      "fa-brain-circuit"
+    ],
+    "source": "icon=\"fa-thin fa-brain-circuit\""
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 109,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-up-right-from-square"
+    ],
+    "source": "View <i className=\"fa-thin fa-arrow-up-right-from-square\" aria-hidden=\"true\" /><span className=\"sr-only\"> (opens in a new tab)</span>"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 127,
+    "glyphs": [
+      "fa-thin",
+      "fa-envelope"
+    ],
+    "source": "<i className=\"fa-thin fa-envelope\" aria-hidden=\"true\" /> hi@jacobmedley.com{' '}"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 128,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-right"
+    ],
+    "source": "<i className=\"fa-thin fa-arrow-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/EducationSection.tsx",
+    "line": 133,
+    "glyphs": [
+      "fa-kit",
+      "fa-jm-icon-full"
+    ],
+    "source": "<i className=\"fa-kit fa-jm-icon-full\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/FullStackSection.tsx",
+    "line": 54,
+    "glyphs": [
+      "fa-thin",
+      "fa-toolbox"
+    ],
+    "source": "<SectionHeader title=\"Full Stack Designer\" icon=\"fa-thin fa-toolbox\" />"
+  },
+  {
+    "path": "components/sections/FullStackSection.tsx",
+    "line": 98,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb",
+      "fa-thin",
+      "fa-star"
+    ],
+    "source": "<i className={`${project.id === 'workshops' ? 'fa-thin fa-lightbulb' : project.icon ?? 'fa-thin fa-star'} thinking-icon`} />"
+  },
+  {
+    "path": "components/sections/FullStackSection.tsx",
+    "line": 108,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-right"
+    ],
+    "source": "<i className=\"fa-thin fa-arrow-right thinking-arrow\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/HeroSection.tsx",
+    "line": 14,
+    "glyphs": [
+      "fa-kit",
+      "fa-jm-icon-full"
+    ],
+    "source": "<i className=\"fa-kit fa-jm-icon-full font-normal\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/HeroSection.tsx",
+    "line": 41,
+    "glyphs": [
+      "fa-thin",
+      "fa-circle-arrow-down"
+    ],
+    "source": "<i className=\"fa-thin fa-circle-arrow-down\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 117,
+    "glyphs": [
+      "fa-ul"
+    ],
+    "source": "<ul className=\"fa-ul\">"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 120,
+    "glyphs": [
+      "fa-li"
+    ],
+    "source": "<span className=\"fa-li\">"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 121,
+    "glyphs": [
+      "fa-thin",
+      "fa-angle-right"
+    ],
+    "source": "<i className=\"fa-thin fa-angle-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 137,
+    "glyphs": [
+      "fa-thin",
+      "fa-fw",
+      "fa-list-timeline"
+    ],
+    "source": "<SectionHeader title=\"Resume\" icon=\"fa-thin fa-fw fa-list-timeline\" />"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 145,
+    "glyphs": [
+      "fa-ul"
+    ],
+    "source": "<ul className=\"fa-ul\">"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 148,
+    "glyphs": [
+      "fa-li"
+    ],
+    "source": "<span className=\"fa-li\">"
+  },
+  {
+    "path": "components/sections/ResumeSection.tsx",
+    "line": 149,
+    "glyphs": [
+      "fa-thin",
+      "fa-angle-right"
+    ],
+    "source": "<i className=\"fa-thin fa-angle-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 117,
+    "glyphs": [
+      "fa-thin",
+      "fa-xmark-large"
+    ],
+    "source": "<i className=\"fa-thin fa-xmark-large\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 193,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-up-right-from-square"
+    ],
+    "source": "{label}{' '}<i className=\"fa-thin fa-arrow-up-right-from-square\" aria-hidden=\"true\" /><span className=\"sr-only\"> (opens in a new tab)</span>"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 232,
+    "glyphs": [
+      "fa-ul"
+    ],
+    "source": "<ul className=\"fa-ul\">"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 235,
+    "glyphs": [
+      "fa-li"
+    ],
+    "source": "<span className=\"fa-li\">"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 236,
+    "glyphs": [
+      "fa-thin",
+      "fa-angle-right"
+    ],
+    "source": "<i className=\"fa-thin fa-angle-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 337,
+    "glyphs": [
+      "fa-thin",
+      "fa-desktop"
+    ],
+    "source": "<i className=\"fa-thin fa-desktop fa-2x\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 350,
+    "glyphs": [
+      "fa-thin",
+      "fa-mobile"
+    ],
+    "source": "<i className=\"fa-thin fa-mobile fa-2x\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 398,
+    "glyphs": [
+      "fa-ul"
+    ],
+    "source": "<ul className=\"fa-ul\">"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 401,
+    "glyphs": [
+      "fa-li"
+    ],
+    "source": "<span className=\"fa-li\">"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 402,
+    "glyphs": [
+      "fa-thin",
+      "fa-angle-right"
+    ],
+    "source": "<i className=\"fa-thin fa-angle-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 653,
+    "glyphs": [
+      "fa-xl"
+    ],
+    "source": "<i className={`${cell.icon} fa-xl`} aria-hidden=\"true\" /> <br />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 668,
+    "glyphs": [
+      "fa-xl"
+    ],
+    "source": "{cell.sub.icon && <i className={`${cell.sub.icon} fa-xl`} aria-hidden=\"true\" />}{' '}"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 678,
+    "glyphs": [
+      "fa-xl"
+    ],
+    "source": "<i className={`${cell.icon} fa-xl`} aria-hidden=\"true\" />"
+  },
+  {
+    "path": "components/ui/CaseStudyModal.tsx",
+    "line": 770,
+    "glyphs": [
+      "fa-thin",
+      "fa-long-arrow-"
+    ],
+    "source": "className={`display-3 fa-thin fa-long-arrow-${metric.direction}`}"
+  },
+  {
+    "path": "components/ui/WorkCard.tsx",
+    "line": 59,
+    "glyphs": [
+      "fa-thin",
+      "fa-arrow-right"
+    ],
+    "source": "Read <i className=\"fa-thin fa-arrow-right\" aria-hidden=\"true\" />"
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 8,
+    "glyphs": [
+      "fa-thin"
+    ],
+    "source": "// Icons match legacy index.html #the-menu exactly (fa-thin weights)."
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 10,
+    "glyphs": [
+      "fa-kit",
+      "fa-jm-icon-cropped"
+    ],
+    "source": "{ id: 'hi',            label: 'Hello',         icon: 'fa-kit fa-jm-icon-cropped',           color: 'prime'  },"
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 11,
+    "glyphs": [
+      "fa-thin",
+      "fa-briefcase"
+    ],
+    "source": "{ id: 'work',          label: 'Case Studies',  icon: 'fa-thin fa-briefcase',                color: 'second' },"
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 12,
+    "glyphs": [
+      "fa-thin",
+      "fa-fw",
+      "fa-toolbox"
+    ],
+    "source": "{ id: 'full-stack',    label: 'Full Stack', icon: 'fa-thin fa-fw fa-toolbox',            color: 'pop'    },"
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 13,
+    "glyphs": [
+      "fa-thin",
+      "fa-fw",
+      "fa-list-timeline"
+    ],
+    "source": "{ id: 'resume',        label: 'Resume',        icon: 'fa-thin fa-fw fa-list-timeline',      color: 'third'  },"
+  },
+  {
+    "path": "lib/data/navigation.ts",
+    "line": 14,
+    "glyphs": [
+      "fa-thin",
+      "fa-fw",
+      "fa-brain-circuit"
+    ],
+    "source": "{ id: 'education',     label: 'Education',     icon: 'fa-thin fa-fw fa-brain-circuit',      color: 'fourth' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 56,
+    "glyphs": [
+      "fa-xl"
+    ],
+    "source": "icon?: string // FA Pro class, rendered above the label at fa-xl"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 228,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 229,
+    "glyphs": [
+      "fa-thin",
+      "fa-pencil-ruler"
+    ],
+    "source": "{ icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 230,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 231,
+    "glyphs": [
+      "fa-thin",
+      "fa-ruler-triangle"
+    ],
+    "source": "{ icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 232,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "{ icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 233,
+    "glyphs": [
+      "fa-thin",
+      "fa-phone-laptop"
+    ],
+    "source": "{ icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 234,
+    "glyphs": [
+      "fa-thin",
+      "fa-user-chart"
+    ],
+    "source": "{ icon: 'fa-thin fa-user-chart', label: 'User Testing' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 235,
+    "glyphs": [
+      "fa-thin",
+      "fa-vial"
+    ],
+    "source": "{ icon: 'fa-thin fa-vial', label: 'A/B Testing' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 238,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 239,
+    "glyphs": [
+      "fa-brands",
+      "fa-wordpress-simple"
+    ],
+    "source": "{ icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 240,
+    "glyphs": [
+      "fa-brands",
+      "fa-bootstrap"
+    ],
+    "source": "{ icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 241,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 242,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 243,
+    "glyphs": [
+      "fa-brands",
+      "fa-git-alt"
+    ],
+    "source": "{ icon: 'fa-brands fa-git-alt', label: 'GIT' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 355,
+    "glyphs": [
+      "fa-thin",
+      "fa-boxes-stacked"
+    ],
+    "source": "{ icon: 'fa-thin fa-boxes-stacked', label: 'Product Owner' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 356,
+    "glyphs": [
+      "fa-thin",
+      "fa-solar-system"
+    ],
+    "source": "{ icon: 'fa-thin fa-solar-system', label: 'System Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 357,
+    "glyphs": [
+      "fa-thin",
+      "fa-pencil-ruler"
+    ],
+    "source": "{ icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 358,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 361,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 362,
+    "glyphs": [
+      "fa-brands",
+      "fa-wordpress-simple"
+    ],
+    "source": "{ icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 363,
+    "glyphs": [
+      "fa-brands",
+      "fa-bootstrap"
+    ],
+    "source": "{ icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 364,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 365,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 366,
+    "glyphs": [
+      "fa-thin",
+      "fa-elephant"
+    ],
+    "source": "{ icon: 'fa-thin fa-elephant', label: 'PHP' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 367,
+    "glyphs": [
+      "fa-thin",
+      "fa-gear-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-gear-code', label: 'DevOps Pipelines' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 368,
+    "glyphs": [
+      "fa-brands",
+      "fa-git-alt"
+    ],
+    "source": "{ icon: 'fa-brands fa-git-alt', label: 'GIT' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 369,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ icon: 'fa-thin fa-webhook', label: 'APIs' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 397,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 406,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 410,
+    "glyphs": [
+      "fa-thin",
+      "fa-palette"
+    ],
+    "source": "icon: 'fa-thin fa-palette',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 418,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 422,
+    "glyphs": [
+      "fa-thin",
+      "fa-palette"
+    ],
+    "source": "icon: 'fa-thin fa-palette',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 430,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 434,
+    "glyphs": [
+      "fa-thin",
+      "fa-palette"
+    ],
+    "source": "icon: 'fa-thin fa-palette',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 442,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 446,
+    "glyphs": [
+      "fa-thin",
+      "fa-palette"
+    ],
+    "source": "icon: 'fa-thin fa-palette',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 454,
+    "glyphs": [
+      "fa-thin",
+      "fa-box"
+    ],
+    "source": "icon: 'fa-thin fa-box',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 458,
+    "glyphs": [
+      "fa-thin",
+      "fa-palette"
+    ],
+    "source": "icon: 'fa-thin fa-palette',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 470,
+    "glyphs": [
+      "fa-thin",
+      "fa-boxes-stacked"
+    ],
+    "source": "icon: 'fa-thin fa-boxes-stacked',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 477,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ label: 'API Integration', icon: 'fa-thin fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 478,
+    "glyphs": [
+      "fa-thin",
+      "fa-square-code"
+    ],
+    "source": "{ label: 'Component Libraries', icon: 'fa-thin fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 479,
+    "glyphs": [
+      "fa-thin",
+      "fa-layer-group"
+    ],
+    "source": "{ label: 'Pattern Library', icon: 'fa-thin fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 480,
+    "glyphs": [
+      "fa-brands",
+      "fa-wordpress-simple"
+    ],
+    "source": "{ label: 'CMS', icon: 'fa-brands fa-wordpress-simple', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 481,
+    "glyphs": [
+      "fa-thin",
+      "fa-gear-code"
+    ],
+    "source": "{ label: 'Pipelines', icon: 'fa-thin fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 488,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "icon: 'fa-thin fa-webhook',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 495,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ label: 'Plan Details', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 496,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ label: 'Dentist Search', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 497,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ label: 'Lead Create', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 498,
+    "glyphs": [
+      "fa-thin",
+      "fa-headset"
+    ],
+    "source": "{ label: 'Call Center Status', icon: 'fa-thin fa-headset', bg: 'fifth', striped: false },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 499,
+    "glyphs": [
+      "fa-thin",
+      "fa-webhook"
+    ],
+    "source": "{ label: 'Google Maps (API)', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 529,
+    "glyphs": [
+      "fa-thin",
+      "fa-map-location-dot"
+    ],
+    "source": "{ type: 'heading', text: 'The Journey', level: 2, icon: 'fa-thin fa-map-location-dot', sectionDivider: true },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 641,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 642,
+    "glyphs": [
+      "fa-thin",
+      "fa-pencil-ruler"
+    ],
+    "source": "{ icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 643,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 644,
+    "glyphs": [
+      "fa-thin",
+      "fa-ruler-triangle"
+    ],
+    "source": "{ icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 645,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "{ icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 646,
+    "glyphs": [
+      "fa-thin",
+      "fa-phone-laptop"
+    ],
+    "source": "{ icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 647,
+    "glyphs": [
+      "fa-thin",
+      "fa-user-chart"
+    ],
+    "source": "{ icon: 'fa-thin fa-user-chart', label: 'User Testing' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 650,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 651,
+    "glyphs": [
+      "fa-brands",
+      "fa-wordpress-simple"
+    ],
+    "source": "{ icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 652,
+    "glyphs": [
+      "fa-brands",
+      "fa-bootstrap"
+    ],
+    "source": "{ icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 653,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 654,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 655,
+    "glyphs": [
+      "fa-brands",
+      "fa-git-alt"
+    ],
+    "source": "{ icon: 'fa-brands fa-git-alt', label: 'GIT' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 744,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "{ icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 745,
+    "glyphs": [
+      "fa-thin",
+      "fa-magnifying-glass-chart"
+    ],
+    "source": "{ icon: 'fa-thin fa-magnifying-glass-chart', label: 'Analysis' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 746,
+    "glyphs": [
+      "fa-thin",
+      "fa-solar-system"
+    ],
+    "source": "{ icon: 'fa-thin fa-solar-system', label: 'System Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 747,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'System Dev' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 748,
+    "glyphs": [
+      "fa-thin",
+      "fa-phone-laptop"
+    ],
+    "source": "{ icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 751,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 752,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 753,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS/SASS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 754,
+    "glyphs": [
+      "fa-brands",
+      "fa-git-alt"
+    ],
+    "source": "{ icon: 'fa-brands fa-git-alt', label: 'GIT' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 830,
+    "glyphs": [
+      "fa-thin",
+      "fa-image"
+    ],
+    "source": "{ icon: 'fa-thin fa-image', title: 'Elements' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 831,
+    "glyphs": [
+      "fa-thin",
+      "fa-toggle-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-toggle-on', title: 'Controls' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 832,
+    "glyphs": [
+      "fa-thin",
+      "fa-sliders"
+    ],
+    "source": "{ icon: 'fa-thin fa-sliders', title: 'Components' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 833,
+    "glyphs": [
+      "fa-thin",
+      "fa-sidebar"
+    ],
+    "source": "{ icon: 'fa-thin fa-sidebar', title: 'Modules' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 834,
+    "glyphs": [
+      "fa-thin",
+      "fa-table-layout"
+    ],
+    "source": "{ icon: 'fa-thin fa-table-layout', title: 'Templates' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 835,
+    "glyphs": [
+      "fa-thin",
+      "fa-browsers"
+    ],
+    "source": "{ icon: 'fa-thin fa-browsers', title: 'Pages' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 917,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 918,
+    "glyphs": [
+      "fa-thin",
+      "fa-pencil-ruler"
+    ],
+    "source": "{ icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 919,
+    "glyphs": [
+      "fa-thin",
+      "fa-ruler-triangle"
+    ],
+    "source": "{ icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 920,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 921,
+    "glyphs": [
+      "fa-thin",
+      "fa-phone-laptop"
+    ],
+    "source": "{ icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 922,
+    "glyphs": [
+      "fa-thin",
+      "fa-magnifying-glass-chart"
+    ],
+    "source": "{ icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 925,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 926,
+    "glyphs": [
+      "fa-brands",
+      "fa-laravel"
+    ],
+    "source": "{ icon: 'fa-brands fa-laravel', label: 'Laravel & Statamic' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 927,
+    "glyphs": [
+      "fa-brands",
+      "fa-bootstrap"
+    ],
+    "source": "{ icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 928,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 929,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 930,
+    "glyphs": [
+      "fa-brands",
+      "fa-git-alt"
+    ],
+    "source": "{ icon: 'fa-brands fa-git-alt', label: 'GIT' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1011,
+    "glyphs": [
+      "fa-thin",
+      "fa-vial"
+    ],
+    "source": "icon: 'fa-thin fa-vial',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1127,
+    "glyphs": [
+      "fa-thin",
+      "fa-headset"
+    ],
+    "source": "icon: 'fa-thin fa-headset',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1137,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "contributions: [ { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' } ],"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1140,
+    "glyphs": [
+      "fa-thin",
+      "fa-project-diagram"
+    ],
+    "source": "icon: 'fa-thin fa-project-diagram',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1143,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Target' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1205,
+    "glyphs": [
+      "fa-thin",
+      "fa-bullseye-arrow"
+    ],
+    "source": "icon: 'fa-thin fa-bullseye-arrow',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1216,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1217,
+    "glyphs": [
+      "fa-thin",
+      "fa-pencil-ruler"
+    ],
+    "source": "{ icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1218,
+    "glyphs": [
+      "fa-thin",
+      "fa-laptop-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1219,
+    "glyphs": [
+      "fa-thin",
+      "fa-phone-laptop"
+    ],
+    "source": "{ icon: 'fa-thin fa-phone-laptop', label: 'Responsive Design' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1220,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "{ icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1221,
+    "glyphs": [
+      "fa-thin",
+      "fa-solar-system"
+    ],
+    "source": "{ icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1224,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1225,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Scene 7' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1226,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "{ icon: 'fa-thin fa-drafting-compass', label: 'Aprimo' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1227,
+    "glyphs": [
+      "fa-thin",
+      "fa-code"
+    ],
+    "source": "{ icon: 'fa-thin fa-code', label: 'HTML' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1228,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'CSS' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1229,
+    "glyphs": [
+      "fa-thin",
+      "fa-brackets-curly"
+    ],
+    "source": "{ icon: 'fa-thin fa-brackets-curly', label: 'JS' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1262,
+    "glyphs": [
+      "fa-thin",
+      "fa-screen-users"
+    ],
+    "source": "icon: 'fa-thin fa-screen-users',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1273,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "contributions: [{ icon: 'fa-thin fa-lightbulb-on', label: 'Facilitator' }],"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1275,
+    "glyphs": [
+      "fa-thin",
+      "fa-chalkboard"
+    ],
+    "source": "{ icon: 'fa-thin fa-chalkboard', label: 'Whiteboard' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1276,
+    "glyphs": [
+      "fa-thin",
+      "fa-marker"
+    ],
+    "source": "{ icon: 'fa-thin fa-marker', label: 'Dry Erase Markers' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1277,
+    "glyphs": [
+      "fa-thin",
+      "fa-notes"
+    ],
+    "source": "{ icon: 'fa-thin fa-notes', label: 'Post-it Notes' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1278,
+    "glyphs": [
+      "fa-thin",
+      "fa-brain"
+    ],
+    "source": "{ icon: 'fa-thin fa-brain', label: 'Brains' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1310,
+    "glyphs": [
+      "fa-thin",
+      "fa-mouse-field"
+    ],
+    "source": "icon: 'fa-thin fa-mouse-field',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1322,
+    "glyphs": [
+      "fa-thin",
+      "fa-mouse-field"
+    ],
+    "source": "contributions: [{ icon: 'fa-thin fa-mouse-field', label: 'Roadmap Planning' }],"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1323,
+    "glyphs": [
+      "fa-thin",
+      "fa-chalkboard"
+    ],
+    "source": "technologies: [{ icon: 'fa-thin fa-chalkboard', label: 'Lucidchart' }],"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1397,
+    "glyphs": [
+      "fa-thin",
+      "fa-masks-theater"
+    ],
+    "source": "icon: 'fa-thin fa-masks-theater',"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1408,
+    "glyphs": [
+      "fa-thin",
+      "fa-clipboard-list-check"
+    ],
+    "source": "{ icon: 'fa-thin fa-clipboard-list-check', label: 'Co-Project Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1409,
+    "glyphs": [
+      "fa-thin",
+      "fa-fill-drip"
+    ],
+    "source": "{ icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1411,
+    "glyphs": [
+      "fa-thin",
+      "fa-drafting-compass"
+    ],
+    "source": "technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1439,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1440,
+    "glyphs": [
+      "fa-thin",
+      "fa-handshake"
+    ],
+    "source": "{ icon: 'fa-thin fa-handshake', label: 'Collaboration' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1441,
+    "glyphs": [
+      "fa-thin",
+      "fa-fill-drip"
+    ],
+    "source": "{ icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1517,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1518,
+    "glyphs": [
+      "fa-thin",
+      "fa-handshake"
+    ],
+    "source": "{ icon: 'fa-thin fa-handshake', label: 'Collaboration' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1519,
+    "glyphs": [
+      "fa-thin",
+      "fa-fill-drip"
+    ],
+    "source": "{ icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1617,
+    "glyphs": [
+      "fa-thin",
+      "fa-lightbulb-on"
+    ],
+    "source": "{ icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1618,
+    "glyphs": [
+      "fa-thin",
+      "fa-handshake"
+    ],
+    "source": "{ icon: 'fa-thin fa-handshake', label: 'Collaboration' },"
+  },
+  {
+    "path": "lib/data/projects.ts",
+    "line": 1619,
+    "glyphs": [
+      "fa-thin",
+      "fa-fill-drip"
+    ],
+    "source": "{ icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }"
+  }
+]

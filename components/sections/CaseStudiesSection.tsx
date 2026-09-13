@@ -30,16 +30,18 @@ export default function CaseStudiesSection() {
             titleClassName="mb-0"
           />
 
-          {caseStudies.map((project, i) => (
-            <Fragment key={project.id}>
-              <WorkCard
-                project={project}
-                reverse={i % 2 === 1}
-                onOpen={setActiveId}
-              />
-              {i < caseStudies.length - 1 && <hr className="solid-center work-separator" />}
-            </Fragment>
-          ))}
+          <div className="featured-work-grid">
+            {caseStudies.map((project, i) => (
+              <Fragment key={project.id}>
+                <WorkCard
+                  project={project}
+                  reverse={i % 2 === 1}
+                  onOpen={setActiveId}
+                />
+                {i < caseStudies.length - 1 && <hr className="solid-center work-separator" />}
+              </Fragment>
+            ))}
+          </div>
         </div>
       </div>
 

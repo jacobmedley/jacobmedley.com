@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils'
 import { type Project } from '@/lib/data/projects'
+import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
 
 interface WorkCardProps {
   project: Project
@@ -7,11 +8,6 @@ interface WorkCardProps {
   onOpen?: (id: string) => void
 }
 
-/**
- * Legacy .work-item editorial row (components/section-work-v2.html):
- * full-width image button + title/summary column, alternating via
- * flex-row-reverse.
- */
 export default function WorkCard({
   project,
   reverse = false,
@@ -20,48 +16,41 @@ export default function WorkCard({
   const open = () => onOpen?.(project.id)
 
   return (
-    <div className="work-item py-2 lg:py-6 2xl:py-12">
-      <div className={cn('row items-start 2xl:items-center', reverse && 'flex-row-reverse')}>
-        <div className="col-24 col-lg-12 mb-12 lg:mb-0">
-          <button
-            type="button"
-            className="btn p-0 m-0 work-image-frame"
-            onClick={open}
-            data-modal-trigger={project.id}
-          >
-            {project.cardImage && (
-              // eslint-disable-next-line @next/next/no-img-element -- legacy parity: native img, natural aspect
-              <img
-                loading="lazy"
-                src={project.cardImage.src}
-                alt={project.cardImage.alt}
-                className="img-fluid work-image"
-              />
-            )}
-          </button>
+    <div className={`work-item work-item-${project.id} py-2 lg:py-6 2xl:py-12`}>
+      <article
+        className={cn(
+          'featured-work-card',
+          `featured-work-card-${project.id}`,
+          reverse && 'featured-work-card-even',
+        )}
+        data-motion-root
+        data-project-id={project.id}
+      >
+        <FeaturedField projectId={project.id} />
+
+        <div className="featured-work-art" aria-hidden="true">
+          <span className="featured-work-anchor">
+            <FeaturedAnchor projectId={project.id} />
+          </span>
         </div>
 
-        <div className="col-24 col-lg-12">
-          <h4 className="h2">{project.title}</h4>
-          <p className="h5">{project.subtitle}</p>
+        <div className="featured-work-copy">
           <div className="portfolio-badges work-card-badges" aria-label="Disciplines">
             {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
           </div>
-          <p>{project.summary}</p>
-
-          <div className="row text-center md:text-left">
-            <div className="col-24">
-              <button
-                type="button"
-                className="btn btn-lg btn-second-dark rounded-full action-label case-study-read"
-                onClick={open}
-              >
-                Read <i className="fa-thin fa-arrow-right" aria-hidden="true" />
-              </button>
-            </div>
+          <div className="featured-work-heading">
+            <h4 className="h2">{project.title}</h4>
+            <p className="h5 featured-work-subtitle">{project.subtitle}</p>
           </div>
+          <p className="featured-work-summary">{project.summary}</p>
+
+          <span className="btn btn-lg btn-second-dark rounded-full action-label case-study-read" aria-hidden="true">
+            Read <i className="fa-thin fa-arrow-right" />
+          </span>
         </div>
-      </div>
+        <button type="button" className="featured-work-open" onClick={open}
+          data-modal-trigger={project.id} aria-label={`Open ${project.title} case study`} />
+      </article>
     </div>
   )
 }

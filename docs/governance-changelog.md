@@ -131,3 +131,15 @@ checked out.
 workstream has assumed yes and applied it consistently across every case study and every
 employment entry. It has never been ruled on. It belongs in the register or the working
 agreement as a stated rule so no chat has to guess again.
+# 2026-09-12: visual-system checkpoint
+
+- Registered B49 before editing visible copy or taxonomy.
+- Recorded browser comments 1 through 15, implementation state, explicit
+  deferrals, verification limits and the higher-model continuation prompt in
+  `docs/visual-system-checkpoint-20260912.md`.
+- Kept Resume timeline work and the Reveal source crop out of this wave exactly
+  as directed.
+- Logged the request and implementation checkpoint to Genesis Exchange through
+  separate UUID-named inbox events. No coordinator-owned Exchange file changed.
+- Figma creation is held on the required team-plan choice. No destination was
+  inferred.

@@ -1,6 +1,9 @@
 # Copy Register
 
-**Status:** edits B0 through B38. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B54. All APPLIED unless marked otherwise.
+B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
+B41 by B44, and B42 by B46.
+The September 8 annotation plan is historical; later applied edits govern the site.
 Advisors read this before proposing. If a proposal already exists as an
 APPLIED edit, report that rather than resending. (B32 was skipped in
 numbering during application; it is not missing content. B31 is SUPERSEDED —
@@ -25,7 +28,7 @@ the register will drift.
 
 | Surface | Owner | Status |
 |---|---|---|
-| Site | this repo, main | current at 5388c1c |
+| Site | this repo, main | PR #8 merged at e6b3672 on September 8, 2026; deploy workflow succeeded; live cache not independently verified. B39 remains local. See STATUS.md. |
 | Word master | resume workstream | v1r6 pending |
 | Designed PDF | resume workstream | rebuild after v1r6 |
 | LinkedIn | Jacob, manual | UNMANAGED, not in register |
@@ -1263,6 +1266,105 @@ Jacob restored the visible section heading to `Full Stack Designer` on September
 anchor remains unchanged. This direct instruction supersedes the heading portion of
 the earlier Wave 3 rename; it does not change the site hero title standard in B35.
 
+## B39. Career dashboard framing [APPLIED]
+
+**Publication state:** applied and locally verified on
+`codex/case-study-dashboard-refinement`, preserved in `8ee1310` before base
+operations and replayed as `69a6b22` on merged main for Stage 1. Not published.
+See [Stage 1 checkpoint](stage1-checkpoint-20260909.md) for the current branch. See
+`case-study-dashboard-acceptance.md` for the prior local checks and `STATUS.md`
+for the current handoff. APPLIED here does not mean deployed.
+
+Jacob requested four large-number cards in the standalone case-study hero on
+September 8. Reuse documented figures, not inferred lifetime totals:
+
+- `20` / `Years in design`, from B37's twenty-year career description. Source link:
+  the main site's Resume section, opening separately as an outbound site link.
+- `5` / `properties on one platform`, canonical platform story proof[1].
+- `47%` / `of company revenue growth in one measured year`, canonical platform
+  proof[2]. Attribution reads `Finance Attributed`. The visible clarification reads
+  `Share of that year's growth increment.` This is not a revenue or sales lift.
+  The source story retains mechanism.
+- `6 → 2` / `weeks to launch a property`, canonical platform proof[0]. Split into
+  `Before` and `After` in the featured timing comparison. Six equal week marks before,
+  two after; no newly derived percentage. The hero uses the original value verbatim.
+
+Dashboard labels `Career at a Glance`, `Experience`, `Shared Foundation`, and
+`Launch Cycle` describe these same sources. Supporting qualitative outcomes stay
+qualitative. All source-story prose, disciplines and titles remain unchanged.
+
+## B40. Design Leadership introduction and column order [SUPERSEDED BY B45]
+
+Source: Jacob's September 8 browser comments 6–8. Owning implementation file:
+`components/sections/ResumeSection.tsx`. Stage 2 of the September 8 refinement plan.
+
+- Move the exact B37 body from the Design Leadership bullet to the main paragraph
+  immediately beneath the existing Design Leadership heading and before both
+  bullet columns. Remove that bullet and its redundant label; do not duplicate it.
+- Put the existing AI Product Design item first in `leadershipLeft` and Business
+  Outcomes first in `leadershipRight`. Preserve the current canonical bodies and
+  the relative order of the remaining items. On mobile, retain left-column then
+  right-column DOM reading order after the introduction.
+- This changes placement only. B37's wording, the assistant scope corrections,
+  measured-year qualification and business figures remain canonical. Historical
+  B28/B37 references to the old bullet layout are an audit trail.
+
+Stage 1 verified the current B37 body matches the existing Design Leadership bullet exactly. Left order after placement: AI Product Design, Design Systems, Research and Measurement. Right order: Business Outcomes, Conversion and Experimentation. One introduction precedes both columns. No site edit for B40 has been made. The layout request is authorized for its future
+stage; it does not need a fresh copy rewrite or renewed permission for placement.
+
+## B41. Comparable main featured-study summaries [SUPERSEDED BY B44]
+
+Source: Jacob's September 8 browser comment 12. Scope: the five featured `summary`
+fields in `lib/data/projects.ts`, used by the homepage WorkCard: WebMD, DentalPlans,
+BumblebeeMD, Hydra and One Park Financial. Their current whitespace word counts
+are respectively 27, 58, 23, 27 and 21.
+
+Stage 1 authors the exact proposed replacements here before any implementation;
+Stage 2 applies the approved drafts. Start around 25–35 words and compare rendered
+lengths. This is an approximate visual target, not permission to invent outcomes,
+pad short stories or erase a needed mechanism. Preserve Jacob's actual role,
+platform scope and BumblebeeMD's retired status. Review Hydra's `championed` and
+`streamlined` against the style authority. Do not change detailed project content,
+standalone canonical JSON, source attribution or diagrams to achieve equal length.
+
+**Stage 1 source-reviewed drafts, September 9, 2026. Not applied; Jacob’s copy approval remains pending.**
+
+### WebMD
+
+> I led UX/UI design and front-end development for an ecommerce website combining WebMD’s brand with DentalPlans’ products. The work covered plan search, comparison, cart and checkout.
+
+### DentalPlans
+
+> I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data supported five properties, with launch time per property falling from six weeks to two.
+
+### BumblebeeMD
+
+> BumblebeeMD launched as a DentalPlans sub-brand on the shared product platform. It was one of five properties built on that framework and was later retired.
+
+### Hydra
+
+> I built Hydra to give products a shared design vocabulary across brands and technology stacks. The system joined reusable interface patterns with front-end components while leaving the underlying functional code intact.
+
+### One Park Financial
+
+> I redesigned One Park Financial’s corporate website and lead flow as part of the Hydra implementation. Visitor behavior, device performance, heat maps and scroll maps informed the interface decisions.
+
+Source review: WebMD contribution badges and plan/cart/checkout media; DentalPlans B27 and platform source JSON; BumblebeeMD B10 and current summary; Hydra The Rise of Hydra prose; One Park Financial current brief. No performance figure was added. DentalPlans preserves the per-property launch unit and shared-platform mechanism. BumblebeeMD remains a retired platform property, not an employer or independent venture. WebMD’s six-week first launch is intentionally absent to avoid confusing it with the later platform launch cycle. Hydra removes the banned verbs without adding a delivery claim. All five drafts were authored here before the review artifacts. Existing production summaries remain unchanged.
+
+Counts use whitespace-delimited words: WebMD 26, DentalPlans 33, BumblebeeMD 25, Hydra 31, One Park Financial 29. Counts are a guide; the review board shows all five at the same desktop/narrow copy widths without clamping.
+
+## B42. Motion-control labels [SUPERSEDED BY B46]
+
+Proposed interface strings for the shared pause/resume control in Stage 3:
+
+- While decorative animations are running: `Pause animations`.
+- While paused: `Resume animations`.
+
+Stage 1 accepts these action labels for the specification. Use a normal button whose label changes with the available action; do not pair changing labels with aria-pressed. With OS reduced motion, show noninteractive status `Animations off: reduced motion` and offer no override. On a user pause, freeze decorative motion and cancel interaction zoom; preserve the preference across both site surfaces. These describe an action rather than a marketing claim. Define accessible state and
+reduced-motion behavior in Stage 1's motion specification; do not present a control
+as running when reduced motion has made it static. This is proposed supporting copy
+for the requested cross-site motion/accessibility work, not an applied UI change.
+
 ---
 
 ## Implementation hazard
@@ -1522,6 +1624,45 @@ If you want a different standard for former employers than for the current one, 
 so and I will apply it consistently rather than case by case.
 
 
+## B43. Shared motion control labels [APPLIED]
+
+**Files:** `components/ui/MotionControls.tsx`, `app/layout.tsx`
+
+The shared control uses the registered labels **Pause motion** and **Resume motion**.
+It is available on both the homepage and standalone case-study surface, with the
+current state exposed through `aria-pressed`.
+
+## B44. Comparable homepage featured-study excerpts [APPLIED]
+
+Source: Jacob's September 9 browser comment 4. Scope: the five homepage featured
+`summary` fields in `lib/data/projects.ts`: WebMD, DentalPlans, BumblebeeMD, Hydra
+and One Park Financial. This supersedes B41. The detailed modal paragraphs and
+standalone case-study copy remain outside this edit.
+
+Jacob directed that the BumblebeeMD excerpt remove the retirement sentence and
+that all five excerpts use approximately the same character count. No new figures
+or outcomes are introduced.
+
+### WebMD, 182 characters
+
+> I led UX/UI design and front-end development for an ecommerce website combining WebMD's brand with DentalPlans' products. The work covered plan search, comparison, cart and checkout.
+
+### DentalPlans, 203 characters
+
+> I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data carried five properties and cut each launch from six weeks to two.
+
+### BumblebeeMD, 179 characters
+
+> BumblebeeMD launched as a DentalPlans.com sub-brand on the shared product platform. It was one of five properties using the same design, product data and ecommerce infrastructure.
+
+### Hydra, 201 characters
+
+> I built Hydra as a shared design vocabulary across brands and technology stacks. Reusable interface patterns and front-end components kept products consistent while their functional code stayed intact.
+
+### One Park Financial, 189 characters
+
+> I redesigned One Park Financial's corporate website and lead flow through the Hydra system. Visitor behavior, device performance, heat maps and scroll maps informed each interface decision.
+
 ## Website brand cleanup, September 6, 2026
 
 Source: Jacob's 21 browser annotations and subsequent instruction to begin the
@@ -1538,3 +1679,241 @@ website branch; employment titles, claims and external resume masters are unchan
 - Case-study navigation: Case Studies; About & experience; More about Jacob.
 - Existing case-study-copy JSON remains the canonical story source; these casing
   edits do not change its metrics, narrative, scope or provenance.
+
+## B45. Resume belief headline and balanced introduction [APPLIED]
+
+Source: Jacob's September 11 overnight housekeeping request and resume annotation.
+This supersedes B40's retained Design Leadership heading and B37's opening sentence
+placement on the website. External resume documents remain separately owned.
+
+- Remove the visible Design Leadership heading.
+- Headline: `Twenty years. One belief.`
+- Subheadline, matching the existing registered hero slogan:
+  `I believe there's always a better way, together we can find it.`
+- Body, unchanged after the former opening sentence:
+
+> Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.
+
+Use a larger body, an explicit horizontal rule before the five existing bullets,
+and balanced rows: AI Product Design / Business Outcomes; Design Systems /
+Conversion and Experimentation; Research and Measurement across the final row.
+All bullet wording, employment history, measurements and source links are retained.
+
+## B46. Consistent motion controls inside and outside modals [APPLIED]
+
+Source: Jacob's September 11 request to review all buttons and the full experience.
+Retain the existing action labels `Pause motion` and `Resume motion`, and reuse
+them for the synchronized modal control. These action buttons change their label
+and do not also expose toggle-button `aria-pressed` semantics. With an OS reduced
+motion preference, show the noninteractive status `Motion off: reduced motion`.
+The preference cannot be overridden here. This supersedes B42's proposed labels
+while implementing its action/state and reduced-motion distinction.
+
+## B47. Source-backed supporting imagery [APPLIED]
+
+Source: the September 11 release plan and its requirement to replace unresolved
+supporting cartoons with restrained, source-backed visual explanations. Scope is
+limited to the DentalPlans, Hydra, A/B testing, Personas and Personalization modal
+imagery named in `docs/release-plan-20260911.md`. This entry authorizes supporting
+diagram labels and accurate alternative text; it does not change project claims,
+measurements, titles, summaries or narrative prose.
+
+- DentalPlans platform diagram labels: `Shared Platform`, `Product Data`,
+  `Search & API`, `Promotions`, and `Deployment`. Alt text: `Shared ecommerce
+  platform connecting product data, search and APIs, promotions, and deployment.`
+- DentalPlans iteration one labels: `MVP 01`, `WordPress`, `Bootstrap`,
+  `Product`, and `Cart`. Alt text: `First MVP joining a WordPress storefront,
+  Bootstrap interface, product details, and cart.`
+- DentalPlans iteration two labels: `MVP 02`, `Two Brands`, `Shared Product
+  Data`, and `Shared Cart`. Alt text: `Second MVP connecting two branded
+  storefronts to shared product data and cart.`
+- DentalPlans iteration three labels: `MVP 03`, `Patterns`, `Components`,
+  `Microservices`, and `Properties`. Alt text: `Third MVP carrying shared
+  patterns and components through microservices to multiple properties.`
+- DentalPlans iteration four labels: `MVP 04`, `ZIP`, `Results`, and `Dentist
+  Profile`. Alt text: `Fourth MVP flow from ZIP search to results and a dentist
+  profile.`
+- Hydra supporting diagram labels: `Shared Vocabulary`, `Patterns`,
+  `Components`, `Brands`, and `Technology Stacks`. Alt text: `Hydra connecting
+  shared interface patterns and components across brands and technology stacks.`
+- The A/B testing lead uses the existing control and winning WebMD homepage
+  screenshots. Alt text: `WebMD homepage control` and `WebMD homepage, winning
+  variant V1`.
+- The Personas lead uses the existing source persona artifact. Alt text:
+  `Frugal Francine persona card with demographics, motivations, preferences,
+  channels, and reasons to buy.` The later duplicate presentation of that artifact
+  may be removed; its surrounding case-study narrative stays unchanged.
+- Retain the Personalization automation GIF and its existing static frame. The
+  registered alt remains `Animated walkthrough of the marketing automation
+  workflow`; the static frame remains decorative because it is the paused rendering
+  of the same content.
+
+The diagram labels above are explanatory interface copy derived only from the
+adjacent registered project narrative. They are not presented as original project
+artifacts or as new evidence. The five replaced DentalPlans cartoon files and the
+Hydra fantasy illustration remain in the repository as preserved originals but are
+removed from rendered project data.
+
+## B48. September 11 aesthetic copy refinements [APPLIED]
+
+Source: Jacob's September 11 browser comments 2–4, 8, 33 and 34. This entry
+supersedes B45 only where the exact Resume headline, slogan and visible leadership
+set differ. It does not change employment history, project claims, measurements,
+source evidence or external resume masters.
+
+- Resume belief headline: `One belief...`
+- Resume belief slogan: `There is always a better way, together we will find it.`
+- Remove the visible `Research and Measurement` leadership item. Retain the four
+  remaining items in this order and two-column pairing: AI Product Design / Design
+  Systems in the first column; Business Outcomes / Conversion and Experimentation
+  in the second column. Their wording is unchanged and explicitly flagged for a
+  later Jacob copy review.
+- In the Hydra study, remove the redundant standalone `The Problem` heading. In
+  the following narrative column, use `The Problem` as the H3 and `Severe UI
+  Fragmentation` as the H4 before the existing prose.
+
+The revised slogan is Jacob's direct surface-specific wording for this Resume
+section. It intentionally differs from the earlier reusable slogan recorded in
+B45 and `docs/voice-and-tone.md`; do not propagate it to other surfaces without a
+new direct instruction.
+
+## B49. September 12 visual-system and kinetic-hero labels [APPROVED]
+
+Source: Jacob's September 12 browser comments 1, 4, 5, 6, 8, 14 and 15. This
+entry authorizes the short interface labels needed for the approved card,
+schematic and kinetic-type treatments. It does not revise case-study narrative,
+employment history, measurements or source evidence.
+
+- Homepage semantic H1: `Jacob Medley`.
+- Kinetic identity sequence: `Product`, `UX`, `Systems`, `Service`, `Motion`,
+  `Interaction`, `Human`. The visible construction is `{ Product } + Design`
+  with the role word changing in that order. `Interaction` corrects the typo in
+  the browser annotation without changing its meaning.
+- Kinetic closing line: `Let's Design and Build Something Great Together!`
+- A/B Testing contributions: `Strategy`, `Analysis`, `UX`, `Planning`,
+  `Implementation`.
+- A/B Testing technologies: `Adobe Target`, `WordPress`. Adobe's current product
+  documentation confirms the name remains Adobe Target as of September 12, 2026.
+- Call-center schematic labels: `Site`, `Status Check · 5 min`, `Call Center API`,
+  `State Response`, `Open`, `Busy`, `Closed`, `Message + Offer`. These labels
+  compress the existing registered narrative: the API checks availability every
+  five minutes, returns a state, and changes site messaging and the offer.
+- Reveal concept-card heading: `Concepts`.
+
+The source crop for `reveal-clear-01.jpg` remains unchanged and is recorded as a
+required source-image replacement in the September 12 handoff document.
+
+## B50. September 12 Resume timeline disclosure [APPROVED]
+
+Source: Jacob's direct September 12 continuation request. This entry authorizes
+the `Read more` interface label for the expandable work-history timeline. It does
+not revise employment history, job titles, dates, locations, metrics, narrative
+sentences, leadership copy or external resume masters.
+
+- Work-history disclosure label: `Read more`.
+- All timeline entries are closed by default. One entry may receive visual
+  emphasis without adding a factual label or changing its text.
+
+## B51. No all-caps display treatment [APPROVED]
+
+Source: Jacob's September 12 call-center browser comment. Ordinary headings,
+eyebrows, badges and labels use title or sentence case across the site. Standard
+acronyms and proper names retain their registered spelling. This is a typographic
+rule and does not authorize rewriting narrative copy.
+
+The call-center example uses the recommended contextual section treatment: a
+restrained Font Awesome icon, a title-case heading and the established faded rule.
+It is the first reviewed example, not authorization for a blind modal-wide sweep.
+
+## B52. September 12 modal presentation follow-up [APPROVED]
+
+Source: Jacob's later September 12 browser comments. Remove visible motion-pause
+controls everywhere. Remove the rendered Data-Driven Personalization brief GIF and
+Team Workshops brief image from their post-hero slots while preserving their source
+files and registered narrative. Move Reveal's three existing concept cards below
+the hero without changing their labels or bodies. These are presentation changes;
+no employment fact, project sentence, metric, title or source asset is revised.
+
+## B53. September 12 mechanical visual-system continuation [APPLIED]
+
+Source: Jacob's nineteen-item continuation request in task 01a0978b, followed
+by approval of its continuation branch and explicit selection of Roadmap for
+the standalone follow-up image removal. Supersedes B49/B50 only as listed here.
+
+- Visible hero name: `Jacob Medley`, without decorative slashes.
+- Mechanical role sequence: `Product`, `UX`, `Systems`, `IdX`, `Human`, paired
+  with `+ Design`. Preserve `IdX` exactly as Jacob supplied it.
+- Keep the registered closing line: `Let's Design and Build Something Great Together!`
+- First Reveal concept section: `The thinking behind the idea`, brain icon.
+- Later Reveal image section: `Visual expression of the concept`, visual-design icon.
+- Resume disclosures: `More` when closed, `Less` when open. Accessible contextual
+  naming may append the unchanged employer string after either label.
+- Remove visible `Contributions:` and `Technologies:` headings globally; retain
+  semantic group names, the faded contribution divider and all category/badge text.
+- Remove the rendered Roadmap standalone post-hero image. Preserve its source.
+
+No employment title, period, location, metric, paragraph, leadership sentence,
+project narrative or other source asset changes are authorized by this entry.
+
+## B54. Browser refinement contribution labels [APPLIED]
+
+Source: Jacob's September 12 comments 3 and 16 authorize a maximum of four
+modern product/UX contribution labels per project and removal of rendered
+technology badges. These labels summarize existing contributions, not new work.
+Underlying technologies remain historical data. Broader copy rewriting is
+deferred until all visual refinements are complete (comment 17).
+
+| Project | Contribution labels in display order |
+|---|---|
+| webmd | Product Design; Design Leadership; Prototyping; Usability Testing |
+| dentalplans | Product Ownership; Design Systems; UX & UI Design; Front-end Development |
+| bumblebeemd | Product Design; Design Leadership; Prototyping; Usability Testing |
+| hydra | Design Systems; Design Leadership; Systems Analysis; UI Engineering |
+| opfred | Product Design; User Research; Prototyping; Design Leadership |
+| split-test | Experimentation; UX Strategy; Data Analysis; Implementation |
+| call-center-ux | Project Leadership |
+| marketing-auto | UX & UI Design; Responsive Design; Design Leadership; Integration Strategy |
+| workshops | Workshop Facilitation |
+| roadmap | UX Roadmapping |
+| personas | Project Collaboration; Visual Design |
+| reveal | Concept Development; Collaboration; Visual Design |
+| viva | Concept Development; Collaboration; Visual Design |
+| wrong | Design Leadership; Collaboration; Visual Design |
+
+Hero name, role spellings and closing line remain as registered in B53. Resume
+facts, dates, company names, narrative, leadership and education text are unchanged.
+
+## B55. Hero spelling and interactive call-center demo [APPLIED]
+
+Source: Jacob's next eight browser comments, September 12, task 01a0978b.
+Supersedes B53's `IdX` spelling with `IxD`. The five-role order and closing
+line remain unchanged. Braces stay around the role; the closing line only fades.
+
+Replace the three static site states with a labeled interactive demo. Interface
+labels: `Responsive site states`, `Interactive demo`, `Call center`, `Auto`,
+`Ready`, `Busy`, `Closed`, `Highlight`, `Header`, `Sitewide banner`, `Hero`.
+Phone brand: `DentalPlans.com`; header actions: `Call now`, `Shop online`.
+State messaging and offers, directly specified by Jacob for this demonstration:
+
+| State | Header / banner | Hero | Action |
+|---|---|---|---|
+| Ready | Ready to help / Our team is ready. Call for help choosing a plan. | Find your dental savings plan. / Talk to our team or explore plans online. | View plans |
+| Busy | High call volume / Skip the wait. Save 15% online only. | Keep smiling. Skip the wait. / Our team is busy. Buy online and save 15%. | Save 15% online |
+| Closed | Call center closed / We are closed. Save 10% when you buy online. | Your next step is online. / Explore dental savings plans and save 10% online. | Save 10% online |
+
+Control descriptions: `Watch the site respond to call-center availability.`,
+`No offer. Phone support is available.`, `15% off online only.`,
+`10% off online.`, `Emphasize the areas that change.`,
+`Auto cycles every 5 seconds. Choose a state to stop.`,
+`Reduced motion: choose a state to preview it.` Phone supporting labels:
+`Explore plans`, `Compare plans`, `Find a dentist`, `Choose a plan`,
+`Browse dental savings plans online.` Demonstration navigation opens a small
+menu containing `Explore plans`, `Find a dentist`, and `Close menu`; plan
+actions show `Plan comparison preview` and `Back to home`; call action shows
+`Phone support is available.` and `Back to home`. Accessible names may describe
+the controls and simulated preview. These figures are demo offer values,
+not a new historical result or measurement claim. No external transaction.
+
+Future copy note, comment 7: expand the BumblebeeMD brief in the later copy
+pass. Jacob finds the current one-of-five-properties summary too thin. No
+replacement or additional claim is approved in this pass.

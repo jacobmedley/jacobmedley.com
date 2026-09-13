@@ -18,6 +18,7 @@ export interface ProjectMetric {
 export type BrandToken = 'prime' | 'second' | 'third' | 'fourth' | 'fifth' | 'pop'
 
 export interface StyledListItem {
+  icon?: string
   label?: string
   body?: string
   bg?: BrandToken // per-item tint at 25% opacity; omit for a plain item
@@ -120,12 +121,28 @@ export interface IconGridBlock {
   colsLg?: number // row-cols-lg-N, optional
 }
 
+export type SupportingArtKind =
+  | 'dental-platform'
+  | 'dental-mvp-one'
+  | 'dental-mvp-two'
+  | 'dental-mvp-three'
+  | 'dental-mvp-four'
+  | 'hydra'
+  | 'call-center'
+
+export interface SupportingArtBlock {
+  type: 'supporting-art'
+  kind: SupportingArtKind
+  alt: string
+}
+
 export type ProjectMedia =
   | {
       type: 'heading'
       text: string
       level?: 2 | 3 | 4 | 5
       icon?: string
+      treatment?: 'section'
       // legacy's `hr.my-5 -> icon -> h2 -> hr.my-5` section-break pattern
       // (col gets text-center, leading hr added, trailing hr gets my-12,
       // the usual mt-12 dropped since the leading hr supplies the gap)
@@ -158,6 +175,8 @@ export type ProjectMedia =
   | ProgressDiagramBlock
   | SplitRowBlock
   | IconGridBlock
+  | SupportingArtBlock
+  | { type: 'call-center-states' }
   | { type: 'contributions' } // zero-config marker: renders project.contributions inline in media[]
 
 export interface ProjectBadge {
@@ -188,8 +207,10 @@ export interface Project {
   icon?: string // FA icon for work thumbs
   thumb?: ProjectImage // visual-design thumb background
   cardImage?: ProjectImage // feature-card image
-  brief: { image?: ProjectImage; paragraphs: string[] }
+  heroBrandImage?: ProjectImage // brand asset used by a modal hero instead of the thumbnail
+  brief: { image?: ProjectImage; images?: ProjectImage[]; paragraphs: string[] }
   briefHeading?: string // legacy's custom h3 next to the brief image, default 'Project Brief:'
+  briefLabels?: string[] // brief paragraphs rendered as standalone emphasized labels
   // Legacy ships two intro-row shapes. 'wide' (default) = plain `.row` with
   // image col-xl-10 / text col-xl-14. 'narrow' = `.row.justify-content-center`
   // with image col-24 col-xl-8 / text col-xl-10. Legacy used col-20 at the base
@@ -203,6 +224,10 @@ export interface Project {
   // render them at the correct position instead.
   inlineContributions?: boolean
   technologies: ProjectBadge[]
+  heroMedia?: ProjectMedia[] // supporting prose/lists that belong inside the hero copy panel
+  heroCards?: StyledListItem[] // full-width concept/information cards in the top hero
+  heroCardsHeading?: string
+  heroCardsIcon?: string
   media: ProjectMedia[] // preserves the legacy modal section order
 }
 
@@ -216,7 +241,7 @@ export const projects: Project[] = [
     title: 'WebMD',
     subtitle: 'eCommerce Website',
     cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: "Internet Brands wanted to open up new opportunities for growth across their portfolio. One of these efforts was combining the strength of WebMD's brand and DentalPlans product.",
+    summary: "I led UX/UI design and front-end development for an ecommerce website combining WebMD's brand with DentalPlans' products. The work covered plan search, comparison, cart and checkout.",
     visible: true,
     brief: {
       image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
@@ -225,14 +250,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-user-chart', label: 'User Testing' },
-      { icon: 'fa-thin fa-vial', label: 'A/B Testing' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -341,7 +362,7 @@ export const projects: Project[] = [
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: "I led the design and front-end development of product-focused sites for DentalPlans.com. Over the course of a year, what started as a tiny product site initiative evolved into a core component of DentalPlans' business. This initiative developed into a framework for rapidly designing and launching product eCommerce websites for Cigna, Aetna, WebMD, and Lower My Dental Bills (LMDB).",
+    summary: 'I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data carried five properties and cut each launch from six weeks to two.',
     modalTitle: 'Product Framework and Design System',
     visible: true,
     brief: {
@@ -352,10 +373,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Owner' },
-      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' }
+      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Ownership' },
+      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
+      { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
+      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Development' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -506,7 +527,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/rocket.png', alt: '', shape: 'circle', bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform connecting product data, search and APIs, promotions, and deployment.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -530,7 +551,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-one.png', alt: 'DentalPlans partner site MVP, iteration one', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'First MVP joining a WordPress storefront, Bootstrap interface, product details, and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -559,7 +580,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-two.png', alt: 'DentalPlans partner site MVP, iteration two', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Second MVP connecting two branded storefronts to shared product data and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -580,7 +601,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-three.png', alt: 'DentalPlans partner site MVP, iteration three', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Third MVP carrying shared patterns and components through microservices to multiple properties.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -600,7 +621,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/dpprod-modal/mvp-four.png', alt: 'DentalPlans partner site MVP, iteration four', shape: 'circle', widthPct: 75, bordered: true }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Fourth MVP flow from ZIP search to results and a dentist profile.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -628,7 +649,7 @@ export const projects: Project[] = [
     title: 'BumblebeeMD',
     subtitle: 'Brand and Product Development',
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'BumblebeeMD was a sub-brand built on the DentalPlans.com product platform, one of five properties launched from that shared framework. It was later retired.',
+    summary: 'BumblebeeMD launched as a DentalPlans.com sub-brand on the shared product platform. It was one of five properties using the same design, product data and ecommerce infrastructure.',
     modalTitle: 'BumblebeeMD',
     visible: true,
     brief: {
@@ -638,13 +659,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-user-chart', label: 'User Testing' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -730,7 +748,7 @@ export const projects: Project[] = [
     title: 'Hydra',
     subtitle: 'The Making of a Design System',
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: "I championed and implemented the Hydra design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
+    summary: 'I built Hydra as a shared design vocabulary across brands and technology stacks. Reusable interface patterns and front-end components kept products consistent while their functional code stayed intact.',
     modalTitle: 'Hydra Design System',
     visible: true,
     brief: {
@@ -741,11 +759,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Analysis' },
-      { icon: 'fa-thin fa-solar-system', label: 'System Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'System Dev' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' }
+      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Systems Analysis' },
+      { icon: 'fa-thin fa-laptop-code', label: 'UI Engineering' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -754,11 +771,11 @@ export const projects: Project[] = [
       { icon: 'fa-brands fa-git-alt', label: 'GIT' }
     ],
     media: [
-      { type: 'heading', text: 'The Problem' },
       {
         type: 'split-row',
         left: [
-          { type: 'heading', text: 'The user experience was fragmented.' },
+          { type: 'heading', text: 'The Problem', level: 3 },
+          { type: 'heading', text: 'Severe UI Fragmentation', level: 4 },
           {
             type: 'text',
             text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
@@ -878,7 +895,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Why Hydra?' },
       {
         type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/hydra/why.jpg', alt: "Big'ol Hydra", shape: 'circle' }],
+        left: [{ type: 'supporting-art', kind: 'hydra', alt: 'Hydra connecting shared interface patterns and components across brands and technology stacks.' }],
         right: [
           {
             type: 'text',
@@ -904,7 +921,7 @@ export const projects: Project[] = [
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'
     },
-    summary: 'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow.',
+    summary: "I redesigned One Park Financial's corporate website and lead flow through the Hydra system. Visitor behavior, device performance, heat maps and scroll maps informed each interface decision.",
     visible: true,
     brief: {
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
@@ -914,12 +931,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Wireframes' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
-      { icon: 'fa-thin fa-phone-laptop', label: 'Device Testing' },
-      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' }
+      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
+      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' },
+      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -1014,17 +1029,27 @@ export const projects: Project[] = [
     briefHeading: 'Never Stop Testing!',
     briefVariant: 'narrow',
     brief: {
-      image: { src: '/images/work/split01-modal/thumb.png', alt: '' },
+      images: [
+        { src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage control' },
+        { src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, winning variant V1' }
+      ],
       paragraphs: [
         'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
         "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
         'Testing ran as a standing partnership with product marketing. They owned hypothesis and traffic, I owned the variant and the read.'
       ]
     },
-    contributions: [],
-    technologies: [],
+    contributions: [
+      { icon: 'fa-thin fa-flask', label: 'Experimentation' },
+      { icon: 'fa-thin fa-chess', label: 'UX Strategy' },
+      { icon: 'fa-thin fa-chart-mixed', label: 'Data Analysis' },
+      { icon: 'fa-thin fa-code', label: 'Implementation' },
+    ],
+    technologies: [
+      { icon: 'fa-thin fa-bullseye-arrow', label: 'Adobe Target' },
+      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' }
+    ],
     media: [
-      { type: 'divider' },
       {
         type: 'split-row',
         reverse: true,
@@ -1134,7 +1159,9 @@ export const projects: Project[] = [
         'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
       ]
     },
-    contributions: [ { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' } ],
+    contributions: [
+      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Leadership' },
+    ],
     technologies: [
       {
         icon: 'fa-thin fa-project-diagram',
@@ -1143,56 +1170,12 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Target' }
     ],
     media: [
-      { type: 'heading', text: 'Messaging and State Change' },
+      { type: 'heading', text: 'Messaging and State Change', level: 4, icon: 'fa-thin fa-message-lines', treatment: 'section' },
       {
         type: 'text',
         text: 'Our API checked the status of the call center every five minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'
       },
-      { type: 'text', text: 'Call Center Status: Green' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-green.png',
-            alt: 'Site header showing call center open and available, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-green.png',
-            alt: 'Site header showing call center open and available, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      },
-      { type: 'text', text: 'Call Center Status: Closed' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-closed.png',
-            alt: 'Site header showing call center closed, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Site header showing call center at high call volume, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      },
-      { type: 'text', text: 'Call Center Status: Busy' },
-      {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/ccux-modal/dt-header-busy.png',
-            alt: 'Site header showing call center at high call volume, desktop'
-          },
-          {
-            src: '/images/work/ccux-modal/mb-header-busy.png',
-            alt: 'Site header showing call center at high call volume, mobile'
-          }
-        ],
-        cols: [ 15, 9 ]
-      }
+      { type: 'call-center-states' }
     ]
   },
   {
@@ -1213,12 +1196,10 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
-      { icon: 'fa-thin fa-pencil-ruler', label: 'UX/UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Dev' },
+      { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
       { icon: 'fa-thin fa-phone-laptop', label: 'Responsive Design' },
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Lead' },
-      { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' }
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
+      { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' },
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
@@ -1270,7 +1251,9 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Solving the Right Problems',
-    contributions: [{ icon: 'fa-thin fa-lightbulb-on', label: 'Facilitator' }],
+    contributions: [
+      { icon: 'fa-thin fa-lightbulb', label: 'Workshop Facilitation' },
+    ],
     technologies: [
       { icon: 'fa-thin fa-chalkboard', label: 'Whiteboard' },
       { icon: 'fa-thin fa-marker', label: 'Dry Erase Markers' },
@@ -1319,7 +1302,9 @@ export const projects: Project[] = [
       ]
     },
     briefHeading: 'Are we there yet?',
-    contributions: [{ icon: 'fa-thin fa-mouse-field', label: 'Roadmap Planning' }],
+    contributions: [
+      { icon: 'fa-thin fa-map', label: 'UX Roadmapping' },
+    ],
     technologies: [{ icon: 'fa-thin fa-chalkboard', label: 'Lucidchart' }],
     media: [
       { type: 'heading', text: 'Example UX Roadmap: obfuscated for client protection' },
@@ -1398,25 +1383,18 @@ export const projects: Project[] = [
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/kitchen-sink/persona-one.webp', alt: 'Example persona card for Frugal Francine' },
+      image: { src: '/images/work/kitchen-sink/Persona-Cards.png', alt: 'Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy.' },
       paragraphs: [
         'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
       ]
     },
     briefHeading: 'What Frugal Francine Taught Us',
     contributions: [
-      { icon: 'fa-thin fa-clipboard-list-check', label: 'Co-Project Lead' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-handshake', label: 'Project Collaboration' },
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],
-    media: [
-      { type: 'heading', text: 'Example Persona' },
-      {
-        type: 'image',
-        src: '/images/work/kitchen-sink/Persona-Cards.png',
-        alt: 'Content Strategy'
-      }
-    ]
+    media: []
   },
   {
     id: 'reveal',
@@ -1436,37 +1414,40 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     inlineContributions: true,
     technologies: [],
-    media: [
-      { type: 'text', text: 'My Concepts:' },
+    heroCardsHeading: 'The thinking behind the idea',
+    heroCardsIcon: 'fa-thin fa-brain',
+    heroCards: [
       {
-        type: 'styled-list',
-        items: [
-          {
-            label: "Yup, It's That Clear:",
-            body: 'This concept emphasized the transparency and subtlety of the aligners.'
-          },
-          {
-            label: "So Clear, Like It's Not Even There:",
-            body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
-          },
-          {
-            label: 'OMG, Your Aligner Is Showing:',
-            body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
-          }
-        ]
+        icon: 'fa-thin fa-lightbulb-on',
+        label: "Yup, It's That Clear:",
+        body: 'This concept emphasized the transparency and subtlety of the aligners.'
       },
+      {
+        icon: 'fa-thin fa-lightbulb-on',
+        label: "So Clear, Like It's Not Even There:",
+        body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
+      },
+      {
+        icon: 'fa-thin fa-lightbulb-on',
+        label: 'OMG, Your Aligner Is Showing:',
+        body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
+      }
+    ],
+    heroMedia: [
       {
         type: 'text',
         text: 'Each concept had to sit inside one overarching campaign theme while standing on its own in a paid placement. The through-line was simple: the choice of Reveal Clear Aligners was, itself, clear.'
       },
       { type: 'contributions' },
-      { type: 'heading', text: 'Concepts' },
+    ],
+    media: [
+      { type: 'heading', text: 'Visual expression of the concept', level: 4, icon: 'fa-thin fa-fill-drip', treatment: 'section' },
       {
         type: 'image-row',
         images: [
@@ -1502,7 +1483,7 @@ export const projects: Project[] = [
     disciplines: ['Brand', 'UX Research'],
     order: 13,
     title: 'Viva',
-    thumb: { src: '/images/work/viva-modal/hero-1.png', alt: 'Viva Medicare brand campaign concept' },
+    thumb: { src: '/images/work/viva-modal/vs-3.png', alt: 'Viva Medicare brand campaign concept' },
     modalTitle: 'Viva Medicare',
     visible: true,
     summary: 'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
@@ -1514,9 +1495,9 @@ export const projects: Project[] = [
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Concepting' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [],
     media: [
@@ -1530,7 +1511,8 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare logo, inline lockup', flush: true }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        vAlign: 'center'
       },
       { type: 'heading', text: 'Color Study' },
       {
@@ -1602,6 +1584,7 @@ export const projects: Project[] = [
     order: 14,
     title: 'Wrong',
     thumb: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: 'The Wrong campaign portrait' },
+    heroBrandImage: { src: '/assets/featured/dentalplans-icon.svg', alt: 'DentalPlans.com' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
     summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
@@ -1613,10 +1596,11 @@ export const projects: Project[] = [
         'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
       ]
     },
+    briefLabels: ['Campaign Concept:'],
     contributions: [
-      { icon: 'fa-thin fa-lightbulb-on', label: 'Creative Lead' },
+      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' }
+      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     technologies: [],
     media: [
@@ -1625,14 +1609,17 @@ export const projects: Project[] = [
         type: 'styled-list',
         items: [
           {
+            icon: 'fa-thin fa-eye',
             label: 'Visual Approach:',
             body: 'We aimed for a visually striking look, using bold and aggressive headlines.'
           },
           {
+            icon: 'fa-thin fa-people-group',
             label: 'Inclusivity:',
             body: 'Ensured the campaign was diverse and inclusive, representing various age groups and ethnic backgrounds.'
           },
           {
+            icon: 'fa-thin fa-flag-checkered',
             label: 'Execution:',
             body: 'Below is the final landing page and hero variants used for conversion rate optimization.'
           }

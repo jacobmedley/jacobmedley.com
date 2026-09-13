@@ -1,35 +1,35 @@
 import WaveSeparator from '@/components/ui/WaveSeparator'
 import SectionHeader from '@/components/ui/SectionHeader'
+import ExperienceDisclosure from '@/components/ui/ExperienceDisclosure'
+import type { CSSProperties } from 'react'
 
 const leadershipLeft = [
   {
-    title: 'Design Systems',
-    body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
-  },
-  {
-    title: 'Research and Measurement',
-    body: 'Set a usability testing practice at ten participants per round and a HEART-based KPI framework, so design decisions rested on evidence and outcomes had a number to move.',
-  },
-  {
     title: 'AI Product Design',
+    icon: 'fa-thin fa-brain',
     body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
+  },
+  {
+    title: 'Design Systems',
+    icon: 'fa-thin fa-layer-group',
+    body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
   },
 ]
 
 const leadershipRight = [
   {
-    title: 'Conversion and Experimentation',
-    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
-  },
-  {
     title: 'Business Outcomes',
+    icon: 'fa-thin fa-chart-line',
     body: 'Systems work with numbers attached: 47% of company revenue growth in a single measured year, and a 66% reduction in launch time per property.',
   },
   {
-    title: 'Design Leadership',
-    body: 'Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.',
+    title: 'Conversion and Experimentation',
+    icon: 'fa-thin fa-flask',
+    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
   },
 ]
+
+const designLeadershipIntro = 'Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.'
 
 type ExperienceRole = {
   title: string
@@ -40,12 +40,18 @@ type ExperienceEntry = {
   company: string
   roles: ExperienceRole[]
   paragraphs: string[]
+  logo: string
+  tone: string
+  highlighted?: boolean
 }
 
 // Text ported verbatim from components/section-resume.html
 const experience: ExperienceEntry[] = [
   {
     company: 'Health-E Commerce, New York, NY (Remote)',
+    logo: '/assets/references/hec-icon.svg',
+    tone: 'health',
+    highlighted: true,
     roles: [
       { title: 'Director of User and Experience Design', period: 'Feb 2026 to Present' },
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
@@ -58,6 +64,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
+    logo: '/assets/references/moa-icon.svg',
+    tone: 'mutual',
     roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
       'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
@@ -68,6 +76,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'One Park Financial, Coconut Grove, FL',
+    logo: '/assets/featured/opf-icon-color.svg',
+    tone: 'one-park',
     roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
       'Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.',
@@ -78,6 +88,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'DentalPlans.com, Plantation, FL',
+    logo: '/assets/featured/dentalplans-icon.svg',
+    tone: 'dentalplans',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
       'The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. Cloning it was the obvious path, so I brought a roadmap instead: token-based theming, scheduled multi-phase promotions, one source of truth for products and providers, and one-button deploys per environment. Launch time for a fully branded property fell from six weeks to two. Five properties ran on it. Two people built and maintained the platform, and four experience designers covered every property on it.',
@@ -86,6 +98,8 @@ const experience: ExperienceEntry[] = [
   },
   {
     company: 'Bluegreen Vacations, Boca Raton, FL',
+    logo: '/assets/references/blue-green-dots.svg',
+    tone: 'bluegreen',
     roles: [{ title: 'Senior Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
       'I evaluated the digital signage platforms and designed the integration that connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress in the middle as the authoring surface. Learning how each system expected to be fed, then designing a path through all four, was most of the work.',
@@ -138,23 +152,20 @@ export default function ResumeSection() {
 
           <div className="row">
             <div className="col-24">
-              <h3 className="mb-6">Design Leadership</h3>
-              <div className="row">
-                {[leadershipLeft, leadershipRight].map((column, i) => (
-                  <div key={i} className="col-md-12">
-                    <ul className="fa-ul">
-                      {column.map((item) => (
-                        <li key={item.title} className="mb-4">
-                          <span className="fa-li">
-                            <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                          </span>
-                          <strong>{item.title}:</strong> {item.body}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="resume-belief">
+                <h3>One belief...</h3>
+                <p className="resume-belief-slogan">There is always a better way, together we will find it.</p>
+                <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
+              <hr className="solid-center resume-belief-divider" />
+              <ul className="resume-leadership-grid">
+                {[leadershipLeft[0], leadershipLeft[1], leadershipRight[0], leadershipRight[1]].map((item) => (
+                  <li key={item.title}>
+                    <span className="resume-value-icon" aria-hidden="true"><i className={item.icon} /></span>
+                    <div><h4>{item.title}</h4><hr className="solid-center" /><p>{item.body}</p></div>
+                  </li>
+                ))}
+              </ul>
 
               <div className="mt-12 mb-12">
                 <div className="row text-center">
@@ -171,39 +182,37 @@ export default function ResumeSection() {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-lg-16">
-              <h3 className="mb-6">Experience</h3>
-              <div className="row">
-                <div className="col-24">
-                  {experience.map((job, i) => (
-                    <div key={job.company}>
-                      <p>
-                        <strong>{job.roles[0].title}</strong>
-                        <br />
-                        {job.company}
-                        <br />
-                        <em>{job.roles[0].period}</em>
-                        {job.roles.slice(1).map((role) => (
-                          <span key={role.title}>
-                            <br />
-                            <strong>{role.title}</strong>
-                            <br />
-                            <em>{role.period}</em>
-                          </span>
-                        ))}
-                      </p>
-                      {job.paragraphs.map((p, j) => (
-                        <p key={j}>{p}</p>
-                      ))}
-                      {i < experience.length - 1 && <hr className="solid-center my-12" />}
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <div className="row resume-columns">
+            <div className="col-24 col-lg-12">
+              <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
+              <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
+                {experience.map((job) => (
+                  <li className={`resume-timeline-entry resume-timeline-entry-${job.tone}${job.highlighted ? ' is-highlighted' : ''}`} key={job.company}>
+                    <ExperienceDisclosure company={job.company} header={
+                      <header className="resume-experience-header">
+                        <span className="resume-company-mark" aria-hidden="true">
+                          <span className="resume-brand-logo" style={{ '--resume-logo': `url("${job.logo}")` } as CSSProperties} />
+                        </span>
+                        <div className="resume-job-heading">
+                          <p className="resume-experience-company">{job.company}</p>
+                          <div className="resume-experience-roles">
+                            {job.roles.map((role, index) => (
+                              <p key={role.title} className={index > 0 ? 'resume-prior-role' : undefined}>
+                                <strong>{role.title}</strong><em>{role.period}</em>
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </header>
+                    }>
+                      {job.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </ExperienceDisclosure>
+                  </li>
+                ))}
+              </ol>
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-24 col-lg-12 resume-expertise">
               <div className="row">
                 <div className="col-24">
                   <h3 className="mb-6">Expertise</h3>

@@ -1,0 +1,728 @@
+{
+  "observedUtc": "2026-09-12T22:19:06.041416+00:00",
+  "branch": "codex/website-visual-system-20260912",
+  "baseline": "9508686b0f80193e87740d243b2adb2a1cb302d1",
+  "preview": "http://localhost:3013/",
+  "browser": "Codex in-app Chromium",
+  "layoutSettings": [
+    {
+      "width": 320,
+      "textScale": 2,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "57.6px",
+          "52.8px",
+          "32px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          5.75,
+          5.75,
+          5.75,
+          5.75,
+          5.75
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 320,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "28.8px",
+          "26.4px",
+          "16px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          2.875,
+          2.875,
+          2.875,
+          2.875,
+          2.875
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 375,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "28.8px",
+          "26.4px",
+          "16.0802px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          2.875,
+          2.875,
+          2.875,
+          2.875,
+          2.875
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 768,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "33.4541px",
+          "29.0586px",
+          "18.6796px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          3.0625,
+          3.0625,
+          3.0625,
+          3.0625,
+          3.0625
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 992,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "37.6115px",
+          "35.2006px",
+          "20.1611px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          3.953125,
+          3.953125,
+          3.953125,
+          3.953125,
+          3.953125
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "45.9264px",
+          "47.4848px",
+          "23.1242px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          5.59375,
+          5.59375,
+          5.59375,
+          5.59375,
+          5.59375
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 1875,
+      "textScale": 1,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "54px",
+          "59.4px",
+          "26px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          5.59375,
+          5.59375,
+          5.59375,
+          5.59375,
+          5.59375
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    },
+    {
+      "width": 992,
+      "textScale": 2,
+      "home": {
+        "overflow": 0,
+        "h1": 1,
+        "name": "Jacob Medley",
+        "sizes": [
+          "57.6px",
+          "52.8px",
+          "33.7611px"
+        ],
+        "leadership": 4,
+        "logos": [
+          "url(\"http://localhost:3013/assets/references/hec-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/moa-icon.svg\")",
+          "url(\"http://localhost:3013/assets/featured/opf-icon-color.svg\")",
+          "url(\"http://localhost:3013/assets/featured/dentalplans-icon.svg\")",
+          "url(\"http://localhost:3013/assets/references/blue-green-dots.svg\")"
+        ],
+        "resumeOverflow": 0,
+        "controls": 0,
+        "headerGaps": [
+          5.75,
+          5.75,
+          5.75,
+          5.75,
+          5.75
+        ]
+      },
+      "disclosure": {
+        "open": true,
+        "text": "Less about Health-E Commerce, New York, NY (Remote)+",
+        "focus": true,
+        "bottomGap": 0,
+        "order": true,
+        "contentOverflow": 0
+      }
+    }
+  ],
+  "modalSummary": {
+    "count": 112,
+    "projectIds": [
+      "bumblebeemd",
+      "call-center-ux",
+      "dentalplans",
+      "hydra",
+      "marketing-auto",
+      "opfred",
+      "personas",
+      "reveal",
+      "roadmap",
+      "split-test",
+      "viva",
+      "webmd",
+      "workshops",
+      "wrong"
+    ],
+    "maximumOverflow": 0,
+    "minimumTechnologyContrast": 5.35,
+    "allPlaquesCircular": true,
+    "allBoundsFit": true,
+    "nestedShadows": 264
+  },
+  "motion": {
+    "offscreen": {
+      "paused": true,
+      "unchanged": true
+    },
+    "hidden": {
+      "method": "synthetic visibilitychange with temporary document.hidden override; restored",
+      "paused": true,
+      "unchanged": true
+    },
+    "frames": [
+      {
+        "time": 850,
+        "braceGap": 47.05682373046875,
+        "words": [],
+        "ctaOpacity": "0.55994"
+      },
+      {
+        "time": 1760,
+        "braceGap": 61.4388427734375,
+        "words": [],
+        "ctaOpacity": "0.847194"
+      },
+      {
+        "time": 2400,
+        "braceGap": 369.84375,
+        "words": [],
+        "ctaOpacity": "0.924807"
+      },
+      {
+        "time": 5000,
+        "braceGap": 235.6875,
+        "words": [
+          "Product"
+        ],
+        "ctaOpacity": "0.999949"
+      },
+      {
+        "time": 10500,
+        "braceGap": 105.6875,
+        "words": [
+          "UX"
+        ],
+        "ctaOpacity": "0"
+      },
+      {
+        "time": 16000,
+        "braceGap": 243.6875,
+        "words": [
+          "Systems"
+        ],
+        "ctaOpacity": "0"
+      },
+      {
+        "time": 21500,
+        "braceGap": 116.6875,
+        "words": [
+          "IdX"
+        ],
+        "ctaOpacity": "0"
+      },
+      {
+        "time": 27000,
+        "braceGap": 225.6875,
+        "words": [
+          "Human"
+        ],
+        "ctaOpacity": "0"
+      },
+      {
+        "time": 64000,
+        "braceGap": 225.6875,
+        "words": [
+          "Human"
+        ],
+        "ctaOpacity": "0"
+      }
+    ],
+    "settled": {
+      "state": "settled",
+      "times": [
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000,
+        65000
+      ],
+      "paused": false,
+      "finished": true
+    },
+    "reduced": {
+      "state": "static",
+      "animations": 0,
+      "product": "1",
+      "cta": "1"
+    },
+    "reducedField": 0,
+    "reversal": {
+      "open": true,
+      "label": "Less about Health-E Commerce, New York, NY (Remote)+",
+      "focus": "SUMMARY"
+    },
+    "semantics": [
+      {
+        "role": "RootWebArea",
+        "name": "Jacob Medley, Product & Design Leader",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "url",
+            "value": {
+              "type": "string",
+              "value": "http://localhost:3013/#full-stack"
+            }
+          }
+        ]
+      },
+      {
+        "role": "heading",
+        "name": "Jacob Medley",
+        "properties": [
+          {
+            "name": "level",
+            "value": {
+              "type": "integer",
+              "value": 1
+            }
+          }
+        ]
+      },
+      {
+        "role": "heading",
+        "name": "Experience",
+        "properties": [
+          {
+            "name": "level",
+            "value": {
+              "type": "integer",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "role": "list",
+        "name": "Experience",
+        "properties": [
+          {
+            "name": "labelledby",
+            "value": {
+              "relatedNodes": [
+                {
+                  "backendDOMNodeId": 92880,
+                  "idref": "resume-experience-heading",
+                  "text": "Experience"
+                }
+              ],
+              "type": "nodeList"
+            }
+          }
+        ]
+      },
+      {
+        "role": "StaticText",
+        "name": "Jacob Medley",
+        "properties": []
+      },
+      {
+        "role": "StaticText",
+        "name": "Product and design leader",
+        "properties": []
+      },
+      {
+        "role": "StaticText",
+        "name": "Experience",
+        "properties": []
+      },
+      {
+        "role": "DisclosureTriangle",
+        "name": "Less about Health-E Commerce, New York, NY (Remote)",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "focused",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "expanded",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "role": "DisclosureTriangle",
+        "name": "More about Mutual of America Financial Group, Boca Raton, FL",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "expanded",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": false
+            }
+          }
+        ]
+      },
+      {
+        "role": "DisclosureTriangle",
+        "name": "More about One Park Financial, Coconut Grove, FL",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "expanded",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": false
+            }
+          }
+        ]
+      },
+      {
+        "role": "DisclosureTriangle",
+        "name": "More about DentalPlans.com, Plantation, FL",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "expanded",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": false
+            }
+          }
+        ]
+      },
+      {
+        "role": "DisclosureTriangle",
+        "name": "More about Bluegreen Vacations, Boca Raton, FL",
+        "properties": [
+          {
+            "name": "focusable",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": true
+            }
+          },
+          {
+            "name": "expanded",
+            "value": {
+              "type": "booleanOrUndefined",
+              "value": false
+            }
+          }
+        ]
+      }
+    ],
+    "enlargedIntro": [
+      {
+        "time": 0,
+        "overflow": 0
+      },
+      {
+        "time": 850,
+        "overflow": 0
+      },
+      {
+        "time": 1760,
+        "overflow": 0
+      },
+      {
+        "time": 2400,
+        "overflow": 0
+      },
+      {
+        "time": 3100,
+        "overflow": 0
+      },
+      {
+        "time": 4200,
+        "overflow": 0
+      },
+      {
+        "time": 4600,
+        "overflow": 0
+      },
+      {
+        "time": 5000,
+        "overflow": 0
+      }
+    ]
+  },
+  "assets": {
+    "hec-icon.svg": {
+      "source": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\hec\\hec-icon.svg",
+      "sha256": "32851230b89818e3c1964375c2dc34f4691f67a6c9febb5055b1f2dfb489fd57",
+      "byteIdentical": true
+    },
+    "moa-icon.svg": {
+      "source": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\moa\\moa-icon.svg",
+      "sha256": "289d28da599b112f9322eb9f99e9b3fbc48a694af2638f55aa9f763f3c1e7a35",
+      "byteIdentical": true
+    },
+    "blue-green-dots.svg": {
+      "source": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\bgv\\blue-green-dots.svg",
+      "sha256": "9874023e9b866b6f6f2687717c7fe4801bd1736f548855e06370f0db996aa4b3",
+      "byteIdentical": true
+    },
+    "hydra-icon.svg": {
+      "source": "C:\\dev\\jacobmedley.com\\public\\assets\\references\\hydra\\hydra-icon.svg",
+      "sha256": "a9adc4d77cc1b1ac94582af0997539de53ff353d9d7067da07c5ab816bb13beb",
+      "byteIdentical": true
+    }
+  },
+  "sourceFidelity": {
+    "command": "node scripts/parity/visual-system-acceptance-20260912.mjs --source",
+    "result": "pass: employment and leadership strings exactly match baseline; original images unchanged; four assets byte-identical"
+  },
+  "checks": {
+    "typescript": "pass",
+    "eslint": "pass",
+    "productionBuild": "pass, 11 static pages",
+    "gitDiffCheck": "pass"
+  },
+  "failures": [],
+  "limits": [
+    "Native background-tab visibility was not verified; the visibilitychange handler was tested synthetically and restored.",
+    "Accessibility tree and keyboard tested; no actual screen reader session.",
+    "Firefox and WebKit not exercised.",
+    "Reveal source-image replacement remains deferred."
+  ],
+  "localDetailedEvidence": "scripts/parity/shots/visual-system-20260912/results.json"
+}

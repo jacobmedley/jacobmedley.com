@@ -71,47 +71,25 @@ export default function EducationSection() {
     <section className="bg-fourth-dark bg-gradient-bs text-white">
       <div className="content py-12">
         <div className="container">
-          <div className="row">
-            <div className="col-24 md:text-center mb-12">
-              <SectionHeader
-                title="Education"
-                icon="fa-thin fa-brain-circuit"
-                iconClassName="text-fourth-light"
-                titleClassName="text-fourth-light"
-                light
-              />
-            </div>
-          </div>
+          <SectionHeader
+            title="Education"
+            icon="fa-thin fa-brain-circuit"
+            iconClassName="text-fourth-light"
+            titleClassName="text-fourth-light"
+            light
+          />
 
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 text-center">
+          <div className="education-mosaic">
             {educationItems.map((item, i) => (
-              <div key={item.title} className="col">
-                <div
-                  className="card h-full rounded-[2rem] shadow-[var(--shadow-bs-lg)]"
-                  /* legacy sets min-height:220px on the first seven cards only */
-                  style={i < 7 ? { minHeight: 220 } : undefined}
-                >
-                  <div className="card-body text-fourth-dark">
-                    <p>
-                      <i className={`${item.icon} fa-2x mt-4`} aria-hidden="true" />
-                    </p>
-                    <h5 className="card-title">{item.title}</h5>
-                    <p className="card-text">{item.source}</p>
-                  </div>
-                  <div className="card-footer bg-transparent border-0">
-                    <a
-                      className="stretched-link"
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="text-fourth-dark action-label">
-                        View <i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <article key={item.title} className={`education-card education-tone-${(i * 3 + 1) % 5}`}>
+                <header><i className={item.icon} aria-hidden="true" /><h4>{item.title}</h4></header>
+                <p>{item.source}</p>
+                <hr className="solid-center" />
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  View <i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" />
+                  <span className="sr-only"> {item.title} (opens in a new tab)</span>
+                </a>
+              </article>
             ))}
           </div>
 

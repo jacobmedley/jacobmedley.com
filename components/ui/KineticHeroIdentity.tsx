@@ -8,7 +8,7 @@ const DURATION = 39000
 const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000]
 type Cue = [number, Keyframe]
 
-// Figma 15:244: the supplied 2.2s timeline, sampled from its exact spring
+// Figma 15:244: the updated 3.089s timeline, sampled from its exact spring
 // functions for the existing WAAPI clock. Only spatial values fit the type size.
 const spring = (decay: number, frequency: number, damping: number) =>
   `linear(${Array.from({ length: 81 }, (_, i) => {
@@ -17,7 +17,16 @@ const spring = (decay: number, frequency: number, damping: number) =>
   }).join(',')})`
 const ARRIVE = spring(7.6657, 6.7605, 1.1339)
 const TURN = spring(7.4426, 10.5254, .7071)
-const FIGMA = { arrive: 2200 * .2707, turn: 2200 * .3353, upright: 2200 * .4373, spread: 2200 * .5622, open: 2200 * .968 }
+const SNAP = spring(11.1803, .1581, 70.7054)
+const FIGMA_DURATION = 3089.468
+const FIGMA = {
+  arrive: FIGMA_DURATION * .1927, turn: FIGMA_DURATION * .2388,
+  upright: FIGMA_DURATION * .3114, spread: FIGMA_DURATION * .4003,
+  open: FIGMA_DURATION * .6893, descend: FIGMA_DURATION * .7121,
+  landed: FIGMA_DURATION * .7594, closed: FIGMA_DURATION * .8257,
+  product: FIGMA_DURATION * .9251,
+}
+type OpeningCue = [time: number, width: number, easing?: string]
 
 /** A finite shared clock drives the mechanism without typing timers or React render loops. */
 export default function KineticHeroIdentity() {
@@ -54,7 +63,8 @@ export default function KineticHeroIdentity() {
       const words = [...root.querySelectorAll<HTMLElement>('.kinetic-word')]
       const size = parseFloat(getComputedStyle(stage).fontSize)
       const widths = words.map(word => word.scrollWidth + size * 1.6)
-      const nameWidth = name.getBoundingClientRect().width + size * 1.6
+      const nameTextWidth = name.getBoundingClientRect().width
+      const nameWidth = Math.min(nameTextWidth + size * 1.6, root.clientWidth - size)
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
@@ -71,20 +81,31 @@ export default function KineticHeroIdentity() {
       }
       const pose = (time: number, transform: string, opacity = 1): Cue => [time, { transform, opacity }]
       track(find('.h-jakeicon'), [pose(0, 'translateY(-12px)', 0), pose(540, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
-      track(find('.hero-title'), [pose(0, 'translateY(0)', 0), pose(FIGMA.spread, 'translateY(0)', 0), pose(FIGMA.open, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
+      // One aperture defines both the brace span and the visible name. Negative
+      // insets preserve that exact edge relationship while opening past the text.
+      const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameWidth]]
+      const masked = (node: HTMLElement, textWidth: number, opening: OpeningCue[]) => track(node,
+        opening.map(([time,width,easing]) => [time,{
+          clipPath: `inset(0px ${(textWidth-width)/2}px)`, ...(easing ? {easing} : {}),
+        }]))
+      masked(name,nameTextWidth,[...nameOpening,[DURATION,nameWidth]])
       const widthCues: Cue[] = [[0, {width: `${widths[0]}px`}]]
       CHANGES.forEach((time,i) => widthCues.push([time,{width:`${widths[i % 5]}px`}],[time+280,{width:`${widths[(i+1)%5]}px`}]))
       widthCues.push([DURATION,{width:`${widths[4]}px`}])
       track(find('.kinetic-bracketed'),widthCues)
-      const mechanismWidth: Cue[] = [[0,{width:'0px'}],[FIGMA.spread,{width:'0px',easing:TURN}],[FIGMA.open,{width:`${nameWidth}px`}],[2400,{width:`${nameWidth}px`}],[2900,{width:`${widths[0]-size*.7}px`}]]
+      const productWidth = widths[0]-size*.7
+      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,productWidth]]
+      const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.landed,nameWidth,SNAP],...productOpening]
+      const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{width:`${width}px`,...(easing ? {easing} : {})}])
       CHANGES.forEach((time,i)=>mechanismWidth.push([time,{width:`${widths[i%5]-size*.7}px`}],[time+280,{width:`${widths[(i+1)%5]-size*.7}px`}]))
       mechanismWidth.push([DURATION,{width:`${widths[4]-size*.7}px`}])
       track(find('.kinetic-mechanism'),mechanismWidth)
       const center = stacked ? 0 : -tailWidth / 2
       track(find('.kinetic-mechanism-motion'),[
         [0,{transform:`translate(0px, ${nameY - 528 * size * .85 / 261.818}px)`,easing:ARRIVE}],
-        pose(FIGMA.arrive,`translate(0px, ${nameY}px)`),pose(2400,`translate(0px, ${nameY}px)`),
-        pose(2900,`translate(0px, ${roleY}px)`),pose(3100,`translate(0px, ${roleY}px)`),
+        pose(FIGMA.arrive,`translate(0px, ${nameY}px)`),
+        [FIGMA.descend,{transform:`translate(0px, ${nameY}px)`,easing:TURN}],
+        pose(FIGMA.landed,`translate(0px, ${roleY}px)`),pose(3100,`translate(0px, ${roleY}px)`),
         pose(3650,`translate(${center}px, ${roleY}px)`),pose(DURATION,`translate(${center}px, ${roleY}px)`),
       ])
       track(find('.kinetic-brace-left'),[
@@ -98,8 +119,8 @@ export default function KineticHeroIdentity() {
         pose(FIGMA.upright,'rotate(0deg)'),pose(DURATION,'rotate(0deg)'),
       ])
       words.forEach((word,roleIndex)=>{
-        const frames:Cue[]=[pose(0,'translateY(-.2em)',0)]
-        if(roleIndex===0) frames.push(pose(2800,'translateY(-.2em)',0),pose(3000,'translateY(0)'))
+        const frames:Cue[]=[pose(0,roleIndex===0?'translateY(0)':'translateY(-.2em)',roleIndex===0?1:0)]
+        if(roleIndex===0) masked(word,word.scrollWidth,[[0,0],...productOpening,[DURATION,productWidth]])
         CHANGES.forEach((time,i)=>{
           if(i%5===roleIndex) frames.push(pose(time,'translateY(0)'),pose(time+100,'translateY(.2em)',0))
           if((i+1)%5===roleIndex) frames.push(pose(time+100,'translateY(-.2em)',0),pose(time+280,'translateY(0)'))

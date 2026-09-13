@@ -1,5 +1,45 @@
 # Status
 
+## September 12, 2026: Updated hero mask and brace transfer complete
+
+Jacob's refreshed Figma 15:244 animation is implemented in worktree 4b5e on
+`codex/website-visual-system-20260912`, from rollback `1c6535a`.
+The recovery commit containing this entry is the checkpoint; its exact ID is
+recorded in the append-only Genesis completion event.
+
+The fully opaque name is revealed by a mask sharing the braces' opening
+width, timestamps and spring easing. Braces descend straight down before
+snapping together and springing open around a matching Product mask.
+The updated 3089.468ms Figma cohort preserves three distinct spring curves.
+The later role sequence, plus and closing line retain their existing behavior.
+Removing a width clamp keeps spring overshoot connected at enlarged text sizes.
+
+Verification: TypeScript, targeted ESLint, production export of 11 pages and
+whitespace checks pass. All 175 sampled frames across seven layouts pass,
+including 320px and 200% text. Real intro playback collected 34 observations;
+reduced motion is static, and seeking the endpoint then resizing keeps all
+17 tracks finished. Reference assets and project/demo source match 1c6535a.
+Chromium only; the full unchanged 39-second clock was not replayed in real
+time in this scoped pass. Details: docs/hero-transfer-20260912.md.
+
+Changed: KineticHeroIdentity.tsx, visual-system.css, focused verification
+script, acceptance report, two evidence JSON files and this status (seven
+files). No copy changes. Sol/medium was recommended; no in-place model
+switch was available or performed. No local inference or additional spending.
+
+Preview: HTTP 200 at http://localhost:3013/, PID 62276, static out/ in this
+worktree. Test overrides were reset and the browser reloaded. No other
+checkout's service was operated. No push, PR, merge or deployment.
+Rollback: 1c6535a. The owned lock is released on closeout.
+
+Exchange was freshly checked at intake and acceptance (03:54:33Z September 13).
+Direction event: 20260913T034229Z-5bb937bdc91f41b0b0a4e8497bfa1388.
+Acceptance fingerprint: 4409d3ec67f00709c9febd4db5d44ce72859162aee1fece2d3b77f255dc0c3d1.
+No conflicts. Completion is recorded append-only; shared CURRENT and website
+pointers remain coordinator-owned. No remote acknowledgement is claimed.
+No unresolved work for this refinement. Earlier broader copy, BumblebeeMD
+expansion and Reveal source replacement remain deferred.
+
 ## September 12, 2026: Figma motion and call-center demo complete
 
 Latest eight browser comments are implemented locally in worktree 4b5e on

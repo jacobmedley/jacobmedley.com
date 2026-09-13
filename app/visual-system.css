@@ -94,7 +94,7 @@
 .kinetic-identity { position: relative; container-type: inline-size; }
 #hi .kinetic-identity .h-jakeicon { opacity: 1; animation: none; }
 #hi .kinetic-identity .hero-title { margin: .65rem 0 .5rem; font-size: var(--hero-name-size); line-height: 1.2; font-family: inherit; font-weight: 500; }
-.hero-name { display: inline-block; max-width: 100%; }
+.hero-name { display: inline-block; max-width: calc(100% - var(--hero-role-size)); }
 .kinetic-stage { position: relative; min-height: 1.35em; font-size: var(--hero-role-size); line-height: 1.25; color: var(--color-prime); }
 .kinetic-assembly { position: absolute; left: 50%; top: 0; display: flex; align-items: center; transform: translateX(-50%); }
 .kinetic-bracketed { position: relative; flex: none; width: 8ch; max-width: 100cqi; height: 1.3em; }
@@ -256,7 +256,6 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .kinetic-word, .kinetic-design { font-weight: 600; }
 .kinetic-mechanism-motion { position: absolute; top: 0; left: 50%; width: 0; pointer-events: none; font-size: var(--hero-role-size); line-height: 1.25; color: var(--color-prime); }
 .kinetic-mechanism { position: absolute; top: 0; left: 0; height: 1.3em; transform: translateX(-50%); }
-.kinetic-mechanism { max-width: calc(100cqi - 1em); }
 .kinetic-identity[data-hero-state='static'] .kinetic-mechanism-motion { display: none; }
 .kinetic-closing { min-height: 0; }
 .kinetic-brace, .kinetic-static-brace { width: .2723em; height: .85em; top: .225em; background: currentColor; mask: url('/assets/references/hero-brace-right.svg') center / 100% 100% no-repeat; transform-origin: 0% 50%; }

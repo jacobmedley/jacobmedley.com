@@ -1,5 +1,44 @@
 # Status
 
+## September 13, 2026: Tight, shared hero mask edges complete
+
+Jacob's latest mask-spacing correction is implemented in worktree 4b5e on
+`codex/website-visual-system-20260912`, from rollback `8cd2db3`.
+The name and Product masks now read the same animated --hero-aperture value
+as the braces. There is no separately interpolated mask motion. The name
+stays visible after its reveal; original spring timings and curves remain.
+
+The old name span left about 44px of empty space per side at desktop size,
+roughly 54px during the observed bounce. The new target gap is .04em per
+side (about 2px at desktop). Later role spans retain this tighter spacing.
+The prior acceptance checked container alignment but missed visible spacing.
+
+Verification: 301 frames across seven layouts, including 200% text, pass.
+Actual brace-edge/mask differences stay below .016px in those samples.
+Real playback collected 54 name and 20 Product observations, each below
+.01px error. Reduced motion is static; endpoint seek/resize retains all 17
+tracks finished. TypeScript, targeted ESLint, 11-page export, whitespace and
+unchanged project/demo/reference checks pass. Chromium only; no new full
+39-second real-time run. Evidence: docs/hero-mask-edge-20260913.md and its
+review JSON. No copy changes; no B edits applied or skipped.
+
+Changed: KineticHeroIdentity.tsx, visual-system.css, the focused verification
+script, report, compact JSON and this status (six files). Sol/medium was
+recommended; the current model was retained. No local inference or extra spend.
+
+Preview: HTTP 200 at http://localhost:3013/, PID 35788, this worktree's out/.
+Test overrides cleared and browser playback restored. No other checkout's
+service was operated. No push, PR, merge or deployment. Rollback: 8cd2db3.
+The recovery commit containing this entry is recorded in the completion event;
+the owned lock is released on closeout.
+
+Exchange fresh acceptance: 2026-09-13T04:06:02Z, fingerprint
+3c3eff60fd622a9445d4d1cf312ebe0514e46d3f167cf58ffe12f4beadae99ed.
+Direction event: 20260913T040049Z-f311dfa5557d412d90c9aa1817de6794.
+No conflicts; completion is append-only. Shared pointers remain coordinator
+owned; no remote acknowledgement claimed. No remaining work for this fix.
+Previously deferred copy, BumblebeeMD and Reveal source work remains open.
+
 ## September 12, 2026: Updated hero mask and brace transfer complete
 
 Jacob's refreshed Figma 15:244 animation is implemented in worktree 4b5e on

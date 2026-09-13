@@ -255,7 +255,8 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 
 .kinetic-word, .kinetic-design { font-weight: 600; }
 .kinetic-mechanism-motion { position: absolute; top: 0; left: 50%; width: 0; pointer-events: none; font-size: var(--hero-role-size); line-height: 1.25; color: var(--color-prime); }
-.kinetic-mechanism { position: absolute; top: 0; left: 0; height: 1.3em; transform: translateX(-50%); }
+@property --hero-aperture { syntax: '<length>'; inherits: true; initial-value: 0px; }
+.kinetic-mechanism { position: absolute; top: 0; left: 0; width: var(--hero-aperture); height: 1.3em; transform: translateX(-50%); }
 .kinetic-identity[data-hero-state='static'] .kinetic-mechanism-motion { display: none; }
 .kinetic-closing { min-height: 0; }
 .kinetic-brace, .kinetic-static-brace { width: .2723em; height: .85em; top: .225em; background: currentColor; mask: url('/assets/references/hero-brace-right.svg') center / 100% 100% no-repeat; transform-origin: 0% 50%; }

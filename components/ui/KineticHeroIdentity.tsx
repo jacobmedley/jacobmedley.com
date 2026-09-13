@@ -62,9 +62,12 @@ export default function KineticHeroIdentity() {
       const name = find('.hero-name')
       const words = [...root.querySelectorAll<HTMLElement>('.kinetic-word')]
       const size = parseFloat(getComputedStyle(stage).fontSize)
-      const widths = words.map(word => word.scrollWidth + size * 1.6)
+      // Keep the brace's inner edge just .04em from the fully revealed text.
+      // The remaining .7em belongs outside the braces, beside the + Design tail.
+      const revealGap = size * .08
+      const widths = words.map(word => word.scrollWidth + size * .7 + revealGap)
       const nameTextWidth = name.getBoundingClientRect().width
-      const nameWidth = Math.min(nameTextWidth + size * 1.6, root.clientWidth - size)
+      const nameWidth = Math.min(nameTextWidth + revealGap, root.clientWidth - size)
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
@@ -81,14 +84,17 @@ export default function KineticHeroIdentity() {
       }
       const pose = (time: number, transform: string, opacity = 1): Cue => [time, { transform, opacity }]
       track(find('.h-jakeicon'), [pose(0, 'translateY(-12px)', 0), pose(540, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
-      // One aperture defines both the brace span and the visible name. Negative
-      // insets preserve that exact edge relationship while opening past the text.
+      // The mask reads the SAME animated property as the brace width every frame.
+      // Only its release is discrete; there is no separately interpolated mask.
       const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameWidth]]
-      const masked = (node: HTMLElement, textWidth: number, opening: OpeningCue[]) => track(node,
-        opening.map(([time,width,easing]) => [time,{
-          clipPath: `inset(0px ${(textWidth-width)/2}px)`, ...(easing ? {easing} : {}),
-        }]))
-      masked(name,nameTextWidth,[...nameOpening,[DURATION,nameWidth]])
+      const masked = (node: HTMLElement, start: number, end: number) => {
+        const connected = 'inset(0px calc((100% - var(--hero-aperture)) / 2))'
+        const cues: Cue[] = [[0,{clipPath:start === 0 ? connected : 'inset(0px 50%)',easing:'steps(1,end)'}]]
+        if (start > 0) cues.push([start,{clipPath:connected,easing:'steps(1,end)'}])
+        cues.push([end,{clipPath:'none',easing:'steps(1,end)'}],[DURATION,{clipPath:'none'}])
+        track(node,cues)
+      }
+      masked(name,0,FIGMA.open)
       const widthCues: Cue[] = [[0, {width: `${widths[0]}px`}]]
       CHANGES.forEach((time,i) => widthCues.push([time,{width:`${widths[i % 5]}px`}],[time+280,{width:`${widths[(i+1)%5]}px`}]))
       widthCues.push([DURATION,{width:`${widths[4]}px`}])
@@ -96,10 +102,10 @@ export default function KineticHeroIdentity() {
       const productWidth = widths[0]-size*.7
       const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,productWidth]]
       const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.landed,nameWidth,SNAP],...productOpening]
-      const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{width:`${width}px`,...(easing ? {easing} : {})}])
-      CHANGES.forEach((time,i)=>mechanismWidth.push([time,{width:`${widths[i%5]-size*.7}px`}],[time+280,{width:`${widths[(i+1)%5]-size*.7}px`}]))
-      mechanismWidth.push([DURATION,{width:`${widths[4]-size*.7}px`}])
-      track(find('.kinetic-mechanism'),mechanismWidth)
+      const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{'--hero-aperture':`${width}px`,...(easing ? {easing} : {})}])
+      CHANGES.forEach((time,i)=>mechanismWidth.push([time,{'--hero-aperture':`${widths[i%5]-size*.7}px`}],[time+280,{'--hero-aperture':`${widths[(i+1)%5]-size*.7}px`}]))
+      mechanismWidth.push([DURATION,{'--hero-aperture':`${widths[4]-size*.7}px`}])
+      track(root,mechanismWidth)
       const center = stacked ? 0 : -tailWidth / 2
       track(find('.kinetic-mechanism-motion'),[
         [0,{transform:`translate(0px, ${nameY - 528 * size * .85 / 261.818}px)`,easing:ARRIVE}],
@@ -120,7 +126,7 @@ export default function KineticHeroIdentity() {
       ])
       words.forEach((word,roleIndex)=>{
         const frames:Cue[]=[pose(0,roleIndex===0?'translateY(0)':'translateY(-.2em)',roleIndex===0?1:0)]
-        if(roleIndex===0) masked(word,word.scrollWidth,[[0,0],...productOpening,[DURATION,productWidth]])
+        if(roleIndex===0) masked(word,FIGMA.closed,FIGMA.product)
         CHANGES.forEach((time,i)=>{
           if(i%5===roleIndex) frames.push(pose(time,'translateY(0)'),pose(time+100,'translateY(.2em)',0))
           if((i+1)%5===roleIndex) frames.push(pose(time+100,'translateY(-.2em)',0),pose(time+280,'translateY(0)'))

@@ -1,0 +1,35 @@
+name: Verify static export
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Ubuntu Node 20 export
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Typecheck
+        run: node node_modules/typescript/bin/tsc --noEmit --incremental false
+      - name: Lint authored source
+        run: node node_modules/eslint/bin/eslint.js app components hooks lib scripts --no-cache
+      - name: Build and verify all exported images
+        run: npm run build
+      - name: Dependency audit
+        run: npm audit --audit-level=high
+      - name: Retain verified static export
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-export
+          path: out/
+          retention-days: 7

@@ -1,5 +1,50 @@
 # Status
 
+## September 13, 2026: Final release candidate ready for PR review
+
+Final release review is complete in worktree 4b5e on
+`codex/website-visual-system-20260912`. Fresh `origin/main` is `e6b3672`; the
+requested start was `4aefa908`. The exact code candidate is
+`40377c4746e9262a3524aeef0d05a3ab6f546fb6`, 38 unpublished commits and 134 files
+ahead of main. No push, pull request, merge or deployment occurred.
+
+ACC-B01 was confirmed and fixed. At 320px/200% text, the six DentalPlans/Hydra
+schematics now use an em-based narrow-measure composition and intrinsic height;
+every label remains inside its diagram with zero internal overflow. ACC-B02 remains
+resolved: no visible motion control, sticky heading or fixed-element collision at
+320, 375, 438, 439, 768, 1100 or 1440px, including enlarged text.
+
+The accepted hero and its source are unchanged from `4aefa908`: connected masks,
+post-reveal resting space, brace typography switch at the closed snap and finite
+Product ending. Project data, case-study copy and copy authorities are also
+unchanged. Broader copy, BumblebeeMD expansion and Reveal image replacement remain
+deferred.
+
+TypeScript, authored-source ESLint, source-preservation checks, whitespace and a
+fresh 11-page production export pass. Rebuilt-export browser acceptance has zero
+failures or console warnings/errors across eight homepage layouts, 42 all-project
+modal scenarios, 12 all-story standalone scenarios, six filters, call-center
+states/highlight/menu, keyboard activation, a 30-step focus trap, Escape return and
+reduced motion. The old September 11 source script is stale against later registered
+badge-label edits; the checkpoint-bound final source test supersedes it here.
+
+Unavailable coverage is recorded rather than inferred: the in-app browser exposes
+neither browser-chrome 200% zoom nor a native hidden-tab transition (a second tab
+left `document.hidden` false). Firefox, WebKit, a physical device and Node 20 CI were
+also unavailable. Root text at 200% passed; local build used Node 22.11.0. Detailed
+evidence: `docs/final-release-candidate-20260913.md`; local ignored measurements:
+`scripts/parity/shots/final-release-20260913/results.json`.
+
+Preview: HTTP 200 at http://localhost:3013/, listener PID 34544, serving this worktree's
+`out/`. Rollback for this release-review fix: `4aefa908`. The documentation commit
+and final Exchange update follow; the owned lock is released only at closeout.
+
+Genesis was freshly reread before acceptance at 2026-09-13T04:50:59Z, fingerprint
+`563de059cc45f1df8ead1c5e3d6d0e5d663d2652ab4ccffda082bcfd3d718764`, with no
+conflicts. Direction event:
+`20260913T043416Z-20307531dcf848e081eb793a4cea046b`. Shared pointers remain
+coordinator-owned; no remote acknowledgement is claimed.
+
 ## September 13, 2026: Resting space and Product finale complete
 
 Jacob accepted mask tracking and requested wider spacing after the reveal,

@@ -1,5 +1,60 @@
 # Status
 
+## September 12, 2026: Figma motion and call-center demo complete
+
+Latest eight browser comments are implemented locally in worktree 4b5e on
+`codex/website-visual-system-20260912`, from rollback `99409f0`.
+The recovery commit containing this entry is the checkpoint; its exact ID is
+recorded in the append-only Genesis completion event.
+
+The hero uses the Figma 15:244 2.2-second brace timing, supplied vector shapes
+and plus.svg, IxD, weight 600 roles/Design, and an opacity-only closing line.
+Braces remain around the role throughout the finite sequence. Measured plus
+centers stay fixed during rotation, with a maximum 0.008px center difference
+across the sampled same-line layouts. Static reduced motion retains braces.
+
+Page waves run four times slower. All modal hero waves are removed. Modal
+section icons are bare; desktop content uses a shared 3rem icon-plus-gap inset
+on both sides. At 575px and below the icon stacks above the title and content
+uses full width. Contribution badges use 14px text/icons, 8px/16px padding and
+#ffffff66 at default font size, scaling with rem units.
+
+The call-center study now has a phone wireframe with Auto/Ready/Busy/Closed
+controls and a Highlight switch. Header, banner and hero change together.
+Ready has no offer; Busy offers 15% online only; Closed offers 10% online.
+The controls stack above the phone below 992px and compress on mobile.
+Auto suspends offscreen and under reduced motion; manual states remain usable.
+Menu and primary actions stay in the simulated preview and manage keyboard focus.
+B55 is APPLIED. The BumblebeeMD expansion is recorded for the future copy pass.
+
+Verification: TypeScript, ESLint, production export of 11 pages, whitespace and
+source-fidelity checks pass. 98 modal cases cover five normal widths plus two
+200% text settings. All seven hero settings were rechecked after the final
+centering adjustment. Native keyboard actions, state offers, offscreen Auto
+suspension and reduced motion pass. A real-time run settled all 16 hero tracks
+at 39000ms and stayed finished after resize. Exact evidence and verification
+limits are in docs/motion-demo-refinements-20260912.md and its review JSON.
+Project narrative, Resume, education and original images match 99409f0.
+
+Changed: globals.css, visual-system.css, CaseStudyModal, KineticHeroIdentity,
+new CallCenterDemo, three SVG assets, focused acceptance script, copy register,
+QA notes, this status, the acceptance report and two evidence JSON files.
+
+Preview: HTTP 200 at http://localhost:3013/, PID 34976, static out/ in this
+worktree. Port 3012 was no longer listening at closeout; no other worktree
+process was operated. No push, PR, merge or deployment. Rollback: 99409f0.
+The owned lock is released after commit and the Exchange update. Final tree
+and commit verification follow. Remaining work: broader copy review,
+BumblebeeMD expansion and the previously deferred Reveal source replacement.
+
+Exchange freshly read and checked through 2026-09-13T03:14:23Z; fingerprint
+66e207864ccc67bd65931c9804523a7bd4c29abfedc465e881e6897112cb9408, no conflicts.
+Direction event: 20260913T025133Z-ab0a322e187242b1a12ec3443540e394. The completion
+update records the final commit. CURRENT/workstream reconciliation belongs to
+the Genesis coordinator; no remote acknowledgement is asserted.
+
+---
+
 ## September 12, 2026: browser refinements 1-25 complete
 
 All 25 browser comments are implemented locally in worktree 4b5e on

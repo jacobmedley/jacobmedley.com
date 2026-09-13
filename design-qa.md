@@ -1,3 +1,22 @@
+# September 12 motion and call-center follow-up
+
+Latest eight browser comments pass in the production export on port 3013.
+Figma brace timing, retained braces, centered supplied plus, IxD, stronger role
+weight, and opacity-only closing are implemented. Page waves are four times
+slower; shared modal hero waves are removed. Modal icons are bare, content
+insets follow icon width plus gap, and contribution pills use 14px/8px/16px
+and #ffffff66 at default text size. The call-center phone demo has keyboard
+state buttons, a highlight switch, three synchronized content regions, focus
+handling, offscreen suspension and a static reduced-motion mode.
+
+98 modal cases and seven hero settings pass, including mobile and 200% text.
+Build, TypeScript, ESLint and source-fidelity checks pass. See
+[the acceptance report](docs/motion-demo-refinements-20260912.md) and
+[measured evidence](docs/reviews/motion-demo-20260912.json) for scope and limits.
+No deployment. B55 is applied; BumblebeeMD copy expansion is a future note.
+
+---
+
 # Design QA
 
 ## September 12 browser comments 1-25

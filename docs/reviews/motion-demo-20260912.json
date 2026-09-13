@@ -1,0 +1,5618 @@
+{
+  "modals": [
+    {
+      "id": "webmd",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        },
+        {
+          "size": "14px",
+          "padding": "8px 16px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "14px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "column"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "webmd",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "dentalplans",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "bumblebeemd",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "hydra",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "opfred",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "split-test",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "call-center-ux",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "marketing-auto",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "workshops",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "roadmap",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "personas",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "reveal",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "direction": "row"
+        }
+      ]
+    },
+    {
+      "id": "viva",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    },
+    {
+      "id": "wrong",
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "noWave": true,
+      "badges": [
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        },
+        {
+          "size": "28px",
+          "padding": "16px 32px",
+          "background": "rgba(255, 255, 255, 0.4)",
+          "icon": "28px"
+        }
+      ],
+      "icons": []
+    }
+  ],
+  "hero": [
+    {
+      "width": 320,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 475.53125
+          },
+          "braces": "1",
+          "alignment": 211.52340698242188,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 72.26937866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 72.26937866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 75.86671447753906,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 75.86312866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 75.86312866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 473.53125
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 117.52340698242188,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 72.26937866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 72.26937866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 75.86671447753906,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 75.86312866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 75.86312866210938,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 478.921875
+          },
+          "braces": "1",
+          "alignment": 33.65625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 92.87908935546875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 43.067779541015625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 43.067779541015625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 47.02484130859375,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 47.020904541015625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 47.020904541015625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 488.734375
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 992,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 109.06387329101562,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 48.724151611328125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 48.724151611328125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 53.517974853515625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 53.513214111328125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 53.513214111328125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 482
+          },
+          "braces": "1",
+          "alignment": 0.0078125,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 1706,
+      "scale": 1,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 160.58367919921875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 66.68414306640625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 66.68414306640625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 74.14469909667969,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": false,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 74.13726806640625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 74.13726806640625,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": false,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 536.546875
+          },
+          "braces": "1",
+          "alignment": 0,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "scale": 2,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 270.16400146484375,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 179.65594482421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 179.65594482421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 186.8506088256836,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 186.84344482421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 186.84344482421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 477.21875
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    },
+    {
+      "width": 992,
+      "scale": 2,
+      "frames": [
+        {
+          "time": 0,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 235.55462646484375,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 595.54,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 145.04656982421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 737.66,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 145.04656982421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 962.06,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 152.24122619628906,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 1236.84,
+          "stacked": true,
+          "overflow": 0,
+          "name": "0",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 152.23406982421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 2129.6,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 152.23406982421875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 3100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 4400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 5400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 6400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "IxD"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 7400,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "0",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 8100,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [],
+          "closing": {
+            "opacity": "0.219684",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 9000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "0.971104",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 10500,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Product"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 12000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "UX"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 16000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Systems"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        },
+        {
+          "time": 39000,
+          "stacked": true,
+          "overflow": 0,
+          "name": "1",
+          "words": [
+            "Human"
+          ],
+          "closing": {
+            "opacity": "1",
+            "transform": "none",
+            "clip": "none",
+            "top": 387.0625
+          },
+          "braces": "1",
+          "alignment": 67.3046875,
+          "weight": "600",
+          "plusMask": "url(\"http://localhost:3013/assets/references/plus.svg\")",
+          "braceMask": "url(\"http://localhost:3013/assets/references/hero-brace-right.svg\")"
+        }
+      ]
+    }
+  ],
+  "demo": [
+    {
+      "width": 320,
+      "scale": 1,
+      "overflow": 0,
+      "phoneWidth": 260,
+      "phoneLeft": 25,
+      "phoneRight": 285,
+      "controlsLeft": 25,
+      "controlsTop": 171.78494262695312,
+      "phoneTop": 456.1130676269531,
+      "textInset": 0,
+      "contentRight": 285,
+      "inset": "0px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 375,
+      "scale": 1,
+      "overflow": 0,
+      "phoneWidth": 315,
+      "phoneLeft": 25,
+      "phoneRight": 340,
+      "controlsLeft": 25,
+      "controlsTop": 172.73504638671875,
+      "phoneTop": 389.09442138671875,
+      "textInset": 0,
+      "contentRight": 340,
+      "inset": "0px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 768,
+      "scale": 1,
+      "overflow": 0,
+      "phoneWidth": 368,
+      "phoneLeft": 195,
+      "phoneRight": 563,
+      "controlsLeft": 96.03125,
+      "controlsTop": 166.02882385253906,
+      "phoneTop": 660.43505859375,
+      "textInset": 0,
+      "contentRight": 709.96875,
+      "inset": "48px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 992,
+      "scale": 1,
+      "overflow": 0,
+      "phoneWidth": 368,
+      "phoneLeft": 94.75,
+      "phoneRight": 462.75,
+      "controlsLeft": 500.65625,
+      "controlsTop": 276.04510498046875,
+      "phoneTop": 167.6388702392578,
+      "textInset": 0,
+      "contentRight": 935.25,
+      "inset": "48px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 1706,
+      "scale": 1,
+      "overflow": 0,
+      "phoneWidth": 368,
+      "phoneLeft": 282,
+      "phoneRight": 650,
+      "controlsLeft": 702.3125,
+      "controlsTop": 292.6484375,
+      "phoneTop": 187.36717224121094,
+      "textInset": 0,
+      "contentRight": 1462,
+      "inset": "48px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 320,
+      "scale": 2,
+      "overflow": 0,
+      "phoneWidth": 212,
+      "phoneLeft": 49,
+      "phoneRight": 261,
+      "controlsLeft": 49,
+      "controlsTop": 444.3506164550781,
+      "phoneTop": 2263.8037109375,
+      "textInset": 0,
+      "contentRight": 261,
+      "inset": "0px",
+      "phoneScroll": 0
+    },
+    {
+      "width": 992,
+      "scale": 2,
+      "overflow": 0,
+      "phoneWidth": 628,
+      "phoneLeft": 145,
+      "phoneRight": 773,
+      "controlsLeft": 837,
+      "controlsTop": 293.3393859863281,
+      "phoneTop": 4695.80810546875,
+      "textInset": 0,
+      "contentRight": 933,
+      "inset": "96px",
+      "phoneScroll": 0
+    }
+  ],
+  "failures": [],
+  "behavior": {
+    "states": [
+      {
+        "state": "ready",
+        "header": "DentalPlans.comCall nowReady to help",
+        "banner": "Our team is ready. Call for help choosing a plan.",
+        "hero": "Find your dental savings plan.Talk to our team or explore plans online.View plans"
+      },
+      {
+        "state": "busy",
+        "header": "DentalPlans.comShop onlineHigh call volume",
+        "banner": "Skip the wait. Save 15% online only.",
+        "hero": "Keep smiling. Skip the wait.Our team is busy. Buy online and save 15%.Save 15% online"
+      },
+      {
+        "state": "closed",
+        "header": "DentalPlans.comShop onlineCall center closed",
+        "banner": "We are closed. Save 10% when you buy online.",
+        "hero": "Your next step is online.Explore dental savings plans and save 10% online.Save 10% online"
+      }
+    ],
+    "highlight": {
+      "value": "true",
+      "regions": 3,
+      "focus": "switch"
+    },
+    "destinationFocus": "Plan comparison preview",
+    "returnFocus": "Save 10% online",
+    "autoStart": {
+      "time": 159697.29999998212,
+      "state": "ready"
+    },
+    "autoAfter": {
+      "time": 173313,
+      "state": "closed"
+    },
+    "offscreenBefore": {
+      "time": 173319.5,
+      "state": "closed"
+    },
+    "offscreenAfter": {
+      "time": 193732.29999998212,
+      "state": "closed"
+    },
+    "reducedBefore": {
+      "time": 194075.79999998212,
+      "state": "ready",
+      "animations": 0
+    },
+    "reducedAfter": {
+      "time": 218675.59999999404,
+      "state": "ready"
+    },
+    "reducedManual": "busy"
+  },
+  "reducedHero": {
+    "state": "static",
+    "braces": [
+      "block",
+      "block"
+    ],
+    "animations": 0,
+    "words": [
+      "Product"
+    ],
+    "closing": "1"
+  },
+  "liveHeroStart": {
+    "time": 96.40000000596046,
+    "state": "static"
+  },
+  "liveHeroEnd": {
+    "time": 101693.20000001788,
+    "state": "settled",
+    "animations": [
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      }
+    ],
+    "role": [
+      "Human"
+    ]
+  },
+  "settledResize": {
+    "state": "settled",
+    "animations": [
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      },
+      {
+        "time": 39000,
+        "state": "finished"
+      }
+    ]
+  },
+  "rotation": [
+    {
+      "time": 4000,
+      "centerDelta": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)"
+    },
+    {
+      "time": 4100,
+      "centerDelta": 0,
+      "transform": "matrix(-0.901098, 0.433616, -0.433616, -0.901098, 0, 0)"
+    },
+    {
+      "time": 4140,
+      "centerDelta": 0,
+      "transform": "matrix(-0.980237, 0.197826, -0.197826, -0.980237, 0, 0)"
+    },
+    {
+      "time": 4200,
+      "centerDelta": 0,
+      "transform": "matrix(-0.998925, 0.0463657, -0.0463657, -0.998925, 0, 0)"
+    },
+    {
+      "time": 4280,
+      "centerDelta": 0,
+      "transform": "matrix(-1, 0, 0, -1, 0, 0)"
+    }
+  ]
+}

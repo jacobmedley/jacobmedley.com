@@ -7,6 +7,7 @@ import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
 import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
+import CallCenterDemo from './CallCenterDemo'
 import {
   type Project,
   type ProjectMedia,
@@ -136,7 +137,6 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
                   <ModalHeroField project={project} />
-                  <svg className="modal-hero-wave" viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0 48C240 4 400 4 640 40S1100 74 1440 24V72H0Z" /></svg>
                 </div>
               )}
               <div className="modal-header">
@@ -391,7 +391,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
     case 'supporting-art':
       return <StudySupportingArt kind={block.kind} alt={block.alt} />
     case 'call-center-states':
-      return <CallCenterStateWireframes />
+      return <CallCenterDemo />
     default:
       return <MediaBlock block={block} />
   }
@@ -893,44 +893,6 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
   )
 }
 
-const CALL_CENTER_STATES = [
-  { label: 'Open', icon: 'fa-thin fa-phone-volume', action: 'Call now', tone: 'open' },
-  { label: 'Busy', icon: 'fa-thin fa-clock', action: 'Wait times are high', tone: 'busy' },
-  { label: 'Closed', icon: 'fa-thin fa-moon', action: 'Use the online offer', tone: 'closed' }
-] as const
-
-function CallCenterStateWireframes() {
-  return (
-    <section className="call-center-wireframes" aria-labelledby="call-center-wireframes-title">
-      <div className="call-center-wireframes-heading">
-        <div className="modal-section-heading">
-          <span><i className="fa-thin fa-window" aria-hidden="true" /></span>
-          <h4 id="call-center-wireframes-title">Responsive site states</h4>
-        </div>
-        <hr className="solid-center rule-heading" />
-      </div>
-      <div className="call-center-wireframes-grid">
-        {CALL_CENTER_STATES.map((state) => (
-          <article className={`call-center-wireframe is-${state.tone}`} key={state.label}>
-            <header>
-              <span className="wireframe-brand">DentalPlans.com</span>
-              <i className="fa-thin fa-bars" aria-hidden="true" />
-            </header>
-            <div className="wireframe-status">
-              <span className="wireframe-state-icon" aria-hidden="true"><i className={state.icon} /></span>
-              <span><b>{state.label}</b><small>{state.action}</small></span>
-            </div>
-            <div className="wireframe-promo">
-              <span>Dental savings plans</span>
-              <span className="wireframe-action">View plans</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 function ModalContent({ project }: { project: Project }) {
   const featured = true
   const originalFeatured = ORIGINAL_FEATURED_IDS.has(project.id)
@@ -1018,6 +980,18 @@ function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
   const nodes: ReactNode[] = []
   for (let i = 0; i < media.length; i++) {
     const [b0, b1, b2, b3] = [media[i], media[i + 1], media[i + 2], media[i + 3]]
+    if (b0.type === 'heading' && b0.icon) {
+      let end = i + 1
+      while (end < media.length && !['heading', 'divider', 'contributions', 'call-center-states'].includes(media[end].type)) end++
+      nodes.push(
+        <section className="modal-content-section" key={i}>
+          <BlockContent block={b0} />
+          <div className="modal-section-content">{renderMedia(media.slice(i + 1, end), contributions)}</div>
+        </section>
+      )
+      i = end - 1
+      continue
+    }
     if (b0.type === 'contributions') {
       nodes.push(
         <div className="row" key={i}>

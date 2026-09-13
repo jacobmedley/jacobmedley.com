@@ -1882,3 +1882,38 @@ deferred until all visual refinements are complete (comment 17).
 
 Hero name, role spellings and closing line remain as registered in B53. Resume
 facts, dates, company names, narrative, leadership and education text are unchanged.
+
+## B55. Hero spelling and interactive call-center demo [APPLIED]
+
+Source: Jacob's next eight browser comments, September 12, task 01a0978b.
+Supersedes B53's `IdX` spelling with `IxD`. The five-role order and closing
+line remain unchanged. Braces stay around the role; the closing line only fades.
+
+Replace the three static site states with a labeled interactive demo. Interface
+labels: `Responsive site states`, `Interactive demo`, `Call center`, `Auto`,
+`Ready`, `Busy`, `Closed`, `Highlight`, `Header`, `Sitewide banner`, `Hero`.
+Phone brand: `DentalPlans.com`; header actions: `Call now`, `Shop online`.
+State messaging and offers, directly specified by Jacob for this demonstration:
+
+| State | Header / banner | Hero | Action |
+|---|---|---|---|
+| Ready | Ready to help / Our team is ready. Call for help choosing a plan. | Find your dental savings plan. / Talk to our team or explore plans online. | View plans |
+| Busy | High call volume / Skip the wait. Save 15% online only. | Keep smiling. Skip the wait. / Our team is busy. Buy online and save 15%. | Save 15% online |
+| Closed | Call center closed / We are closed. Save 10% when you buy online. | Your next step is online. / Explore dental savings plans and save 10% online. | Save 10% online |
+
+Control descriptions: `Watch the site respond to call-center availability.`,
+`No offer. Phone support is available.`, `15% off online only.`,
+`10% off online.`, `Emphasize the areas that change.`,
+`Auto cycles every 5 seconds. Choose a state to stop.`,
+`Reduced motion: choose a state to preview it.` Phone supporting labels:
+`Explore plans`, `Compare plans`, `Find a dentist`, `Choose a plan`,
+`Browse dental savings plans online.` Demonstration navigation opens a small
+menu containing `Explore plans`, `Find a dentist`, and `Close menu`; plan
+actions show `Plan comparison preview` and `Back to home`; call action shows
+`Phone support is available.` and `Back to home`. Accessible names may describe
+the controls and simulated preview. These figures are demo offer values,
+not a new historical result or measurement claim. No external transaction.
+
+Future copy note, comment 7: expand the BumblebeeMD brief in the later copy
+pass. Jacob finds the current one-of-five-properties summary too thin. No
+replacement or additional claim is approved in this pass.

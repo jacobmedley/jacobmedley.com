@@ -3,10 +3,21 @@
 import { useLayoutEffect, useRef } from 'react'
 import { useReducedMotion } from './MotionControls'
 
-const ROLES = ['Product', 'UX', 'Systems', 'IdX', 'Human'] as const
+const ROLES = ['Product', 'UX', 'Systems', 'IxD', 'Human'] as const
 const DURATION = 39000
 const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000]
 type Cue = [number, Keyframe]
+
+// Figma 15:244: the supplied 2.2s timeline, sampled from its exact spring
+// functions for the existing WAAPI clock. Only spatial values fit the type size.
+const spring = (decay: number, frequency: number, damping: number) =>
+  `linear(${Array.from({ length: 81 }, (_, i) => {
+    const t = i / 80
+    return 1 - Math.exp(-t * decay) * (Math.cos(t * frequency) + damping * Math.sin(t * frequency))
+  }).join(',')})`
+const ARRIVE = spring(7.6657, 6.7605, 1.1339)
+const TURN = spring(7.4426, 10.5254, .7071)
+const FIGMA = { arrive: 2200 * .2707, turn: 2200 * .3353, upright: 2200 * .4373, spread: 2200 * .5622, open: 2200 * .968 }
 
 /** A finite shared clock drives the mechanism without typing timers or React render loops. */
 export default function KineticHeroIdentity() {
@@ -48,12 +59,10 @@ export default function KineticHeroIdentity() {
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
       const closingNode = find('.kinetic-closing')
-      const closingY = closingNode.getBoundingClientRect().top - rootTop + closingNode.offsetHeight / 2 - size * .65
-      const closingWidth = Math.min(root.clientWidth - size, closingNode.scrollWidth + size * .3)
       const tailWidth = find('.kinetic-tail-inner').getBoundingClientRect().width
       const stacked = getComputedStyle(find('.kinetic-assembly')).flexDirection === 'column'
       function track(node: HTMLElement, cues: Cue[]) {
-        const animation = node.animate(cues.map(([time, frame]) => ({ ...frame, offset: time / DURATION, easing: 'cubic-bezier(.22,.75,.2,1)' })), { duration: DURATION, fill: 'both' })
+        const animation = node.animate(cues.map(([time, frame]) => ({ easing: 'cubic-bezier(.22,.75,.2,1)', ...frame, offset: time / DURATION })), { duration: DURATION, fill: 'both' })
         animation.pause()
         animation.currentTime = Math.min(elapsedRef.current, DURATION)
         // play() at a paused end time rewinds a finished timeline. Keep it finished.
@@ -62,32 +71,31 @@ export default function KineticHeroIdentity() {
       }
       const pose = (time: number, transform: string, opacity = 1): Cue => [time, { transform, opacity }]
       track(find('.h-jakeicon'), [pose(0, 'translateY(-12px)', 0), pose(540, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
-      track(find('.hero-title'), [pose(0, 'translateY(0)', 0), pose(1650, 'translateY(0)', 0), pose(2250, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
+      track(find('.hero-title'), [pose(0, 'translateY(0)', 0), pose(FIGMA.spread, 'translateY(0)', 0), pose(FIGMA.open, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
       const widthCues: Cue[] = [[0, {width: `${widths[0]}px`}]]
       CHANGES.forEach((time,i) => widthCues.push([time,{width:`${widths[i % 5]}px`}],[time+280,{width:`${widths[(i+1)%5]}px`}]))
       widthCues.push([DURATION,{width:`${widths[4]}px`}])
       track(find('.kinetic-bracketed'),widthCues)
-      const mechanismWidth: Cue[] = [[0,{width:'0px'}],[1200,{width:'0px'}],[2200,{width:`${nameWidth}px`}],[2400,{width:`${nameWidth}px`}],[2900,{width:`${widths[0]-size*.7}px`}]]
-      CHANGES.slice(0,4).forEach((time,i)=>mechanismWidth.push([time,{width:`${widths[i]-size*.7}px`}],[time+280,{width:`${widths[i+1]-size*.7}px`}]))
-      mechanismWidth.push([8000,{width:`${widths[4]-size*.7}px`}],[8620,{width:'0px'}],[9450,{width:`${closingWidth}px`}],[10000,{width:`${closingWidth}px`}],[DURATION,{width:`${closingWidth}px`}])
+      const mechanismWidth: Cue[] = [[0,{width:'0px'}],[FIGMA.spread,{width:'0px',easing:TURN}],[FIGMA.open,{width:`${nameWidth}px`}],[2400,{width:`${nameWidth}px`}],[2900,{width:`${widths[0]-size*.7}px`}]]
+      CHANGES.forEach((time,i)=>mechanismWidth.push([time,{width:`${widths[i%5]-size*.7}px`}],[time+280,{width:`${widths[(i+1)%5]-size*.7}px`}]))
+      mechanismWidth.push([DURATION,{width:`${widths[4]-size*.7}px`}])
       track(find('.kinetic-mechanism'),mechanismWidth)
       const center = stacked ? 0 : -tailWidth / 2
       track(find('.kinetic-mechanism-motion'),[
-        pose(0,`translate(0px, ${nameY}px)`),pose(2400,`translate(0px, ${nameY}px)`),
+        [0,{transform:`translate(0px, ${nameY - 528 * size * .85 / 261.818}px)`,easing:ARRIVE}],
+        pose(FIGMA.arrive,`translate(0px, ${nameY}px)`),pose(2400,`translate(0px, ${nameY}px)`),
         pose(2900,`translate(0px, ${roleY}px)`),pose(3100,`translate(0px, ${roleY}px)`),
-        pose(3650,`translate(${center}px, ${roleY}px)`),pose(8000,`translate(${center}px, ${roleY}px)`),
-        pose(8620,`translate(0px, ${closingY}px)`),pose(9700,`translate(0px, ${closingY}px)`),
-        pose(10300,`translate(0px, ${closingY+16}px)`,0),pose(DURATION,`translate(0px, ${closingY+16}px)`,0),
+        pose(3650,`translate(${center}px, ${roleY}px)`),pose(DURATION,`translate(${center}px, ${roleY}px)`),
       ])
       track(find('.kinetic-brace-left'),[
-        pose(0,'translate(-50%, -.28em) rotate(-90deg)',0),pose(580,'translate(-50%, -.28em) rotate(-90deg)',0),
-        pose(940,'translate(-50%, -.28em) rotate(-90deg)'),pose(1180,'translate(-50%, -.28em) rotate(-90deg)'),
-        pose(1690,'translate(-50%, 0) rotate(0deg)'),pose(DURATION,'translate(-50%, 0) rotate(0deg)'),
+        [0,{transform:'rotate(-90deg)',opacity:0,easing:ARRIVE}],pose(FIGMA.arrive,'rotate(-90deg)'),
+        [FIGMA.turn,{transform:'rotate(-90deg)',easing:TURN}],
+        pose(FIGMA.upright,'rotate(-180deg)'),pose(DURATION,'rotate(-180deg)'),
       ])
       track(find('.kinetic-brace-right'),[
-        pose(0,'translate(50%, .28em) rotate(-90deg)',0),pose(680,'translate(50%, .28em) rotate(-90deg)',0),
-        pose(1040,'translate(50%, .28em) rotate(-90deg)'),pose(1180,'translate(50%, .28em) rotate(-90deg)'),
-        pose(1690,'translate(50%, 0) rotate(0deg)'),pose(DURATION,'translate(50%, 0) rotate(0deg)'),
+        [0,{transform:'rotate(90deg)',opacity:0,easing:ARRIVE}],pose(FIGMA.arrive,'rotate(90deg)'),
+        [FIGMA.turn,{transform:'rotate(90deg)',easing:TURN}],
+        pose(FIGMA.upright,'rotate(0deg)'),pose(DURATION,'rotate(0deg)'),
       ])
       words.forEach((word,roleIndex)=>{
         const frames:Cue[]=[pose(0,'translateY(-.2em)',0)]
@@ -100,13 +108,12 @@ export default function KineticHeroIdentity() {
         track(word,frames)
       })
       track(find('.kinetic-tail'),[[0,{width:'0px'}],[3100,{width:'0px'}],[3650,{width:`${tailWidth}px`}],[DURATION,{width:`${tailWidth}px`}]])
-      const plusCues=[pose(0,'translateY(.06em) rotate(0deg)',0),pose(3150,'translateY(.06em) rotate(0deg)',0),pose(3550,'translateY(.06em) rotate(0deg)')]
-      CHANGES.forEach((time,i)=>plusCues.push(pose(time,`translateY(.06em) rotate(${i*180}deg)`),pose(time+280,`translateY(.06em) rotate(${(i+1)*180}deg)`)))
-      plusCues.push(pose(DURATION,`translateY(.06em) rotate(${CHANGES.length*180}deg)`))
+      const plusCues=[pose(0,'rotate(0deg)',0),pose(3150,'rotate(0deg)',0),pose(3550,'rotate(0deg)')]
+      CHANGES.forEach((time,i)=>plusCues.push(pose(time,`rotate(${i*180}deg)`),pose(time+280,`rotate(${(i+1)*180}deg)`)))
+      plusCues.push(pose(DURATION,`rotate(${CHANGES.length*180}deg)`))
       track(find('.kinetic-plus'),plusCues)
       track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370,'translateX(.4em)',0),pose(3800,'translateX(0)'),pose(DURATION,'translateX(0)')])
-      const closing=(time:number,clip:number,opacity:number):Cue=>[time,{clipPath:`inset(0 ${clip}% 0 0)`,opacity}]
-      track(closingNode,[closing(0,100,0),closing(8500,100,0),closing(8650,100,1),closing(9450,0,1),closing(DURATION,0,1)])
+      track(closingNode,[[0,{opacity:0}],[8000,{opacity:0}],[9600,{opacity:1}],[DURATION,{opacity:1}]])
       animations[0].onfinish = () => { elapsedRef.current = DURATION; root.dataset.heroState = 'settled' }
       syncPlayback()
     }
@@ -138,13 +145,15 @@ export default function KineticHeroIdentity() {
       <div className="kinetic-stage" aria-hidden="true">
         <div className="kinetic-assembly">
           <div className="kinetic-bracketed">
+            <span className="kinetic-static-brace is-left" />
             {ROLES.map(role => <span key={role} className="kinetic-word" data-role={role}>{role}</span>)}
+            <span className="kinetic-static-brace is-right" />
           </div>
-          <div className="kinetic-tail"><div className="kinetic-tail-inner"><span className="kinetic-plus">+</span><span className="kinetic-design">Design</span></div></div>
+          <div className="kinetic-tail"><div className="kinetic-tail-inner"><span className="kinetic-plus" /><span className="kinetic-design">Design</span></div></div>
         </div>
       </div>
       <div className="kinetic-mechanism-motion" aria-hidden="true"><div className="kinetic-mechanism">
-        <span className="kinetic-brace kinetic-brace-left">{'{'}</span><span className="kinetic-brace kinetic-brace-right">{'}'}</span>
+        <span className="kinetic-brace kinetic-brace-left" /><span className="kinetic-brace kinetic-brace-right" />
       </div></div>
       <p className="sr-only">Product and design leader</p>
       <p className="kinetic-closing">Let&apos;s Design and Build Something Great Together!</p>

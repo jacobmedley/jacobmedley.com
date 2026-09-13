@@ -1,5 +1,57 @@
 # Status
 
+## September 13, 2026: Independent final acceptance BLOCKED
+
+This supersedes the readiness suggestion below. Tested repository SHA:
+`c788fa9dfe1d02f7f69047d0627cac1760ba0f6d`; application SHA:
+`40377c4746e9262a3524aeef0d05a3ab6f546fb6`. The full unpublished application
+delta was reviewed against freshly verified main
+`e6b3672f88e5847d84a854f45ae3d29ca8269952`, on branch
+`codex/website-visual-system-20260912` in worktree 4b5e.
+
+**ACC-B03 is a confirmed release blocker.** A clean archive of the tested SHA
+installs and builds successfully with Node 20.20.2/npm 10.9.9, but exports no
+`out/images` directory. Of 117 source asset references, 104 are absent from the
+clean export (including unused historical references as well as rendered assets).
+The existing preview relies on an ignored `public/images` junction created only
+by development setup. The unchanged production workflow never runs that setup.
+This is an inherited artifact defect, not evidence of a current live outage.
+
+ACC-B01 schematic clipping and ACC-B02 fixed-control overlap have fresh passing
+dispositions. All eight public routes, 14 mobile modals, six filters, six stories
+on desktop/mobile, call-center interactions, keyboard focus and representative
+layouts were checked. TypeScript and authored-source lint pass. Original images,
+canonical case-study content and the SiteGround workflow are preserved.
+Browser checks used the existing export; the clean Node 20 artifact was inspected
+separately. Native visibility transitions and native 200% browser zoom remain
+unavailable required coverage. Local Node 20 verification ran on Windows, not the
+workflow's Ubuntu runner. Dependency audit findings remain untriaged.
+
+Evidence and concrete publication handoff:
+`docs/release-acceptance-20260913.md` and
+`docs/reviews/release-acceptance-20260913.json`. Fix production image preparation,
+verify a clean Node 20 artifact and the missing native-browser coverage, then
+repeat affected acceptance before packaging. Broader copy, BumblebeeMD expansion,
+Reveal image replacement and dormant-style cleanup remain deferred.
+
+PR URL/head/base: none; the implementation branch is not on the remote. No push,
+PR, merge or deployment occurred. Keep the existing SiteGround workflow and
+`dangerous-clean-slate: false`. Production rollback remains `e6b3672`; the local
+pre-acceptance checkpoint is `c788fa9`. This acceptance changes only the two
+evidence documents and STATUS; its local documentation commit follows.
+
+The existing preview at http://localhost:3013/ (PID 34544) was left running.
+No new preview server remains; temporary browser tabs were closed and viewport
+overrides reset. The clean-build reproduction remains in the local Temp directory
+documented in the report. The owned acceptance lock is released at closeout.
+
+Genesis was freshly checked at 2026-09-13T07:27:21Z, fingerprint
+`b2385fc52f965ca1bf6f73e4436f84fe00ff2f29d16e66736b6ffc5dd54636ea`, no conflicts.
+Direction event: `20260913T070948Z-7f0164cb280b44d3b42f6d522c15a5b9`.
+An append-only completion event will record the final documentation commit.
+The shared website card remains coordinator-owned; peer receipt is not asserted.
+STATUS is the final repository document written for this acceptance checkpoint.
+
 ## September 13, 2026: Final release candidate ready for PR review
 
 Final release review is complete in worktree 4b5e on

@@ -1611,6 +1611,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 .study-supporting-art {
   position: relative;
   isolation: isolate;
+  box-sizing: border-box;
   width: min(100%, 440px);
   min-height: clamp(280px, 34vw, 390px);
   margin-inline: auto;
@@ -1958,4 +1959,24 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 @container (min-width: 900px) {
   .modal-project-icon-anchor { width: min(320px, 78cqi); }
   .modal-project-icon-anchor i { font-size: 7.5rem; }
+}
+
+/* Final enlarged-text override: keep every explanatory label inside an
+   intrinsic-height diagram once its available line measure becomes narrow. */
+@container (max-width: 20em) {
+  .study-supporting-art:not([data-supporting-art='call-center']) {
+    min-height: 0;
+    padding: 1rem;
+    overflow: visible;
+  }
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-eyebrow { position: static; }
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-diagram { position: static; display: block; margin-top: 1rem; }
+  .study-supporting-art-is-hub .study-supporting-art-center { width: min(8.25rem, 100%); margin-inline: auto; }
+  .study-supporting-art-is-hub .study-supporting-art-orbit { position: static; display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin-top: .75rem; }
+  .study-supporting-art-is-hub .study-supporting-art-orbit::before { display: none; }
+  .study-supporting-art-is-hub .study-supporting-art-orbit > span { position: static; width: auto; min-height: 0; border-radius: 1rem; }
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-flow { grid-template-columns: minmax(0, 1fr); }
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-flow b,
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-flow > span:last-child:nth-child(odd) b { grid-column: auto; width: auto; min-height: 0; justify-self: stretch; }
+  .study-supporting-art:not([data-supporting-art='call-center']) .study-supporting-art-flow b > i { font-size: clamp(2.5rem, 24cqi, 5rem); }
 }

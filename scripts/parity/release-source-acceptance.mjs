@@ -7,11 +7,3 @@ const entries=execFileSync('git',['ls-tree','-r','-z',main,'images'],{encoding:'
 for(const [src,dst] of [['webmd/webmd_logo_white.svg','webmd-logo-white.svg'],['bmd/SVG/bmd-icon2.svg','bumblebeemd-icon.svg'],['bmd/SVG/bmd-hex3.svg','bumblebeemd-hex.svg'],['opf/opf-icon-white.svg','opf-icon-white.svg']]){const a=hash(readFileSync('C:/dev/jacobmedley.com/public/assets/references/'+src,'utf8').replace(/\r\n/g,'\n')),z=hash(readFileSync('public/assets/featured/'+dst,'utf8').replace(/\r\n/g,'\n'));assert.equal(a,z);r.assets.push({file:dst,sha256:z});}
 const source=readFileSync('components/sections/ResumeSection.tsx','utf8').replace(/\r\n/g,'\n'),before=git('components/sections/ResumeSection.tsx').toString().replace(/\r\n/g,'\n');assert.equal(source.slice(source.indexOf('type ExperienceRole'),source.indexOf('export default')),before.slice(before.indexOf('type ExperienceRole'),before.indexOf('export default')));r.employmentAndSkillsPreserved=true;
 writeFileSync('scripts/parity/shots/acceptance-20260911/source.json',JSON.stringify(r,null,2));console.log(JSON.stringify({projects:r.projects.length,images:r.preservedImages,assets:r.assets.length,preserved:r.preserved.length}));
-
-
-
-
-
-
-
-

@@ -17,7 +17,3 @@ const other=await p.context().newPage();await other.goto('about:blank');await ot
 for(let i=0;i<13;i++){results.cycles.push(await p.locator('[data-modal-trigger="call-center-ux"]').evaluate(n=>({time:performance.now(),node:n.querySelector('.thinking-network-node').getAttribute('cx'),anchor:getComputedStyle(n.querySelector('.thinking-icon-anchor')).translate,state:n.querySelector('svg').dataset.networkState})));await p.waitForTimeout(5500);}
 await p.screenshot({path:out+'/network-active.png'});
 }finally{await writeFile(out+'/results.json',JSON.stringify(results,null,2));await b.close();}console.log(JSON.stringify(results));
-
-
-
-

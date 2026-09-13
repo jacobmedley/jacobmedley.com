@@ -64,5 +64,3 @@ for(const id of await t.locator('[data-modal-trigger]').evaluateAll(ns=>ns.map(n
 await t.close();
 }finally{await writeFile(`${output}/results.json`,JSON.stringify(results,null,2));await b.close();}
 console.log(JSON.stringify({reflow:results.reflow.length,resize:results.resize.length,focus:results.focus,failures:results.reflow.filter(x=>x.bodyOverflow>2||x.text.length||x.header?.text.length||x.footer?.text.length).map(x=>({mode:x.mode,width:x.width,route:x.route,id:x.id,overflow:x.bodyOverflow,text:x.text,header:x.header?.text,footer:x.footer?.text})),stickyFailures:results.sticky.filter(x=>(x.delta>0)!==x.compact)},null,2));
-
-

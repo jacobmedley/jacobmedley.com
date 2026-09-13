@@ -1,5 +1,47 @@
 # Status
 
+## September 13, 2026: Resting space and Product finale complete
+
+Jacob accepted mask tracking and requested wider spacing after the reveal,
+matching role braces, and a Product final state. Implemented in worktree 4b5e
+on `codex/website-visual-system-20260912`, rollback `c7a6627`.
+
+Each mask still shares the moving brace aperture. Once fully released, a
+180ms outward move restores the original resting gap: .8em per side for the
+name, .45em for the role. The existing name container cap remains. Initial
+transfer/tail timing shifts 180ms to fit this step; spring curves remain.
+At the closed Product snap, the vectors switch to actual braces matching
+Design's family, size and weight 600, with a small optical vertical correction.
+The last transition returns to Product at 38000ms; the clock stops at 39000ms.
+
+Verification: 280 sampled frames across seven layouts, including 200% text,
+pass. Mask/brace errors stay below .04px; all layouts have zero page overflow.
+Types, targeted lint, final 11-page build, whitespace and unchanged project,
+demo and reference checks pass. Natural playback was observed settled on
+Product with all 19 tracks finished at 39000ms; resize preserves it. Reduced
+motion shows Product and both weight-600 braces with zero animations.
+Two long recorder calls timed out; subsequent end-state reads confirm the
+result, but no complete live frame recording is claimed. Chromium only.
+Detailed evidence and limits: docs/hero-resting-space-20260913.md.
+
+Six files changed: KineticHeroIdentity.tsx, visual-system.css, verification
+script, report, compact evidence JSON and this status. No B edits or copy
+changes. Same model route; no switch, local inference or additional spending.
+
+Preview: HTTP 200 at http://localhost:3013/, PID 25608, this worktree's out/.
+Browser overrides cleared and playback restored. No other checkout's service
+operated. No push, PR, merge or deployment. Rollback: c7a6627. The recovery
+commit containing this entry is recorded in the completion event; the owned
+lock is released on closeout.
+
+Exchange fresh at intake and acceptance (04:25:01Z September 13), fingerprint
+205c1b9e6f57786674c01fae5d031091fee1e8be24435e2664ce6d70c0ed723c.
+Direction event: 20260913T041533Z-31fac2cae2614f479e444498e5a22921.
+No conflicts. Completion is append-only; shared pointers remain coordinator
+owned, with no remote acknowledgement claimed. No unresolved implementation
+work for this request. Earlier copy, BumblebeeMD and Reveal source work remains
+deferred.
+
 ## September 13, 2026: Tight, shared hero mask edges complete
 
 Jacob's latest mask-spacing correction is implemented in worktree 4b5e on

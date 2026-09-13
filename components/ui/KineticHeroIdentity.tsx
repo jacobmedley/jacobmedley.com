@@ -5,7 +5,9 @@ import { useReducedMotion } from './MotionControls'
 
 const ROLES = ['Product', 'UX', 'Systems', 'IxD', 'Human'] as const
 const DURATION = 39000
-const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000]
+const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000, 38000]
+const FINAL_ROLE = CHANGES.length % ROLES.length
+const END_SPACE_DURATION = 180
 type Cue = [number, Keyframe]
 
 // Figma 15:244: the updated 3.089s timeline, sampled from its exact spring
@@ -22,9 +24,13 @@ const FIGMA_DURATION = 3089.468
 const FIGMA = {
   arrive: FIGMA_DURATION * .1927, turn: FIGMA_DURATION * .2388,
   upright: FIGMA_DURATION * .3114, spread: FIGMA_DURATION * .4003,
-  open: FIGMA_DURATION * .6893, descend: FIGMA_DURATION * .7121,
-  landed: FIGMA_DURATION * .7594, closed: FIGMA_DURATION * .8257,
-  product: FIGMA_DURATION * .9251,
+  open: FIGMA_DURATION * .6893,
+  nameRest: FIGMA_DURATION * .6893 + END_SPACE_DURATION,
+  descend: FIGMA_DURATION * .7121 + END_SPACE_DURATION,
+  landed: FIGMA_DURATION * .7594 + END_SPACE_DURATION,
+  closed: FIGMA_DURATION * .8257 + END_SPACE_DURATION,
+  product: FIGMA_DURATION * .9251 + END_SPACE_DURATION,
+  productRest: FIGMA_DURATION * .9251 + END_SPACE_DURATION * 2,
 }
 type OpeningCue = [time: number, width: number, easing?: string]
 
@@ -62,12 +68,13 @@ export default function KineticHeroIdentity() {
       const name = find('.hero-name')
       const words = [...root.querySelectorAll<HTMLElement>('.kinetic-word')]
       const size = parseFloat(getComputedStyle(stage).fontSize)
-      // Keep the brace's inner edge just .04em from the fully revealed text.
+      // Reveal with a tight aperture, then add the original resting space.
       // The remaining .7em belongs outside the braces, beside the + Design tail.
       const revealGap = size * .08
-      const widths = words.map(word => word.scrollWidth + size * .7 + revealGap)
+      const widths = words.map(word => word.scrollWidth + size * 1.6)
       const nameTextWidth = name.getBoundingClientRect().width
       const nameWidth = Math.min(nameTextWidth + revealGap, root.clientWidth - size)
+      const nameRestWidth = Math.min(nameTextWidth + size * 1.6, root.clientWidth - size)
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
@@ -97,33 +104,40 @@ export default function KineticHeroIdentity() {
       masked(name,0,FIGMA.open)
       const widthCues: Cue[] = [[0, {width: `${widths[0]}px`}]]
       CHANGES.forEach((time,i) => widthCues.push([time,{width:`${widths[i % 5]}px`}],[time+280,{width:`${widths[(i+1)%5]}px`}]))
-      widthCues.push([DURATION,{width:`${widths[4]}px`}])
+      widthCues.push([DURATION,{width:`${widths[FINAL_ROLE]}px`}])
       track(find('.kinetic-bracketed'),widthCues)
       const productWidth = widths[0]-size*.7
-      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,productWidth]]
-      const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.landed,nameWidth,SNAP],...productOpening]
+      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,words[0].scrollWidth+revealGap]]
+      const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.nameRest,nameRestWidth],[FIGMA.landed,nameRestWidth,SNAP],...productOpening,[FIGMA.productRest,productWidth]]
       const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{'--hero-aperture':`${width}px`,...(easing ? {easing} : {})}])
       CHANGES.forEach((time,i)=>mechanismWidth.push([time,{'--hero-aperture':`${widths[i%5]-size*.7}px`}],[time+280,{'--hero-aperture':`${widths[(i+1)%5]-size*.7}px`}]))
-      mechanismWidth.push([DURATION,{'--hero-aperture':`${widths[4]-size*.7}px`}])
+      mechanismWidth.push([DURATION,{'--hero-aperture':`${widths[FINAL_ROLE]-size*.7}px`}])
       track(root,mechanismWidth)
       const center = stacked ? 0 : -tailWidth / 2
       track(find('.kinetic-mechanism-motion'),[
         [0,{transform:`translate(0px, ${nameY - 528 * size * .85 / 261.818}px)`,easing:ARRIVE}],
         pose(FIGMA.arrive,`translate(0px, ${nameY}px)`),
         [FIGMA.descend,{transform:`translate(0px, ${nameY}px)`,easing:TURN}],
-        pose(FIGMA.landed,`translate(0px, ${roleY}px)`),pose(3100,`translate(0px, ${roleY}px)`),
-        pose(3650,`translate(${center}px, ${roleY}px)`),pose(DURATION,`translate(${center}px, ${roleY}px)`),
+        pose(FIGMA.landed,`translate(0px, ${roleY}px)`),pose(3100+END_SPACE_DURATION,`translate(0px, ${roleY}px)`),
+        pose(3650+END_SPACE_DURATION,`translate(${center}px, ${roleY}px)`),pose(DURATION,`translate(${center}px, ${roleY}px)`),
       ])
       track(find('.kinetic-brace-left'),[
         [0,{transform:'rotate(-90deg)',opacity:0,easing:ARRIVE}],pose(FIGMA.arrive,'rotate(-90deg)'),
         [FIGMA.turn,{transform:'rotate(-90deg)',easing:TURN}],
-        pose(FIGMA.upright,'rotate(-180deg)'),pose(DURATION,'rotate(-180deg)'),
+        pose(FIGMA.upright,'rotate(-180deg)'),
+        [FIGMA.closed-1,{transform:'rotate(-180deg)',opacity:1,easing:'steps(1,end)'}],
+        pose(FIGMA.closed,'rotate(-180deg)',0),pose(DURATION,'rotate(-180deg)',0),
       ])
       track(find('.kinetic-brace-right'),[
         [0,{transform:'rotate(90deg)',opacity:0,easing:ARRIVE}],pose(FIGMA.arrive,'rotate(90deg)'),
         [FIGMA.turn,{transform:'rotate(90deg)',easing:TURN}],
-        pose(FIGMA.upright,'rotate(0deg)'),pose(DURATION,'rotate(0deg)'),
+        pose(FIGMA.upright,'rotate(0deg)'),
+        [FIGMA.closed-1,{transform:'rotate(0deg)',opacity:1,easing:'steps(1,end)'}],
+        pose(FIGMA.closed,'rotate(0deg)',0),pose(DURATION,'rotate(0deg)',0),
       ])
+      // Swap to the role's actual font at the closed snap, with no cross-fade.
+      root.querySelectorAll<HTMLElement>('.kinetic-type-brace').forEach(brace=>track(brace,
+        [[0,{opacity:0,easing:'steps(1,end)'}],[FIGMA.closed,{opacity:1}],[DURATION,{opacity:1}]]))
       words.forEach((word,roleIndex)=>{
         const frames:Cue[]=[pose(0,roleIndex===0?'translateY(0)':'translateY(-.2em)',roleIndex===0?1:0)]
         if(roleIndex===0) masked(word,FIGMA.closed,FIGMA.product)
@@ -131,15 +145,15 @@ export default function KineticHeroIdentity() {
           if(i%5===roleIndex) frames.push(pose(time,'translateY(0)'),pose(time+100,'translateY(.2em)',0))
           if((i+1)%5===roleIndex) frames.push(pose(time+100,'translateY(-.2em)',0),pose(time+280,'translateY(0)'))
         })
-        frames.push(pose(DURATION,roleIndex===4?'translateY(0)':'translateY(.2em)',roleIndex===4?1:0))
+        frames.push(pose(DURATION,roleIndex===FINAL_ROLE?'translateY(0)':'translateY(.2em)',roleIndex===FINAL_ROLE?1:0))
         track(word,frames)
       })
-      track(find('.kinetic-tail'),[[0,{width:'0px'}],[3100,{width:'0px'}],[3650,{width:`${tailWidth}px`}],[DURATION,{width:`${tailWidth}px`}]])
-      const plusCues=[pose(0,'rotate(0deg)',0),pose(3150,'rotate(0deg)',0),pose(3550,'rotate(0deg)')]
+      track(find('.kinetic-tail'),[[0,{width:'0px'}],[3100+END_SPACE_DURATION,{width:'0px'}],[3650+END_SPACE_DURATION,{width:`${tailWidth}px`}],[DURATION,{width:`${tailWidth}px`}]])
+      const plusCues=[pose(0,'rotate(0deg)',0),pose(3150+END_SPACE_DURATION,'rotate(0deg)',0),pose(3550+END_SPACE_DURATION,'rotate(0deg)')]
       CHANGES.forEach((time,i)=>plusCues.push(pose(time,`rotate(${i*180}deg)`),pose(time+280,`rotate(${(i+1)*180}deg)`)))
       plusCues.push(pose(DURATION,`rotate(${CHANGES.length*180}deg)`))
       track(find('.kinetic-plus'),plusCues)
-      track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370,'translateX(.4em)',0),pose(3800,'translateX(0)'),pose(DURATION,'translateX(0)')])
+      track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370+END_SPACE_DURATION,'translateX(.4em)',0),pose(3800+END_SPACE_DURATION,'translateX(0)'),pose(DURATION,'translateX(0)')])
       track(closingNode,[[0,{opacity:0}],[8000,{opacity:0}],[9600,{opacity:1}],[DURATION,{opacity:1}]])
       animations[0].onfinish = () => { elapsedRef.current = DURATION; root.dataset.heroState = 'settled' }
       syncPlayback()
@@ -172,15 +186,16 @@ export default function KineticHeroIdentity() {
       <div className="kinetic-stage" aria-hidden="true">
         <div className="kinetic-assembly">
           <div className="kinetic-bracketed">
-            <span className="kinetic-static-brace is-left" />
+            <span className="kinetic-static-brace is-left">{'{'}</span>
             {ROLES.map(role => <span key={role} className="kinetic-word" data-role={role}>{role}</span>)}
-            <span className="kinetic-static-brace is-right" />
+            <span className="kinetic-static-brace is-right">{'}'}</span>
           </div>
           <div className="kinetic-tail"><div className="kinetic-tail-inner"><span className="kinetic-plus" /><span className="kinetic-design">Design</span></div></div>
         </div>
       </div>
       <div className="kinetic-mechanism-motion" aria-hidden="true"><div className="kinetic-mechanism">
         <span className="kinetic-brace kinetic-brace-left" /><span className="kinetic-brace kinetic-brace-right" />
+        <span className="kinetic-type-brace is-left">{'{'}</span><span className="kinetic-type-brace is-right">{'}'}</span>
       </div></div>
       <p className="sr-only">Product and design leader</p>
       <p className="kinetic-closing">Let&apos;s Design and Build Something Great Together!</p>

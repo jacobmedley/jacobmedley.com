@@ -267,6 +267,12 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .kinetic-static-brace { display: none; position: absolute; }
 .kinetic-static-brace.is-left { left: .35em; transform: rotate(-180deg); }
 .kinetic-static-brace.is-right { right: .35em; }
+/* Optical baseline correction keeps the URW Form curly point centered on +. */
+.kinetic-type-brace, .kinetic-static-brace { position: absolute; top: 0; width: max-content; height: 1.3em; font-family: inherit; font-size: 1em; font-weight: 600; line-height: 1.3; background: none; mask: none; transform: none; translate: 0 -.08em; }
+.kinetic-type-brace { opacity: 0; }
+.kinetic-type-brace.is-left { right: 100%; }
+.kinetic-type-brace.is-right { left: 100%; }
+.kinetic-static-brace.is-left { transform: none; }
 .kinetic-identity[data-hero-state='static'] .kinetic-static-brace { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .resume-experience-details .resume-disclosure-chevron { transition: none; }

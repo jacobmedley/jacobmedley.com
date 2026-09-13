@@ -26,7 +26,7 @@ jobs:
       - name: Build and verify all exported images
         run: npm run build
       - name: Dependency audit
-        run: npm audit --audit-level=high
+        run: npm audit --offline=false --registry=https://registry.npmjs.org --audit-level=high
       - name: Retain verified static export
         uses: actions/upload-artifact@v4
         with:

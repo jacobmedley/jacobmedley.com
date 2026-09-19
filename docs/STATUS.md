@@ -1,5 +1,42 @@
 # Status
 
+## September 19, 2026: Main-site editorial recommendation ready, local only
+
+The main-site editorial workstream completed one consolidated recommendation
+against published baseline 909ea22 / v12.160. B60 registers four pending Team
+Building and Mentorship bullets derived only from B58 and Jacob's September 19
+brief, plus one proposed label change from `How I approach the work` to
+`How I lead the work`. Nothing is approved or implemented in application source.
+
+The 39-row source and decision inventory is in
+`docs/main-site-editorial-review-20260919.md`. It reviews the hero, introductions,
+homepage teasers, experience, Expertise, historical Apps & Tools, education labels,
+and main UI microcopy. Its recommendation is to preserve the remaining published
+copy. Dedicated case-study pages and long modal narratives were excluded. Current
+tool proficiency remains unverified; the existing historical qualifier stays.
+
+Deterministic checks confirm four registered bullets, four report bullets, exact
+parity between them, one B60 entry, all proposed source phrases present, and clean
+Git whitespace. The new report has no em dash or weak-ownership phrase. One broad
+style-pattern hit is the table-header noun `Surface`, not the banned verb. No build,
+browser, preview, or accessibility scan was run because no application file changed.
+This is not a WCAG claim; the full WCAG 2.0 A and AA evaluation remains after
+integration by design.
+
+Changed files: copy register, editorial review, and this status. Local branch
+`codex/main-site-editorial-20260919`; rollback 909ea22. No push, merge, deploy,
+service change, paid fallback, model download, reset, or added spending. The
+recommended Astra/high configuration could not be verified from task metadata;
+no switch is claimed. The fixed local review workflow did not cover this new
+inventory, so no local inference was dispatched. Exchange was rechecked unchanged
+at 2026-09-19T16:16:58Z, fingerprint
+bf2a05b77509126c7c48c09b365260d84d08b4469911e592d61449358e7064b3, with no
+sync conflict and no remote-awareness claim. Final commit is recorded in the
+append-only Exchange update; this task's lock is released after checkpointing.
+
+Open approval decisions: the four B60 mentorship bullets and the local heading
+change. The parent coordinator owns integration and any later implementation.
+
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 
 Jacob explicitly requested publication. PR #11 merged as

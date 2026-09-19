@@ -1,6 +1,7 @@
 # Copy Register
 
-**Status:** edits B0 through B59. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B60. All APPLIED unless marked otherwise.
+B60 is a pending main-site editorial proposal; nothing in it is implemented.
 B58 preserves the leadership draft; B59 removes its placement pending Jacob's review.
 B56 records the full local copy pass; B57 limits this release to the main site.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
@@ -2020,3 +2021,45 @@ Education uses tighter card padding, source directly beneath the title when the
 card allows, and stacked content on narrow cards. Correct the heading's dark
 color on the dark education background, including after scrolling past the top.
 This remains a local preview pass; no merge, push, or deploy is requested here.
+
+## B60. Main-site editorial consolidation [PENDING APPROVAL]
+
+Source: the September 19 main-site editorial workstream in task
+`01a0ba6e-f542-77a3-b0f5-c8172fbdf40a`, using the approved B58 practice,
+Jacob's September 19 experience-program brief, and the published v12.160 source.
+This is one proposed pass. It does not revise homepage study summaries,
+employment facts, metrics, education names, dedicated case-study prose, or the
+historical scope of the tools list. Nothing in B60 is approved or implemented.
+
+### Team Building and Mentorship
+
+- I walk beside junior staff, asking questions until they can name the next step,
+  dependency, or piece they can move now.
+- I make authority explicit. People can assess the risk and decide without
+  bringing every next step back for permission.
+- I stay available and remove blockers beyond their control.
+- We review outcomes together. We change the conditions behind mistakes and
+  understand good results well enough to repeat them.
+
+These four bullets compress B58 without adding an employer, colleague, metric,
+mentee result, permission claim, or management promise. The third bullet is
+deliberately short. The set belongs above Expertise in the proposed unified side
+card; visual placement remains owned by the visual-system workstream.
+
+### One label correction
+
+In About and experience, change the local heading `How I approach the work` to
+`How I lead the work`. The current page already uses `How I work` for the prior
+section. The new label removes that near-duplicate and more accurately introduces
+the leadership belief, leadership examples, and mentorship material that follow.
+The slogan and body beneath it stay unchanged.
+
+### Preserve the rest
+
+Keep the hero, navigation, five homepage study summaries, How I work introduction
+and teasers, four leadership examples, all employment entries, Expertise wording,
+the visible `Tools used across these roles` qualifier, tool names, education labels,
+More/Less controls, external-link context, modal Close labels, demo labels, email,
+and footer copy as published in v12.160. Current tool proficiency remains unknown;
+the historical qualifier is why the existing list is safe. A stronger current-use
+claim needs fresh confirmation from Jacob.

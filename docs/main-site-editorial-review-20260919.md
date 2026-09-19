@@ -14,7 +14,12 @@ One coherent pass is enough:
 
 This recommendation combines a product/design-practice read, a marketing-copy
 read, and a brand-voice read. It is one editorial decision, not three competing
-rewrites. Meaning and placement remain approval-gated. No source component changed.
+rewrites. At the original checkpoint, meaning and placement remained approval-gated.
+No source component changed.
+
+**Approval update:** Jacob approved B60 and the unified Resume card in visual-system
+task `01a0ba6e-ce13-7701-a6a9-206e048245ea` on September 19. The four bullets and
+`How I lead the work` are now approved but not implemented on the published site.
 
 ## Scope and authorities
 
@@ -92,7 +97,7 @@ claim should be written until Jacob supplies or confirms the source.
 Before: no published people-development block. B58 is approved source material but
 off-page under B59.
 
-After, pending Jacob's approval:
+After, approved by Jacob but not yet implemented:
 
 - I walk beside junior staff, asking questions until they can name the next step,
   dependency, or piece they can move now.
@@ -144,10 +149,11 @@ worth carrying into the later making-of case study.
 
 ## Approval summary
 
-Only two decisions need Jacob:
+Jacob approved both editorial decisions through his explicit approval of B60:
 
-1. Approve, amend, or reject the four Team Building and Mentorship bullets in B60.
-2. Approve or reject `How I lead the work` as the replacement local heading.
+1. The four Team Building and Mentorship bullets in B60.
+2. `How I lead the work` as the replacement local heading.
 
-Everything else is a keep decision. No production copy, layout, case-study narrative,
-branch integration, push, or deployment is authorized by this report.
+Everything else remains a keep decision. No production copy, layout, case-study
+narrative, branch integration, push, or deployment is authorized by this approval
+record.

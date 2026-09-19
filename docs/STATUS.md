@@ -2,11 +2,18 @@
 
 ## September 19, 2026: Main-site editorial recommendation ready, local only
 
+**Approval update:** Jacob explicitly approved `B60 - Unified Resume Card` in
+visual-system task 01a0ba6e-ce13-7701-a6a9-206e048245ea. B60 now records the four
+Team Building and Mentorship bullets and `How I lead the work` as approved but not
+implemented. Quiet Prism and the related Title Case eyebrow, faded-rule, spacing,
+and icon-alignment choices remain owned by the visual workstream. This approval
+does not authorize publication, and no application source changed in this record.
+
 The main-site editorial workstream completed one consolidated recommendation
-against published baseline 909ea22 / v12.160. B60 registers four pending Team
+against published baseline 909ea22 / v12.160. B60 registers four approved Team
 Building and Mentorship bullets derived only from B58 and Jacob's September 19
-brief, plus one proposed label change from `How I approach the work` to
-`How I lead the work`. Nothing is approved or implemented in application source.
+brief, plus the approved label change from `How I approach the work` to
+`How I lead the work`. Nothing is implemented in application source.
 
 The 39-row source and decision inventory is in
 `docs/main-site-editorial-review-20260919.md`. It reviews the hero, introductions,
@@ -34,8 +41,8 @@ bf2a05b77509126c7c48c09b365260d84d08b4469911e592d61449358e7064b3, with no
 sync conflict and no remote-awareness claim. Final commit is recorded in the
 append-only Exchange update; this task's lock is released after checkpointing.
 
-Open approval decisions: the four B60 mentorship bullets and the local heading
-change. The parent coordinator owns integration and any later implementation.
+Editorial approval is complete. The parent coordinator owns integration and any
+later implementation; publication remains a separate decision.
 
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 

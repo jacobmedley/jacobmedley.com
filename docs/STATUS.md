@@ -1,5 +1,28 @@
 # Status
 
+## September 19, 2026: LIVE — experience and education refinements, v12.160
+
+Jacob explicitly requested publication. PR #11 merged as
+1325c6bf31dce1b3483f17da1386d44d610accf2 and deployment 35418473415 succeeded
+at 03:25:53 UTC. B59 plus the focus/divider follow-up are live. Leadership B58
+remains a draft off-page, tools are visible, dedicated case-study source unchanged.
+
+Ubuntu Node 20 CI passed types, authored lint, build, image verification and
+dependency audit. Normal production browser checks confirm the divider, focus
+border, keyboard disclosure, rotating plus and compact education presentation.
+All eight public routes, ten homepage Next assets and both protected legacy
+pages return 200 (canonical redirects followed). Normal cache Last-Modified
+03:25:50 matches deployment; no stale content or cache purge. See
+browser-refinements-20260919.md for complete evidence and scoped limitations.
+
+Production1325c6b; application cb9ebdf; rollbackf2a6f57 / prior live7bcb9e0.
+Release branch codex/main-site-wrapup-20260919 in X:\website-release-20260919.
+Only this report and browser-refinements handoff changed during release closeout;
+documentation commit uses [skip ci], with final hash recorded in Genesis.
+Clean after commit; own lock released. Preview8090/PID11136 remains running.
+Original dirty checkout and other worktrees untouched. No added spending.
+Open: Jacob's leadership placement/content decision and dedicated case-study work.
+
 ## September 19, 2026: Focus and section-divider follow-up, local only
 
 Experience cards now have one softened 2px inset focus border, without the dark

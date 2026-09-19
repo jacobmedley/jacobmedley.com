@@ -1,5 +1,43 @@
 # Browser annotations 1–8: local acceptance
 
+## Published after Jacob's explicit approval
+
+Jacob requested "Push live" after local acceptance. PR #11 merged as
+1325c6bf31dce1b3483f17da1386d44d610accf2, deploying application cb9ebdf and the
+preceding reviewed refinements. CI iteration calculation yields v12.160.
+Rollback: f2a6f57a91cfef79cfc7a6cc8676b1846eb03070 (prior live application 7bcb9e0).
+
+- Ubuntu Node 20 verification 35418408691 passed typecheck, authored lint,
+  production build/image verification, dependency audit and artifact retention.
+- Production deployment 35418473415 succeeded at 03:25:53 UTC. Workflow and
+  dangerous-clean-slate:false were unchanged. Dedicated case-study source unchanged.
+- Normal homepage response is 200; Last-Modified 03:25:50 UTC matches upload.
+  Cache-Control:no-cache,must-revalidate and X-Proxy-Cache-Info:DT:1; no stale
+  content observed and no cache purge needed.
+- Ten homepage Next assets return 200. All eight public routes return 200 after
+  canonical trailing-slash redirects. Protected /musings/ and
+  /interaction-design-concepts/response-times/ both return 200.
+- Fresh normal production browser load shows the section divider, five plus
+  controls, visible historical tools list, and nine grouped education sources.
+  Keyboard expansion/closure works; plus settles at 225deg, card outline is 2px
+  inset and summary outline is none. Screenshots visually inspected.
+  Education has three equal columns, 31px/20px vertical padding, and heading
+  rgb(245,237,240). A browser scroll call timed out but fresh inspection confirmed
+  it had scrolled and the disclosure was closed; no application failure observed.
+- B59 and subsequent focus/divider refinements are live; B58 remains a preserved
+  draft off-page. Leadership placement and dedicated study work remain deferred.
+
+Release worktree X:\website-release-20260919, branch
+codex/main-site-wrapup-20260919. Documentation-only closeout uses [skip ci]; final
+commit recorded in Genesis. Clean after commit; own lock released. Existing
+preview8090/PID11136 unchanged. Original dirty checkout and other services untouched.
+No source changes beyond the accepted local commits, no added spending, no local
+inference, and no new full cross-browser/accessibility certification.
+Exchange refreshed 03:28:00 UTC, fingerprint
+aa6b0c0433f259ef29aade4e9df5c7b6192f7d08fbda90b2d4b4fef25351d6b1.
+Unresolved historical inbox events remain coordinator-owned; Jacob's latest
+explicit publication instruction supersedes this task's local-only hold.
+
 ## Follow-up: focus border and experience divider
 
 Jacob requested a softer active/focus treatment without glow, then a rule between

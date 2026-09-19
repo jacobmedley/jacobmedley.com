@@ -1,6 +1,7 @@
 # Copy Register
 
-**Status:** edits B0 through B57. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B58. All APPLIED unless marked otherwise.
+B58 records approved leadership copy; its local implementation is not yet live.
 B56 records the full local copy pass; B57 limits this release to the main site.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
@@ -964,8 +965,13 @@ adjective, and repeated "design and development" within one sentence.
 
 Nothing else in the paragraph changed. **Applied.**
 
-## B30. Open item: mentorship and team development [OPEN]
-**File:** none yet — no surface in the document addresses this.
+## B30. Mentorship and team development [RESOLVED FOR MAIN SITE, see B58]
+**Surface:** approved Developing people passage, implemented under B58.
+
+Jacob supplied his coaching practice and approved the edited passage on September
+19 UTC. This resolves the main-site source gap. A specific mentee's later outcome
+remains an optional addition for a longer story, not a fact claimed by this copy.
+Original gap assessment retained below as history:
 
 The old "Inclusive Design Culture" bullet, cut under B28, claimed mentoring. Nothing
 else in the register, the site resume, or `docs/case-studies-sanitized.md` describes
@@ -1975,3 +1981,24 @@ and remaining copy decisions belong in `main-site-wrapup-20260919.md`.
 
 Published September 19 UTC through PR #10, deployment commit `7bcb9e0`, v12.155.
 B56's dedicated-page work remains local and deferred. Main-site B30 remains open.
+
+## B58. Developing people [APPLIED LOCALLY]
+
+Source: Jacob's first-person account of servant leadership, coaching junior staff,
+autonomy, risk, and accountability in task 01a0b75f, followed by explicit approval
+of the edited draft: "That sounds great. aproved." September 19, 2026 UTC.
+This resolves B30 for main-site copy. Preserve the approved wording verbatim.
+Place in About and experience, alongside the experience timeline, between
+Expertise and Apps & Tools. No employer, colleague, metric, or mentee outcome is
+added. The longer anecdote remains optional. Approval of this passage is recorded
+separately from publication; this checkpoint does not authorize another deploy.
+
+### Developing people
+
+I walk beside junior staff as they learn to exercise their own judgment. That can mean working through a conflict or sitting together with a design exercise. When someone gets stuck, I start with questions: How would you solve this? What are you depending on? What part can you move forward now?
+
+I make their authority explicit. They can assess the risk and make decisions without bringing every next step back for permission. My responsibility is to stay available, work through obstacles beyond their control, and hold others accountable for commitments the team depends on.
+
+People need time to suck at something new. I encourage my reports to stretch beyond what they already know, with room to make mistakes and talk openly about them.
+
+Ownership continues after the decision. We review the outcome together and follow through on what we learn. That includes changing the conditions behind a mistake and understanding good results well enough to repeat them.

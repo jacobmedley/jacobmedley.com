@@ -1,5 +1,33 @@
 # Status
 
+## September 19, 2026: Approved leadership passage implemented locally
+
+Jacob supplied his coaching practice and approved the edited Developing people
+passage verbatim. B58 now renders all four paragraphs in About and experience,
+between Expertise and Apps & Tools, alongside the experience timeline on desktop.
+B30's main-site evidence gap is resolved. A specific mentee outcome is optional
+for a future longer story; none is claimed in this approved passage.
+
+Changed only ResumeSection.tsx, copy-register.md, and this status record.
+All four component paragraphs match the register exactly. Scoped ESLint,
+production build/type checks, 288 source-image hashes, 104 image references, and
+git diff --check pass. Browser inspection at 1440 and 375px shows the complete
+passage with no horizontal overflow. Saved and inspected screenshots are
+09-developing-people-desktop.png and 10-developing-people-mobile.png in this task's
+local artifact folder. Browser skill verification checked presentation without
+changing the approved language or introducing new styling.
+
+Local checkpoint on codex/main-site-wrapup-20260919, based on f2a6f57. No push,
+merge, or deployment in this follow-up; production remains v12.155 / 7bcb9e0.
+Local rollback is f2a6f57a91cfef79cfc7a6cc8676b1846eb03070. Working tree clean
+after checkpoint; own lock released. Preview8090 now runs as PID19888 from
+X:\website-release-20260919\out after replacing this task's verified PID9212.
+Other worktrees and services preserved. Final local commit ID recorded in Genesis.
+Publication remains a separate decision. No added spending or local inference.
+Exchange checked 02:31:22 UTC, fingerprint
+d3a84df381cf48ab20575a96a6eb5b639d7d21c90f613c671e5c68f76fd7ad89;
+only this session's approval record was added since intake. No peer awareness claimed.
+
 ## September 19, 2026: LIVE — v12.155, production 7bcb9e0
 
 PR #10 merged; Ubuntu Node 20 CI passed, and deployment 35415309921 succeeded

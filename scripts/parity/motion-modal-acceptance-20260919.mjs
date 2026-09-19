@@ -99,24 +99,33 @@ try {
     const dialog = page.getByRole('dialog')
     await dialog.waitFor({ state: 'visible' })
     await page.screenshot({ path: `${output}/desktop-camera-begin.png` })
-    await page.waitForTimeout(420)
+    await page.waitForTimeout(260)
     const passingPlane = await page.evaluate(() => {
       const modalDialog = document.querySelector('.modal-dialog')
+      const modalContent = document.querySelector('.modal-content')
       const pageLayer = document.querySelector('#hi')
       const style = getComputedStyle(modalDialog)
+      const rect = modalDialog.getBoundingClientRect()
+      const contentRect = modalContent.getBoundingClientRect()
       return {
         dialogTransform: style.transform,
         dialogFilter: style.filter,
         dialogOpacity: Number(style.opacity),
         pageTransform: getComputedStyle(pageLayer).transform,
         pageFilter: getComputedStyle(pageLayer).filter,
+        viewport: { width: innerWidth, height: innerHeight },
+        dialogRect: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom },
+        contentRect: { left: contentRect.left, top: contentRect.top, right: contentRect.right, bottom: contentRect.bottom },
       }
     })
     assert.notEqual(passingPlane.dialogTransform, 'none', 'mid-transition dialog is still crossing the focal plane')
-    assert.match(passingPlane.dialogFilter, /blur/, 'mid-transition dialog remains partially defocused')
+    assert.equal(passingPlane.dialogFilter, 'none', 'zoom-pan avoids full-dialog filter rasterization')
+    assert.equal(passingPlane.pageFilter, 'none', 'site push-forward avoids full-page filter rasterization')
     assert.ok(passingPlane.dialogOpacity > .35 && passingPlane.dialogOpacity < 1, `mid-transition dialog is legible but unsettled: ${JSON.stringify(passingPlane)}`)
+    assert.ok(passingPlane.dialogRect.left >= -1 && passingPlane.dialogRect.top >= -1 && passingPlane.dialogRect.right <= passingPlane.viewport.width + 1 && passingPlane.dialogRect.bottom <= passingPlane.viewport.height + 1, `dialog remains inside the viewport during zoom-pan: ${JSON.stringify(passingPlane)}`)
+    assert.ok(passingPlane.contentRect.left >= -1 && passingPlane.contentRect.top >= -1 && passingPlane.contentRect.right <= passingPlane.viewport.width + 1 && passingPlane.contentRect.bottom <= passingPlane.viewport.height + 1, `modal content is not cropped during zoom-pan: ${JSON.stringify(passingPlane)}`)
     await page.screenshot({ path: `${output}/desktop-camera-passing-plane.png` })
-    await page.waitForTimeout(650)
+    await page.waitForTimeout(450)
     const openState = await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]')
       const modalDialog = document.querySelector('.modal-dialog')
@@ -126,6 +135,7 @@ try {
         camera: document.body.dataset.modalCamera,
         dialogTransform: getComputedStyle(modalDialog).transform,
         dialogFilter: getComputedStyle(modalDialog).filter,
+        dialogAnimationDuration: parseFloat(getComputedStyle(modalDialog).animationDuration) * 1000,
         pageTransform: getComputedStyle(pageLayer).transform,
         pageFilter: getComputedStyle(pageLayer).filter,
         focusInside: dialog.contains(document.activeElement),
@@ -136,8 +146,9 @@ try {
     })
     assert.equal(openState.camera, 'open')
     assert.notEqual(openState.pageTransform, 'none')
-    assert.match(openState.pageFilter, /blur/)
+    assert.equal(openState.pageFilter, 'none')
     assert.ok(openState.dialogFilter === 'none' || openState.dialogFilter === 'blur(0px)', `settled dialog is sharp: ${openState.dialogFilter}`)
+    assert.equal(openState.dialogAnimationDuration, 650, 'desktop zoom-pan entrance uses the requested 650ms clock')
     assert.equal(openState.focusInside, true)
     assert.equal(openState.backgroundHidden, true)
     assert.equal(openState.internalScrollable, true)

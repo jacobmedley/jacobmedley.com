@@ -1,5 +1,41 @@
 # Status
 
+## September 19, 2026: Desktop modal zoom-pan follow-up complete locally
+
+Jacob reversed the desktop scene direction after the 980ms pull-back felt close
+but choppy. The site now pushes quickly toward the camera to scale 1.035 with a
+small up-left pan over 280ms. The modal zooms and pans from a smaller down-right
+frame into its exact resting geometry over 650ms. Close reverses over 520ms.
+
+All animated site/modal filters are removed. The six large page sections now use
+only transform and opacity, eliminating the prior continuous full-page blur and
+saturation raster work. The modal starts at scale .86 rather than an enlarged
+1.1, so its edges move inward instead of being cropped outside the viewport.
+
+At the automated 1440x950 midframe, dialog bounds were
+17.36/9.55/1435.65/945.22 and content bounds were
+76.46/33.18/1376.55/921.58; every edge remained inside the viewport. The site
+was at scale 1.035 and both site/dialog filters were `none`. Beginning, mid and
+settled frames were inspected. The computed entrance clock was exactly 650ms.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the complete focused Chromium suite pass. Open/close,
+reverse, interrupted entrance, immediate study switching, focus trap/return,
+Escape, scroll/history, reduced motion, loading/error/retry and mobile sheets at
+320–390px remain intact. The in-app normal-motion profile confirmed no background
+filters and in-bounds geometry at 1689x1272. A warm one-second sample recorded
+59 frames, one 49.9ms gap and one 51ms long task during modal mount; the sustained
+GPU blur cost is removed, but perfect pacing on every device is not claimed.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`c36e4acc8e46dceb0337b9ea20eca866dfae294c`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+49840 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
 ## September 19, 2026: Perceptible desktop modal camera pull-back complete locally
 
 Jacob found the first 340ms desktop modal treatment too quick and shallow to read

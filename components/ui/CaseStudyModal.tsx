@@ -198,7 +198,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
       body.dataset.modalCamera = 'closing'
       cameraTimer = window.setTimeout(() => {
         if (!document.querySelector(".modal[data-state='open']")) delete body.dataset.modalCamera
-      }, 840)
+      }, 540)
       wasOpenRef.current = false
     }
     return () => window.clearTimeout(cameraTimer)

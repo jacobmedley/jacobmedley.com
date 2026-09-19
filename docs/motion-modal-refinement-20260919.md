@@ -6,6 +6,41 @@ Baseline: `909ea2275104bc73f483ba7f1c5591db4d17a5b1` (`origin/main` at intake)
 Branch: `codex/motion-modal-refinement-20260919`  
 Publication: not authorized; production remains v12.160 / `1325c6b`
 
+## September 19 follow-up: compositor-only zoom-pan
+
+Jacob found the 980ms pull-back close to the intended feel but visibly choppy,
+with remaining transition cropping. He reversed the scene direction: the site
+should move quickly toward the camera while the modal zooms and pans into place
+in 650ms. This follow-up starts from local checkpoint `c36e4ac` and supersedes
+the live-blur/depth values in the continuation section below.
+
+Desktop background motion now uses only transform and opacity. The site moves
+forward to scale 1.035 with a small up-left pan over 280ms, then stays subdued at
+0.74 opacity behind the backdrop. All animated background blur and saturation are
+removed. The modal begins at scale 0.86, offset down and right, then reaches its
+exact resting geometry in 650ms. Starting smaller instead of larger keeps every
+dialog and content edge inside the viewport throughout the entrance. Close uses
+the inverse 520ms path, with camera cleanup retained for 540ms.
+
+The production export and focused Chromium suite pass. At the 1440x950 sampled
+midframe the dialog bounds were 17.36/9.55/1435.65/945.22 and the content bounds
+were 76.46/33.18/1376.55/921.58: all four edges remained inside the viewport.
+The site was at scale 1.035; both site and dialog filters were `none`. The settled
+dialog was sharp and the computed desktop animation duration was exactly 650ms.
+Beginning, mid-transition and settled captures were inspected without visible
+modal-edge clipping.
+
+The complete lifecycle suite still passes open/close/reverse, interrupted entrance,
+immediate study switching, keyboard trap/return, Escape, scroll and history,
+reduced motion, loading/error/retry, and all accepted mobile sheet geometries. A
+normal-motion in-app-browser profile confirmed `filter: none` on all six background
+layers and kept the modal inside its 1689x1272 viewport at mid-transition. Its warm
+sample recorded 59 frames over one second, one 49.9ms frame gap and one 51ms long
+task during modal mount. The prior large continuous GPU blur/raster workload is
+removed; this bounded result does not claim perfect pacing on every device.
+
+No copy, B edit, mobile behavior, dependency, push, merge or deployment changed.
+
 ## September 19 continuation: perceptible desktop camera pull-back
 
 Jacob found the first desktop treatment too quick and too shallow to read as a

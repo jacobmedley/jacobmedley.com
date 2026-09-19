@@ -7,6 +7,8 @@ const ROLES = ['Product', 'UX', 'Systems', 'IxD', 'Human'] as const
 const DURATION = 39000
 const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000, 38000]
 const FINAL_ROLE = CHANGES.length % ROLES.length
+// Continue after Product and the closing copy are revealed; never replay the intro.
+const LOOP_START = 9600
 const END_SPACE_DURATION = 180
 type Cue = [number, Keyframe]
 
@@ -34,7 +36,7 @@ const FIGMA = {
 }
 type OpeningCue = [time: number, width: number, easing?: string]
 
-/** A finite shared clock drives the mechanism without typing timers or React render loops. */
+/** One shared clock reveals the identity, then keeps the role sequence moving. */
 export default function KineticHeroIdentity() {
   const rootRef = useRef<HTMLDivElement>(null)
   const elapsedRef = useRef(0)
@@ -52,16 +54,24 @@ export default function KineticHeroIdentity() {
     let inView = root.getBoundingClientRect().bottom > 0 && root.getBoundingClientRect().top < innerHeight
     const find = (selector: string) => root.querySelector<HTMLElement>(selector)!
     const syncPlayback = () => {
+      if (disposed) return
+      if (animations[0]?.playState === 'finished') {
+        elapsedRef.current = LOOP_START
+        animations.forEach(animation => {
+          animation.pause()
+          animation.currentTime = LOOP_START
+        })
+      }
       animations.forEach(animation => {
-        if (animation.playState === 'finished') return
         if (inView && !document.hidden) animation.play()
         else animation.pause()
       })
-      root.dataset.heroState = elapsedRef.current >= DURATION ? 'settled' : inView && !document.hidden ? 'running' : 'paused'
+      root.dataset.heroState = inView && !document.hidden ? 'running' : 'paused'
     }
     function build() {
       if (disposed) return
       if (animations.length) elapsedRef.current = Number(animations[0].currentTime ?? elapsedRef.current)
+      if (elapsedRef.current >= DURATION) elapsedRef.current = LOOP_START
       animations.forEach(animation => animation.cancel())
       animations = []
       const stage = find('.kinetic-stage')
@@ -85,8 +95,6 @@ export default function KineticHeroIdentity() {
         const animation = node.animate(cues.map(([time, frame]) => ({ easing: 'cubic-bezier(.22,.75,.2,1)', ...frame, offset: time / DURATION })), { duration: DURATION, fill: 'both' })
         animation.pause()
         animation.currentTime = Math.min(elapsedRef.current, DURATION)
-        // play() at a paused end time rewinds a finished timeline. Keep it finished.
-        if (elapsedRef.current >= DURATION) animation.finish()
         animations.push(animation)
       }
       const pose = (time: number, transform: string, opacity = 1): Cue => [time, { transform, opacity }]
@@ -155,7 +163,7 @@ export default function KineticHeroIdentity() {
       track(find('.kinetic-plus'),plusCues)
       track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370+END_SPACE_DURATION,'translateX(.4em)',0),pose(3800+END_SPACE_DURATION,'translateX(0)'),pose(DURATION,'translateX(0)')])
       track(closingNode,[[0,{opacity:0}],[8000,{opacity:0}],[9600,{opacity:1}],[DURATION,{opacity:1}]])
-      animations[0].onfinish = () => { elapsedRef.current = DURATION; root.dataset.heroState = 'settled' }
+      animations[0].onfinish = syncPlayback
       syncPlayback()
     }
     build()
@@ -198,7 +206,10 @@ export default function KineticHeroIdentity() {
         <span className="kinetic-type-brace is-left">{'{'}</span><span className="kinetic-type-brace is-right">{'}'}</span>
       </div></div>
       <p className="sr-only">Product and design leader</p>
-      <p className="kinetic-closing">Let&apos;s Design and Build Something Great Together!</p>
+      <div className="kinetic-closing">
+        <p>I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
+        <p>There is always a better way, together we can find it.</p>
+      </div>
     </div>
   )
 }

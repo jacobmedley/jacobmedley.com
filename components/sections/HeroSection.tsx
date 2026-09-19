@@ -17,8 +17,8 @@ export default function HeroSection() {
                 <hr className="solid-center rule-heading" />
               </div>
 
-              <a className="btn action-label mt-4 mb-4 hero-case-studies-link" href="#work" aria-label="Explore the case studies">
-                <span className="sr-only">Explore the case studies</span>
+              <a className="btn action-label mt-4 mb-4 hero-case-studies-link" href="#work" aria-label="Explore selected work">
+                <span>Explore selected work</span>
                 <i className="fa-thin fa-circle-arrow-down" aria-hidden="true" />
               </a>
             </div>

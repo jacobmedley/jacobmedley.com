@@ -274,6 +274,14 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .kinetic-type-brace.is-right { left: 100%; }
 .kinetic-static-brace.is-left { transform: none; }
 .kinetic-identity[data-hero-state='static'] .kinetic-static-brace { display: block; }
+/* Size the reduced-motion fallback from its word, not an approximate ch width. */
+.kinetic-identity[data-hero-state='static'] .kinetic-bracketed { width: auto; padding-inline: .8em; }
+.kinetic-identity[data-hero-state='static'] .kinetic-word[data-role='Product'] { position: relative; left: auto; translate: none; }
+.kinetic-identity[data-hero-state='static'] .kinetic-static-brace.is-left { left: 0; right: auto; }
+.kinetic-identity[data-hero-state='static'] .kinetic-static-brace.is-right { right: 0; left: auto; }
+.kinetic-closing p { margin: 0; }
+.kinetic-closing p + p { margin-top: .65em; }
+.modal-reference > summary, .resume-expertise summary { cursor: pointer; padding-block: .75rem; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .resume-experience-details .resume-disclosure-chevron { transition: none; }
   .project-geometry, .project-geometry *, .thinking-thumb-icon .thinking-icon, .modal-project-icon-anchor > i, .hydra-schematic, .hydra-schematic * { animation: none !important; }

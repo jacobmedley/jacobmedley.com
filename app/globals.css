@@ -1856,7 +1856,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   #hi .hero-title { font-size: clamp(2.75rem, 4vw, 4rem); white-space: nowrap; }
 }
 
-.hero-case-studies-link { width: 3rem; height: 3rem; padding: 0; border: 0; border-radius: 50%; background: transparent; line-height: 1; }
+.hero-case-studies-link { display: inline-flex; align-items: center; gap: .75rem; width: auto; min-height: 3rem; padding: .5rem; border: 0; border-radius: 0; background: transparent; line-height: 1.3; }
 .hero-case-studies-link:hover, .hero-case-studies-link:focus-visible { border: 0; background: transparent; }
 .hero-case-studies-link i { font-size: 3rem; animation: hero-arrow-bob 2.4s ease-in-out infinite; }
 @keyframes hero-arrow-bob {

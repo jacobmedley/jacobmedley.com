@@ -45,7 +45,7 @@ export default function WorkCard({
           <p className="featured-work-summary">{project.summary}</p>
 
           <span className="btn btn-lg btn-second-dark rounded-full action-label case-study-read" aria-hidden="true">
-            Read <i className="fa-thin fa-arrow-right" />
+            Read case study <i className="fa-thin fa-arrow-right" />
           </span>
         </div>
         <button type="button" className="featured-work-open" onClick={open}

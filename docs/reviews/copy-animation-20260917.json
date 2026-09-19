@@ -1,0 +1,200 @@
+{
+  "observedDateUtc": "2026-09-18",
+  "preview": "http://localhost:8090/",
+  "base": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+  "cycle": {
+    "elapsed": 45046.59999999404,
+    "minClosing": 1,
+    "roles": [
+      "UX",
+      "Systems",
+      "IxD",
+      "Human",
+      "Product"
+    ],
+    "samples": [
+      {
+        "state": "running",
+        "time": 11192
+      },
+      {
+        "state": "running",
+        "time": 13710
+      },
+      {
+        "state": "running",
+        "time": 16246
+      },
+      {
+        "state": "running",
+        "time": 18748
+      },
+      {
+        "state": "running",
+        "time": 21267
+      },
+      {
+        "state": "running",
+        "time": 23785
+      },
+      {
+        "state": "running",
+        "time": 26321
+      },
+      {
+        "state": "running",
+        "time": 28839
+      },
+      {
+        "state": "running",
+        "time": 31342
+      },
+      {
+        "state": "running",
+        "time": 33893
+      },
+      {
+        "state": "running",
+        "time": 36413
+      },
+      {
+        "state": "running",
+        "time": 38964
+      },
+      {
+        "state": "running",
+        "time": 9600
+      },
+      {
+        "state": "running",
+        "time": 12185
+      },
+      {
+        "state": "running",
+        "time": 14737
+      },
+      {
+        "state": "running",
+        "time": 17256
+      },
+      {
+        "state": "running",
+        "time": 19841
+      },
+      {
+        "state": "running",
+        "time": 22376
+      }
+    ],
+    "state": "running",
+    "wraps": 1
+  },
+  "static": [
+    {
+      "animations": 0,
+      "leftGap": 10.640625,
+      "overflow": -15,
+      "rightGap": 10.640625,
+      "state": "static",
+      "width": 320
+    },
+    {
+      "animations": 0,
+      "leftGap": 10.640625,
+      "overflow": -15,
+      "rightGap": 10.640625,
+      "state": "static",
+      "width": 375
+    },
+    {
+      "animations": 0,
+      "leftGap": 11.71875,
+      "overflow": -15,
+      "rightGap": 11.71875,
+      "state": "static",
+      "width": 768
+    },
+    {
+      "animations": 0,
+      "leftGap": 19.171875,
+      "overflow": -15,
+      "rightGap": 19.171875,
+      "state": "static",
+      "width": 1440
+    }
+  ],
+  "routes": [
+    {
+      "path": "/case-studies/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "The thinking\nbehind the work."
+    },
+    {
+      "path": "/case-studies/one-platform-five-properties/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "One platform. Five properties."
+    },
+    {
+      "path": "/case-studies/building-a-design-function/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "Building an experience design practice"
+    },
+    {
+      "path": "/case-studies/one-customer-journey/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "Four executives, four different customer journeys."
+    },
+    {
+      "path": "/case-studies/navigation-beyond-opinion/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "How customers look for products"
+    },
+    {
+      "path": "/case-studies/tokens-before-pages/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "A shared foundation for a second brand"
+    },
+    {
+      "path": "/case-studies/a-checkout-decision-with-receipts/",
+      "width": 375,
+      "overflow": 0,
+      "heading": "Four documents, one checkout, zero agreement."
+    }
+  ],
+  "resumed": {
+    "state": "running",
+    "time": 14220.011000013585,
+    "states": [
+      "running"
+    ],
+    "visible": [
+      "Systems"
+    ],
+    "closing": "1",
+    "hidden": false,
+    "width": 375,
+    "overflow": -15
+  },
+  "spreadsheet": {
+    "rows": 479,
+    "workingCopyMismatches": [],
+    "originalDecisionMismatches": []
+  },
+  "offscreen": {
+    "stableClockMilliseconds": 38690.04300001811,
+    "state": "paused",
+    "resumed": true
+  },
+  "limitations": [
+    "Chrome only in this pass",
+    "Native hidden-tab transition was not established by the browser tool; previous release coverage is not a new test",
+    "Native 200% zoom and screen reader not rerun",
+    "BumblebeeMD modal opened and copy inspected; numerical width capture obtained for the other 13"
+  ]
+}

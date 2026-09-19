@@ -1,5 +1,24 @@
 # Status
 
+## September 19, 2026: Main-site copy accepted locally; publication authorized
+
+Jacob requested cleanup, merge, and push with dedicated case studies deferred.
+B57 applies the main-site subset of B56, clear in-page entry controls, neutral
+variant alt text, historical Scene7 spelling, and the continuing hero repair.
+Dedicated source, dependencies, source imagery, and deployment workflow remain
+unchanged. Original dirty checkout and September 17 copy worktree are preserved.
+
+Windows production export, source-image verification, TypeScript, authored ESLint,
+online audit (zero findings), 14 modal checks, four reduced-motion viewports, and
+the hero's natural continuing cycle passed. Ubuntu PR CI, merge, deploy, and live
+checks follow. See main-site-wrapup-20260919.md for evidence and limitations.
+Main copy follow-up is B30: a source-backed coaching/development example.
+
+Branch codex/main-site-wrapup-20260919, worktree X:\website-release-20260919.
+Rollback e2995d7fb703d4641562df1903b70adb3dfca3fc. Own lock held. Static preview
+8090/PID9212 runs from this worktree's out/. No other process changed.
+GPT-6 Astra/high verified; no local inference, added spending, or reset.
+
 ## September 13, 2026: LIVE — v12.152, production 64c95cf
 
 PR #9 merged and SiteGround deployment 34763809915 completed successfully at

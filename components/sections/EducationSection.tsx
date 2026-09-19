@@ -1,5 +1,4 @@
 import SectionHeader from '@/components/ui/SectionHeader'
-import { SITE_VERSION, SITE_ITERATION } from '@/lib/version'
 
 const educationItems = [
   {
@@ -56,12 +55,6 @@ const educationItems = [
     source: 'Johns Hopkins University',
     url: 'https://www.coursera.org/account/accomplishments/verify/3JE7KWFED4',
   },
-  {
-    icon: 'fa-thin fa-file-certificate',
-    title: 'Certificate of Membership',
-    source: 'Interaction Design Foundation (IxDF)',
-    url: 'https://www.interaction-design.org/members/jacob-medley/certificate/membership/mc_V0FMlS9wR',
-  },
 ]
 
 export default function EducationSection() {
@@ -111,9 +104,6 @@ export default function EducationSection() {
                 <i className="fa-kit fa-jm-icon-full" aria-hidden="true" />
               </p>
               <p>© {year} by Jacob Medley</p>
-              <p className="small opacity-75 mb-0">
-                v{SITE_VERSION}.{SITE_ITERATION}
-              </p>
             </div>
           </div>
         </div>

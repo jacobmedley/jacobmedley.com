@@ -1,0 +1,2420 @@
+[
+  {
+    "id": "H-001",
+    "row": 2,
+    "action": "Rewrite",
+    "copy": "Hello | Case studies | How I work | Experience | Education",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/nav/NavMain.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-002",
+    "row": 3,
+    "action": "Rewrite",
+    "copy": "Jacob Medley\nProduct and design leader\nI build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.\nThere is always a better way, together we can find it.\nExplore the case studies",
+    "approval": "Approved with edits",
+    "status": "Implemented locally",
+    "files": [
+      "components/ui/KineticHeroIdentity.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-004",
+    "row": 5,
+    "action": "Rewrite",
+    "copy": "Product · Conversion Optimization\nWebMD\nFrom plan search to checkout\nI led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans.\nRead Case Study",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "From plan search to checkout"
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans."
+      }
+    ]
+  },
+  {
+    "id": "H-005",
+    "row": 6,
+    "action": "Rewrite",
+    "copy": "Systems · Product\nDentalPlans.com\nOne platform. Five branded businesses.\nI built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two.\nRead case study",
+    "approval": "Approved with edits",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "One platform. Five branded businesses."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two."
+      }
+    ]
+  },
+  {
+    "id": "H-006",
+    "row": 7,
+    "action": "Move",
+    "copy": "Systems · Brand\nBumblebeeMD\nRoom to build the brand\nThe shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands.\nRead case study",
+    "approval": "Needs revision",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts",
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Room to build the brand"
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": [
+          "BumblebeeMD was a DentalPlans.com sub-brand built on the shared commerce platform. The product data, components, and purchase flow were already there.",
+          "That gave us room to work on the brand: its identity, the interface, and how the experience should feel. We could carry those decisions into working pages without rebuilding the commerce underneath them."
+        ]
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Launching a fully branded property fell from six weeks to two. Five properties ran on the platform."
+      }
+    ]
+  },
+  {
+    "id": "H-007",
+    "row": 8,
+    "action": "Rewrite",
+    "copy": "Systems · Product\nHydra\nFrom an idea to working parts\nI built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built.\nRead case study",
+    "approval": "Needs revision",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "From an idea to working parts"
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built."
+      }
+    ]
+  },
+  {
+    "id": "H-008",
+    "row": 9,
+    "action": "Rewrite",
+    "copy": "Product · UX Research\nOne Park Financial\nFrom visitor to the right next step\nI led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey.\nRead case study",
+    "approval": "Approved with edits",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "From visitor to the right next step"
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": [
+          "I led the website and lead-flow redesign with the CEO and SVP of Marketing. The work also put the Hydra design system into the corporate website.",
+          "I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with, and which they scrolled straight past.",
+          "We could add, remove, or change steps in the lead flow in hours. Each lead carried its test ID, so we could follow a variant through the customer journey.",
+          "An additional step routed applicants to the next appropriate channel: agents for higher-value leads, an online experience for lower-value leads, and willing partners for applicants outside our risk criteria."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "H-009",
+    "row": 10,
+    "action": "Rewrite",
+    "copy": "How I work",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-010",
+    "row": 11,
+    "action": "Rewrite",
+    "copy": "The work ranges from a customer stuck on hold to a team deciding what to build next. These examples show how I approach both.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-011",
+    "row": 12,
+    "action": "Rewrite",
+    "copy": "Testing the experience",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-012",
+    "row": 13,
+    "action": "Rewrite",
+    "copy": "When nobody can take the call",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-013",
+    "row": 14,
+    "action": "Rewrite",
+    "copy": "A small team. A campaign built for scale.",
+    "approval": "Needs revision",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-014",
+    "row": 15,
+    "action": "Rewrite",
+    "copy": "Getting teams to a shared decision",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-015",
+    "row": 16,
+    "action": "Rewrite",
+    "copy": "Choosing what comes next",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-016",
+    "row": 17,
+    "action": "Rewrite",
+    "copy": "Understanding the people buying the product",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-017",
+    "row": 18,
+    "action": "Rewrite",
+    "copy": "The Wrong Campaign",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/FullStackSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-020",
+    "row": 21,
+    "action": "Rewrite",
+    "copy": "About and experience",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "About and experience"
+      }
+    ]
+  },
+  {
+    "id": "H-021",
+    "row": 22,
+    "action": "Rewrite",
+    "copy": "How I approach the work",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-022",
+    "row": 23,
+    "action": "Rewrite",
+    "copy": "There is always a better way, together we can find it.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-023",
+    "row": 24,
+    "action": "Rewrite",
+    "copy": "A customer experience is capped by what the people delivering it can actually do. I follow the customer’s problem back through the teams, tools, and steps behind it. Sometimes the work is a product. Sometimes it is the team or system that needs to exist before the product can work. I have built all three.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "A customer experience is capped by what the people delivering it can actually do. I follow the customer’s problem back through the teams, tools, and steps behind it. Sometimes the work is a product. Sometimes it is the team or system that needs to exist before the product can work. I have built all three."
+      }
+    ]
+  },
+  {
+    "id": "H-024",
+    "row": 25,
+    "action": "Rewrite",
+    "copy": "AI product design\nI led experience research for a conversational assistant serving customers and internal teams. My work defined how it should respond, handle uncertainty, and get a person to the right help.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "AI product design"
+      },
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I led experience research for a conversational assistant serving customers and internal teams. My work defined how it should respond, handle uncertainty, and get a person to the right help."
+      }
+    ]
+  },
+  {
+    "id": "H-025",
+    "row": 26,
+    "action": "Rewrite",
+    "copy": "Design systems\nI build shared foundations that let teams launch new products and brands without repeating the same design work. One platform supported five branded commerce sites.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "Design systems"
+      },
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I build shared foundations that let teams launch new products and brands without repeating the same design work. One platform supported five branded commerce sites."
+      }
+    ]
+  },
+  {
+    "id": "H-026",
+    "row": 27,
+    "action": "Rewrite",
+    "copy": "Business outcomes\nThe commerce platform I led supported five properties. In one measured year, finance credited those properties with 47% of the company’s revenue growth.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "Business outcomes"
+      },
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "The commerce platform I led supported five properties. In one measured year, finance credited those properties with 47% of the company’s revenue growth."
+      }
+    ]
+  },
+  {
+    "id": "H-027",
+    "row": 28,
+    "action": "Rewrite",
+    "copy": "Conversion and experimentation\nI use research and testing to find where the experience loses people. That has included matching a landing page to the ad that brought someone there, and testing what customers need before they decide to buy.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "Conversion and experimentation"
+      },
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I use research and testing to find where the experience loses people. That has included matching a landing page to the ad that brought someone there, and testing what customers need before they decide to buy."
+      }
+    ]
+  },
+  {
+    "id": "H-028",
+    "row": 29,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-034",
+    "row": 35,
+    "action": "Rewrite",
+    "copy": "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated."
+      }
+    ]
+  },
+  {
+    "id": "H-035",
+    "row": 36,
+    "action": "Rewrite",
+    "copy": "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor.",
+    "approval": "Needs revision",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor."
+      }
+    ]
+  },
+  {
+    "id": "H-036",
+    "row": 37,
+    "action": "Rewrite",
+    "copy": "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs."
+      }
+    ]
+  },
+  {
+    "id": "H-040",
+    "row": 41,
+    "action": "Rewrite",
+    "copy": "I led experience research and scoping for one internally built conversational assistant with two deployments: an internal helper integrated with Salesforce, designed with a service designer, and a public assistant on the main website. Work with retirement and financial account information made accuracy, security, and escalation central to the design.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I led experience research and scoping for one internally built conversational assistant with two deployments: an internal helper integrated with Salesforce, designed with a service designer, and a public assistant on the main website. Work with retirement and financial account information made accuracy, security, and escalation central to the design."
+      }
+    ]
+  },
+  {
+    "id": "H-041",
+    "row": 42,
+    "action": "Rewrite",
+    "copy": "I flagged hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response in that situation was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I flagged hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response in that situation was a referral to an account manager. I traced the answer to a sample account statement in the source documentation."
+      }
+    ]
+  },
+  {
+    "id": "H-042",
+    "row": 43,
+    "action": "Rewrite",
+    "copy": "I wrote requirements for response feedback, system status, failures, escalation to human support, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. Conduct mattered: the assistant was taking the opening minutes of a service conversation.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I wrote requirements for response feedback, system status, failures, escalation to human support, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. Conduct mattered: the assistant was taking the opening minutes of a service conversation."
+      }
+    ]
+  },
+  {
+    "id": "H-043",
+    "row": 44,
+    "action": "Rewrite",
+    "copy": "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped."
+      }
+    ]
+  },
+  {
+    "id": "H-054",
+    "row": 55,
+    "action": "Rewrite",
+    "copy": "The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to two. Five properties ran on it.\nI built and maintained the platform with a part-time offshore engineer. Four experience designers covered the properties.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to two. Five properties ran on it.\nI built and maintained the platform with a part-time offshore engineer. Four experience designers covered the properties."
+      }
+    ]
+  },
+  {
+    "id": "H-055",
+    "row": 56,
+    "action": "Rewrite",
+    "copy": "I led UX, UI, and front-end work across the commerce funnel. Source attribution meant the page said what the ad promised: promotion, copy, and messaging changed by traffic source, down to individual affiliate IDs. In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The company owned the custom platform.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "I led UX, UI, and front-end work across the commerce funnel. Source attribution meant the page said what the ad promised: promotion, copy, and messaging changed by traffic source, down to individual affiliate IDs. In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The company owned the custom platform."
+      }
+    ]
+  },
+  {
+    "id": "H-060",
+    "row": 61,
+    "action": "Rewrite",
+    "copy": "Campaign content had to cover 48 resorts, four seasons, and several personas. I owned UX and UI for an approach using a central asset library and shared data, so content variants could be reused across properties. I worked with a PHP engineer, a data engineer, an outside consultant, and the marketing managers who would use it. The publishing tools had to work for people beyond the team that built them.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": "Campaign content had to cover 48 resorts, four seasons, and several personas. I owned UX and UI for an approach using a central asset library and shared data, so content variants could be reused across properties. I worked with a PHP engineer, a data engineer, an outside consultant, and the marketing managers who would use it. The publishing tools had to work for people beyond the team that built them."
+      }
+    ]
+  },
+  {
+    "id": "H-062",
+    "row": 63,
+    "action": "Rewrite",
+    "copy": "Leadership: design practice, hiring, research operations, UX roadmapping, workshop leadership.\nProduct: UX research, interaction design, information architecture, usability testing, conversion testing, accessibility and WCAG.\nSystems and craft: design systems, brand and visual design, prototyping, responsive interfaces, front-end development.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": [
+          "Leadership: design practice, hiring, research operations, UX roadmapping, workshop leadership.",
+          "Product: UX research, interaction design, information architecture, usability testing, conversion testing, accessibility and WCAG.",
+          "Systems and craft: design systems, brand and visual design, prototyping, responsive interfaces, front-end development."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "H-064",
+    "row": 65,
+    "action": "Move",
+    "copy": "Design and collaboration: Figma, FigJam, Adobe Creative Suite, Miro.\nResearch and experimentation: FullStory, Hotjar, UserTesting.com, Google Analytics, Optimizely, VWO, Adobe Target.\nDelivery: Jira, Asana, GitHub, VS Code.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/ResumeSection.tsx"
+    ],
+    "implementation": [
+      {
+        "file": "components/sections/ResumeSection.tsx",
+        "text": [
+          "Design and collaboration: Figma, FigJam, Adobe Creative Suite, Miro.",
+          "Research and experimentation: FullStory, Hotjar, UserTesting.com, Google Analytics, Optimizely, VWO, Adobe Target.",
+          "Delivery: Jira, Asana, GitHub, VS Code."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "H-075",
+    "row": 76,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/EducationSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-078",
+    "row": 79,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/sections/EducationSection.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "H-META-meta",
+    "row": 81,
+    "action": "Rewrite",
+    "copy": "Jacob Medley, product and design leader. Explore work in design leadership, shared commerce platforms, research, and AI product experiences.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "app/layout.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-006",
+    "row": 87,
+    "action": "Rewrite",
+    "copy": "I build products, teams, and systems around the people using them. These stories show the decisions I made and what the work changed.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I build products, teams, and systems around the people using them. These stories show the decisions I made and what the work changed."
+      }
+    ]
+  },
+  {
+    "id": "I-008",
+    "row": 89,
+    "action": "Rewrite",
+    "copy": "20+ years in design",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/case-studies/CareerStats.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-015",
+    "row": 96,
+    "action": "Rewrite",
+    "copy": "6 case studies",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/case-studies/OutcomeDashboard.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-016",
+    "row": 97,
+    "action": "Rewrite",
+    "copy": "One platform. Five properties.\nA fully branded commerce site went from six weeks to launch to two.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A fully branded commerce site went from six weeks to launch to two."
+      }
+    ]
+  },
+  {
+    "id": "I-017",
+    "row": 98,
+    "action": "Rewrite",
+    "copy": "Building an experience design practice\nI put research, design systems, and measurement in place while the team delivered an integration.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I put research, design systems, and measurement in place while the team delivered an integration."
+      }
+    ]
+  },
+  {
+    "id": "I-018",
+    "row": 99,
+    "action": "Rewrite",
+    "copy": "A shared customer journey\nI brought the leaders responsible for each part of the experience into one working session to examine the handoffs.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I brought the leaders responsible for each part of the experience into one working session to examine the handoffs."
+      }
+    ]
+  },
+  {
+    "id": "I-019",
+    "row": 100,
+    "action": "Rewrite",
+    "copy": "How customers look for products\nI led research into how people looked for products and brought the findings into the navigation redesign.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I led research into how people looked for products and brought the findings into the navigation redesign."
+      }
+    ]
+  },
+  {
+    "id": "I-020",
+    "row": 101,
+    "action": "Rewrite",
+    "copy": "A shared foundation for a second brand\nI defined the design rules before the pages multiplied, giving the next designer a documented starting point.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I defined the design rules before the pages multiplied, giving the next designer a documented starting point."
+      }
+    ]
+  },
+  {
+    "id": "I-021",
+    "row": 102,
+    "action": "Rewrite",
+    "copy": "A checkout decision with receipts\nI resolved conflicting price requirements and recorded which instructions the decision replaced.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I resolved conflicting price requirements and recorded which instructions the decision replaced."
+      }
+    ]
+  },
+  {
+    "id": "I-024",
+    "row": 105,
+    "action": "Rewrite",
+    "copy": "One platform. Five properties.\nI built a shared commerce platform with a part-time engineer. A fully branded property went from six weeks to launch to two.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-025",
+    "row": 106,
+    "action": "Rewrite",
+    "copy": "Building an experience design practice\nI built the research, systems, and measurement a new design function needed while we delivered a product integration.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-026",
+    "row": 107,
+    "action": "Rewrite",
+    "copy": "A shared customer journey\nI designed a working session that brought department leaders together around the same customer journey and its handoffs.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-027",
+    "row": 108,
+    "action": "Rewrite",
+    "copy": "How customers look for products\nI led navigation research with customers and used the findings to guide the category structure and shop-by paths.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-028",
+    "row": 109,
+    "action": "Rewrite",
+    "copy": "A shared foundation for a second brand\nI defined the brand rules and documented the design foundation before the page count grew.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-029",
+    "row": 110,
+    "action": "Rewrite",
+    "copy": "A checkout decision with receipts\nI used AI to compare conflicting requirements, made the experience decision, and recorded what engineering should build.\nRead the case study",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-030",
+    "row": 111,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "app/case-studies/page.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "I-META-meta",
+    "row": 116,
+    "action": "Rewrite",
+    "copy": "I build products, teams, and systems around the people using them. These stories show the decisions I made and what the work changed.",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "S1-003",
+    "row": 119,
+    "action": "Rewrite",
+    "copy": "One platform. Five properties.\nI built a shared commerce platform with a part-time engineer. A fully branded property went from six weeks to launch to two.\nMy role: product and design lead; front-end development.\nScope: brand experience, platform roadmap, and the commerce funnel.\nCollaboration: a part-time engineer built and maintained the platform with me; four experience designers covered the properties.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "One platform. Five properties."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I built a shared commerce platform with a part-time engineer. A fully branded property went from six weeks to launch to two."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "product and design lead; front-end development."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "brand experience, platform roadmap, and the commerce funnel."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "a part-time engineer built and maintained the platform with me; four experience designers covered the properties."
+      }
+    ]
+  },
+  {
+    "id": "S1-009",
+    "row": 125,
+    "action": "Rewrite",
+    "copy": "02 // The Journey I brought a roadmap for the work we could stop doing. I argued for a platform and phased the work deliberately. A full rewrite would have been difficult to fund. Each release replaced a piece of manual labor with a capability the next property could reuse. Brand configuration came into the content management layer. Theme tokens separated each storefront's identity from the application underneath it. Shared product and provider data meant engineering could add information once and every site would inherit it. I owned the experience through marketing pages, cart, and checkout, along with the front-end build. The platform was built and maintained by me and a part-time offshore engineer. The Decision Remove repeated work before adding the next storefront.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I owned the experience through marketing pages, cart, and checkout, along with the front-end build. The platform was built and maintained by me and a part-time offshore engineer."
+      }
+    ]
+  },
+  {
+    "id": "S1-011",
+    "row": 127,
+    "action": "Rewrite",
+    "copy": "The business grew without rebuilding the machinery.\nLaunching a fully branded property fell from six weeks to two. Five properties ran on the platform.\nIn one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company's growth increment in that year.\nFour experience designers covered the properties. Automation absorbed repetitive updates, leaving people time for the decisions that changed the experience.\n6 → 2 weeks to launch a property\n5 properties on one platform\n47% of company revenue growth in one measured year\nYou create velocity by making the work smaller.",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "S1-META-title",
+    "row": 130,
+    "action": "Rewrite",
+    "copy": "One platform. Five properties. | Jacob Medley",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "S1-META-meta",
+    "row": 131,
+    "action": "Rewrite",
+    "copy": "I built a shared commerce platform with a part-time engineer. A fully branded property went from six weeks to launch to two.",
+    "approval": "Unreviewed",
+    "status": "Consolidated locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "S2-003",
+    "row": 134,
+    "action": "Rewrite",
+    "copy": "Building an experience design practice\nI built the research, systems, and measurement a new design function needed while we delivered a product integration.\nMy role: Experience design practice lead\nScope: Design foundations, research, measurement, executive facilitation\nCollaboration: A small experience design function working across product, engineering, marketing, and leadership.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Building an experience design practice"
+      }
+    ]
+  },
+  {
+    "id": "S2-010",
+    "row": 141,
+    "action": "Rewrite",
+    "copy": "A practice another designer could use\nThe function gained documented tokens, a repeatable usability-testing report, a measurement framework, and materials for executive workshops.\nThe scorecard combined experience measures and business outcomes. The customer feedback program had a vendor recommendation and was ready for instrumentation.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A practice another designer could use"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "The function gained documented tokens, a repeatable usability-testing report, a measurement framework, and materials for executive workshops.",
+          "The scorecard combined experience measures and business outcomes. The customer feedback program had a vendor recommendation and was ready for instrumentation."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S2-011",
+    "row": 142,
+    "action": "Rewrite",
+    "copy": "The next project had a starting point\nSubsequent work could use the documented tokens, research format, scorecard, and workshop materials. The customer feedback program was ready for instrumentation.\nSystems a token foundation with governance\nResearch a repeatable testing practice\nMeasurement an experience scorecard\nThe artifact was stability.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Documented foundations were available for subsequent work."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "The next project had a starting point"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "Subsequent work could use the documented tokens, research format, scorecard, and workshop materials. The customer feedback program was ready for instrumentation."
+        ]
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "The artifact was stability."
+      }
+    ]
+  },
+  {
+    "id": "S2-META-title",
+    "row": 145,
+    "action": "Rewrite",
+    "copy": "Building an experience design practice | Jacob Medley",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Building an experience design practice"
+      }
+    ]
+  },
+  {
+    "id": "S2-META-meta",
+    "row": 146,
+    "action": "Rewrite",
+    "copy": "I built the research, systems, and measurement a new design function needed while we delivered a product integration.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I built the research, systems, and measurement a new design function needed while we delivered a product integration."
+      }
+    ]
+  },
+  {
+    "id": "S3-010",
+    "row": 156,
+    "action": "Rewrite",
+    "copy": "Follow the customer across departments\nI used customer scenarios to walk the group through the journey. When a handoff failed, the people responsible for both sides were present to examine it. The moderator guide kept the discussion on the customer situation.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Follow the customer across departments"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "I used customer scenarios to walk the group through the journey. When a handoff failed, the people responsible for both sides were present to examine it. The moderator guide kept the discussion on the customer situation."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S3-011",
+    "row": 157,
+    "action": "Rewrite",
+    "copy": "A shared journey and a record of the gaps\nThe group documented the end-to-end journey with executive participation. Handoff failures were discussed with their owners present. The boards, moderator guide, and scenario matrix remained available for future sessions.\nShared view a documented end-to-end journey\nHandoffs examined with both owners present\nReusable boards, guide, and scenario matrix",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A shared journey and a record of the gaps"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "The group documented the end-to-end journey with executive participation. Handoff failures were discussed with their owners present. The boards, moderator guide, and scenario matrix remained available for future sessions."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S3-META-title",
+    "row": 160,
+    "action": "Rewrite",
+    "copy": "A shared customer journey | Jacob Medley",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A shared customer journey"
+      }
+    ]
+  },
+  {
+    "id": "S3-META-meta",
+    "row": 161,
+    "action": "Rewrite",
+    "copy": "I designed a working session that brought department leaders together around the same customer journey and its handoffs.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I designed a working session that brought department leaders together around the same customer journey and its handoffs."
+      }
+    ]
+  },
+  {
+    "id": "S4-003",
+    "row": 164,
+    "action": "Rewrite",
+    "copy": "How customers look for products\nI led navigation research with customers and used the findings to guide the category structure and shop-by paths.\nMy role: Research direction and synthesis\nScope: Navigation, category structure, and shop-by paths\nCollaboration: Research findings prepared for the team making navigation and information architecture decisions.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "How customers look for products"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Research direction and synthesis"
+      }
+    ]
+  },
+  {
+    "id": "S4-004",
+    "row": 165,
+    "action": "Rewrite",
+    "copy": "How do customers look for products?\nCatalog structure | Shop by Condition\nTest finding: customers used their health need as an entry point.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "components/case-studies/StudyVisual.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "S4-010",
+    "row": 171,
+    "action": "Rewrite",
+    "copy": "Start with the customer’s need\nModerated testing supported Shop by Condition as an entry point and exposed discoverability problems in the mega menu. I brought those findings into the navigation redesign.\nThe report gave the team a record of observed behavior and a format for later studies.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Start with the customer’s need"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "Moderated testing supported Shop by Condition as an entry point and exposed discoverability problems in the mega menu. I brought those findings into the navigation redesign.",
+          "The report gave the team a record of observed behavior and a format for later studies."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S4-011",
+    "row": 172,
+    "action": "Rewrite",
+    "copy": "Preference lost its monopoly.\nThe redesign had observed customer behavior to work from, and the team had a repeatable research-report format for its next study.\nCustomer needs a stronger entry point into the catalog\nFindability mega menu failures documented\nEvidence research feeding the redesign",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "The redesign had observed customer behavior to work from, and the team had a repeatable research-report format for its next study."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S4-META-title",
+    "row": 175,
+    "action": "Rewrite",
+    "copy": "How customers look for products | Jacob Medley",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "How customers look for products"
+      }
+    ]
+  },
+  {
+    "id": "S4-META-meta",
+    "row": 176,
+    "action": "Rewrite",
+    "copy": "I led navigation research with customers and used the findings to guide the category structure and shop-by paths.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I led navigation research with customers and used the findings to guide the category structure and shop-by paths."
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I led moderated usability research into the navigation and information architecture. I used the findings to guide the redesign."
+      }
+    ]
+  },
+  {
+    "id": "S5-003",
+    "row": 179,
+    "action": "Rewrite",
+    "copy": "A shared foundation for a second brand\nI defined the brand rules and documented the design foundation before the page count grew.\nMy role: Design system foundation and governance\nScope: Theme tokens, brand layer, button variants, component evaluation\nCollaboration: A documented foundation for the incoming designer and the shared commerce build.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A shared foundation for a second brand"
+      }
+    ]
+  },
+  {
+    "id": "S5-009",
+    "row": 185,
+    "action": "Rewrite",
+    "copy": "Decide what the pages should inherit\nI defined color, typography, and spacing tokens, then layered the new brand over that base. I documented the button variants and their accessibility constraints.\nI evaluated a component foundation and recorded the recommendation and reasoning so incoming work had explicit guidance.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Decide what the pages should inherit"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "I defined color, typography, and spacing tokens, then layered the new brand over that base. I documented the button variants and their accessibility constraints.",
+          "I evaluated a component foundation and recorded the recommendation and reasoning so incoming work had explicit guidance."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S5-011",
+    "row": 187,
+    "action": "Rewrite",
+    "copy": "The brand had a foundation to maintain\nThe brand launched on the shared infrastructure. Brand adjustments could happen at the token layer, and the incoming designer had the decisions and their reasoning documented.\nShared base color, typography, and spacing\nBrand layer a theme on existing infrastructure\nGovernance documented before the build",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "The brand had a foundation to maintain"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "The brand launched on the shared infrastructure. Brand adjustments could happen at the token layer, and the incoming designer had the decisions and their reasoning documented."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S5-META-title",
+    "row": 190,
+    "action": "Rewrite",
+    "copy": "A shared foundation for a second brand | Jacob Medley",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A shared foundation for a second brand"
+      }
+    ]
+  },
+  {
+    "id": "S5-META-meta",
+    "row": 191,
+    "action": "Rewrite",
+    "copy": "I defined the brand rules and documented the design foundation before the page count grew.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I defined the brand rules and documented the design foundation before the page count grew."
+      }
+    ]
+  },
+  {
+    "id": "S6-011",
+    "row": 202,
+    "action": "Rewrite",
+    "copy": "Engineering had a decision to build\nI recorded the combined-price direction and the requirements it replaced. Engineering built against that record without another meeting cycle. Refund messaging remained an explicit dependency.\nOne price a combined checkout presentation\nTraceable superseded requirements documented\nBuild once engineering had a recorded decision",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "Engineering had a decision to build"
+      },
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": [
+          "I recorded the combined-price direction and the requirements it replaced. Engineering built against that record without another meeting cycle. Refund messaging remained an explicit dependency."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S6-META-title",
+    "row": 205,
+    "action": "Rewrite",
+    "copy": "A checkout decision with receipts | Jacob Medley",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "A checkout decision with receipts"
+      }
+    ]
+  },
+  {
+    "id": "S6-META-meta",
+    "row": 206,
+    "action": "Rewrite",
+    "copy": "I used AI to compare conflicting requirements, made the experience decision, and recorded what engineering should build.",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "docs/case-study-site-copy.json"
+    ],
+    "implementation": [
+      {
+        "file": "docs/case-study-site-copy.json",
+        "text": "I used AI to compare conflicting requirements, made the experience decision, and recorded what engineering should build."
+      }
+    ]
+  },
+  {
+    "id": "M1-003",
+    "row": 209,
+    "action": "Rewrite",
+    "copy": "WebMD’s brand and DentalPlans’ products needed one commerce experience. We had less than eight weeks to plan and launch. I led UX/UI design and front-end development across plan search, comparison, cart, and checkout. We launched in six weeks.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "WebMD’s brand and DentalPlans’ products needed one commerce experience. We had less than eight weeks to plan and launch. I led UX/UI design and front-end development across plan search, comparison, cart, and checkout. We launched in six weeks."
+      }
+    ]
+  },
+  {
+    "id": "M2-003",
+    "row": 221,
+    "action": "Rewrite",
+    "copy": "DentalPlans.com wanted dedicated storefronts for product partners. The first site tested whether customers would buy through a focused brand experience. Once it sold, the next question was how to add brands without copying the manual work.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "DentalPlans.com wanted dedicated storefronts for product partners. The first site tested whether customers would buy through a focused brand experience. Once it sold, the next question was how to add brands without copying the manual work."
+      }
+    ]
+  },
+  {
+    "id": "M2-004",
+    "row": 222,
+    "action": "Rewrite",
+    "copy": "I led product design and front-end development for the platform that followed. Each release replaced repeated work with a capability the next site could use. I built and maintained it with a part-time engineer.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led product design and front-end development for the platform that followed. Each release replaced repeated work with a capability the next site could use. I built and maintained it with a part-time engineer."
+      }
+    ]
+  },
+  {
+    "id": "M2-006",
+    "row": 224,
+    "action": "Rewrite",
+    "copy": "Finance-attributed shares from one measured year; launch time per property",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Business results from one measured year"
+      }
+    ]
+  },
+  {
+    "id": "M2-007",
+    "row": 225,
+    "action": "Rewrite",
+    "copy": "Finance credited the properties with these shares in one measured year:\n47% of company revenue growth\n20% of overall company revenue\n27% of total company lead capture\nLaunch time per property: six weeks to two",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": [
+          {
+            "value": "47%",
+            "label": "of company revenue growth"
+          },
+          {
+            "value": "20%",
+            "label": "of overall company revenue"
+          },
+          {
+            "value": "27%",
+            "label": "of total company lead capture"
+          },
+          {
+            "value": "6 to 2",
+            "label": "weeks to launch a property",
+            "direction": "down"
+          }
+        ]
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Finance-attributed shares from one measured year; launch time per property"
+      }
+    ]
+  },
+  {
+    "id": "M2-009",
+    "row": 227,
+    "action": "Rewrite",
+    "copy": "Five properties on one platform\nTwo people built and maintained the platform\nFour experience designers covered the properties\nThe company owned the custom platform",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": [
+          "Five properties on one platform",
+          "Two people built and maintained the platform",
+          "Four experience designers covered the properties",
+          "The company owned the custom platform"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M2-018",
+    "row": 236,
+    "action": "Rewrite",
+    "copy": "Partner storefront",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Partner storefront"
+      }
+    ]
+  },
+  {
+    "id": "M2-020",
+    "row": 238,
+    "action": "Move",
+    "copy": "Documentation",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M2-036",
+    "row": 254,
+    "action": "Rewrite",
+    "copy": "Shared design patterns and front-end components for updates and testing across properties.\nBrand settings separated identity from the application.\nServices supplied product information, dentist search, and cart functions.\nScheduled promotions handled offer versions and expiry.\nSource tracking covered paid search, affiliates, and organic traffic.\nDocumentation supported designers and developers.\nDeployment could target one property or all of them.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": [
+          "Shared design patterns and front-end components for updates and testing across properties.",
+          "Brand settings separated identity from the application.",
+          "Services supplied product information, dentist search, and cart functions.",
+          "Scheduled promotions handled offer versions and expiry.",
+          "Source tracking covered paid search, affiliates, and organic traffic.",
+          "Documentation supported designers and developers.",
+          "Deployment could target one property or all of them."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "M2-042",
+    "row": 260,
+    "action": "Rewrite",
+    "copy": "We started with a single-product flow to test customer response. Engineering built the service that passed the product into the existing cart. I designed the storefront so later versions could support other products and brands.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "We started with a single-product flow to test customer response. Engineering built the service that passed the product into the existing cart. I designed the storefront so later versions could support other products and brands."
+      }
+    ]
+  },
+  {
+    "id": "M2-045",
+    "row": 263,
+    "action": "Rewrite",
+    "copy": "The first storefront sold, and leadership asked for a second. That gave us a reason to invest in shared capabilities.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The first storefront sold, and leadership asked for a second. That gave us a reason to invest in shared capabilities."
+      }
+    ]
+  },
+  {
+    "id": "M2-048",
+    "row": 266,
+    "action": "Rewrite",
+    "copy": "The second site needed the brand experience to continue into the cart. We added a cart that could take each brand’s identity and services for shared product information. Testing could then cover the path from landing page through purchase.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The second site needed the brand experience to continue into the cart. We added a cart that could take each brand’s identity and services for shared product information. Testing could then cover the path from landing page through purchase."
+      }
+    ]
+  },
+  {
+    "id": "M2-050",
+    "row": 268,
+    "action": "Rewrite",
+    "copy": "The second launch gave us a shared base for later changes. The components could be reused in landing pages and purchase flows, so tests no longer required rebuilding each variant from scratch.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The second launch gave us a shared base for later changes. The components could be reused in landing pages and purchase flows, so tests no longer required rebuilding each variant from scratch."
+      }
+    ]
+  },
+  {
+    "id": "M2-053",
+    "row": 271,
+    "action": "Rewrite",
+    "copy": "We brought product information into shared services. When engineering added or changed data, every property could use it. Common patterns and components gave the interfaces a consistent way to present it.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "We brought product information into shared services. When engineering added or changed data, every property could use it. Common patterns and components gave the interfaces a consistent way to present it."
+      }
+    ]
+  },
+  {
+    "id": "M2-055",
+    "row": 273,
+    "action": "Move",
+    "copy": "We built landing pages, developed content for organic search, and continued testing acquisition and purchase flows.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M2-058",
+    "row": 276,
+    "action": "Rewrite",
+    "copy": "I designed and built the dentist-search interface using the existing patterns and components.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I designed and built the dentist-search interface using the existing patterns and components."
+      }
+    ]
+  },
+  {
+    "id": "M2-060",
+    "row": 278,
+    "action": "Rewrite",
+    "copy": "The platform gained a dentist-search flow built from the same patterns and components as the storefronts.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The platform gained a dentist-search flow built from the same patterns and components as the storefronts."
+      }
+    ]
+  },
+  {
+    "id": "M4-003",
+    "row": 296,
+    "action": "Rewrite",
+    "copy": "I built Hydra to give products on different technology stacks one design language. The work covered reusable interface patterns, front-end components, and brand settings.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I built Hydra to give products on different technology stacks one design language. The work covered reusable interface patterns, front-end components, and brand settings."
+      }
+    ]
+  },
+  {
+    "id": "M4-004",
+    "row": 297,
+    "action": "Rewrite",
+    "copy": "I showed the SVP of Marketing and the CTO where the interfaces had fragmented and proposed a shared system. Their backing gave the work a path across departments.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I showed the SVP of Marketing and the CTO where the interfaces had fragmented and proposed a shared system. Their backing gave the work a path across departments."
+      }
+    ]
+  },
+  {
+    "id": "M4-009",
+    "row": 302,
+    "action": "Rewrite",
+    "copy": "The same action could look different from one part of the product to the next. Teams also had more variants to design, build, and maintain.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The same action could look different from one part of the product to the next. Teams also had more variants to design, build, and maintain."
+      }
+    ]
+  },
+  {
+    "id": "M4-014",
+    "row": 307,
+    "action": "Rewrite",
+    "copy": "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products."
+      }
+    ]
+  },
+  {
+    "id": "M4-015",
+    "row": 308,
+    "action": "Rewrite",
+    "copy": "I kept the changes in the front-end markup. The applications could adopt the shared interface without replacing their functional back-end code.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I kept the changes in the front-end markup. The applications could adopt the shared interface without replacing their functional back-end code."
+      }
+    ]
+  },
+  {
+    "id": "M4-016",
+    "row": 309,
+    "action": "Rewrite",
+    "copy": "Variables controlled color, type, and interface treatment for each brand. The core patterns stayed shared, and applications could take design-system updates independently.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Variables controlled color, type, and interface treatment for each brand. The core patterns stayed shared, and applications could take design-system updates independently."
+      }
+    ]
+  },
+  {
+    "id": "M4-038",
+    "row": 331,
+    "action": "Rewrite",
+    "copy": "Hydra had many heads and one body. The system’s shared patterns served several products and brands.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Hydra had many heads and one body. The system’s shared patterns served several products and brands."
+      }
+    ]
+  },
+  {
+    "id": "M5-003",
+    "row": 335,
+    "action": "Rewrite",
+    "copy": "I led the website and lead-flow redesign with the CEO and SVP of Marketing. The work also put the Hydra design system into the corporate website.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led the website and lead-flow redesign with the CEO and SVP of Marketing. The work also put the Hydra design system into the corporate website."
+      }
+    ]
+  },
+  {
+    "id": "M6-002",
+    "row": 353,
+    "action": "Rewrite",
+    "copy": "What we tested, and why",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "What we tested, and why"
+      }
+    ]
+  },
+  {
+    "id": "M6-003",
+    "row": 354,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M6-004",
+    "row": 355,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M6-005",
+    "row": 356,
+    "action": "Rewrite",
+    "copy": "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results.",
+    "approval": "Approved with edits",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results."
+      }
+    ]
+  },
+  {
+    "id": "M6-008",
+    "row": 359,
+    "action": "Rewrite",
+    "copy": "Hypothesis: imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Hypothesis: imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site."
+      }
+    ]
+  },
+  {
+    "id": "M6-010",
+    "row": 361,
+    "action": "Rewrite",
+    "copy": "Variant 1",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Variant 1"
+      }
+    ]
+  },
+  {
+    "id": "M6-011",
+    "row": 362,
+    "action": "Rewrite",
+    "copy": "Variant 2",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Variant 2"
+      }
+    ]
+  },
+  {
+    "id": "M6-012",
+    "row": 363,
+    "action": "Rewrite",
+    "copy": "Variant 3",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Variant 3"
+      }
+    ]
+  },
+  {
+    "id": "M6-014",
+    "row": 365,
+    "action": "Rewrite",
+    "copy": "Hypothesis: additional product information and a recognizable spokesperson might change customer response.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Hypothesis: additional product information and a recognizable spokesperson might change customer response."
+      }
+    ]
+  },
+  {
+    "id": "M6-016",
+    "row": 367,
+    "action": "Rewrite",
+    "copy": "Variant 1",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Variant 1"
+      }
+    ]
+  },
+  {
+    "id": "M7-001",
+    "row": 369,
+    "action": "Rewrite",
+    "copy": "When nobody can take the call",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "When nobody can take the call"
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "When nobody can take the call"
+      }
+    ]
+  },
+  {
+    "id": "M7-003",
+    "row": 371,
+    "action": "Rewrite",
+    "copy": "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
+      }
+    ]
+  },
+  {
+    "id": "M7-019",
+    "row": 387,
+    "action": "Rewrite",
+    "copy": "Illustrative interaction demo",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/ui/CallCenterDemo.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M8-003",
+    "row": 401,
+    "action": "Rewrite",
+    "copy": "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign."
+      }
+    ]
+  },
+  {
+    "id": "M8-006",
+    "row": 404,
+    "action": "Rewrite",
+    "copy": "I worked with marketing, business analysis, and data teams to build the campaign around the platform’s shared data and reusable content. Campaign managers could manage variants through the system.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I worked with marketing, business analysis, and data teams to build the campaign around the platform’s shared data and reusable content. Campaign managers could manage variants through the system."
+      }
+    ]
+  },
+  {
+    "id": "M9-003",
+    "row": 410,
+    "action": "Rewrite",
+    "copy": "I design workshops around the decision the group needs to make. The work has included customer journeys, product direction, and conversion-testing plans, with people from different disciplines in the room. I prepare the activities and materials so the session can produce something the team can use afterward.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I design workshops around the decision the group needs to make. The work has included customer journeys, product direction, and conversion-testing plans, with people from different disciplines in the room. I prepare the activities and materials so the session can produce something the team can use afterward."
+      }
+    ]
+  },
+  {
+    "id": "M9-004",
+    "row": 411,
+    "action": "Remove",
+    "copy": "",
+    "approval": "Unreviewed",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M10-003",
+    "row": 420,
+    "action": "Rewrite",
+    "copy": "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start."
+      }
+    ]
+  },
+  {
+    "id": "M10-005",
+    "row": 422,
+    "action": "Rewrite",
+    "copy": "The plan has to survive new information. I make the dependencies visible so a change in scope can lead to a new sequence.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The plan has to survive new information. I make the dependencies visible so a change in scope can lead to a new sequence."
+      }
+    ]
+  },
+  {
+    "id": "M10-009",
+    "row": 426,
+    "action": "Move",
+    "copy": "Roadmap Title: A name that is memorable and resonates with the top-level goals if possible. Roadmap Owner: Set accountability and identify a point person for questions about the roadmap. High-Level Goals/Vision: Larger company strategy, vision, or specific goals that the roadmap aligns to. Timeline: Now → Next → Later (note: these are not specific dates, but what should be tackled first). Specific Projects or Initiatives: Project Title / Number Beneficiary Need Business Objectives Team Dependencies",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/ui/CaseStudyModal.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "M10-017",
+    "row": 434,
+    "action": "Rewrite",
+    "copy": "The intended business outcome and how the team will judge success.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The intended business outcome and how the team will judge success."
+      }
+    ]
+  },
+  {
+    "id": "M11-002",
+    "row": 440,
+    "action": "Rewrite",
+    "copy": "A cost-conscious customer persona",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "A cost-conscious customer persona"
+      }
+    ]
+  },
+  {
+    "id": "M11-003",
+    "row": 441,
+    "action": "Rewrite",
+    "copy": "I worked with business intelligence and product marketing on personas for the DentalPlans audience. One was Frugal Francine, representing customers who weighed dental-plan choices around cost and value.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "I worked with business intelligence and product marketing on personas for the DentalPlans audience. One was Frugal Francine, representing customers who weighed dental-plan choices around cost and value."
+      }
+    ]
+  },
+  {
+    "id": "M12-003",
+    "row": 446,
+    "action": "Rewrite",
+    "copy": "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option."
+      }
+    ]
+  },
+  {
+    "id": "M12-005",
+    "row": 448,
+    "action": "Rewrite",
+    "copy": "The campaign challenged the assumption that dental care was out of reach. “WRONG” was the creative device. The design question was whether that provocation could earn attention without making the person feel blamed.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The campaign challenged the assumption that dental care was out of reach. “WRONG” was the creative device. The design question was whether that provocation could earn attention without making the person feel blamed."
+      }
+    ]
+  },
+  {
+    "id": "M12-008",
+    "row": 451,
+    "action": "Rewrite",
+    "copy": "Bold headlines carried the campaign message. The visual variants showed adults of different ages and backgrounds. The landing page and hero versions below were prepared for conversion testing.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "Bold headlines carried the campaign message."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The visual variants showed adults of different ages and backgrounds."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The landing page and hero versions below were prepared for conversion testing."
+      }
+    ]
+  },
+  {
+    "id": "M13-003",
+    "row": 457,
+    "action": "Rewrite",
+    "copy": "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on."
+      }
+    ]
+  },
+  {
+    "id": "M13-007",
+    "row": 461,
+    "action": "Rewrite",
+    "copy": "Yup, It’s That Clear: a direct statement of the campaign’s clarity idea.\nSo Clear, Like It’s Not Even There: a playful expression of subtle appearance.\nOMG, Your Aligner Is Showing: a deliberately provocative concept about visibility.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "A direct statement of the campaign’s clarity idea."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "A playful expression of subtle appearance."
+      },
+      {
+        "file": "lib/data/projects.ts",
+        "text": "A deliberately provocative concept about visibility."
+      }
+    ]
+  },
+  {
+    "id": "M14-004",
+    "row": 467,
+    "action": "Rewrite",
+    "copy": "The marks, palettes, and interface treatments shown here are my work. These variations show the directions explored for the brand.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "lib/data/projects.ts"
+    ],
+    "implementation": [
+      {
+        "file": "lib/data/projects.ts",
+        "text": "The marks, palettes, and interface treatments shown here are my work. These variations show the directions explored for the brand."
+      }
+    ]
+  },
+  {
+    "id": "DEMO-BUSY",
+    "row": 478,
+    "action": "Rewrite",
+    "copy": "Responsive site states DentalPlans.com Shop online High call volume Skip the wait. Explore plans online while the team is unavailable. Keep smiling. Skip the wait. Our team is busy. You can explore plans online. View plans Explore plans Compare plans Find a dentist Illustrative interaction demo Call center Watch the site respond to call-center availability. Auto Ready Busy Closed Busy Example busy state. Highlight 0 Emphasize the areas that change. Header Sitewide banner Hero Auto cycles every 5 seconds. Choose a state to stop.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/ui/CallCenterDemo.tsx"
+    ],
+    "implementation": []
+  },
+  {
+    "id": "DEMO-CLOSED",
+    "row": 479,
+    "action": "Rewrite",
+    "copy": "Responsive site states DentalPlans.com Shop online Call center closed The call center is closed. You can explore plans online. Your next step is online. Explore dental savings plans online. View plans Explore plans Compare plans Find a dentist Illustrative interaction demo Call center Watch the site respond to call-center availability. Auto Ready Busy Closed Closed Example closed state. Highlight 0 Emphasize the areas that change. Header Sitewide banner Hero Auto cycles every 5 seconds. Choose a state to stop.",
+    "approval": "Approved",
+    "status": "Implemented locally",
+    "files": [
+      "components/ui/CallCenterDemo.tsx"
+    ],
+    "implementation": []
+  }
+]

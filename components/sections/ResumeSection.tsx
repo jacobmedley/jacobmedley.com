@@ -5,31 +5,31 @@ import type { CSSProperties } from 'react'
 
 const leadershipLeft = [
   {
-    title: 'AI Product Design',
+    title: "AI product design",
     icon: 'fa-thin fa-brain',
-    body: 'Led experience research and scoping for a conversational assistant in a regulated financial environment, deployed to internal representatives and to customers. Wrote the interaction specification: response timing against Nielsen and Doherty anchors, system status, failure states, and escalation paths.',
+    body: "I led experience research for a conversational assistant serving customers and internal teams. My work defined how it should respond, handle uncertainty, and get a person to the right help.",
   },
   {
-    title: 'Design Systems',
+    title: "Design systems",
     icon: 'fa-thin fa-layer-group',
-    body: 'Built token foundations so brand identity became configuration instead of a build. One system carried five ecommerce properties, with one source of truth for products and providers behind all of them.',
+    body: "I build shared foundations that let teams launch new products and brands without repeating the same design work. One platform supported five branded commerce sites.",
   },
 ]
 
 const leadershipRight = [
   {
-    title: 'Business Outcomes',
+    title: "Business outcomes",
     icon: 'fa-thin fa-chart-line',
-    body: 'Systems work with numbers attached: 47% of company revenue growth in a single measured year, and a 66% reduction in launch time per property.',
+    body: "The commerce platform I led supported five properties. In one measured year, finance credited those properties with 47% of the company’s revenue growth.",
   },
   {
-    title: 'Conversion and Experimentation',
+    title: "Conversion and experimentation",
     icon: 'fa-thin fa-flask',
-    body: 'Ran conversion work as experiments with hypothesis standards and a defined read. Source attribution changed promotion, copy, and messaging by traffic source, down to individual affiliate IDs.',
+    body: "I use research and testing to find where the experience loses people. That has included matching a landing page to the ad that brought someone there, and testing what customers need before they decide to buy.",
   },
 ]
 
-const designLeadershipIntro = 'Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.'
+const designLeadershipIntro = "A customer experience is capped by what the people delivering it can actually do. I follow the customer’s problem back through the teams, tools, and steps behind it. Sometimes the work is a product. Sometimes it is the team or system that needs to exist before the product can work. I have built all three."
 
 type ExperienceRole = {
   title: string
@@ -57,9 +57,9 @@ const experience: ExperienceEntry[] = [
       { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
     ],
     paragraphs: [
-      'I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them. Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 72% year over year on a 6.6% increase in production hours. Output per hour went up about 62% and output per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.',
-      'Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. The function grew from one direct report to two full-time designers and a contractor.',
-      'Owned the company Figma account including contract renewal, through a large influx of product and engineering seats. After the split I kept everything outside the creative team, ran a seat and usage audit, and got Figma reclassified as a company-wide tool rather than a department one, moving a standing administrative load off design. Own the tooling and research budget and propose the headcount the function needs.',
+      "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated.",
+      "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor.",
+      "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs.",
     ],
   },
   {
@@ -68,10 +68,10 @@ const experience: ExperienceEntry[] = [
     tone: 'mutual',
     roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
-      'I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website. Handling retirement and financial account data meant security, compliance, and accuracy governed every decision.',
-      'I reviewed emerging research on LLM behavior and conversational patterns and partnered with a data scientist on the model and data layer. That research identified hallucination risk before it was widely understood. Testing confirmed it: asked for an account balance, the system returned a specific figure and supporting detail. The only compliant answer was to refer the customer to their account manager. I traced the cause to a sample account statement sitting in the training documentation.',
-      'I defined the interaction requirements. Conduct came first, since the assistant stood in for the opening minutes of a service conversation. It had to stay courteous, stay useful, and never dead-end a customer. From there: response-time feedback built on the standard anchors, streaming responses, explicit system status and failure states, escalation into a live service channel or the right department, compliance alerting that flagged exposure in what internal users were sending, and account and chat history summaries so the assistant and the agent both opened with context. I specified ingestion quality as well, since the source corpus arrived as mixed PDFs, documents, spreadsheets, presentations, and raster images, and what an assistant knows is settled before any interface question.',
-      'A subset of the requirements shipped. I secured tracking on the customer-facing assistant. The data showed early customer engagement followed by rapid dropoff correlated with response speed and friction, and internal adoption that stayed low, with representatives citing accuracy and wait.',
+      "I led experience research and scoping for one internally built conversational assistant with two deployments: an internal helper integrated with Salesforce, designed with a service designer, and a public assistant on the main website. Work with retirement and financial account information made accuracy, security, and escalation central to the design.",
+      "I flagged hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response in that situation was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.",
+      "I wrote requirements for response feedback, system status, failures, escalation to human support, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. Conduct mattered: the assistant was taking the opening minutes of a service conversation.",
+      "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.",
     ],
   },
   {
@@ -92,8 +92,8 @@ const experience: ExperienceEntry[] = [
     tone: 'dentalplans',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
-      'The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. Cloning it was the obvious path, so I brought a roadmap instead: token-based theming, scheduled multi-phase promotions, one source of truth for products and providers, and one-button deploys per environment. Launch time for a fully branded property fell from six weeks to two. Five properties ran on it. Two people built and maintained the platform, and four experience designers covered every property on it.',
-      "I led UX, UI, and front-end work across the LAMP stack, including the properties built with product partners. Source attribution meant the page said what the ad promised. Promotion, copy, and messaging changed based on where the visitor came from, down to individual affiliate IDs. In one measured year finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The platform was built and owned outright, with nothing licensed beneath it.",
+      "The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to two. Five properties ran on it.\nI built and maintained the platform with a part-time offshore engineer. Four experience designers covered the properties.",
+      "I led UX, UI, and front-end work across the commerce funnel. Source attribution meant the page said what the ad promised: promotion, copy, and messaging changed by traffic source, down to individual affiliate IDs. In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The company owned the custom platform.",
     ],
   },
   {
@@ -103,27 +103,21 @@ const experience: ExperienceEntry[] = [
     roles: [{ title: 'Senior Digital Designer', period: '2011 to 2015' }],
     paragraphs: [
       'I evaluated the digital signage platforms and designed the integration that connected them. Four Winds Interactive for signage and kiosks, Adobe Scene7 for dynamic media, Aprimo Marketing Studio for campaign operations, with WordPress in the middle as the authoring surface. Learning how each system expected to be fed, then designing a path through all four, was most of the work.',
-      "The wider effort built a 360 degree view of the customer across email, landing pages, and account management, driven by personas rather than by channel. Campaigns had to cover 48 resorts across four seasons and several personas at once, so variant content came out of a central asset library and a shared data layer instead of being rebuilt per property. I owned UX and UI and worked with a PHP engineer, a data engineer, an outside consultant, and marketing managers. The integration had to stay usable for a wide range of content creators and designers, not only for the people who built it.",
+      "Campaign content had to cover 48 resorts, four seasons, and several personas. I owned UX and UI for an approach using a central asset library and shared data, so content variants could be reused across properties. I worked with a PHP engineer, a data engineer, an outside consultant, and the marketing managers who would use it. The publishing tools had to work for people beyond the team that built them.",
     ],
   },
 ]
 
 const expertise = [
-  'Design Thinking', 'Systems Thinking', 'User Experience Design', 'User Interface Design',
-  'Interaction Design', 'Brand & Visual Design', 'Mobile-First & Responsive Design',
-  'UX Roadmapping & Prioritization', 'User Testing', 'Facilitating Workshops',
-  'A/B Testing & Planning', 'Conversion Rate Optimization', 'Wireframing', 'Prototyping',
-  'Accessibility Standards (WCAG)', 'Designing for B2C & B2B', 'Design Systems',
-  'Project Management',
-  'Agile Workflows', 'Writing User Stories & Acceptance Criteria', 'Front-end Development',
-  'HTML and CSS', 'Less and Sass', 'Bootstrap Framework',
+  "Leadership: design practice, hiring, research operations, UX roadmapping, workshop leadership.",
+  "Product: UX research, interaction design, information architecture, usability testing, conversion testing, accessibility and WCAG.",
+  "Systems and craft: design systems, brand and visual design, prototyping, responsive interfaces, front-end development."
 ]
 
 const tools = [
-  'Figma', 'Adobe XD', 'Adobe Creative Suite', 'FigJam', 'Miro', 'Balsamiq', 'Lucidchart',
-  'Adobe Target', 'Optimizely', 'VWO', 'FullStory', 'SessionCam', 'Hotjar',
-  'UserTesting.com', 'Userlytics', 'Google Analytics', 'New Relic', 'Splunk', 'Lighthouse',
-  'ChatGPT', 'VS Code', 'Sublime Text', 'Jira', 'Asana', 'Bitbucket', 'GitHub', 'GitKraken',
+  "Design and collaboration: Figma, FigJam, Adobe Creative Suite, Miro.",
+  "Research and experimentation: FullStory, Hotjar, UserTesting.com, Google Analytics, Optimizely, VWO, Adobe Target.",
+  "Delivery: Jira, Asana, GitHub, VS Code."
 ]
 
 function SkillList({ items }: { items: string[] }) {
@@ -148,13 +142,13 @@ export default function ResumeSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Resume" icon="fa-thin fa-fw fa-list-timeline" />
+          <SectionHeader title="About and experience" icon="fa-thin fa-fw fa-list-timeline" />
 
           <div className="row">
             <div className="col-24">
               <div className="resume-belief">
-                <h3>One belief...</h3>
-                <p className="resume-belief-slogan">There is always a better way, together we will find it.</p>
+                <h3>How I approach the work</h3>
+                <p className="resume-belief-slogan">There is always a better way, together we can find it.</p>
                 <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
               <hr className="solid-center resume-belief-divider" />
@@ -167,18 +161,6 @@ export default function ResumeSection() {
                 ))}
               </ul>
 
-              <div className="mt-12 mb-12">
-                <div className="row text-center">
-                  <div className="col-24">
-                    <hr className="solid-center w-1/4 mx-auto" />
-                    <h2 className="py-4">
-                      &ldquo;With the right team, anything is possible.
-                      <br className="hidden md:block" /> Anything!&rdquo;
-                    </h2>
-                    <hr className="solid-center w-1/4 mx-auto" />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -227,7 +209,10 @@ export default function ResumeSection() {
                   <h3 className="mb-6">Apps &amp; Tools</h3>
                 </div>
                 <div className="col-24">
-                  <SkillList items={tools} />
+                  <details>
+                    <summary>Tools used across these roles</summary>
+                    <SkillList items={tools} />
+                  </details>
                 </div>
               </div>
             </div>

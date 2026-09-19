@@ -7,7 +7,7 @@ import MotionControls from '@/components/ui/MotionControls'
 export const metadata: Metadata = {
   title: 'Jacob Medley, Product & Design Leader',
   description:
-    'Portfolio of Jacob Medley, a Product & Design Leader driving business results through design systems, platform thinking, and research.',
+    'Jacob Medley, product and design leader. Explore work in design leadership, shared commerce platforms, research, and AI product experiences.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

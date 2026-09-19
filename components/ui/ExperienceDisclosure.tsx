@@ -46,13 +46,14 @@ export default function ExperienceDisclosure({ company, header, children }: { co
   }
 
   return (
-    <article className="resume-experience-card" onClick={event => {
+    <article className="resume-experience-card" data-expanded={expanded} onClick={event => {
       if ((event.target as HTMLElement).closest('a,button,input,select,textarea,summary') || window.getSelection()?.toString()) return
       const summary = detailsRef.current?.querySelector('summary')
       summary?.focus({ preventScroll: true })
       summary?.click()
     }}>
       {header}
+      <span className="resume-disclosure-plus" aria-hidden="true" />
     <details ref={detailsRef} className="resume-experience-details" data-expanded={expanded} onToggle={() => {
       // Also support native/scripted activation outside the enhanced click path.
       if (!animationRef.current) {

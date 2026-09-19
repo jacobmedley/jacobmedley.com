@@ -1,5 +1,78 @@
 # Status
 
+## September 19, 2026: Focus and section-divider follow-up, local only
+
+Experience cards now have one softened 2px inset focus border, without the dark
+duplicate summary rectangle or added glow. A shared gradient rule separates the
+outcomes cards from Experience/Expertise using existing fluid spacing tokens.
+No copy changed. See browser-refinements-20260919.md for verification and scope.
+
+Build/types, 288 source-image hashes/104 references, diff check, five keyboard
+disclosures and desktop1376/mobile375 layout checks passed. Screenshots inspected.
+Only visual-system.css, ResumeSection.tsx and the two handoff documents changed.
+No new full cross-browser or accessibility audit. No unrelated improvements.
+
+Local codex/main-site-wrapup-20260919 in X:\website-release-20260919; final commit
+recorded in Genesis. Clean after checkpoint, own lock released. Preview8090 now
+runs as PID11136. Original dirty checkout and other worktrees preserved.
+Rollback6771ef3; no push/merge/deploy; production stays v12.155 / 7bcb9e0.
+Leadership placement and dedicated case-study work remain deferred. No added spend.
+
+## September 19, 2026: Browser refinements 1–8 complete locally
+
+B59 applies Jacob's annotated experience and education changes. All five
+experience cards now have a rule and chevron beside More/Less, plus a top-right
+plus rotating into an X during expansion. Column spacing and mobile indicator
+clearance are corrected. Apps & Tools is visible with its historical qualifier.
+Developing people is removed from the page; its B58 draft is preserved while
+Jacob rethinks leadership content and placement. B30 is deferred for placement.
+
+Education cards use equal responsive columns, tighter card-only padding and
+title/source grouping with narrow-card stacking. The dark-on-dark Education
+title bug was reproduced and fixed at its legacy layered-important source.
+The heading now remains light in both scrolled states. See
+browser-refinements-20260919.md for all annotation mappings, breakpoint choices,
+screenshots, verification and limitations.
+
+Final build/types, authored ESLint, image verification (288 hashes/104 references),
+diff check, five keyboard disclosures, normal/reduced motion, repeated toggles,
+and 320/375/768/1280/1376px layout checks passed. Browser checks caught two legacy
+CSS overrides, both corrected and rechecked. No full accessibility certification.
+
+Local only on codex/main-site-wrapup-20260919 in X:\website-release-20260919;
+no push/merge/deploy. Production stays v12.155 / 7bcb9e0. Local rollback c6b559b.
+Eight scoped files changed; clean after commit, own lock released. Final commit
+recorded in Genesis. Static preview8090/PID10348 remains running. Original dirty
+checkout and other worktrees untouched. No extra spending or local inference.
+
+## September 19, 2026: Approved leadership passage implemented locally
+
+Jacob supplied his coaching practice and approved the edited Developing people
+passage verbatim. B58 now renders all four paragraphs in About and experience,
+between Expertise and Apps & Tools, alongside the experience timeline on desktop.
+B30's main-site evidence gap is resolved. A specific mentee outcome is optional
+for a future longer story; none is claimed in this approved passage.
+
+Changed only ResumeSection.tsx, copy-register.md, and this status record.
+All four component paragraphs match the register exactly. Scoped ESLint,
+production build/type checks, 288 source-image hashes, 104 image references, and
+git diff --check pass. Browser inspection at 1440 and 375px shows the complete
+passage with no horizontal overflow. Saved and inspected screenshots are
+09-developing-people-desktop.png and 10-developing-people-mobile.png in this task's
+local artifact folder. Browser skill verification checked presentation without
+changing the approved language or introducing new styling.
+
+Local checkpoint on codex/main-site-wrapup-20260919, based on f2a6f57. No push,
+merge, or deployment in this follow-up; production remains v12.155 / 7bcb9e0.
+Local rollback is f2a6f57a91cfef79cfc7a6cc8676b1846eb03070. Working tree clean
+after checkpoint; own lock released. Preview8090 now runs as PID19888 from
+X:\website-release-20260919\out after replacing this task's verified PID9212.
+Other worktrees and services preserved. Final local commit ID recorded in Genesis.
+Publication remains a separate decision. No added spending or local inference.
+Exchange checked 02:31:22 UTC, fingerprint
+d3a84df381cf48ab20575a96a6eb5b639d7d21c90f613c671e5c68f76fd7ad89;
+only this session's approval record was added since intake. No peer awareness claimed.
+
 ## September 19, 2026: LIVE — v12.155, production 7bcb9e0
 
 PR #10 merged; Ubuntu Node 20 CI passed, and deployment 35415309921 succeeded

@@ -78,12 +78,10 @@ export default function KineticHeroIdentity() {
       const name = find('.hero-name')
       const words = [...root.querySelectorAll<HTMLElement>('.kinetic-word')]
       const size = parseFloat(getComputedStyle(stage).fontSize)
-      // Reveal with a tight aperture, then add the original resting space.
-      // The remaining .7em belongs outside the braces, beside the + Design tail.
-      const revealGap = size * .08
+      // Open directly to the same roomy aperture used by the settled identity.
+      // This keeps both reveals from visually stopping at the text edges.
       const widths = words.map(word => word.scrollWidth + size * 1.6)
       const nameTextWidth = name.getBoundingClientRect().width
-      const nameWidth = Math.min(nameTextWidth + revealGap, root.clientWidth - size)
       const nameRestWidth = Math.min(nameTextWidth + size * 1.6, root.clientWidth - size)
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
@@ -101,7 +99,7 @@ export default function KineticHeroIdentity() {
       track(find('.h-jakeicon'), [pose(0, 'translateY(-12px)', 0), pose(540, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
       // The mask reads the SAME animated property as the brace width every frame.
       // Only its release is discrete; there is no separately interpolated mask.
-      const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameWidth]]
+      const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameRestWidth]]
       const masked = (node: HTMLElement, start: number, end: number) => {
         const connected = 'inset(0px calc((100% - var(--hero-aperture)) / 2))'
         const cues: Cue[] = [[0,{clipPath:start === 0 ? connected : 'inset(0px 50%)',easing:'steps(1,end)'}]]
@@ -115,7 +113,7 @@ export default function KineticHeroIdentity() {
       widthCues.push([DURATION,{width:`${widths[FINAL_ROLE]}px`}])
       track(find('.kinetic-bracketed'),widthCues)
       const productWidth = widths[0]-size*.7
-      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,words[0].scrollWidth+revealGap]]
+      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,productWidth]]
       const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.nameRest,nameRestWidth],[FIGMA.landed,nameRestWidth,SNAP],...productOpening,[FIGMA.productRest,productWidth]]
       const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{'--hero-aperture':`${width}px`,...(easing ? {easing} : {})}])
       CHANGES.forEach((time,i)=>mechanismWidth.push([time,{'--hero-aperture':`${widths[i%5]-size*.7}px`}],[time+280,{'--hero-aperture':`${widths[(i+1)%5]-size*.7}px`}]))

@@ -1,5 +1,42 @@
 # Status
 
+## September 19, 2026: Hero and modal motion refinements complete locally
+
+Annotations 4 and 9 are implemented on an isolated branch. Jacob Medley and
+Product now reveal directly to their settled roomy brace apertures. Desktop
+case-study modals use a restrained camera retreat/refocus with a symmetric close;
+mobile uses a full-width sheet from a 12px safe top gap to the dynamic viewport
+bottom, covering the fixed menu. Its footer measures and matches the real 71px
+mobile nav footprint, with header X, footer Close and handle-only downward swipe.
+Jacob's corrected over-menu direction supersedes the earlier above-menu brief.
+
+Radix focus trap/return, Escape, outside click, background hiding, body scroll
+lock/restoration, internal modal scrolling and unchanged URL/history behavior
+pass. Reduced motion removes camera/dialog movement. Intent loading is bounded to
+three assets after pointer/keyboard intent and zero modal evidence assets before
+intent; native lazy images now have loading, error and Retry states. No copy,
+case-study narrative, parent foundation selector or B edit changed.
+
+Lockfile-exact Next 15.5.25 on bundled Node 24.19.0 passed TypeScript, authored
+lint, production export, 288 image hashes and 104 active references. The focused
+Chromium suite passed hero dimensions, desktop modal lifecycle, rapid study
+switching, keyboard trap/return, 375x812 touch/swipe, 320x568/360x640/390x664
+short/narrow sheets, delayed/failed/retried media and reduced motion. Screenshots
+were inspected. Safari/iOS browser chrome, physical safe areas, VoiceOver, other
+engines/devices and the final criterion-by-criterion WCAG 2.0 A/AA evaluation
+remain unverified; no certification is claimed.
+
+Local branch `codex/motion-modal-refinement-20260919` from baseline `909ea22`;
+checkpoint commit follows this STATUS-last update and its exact ID is recorded in
+Genesis. Five scoped source/report/test files plus STATUS changed. Parent foundation
+checkpoint `e342d3d` edits separate CSS/assets; integrated hero CTA and complete
+journey testing remain coordinator-owned. Preview 8092/PID44956 serves this task's
+`out/`; parent preview8090 is untouched. Own lock remains held through commit and
+will be released after the checkpoint. No push, merge, deploy or production
+change; production stays v12.160 / `1325c6b`, rollback `f2a6f57`. No added
+spending, local inference, model download or reset. Full evidence:
+`docs/motion-modal-refinement-20260919.md`.
+
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 
 Jacob explicitly requested publication. PR #11 merged as

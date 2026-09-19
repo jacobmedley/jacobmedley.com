@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useCallback, useRef, type ReactNode } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
@@ -9,6 +9,7 @@ import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
 import CallCenterDemo from './CallCenterDemo'
 import {
+  projects,
   type Project,
   type ProjectMedia,
   type ProjectBadge,
@@ -78,6 +79,84 @@ function projectIcon(icon: string) {
   return alternatives[icon] ?? icon
 }
 
+const intentPreloadCache = new Set<string>()
+const intentProjectCache = new Set<string>()
+let intentListenerUsers = 0
+
+function preloadCaseStudyAssets(projectId: string) {
+  if (intentProjectCache.has(projectId)) return
+  intentProjectCache.add(projectId)
+  const project = projects.find((candidate) => candidate.id === projectId)
+  if (!project) return
+  const sources: string[] = []
+  const visit = (value: unknown) => {
+    if (!value || sources.length >= 3) return
+    if (Array.isArray(value)) {
+      value.forEach(visit)
+      return
+    }
+    if (typeof value !== 'object') return
+    const record = value as Record<string, unknown>
+    if (typeof record.src === 'string' && !sources.includes(record.src)) sources.push(record.src)
+    Object.values(record).forEach(visit)
+  }
+  visit(project.heroBrandImage)
+  visit(project.brief)
+  visit(project.media)
+  sources.slice(0, 3).forEach((src) => {
+    if (intentPreloadCache.has(src)) return
+    intentPreloadCache.add(src)
+    const image = new window.Image()
+    image.decoding = 'async'
+    image.src = src
+  })
+}
+
+function warmCaseStudyFromTarget(target: EventTarget | null) {
+  if (!(target instanceof Element)) return
+  const trigger = target.closest<HTMLElement>('[data-modal-trigger]')
+  if (trigger?.dataset.modalTrigger) preloadCaseStudyAssets(trigger.dataset.modalTrigger)
+}
+
+const onCaseStudyPointerIntent = (event: PointerEvent) => warmCaseStudyFromTarget(event.target)
+const onCaseStudyFocusIntent = (event: FocusEvent) => warmCaseStudyFromTarget(event.target)
+
+function ModalStudyImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  const [attempt, setAttempt] = useState(0)
+  const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading')
+  const retrySrc = attempt === 0 ? src : `${src}${src.includes('?') ? '&' : '?'}retry=${attempt}`
+  return (
+    <span className="modal-image-frame" data-load-state={state} aria-busy={state === 'loading'}>
+      <span className="modal-image-loading" aria-hidden="true">Loading image…</span>
+      {/* eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset */}
+      <img
+        loading="lazy"
+        decoding="async"
+        className={className}
+        src={retrySrc}
+        alt={alt}
+        onLoad={() => setState('loaded')}
+        onError={() => setState('error')}
+      />
+      {state === 'error' && (
+        <span className="modal-image-error" role="alert">
+          Image unavailable.
+          <button
+            type="button"
+            className="btn btn-outline-prime-dark rounded-full"
+            onClick={() => {
+              setState('loading')
+              setAttempt((value) => value + 1)
+            }}
+          >
+            Retry
+          </button>
+        </span>
+      )}
+    </span>
+  )
+}
+
 /**
  * Legacy Bootstrap modal (components/modal-*.html): fullscreen dialog
  * with container-width content, blur behind the modal viewport, fade +
@@ -87,7 +166,110 @@ function projectIcon(icon: string) {
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   const returnFocusRef = useRef<HTMLElement | null>(null)
+  const modalRef = useRef<HTMLDivElement | null>(null)
+  const wasOpenRef = useRef(false)
+  const swipeRef = useRef({ pointerId: -1, startY: 0, currentY: 0, startTime: 0 })
   const featured = !!project
+
+  useEffect(() => {
+    intentListenerUsers += 1
+    if (intentListenerUsers === 1) {
+      document.addEventListener('pointerover', onCaseStudyPointerIntent, { passive: true })
+      document.addEventListener('pointerdown', onCaseStudyPointerIntent, { passive: true })
+      document.addEventListener('focusin', onCaseStudyFocusIntent)
+    }
+    return () => {
+      intentListenerUsers -= 1
+      if (intentListenerUsers === 0) {
+        document.removeEventListener('pointerover', onCaseStudyPointerIntent)
+        document.removeEventListener('pointerdown', onCaseStudyPointerIntent)
+        document.removeEventListener('focusin', onCaseStudyFocusIntent)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    let cameraTimer = 0
+    const body = document.body
+    if (open) {
+      body.dataset.modalCamera = 'open'
+      wasOpenRef.current = true
+    } else if (wasOpenRef.current) {
+      body.dataset.modalCamera = 'closing'
+      cameraTimer = window.setTimeout(() => {
+        if (!document.querySelector(".modal[data-state='open']")) delete body.dataset.modalCamera
+      }, 340)
+      wasOpenRef.current = false
+    }
+    return () => window.clearTimeout(cameraTimer)
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    let frame = 0
+    let observer: ResizeObserver | undefined
+    const connect = () => {
+      const modal = modalRef.current
+      if (!modal) {
+        frame = requestAnimationFrame(connect)
+        return
+      }
+      const navigation = document.querySelector<HTMLElement>('#the-menu')
+      const measureNavigation = () => {
+        const height = navigation?.offsetHeight ?? 0
+        modal.style.setProperty('--modal-mobile-footer-height', `${Math.ceil(height)}px`)
+      }
+      measureNavigation()
+      if (navigation) {
+        observer = new ResizeObserver(measureNavigation)
+        observer.observe(navigation)
+      }
+    }
+    connect()
+    return () => {
+      cancelAnimationFrame(frame)
+      observer?.disconnect()
+    }
+  }, [open])
+
+  const setSwipeOffset = (value: number) => {
+    modalRef.current?.querySelector<HTMLElement>('.modal-content')?.style.setProperty('--modal-swipe-y', `${Math.max(0, value)}px`)
+  }
+  const resetSwipe = () => {
+    const content = modalRef.current?.querySelector<HTMLElement>('.modal-content')
+    if (!content) return
+    content.dataset.swipeSettling = 'true'
+    setSwipeOffset(0)
+    window.setTimeout(() => { delete content.dataset.swipeSettling }, 260)
+  }
+  const onSwipePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.button !== 0 || !matchMedia('(max-width: 767px)').matches) return
+    swipeRef.current = { pointerId: event.pointerId, startY: event.clientY, currentY: event.clientY, startTime: performance.now() }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+  const onSwipePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    swipeRef.current.currentY = event.clientY
+    setSwipeOffset(event.clientY - swipeRef.current.startY)
+  }
+  const finishSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    const distance = Math.max(0, swipeRef.current.currentY - swipeRef.current.startY)
+    const duration = Math.max(1, performance.now() - swipeRef.current.startTime)
+    const velocity = distance / duration
+    swipeRef.current.pointerId = -1
+    if (distance > 88 || (distance > 32 && velocity > .65)) {
+      onOpenChange(false)
+      window.setTimeout(() => setSwipeOffset(0), 340)
+    } else {
+      resetSwipe()
+    }
+  }
+  const cancelSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    swipeRef.current.pointerId = -1
+    resetSwipe()
+  }
   // Paint outside the native scroll viewport so its transparent gutter cannot
   // crop the artwork. Keep this one field aligned with the scrolling intro.
   const bindFeaturedBody = useCallback((body: HTMLDivElement | null) => {
@@ -117,6 +299,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
       <Dialog.Portal>
         <Dialog.Overlay className="modal-backdrop" />
         <Dialog.Content
+          ref={modalRef}
           aria-describedby={undefined}
           className="modal"
           onOpenAutoFocus={() => {
@@ -134,6 +317,14 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
             <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`, project && !project.thumb && !ORIGINAL_FEATURED_IDS.has(project.id) && 'modal-theme-thinking')} data-project-id={project?.id}>
+              <div
+                className="modal-sheet-grabber"
+                aria-hidden="true"
+                onPointerDown={onSwipePointerDown}
+                onPointerMove={onSwipePointerMove}
+                onPointerUp={finishSwipe}
+                onPointerCancel={cancelSwipe}
+              ><span /></div>
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
                   <ModalHeroField project={project} />
@@ -251,8 +442,7 @@ function BriefFollowup({ project }: { project: Project }) {
       {image.src.endsWith('.gif') ? (
         <AnimatedStudyImage src={image.src} alt={image.alt} />
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset
-        <img loading="lazy" className="img-fluid" src={image.src} alt={image.alt} />
+        <ModalStudyImage className="img-fluid" src={image.src} alt={image.alt} />
       )}
     </div>
   )
@@ -354,8 +544,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         // reposition it within the column.
         <div className="text-center">
           <figure className="figure">
-            <img
-              loading="lazy"
+            <ModalStudyImage
               className={cn(
                 'figure-img img-fluid',
                 widthClass,
@@ -370,8 +559,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         </div>
       ) : (
         <p className="text-center">
-          <img
-            loading="lazy"
+          <ModalStudyImage
             className={cn(
               'img-fluid',
               widthClass,
@@ -448,8 +636,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               <i className="fa-thin fa-desktop fa-2x" aria-hidden="true" />
             </p>
             <p>
-              <img
-                loading="lazy"
+              <ModalStudyImage
                 className="img-fluid shadow-[var(--shadow-bs-lg)]"
                 src={block.desktop.src}
                 alt={block.desktop.alt}
@@ -461,8 +648,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               <i className="fa-thin fa-mobile fa-2x" aria-hidden="true" />
             </p>
             <p className="text-center">
-              <img
-                loading="lazy"
+              <ModalStudyImage
                 className="img-fluid shadow-[var(--shadow-bs-lg)]"
                 src={block.mobile.src}
                 alt={block.mobile.alt}
@@ -483,7 +669,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               )}
               <div className={`col-24 col-lg-${block.cols[i] ?? 12}`}>
                 <p>
-                  <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
+                  <ModalStudyImage className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
                 </p>
               </div>
             </Fragment>

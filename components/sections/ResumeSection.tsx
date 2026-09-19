@@ -114,14 +114,6 @@ const expertise = [
   "Systems and craft: design systems, brand and visual design, prototyping, responsive interfaces, front-end development."
 ]
 
-// B58: Jacob-approved coaching practice. Preserve the wording in the copy register.
-const developingPeople = [
-  "I walk beside junior staff as they learn to exercise their own judgment. That can mean working through a conflict or sitting together with a design exercise. When someone gets stuck, I start with questions: How would you solve this? What are you depending on? What part can you move forward now?",
-  "I make their authority explicit. They can assess the risk and make decisions without bringing every next step back for permission. My responsibility is to stay available, work through obstacles beyond their control, and hold others accountable for commitments the team depends on.",
-  "People need time to suck at something new. I encourage my reports to stretch beyond what they already know, with room to make mistakes and talk openly about them.",
-  "Ownership continues after the decision. We review the outcome together and follow through on what we learn. That includes changing the conditions behind a mistake and understanding good results well enough to repeat them.",
-]
-
 const tools = [
   "Design and collaboration: Figma, FigJam, Adobe Creative Suite, Miro.",
   "Research and experimentation: FullStory, Hotjar, UserTesting.com, Google Analytics, Optimizely, VWO, Adobe Target.",
@@ -211,21 +203,14 @@ export default function ResumeSection() {
                   <SkillList items={expertise} />
                 </div>
               </div>
-              <section aria-labelledby="resume-developing-people-heading">
-                <hr className="solid-center my-12" />
-                <h3 id="resume-developing-people-heading" className="mb-6">Developing people</h3>
-                {developingPeople.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-              </section>
               <div className="row">
                 <div className="col-24">
                   <hr className="solid-center my-12" />
                   <h3 className="mb-6">Apps &amp; Tools</h3>
                 </div>
                 <div className="col-24">
-                  <details>
-                    <summary>Tools used across these roles</summary>
-                    <SkillList items={tools} />
-                  </details>
+                  <p className="resume-tools-context">Tools used across these roles</p>
+                  <SkillList items={tools} />
                 </div>
               </div>
             </div>

@@ -75,8 +75,11 @@ export default function EducationSection() {
           <div className="education-mosaic">
             {educationItems.map((item, i) => (
               <article key={item.title} className={`education-card education-tone-${(i * 3 + 1) % 5}`}>
-                <header><i className={item.icon} aria-hidden="true" /><h4>{item.title}</h4></header>
-                <p>{item.source}</p>
+                <header>
+                  <i className={item.icon} aria-hidden="true" />
+                  <h4>{item.title}</h4>
+                  <p>{item.source}</p>
+                </header>
                 <hr className="solid-center" />
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   View <i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" />

@@ -75,8 +75,17 @@
 .resume-experience-content { order: 0; overflow: hidden; }
 .resume-experience-details:not([open]) > .resume-experience-content { display: none; }
 .resume-experience-copy { padding-top: .65rem; }
-.resume-disclosure-plus { display: inline-block; flex: none; font: 300 1.7rem/1 ui-monospace, monospace; transition: rotate 360ms cubic-bezier(.22,.75,.2,1); }
-.resume-experience-details[data-expanded='true'] .resume-disclosure-plus { rotate: 45deg; }
+.resume-disclosure-plus {
+  position: absolute; top: 1rem; right: 1rem; width: 1.25rem; height: 1.25rem;
+  color: var(--resume-ink); pointer-events: none; rotate: 0deg;
+  transition: rotate 540ms cubic-bezier(.4,0,.7,.2);
+}
+.resume-disclosure-plus::before, .resume-disclosure-plus::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 1rem; height: 1px;
+  background: currentColor; transform: translate(-50%, -50%);
+}
+.resume-disclosure-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+.resume-experience-card[data-expanded='true'] .resume-disclosure-plus { rotate: 225deg; transition-duration: 620ms; transition-timing-function: cubic-bezier(.16,1,.3,1); }
 .resume-leadership-grid { gap: 1rem; }
 .resume-leadership-grid > li {
   --resume-ink: #4f3864; --value-tint: #f0e9f6;
@@ -174,7 +183,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-leadership-grid h4 { margin: 0; color: var(--resume-ink); font-size: clamp(1.2rem, 1.5vw, 1.5rem); font-weight: 500; line-height: 1.25; }
 .resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
 .resume-leadership-grid p { margin: 0; }
-.row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; }
+.row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: start; }
 .resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
 .resume-timeline::before { content: none; }
 .resume-timeline-entry { padding-left: 0; }
@@ -184,7 +193,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-experience-header { grid-template-columns: 3rem minmax(0,1fr); gap: var(--nested-icon-gap); padding: var(--card-pad-y) var(--card-pad-x) 1rem; align-items: start; }
 .resume-company-mark { display: grid; width: 3rem; height: 3rem; place-items: center; }
 .resume-brand-logo { width: 100%; height: 100%; }
-.resume-job-heading { min-width: 0; padding-right: 1rem; }
+.resume-job-heading { min-width: 0; padding-right: 1.5rem; }
 .resume-experience-company { margin-bottom: .55rem; }
 .resume-experience-roles { gap: .45rem; }
 .resume-experience-roles p { grid-template-columns: minmax(0,1fr); gap: .2rem; }
@@ -193,30 +202,46 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-experience-roles .resume-prior-role { position: relative; padding-left: 1.25rem; margin-top: .35rem; }
 .resume-prior-role::before { content: ''; position: absolute; top: .05rem; left: .2rem; width: .65rem; height: .65rem; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; opacity: .4; }
 .resume-experience-roles .resume-prior-role strong { font-size: .95rem; }
-.resume-experience-details, .resume-experience-details summary { position: static; }
-.resume-experience-details summary { padding: .75rem var(--card-pad-x) 1.15rem; }
-.resume-experience-details summary::before { content: none; }
+.resume-experience-details { position: static; }
+.resume-experience-details summary { position: relative; justify-content: flex-start; gap: .6rem; padding: .9rem var(--card-pad-x) 1rem; }
+.resume-experience-details summary::before { content: ''; inset-inline: var(--card-pad-x); opacity: .35; }
 .resume-experience-details summary:hover { background: transparent; }
-.resume-experience-details .resume-disclosure-chevron { position: absolute; top: 1rem; right: 1rem; width: 1.5rem; text-align: center; font-size: 1rem; transition: rotate 620ms cubic-bezier(.16,1,.3,1); }
+.resume-experience-details .resume-disclosure-chevron { position: static; width: .85rem; text-align: center; font-size: .8rem; transition: rotate 620ms cubic-bezier(.16,1,.3,1); }
 .resume-experience-details[data-expanded='true'] .resume-disclosure-chevron { rotate: 180deg; }
 .resume-experience-details[data-expanded='false'] .resume-disclosure-chevron { rotate: 0deg; }
 .resume-experience-copy { padding: .5rem var(--card-pad-x) 1rem; }
-@media (min-width: 992px) { .row.resume-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,5vw,5rem); } .resume-expertise .fa-ul { columns: 2; column-gap: 2rem; } .resume-expertise li { break-inside: avoid; } }
+.resume-expertise .fa-ul { columns: 1; }
+.resume-expertise li + li { margin-top: .8rem; }
+.resume-tools-context { margin-bottom: 1rem; }
+@media (min-width: 992px) { .row.resume-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,4vw,4rem); } }
 @media (max-width: 575px) { .resume-experience-header { grid-template-columns: 2.25rem minmax(0,1fr); gap: 1rem; } .resume-company-mark { width: 2.25rem; height: 2.25rem; } }
 
 /* Stable varied tones and spans keep reading order intact as the mosaic restacks. */
-.education-mosaic { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.2rem; }
-.education-card { --edu-tone: #dfc4bf; display: flex; flex-direction: column; position: relative; gap: 1rem; min-width: 0; padding: var(--card-pad-y) var(--card-pad-x); color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone)); }
+.education-mosaic { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.2rem; align-items: start; }
+.education-card {
+  --edu-tone: #dfc4bf; --education-pad-top: clamp(1.4rem, 2.25vw, 1.9375rem);
+  container-type: inline-size; display: flex; flex-direction: column; position: relative;
+  gap: 1rem; min-width: 0; padding: var(--education-pad-top) var(--card-pad-x) 1.25rem;
+  color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone));
+}
 .education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
-.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: 1rem; align-items: start; }
-.education-card header > i { font-size: 2rem; line-height: 1.2; }
+.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; }
+.education-card header > i { grid-row: 1 / 3; font-size: 2rem; line-height: 1.2; }
+.education-card header > :is(h4,p) { grid-column: 2; }
 .education-card h4 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
 .education-card h4, .education-card p { overflow-wrap: anywhere; }
 .education-card p { margin: 0; }
-.education-card hr { width: 100%; margin: auto 0 0; }
+.education-card hr { width: 100%; margin: 0; }
 .education-card a { align-self: start; color: inherit; padding: .3rem 0; }
-@media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } .education-card:first-child { grid-column: span 2; } }
-@media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(12,minmax(0,1fr)); } .education-card { grid-column: span 3; } .education-card:first-child { grid-column: span 6; } .education-card:nth-child(n+4):nth-child(-n+6) { grid-column: span 4; } }
+@container (max-width: 18rem) {
+  .education-card header > i { grid-row: 1; }
+  .education-card header > p { grid-column: 1 / -1; }
+}
+@media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+/* Dormant compact-header rules must not turn a dark-section title dark on scroll. */
+#education .section-heading-title,
+#education .section-heading-reserve.is-compact .section-heading-title { color: #f5edf0 !important; }
 
 /* The same warm geometry runs in both surfaces; independent periods avoid lockstep. */
 .modal-theme-thinking, .modal-theme-thinking .modal-bleed-field, .modal-theme-thinking .modal-featured-hero { --featured-light: #f8f7ee; --featured-mid: #e7dfb9; --featured-dark: #d6ca8e; --featured-ink: #695512; }
@@ -302,9 +327,8 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
   .resume-experience-header { display: flow-root; }
   .resume-company-mark { float: left; margin: 0 1rem .5rem 0; }
   .resume-job-heading { padding-right: 0; }
+  .resume-experience-company { padding-right: 1.5rem; }
   .resume-experience-roles { clear: both; padding-top: .35rem; }
-  .education-card header { display: flow-root; }
-  .education-card header > i { float: left; margin: 0 .65rem .3rem 0; }
 }
 
 /* Bare section icons own one inset token; text scales it and mobile removes it. */

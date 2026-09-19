@@ -1,7 +1,7 @@
 # Copy Register
 
-**Status:** edits B0 through B58. All APPLIED unless marked otherwise.
-B58 records approved leadership copy; its local implementation is not yet live.
+**Status:** edits B0 through B59. All APPLIED unless marked otherwise.
+B58 preserves the leadership draft; B59 removes its placement pending Jacob's review.
 B56 records the full local copy pass; B57 limits this release to the main site.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
@@ -965,8 +965,8 @@ adjective, and repeated "design and development" within one sentence.
 
 Nothing else in the paragraph changed. **Applied.**
 
-## B30. Mentorship and team development [RESOLVED FOR MAIN SITE, see B58]
-**Surface:** approved Developing people passage, implemented under B58.
+## B30. Mentorship and team development [PLACEMENT DEFERRED, see B59]
+**Surface:** Developing people draft preserved under B58, removed from the page under B59.
 
 Jacob supplied his coaching practice and approved the edited passage on September
 19 UTC. This resolves the main-site source gap. A specific mentee's later outcome
@@ -1982,7 +1982,7 @@ and remaining copy decisions belong in `main-site-wrapup-20260919.md`.
 Published September 19 UTC through PR #10, deployment commit `7bcb9e0`, v12.155.
 B56's dedicated-page work remains local and deferred. Main-site B30 remains open.
 
-## B58. Developing people [APPLIED LOCALLY]
+## B58. Developing people [DRAFT PRESERVED; PLACEMENT REMOVED BY B59]
 
 Source: Jacob's first-person account of servant leadership, coaching junior staff,
 autonomy, risk, and accountability in task 01a0b75f, followed by explicit approval
@@ -2002,3 +2002,21 @@ I make their authority explicit. They can assess the risk and make decisions wit
 People need time to suck at something new. I encourage my reports to stretch beyond what they already know, with room to make mistakes and talk openly about them.
 
 Ownership continues after the decision. We review the outcome together and follow through on what we learn. That includes changing the conditions behind a mistake and understanding good results well enough to repeat them.
+
+## B59. September 19 browser annotations 1–8 [APPLIED LOCALLY]
+
+Source: Jacob's eight comments on the local resume and education preview.
+Remove Developing people from the page while Jacob rethinks the leadership
+content and its placement. Preserve B58 verbatim as a draft; do not rewrite it.
+Show Apps & Tools and all three existing grouped tool lists without a disclosure.
+Keep the existing qualification, `Tools used across these roles`, as visible copy.
+No proficiency claim, credential wording, external URL, or experience fact changes.
+
+Shared experience disclosures: a rule above More/Less, an adjacent directional
+chevron, and a top-right plus that spins to an X as the content opens. Apply to
+all five experience cards, retain native summary semantics and reduced motion.
+Improve spacing before the experience columns and readability of grouped lists.
+Education uses tighter card padding, source directly beneath the title when the
+card allows, and stacked content on narrow cards. Correct the heading's dark
+color on the dark education background, including after scrolling past the top.
+This remains a local preview pass; no merge, push, or deploy is requested here.

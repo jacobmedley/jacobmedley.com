@@ -1,5 +1,32 @@
 # Status
 
+## September 19, 2026: Browser refinements 1–8 complete locally
+
+B59 applies Jacob's annotated experience and education changes. All five
+experience cards now have a rule and chevron beside More/Less, plus a top-right
+plus rotating into an X during expansion. Column spacing and mobile indicator
+clearance are corrected. Apps & Tools is visible with its historical qualifier.
+Developing people is removed from the page; its B58 draft is preserved while
+Jacob rethinks leadership content and placement. B30 is deferred for placement.
+
+Education cards use equal responsive columns, tighter card-only padding and
+title/source grouping with narrow-card stacking. The dark-on-dark Education
+title bug was reproduced and fixed at its legacy layered-important source.
+The heading now remains light in both scrolled states. See
+browser-refinements-20260919.md for all annotation mappings, breakpoint choices,
+screenshots, verification and limitations.
+
+Final build/types, authored ESLint, image verification (288 hashes/104 references),
+diff check, five keyboard disclosures, normal/reduced motion, repeated toggles,
+and 320/375/768/1280/1376px layout checks passed. Browser checks caught two legacy
+CSS overrides, both corrected and rechecked. No full accessibility certification.
+
+Local only on codex/main-site-wrapup-20260919 in X:\website-release-20260919;
+no push/merge/deploy. Production stays v12.155 / 7bcb9e0. Local rollback c6b559b.
+Eight scoped files changed; clean after commit, own lock released. Final commit
+recorded in Genesis. Static preview8090/PID10348 remains running. Original dirty
+checkout and other worktrees untouched. No extra spending or local inference.
+
 ## September 19, 2026: Approved leadership passage implemented locally
 
 Jacob supplied his coaching practice and approved the edited Developing people

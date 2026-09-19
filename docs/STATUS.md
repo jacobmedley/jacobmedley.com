@@ -1,5 +1,38 @@
 # Status
 
+## September 19, 2026: Local foundation complete; three refinement tasks created
+
+Jacob's new ten-annotation program is coordinated in
+experience-program-20260919.md. Foundation annotations1,2,3,5,7,8 are complete:
+education22px top/sides16px bottom with mobile icon stacking and compact footer;
+one smooth3px employer-toned focus border; stacked hero action; full section-rule
+spacing; container-based full-width featured CTA; supplied Hydra SVG. No copy B
+edit applied or skipped. No broader material redesign was rolled into production.
+
+Production build/type/lint/export passed,288 image hashes/104 references passed,
+diff check passed. In-app checks at320/375/599/600/614/768/1024/1376px found no
+horizontal overflow. Keyboard disclosure, contextual focus, reduced motion and
+forced colors checked; six screenshots inspected. Full WCAG2.0 A+AA evaluation
+is deliberately post-integration, not claimed complete. Detailed evidence and
+limitations are in site-making-of-evidence-20260919.md.
+
+Two implementation tasks and one editorial task were created in isolated worktrees.
+Visual task01a0ba6e-ce13-7701-a6a9-206e048245ea has three options awaiting Jacob's
+selection. Motion task01a0ba6e-e37a-7ee3-bff1-63b5baf86fa5 is testing its first
+implementation. Editorial task01a0ba6e-f542-77a3-b0f5-c8172fbdf40a completed its
+39-row review at4015702: preserve published copy, with four mentorship bullets
+and one heading change proposed as B60 pending approval. No integration yet.
+Editorial's Genesis helper failed to record its checkpoint; parent carries it
+into the coordination update. Visual task reports missing app-brand kit assets.
+
+Own five-file checkpoint: app/visual-system.css, supplied hydra-mark.svg, program
+ledger, making-of journal and this status record. Branch
+codex/main-site-wrapup-20260919 in X:\website-release-20260919; rollback909ea22.
+Final commit is recorded in Genesis; tree clean and own lock released at closeout.
+Preview8090/PID12432 serves this worktree's out/. Original dirty checkout and
+other services preserved. No push, merge, deployment, added spending or reset.
+Production remains v12.160 /1325c6b. No new publication authorized.
+
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 
 Jacob explicitly requested publication. PR #11 merged as

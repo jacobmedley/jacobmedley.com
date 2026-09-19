@@ -1972,3 +1972,6 @@ No new results, current-tool proficiency, unidentified partner name, or proposed
 restoration is inferred. Tool names are explicitly historical to the listed roles.
 The full local-pass report is historical evidence; this release's verification
 and remaining copy decisions belong in `main-site-wrapup-20260919.md`.
+
+Published September 19 UTC through PR #10, deployment commit `7bcb9e0`, v12.155.
+B56's dedicated-page work remains local and deferred. Main-site B30 remains open.

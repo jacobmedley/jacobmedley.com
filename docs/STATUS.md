@@ -1,5 +1,32 @@
 # Status
 
+## September 19, 2026: LIVE — v12.155, production 7bcb9e0
+
+PR #10 merged; Ubuntu Node 20 CI passed, and deployment 35415309921 succeeded
+at 02:20:32 UTC. Main-site B57 is live: cleaner copy and entry controls, qualified
+metrics and historical tools, existing work modals, education cleanup, and the
+continuing hero. Dedicated case-study source and entry links remain deferred.
+
+Normal browser reload displays new copy and working CTA/WebMD modal. All eight
+public routes, both protected legacy pages, ten homepage Next assets, and four
+representative images return 200. Last-Modified 02:20:27 matches the upload;
+normal headers show no-cache/must-revalidate and DT:1, no stale content or purge.
+PowerShell HTTP received 403; curl and browser succeeded. See
+main-site-wrapup-20260919.md for complete evidence and scoped test limitations.
+
+Main-site copy is solid. Remaining meaningful content follow-up: B30, one concrete
+coaching/development story from Jacob. Current tool proficiency can be confirmed
+later; the live list is explicitly historical. Dedicated copy stays on the prior
+copy branch. No unsupported results or new facts were invented.
+
+Production 7bcb9e0ef60c29fa453bf48164904ebc7813f94c; application 16d9ffb.
+Rollback e2995d7fb703d4641562df1903b70adb3dfca3fc. This documentation-only closeout
+uses [skip ci]; exact final commit is recorded in Genesis. Release branch
+codex/main-site-wrapup-20260919 in X:\website-release-20260919 is clean after
+commit, own lock released. Original dirty main at a49e4d7 and other worktrees
+are preserved. Preview8090/PID9212 remains running from this release's out/.
+No added spending, local inference, reset, or unsupported savings claim.
+
 ## September 19, 2026: Main-site copy accepted locally; publication authorized
 
 Jacob requested cleanup, merge, and push with dedicated case studies deferred.

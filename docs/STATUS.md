@@ -1,5 +1,23 @@
 # Status
 
+## September 19, 2026: Focus and section-divider follow-up, local only
+
+Experience cards now have one softened 2px inset focus border, without the dark
+duplicate summary rectangle or added glow. A shared gradient rule separates the
+outcomes cards from Experience/Expertise using existing fluid spacing tokens.
+No copy changed. See browser-refinements-20260919.md for verification and scope.
+
+Build/types, 288 source-image hashes/104 references, diff check, five keyboard
+disclosures and desktop1376/mobile375 layout checks passed. Screenshots inspected.
+Only visual-system.css, ResumeSection.tsx and the two handoff documents changed.
+No new full cross-browser or accessibility audit. No unrelated improvements.
+
+Local codex/main-site-wrapup-20260919 in X:\website-release-20260919; final commit
+recorded in Genesis. Clean after checkpoint, own lock released. Preview8090 now
+runs as PID11136. Original dirty checkout and other worktrees preserved.
+Rollback6771ef3; no push/merge/deploy; production stays v12.155 / 7bcb9e0.
+Leadership placement and dedicated case-study work remain deferred. No added spend.
+
 ## September 19, 2026: Browser refinements 1–8 complete locally
 
 B59 applies Jacob's annotated experience and education changes. All five

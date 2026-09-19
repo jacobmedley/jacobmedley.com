@@ -1,5 +1,37 @@
 # Browser annotations 1–8: local acceptance
 
+## Follow-up: focus border and experience divider
+
+Jacob requested a softer active/focus treatment without glow, then a rule between
+the outcomes cards and Experience/Expertise. The shared card now uses one 2px
+inset outline, mixed from 65% employer ink and white. The duplicate rectangular
+summary outline is suppressed; focus remains visible on the containing card.
+Existing ambient card shadows are unchanged; no focus shadow is added.
+
+A semantic hr uses the existing solid-center rule. Half the fluid section-rhythm
+token sits on each side; the old column top margin is removed for this adjacency.
+The rule adds only its 1px stroke, not another block of spacing. No new breakpoint.
+No copy or B-edit status changed.
+
+Production build/types and image verification (288 source hashes, 104 references)
+passed, as did diff checking. Browser-skill verification checked all five native
+summaries with keyboard opening/closing: one 2px inset card outline, summary
+outline-style none, all five closed afterward. Desktop1376 and mobile375 had no
+horizontal overflow; the mobile disclosure opened successfully. The divider
+measured 1px high, 1120.81px wide at desktop and 340.81px at mobile, opacity .25.
+Saved and inspected 17-focus-refined-desktop.png, 18-focus-refined-mobile.png and
+19-experience-section-divider.png in this task's local artifact folder.
+Scoped Chromium checks only; no new cross-browser/accessibility certification.
+
+Local rollback 6771ef3da640fdd0de1d688a3709acc18f84a4b9. Same worktree and branch
+as below; final checkpoint ID recorded in Genesis. Preview8090/PID11136 replaces
+this task's verified PID10348. No push, merge, deployment or added spending.
+Changed source: app/visual-system.css and components/sections/ResumeSection.tsx;
+handoff: this report and STATUS.md. Own lock released after clean local commit.
+Exchange refreshed at 03:16:48 UTC, fingerprint
+ef20365afcd7730f398f97024012a05c7a225f440b032f714deab7282ca6c6e6;
+only this task's new direction event changed intake context. No peer awareness claimed.
+
 Jacob requested these refinements against the local B58 preview. B59 records
 the changed direction. No push, merge, or publication is part of this pass.
 

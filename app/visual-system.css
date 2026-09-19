@@ -184,12 +184,16 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
 .resume-leadership-grid p { margin: 0; }
 .row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: start; }
+.resume-experience-divider { margin-block: calc(var(--section-rhythm) / 2); }
+.resume-experience-divider + .row.resume-columns { margin-top: 0; }
 .resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
 .resume-timeline::before { content: none; }
 .resume-timeline-entry { padding-left: 0; }
 .resume-timeline-entry + .resume-timeline-entry { margin-top: 1.5rem; }
 .resume-experience-card { cursor: pointer; }
-.resume-experience-card:focus-within { outline: 2px solid var(--resume-ink); outline-offset: 3px; }
+/* One crisp, inset focus border; no duplicate summary box or focus glow. */
+.resume-experience-card:focus-within { outline: 2px solid color-mix(in srgb, var(--resume-ink) 65%, white); outline-offset: -2px; }
+.resume-experience-details summary:focus-visible { outline: none; }
 .resume-experience-header { grid-template-columns: 3rem minmax(0,1fr); gap: var(--nested-icon-gap); padding: var(--card-pad-y) var(--card-pad-x) 1rem; align-items: start; }
 .resume-company-mark { display: grid; width: 3rem; height: 3rem; place-items: center; }
 .resume-brand-logo { width: 100%; height: 100%; }

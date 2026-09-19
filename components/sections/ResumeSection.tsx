@@ -164,6 +164,7 @@ export default function ResumeSection() {
             </div>
           </div>
 
+          <hr className="solid-center resume-experience-divider" />
           <div className="row resume-columns">
             <div className="col-24 col-lg-12">
               <h3 id="resume-experience-heading" className="mb-6">Experience</h3>

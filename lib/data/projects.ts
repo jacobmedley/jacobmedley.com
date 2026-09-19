@@ -9,7 +9,7 @@ export interface ProjectImage {
 
 export interface ProjectMetric {
   value: string
-  direction: 'up' | 'down'
+  direction?: 'up' | 'down'
   label: string
 }
 
@@ -239,14 +239,14 @@ export const projects: Project[] = [
     disciplines: ['Product', 'Conversion Optimization'],
     order: 1,
     title: 'WebMD',
-    subtitle: 'eCommerce Website',
+    subtitle: "From plan search to checkout",
     cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: "I led UX/UI design and front-end development for an ecommerce website combining WebMD's brand with DentalPlans' products. The work covered plan search, comparison, cart and checkout.",
+    summary: "I led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans.",
     visible: true,
     brief: {
       image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
       paragraphs: [
-        "Internet Brands wanted to open up new opportunities for growth across their portfolio. One of these efforts was combining the strength of WebMD's brand and DentalPlans product with a new eCommerce website. The challenge: we had less than eight weeks to plan and launch. We did it in six!"
+        "WebMD’s brand and DentalPlans’ products needed one commerce experience. We had less than eight weeks to plan and launch. I led UX/UI design and front-end development across plan search, comparison, cart, and checkout. We launched in six weeks."
       ]
     },
     contributions: [
@@ -357,19 +357,19 @@ export const projects: Project[] = [
     disciplines: ['Systems', 'Product'],
     order: 2,
     title: 'DentalPlans.com',
-    subtitle: 'Product Framework and Design System',
+    subtitle: "One platform. Five branded businesses.",
     cardImage: {
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: 'I led design and front-end development for a shared ecommerce platform. Brand configuration, reusable components and common product data carried five properties and cut each launch from six weeks to two.',
+    summary: "I built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two.",
     modalTitle: 'Product Framework and Design System',
     visible: true,
     brief: {
       image: { src: '/images/work/dpprod-modal/brief.png', alt: '' },
       paragraphs: [
-        "DentalPlans.com, a marketplace for dental savings and insurance plans, identified an opportunity to create brand-focused product sites for larger partners. These sites would highlight specific brands, cater to customers’ preferences, and optimize sales and conversions by crafting individualized brand experiences.",
-        'This case study highlights how a small, lean team transformed an idea for a single product-focused site into a robust framework supporting rapid product site deployment, a multi-brand design system, and microservices that drive significant business results.'
+        "DentalPlans.com wanted dedicated storefronts for product partners. The first site tested whether customers would buy through a focused brand experience. Once it sold, the next question was how to add brands without copying the manual work.",
+        "I led product design and front-end development for the platform that followed. Each release replaced repeated work with a capability the next site could use. I built and maintained it with a part-time engineer."
       ]
     },
     contributions: [
@@ -392,21 +392,34 @@ export const projects: Project[] = [
     media: [
       {
         type: 'metric-grid',
-        heading: 'Business Results: DentalPlans.com Partner Platform, 2015–2021',
+        heading: "Finance-attributed shares from one measured year; launch time per property",
         metrics: [
-          { value: '47%', direction: 'up', label: 'Share of Revenue Growth' },
-          { value: '20%', direction: 'up', label: 'Company Revenue' },
-          { value: '27%', direction: 'up', label: 'Lead Generation' },
-          { value: '66%', direction: 'down', label: 'Launch Cycle: Six Weeks to Two, per Property' }
-        ],
+  {
+    "value": "47%",
+    "label": "of company revenue growth"
+  },
+  {
+    "value": "20%",
+    "label": "of overall company revenue"
+  },
+  {
+    "value": "27%",
+    "label": "of total company lead capture"
+  },
+  {
+    "value": "6 to 2",
+    "label": "weeks to launch a property",
+    "direction": "down"
+  }
+],
         valueCreated: {
           heading: 'Value Created',
           items: [
-            'Large-scale efforts by a small, lean team',
-            'Scalable Product Features',
-            'Rapid launch and learn efforts and conversion rate optimization',
-            'Proprietary platform and systems owned by the company'
-          ]
+  "Five properties on one platform",
+  "Two people built and maintained the platform",
+  "Four experience designers covered the properties",
+  "The company owned the custom platform"
+]
         }
       },
       {
@@ -414,13 +427,13 @@ export const projects: Project[] = [
         heading: 'The System Framework',
         bands: [
           {
-            heading: 'Individual Product Sites',
+            heading: 'Partner storefront examples',
             icon: 'fa-thin fa-box',
             bg: 'dark-subtle',
             textColor: 'black',
             rows: [
               {
-                cols: 5,
+                cols: 4,
                 cells: [
                   {
                     label: 'Cigna',
@@ -459,7 +472,7 @@ export const projects: Project[] = [
                     }
                   },
                   {
-                    label: 'LMDB',
+                    label: "Partner storefront",
                     icon: 'fa-thin fa-box',
                     bg: 'fourth',
                     striped: false,
@@ -468,18 +481,6 @@ export const projects: Project[] = [
                       label: 'Brand Theme',
                       bg: 'fourth-light',
                       textColor: 'fourth-dark'
-                    }
-                  },
-                  {
-                    label: 'Documentation',
-                    icon: 'fa-thin fa-box',
-                    bg: 'fifth',
-                    striped: false,
-                    sub: {
-                      icon: 'fa-thin fa-palette',
-                      label: 'Brand Theme',
-                      bg: 'fifth-light',
-                      textColor: 'fifth-dark'
                     }
                   }
                 ]
@@ -499,7 +500,8 @@ export const projects: Project[] = [
                   { label: 'Component Libraries', icon: 'fa-thin fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
                   { label: 'Pattern Library', icon: 'fa-thin fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
                   { label: 'CMS', icon: 'fa-brands fa-wordpress-simple', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Pipelines', icon: 'fa-thin fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
+                  { label: 'Pipelines', icon: 'fa-thin fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
+                  { label: 'Documentation', icon: 'fa-thin fa-book', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
                 ]
               }
             ]
@@ -536,14 +538,14 @@ export const projects: Project[] = [
           {
             type: 'list',
             items: [
-              'Product Design Framework: Enabled updates, testing, and conversion rate optimization at scale.',
-              'Multi-Brand Design System: One-to-one design and development architecture, ensuring rapid prototyping with minimal variance between design and code.',
-              'Microservices and APIs: Provided product information, dentist search, and shopping cart functionalities.',
-              'Sales and Promotional Management: Scheduling, versioning, and expiry handling for offers across every partner site.',
-              'Robust Marketing and Campaign Tracking: Included PPC, affiliate, and organic tracking.',
-              'Knowledge Base and Documentation: Supported designers and developers with comprehensive resources.',
-              'DevOps Pipelines: Facilitated global system updates and individual feature deployments across all sites or single sites.'
-            ]
+  "Shared design patterns and front-end components for updates and testing across properties.",
+  "Brand settings separated identity from the application.",
+  "Services supplied product information, dentist search, and cart functions.",
+  "Scheduled promotions handled offer versions and expiry.",
+  "Source tracking covered paid search, affiliates, and organic traffic.",
+  "Documentation supported designers and developers.",
+  "Deployment could target one property or all of them."
+]
           }
         ]
       },
@@ -564,7 +566,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Plan:', level: 4 },
           {
             type: 'text',
-            text: 'We adopted an iterative approach, focusing on speed to market while minimizing engineering involvement. We designed a simple product flow for a single plan product launch to gauge customer response. Engineering created a service to pass products into our shopping cart system, with plans to expand capabilities for a white-label eCommerce platform.'
+            text: "We started with a single-product flow to test customer response. Engineering built the service that passed the product into the existing cart. I designed the storefront so later versions could support other products and brands."
           },
           {
             type: 'text',
@@ -573,7 +575,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
-            text: 'The launch showed moderately higher conversion rates and a lower cost per acquisition (CPA) compared to our core site. This proved the viability of partnering with plan providers and focusing on customer loyalty and intent, prompting leadership to launch a second site.'
+            text: "The first storefront sold, and leadership asked for a second. That gave us a reason to invest in shared capabilities."
           }
         ]
       },
@@ -588,12 +590,12 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Iteration Two: Scaling and Optimization', level: 4 },
           {
             type: 'text',
-            text: 'With the success of the first site, we faced new challenges. The second site needed dynamic content and a seamless brand experience from the initial interaction to the shopping cart. We started two new projects: a full white-label shopping cart with microservices for product information and a comprehensive A/B testing and conversion rate optimization initiative.'
+            text: "The second site needed the brand experience to continue into the cart. We added a cart that could take each brand’s identity and services for shared product information. Testing could then cover the path from landing page through purchase."
           },
           { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
-            text: 'The second site launched with similar results, providing a solid foundation for future features. We quickly iterated and tested live, planning for future enhancements. The componentized code and design system allowed easy updates and testing, from landing pages to entire user flows.'
+            text: "The second launch gave us a shared base for later changes. The components could be reused in landing pages and purchase flows, so tests no longer required rebuilding each variant from scratch."
           }
         ]
       },
@@ -609,12 +611,12 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
           {
             type: 'text',
-            text: "We focused on integrating all learnings and finalizing microservices into the framework. This allowed scalable product data and information updates across all sites. The design system's pattern and component libraries ensured seamless updates and integration with microservices."
+            text: "We brought product information into shared services. When engineering added or changed data, every property could use it. Common patterns and components gave the interfaces a consistent way to present it."
           },
-          { type: 'heading', text: 'Results:', level: 4 },
+          { type: 'heading', text: 'Delivery', level: 4 },
           {
             type: 'text',
-            text: 'We aggressively created landing pages, developed a content strategy for organic growth, and focused on lead generation and conversion rate optimization.'
+            text: 'We built landing pages, developed content for organic search, and continued testing acquisition and purchase flows.'
           }
         ]
       },
@@ -629,12 +631,12 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Iteration Four: Dentist Search Feature', level: 4 },
           {
             type: 'text',
-            text: 'The final phase involved designing and coding the UX and UI for a dentist search feature. Leveraging our pattern and component libraries, we expedited the development process.'
+            text: "I designed and built the dentist-search interface using the existing patterns and components."
           },
           { type: 'heading', text: 'Results:', level: 4 },
           {
             type: 'text',
-            text: 'The dentist search feature was integrated smoothly, further enhancing the user experience and solidifying our scalable, efficient development framework.'
+            text: "The platform gained a dentist-search flow built from the same patterns and components as the storefronts."
           }
         ]
       }
@@ -647,16 +649,17 @@ export const projects: Project[] = [
     disciplines: ['Systems', 'Brand'],
     order: 3,
     title: 'BumblebeeMD',
-    subtitle: 'Brand and Product Development',
+    subtitle: "Room to build the brand",
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'BumblebeeMD launched as a DentalPlans.com sub-brand on the shared product platform. It was one of five properties using the same design, product data and ecommerce infrastructure.',
+    summary: "The shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands.",
     modalTitle: 'BumblebeeMD',
     visible: true,
     brief: {
       image: { src: '/images/work/bmd-modal/brief.png', alt: '' },
       paragraphs: [
-        'BumblebeeMD launched as one of five properties on the DentalPlans.com platform, sharing that system’s design and infrastructure. The brand was later retired.'
-      ]
+  "BumblebeeMD was a DentalPlans.com sub-brand built on the shared commerce platform. The product data, components, and purchase flow were already there.",
+  "That gave us room to work on the brand: its identity, the interface, and how the experience should feel. We could carry those decisions into working pages without rebuilding the commerce underneath them."
+]
     },
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
@@ -746,16 +749,16 @@ export const projects: Project[] = [
     disciplines: ['Systems', 'Product'],
     order: 4,
     title: 'Hydra',
-    subtitle: 'The Making of a Design System',
+    subtitle: "From an idea to working parts",
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: 'I built Hydra as a shared design vocabulary across brands and technology stacks. Reusable interface patterns and front-end components kept products consistent while their functional code stayed intact.',
+    summary: "I built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built.",
     modalTitle: 'Hydra Design System',
     visible: true,
     brief: {
       image: { src: '/images/work/hydra/brief.png', alt: '' },
       paragraphs: [
-        "I championed and implemented the Hydra design system, a large-scale project that unified the customer experience across the company's products and streamlined the design and engineering processes.",
-        'Executing the project spanned multiple departments. I presented the issues and plan of action to the SVP of Marketing and the CTO, gaining executive sponsorship and support.'
+        "I built Hydra to give products on different technology stacks one design language. The work covered reusable interface patterns, front-end components, and brand settings.",
+        "I showed the SVP of Marketing and the CTO where the interfaces had fragmented and proposed a shared system. Their backing gave the work a path across departments."
       ]
     },
     contributions: [
@@ -782,7 +785,7 @@ export const projects: Project[] = [
           },
           {
             type: 'text',
-            text: 'The fragmentation created confusion and unneeded friction for the user. The uncontrolled variety of UI elements created design and technical debt.'
+            text: "The same action could look different from one part of the product to the next. Teams also had more variants to design, build, and maintain."
           }
         ],
         right: [
@@ -828,15 +831,15 @@ export const projects: Project[] = [
         left: [
           {
             type: 'text',
-            text: 'I created a single source of truth for the UX/UI across our products. I streamlined the UI and created a design system that would be tech agnostic and support multiple brands. I established a vocabulary around the design system that would make sense to UI developers and engineers.'
+            text: "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products."
           },
           {
             type: 'text',
-            text: 'I engineered the design system in a way that only affected the front-end markup. This enabled us to avoid costly back-end updates, leaving the functional code behind the front end untouched.'
+            text: "I kept the changes in the front-end markup. The applications could adopt the shared interface without replacing their functional back-end code."
           },
           {
             type: 'text',
-            text: 'The sub-brand issues were solved by having all attributes set to variables. The variables allowed for a unique brand look, color, fonts, and UI treatment without changing the core. The design system could be independently updated and consumed across any application or digital product.'
+            text: "Variables controlled color, type, and interface treatment for each brand. The core patterns stayed shared, and applications could take design-system updates independently."
           }
         ],
         right: [
@@ -899,7 +902,7 @@ export const projects: Project[] = [
         right: [
           {
             type: 'text',
-            text: 'Good question! Hydra was a mythical beast that had many heads and one body. The design system had a core body of design patterns that branched out to many systems and brands. 🙂'
+            text: "Hydra had many heads and one body. The system’s shared patterns served several products and brands."
           }
         ],
         leftSpan: 8,
@@ -913,22 +916,24 @@ export const projects: Project[] = [
     id: 'opfred',
     section: 'work',
     display: 'feature',
-    disciplines: ['Product', 'Conversion Optimization'],
+    disciplines: ['Product', 'UX Research'],
     order: 5,
     title: 'One Park Financial',
-    subtitle: 'Redesign Corporate Website',
+    subtitle: "From visitor to the right next step",
     cardImage: {
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'
     },
-    summary: "I redesigned One Park Financial's corporate website and lead flow through the Hydra system. Visitor behavior, device performance, heat maps and scroll maps informed each interface decision.",
+    summary: "I led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey.",
     visible: true,
     brief: {
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
       paragraphs: [
-        'I partnered with the CEO and SVP of Marketing at One Park Financial to redesign its corporate website and lead flow. This project was part of a more extensive implementation of the Hydra Design System.',
-        'I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with, and which they scrolled straight past.'
-      ]
+  "I led the website and lead-flow redesign with the CEO and SVP of Marketing. The work also put the Hydra design system into the corporate website.",
+  "I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with, and which they scrolled straight past.",
+  "We could add, remove, or change steps in the lead flow in hours. Each lead carried its test ID, so we could follow a variant through the customer journey.",
+  "An additional step routed applicants to the next appropriate channel: agents for higher-value leads, an online experience for lower-value leads, and willing partners for applicants outside our risk criteria."
+]
     },
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
@@ -1026,17 +1031,15 @@ export const projects: Project[] = [
     icon: 'fa-thin fa-vial',
     visible: true,
     summary: '',
-    briefHeading: 'Never Stop Testing!',
+    briefHeading: "What we tested, and why",
     briefVariant: 'narrow',
     brief: {
       images: [
         { src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage control' },
-        { src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, winning variant V1' }
+        { src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, variant V1' }
       ],
       paragraphs: [
-        'A/B split testing allows you to make data-driven decisions about changes to your website, instead of relying on guesswork or assumptions. For example, you can test different headlines, images, call-to-action (CTA) buttons, and layouts to see which combination generates the most clicks or conversions. By identifying the most effective elements on your site, you can make targeted improvements that result in better user experiences, higher engagement, and increased revenue.',
-        "Overall, A/B split testing can help you optimize your website for your users' needs and preferences, leading to increased traffic, conversions, and revenue. It's a cost-effective way to make data-driven decisions that will benefit your business in the long run.",
-        'Testing ran as a standing partnership with product marketing. They owned hypothesis and traffic, I owned the variant and the read.'
+        "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results."
       ]
     },
     contributions: [
@@ -1066,7 +1069,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'WebMD Demographic Test' },
           {
             type: 'text',
-            text: 'Hypothesis: WebMD would attract a different demographic than DentalPlans.com, which leans heavily toward seniors. By showing a younger demographic, we would resonate better with customers.'
+            text: "Hypothesis: imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site."
           }
         ],
         leftSpan: 12,
@@ -1083,8 +1086,8 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage, control variant' }
         ],
         right: [
-          { type: 'heading', text: 'V1 Winner +14.9%' },
-          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, winning variant V1' }
+          { type: 'heading', text: "Variant 1" },
+          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, variant V1' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1092,11 +1095,11 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'heading', text: 'V2 -2.5%' },
+          { type: 'heading', text: "Variant 2" },
           { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD homepage, variant V2' }
         ],
         right: [
-          { type: 'heading', text: 'V3 -35.1%' },
+          { type: 'heading', text: "Variant 3" },
           { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD homepage, variant V3' }
         ],
         leftSpan: 12,
@@ -1117,7 +1120,7 @@ export const projects: Project[] = [
           { type: 'heading', text: 'Savings Calculator' },
           {
             type: 'text',
-            text: 'Hypothesis: Providing customers more information on the product and using a niche celebrity would increase performance. The additional content would also improve organic rankings over time.'
+            text: "Hypothesis: additional product information and a recognizable spokesperson might change customer response."
           }
         ],
         leftSpan: 12,
@@ -1134,8 +1137,8 @@ export const projects: Project[] = [
           { type: 'image', src: '/images/work/split01-modal/sc-control.png', alt: 'Savings calculator landing page, control variant' }
         ],
         right: [
-          { type: 'heading', text: 'V1 Winner +24.2%' },
-          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'Savings calculator landing page, winning variant V1' }
+          { type: 'heading', text: "Variant 1" },
+          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'Savings calculator landing page, variant V1' }
         ],
         leftSpan: 12,
         rightSpan: 12
@@ -1148,15 +1151,15 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Product'],
     order: 7,
-    title: 'Call Center XD',
+    title: "When nobody can take the call",
     icon: 'fa-thin fa-headset',
-    modalTitle: 'Call Center XD',
+    modalTitle: "When nobody can take the call",
     visible: true,
-    summary: 'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.',
+    summary: "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable.",
     brief: {
       image: { src: '/images/work/ccux-modal/flow.png', alt: 'Call center availability API flow diagram' },
       paragraphs: [
-        'This is a personal initiative of mine at DentalPlans.com. I identified two issues with the customer experience calling in from our online initiatives. One, after-hours call center customers experienced a “dead end”. Two, we had a high abandonment rate when the call center was open. I talked to the executive stakeholder for the call center about the reasons behind the current process and researched the API capabilities of our call center platform. I partnered with our engineers and the business intelligence team to build a call center health API that let us update the online experience in real time based on availability.'
+        "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
       ]
     },
     contributions: [
@@ -1188,11 +1191,11 @@ export const projects: Project[] = [
     icon: 'fa-thin fa-bullseye-arrow',
     modalTitle: 'Data-Driven Personalization',
     visible: true,
-    summary: 'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.',
+    summary: "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign.",
     brief: {
       image: { src: '/images/work/ma-modal/automation.gif', alt: 'Animated walkthrough of the marketing automation workflow' },
       paragraphs: [
-        'I was the lead designer and developer of a cross-departmental task force responsible for launching a new data-driven marketing campaign. The initial marketing campaign had to accommodate several touchpoints, multiple brands with dissimilar looks, various personalized data based on the audience receiving it, as well as incentives that changed by touchpoint.'
+        "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign."
       ]
     },
     contributions: [
@@ -1203,7 +1206,7 @@ export const projects: Project[] = [
     ],
     technologies: [
       { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Scene 7' },
+      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Scene7' },
       { icon: 'fa-thin fa-drafting-compass', label: 'Aprimo' },
       { icon: 'fa-thin fa-code', label: 'HTML' },
       { icon: 'fa-thin fa-brackets-curly', label: 'CSS' },
@@ -1213,7 +1216,7 @@ export const projects: Project[] = [
       { type: 'heading', text: 'Results' },
       {
         type: 'text',
-        text: 'I worked with stakeholders from the marketing, business analysis, and data teams to engineer and design a dynamic campaign using the new platform. I optimized the campaign to leverage the system, which reduced the workload on campaign managers by 92% while meeting every KPI the business had set.'
+        text: "I worked with marketing, business analysis, and data teams to build the campaign around the platform’s shared data and reusable content. Campaign managers could manage variants through the system."
       },
       {
         type: 'split-row',
@@ -1246,8 +1249,7 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/workshop/ideas.jpg', alt: 'Workshop wall covered in sticky notes from a brainstorming session' },
       paragraphs: [
-        'I have successfully led and facilitated numerous design workshops, both on-site and remotely. These interactive sessions addressed a wide range of challenges, engaging diverse groups comprising various personalities and disciplines. Employing a flexible approach, I utilized methodologies like the double-diamond design process and modified design sprints. This approach was instrumental in uniting divergent teams, fostering collaborative problem-solving, and aligning them around central issues. The workshops spanned creative brainstorming, UX/UI strategy, conversion rate optimization (CRO), and user testing strategy, effectively driving innovation and strategic thinking.',
-        'With the right team, anything is possible. Anything!'
+        "I design workshops around the decision the group needs to make. The work has included customer journeys, product direction, and conversion-testing plans, with people from different disciplines in the room. I prepare the activities and materials so the session can produce something the team can use afterward.",
       ]
     },
     briefHeading: 'Solving the Right Problems',
@@ -1296,9 +1298,9 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/roadmap/rm.jpg', alt: 'Obfuscated UX roadmap in Lucidchart' },
       paragraphs: [
-        "A UX Roadmap allows you to communicate a UX team's work and the problems they plan to tackle. It is a living, breathing document that helps align and prioritize projects.",
+        "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start.",
         'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under “Example UX Roadmap.”',
-        'I am a strong planner and lean hard into planning the work and working the plan. To quote Robert Burns - "The best-laid schemes of mice and men often go awry," so be ready to pivot.'
+        "The plan has to survive new information. I make the dependencies visible so a change in scope can lead to a new sequence."
       ]
     },
     briefHeading: 'Are we there yet?',
@@ -1360,7 +1362,7 @@ export const projects: Project[] = [
           { label: 'Need:', body: 'The problem that will be solved or the purpose.' },
           {
             label: 'Business Objective(s):',
-            body: 'Objectives and potential outcomes that will be achieved upon completion. Success metrics for the work.'
+            body: "The intended business outcome and how the team will judge success."
           },
           { label: 'Team:', body: 'Who is involved.' }
         ]
@@ -1385,10 +1387,10 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/kitchen-sink/Persona-Cards.png', alt: 'Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy.' },
       paragraphs: [
-        'At DentalPlans, I collaborated with the business intelligence team and the product marketing manager on persona development projects. Our goal was to create detailed and actionable personas to guide our product and marketing strategies. One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.'
+        "I worked with business intelligence and product marketing on personas for the DentalPlans audience. One was Frugal Francine, representing customers who weighed dental-plan choices around cost and value."
       ]
     },
-    briefHeading: 'What Frugal Francine Taught Us',
+    briefHeading: "A cost-conscious customer persona",
     contributions: [
       { icon: 'fa-thin fa-handshake', label: 'Project Collaboration' },
       { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
@@ -1406,11 +1408,11 @@ export const projects: Project[] = [
     thumb: { src: '/images/work/kitchen-sink/reveal-cover.png', alt: 'Reveal Aligners campaign, The choice is clear' },
     modalTitle: 'Reveal Aligners',
     visible: true,
-    summary: 'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight our product’s clarity and its advantages over the competition. I adopted a fun, edgy tone for both copy and visuals. We produced many concepts; these are the ones I’m proudest of.',
+    summary: "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on.",
     brief: {
       image: { src: '/images/work/kitchen-sink/reveal-cover.jpg', alt: '' },
       paragraphs: [
-        'In a creative collaboration for Reveal Clear Aligners, our team set out to highlight our product’s clarity and its advantages over the competition. I adopted a fun, edgy tone for both copy and visuals. We produced many concepts; these are the ones I’m proudest of.'
+        "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on."
       ]
     },
     contributions: [
@@ -1426,17 +1428,17 @@ export const projects: Project[] = [
       {
         icon: 'fa-thin fa-lightbulb-on',
         label: "Yup, It's That Clear:",
-        body: 'This concept emphasized the transparency and subtlety of the aligners.'
+        body: "A direct statement of the campaign’s clarity idea."
       },
       {
         icon: 'fa-thin fa-lightbulb-on',
         label: "So Clear, Like It's Not Even There:",
-        body: 'Aimed to convey the near-invisibility of the product, making it blend seamlessly.'
+        body: "A playful expression of subtle appearance."
       },
       {
         icon: 'fa-thin fa-lightbulb-on',
         label: 'OMG, Your Aligner Is Showing:',
-        body: 'Played on the human emotion of being embarrassed to have an aligner that is visible, highlighting how the aligners are practically undetectable.'
+        body: "A deliberately provocative concept about visibility."
       }
     ],
     heroMedia: [
@@ -1491,7 +1493,7 @@ export const projects: Project[] = [
       image: { src: '/images/work/viva-modal/brief.png', alt: '' },
       paragraphs: [
         'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
-        'Every mark, palette, and UI treatment shown here is my own work. These are my favorite variations produced for the project.'
+        "The marks, palettes, and interface treatments shown here are my work. These variations show the directions explored for the brand."
       ]
     },
     contributions: [
@@ -1587,13 +1589,13 @@ export const projects: Project[] = [
     heroBrandImage: { src: '/assets/featured/dentalplans-icon.svg', alt: 'DentalPlans.com' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
-    summary: 'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+    summary: "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option.",
     brief: {
       image: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: '' },
       paragraphs: [
-        'The "WRONG" marketing campaign aimed to promote dental savings plans to people searching for crowns, fillings, and root canals, the highest-volume search terms in our category. Recognizing that customers often feel dental care costs are prohibitively high, we needed to swiftly communicate that dental savings plans offer substantial cost reductions and several key advantages over traditional dental insurance.',
+        "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option.",
         'Campaign Concept:',
-        'The core message was that with a dental savings plan, the costs for these procedures are not out-of-reach, contrary to common perceptions. The concept was encapsulated in the idea that the customer was "WRONG" to think dental care was unaffordable.'
+        "The campaign challenged the assumption that dental care was out of reach. “WRONG” was the creative device. The design question was whether that provocation could earn attention without making the person feel blamed."
       ]
     },
     briefLabels: ['Campaign Concept:'],
@@ -1611,17 +1613,17 @@ export const projects: Project[] = [
           {
             icon: 'fa-thin fa-eye',
             label: 'Visual Approach:',
-            body: 'We aimed for a visually striking look, using bold and aggressive headlines.'
+            body: "Bold headlines carried the campaign message."
           },
           {
             icon: 'fa-thin fa-people-group',
             label: 'Inclusivity:',
-            body: 'Ensured the campaign was diverse and inclusive, representing various age groups and ethnic backgrounds.'
+            body: "The visual variants showed adults of different ages and backgrounds."
           },
           {
             icon: 'fa-thin fa-flag-checkered',
             label: 'Execution:',
-            body: 'Below is the final landing page and hero variants used for conversion rate optimization.'
+            body: "The landing page and hero versions below were prepared for conversion testing."
           }
         ]
       },

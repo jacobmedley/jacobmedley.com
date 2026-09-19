@@ -37,7 +37,7 @@ export default function NavMain() {
           <a
             key={section.id}
             href={`#${section.id}`}
-            aria-current={isActive ? 'page' : undefined}
+            aria-current={isActive ? 'location' : undefined}
             className={cn(
               'btn nav-link',
               buttonClass[section.id],
@@ -46,7 +46,7 @@ export default function NavMain() {
             )}
           >
             <i className={section.icon} aria-hidden="true" role="img" />
-            <div className="capitalize">{section.id === 'education' ? 'edu' : section.label}</div>
+            <div>{section.label}</div>
           </a>
         )
       })}

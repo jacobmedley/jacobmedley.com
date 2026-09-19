@@ -5,8 +5,8 @@ import { useReducedMotion } from './MotionControls'
 
 const STATES = {
   ready: { label: 'Ready', icon: 'fa-phone-volume', header: 'Ready to help', banner: 'Our team is ready. Call for help choosing a plan.', title: 'Find your dental savings plan.', body: 'Talk to our team or explore plans online.', action: 'View plans', offer: 'No offer. Phone support is available.' },
-  busy: { label: 'Busy', icon: 'fa-clock', header: 'High call volume', banner: 'Skip the wait. Save 15% online only.', title: 'Keep smiling. Skip the wait.', body: 'Our team is busy. Buy online and save 15%.', action: 'Save 15% online', offer: '15% off online only.' },
-  closed: { label: 'Closed', icon: 'fa-moon', header: 'Call center closed', banner: 'We are closed. Save 10% when you buy online.', title: 'Your next step is online.', body: 'Explore dental savings plans and save 10% online.', action: 'Save 10% online', offer: '10% off online.' },
+  busy: { label: 'Busy', icon: 'fa-clock', header: 'High call volume', banner: 'Skip the wait. Explore plans online while the team is unavailable.', title: 'Keep smiling. Skip the wait.', body: 'Our team is busy. You can explore plans online.', action: 'View plans', offer: 'Example busy state.' },
+  closed: { label: 'Closed', icon: 'fa-moon', header: 'Call center closed', banner: 'The call center is closed. You can explore plans online.', title: 'Your next step is online.', body: 'Explore dental savings plans online.', action: 'View plans', offer: 'Example closed state.' },
 } as const
 type State = keyof typeof STATES
 type Mode = State | 'auto'
@@ -109,7 +109,7 @@ export default function CallCenterDemo() {
           <div className="demo-phone-home" aria-hidden="true" />
         </div>
         <div className="demo-controls">
-          <span className="demo-eyebrow">Interactive demo</span>
+          <span className="demo-eyebrow">Illustrative interaction demo</span>
           <h5>Call center</h5>
           <p>Watch the site respond to call-center availability.</p>
           <div className="demo-state-buttons" role="group" aria-label="Call center state">

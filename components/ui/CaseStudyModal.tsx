@@ -881,12 +881,12 @@ function MetricStat({ metric }: { metric: ProjectMetric }) {
     <div className="modal-metric-card">
       <h4 className="result mb-0 display-5 fw-bolder">
         {metric.value}
-        <small>
+        {metric.direction && <small>
           <i
             className={`display-3 fa-thin fa-long-arrow-${metric.direction}`}
             aria-hidden="true"
           />
-        </small>
+        </small>}
       </h4>
       <p className="result-label mt-0">{metric.label}</p>
     </div>
@@ -1004,7 +1004,9 @@ function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
     }
     if (b0.type === 'text' && b1?.type === 'styled-list' && b2?.type === 'text' && b3?.type === 'card') {
       nodes.push(
-        <div className="row" key={i}>
+        <details className="modal-reference" key={i}>
+          <summary>Roadmap structure</summary>
+          <div className="row">
           <div className="col-24 col-md-12">
             <p>{b0.text}</p>
             <hr className="solid-center" />
@@ -1015,7 +1017,8 @@ function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
             <hr className="solid-center" />
             <CardContent block={b3} />
           </div>
-        </div>
+          </div>
+        </details>
       )
       i += 3
       continue

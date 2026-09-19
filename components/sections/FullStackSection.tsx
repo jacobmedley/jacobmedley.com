@@ -28,9 +28,15 @@ const cardKickers: Record<string, string> = {
 }
 
 const cardTitles: Record<string, string> = {
+  'split-test': 'Testing the experience',
+  'call-center-ux': 'When nobody can take the call',
+  'marketing-auto': 'A small team. A campaign built for scale.',
+  workshops: 'Getting teams to a shared decision',
+  roadmap: 'Choosing what comes next',
+  personas: 'Understanding the people buying the product',
   reveal: 'The Choice Is Clear',
   viva: 'Viva Medicare',
-  wrong: 'Modular Experience for Growth',
+  wrong: 'The Wrong Campaign',
 }
 
 /**
@@ -52,13 +58,13 @@ export default function FullStackSection() {
 
       <div className="content">
         <div className="container">
-          <SectionHeader title="Full Stack Designer" icon="fa-thin fa-toolbox" />
+          <SectionHeader title="How I work" icon="fa-thin fa-toolbox" />
 
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
               <p className="display-1 full-stack-intro">
-                Here are some examples showcasing the diverse skill sets and methods I&rsquo;ve
-                used to create better user experiences and business outcomes.
+                The work ranges from a customer stuck on hold to a team deciding what to build next.
+                These examples show how I approach both.
               </p>
             </div>
           </div>

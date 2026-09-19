@@ -1,6 +1,7 @@
 # Copy Register
 
-**Status:** edits B0 through B54. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B57. All APPLIED unless marked otherwise.
+B56 records the full local copy pass; B57 limits this release to the main site.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
 The September 8 annotation plan is historical; later applied edits govern the site.
@@ -1917,3 +1918,57 @@ not a new historical result or measurement claim. No external transaction.
 Future copy note, comment 7: expand the BumblebeeMD brief in the later copy
 pass. Jacob finds the current one-of-five-properties summary too thin. No
 replacement or additional claim is approved in this pass.
+
+## B56. September 17 copy implementation and continuing hero [APPLIED LOCALLY]
+
+Source: Jacob's direct request to start copy work, address the stopping animation,
+move forward on missed items, and update the linked Site Content Audit spreadsheet.
+The September 17 audit approvals and Jacob Notes are source material for this work.
+The working implementation text is registered in `docs/copy-pass-20260917.json`,
+keyed to the workbook IDs. This manifest is part of this register entry; its ledger
+records direct implementations and shared-copy consolidations. The workbook keeps
+draft status separate from Jacob's original decisions and unresolved questions.
+Original spreadsheet approval decisions and Jacob Notes must be preserved.
+
+Revise the hero and the BumblebeeMD, Hydra, lead-flow, personalization, and design
+practice passages using Jacob's notes. Use research leadership language for the
+navigation study. Keep role rotation and the opening mechanism. Supersede B53's
+old closing sentence and finite endpoint with the registered hero copy and a
+continuing role cycle; reduced motion remains static. Do not claim unsupported
+revenue causation, research execution, current tool usage, or measurement details.
+H-043 omits the proposed 'before launch' timing because the source does not establish it.
+Demo offers are illustrative; remove percentages according to the approved audit.
+All 141 action rows are addressed locally (131 direct, 10 shared-copy consolidations).
+Build and scoped browser verification passed; see `docs/copy-pass-20260917.md`.
+New copy is local pending publication, not live. This entry supersedes B55's
+illustrative discount percentages as directed by the current audit.
+
+## B57. Main-site release scope and entry controls [APPLIED]
+
+Source: Jacob's September 18 request to clean up, merge, and push the main site,
+while leaving dedicated case studies for later; confirmed September 19 UTC.
+
+Carry B56's homepage, existing work-modal, experience, education, demo, and
+metadata copy from checkpoint `d8d7380`. The original manifest remains a record
+of that complete local pass, not a claim that every row ships in this release.
+Dedicated `app/case-studies/`, `components/case-studies/`,
+`docs/case-study-site-copy.json`, and `lib/data/case-studies.ts` retain the
+published baseline. Their later copy remains on `codex/copy-animation-20260917`.
+
+The homepage hero action reads **Explore selected work**, with the same
+accessible name, and points to `#work`. Main navigation remains in-page:
+**Hello**, **Case studies**, **How I work**, **Experience**, **Education**.
+The work cards open the existing homepage modals. No homepage link to the
+dedicated case-study index is introduced. Direct URLs remain available as before.
+
+The continuing hero cycle and reduced-motion spacing fix ship with this copy.
+The A/B examples use neutral alt text matching their visible variant labels:
+`WebMD homepage, variant V1` (both references) and
+`Savings calculator landing page, variant V1`. The earlier local pass removed
+the visible winner claims; alt text must not reintroduce them. Keep source image
+filenames unchanged. Correct the historical technology label to `Adobe Scene7`,
+the spelling already required by `jacob-style.md` and employment history.
+No new results, current-tool proficiency, unidentified partner name, or proposed
+restoration is inferred. Tool names are explicitly historical to the listed roles.
+The full local-pass report is historical evidence; this release's verification
+and remaining copy decisions belong in `main-site-wrapup-20260919.md`.

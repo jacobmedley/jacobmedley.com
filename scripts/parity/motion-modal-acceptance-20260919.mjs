@@ -4,7 +4,7 @@ import { chromium } from 'playwright'
 
 const base = process.env.ACCEPTANCE_BASE_URL ?? 'http://localhost:8092'
 const output = 'scripts/parity/shots/motion-modal-20260919'
-const results = { base, hero: {}, desktop: {}, mobile: {}, reducedMotion: {}, loading: {}, errors: [] }
+const results = { base, hero: {}, desktop: {}, desktopMotion: {}, mobile: {}, reducedMotion: {}, loading: {}, errors: [] }
 
 await mkdir(output, { recursive: true })
 const browser = await chromium.launch({ headless: true })
@@ -83,16 +83,49 @@ try {
     assert.equal(initialModalAssets, 0, 'modal evidence assets stay unloaded before intent')
     assert.ok(intentModalAssets >= 1 && intentModalAssets <= 3, `intent preload is bounded to three assets, observed ${intentModalAssets}`)
     const before = await page.evaluate(() => ({ url: location.href, history: history.length, scrollY, bodyOverflow: getComputedStyle(document.body).overflow }))
+    await page.evaluate(() => {
+      window.__modalMotionPerformance = { frames: [], longTasks: [] }
+      const started = performance.now()
+      const sample = now => {
+        window.__modalMotionPerformance.frames.push(now)
+        if (now - started < 1200) requestAnimationFrame(sample)
+      }
+      requestAnimationFrame(sample)
+      new PerformanceObserver(list => {
+        window.__modalMotionPerformance.longTasks.push(...list.getEntries().map(entry => entry.duration))
+      }).observe({ type: 'longtask', buffered: true })
+    })
     await trigger.click()
     const dialog = page.getByRole('dialog')
     await dialog.waitFor({ state: 'visible' })
-    await page.waitForTimeout(380)
+    await page.screenshot({ path: `${output}/desktop-camera-begin.png` })
+    await page.waitForTimeout(420)
+    const passingPlane = await page.evaluate(() => {
+      const modalDialog = document.querySelector('.modal-dialog')
+      const pageLayer = document.querySelector('#hi')
+      const style = getComputedStyle(modalDialog)
+      return {
+        dialogTransform: style.transform,
+        dialogFilter: style.filter,
+        dialogOpacity: Number(style.opacity),
+        pageTransform: getComputedStyle(pageLayer).transform,
+        pageFilter: getComputedStyle(pageLayer).filter,
+      }
+    })
+    assert.notEqual(passingPlane.dialogTransform, 'none', 'mid-transition dialog is still crossing the focal plane')
+    assert.match(passingPlane.dialogFilter, /blur/, 'mid-transition dialog remains partially defocused')
+    assert.ok(passingPlane.dialogOpacity > .35 && passingPlane.dialogOpacity < 1, `mid-transition dialog is legible but unsettled: ${JSON.stringify(passingPlane)}`)
+    await page.screenshot({ path: `${output}/desktop-camera-passing-plane.png` })
+    await page.waitForTimeout(650)
     const openState = await page.evaluate(() => {
       const dialog = document.querySelector('[role="dialog"]')
+      const modalDialog = document.querySelector('.modal-dialog')
       const pageLayer = document.querySelector('#hi')
       const body = document.querySelector('.modal-body')
       return {
         camera: document.body.dataset.modalCamera,
+        dialogTransform: getComputedStyle(modalDialog).transform,
+        dialogFilter: getComputedStyle(modalDialog).filter,
         pageTransform: getComputedStyle(pageLayer).transform,
         pageFilter: getComputedStyle(pageLayer).filter,
         focusInside: dialog.contains(document.activeElement),
@@ -104,17 +137,38 @@ try {
     assert.equal(openState.camera, 'open')
     assert.notEqual(openState.pageTransform, 'none')
     assert.match(openState.pageFilter, /blur/)
+    assert.ok(openState.dialogFilter === 'none' || openState.dialogFilter === 'blur(0px)', `settled dialog is sharp: ${openState.dialogFilter}`)
     assert.equal(openState.focusInside, true)
     assert.equal(openState.backgroundHidden, true)
     assert.equal(openState.internalScrollable, true)
+    const motionPerformance = await page.evaluate(() => {
+      const { frames, longTasks } = window.__modalMotionPerformance
+      const gaps = frames.slice(1).map((frame, index) => frame - frames[index])
+      return {
+        sampledFrames: frames.length,
+        maxFrameGap: gaps.length ? Math.max(...gaps) : 0,
+        longTaskCount: longTasks.length,
+        maxLongTask: longTasks.length ? Math.max(...longTasks) : 0,
+      }
+    })
+    assert.ok(motionPerformance.sampledFrames >= 20, `transition produced too few frame samples: ${JSON.stringify(motionPerformance)}`)
+    assert.ok(motionPerformance.maxFrameGap < 250, `transition suffered a blocking frame gap: ${JSON.stringify(motionPerformance)}`)
     for (let i = 0; i < 10; i += 1) await page.keyboard.press('Tab')
     assert.equal(await dialog.evaluate(node => node.contains(document.activeElement)), true, 'focus remains trapped')
     await dialog.locator('.modal-body').evaluate(node => { node.scrollTop = 500 })
     assert.ok(await dialog.locator('.modal-body').evaluate(node => node.scrollTop > 0), 'modal body scrolls internally')
-    await page.screenshot({ path: `${output}/desktop-webmd.png` })
+    await page.screenshot({ path: `${output}/desktop-camera-settled.png` })
     await page.keyboard.press('Escape')
+    await page.waitForTimeout(330)
+    const reverseState = await page.evaluate(() => ({
+      camera: document.body.dataset.modalCamera,
+      dialogOpacity: Number(getComputedStyle(document.querySelector('.modal-dialog')).opacity),
+      pageTransform: getComputedStyle(document.querySelector('#hi')).transform,
+    }))
+    assert.equal(reverseState.camera, 'closing', 'reverse camera state remains active through the exit')
+    assert.ok(reverseState.dialogOpacity > 0 && reverseState.dialogOpacity < 1, `dialog reverses through an intermediate plane: ${JSON.stringify(reverseState)}`)
     await dialog.waitFor({ state: 'detached' })
-    await page.waitForTimeout(360)
+    await page.waitForTimeout(60)
     const after = await page.evaluate(() => ({ url: location.href, history: history.length, scrollY, camera: document.body.dataset.modalCamera ?? null }))
     assert.equal(await trigger.evaluate(node => document.activeElement === node), true, 'Escape returns focus')
     assert.deepEqual({ url: after.url, history: after.history }, { url: before.url, history: before.history }, 'modal does not mutate route/history')
@@ -122,12 +176,19 @@ try {
     assert.equal(after.camera, null, 'camera state cleans up')
 
     const second = page.locator('[data-modal-trigger="split-test"]')
-    await second.evaluate(node => node.click())
+    await second.click()
     await page.getByRole('dialog').waitFor({ state: 'visible' })
     assert.match(await page.getByRole('dialog').innerText(), /A\/B Testing|Testing the experience/i)
+    await page.waitForTimeout(180)
+    await page.keyboard.press('Escape')
+    await page.getByRole('dialog').waitFor({ state: 'detached' })
+    await trigger.click()
+    await page.getByRole('dialog').waitFor({ state: 'visible' })
+    assert.match(await page.getByRole('dialog').innerText(), /WebMD|plan search to checkout/i)
     await page.getByRole('button', { name: 'Close', exact: true }).first().click()
     await page.getByRole('dialog').waitFor({ state: 'detached' })
-    results.desktop = { before, openState, after, switchedProject: 'split-test', intentPreload: { initialModalAssets, intentModalAssets } }
+    results.desktop = { before, openState, after, switchedProject: 'split-test-to-webmd', motionPerformance, intentPreload: { initialModalAssets, intentModalAssets } }
+    results.desktopMotion = { passingPlane, reverseState }
     await page.close()
   }
 
@@ -229,6 +290,7 @@ try {
     }))
     assert.equal(reduced.pageTransform, 'none')
     assert.equal(reduced.pageFilter, 'none')
+    assert.equal(reduced.dialogAnimations, 0, 'reduced motion has no running modal animation')
     await page.keyboard.press('Escape')
     await dialog.waitFor({ state: 'detached' })
     results.reducedMotion = reduced
@@ -240,7 +302,7 @@ try {
     const slow = await browser.newPage({ viewport: { width: 1280, height: 850 } })
     watch(slow, 'slow-image')
     await slow.route(`**${imagePath}`, async route => {
-      await new Promise(resolve => setTimeout(resolve, 900))
+      await new Promise(resolve => setTimeout(resolve, 2200))
       await route.continue()
     })
     await slow.goto(`${base}/`, { waitUntil: 'networkidle' })

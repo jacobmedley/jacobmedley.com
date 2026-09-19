@@ -6,6 +6,71 @@ Baseline: `909ea2275104bc73f483ba7f1c5591db4d17a5b1` (`origin/main` at intake)
 Branch: `codex/motion-modal-refinement-20260919`  
 Publication: not authorized; production remains v12.160 / `1325c6b`
 
+## September 19 continuation: perceptible desktop camera pull-back
+
+Jacob found the first desktop treatment too quick and too shallow to read as a
+camera move. This continuation starts from its clean checkpoint
+`27e361f243d0588d871b673e54222bbb5a5c6613` and supersedes only the earlier
+desktop timing/depth description below. It is implemented on
+`codex/modal-camera-pullback-refinement-20260919` in isolated worktree `5a43`.
+
+Desktop open now runs for 980ms. The site recedes to a 0.93 scale with 82px of
+perspective depth, 5px blur, reduced saturation and 0.82 opacity. The dialog
+begins enlarged at 1.1 scale, 210px toward the camera, 16px out of focus and
+transparent. It becomes legible while crossing the focal plane, then resolves
+to an untransformed, unblurred reading surface. The 820ms exit reverses that
+relationship. The component's cleanup clock is 840ms so background restoration
+continues through the full exit instead of dropping the camera state early.
+
+The implementation deliberately avoids splitting the site or adding a literal
+camera rig. Transform/filter/opacity remain the only desktop scene properties.
+CSS keyframes carry the staged focal crossing; the existing React/Radix lifecycle
+still owns presence, focus, Escape, outside click and scroll isolation. The patch
+is reversible by removing the desktop camera media block, restoring the earlier
+background values/timings, and returning the cleanup clock to 340ms.
+
+Mobile remains the established short bottom sheet. A verification run exposed
+that the desktop background camera selector was still active below 768px and
+that a 52px footer floor exceeded the current 45px measured menu. The mobile
+rule now explicitly removes camera transforms, and the footer uses the measured
+menu height while retaining a 44px Close control and expansion for bottom safe
+area. At 320, 360, 375 and 390px the menu and footer both measured 45px.
+
+### Continuation acceptance
+
+The reusable Chromium suite now saves three desktop frames:
+
+- `desktop-camera-begin.png`, before the modal plane becomes visible;
+- `desktop-camera-passing-plane.png`, during the defocused crossing;
+- `desktop-camera-settled.png`, with the modal sharp and the site recessed.
+
+All three were inspected. At the measured midframe the dialog was scaled 1.017,
+blurred 2.03px and 0.945 opaque; the site was scaled 0.934 and blurred 4.74px.
+At rest the dialog filter was `blur(0px)`. The close sample retained
+`data-modal-camera="closing"` and an intermediate dialog opacity. The suite also
+interrupts the second modal during entrance, switches immediately back to WebMD,
+and completes the next close.
+
+The final run passed focus trap/return, ten Tab presses, Escape, background
+isolation, body/internal scroll, unchanged URL/history, bounded intent preload,
+slow/error/retry media, handle-only swipe, visible close controls and all four
+mobile geometries. Reduced motion reported no running dialog animation, no page
+transform and no page filter. A 1.2-second opening sample recorded 25 frames, a
+133.3ms largest frame gap under headless screenshot/test load, zero long tasks
+and no page/console errors. This is a bounded local Chromium performance check,
+not a device-frame-rate guarantee.
+
+TypeScript, scoped ESLint, `git diff --check` and the production export pass.
+Next 15.5.25 exported 11 pages and verified all 288 images plus 104 active image
+references. Existing exact-lock dependencies were reused from the prior clean
+worktree through a local ignored junction; no dependency was downloaded or
+changed. Preview `8094` serves this worktree's export. Ports `8090` and `8092`
+were not operated.
+
+Safari, iOS browser chrome, physical devices/safe areas, VoiceOver and other
+engines remain unverified. No WCAG certification, push, merge, deployment,
+additional spending, model download or local inference is claimed.
+
 ## Scope and ownership
 
 This checkpoint owns only the hero kinetic sequence, case-study modal lifecycle,

@@ -1,5 +1,46 @@
 # Status
 
+## September 19, 2026: Perceptible desktop modal camera pull-back complete locally
+
+Jacob found the first 340ms desktop modal treatment too quick and shallow to read
+as a camera move. Starting from its exact clean checkpoint `27e361f`, desktop open
+now takes 980ms: the site recedes to a 0.93 scale with 5px blur while the dialog
+crosses from a large 16px-defocused near plane into a sharp reading plane. The
+820ms close reverses that relationship and retains its camera state through exit.
+No literal site split or material redesign was added.
+
+Mobile keeps the established short sheet and now explicitly opts out of desktop
+camera transforms. Verification caught a current 45px menu/52px footer mismatch;
+the footer now matches the measured 45px menu at 320, 360, 375 and 390px while
+retaining a 44px Close control and safe-area expansion. Existing sheet geometry,
+handle-only swipe, header X, internal scrolling and bottom-menu coverage pass.
+
+The focused Chromium suite passes begin/mid/settled focus frames, open, reverse
+close, interrupted entrance, immediate split-test-to-WebMD switching, ten trapped
+Tab presses, Escape/focus return, background isolation, scroll lock/restoration,
+unchanged URL/history, bounded intent preload, slow/error/retry media and reduced
+motion with zero running dialog animation. The inspected midframe measured dialog
+scale 1.017/blur 2.03px and site scale 0.934/blur 4.74px; settled dialog blur was
+zero. A 1.2s headless sample recorded 25 frames, a 133.3ms worst gap under capture
+load, zero long tasks and no page/console errors. This is bounded Chromium evidence,
+not a device frame-rate guarantee.
+
+TypeScript, full authored lint, whitespace, production export, 288 image hashes
+and 104 active references pass on Next 15.5.25. Existing lockfile-identical
+dependencies were reused through an ignored local junction; no dependency download
+or change occurred. Five scoped files including this STATUS changed. Full evidence:
+`docs/motion-modal-refinement-20260919.md` and ignored captures/results under
+`scripts/parity/shots/motion-modal-20260919/`.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback/baseline
+`27e361f243d0588d871b673e54222bbb5a5c6613`; the checkpoint commit follows this
+STATUS-last write and is recorded in Genesis. Preview 8094/PID52716 serves this
+worktree's `out/`; 8090 and 8092 remain untouched. Own lock remains held through
+commit and will then be released. No B edit, copy, push, merge, deployment, added
+spending, reset, model download or local inference. Production remains v12.160 /
+`1325c6b`. Safari, iOS browser chrome, physical devices/safe areas, VoiceOver,
+other engines and full WCAG evaluation remain unverified; no certification claimed.
+
 ## September 19, 2026: Hero and modal motion refinements complete locally
 
 Annotations 4 and 9 are implemented on an isolated branch. Jacob Medley and

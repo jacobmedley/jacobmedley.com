@@ -1,5 +1,37 @@
 # Status
 
+## September 19, 2026: Static-blur modal fall complete locally
+
+Jacob replaced the still-choppy zoom-pan with a flat, bounded entrance. The site
+now remains completely stationary and unfiltered. One fixed viewport backdrop
+uses `blur(18px) saturate(.72)` so the page reads as broad shapes without
+animating the page or blur radius.
+
+The desktop dialog has no perspective, z-depth or filter. It falls 18px while
+fading in and scaling only from .975 to 1 over 400ms, after a 45ms mount delay.
+Close is a 260ms upward fade with a .985 end scale; cleanup completes at 280ms.
+The backdrop fades separately over 240ms. No content or edge is enlarged beyond
+the viewport, resolving the reported transition cropping.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the focused Chromium lifecycle suite pass. The suite
+confirmed `pageTransform: none`, `pageFilter: none`, `dialogFilter: none`, the
+18px backdrop blur, in-bounds desktop geometry, focus/scroll/history restoration,
+project switching, reduced motion, loading/error/retry, and mobile sheets at
+320–390px. It recorded zero long tasks. A separate normal-motion profile in the
+actual in-app browser at 1689x1272 recorded 55 frames over 900ms, a 16.8ms maximum
+gap, no gaps over 25ms and no long tasks. The live browser was restored to its
+original reduced-motion preference afterward.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`94306a2a20f30b09504f55635679cb11d8f75fc3`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+36344 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
 ## September 19, 2026: Desktop modal zoom-pan follow-up complete locally
 
 Jacob reversed the desktop scene direction after the 980ms pull-back felt close

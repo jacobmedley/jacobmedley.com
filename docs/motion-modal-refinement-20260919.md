@@ -6,6 +6,40 @@ Baseline: `909ea2275104bc73f483ba7f1c5591db4d17a5b1` (`origin/main` at intake)
 Branch: `codex/motion-modal-refinement-20260919`  
 Publication: not authorized; production remains v12.160 / `1325c6b`
 
+## September 19 follow-up: static blur and restrained fall
+
+Jacob found the compositor-only zoom-pan still visibly choppy and replaced the
+camera metaphor. This follow-up starts from checkpoint `94306a2` and supersedes
+the zoom-pan section below. The site no longer moves, scales, fades or receives a
+filter when a desktop modal opens. A single fixed backdrop supplies an 18px blur
+and restrained desaturation, so the page recedes into broad shapes without
+animating the page or the blur radius.
+
+The desktop dialog is flat: no perspective, z-depth or filter. It falls 18px
+into place while fading from transparent and scaling only from .975 to 1 over
+400ms. A 45ms delay stages visible motion just after mount work; close is a
+260ms, 10px upward fade at .985 scale. The backdrop fades independently over
+240ms. The component cleanup clock is 280ms so closing state remains present for
+the complete exit.
+
+The production export, TypeScript, scoped ESLint, whitespace check and complete
+focused Chromium suite pass. At the sampled 1440x950 transition frame, the site
+transform and filter were both `none`, the dialog filter was `none`, the backdrop
+computed to `blur(18px) saturate(0.72)`, and dialog/content edges stayed inside
+the viewport within subpixel tolerance. Mobile sheets at 320, 360, 375 and 390px,
+focus trap/return, Escape, scroll/history restoration, project switching, reduced
+motion, and loading/error/retry behavior remain intact.
+
+The headless acceptance workload recorded zero long tasks. A separate warm run in
+the actual in-app browser at 1689x1272 recorded 55 frames over 900ms, a 16.8ms
+largest frame gap, no gaps over 25ms and no long tasks. The settled live state
+confirmed the page transform remained `none`, the dialog remained unfiltered and
+the backdrop alone held the 18px blur. This is a bounded local Chromium result,
+not a frame-rate guarantee across devices or browsers.
+
+No copy, B edit, mobile interaction, dependency, push, merge or deployment
+changed.
+
 ## September 19 follow-up: compositor-only zoom-pan
 
 Jacob found the 980ms pull-back close to the intended feel but visibly choppy,

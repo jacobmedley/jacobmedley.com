@@ -1414,7 +1414,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
-  perspective: 1400px;
+  perspective: none;
 }
 .modal[data-state='open'] { animation: modal-fade-in 0.15s linear; }
 .modal[data-state='closed'] { animation: modal-fade-out 0.15s linear forwards; }
@@ -1425,8 +1425,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   margin: 0;
   pointer-events: none;
 }
-/* Mobile keeps the established sheet timing. Desktop overrides this with a staged
- * camera retreat below, so the foreground can cross the focal plane visibly. */
+/* Mobile keeps the established sheet timing. Desktop uses a short, flat entrance. */
 .modal[data-state='open'] .modal-dialog { animation: modal-dialog-in 0.34s cubic-bezier(.2,.78,.25,1); }
 .modal[data-state='closed'] .modal-dialog { animation: modal-dialog-out 0.28s cubic-bezier(.55,0,.8,.25) forwards; }
 
@@ -1501,33 +1500,22 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   position: fixed;
   inset: 0;
   z-index: 1050;
-  background-color: #000;
-  opacity: 0.5;
+  background-color: rgb(38 32 43 / 42%);
+  -webkit-backdrop-filter: blur(18px) saturate(.72);
+  backdrop-filter: blur(18px) saturate(.72);
+  opacity: 1;
+  will-change: opacity;
 }
 .modal-backdrop[data-state='open'] { animation: backdrop-fade-in 0.15s linear; }
 .modal-backdrop[data-state='closed'] { animation: backdrop-fade-out 0.15s linear forwards; }
 
-body[data-modal-camera] > :not(.modal):not(.modal-backdrop):not([data-radix-focus-guard]):not(script):not(noscript) {
-  transition:
-    transform .42s cubic-bezier(.22,.8,.22,1),
-    opacity .42s cubic-bezier(.22,.8,.22,1);
-  transform-origin: 50% 42vh;
-  will-change: transform, opacity;
-}
-body[data-modal-camera='open'] > :not(.modal):not(.modal-backdrop):not([data-radix-focus-guard]):not(script):not(noscript) {
-  transform: translate3d(-1.1vw, -.7vh, 0) scale(1.035);
-  opacity: .74;
-  transition-duration: .28s;
-  transition-timing-function: cubic-bezier(.16,.84,.22,1);
-}
-
 @media (min-width: 768px) {
-  .modal[data-state='open'] { animation: modal-camera-fade-in .65s linear; }
-  .modal[data-state='closed'] { animation: modal-camera-fade-out .52s linear forwards; }
-  .modal[data-state='open'] .modal-dialog { animation: modal-camera-dialog-in .65s cubic-bezier(.16,.78,.2,1); }
-  .modal[data-state='closed'] .modal-dialog { animation: modal-camera-dialog-out .52s cubic-bezier(.5,0,.78,.2) forwards; }
-  .modal-backdrop[data-state='open'] { animation: modal-camera-backdrop-in .65s linear; }
-  .modal-backdrop[data-state='closed'] { animation: modal-camera-backdrop-out .52s linear forwards; }
+  .modal[data-state='open'] { animation: modal-camera-fade-in .4s linear .045s both; }
+  .modal[data-state='closed'] { animation: modal-camera-fade-out .26s linear forwards; }
+  .modal[data-state='open'] .modal-dialog { animation: modal-camera-dialog-in .4s cubic-bezier(.2,.78,.25,1) .045s both; }
+  .modal[data-state='closed'] .modal-dialog { animation: modal-camera-dialog-out .26s cubic-bezier(.5,0,.78,.2) forwards; }
+  .modal-backdrop[data-state='open'] { animation: modal-camera-backdrop-in .24s linear both; }
+  .modal-backdrop[data-state='closed'] { animation: modal-camera-backdrop-out .2s linear forwards; }
 }
 
 /* One reading surface for every case study: rounded media, quiet glass, clear ink. */
@@ -1683,7 +1671,6 @@ body[data-modal-camera='open'] > :not(.modal):not(.modal-backdrop):not([data-rad
   .modal-intro, .modal-featured-hero.featured-work-card { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
 }
 @media (max-width: 767px) {
-  body[data-modal-camera] > :not(.modal):not(.modal-backdrop):not([data-radix-focus-guard]):not(script):not(noscript) { transform: none; filter: none; opacity: 1; transition: none; will-change: auto; }
   .modal { top: max(.75rem, env(safe-area-inset-top, 0px)); bottom: 0; width: 100%; height: auto; max-height: calc(100dvh - max(.75rem, env(safe-area-inset-top, 0px))); overflow: hidden; perspective: none; }
   .modal-dialog { height: 100%; padding: 0; }
   .modal-content { border-radius: 1.5rem 1.5rem 0 0; transform: translateY(var(--modal-swipe-y, 0)); }
@@ -1711,7 +1698,6 @@ body[data-modal-camera='open'] > :not(.modal):not(.modal-backdrop):not([data-rad
 }
 @media (prefers-reduced-motion: reduce) {
   .modal, .modal-backdrop, .modal .modal-dialog { animation: none !important; }
-  body[data-modal-camera] > :not(.modal):not(.modal-backdrop):not([data-radix-focus-guard]):not(script):not(noscript) { transform: none !important; filter: none !important; opacity: 1 !important; transition: none !important; }
   .modal-image-frame[data-load-state='loading'] { animation: none; }
   .modal .progress-bar-animated { animation: none !important; }
   .modal-animated-image canvas { display: inline-block; }
@@ -1735,44 +1721,37 @@ body[data-modal-camera='open'] > :not(.modal):not(.modal-backdrop):not([data-rad
   to   { transform: translate3d(0, 12px, -56px) scale(.985); opacity: .4; }
 }
 @keyframes modal-camera-dialog-in {
-  0% { transform: translate3d(3.5vw, 2vh, 0) scale(.86); opacity: 0; }
-  22% { transform: translate3d(2.4vw, 1.35vh, 0) scale(.9); opacity: .48; }
-  68% { transform: translate3d(.45vw, .25vh, 0) scale(.985); opacity: 1; }
-  100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  from { transform: translate3d(0, -18px, 0) scale(.975); opacity: 0; }
+  to { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
 }
 @keyframes modal-camera-dialog-out {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
-  34% { transform: translate3d(.5vw, .3vh, 0) scale(.982); opacity: .92; }
-  100% { transform: translate3d(3.5vw, 2vh, 0) scale(.86); opacity: 0; }
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  to { transform: translate3d(0, -10px, 0) scale(.985); opacity: 0; }
 }
 @keyframes modal-camera-fade-in {
-  0% { opacity: 0; }
-  42% { opacity: .88; }
-  100% { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes modal-camera-fade-out {
-  0% { opacity: 1; }
-  58% { opacity: .78; }
-  100% { opacity: 0; }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 @keyframes modal-camera-backdrop-in {
-  0% { opacity: 0; }
-  45% { opacity: .4; }
-  100% { opacity: .5; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes modal-camera-backdrop-out {
-  0% { opacity: .5; }
-  55% { opacity: .18; }
-  100% { opacity: 0; }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 @keyframes modal-sheet-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes modal-sheet-out { from { transform: translateY(0); } to { transform: translateY(100%); } }
 @keyframes backdrop-fade-in {
   from { opacity: 0; }
-  to   { opacity: 0.5; }
+  to   { opacity: 1; }
 }
 @keyframes backdrop-fade-out {
-  from { opacity: 0.5; }
+  from { opacity: 1; }
   to   { opacity: 0; }
 }
 

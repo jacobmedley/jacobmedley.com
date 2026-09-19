@@ -103,6 +103,7 @@ try {
     const passingPlane = await page.evaluate(() => {
       const modalDialog = document.querySelector('.modal-dialog')
       const modalContent = document.querySelector('.modal-content')
+      const backdrop = document.querySelector('.modal-backdrop')
       const pageLayer = document.querySelector('#hi')
       const style = getComputedStyle(modalDialog)
       const rect = modalDialog.getBoundingClientRect()
@@ -113,17 +114,20 @@ try {
         dialogOpacity: Number(style.opacity),
         pageTransform: getComputedStyle(pageLayer).transform,
         pageFilter: getComputedStyle(pageLayer).filter,
+        backdropFilter: getComputedStyle(backdrop).backdropFilter || getComputedStyle(backdrop).webkitBackdropFilter,
         viewport: { width: innerWidth, height: innerHeight },
         dialogRect: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom },
         contentRect: { left: contentRect.left, top: contentRect.top, right: contentRect.right, bottom: contentRect.bottom },
       }
     })
-    assert.notEqual(passingPlane.dialogTransform, 'none', 'mid-transition dialog is still crossing the focal plane')
-    assert.equal(passingPlane.dialogFilter, 'none', 'zoom-pan avoids full-dialog filter rasterization')
-    assert.equal(passingPlane.pageFilter, 'none', 'site push-forward avoids full-page filter rasterization')
+    assert.notEqual(passingPlane.dialogTransform, 'none', 'mid-transition dialog is still settling into place')
+    assert.equal(passingPlane.dialogFilter, 'none', 'flat entrance avoids full-dialog filter rasterization')
+    assert.equal(passingPlane.pageTransform, 'none', 'the site stays stationary behind the modal')
+    assert.equal(passingPlane.pageFilter, 'none', 'the site itself is not filtered')
+    assert.match(passingPlane.backdropFilter, /blur\(18px\)/, 'one viewport backdrop layer supplies the stronger blur')
     assert.ok(passingPlane.dialogOpacity > .35 && passingPlane.dialogOpacity < 1, `mid-transition dialog is legible but unsettled: ${JSON.stringify(passingPlane)}`)
-    assert.ok(passingPlane.dialogRect.left >= -1 && passingPlane.dialogRect.top >= -1 && passingPlane.dialogRect.right <= passingPlane.viewport.width + 1 && passingPlane.dialogRect.bottom <= passingPlane.viewport.height + 1, `dialog remains inside the viewport during zoom-pan: ${JSON.stringify(passingPlane)}`)
-    assert.ok(passingPlane.contentRect.left >= -1 && passingPlane.contentRect.top >= -1 && passingPlane.contentRect.right <= passingPlane.viewport.width + 1 && passingPlane.contentRect.bottom <= passingPlane.viewport.height + 1, `modal content is not cropped during zoom-pan: ${JSON.stringify(passingPlane)}`)
+    assert.ok(passingPlane.dialogRect.left >= -1 && passingPlane.dialogRect.top >= -1 && passingPlane.dialogRect.right <= passingPlane.viewport.width + 1 && passingPlane.dialogRect.bottom <= passingPlane.viewport.height + 1, `dialog remains inside the viewport during the fall transition: ${JSON.stringify(passingPlane)}`)
+    assert.ok(passingPlane.contentRect.left >= -1 && passingPlane.contentRect.top >= -1 && passingPlane.contentRect.right <= passingPlane.viewport.width + 1 && passingPlane.contentRect.bottom <= passingPlane.viewport.height + 1, `modal content is not cropped during the fall transition: ${JSON.stringify(passingPlane)}`)
     await page.screenshot({ path: `${output}/desktop-camera-passing-plane.png` })
     await page.waitForTimeout(450)
     const openState = await page.evaluate(() => {
@@ -136,8 +140,10 @@ try {
         dialogTransform: getComputedStyle(modalDialog).transform,
         dialogFilter: getComputedStyle(modalDialog).filter,
         dialogAnimationDuration: parseFloat(getComputedStyle(modalDialog).animationDuration) * 1000,
+        dialogAnimationDelay: parseFloat(getComputedStyle(modalDialog).animationDelay) * 1000,
         pageTransform: getComputedStyle(pageLayer).transform,
         pageFilter: getComputedStyle(pageLayer).filter,
+        backdropFilter: getComputedStyle(document.querySelector('.modal-backdrop')).backdropFilter || getComputedStyle(document.querySelector('.modal-backdrop')).webkitBackdropFilter,
         focusInside: dialog.contains(document.activeElement),
         backgroundHidden: [...document.body.children].filter(node => !node.matches('.modal,.modal-backdrop,[data-radix-focus-guard],script,noscript')).some(node => node.getAttribute('aria-hidden') === 'true' || node.inert),
         bodyOverflow: getComputedStyle(document.body).overflow,
@@ -145,10 +151,12 @@ try {
       }
     })
     assert.equal(openState.camera, 'open')
-    assert.notEqual(openState.pageTransform, 'none')
+    assert.equal(openState.pageTransform, 'none')
     assert.equal(openState.pageFilter, 'none')
+    assert.match(openState.backdropFilter, /blur\(18px\)/)
     assert.ok(openState.dialogFilter === 'none' || openState.dialogFilter === 'blur(0px)', `settled dialog is sharp: ${openState.dialogFilter}`)
-    assert.equal(openState.dialogAnimationDuration, 650, 'desktop zoom-pan entrance uses the requested 650ms clock')
+    assert.equal(openState.dialogAnimationDuration, 400, 'desktop fall entrance stays quick')
+    assert.equal(openState.dialogAnimationDelay, 45, 'visible motion is staged just after mount work')
     assert.equal(openState.focusInside, true)
     assert.equal(openState.backgroundHidden, true)
     assert.equal(openState.internalScrollable, true)
@@ -170,14 +178,15 @@ try {
     assert.ok(await dialog.locator('.modal-body').evaluate(node => node.scrollTop > 0), 'modal body scrolls internally')
     await page.screenshot({ path: `${output}/desktop-camera-settled.png` })
     await page.keyboard.press('Escape')
-    await page.waitForTimeout(330)
+    await page.waitForTimeout(130)
     const reverseState = await page.evaluate(() => ({
       camera: document.body.dataset.modalCamera,
       dialogOpacity: Number(getComputedStyle(document.querySelector('.modal-dialog')).opacity),
       pageTransform: getComputedStyle(document.querySelector('#hi')).transform,
     }))
-    assert.equal(reverseState.camera, 'closing', 'reverse camera state remains active through the exit')
-    assert.ok(reverseState.dialogOpacity > 0 && reverseState.dialogOpacity < 1, `dialog reverses through an intermediate plane: ${JSON.stringify(reverseState)}`)
+    assert.equal(reverseState.camera, 'closing', 'closing state remains active through the exit')
+    assert.equal(reverseState.pageTransform, 'none', 'the site stays stationary through the exit')
+    assert.ok(reverseState.dialogOpacity > 0 && reverseState.dialogOpacity < 1, `dialog fades through an intermediate state: ${JSON.stringify(reverseState)}`)
     await dialog.waitFor({ state: 'detached' })
     await page.waitForTimeout(60)
     const after = await page.evaluate(() => ({ url: location.href, history: history.length, scrollY, camera: document.body.dataset.modalCamera ?? null }))

@@ -161,7 +161,7 @@ are recorded in the task handoff after STATUS is written last and committed.
 Jacob's September 20 browser comments are implemented locally as B65. The hero
 now occupies one full small viewport, keeps a pure-white center field, clips one
 bottom wave at its midpoint, and flows directly into selected work without the
-former second-wave gap. The four pathway cards are removed. The closing hero
+former blank band between the paired wave halves. The four pathway cards are removed. The closing hero
 sequence begins with the first UX role and drops in the build paragraph, bold
 better-way line, rule, action label, and arrow in order. The rule uses the same
 gap on both sides. Reduced motion keeps the complete settled state visible.
@@ -177,7 +177,7 @@ action now includes a lock icon; password enforcement remains outside this pass.
 The production build, type check, build lint, export preparation, 288-image and
 104-reference asset verification, and whitespace check passed. In-app browser
 review at 1484x1272 confirmed a 1272px hero, a 281.83px wave with 140.91px visible,
-no pathway cards, no second top wave, five 819.34px employment cards, a 422.09px
+no pathway cards, no blank boundary gap, five 819.34px employment cards, a 422.09px
 stacked side card, and horizontal divider backgrounds. Education review confirmed
 nine cards, zero visible View labels, zero card dividers, 22px padding, zero
 title/source gap, clipped overflow, and a 44px link 10.8px from the top/right.
@@ -189,3 +189,18 @@ UX was 88% visible while the build paragraph was already 83% visible and the
 later elements remained staged above their resting positions. By 5.3 seconds the
 paragraph, bold line, rule, action label, and arrow were fully settled. The
 browser's original reduced-motion preference was restored afterward.
+
+### Selected-work correction
+
+B66 restores the flipped wave half at the top of selected work, removes the
+introductory `Explore the full case studies` link, and removes the scoped CSS
+uppercase treatment from the repeated `Case Study` eyebrow. This correction
+supersedes the earlier all-caps exception and wave-removal interpretation.
+
+At 1484x1272, the hero and selected-work boundaries met with a measured zero-pixel
+gap; the restored flipped half occupied 139.91px below the seam. At 390x844, the
+same boundary had a zero-pixel gap and a 42.19px flipped half. Both widths had no
+horizontal overflow. Browser inspection found no introductory link and five
+visible `Case Study` labels with `text-transform: none`. The production build,
+TypeScript/build lint, 288-image and 104-reference export verification, authored-
+source ESLint, and whitespace check passed after the correction.

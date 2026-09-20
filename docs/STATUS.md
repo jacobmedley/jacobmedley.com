@@ -1,5 +1,44 @@
 # Status
 
+## September 20, 2026: Selected-work browser corrections complete locally
+
+Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch
+`codex/full-site-integration-20260920`, worktree 6b03. B66 implements Jacob's
+three follow-up browser corrections and supersedes the matching parts of B62,
+B64, and the prior B65 interpretation. No push, main merge, PR, publication, or
+deployment was performed.
+
+The hero retains its clipped upper wave half. Selected work again begins with the
+flipped counterpart, clipped to half-height, with a measured zero-pixel boundary
+gap. The introductory `Explore the full case studies` link is removed. All five
+work cards display `Case Study` in Title Case; the CSS uppercase override is gone,
+matching the standing prohibition on all-caps ordinary labels. The later locked
+`More stories behind the work` action remains.
+
+Verification actually run: production build with Next 15.5.25, TypeScript/build
+lint, export preparation, 288-image and 104-reference asset verification,
+authored-source ESLint over app/components/lib, and Git whitespace. In-app browser
+review at 1484x1272 measured the flipped wave half at 139.91px; 390x844 measured
+42.19px. Both joined the hero at a zero-pixel gap with no horizontal overflow.
+The rendered page had no introductory case-study link and five `Case Study`
+eyebrows with `text-transform: none`. The temporary mobile viewport was reset and
+the preview returned to the page top.
+
+Changed files: `app/globals.css`, `components/sections/CaseStudiesSection.tsx`,
+`components/ui/QuietPrism.module.css`, `docs/copy-register.md`, and
+`docs/full-site-integration-20260920.md`; this STATUS file is written last before
+the checkpoint. Rollback is `4f198855323546ce4dd4eba3948fd2fe5fda684e`.
+Preview `http://localhost:8090/` remains open under PID 52456 and serves the
+rebuilt export. Existing previews on 3016 and 3000 were preserved.
+
+Fresh Exchange status at 2026-09-20T21:37:13+00:00 had fingerprint
+`6186b5cff5cb0b9bed9e21a104b4a7d1d64619568f25033ca51d6fee76fe305f`, no
+conflicts, and change event
+`20260920T213513Z-5e90839238de4820883aec8659529196`. A final append-only update
+follows the local commit. Shared CURRENT and the website card were not edited; no
+peer-awareness claim is made. No added spending, reset, model download, paid
+fallback, or local inference ran.
+
 ## September 20, 2026: Browser-comment refinement complete locally
 
 Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch

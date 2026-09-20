@@ -7,6 +7,7 @@ import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import WorkCard from '@/components/ui/WorkCard'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
+import WaveSeparator from '@/components/ui/WaveSeparator'
 
 const byOrder = (a: { order: number }, b: { order: number }) => a.order - b.order
 
@@ -20,6 +21,8 @@ export default function CaseStudiesSection() {
 
   return (
     <section className="my-work">
+      <WaveSeparator position="top" waveId="wave-work" className="work-wave-reverse" />
+
       <div className="content">
         <div className="container">
           <SectionHeader
@@ -31,7 +34,6 @@ export default function CaseStudiesSection() {
 
           <div className="work-introduction">
             <p>Five projects across product, brand, and design systems. Open a project for the work, or read the longer stories behind the decisions.</p>
-            <Link href="/case-studies/" className="prism-text-link">Explore the full case studies <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link>
           </div>
 
           <div className="featured-work-grid">

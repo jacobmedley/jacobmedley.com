@@ -2206,3 +2206,19 @@ Add a lock icon to `More stories behind the work` as a visual signal for the
 planned protected destination. Password enforcement, credentials, and routing
 are not specified in this pass and remain unimplemented. No employment,
 leadership, expertise, tool, education, project, or outcome wording changes.
+
+
+## B66. Selected-work correction [APPLIED LOCALLY]
+
+Source: Jacob's September 20 browser correction in task
+`01a0bf67-f456-7e32-b581-a233af6149fe`. Publication is not authorized.
+
+Remove the introductory `Explore the full case studies` action from the selected-
+work section. The later `More stories behind the work` action remains. Render the
+repeated work-card eyebrow as `Case Study` in Title Case. This supersedes B62 and
+B64 only where they allowed the ordinary words `CASE STUDY` as an all-caps
+typographic exception; Jacob's style guide forbids that treatment.
+
+Restore the reversed wave at the selected-work section boundary. The hero shows
+one half of the wave and the top of selected work shows its flipped counterpart,
+with no blank band between them. This changes presentation only.

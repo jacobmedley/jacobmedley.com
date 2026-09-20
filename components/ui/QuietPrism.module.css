@@ -128,7 +128,7 @@
   color: #34313b;
   font-size: .8125rem;
   letter-spacing: .18em;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .directionalArrow {

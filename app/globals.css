@@ -310,7 +310,7 @@ section .content,
   overflow: hidden;
   background-color: #fff;
   background-image:
-    radial-gradient(ellipse 48% 58% at center center, #fff 0 58%, rgba(255, 255, 255, .94) 72%, transparent 100%),
+    radial-gradient(ellipse 72% 82% at center center, #fff 0 18%, rgba(255, 255, 255, .96) 34%, rgba(255, 255, 255, .72) 52%, rgba(255, 255, 255, .3) 76%, transparent 100%),
     radial-gradient(ellipse at top center, #c1c8d1, transparent),
     radial-gradient(ellipse at top right, #afc8ae, transparent),
     radial-gradient(ellipse at top left, #f1d988, transparent);
@@ -533,16 +533,16 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   bottom: 0;
   left: 0;
   width: 100%;
-  transform: translateY(50%);
+  transform: none;
 }
 
-/* The hero and selected-work waves share one boundary: each section clips one
- * half, and the lower half is flipped into the next section. */
+/* Each complete sweep is half of the paired band. Both meet at their filled
+ * edges, preserving the crossing translucent layers instead of cropping them. */
 #work .work-wave-reverse {
   position: relative;
   bottom: auto;
   top: auto;
-  height: 5vh;
+  height: 10vh;
   overflow: hidden;
   transform: none;
 }
@@ -554,10 +554,12 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
   transform: rotate(180deg);
 }
 @media (min-width: 768px) {
-  #work .work-wave-reverse { height: 11vh; }
+  #work .work-wave-reverse { height: 22vh; }
 }
 
 .waves {
+  display: block;
+  border: 0;
   width: 100%;
   height: 10vh;
   margin-bottom: 0;
@@ -1390,7 +1392,12 @@ html:is(.motion-paused, .motion-hidden) .thinking-art-split-test .thinking-geome
 .thinking-panel { border-radius: 0 0 2rem 2rem; }
 /* Overlap rasterized SVG edges at fractional viewport heights. */
 .waves { display: block; height: calc(10vh + 2px); translate: 0 1px; }
+.waves-wrapper.top .waves { translate: 0 -1px; }
 @media (min-width: 768px) { .waves { height: calc(22vh + 2px); } }
+@media (max-width: 767.98px) {
+  #hi .waves, #work .work-wave-reverse .waves { height: calc(16vh + 2px); }
+  #work .work-wave-reverse { height: 16vh; }
+}
 .fa-arrow-right { transition: translate 350ms cubic-bezier(.16,1,.3,1); }
 @media (prefers-reduced-motion: no-preference) {
   html:not(.motion-paused):not(.motion-hidden) [data-motion-root]:not(.motion-offscreen):focus-within :is(.thinking-icon-anchor,.featured-work-anchor) { transform: scale(1.16); animation-play-state: running; }

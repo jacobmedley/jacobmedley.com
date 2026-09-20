@@ -149,8 +149,8 @@
   margin: 1.5rem 1.5rem 1.5rem 0;
   padding: clamp(1.75rem, 3vw, 2.5rem);
   padding-bottom: 1.625rem;
-  border-color: #fffffff0;
-  background: linear-gradient(145deg, #f5fbff85, #eff8fc45);
+  border-color: transparent;
+  background: linear-gradient(to bottom left, #ffffffdf, #eff8fc45);
   box-shadow: inset 0 1px 2px #ffffffed, inset 0 -1px 2px #7897a455, 0 .4rem 1.2rem #36566b12;
   -webkit-backdrop-filter: blur(5px) saturate(125%);
   backdrop-filter: blur(5px) saturate(125%);
@@ -164,7 +164,15 @@
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  background: linear-gradient(125deg, #ffffff42, transparent 26%, #ffffff17 60%, transparent 76%);
+  background: linear-gradient(to bottom left, #ffffff35, transparent 70%);
+}
+
+.featuredCopy::after {
+  content: ''; position: absolute; inset: 0; padding: 1px;
+  border-radius: inherit; pointer-events: none;
+  background: linear-gradient(to bottom left, color-mix(in srgb, var(--featured-ink) 35%, white), #fff);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
 
 .featuredCopy :global(.portfolio-badges) {

@@ -175,8 +175,7 @@ export default function ResumeSection() {
           <hr className="solid-center resume-experience-divider" />
           <div className="row resume-columns">
             <div className="col-24 resume-experience-column">
-              <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
-              <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
+              <ol className="resume-timeline" aria-label="Experience">
                 {experience.map((job) => (
                   <li className={`resume-timeline-entry resume-timeline-entry-${job.tone}${job.highlighted ? ' is-highlighted' : ''}`} key={job.company}>
                     <ExperienceDisclosure company={job.company} header={

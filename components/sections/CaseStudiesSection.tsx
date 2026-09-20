@@ -1,7 +1,5 @@
 'use client'
 
-import Link from 'next/link'
-
 import { Fragment, useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -47,7 +45,6 @@ export default function CaseStudiesSection() {
               </Fragment>
             ))}
           </div>
-          <p className="work-more-stories"><Link href="/case-studies/" className="prism-text-link"><i className="fa-thin fa-lock-keyhole work-more-stories-lock" aria-hidden="true" /> More stories behind the work <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link></p>
         </div>
       </div>
 

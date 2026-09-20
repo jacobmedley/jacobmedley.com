@@ -1,5 +1,38 @@
 # Status
 
+## September 20, 2026: Wave and card refinement complete locally
+
+Owner: task `01a0bf67-f456-7e32-b581-a233af6149fe`, worktree 6b03,
+branch `codex/full-site-integration-20260920`. B67 implements Jacob's latest
+seven browser annotations. Broad, independently phased translucent waves now
+join without a seam across the hero and selected-work sections. The white halo
+has a longer falloff. Education uses naturally sized masonry columns with equal
+gaps. The duplicate Experience heading and later case-study link are removed.
+Featured glass panels have brighter top-right corners; How I work cards have
+themed diagonal surfaces, inverse gradient borders, and arrows beside wrapped
+titles. Existing copy and artwork are preserved.
+
+Production build, type/build lint, static export, 288-image/104-reference asset
+verification, authored-source ESLint, and Git whitespace checks passed. Browser
+review at 1484x1272, 820x1180, and 390x844 confirmed 3/2/1 education columns with
+19.2px gaps, 16px arrow clearance, no horizontal overflow, and a zero-gap wave
+boundary. The A/B Testing dialog opens, closes, and returns focus to its card.
+Reduced-motion preference was preserved. Full-cycle animation and screen-reader
+testing were not repeated. Detailed changed files and evidence are in
+`docs/browser-visual-refinement-20260920.md`.
+
+Preview `http://localhost:8090/` remains running as PID 52456 against this
+worktree's rebuilt export. Browser viewport restored. Other previews preserved.
+No push, main merge, PR, or deployment. Rollback:
+`27bd62c8cd6edb246ff477b5bc2ea33a8c989e7b`. Case-study completion and password
+protection remain separate pending work. No added spending or local inference.
+
+Exchange acceptance fingerprint at 2026-09-20T18:24:01-04:00:
+`32238b3b064a17aa073466701e44e82174456d254e0224840ca89873a26101c1`,
+no conflicts; change event `20260920T221532Z-2d8d4fbcb7f84315879147e9993fb5e8`.
+STATUS is the last source write before the local checkpoint. A unique Exchange
+update follows that commit. Shared coordinator-owned records remain untouched.
+
 ## September 20, 2026: Selected-work browser corrections complete locally
 
 Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch

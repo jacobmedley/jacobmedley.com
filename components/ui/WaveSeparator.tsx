@@ -3,6 +3,9 @@ import { cn } from '@/lib/utils'
 // Shared source geometry for page waves and quiet card corner crops.
 export const MAIN_WAVE_PATH = 'M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z'
 
+// Extra periods keep every independently phased layer filled during its drift.
+const SEPARATOR_WAVE_PATH = 'M-336 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 58-18 88-18 58 18 88 18 58-18 88-18 58 18 88 18v44h-704z'
+
 interface WaveSeparatorProps {
   /** 'top' rotates the wave 180° to cap the top of a section (legacy .waves-wrapper.top) */
   position?: 'top' | 'bottom'
@@ -34,14 +37,14 @@ export default function WaveSeparator({
         <defs>
           <path
             id={waveId}
-            d={MAIN_WAVE_PATH}
+            d={SEPARATOR_WAVE_PATH}
           />
         </defs>
         <g className="parallax">
           <use href={`#${waveId}`} className="wave-four" x="48" y="0" />
-          <use href={`#${waveId}`} className="wave-three" x="48" y="3" />
-          <use href={`#${waveId}`} className="wave-two" x="48" y="5" />
-          <use href={`#${waveId}`} className="wave-one" x="48" y="7" />
+          <use href={`#${waveId}`} className="wave-three" x="96" y="1" />
+          <use href={`#${waveId}`} className="wave-two" x="144" y="2" />
+          <use href={`#${waveId}`} className="wave-one" x="192" y="7" />
         </g>
       </svg>
     </div>

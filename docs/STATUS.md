@@ -1,5 +1,42 @@
 # Status
 
+## September 20, 2026: Final Quiet Prism source pinned in integration plan
+
+Updated the documentation-only plan after the refinement owner's final handoff.
+Source is `c1e8dc605aa66e208f446d464588ac7f9e92ce53` on
+`codex/quiet-prism-refinement-20260920`; verified 6d80 clean with lock released.
+Its implementation is complete. Jacob's final visual approval and production
+adoption remain pending; no merge or publication was authorized.
+
+The plan now records the ten-file adoption map, B63's lab-only scope, preserved
+foundation requirements and the explicit classed-HR selector. Three new
+temporary-file conflict probes found foundation/refinement CSS merges textually,
+STATUS conflicts in all three comparisons, and an editorial copy-register
+conflict. Combined behavior still needs testing on a future integration tree.
+Inspected five retained owner evidence files and the committed report; no
+application build or browser suite was rerun here. Document checks passed for
+48 commit references, local links, fences, JSON and whitespace. Validation's
+initial broad reference matcher was corrected to exclude dates and task IDs.
+
+Only the integration plan, inventory JSON and this STATUS changed, with STATUS
+written last. Branch remains `codex/website-integration-plan-20260920`; final
+checkpoint SHA follows in the task/Genesis handoff. Follow-up rollback is
+`bd0f6bd44dc7b50b0167369f0c9dac67a82c8cd1`. Source rollback is `f94afba`.
+Own lock is released after checkpoint. No other checkout changed.
+
+Verified existing previews: 3016 serves 6d80's final static export, listener
+PID 46540 / parent 27272, bound to 127.0.0.1; 3000 remains PID 16740 / parent 4372.
+This task started or stopped no server. No push, PR, merge or deployment.
+Open work: visual approval, scoped production adoption, combined acceptance,
+deferred content and an explicit publication decision. Physical touch, other
+browser engines and screen-reader coverage remain owner-reported limitations.
+
+Fresh Exchange read included final event
+`20260920T155202Z-69295f7dae2c46c98a5451e64905247f`; status at 15:58:27 UTC
+confirmed fingerprint
+`93a4266c068fe1577d6022cd6ac032d1bebe1d16c48597a729009e9a42ec17ed`.
+Append-only final update follows the commit; no shared coordinator file edited.
+
 ## September 20, 2026: Integration inventory and merge plan, documentation only
 
 Completed Jacob's requested coordination audit in isolated planning checkout 6b03,

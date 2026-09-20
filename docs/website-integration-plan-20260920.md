@@ -11,7 +11,8 @@ Start a future integration branch from the freshly verified remote main,
 currently **909ea2275104bc73f483ba7f1c5591db4d17a5b1**. Import the approved B60
 editorial record, the responsive foundation, and the approved final modal branch.
 Then adopt the accepted Quiet Prism components in a separate production change
-after the active refinement has a frozen commit and Jacob has reviewed it.
+from frozen refinement **c1e8dc605aa66e208f446d464588ac7f9e92ce53** after Jacob
+has reviewed it. Implementation is complete; final visual approval is pending.
 Keep the deferred dedicated-page copy and older portfolio experiments separate.
 
 Do not merge every branch. Much of the apparent backlog already shipped. Several
@@ -29,6 +30,8 @@ Audit began at 2026-09-20 15:21 UTC. The machine inventory was captured at
 [the machine inventory](reviews/integration-inventory-20260920.json) for every
 worktree, local/tracking ref, complete SHA, changed path, dirty/lock snapshot,
 patch-equivalence check and conflict probe.
+The follow-up `quietPrismHandoff` entry pins the completed refinement and three
+additional conflict probes; the original inventory remains a historical snapshot.
 
 - Read repository STATUS, working agreement, AGENTS, Genesis protocol, content
   register and style/voice/data authorities. Read Exchange entry point, notes,
@@ -80,7 +83,7 @@ to the evidence table below; these are historical checks, not reruns by this aud
 | `5074`; **Refine modal camera focus pull**, task `01a0bb10-aec3-74f1-9917-1397032a7024` | `codex/modal-camera-pullback-20260919` · `306380b8baf0f46e9428d8ceee95c92ca2e00608` | Parallel 1.04s camera-pullback experiment. V7. Later direct direction rejects moving/depth-treated page. | Clean / none. Superseded alternative; preserve branch and unique test frames, exclude implementation. |
 | `5a43`; **Refine modal camera focus pull**, task `01a0bb11-4163-7263-b6d4-38d791317fbf` | `codex/modal-camera-pullback-refinement-20260919` · `c23b8a39d801500e8e0ec6d435c26fa38860dc70` | Stationary page, fixed 18px backdrop blur, sharp 400ms modal fall/fade/.975 scale, 260ms close; includes `27e361f`. V8. Jacob's later user message says “Aproved.” | Clean / none. Approved local integration candidate. Merge descendant branch, not its final dependent commit alone. |
 | `a64d`; **Explore unified card materials and visual…**, then **Refine Quiet Prism cards** | `codex/visual-system-lab-20260919` · `f94afbacde504c22ea2d3db099eb2e45b13dbc33` | Unlinked noindex lab, card materials, B61/B62, native Experience animation. V9. Direction selected, latest refinement requested; this tip is not final visual acceptance. | Clean / none. Historical base for active refinement; no blanket production merge. |
-| `6d80`; **Refine Quiet Prism motion and layout** | `codex/quiet-prism-refinement-20260920` · `f94afbacde504c22ea2d3db099eb2e45b13dbc33` at inventory | Active 13 annotations plus scroll shine, hover acceleration/slow hold, contextual hero motifs, quiet waves, leadership columns. New source already being edited; no frozen result/test acceptance yet. | Dirty: lab page/TSX, shared wave, register and new hook at inventory; CSS changes observed afterward; own lock `codex-quiet-prism-refinement-01a0bf66`. Wait for final SHA/test/approval handoff. |
+| `6d80`; **Refine Quiet Prism motion and layout** | `codex/quiet-prism-refinement-20260920` · `c1e8dc605aa66e208f446d464588ac7f9e92ce53` at follow-up | Completed 13 annotations, five hero families, scroll shine, hover acceleration/slow hold, contextual motifs, quiet waves and leadership columns. V11. Final visual approval pending. | Clean / none, verified after handoff. Selective production adoption only after review; preserve source branch. Rollback `f94afbacde504c22ea2d3db099eb2e45b13dbc33`. |
 | `C:\dev\jacobmedley-handoff`; Claude website protocol task | `claude/genesis-handoff-protocol-5hzaqj` · `7dced72b10195bfe3c2b70881dd946fb3e21b573` | Three old documentation commits. Core concepts adopted in main's `023bb11`, but not patch-identical. More verbose protocol contains obsolete ownership/closeout claims. V10. | Clean / none. Preserve; review unique prose separately, do not replace current governance wholesale. |
 | `6b03`; this task | `codex/website-integration-plan-20260920` · base `909ea2275104bc73f483ba7f1c5591db4d17a5b1` | This plan and inventory only. Final commit goes in Genesis and the task handoff. | Own lock during drafting; released after checkpoint. No application edits. |
 
@@ -125,6 +128,7 @@ work without treating existence as acceptance.
 | V8 | `c23b8a3:docs/motion-modal-refinement-20260919.md`, script and retained local `5a43/scripts/parity/shots/motion-modal-20260919/results.json` inspected. Results corroborate stationary page, 400ms entrance, 18px backdrop, 45px measured mobile footer/nav, 44px Close, 3 intent assets, error/retry success, zero console errors. | Owner's warm in-app profile: 16.8ms maximum gap/zero long tasks. Retained headless result: 66.7ms maximum frame gap/zero long tasks. Different workloads; no universal smoothness guarantee. Safari/iOS/VoiceOver/physical safe areas unverified. Jacob explicitly approved final `c23b8a3` in its task. |
 | V9 | `f94afba:docs/visual-system-lab-20260919.md`: types/scoped lint, five widths, inspected screenshots, keyboard/full-card activation, pause/reduced motion, disclosure sequencing and reversal. Earlier lab export passed at `43cc4c3`. | No production build at `ea6c283` or `f94afba` while the existing dev preview was active. Do not inherit the earlier build as acceptance of latest source. Active refinement adds fresh requirements. |
 | V10 | Actual old handoff diff and main `023bb11` inspected. | No runtime changes. Unique protocol prose is not current policy by branch age or name. |
+| V11 | `c1e8dc6:docs/quiet-prism-refinement-20260920.md` records non-incremental types, scoped lint, production export, 288 source hashes/104 active references, five widths (1440/1280/1024/768/375), five families in normal/reduced motion, hover/scroll/pause, keyboard/disclosure and shared homepage/modal rules. Retained `family-checks.json`, `export-checks.json`, `pause.json`, `reduced-families.json` and `homepage-rules.json` were inspected here and corroborate no overflow, stable pause, zero reduced-motion animations and centered 80% rules. | Owner-run Chromium evidence, not an integrated-tree test or this task's rerun. Physical touch, other browser engines, screen reader and full production regression remain unverified. Final visual approval pending. |
 
 Task history was read through app tools, including the duplicate modal tasks,
 editorial task, release/audit tasks, stages 0–4 and ChatGPT **Review Card Design**.
@@ -160,7 +164,7 @@ flowchart TD
   M --> A[Approved modal c23b8a3]
   M --> X[Superseded alternate 306380b]
   B --> L[Quiet Prism lab f94afba]
-  L --> R[Active refinement: final SHA pending]
+  L --> R[Refinement c1e8dc6: visual approval pending]
   E --> I[Local integration candidate]
   F --> I
   A --> I
@@ -170,16 +174,16 @@ flowchart TD
   T --> D[Explicit publication decision]
 ```
 
-Nine read-only probes used Git merge bases and `git merge-file --stdout` on
+Nine initial and three follow-up read-only probes used Git merge bases and `git merge-file --stdout` on
 temporary copies. No branch, index or source was merged. They identify textual
 collisions, not semantic compatibility or runtime success.
 
 | Area | Finding | Resolution contract |
 | --- | --- | --- |
-| Main versus foundation/editorial/approved modal/lab | All four stable tips descend from `909ea227`. Pairwise application files do not collide at these tips. Every pair conflicts in STATUS. | Merge full foundation/editorial/modal histories in order, reconcile STATUS as history plus one new current entry. Never resolve docs with a wholesale “ours/theirs.” |
-| B60 versus lab | `a32ee8f` and `f94afba` conflict in `docs/copy-register.md`. Lab has B61/B62 but lacks the separate B60 record. | Preserve B60 and its approval/B30 resolution, then B61/B62 and new B63 with their lab-only scope. Renumber no existing entries. Mark production application only after implementation/parity checks. |
-| Foundation versus active refinement | Both touch `app/visual-system.css`. Active owner plans centered 80%-maximum faded horizontal rules; foundation retains a 100%-width education HR and changes spacing. | New rule width/centering/fade supersedes older width appearance. Preserve foundation spacing, education padding/footer hit area, focus/forced-colors and CTA behavior. Re-probe final committed refinement; current uncommitted work is not an integration input. |
-| Hero art/materials | Lab reuses `FeaturedArtwork` for five families; active owner adds a lab-only atmospheric hook and exports the existing `WaveSeparator` path without changing its output. | Preserve contextual WebMD, DentalPlans, Bumblebee, Hydra and falling-leaf One Park art, supplied marks, factual screenshots and existing diagrams. Share selected primitives; do not copy an entire lab page into WorkCard. |
+| Main versus foundation/editorial/approved modal/lab | All stable tips descend from `909ea227`. Initial `f94afba` pairwise application files did not overlap. Final `c1e8dc6` overlaps foundation CSS but merges textually; all three new probes still conflict in STATUS. | Merge full foundation/editorial/modal histories in order, reconcile STATUS as history plus one new current entry. Never resolve docs with a wholesale “ours/theirs.” Text success does not establish combined behavior. |
+| B60 versus lab | `a32ee8f` conflicts with both `f94afba` and final `c1e8dc6` in `docs/copy-register.md`. Final lab has B61/B62/B63 but lacks the separate B60 record. | Preserve B60 and its approval/B30 resolution, then B61/B62/B63 with their lab-only scope. Renumber no existing entries. Mark production application only after implementation/parity checks. |
+| Foundation versus final refinement | Both touch `app/visual-system.css`; final `e342d3d`/`c1e8dc6` probe merges textually. Refinement adds centered 80% faded rules, including `html body hr[class]` to override older margin shorthand and white `hr.light`. Foundation has older full-width education rules and spacing changes. | Preserve the explicit classed-HR selector. Keep foundation vertical spacing, 3px focus, forced colors/reduced motion, education 22/22/16 padding and hit targets, stacked CTA, mobile width and supplied Hydra mark. Validate the combined cascade; do not replace the whole foundation stylesheet. |
+| Hero art/materials | Final lab reuses `FeaturedArtwork` for five families, adds `components/ui/useAtmosphericMotion.ts` with lab-only adoption, and exports `MAIN_WAVE_PATH`; the actual SVG path string is unchanged. | Preserve contextual WebMD, DentalPlans, Bumblebee, Hydra and falling-leaf One Park art, supplied marks, factual screenshots and existing diagrams. Share selected primitives; do not copy an entire lab page into WorkCard. |
 | Hero and modal motion | `c23b8a3` includes roomy hero reveal from `27e361f` and all modal lifecycle additions. `306380b` conflicts with it in globals, modal component and test script. | Choose `c23b8a3`; exclude `306380b`. Historical `c36e4ac`/`94306a2` remain ancestors but their effects are superseded at the chosen tip. Preserve ongoing hero cycle and stable brace mask; keep atmospheric card motion independent. |
 | Shared motion/accessibility | Scroll/hover shine and quiet wave loops add animation where pause, reduced-motion, offscreen and hidden-tab behavior already exist. | One consistent lifecycle, cleanup on unmount, no duplicate frame loops or listeners, static reduced-motion variant, stable text/hit targets. Validate keyboard focus, contrast and motion controls in the integrated context. The lab pause control alone does not settle production accessibility. |
 | Resume | Older timeline/leadership layouts already reached main and evolved. B58 long-form source was removed from page under B59; B60 wording is approved. Latest direction permits columns and removes the application identity rail. | Keep five employers, dates, metrics, More/Less and disclosure behavior. Implement B60 once, retain historical-tools qualifier, use the new accepted responsive layout. Do not restore B58 wholesale or reintroduce the removed rail. |
@@ -192,19 +196,22 @@ The six deferred dedicated paths are `app/case-studies/page.tsx`,
 The complete B56 manifest/report is already on main. Its presence does not mean
 every listed draft or dedicated-page row shipped. B57 explicitly limits that release.
 
-### Direct coordination with active refinement
+### Direct coordination with completed refinement
 
 Task `01a0bf66-dadf-7cb1-b949-7c7ee3f467e5`, **Refine Quiet Prism motion and layout**,
-confirmed its own `6d80` lock/base and preview 3016. It owns lab TSX/CSS/page,
+delivered final `c1e8dc605aa66e208f446d464588ac7f9e92ce53`; its `6d80` checkout
+is clean and its lock released. The ten-file patch contains lab TSX/CSS/page,
 new `useAtmosphericMotion` hook with lab-only adoption, a shared wave-path export,
 the global horizontal-rule policy, B63 formatting/removal/family-review record and
-its report. It plans no WorkCard, KineticHeroIdentity or modal edits.
+its report. It changes no WorkCard, KineticHeroIdentity or modal component.
 
 This task sent the exact e342d3d overlap and preservation requirements through
 the app. The refinement owner acknowledged the rule overlap and scoped its work
-to width/centering/fade while preserving spacing/interactions. Requested final
-handoff: immutable SHA, changed paths, checks and limitations, visual approval
-state, adoption map and rollback. This is direct coordination with that task only;
+to width/centering/fade while preserving spacing/interactions. Its final handoff
+includes the immutable SHA, ten changed paths, checks and limitations, pending
+visual approval, adoption map and rollback in
+`c1e8dc6:docs/quiet-prism-refinement-20260920.md`. The exact paths are also in the
+inventory's `quietPrismHandoff` entry. This is direct coordination with that task only;
 it is not a claim that other idle tasks or remote peers have read this plan.
 
 ## Ordered integration waves
@@ -216,11 +223,11 @@ and post-wave SHA in the acceptance ledger. These future SHAs do not yet exist.
 
 | Wave | Input and operation | Acceptance gate and rollback |
 | --- | --- | --- |
-| 0. Freeze inputs | Start from fresh `origin/main`; expected `909ea227`. Pin every input SHA, confirm `c23b8a3` approval and active refinement status. Carry this plan/evidence as docs if useful. Keep original dirty main and every owner branch untouched. | Remote still matches or its new delta has been reviewed; isolated checkout clean/owned; candidate path list known. Base rollback `909ea2275104bc73f483ba7f1c5591db4d17a5b1`. No lab approval inferred. |
+| 0. Freeze inputs | Start from fresh `origin/main`; expected `909ea227`. Pin every input SHA, confirm `c23b8a3` approval and whether `c1e8dc6` has gained visual approval. Carry this plan/evidence as docs if useful. Keep original dirty main and every owner branch untouched. | Remote still matches or its new delta has been reviewed; isolated checkout clean/owned; candidate path list known. Base rollback `909ea2275104bc73f483ba7f1c5591db4d17a5b1`. No lab approval inferred. |
 | 1. Content authority | Merge `codex/main-site-editorial-20260919` at `a32ee8f` with its two documentation commits. Resolve STATUS chronologically. Full merge preserves review provenance; cherry-picking only the approval line would lose context. | B60 exact four bullets/heading and B30 resolution present; no application or unrelated copy diff. Record checkpoint I1. Rollback: pre-wave base, through a reviewed revert or a fresh candidate. |
 | 2. Foundation | Merge local `codex/main-site-wrapup-20260919` at `e342d3d`. Its one unique commit is cohesive; merge preserves parent/approval trail. Resolve only expected documentation collisions. | Build/types/authored lint/assets; education at 599/600/1200 breakpoints, CTA at 819/820 container widths, dark education heading before/after scroll, five disclosures/focus, forced colors, real footer hit testing, Hydra asset. Record I2; rollback I1. |
 | 3. Approved hero/modal | Merge `codex/modal-camera-pullback-refinement-20260919` at `c23b8a3`. This deliberately includes `27e361f` and its subsequent refinements. Do not cherry-pick `c23b8a3` alone, and do not also merge `306380b`. | Run final motion-modal suite against I3 export; keyboard trap/return/Escape, inert background, body/internal scroll, unchanged URL/history, rapid switch/reversal, loading/error/retry, bounded preload, mobile sheets and short viewports. Measure nav/footer rather than hard-code historical 71px or 45px. Check hero beyond 39 seconds, visibility pause, reduced motion and CTA. Record I3; rollback I2. |
-| 4. Quiet Prism adoption | Wait for final refinement SHA and visual review. Preserve its full branch as source/evidence. Port accepted shared primitives, relevant CSS and approved register entries into a dedicated production adoption commit on I3. Use a cherry-pick only for a genuinely separated, self-contained shared commit; otherwise extract/review the exact patch with source SHA attribution. | Do not merge the whole lab branch into a publishable candidate: `/visual-system-lab` and its specimen UI would ship even with noindex. Production WorkCard/Resume/banner/education wiring still needs implementation. Check all five hero families, four info cards, leadership columns, disclosure, focus, rules, normal/reduced/paused/scroll/hover behavior and click destinations. Record I4 and approved source SHA; rollback I3. |
+| 4. Quiet Prism adoption | Source is final `c1e8dc605aa66e208f446d464588ac7f9e92ce53`; wait for visual approval. Preserve its full branch as source/evidence. Follow its adoption map to port accepted shared primitives, relevant CSS and approved register entries into a dedicated production adoption commit on I3. Use a cherry-pick only for a genuinely separated, self-contained shared commit; otherwise extract/review the exact patch with source SHA attribution. | Do not merge the whole lab branch into a publishable candidate: `/visual-system-lab` and its specimen UI would ship even with noindex. Production WorkCard/Resume/banner/education wiring still needs implementation; lab specimen actions still link to `/#work`. Check all five hero families, four info cards, leadership columns, disclosure, focus, rules, normal/reduced/paused/scroll/hover behavior and click destinations. Record I4 and approved source SHA; rollback I3. |
 | 5. Combined acceptance | Freeze candidate; reconcile copy-register status, program ledger and making-of record. Run final build and complete affected journeys, then the requested full WCAG 2.0 A+AA criterion review with automated and manual evidence. | Pass/fail/not-applicable/not-tested matrix with exact SHA, tools, widths and assistive-technology scope. Fix/retest failures. Jacob reviews complete normal/reduced-motion candidate plus any new production copy scope. Record I5; rollback last passing I4 or I3 according to failed feature. No publication implied. |
 | 6. PR and publication | Only after explicit publication/packaging instruction, refresh main, prepare a reviewable PR, run Ubuntu Node 20 CI, then request/confirm the exact merge/deploy decision as scoped by that instruction. | Preserve FTP target and `dangerous-clean-slate: false`. Archive deployable prior artifact and identify current production SHA before merge. Existing publication recovery target is `1325c6bf31dce1b3483f17da1386d44d610accf2` (source-equivalent main `909ea227`). A rollback deploy is itself an explicit production action. |
 
@@ -301,7 +308,7 @@ Genesis update. None of these live checks was performed by this planning task.
 1. Review the completed **Refine Quiet Prism motion and layout** preview and
    accept its actual final appearance/motion. Direction approval already exists;
    these new annotations have not yet received final visual acceptance.
-2. Approve the production adoption scope, including whether lab-only B61/B62
+2. Approve the production adoption scope, including whether lab-only B61/B62/B63
    labels/headline/slogan transfer to the main site. B60 wording is already
    approved. Recommend all five hero families plus informational, experience and
    leadership treatments as one coherent local review; keep dedicated-page copy
@@ -314,18 +321,24 @@ Genesis update. None of these live checks was performed by this planning task.
 
 At 15:39:01 UTC process/listener inspection found a64d development preview on port
 3000, listener PID 16740, parent 4372, with a003-linked dependencies. The active
-6d80 task confirmed its isolated 3016 preview; listener PID 42132, parent 41372.
+6d80 task then used development preview 3016, listener PID 42132, parent 41372.
+At the follow-up, 3016 serves the final static export from `6d80/out`, verified
+listener PID 46540, parent 27272, bound to 127.0.0.1. Port 3000 remains PID 16740.
 Ports 3010–3013 and 8090–8095 from older reports were not listening at that
 observation. Do not advertise those old preview URLs as currently available.
 This task started, stopped and rebuilt no server.
 
-Final planning-context refresh at 15:38:58 UTC read the active refinement's new
+Initial planning-context refresh at 15:38:58 UTC read the active refinement's new
 direction event `20260920T153125Z-d1c015375e8a4bb88ae02cd75190aaa6`. Exchange
 fingerprint became
 `06fcf5738f9b7dd0f9e48576db5e6e971ce3c6579aa9722ff3767cc5f654a95b`;
-no sync-conflict files were reported. The active refinement remains uncommitted
-at this closeout. Its final result is a future input, not a missing part of this
-planning checkpoint.
+no sync-conflict files were reported. Refinement was still uncommitted at the
+initial planning checkpoint `bd0f6bd44dc7b50b0167369f0c9dac67a82c8cd1`.
+The follow-up read its completed handoff event
+`20260920T155202Z-69295f7dae2c46c98a5451e64905247f`; Exchange status at
+15:52:40 UTC gave fingerprint
+`93a4266c068fe1577d6022cd6ac032d1bebe1d16c48597a729009e9a42ec17ed`.
+The source is now frozen and verified clean; visual approval remains pending.
 
 Recommended routing was Astra/high; actual task metadata records
 `gpt-6-astra` / `xhigh`, retained without a switch. Initial estimate 20–40k cloud
@@ -336,10 +349,11 @@ spending. The account usage snapshot showed 30% of its seven-day window used;
 that is shared account allowance, not task tokens or a money balance. Current
 configuration remains suitable; no model change is required to complete this plan.
 
-This audit ran ancestry/blob/patch checks, nine temporary-file conflict probes,
+This audit ran ancestry/blob/patch checks, twelve temporary-file conflict probes,
 live GitHub branch/PR/workflow reads, process/listener inspection and document
 validation. It did not run an application build or browser suite. Historical test
-evidence is labeled above. Plan rollback is its initial `909ea227` checkpoint.
+evidence is labeled above. Initial plan rollback is `909ea227`; follow-up rollback
+is `bd0f6bd44dc7b50b0167369f0c9dac67a82c8cd1`.
 The final documentation commit, clean state and Genesis pointer are recorded in
-the closeout; no deployment occurred. Active refinement, production adoption,
+the closeout; no deployment occurred. Refinement visual approval, production adoption,
 combined acceptance, deferred content and explicit release decision remain open.

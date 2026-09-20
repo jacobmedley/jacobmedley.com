@@ -1568,5 +1568,121 @@
       8095
     ],
     "servicesChangedByThisTask": false
+  },
+  "quietPrismHandoff": {
+    "observedUtc": "2026-09-20T15:56:03.500750+00:00",
+    "sourceCommit": "c1e8dc605aa66e208f446d464588ac7f9e92ce53",
+    "sourceBranch": "codex/quiet-prism-refinement-20260920",
+    "sourceWorktree": "C:\\Users\\jacob\\.codex\\worktrees\\6d80\\jacobmedley.com",
+    "sourceState": "clean; no .tree-lock",
+    "approvalState": "awaiting Jacob visual approval; no production adoption or publication authorized",
+    "sourceRollback": "f94afbacde504c22ea2d3db099eb2e45b13dbc33",
+    "sourceReport": "docs/quiet-prism-refinement-20260920.md",
+    "changedPaths": [
+      "app/visual-system-lab/page.tsx",
+      "app/visual-system.css",
+      "components/ui/WaveSeparator.tsx",
+      "components/ui/useAtmosphericMotion.ts",
+      "components/visual-lab/VisualSystemLab.tsx",
+      "components/visual-lab/visual-system-lab.module.css",
+      "docs/STATUS.md",
+      "docs/copy-register.md",
+      "docs/quiet-prism-refinement-20260920.md",
+      "docs/visual-system-lab-20260919.md"
+    ],
+    "conflictProbes": [
+      {
+        "left": "e342d3d24c848bc454461afa47c09c949456707d",
+        "right": "c1e8dc605aa66e208f446d464588ac7f9e92ce53",
+        "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+        "overlap": [
+          {
+            "path": "app/visual-system.css",
+            "result": "text merges",
+            "exitCode": 0,
+            "conflictMarkers": 0
+          },
+          {
+            "path": "docs/STATUS.md",
+            "result": "text conflict",
+            "exitCode": 1,
+            "conflictMarkers": 1
+          }
+        ]
+      },
+      {
+        "left": "a32ee8f9708c494b9b6c6d11c3597fe14356653e",
+        "right": "c1e8dc605aa66e208f446d464588ac7f9e92ce53",
+        "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+        "overlap": [
+          {
+            "path": "docs/STATUS.md",
+            "result": "text conflict",
+            "exitCode": 1,
+            "conflictMarkers": 1
+          },
+          {
+            "path": "docs/copy-register.md",
+            "result": "text conflict",
+            "exitCode": 1,
+            "conflictMarkers": 1
+          }
+        ]
+      },
+      {
+        "left": "c23b8a39d801500e8e0ec6d435c26fa38860dc70",
+        "right": "c1e8dc605aa66e208f446d464588ac7f9e92ce53",
+        "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+        "overlap": [
+          {
+            "path": "docs/STATUS.md",
+            "result": "text conflict",
+            "exitCode": 1,
+            "conflictMarkers": 1
+          }
+        ]
+      }
+    ],
+    "exchangeEvent": "20260920T155202Z-69295f7dae2c46c98a5451e64905247f",
+    "exchangeFingerprint": "93a4266c068fe1577d6022cd6ac032d1bebe1d16c48597a729009e9a42ec17ed",
+    "method": "Verified immutable source report, shared source diff, clean checkout and absent lock. Temporary-file text merge probes only; no application build or browser rerun by planning task.",
+    "inspectedEvidence": [
+      {
+        "path": "C:\\Users\\jacob\\.codex\\visualizations\\2026\\09\\20\\01a0bf66-dadf-7cb1-b949-7c7ee3f467e5\\family-checks.json",
+        "sha256": "088bfcdcbe622f6f85e310e113ae4a451765fbdd892ceed93435fd34475d6519"
+      },
+      {
+        "path": "C:\\Users\\jacob\\.codex\\visualizations\\2026\\09\\20\\01a0bf66-dadf-7cb1-b949-7c7ee3f467e5\\export-checks.json",
+        "sha256": "aff139a0fb21b7106916fd4b7772e1f17968dcc7cf5f27a0c6727360a23a0e53"
+      },
+      {
+        "path": "C:\\Users\\jacob\\.codex\\visualizations\\2026\\09\\20\\01a0bf66-dadf-7cb1-b949-7c7ee3f467e5\\pause.json",
+        "sha256": "5299befc6a6a3e857e2c3ea9f57d0d5d573fc7951555900788d6d478ebc2565c"
+      },
+      {
+        "path": "C:\\Users\\jacob\\.codex\\visualizations\\2026\\09\\20\\01a0bf66-dadf-7cb1-b949-7c7ee3f467e5\\reduced-families.json",
+        "sha256": "558529426c2a03504d13493c4c43d4c04ff9885161239ed92326da619481c446"
+      },
+      {
+        "path": "C:\\Users\\jacob\\.codex\\visualizations\\2026\\09\\20\\01a0bf66-dadf-7cb1-b949-7c7ee3f467e5\\homepage-rules.json",
+        "sha256": "ec6e4ab5389d054a5a166929343ff9fd982dfea0b4d4f149811d00a46a1f5fff"
+      }
+    ],
+    "previewProcesses": [
+      {
+        "port": 3016,
+        "listenerPid": 46540,
+        "parentPid": 27272,
+        "type": "static export",
+        "directory": "C:\\Users\\jacob\\.codex\\worktrees\\6d80\\jacobmedley.com\\out",
+        "bind": "127.0.0.1"
+      },
+      {
+        "port": 3000,
+        "listenerPid": 16740,
+        "parentPid": 4372,
+        "type": "preserved development preview"
+      }
+    ]
   }
 }

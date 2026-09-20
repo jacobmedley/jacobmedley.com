@@ -1,5 +1,17 @@
 # Status
 
+## September 20, 2026: Local full-site integration checkpoint, responsive foundation
+
+Jacob authorized full-site implementation, brand/marketing copy and the dedicated
+case-study experience in task 01a0bf66, delegated to coordinator 01a0bf67. This
+supersedes the prior planning-only/visual-approval implementation hold and dedicated
+content deferral. Publication remains separate. Integrated `e342d3d` with full history
+on `codex/full-site-integration-20260920` in owned 6b03. Only expected STATUS
+conflict required reconciliation; all source changes merged without conflict.
+Preserved both status histories. Rollback `b7ce8146029e12f1aba0891fff596a8e2b915546`. Source acceptance is
+historical; combined build/browser checks follow after integration. No push or
+deploy. Final Quiet Prism tweak SHA is still awaited before primitive adoption.
+
 ## September 20, 2026: Local full-site integration checkpoint, approved B60 editorial record
 
 Jacob authorized full-site implementation, brand/marketing copy and the dedicated
@@ -137,6 +149,39 @@ append-only Exchange update; this task's lock is released after checkpointing.
 
 Editorial approval is complete. The parent coordinator owns integration and any
 later implementation; publication remains a separate decision.
+
+## September 19, 2026: Local foundation complete; three refinement tasks created
+
+Jacob's new ten-annotation program is coordinated in
+experience-program-20260919.md. Foundation annotations1,2,3,5,7,8 are complete:
+education22px top/sides16px bottom with mobile icon stacking and compact footer;
+one smooth3px employer-toned focus border; stacked hero action; full section-rule
+spacing; container-based full-width featured CTA; supplied Hydra SVG. No copy B
+edit applied or skipped. No broader material redesign was rolled into production.
+
+Production build/type/lint/export passed,288 image hashes/104 references passed,
+diff check passed. In-app checks at320/375/599/600/614/768/1024/1376px found no
+horizontal overflow. Keyboard disclosure, contextual focus, reduced motion and
+forced colors checked; six screenshots inspected. Full WCAG2.0 A+AA evaluation
+is deliberately post-integration, not claimed complete. Detailed evidence and
+limitations are in site-making-of-evidence-20260919.md.
+
+Two implementation tasks and one editorial task were created in isolated worktrees.
+Visual task01a0ba6e-ce13-7701-a6a9-206e048245ea has three options awaiting Jacob's
+selection. Motion task01a0ba6e-e37a-7ee3-bff1-63b5baf86fa5 is testing its first
+implementation. Editorial task01a0ba6e-f542-77a3-b0f5-c8172fbdf40a completed its
+39-row review at4015702: preserve published copy, with four mentorship bullets
+and one heading change proposed as B60 pending approval. No integration yet.
+Editorial's Genesis helper failed to record its checkpoint; parent carries it
+into the coordination update. Visual task reports missing app-brand kit assets.
+
+Own five-file checkpoint: app/visual-system.css, supplied hydra-mark.svg, program
+ledger, making-of journal and this status record. Branch
+codex/main-site-wrapup-20260919 in X:\website-release-20260919; rollback909ea22.
+Final commit is recorded in Genesis; tree clean and own lock released at closeout.
+Preview8090/PID12432 serves this worktree's out/. Original dirty checkout and
+other services preserved. No push, merge, deployment, added spending or reset.
+Production remains v12.160 /1325c6b. No new publication authorized.
 
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 

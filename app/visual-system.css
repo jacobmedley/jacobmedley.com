@@ -19,6 +19,9 @@
 .study-supporting-art-flow b > i { font-size: var(--nested-icon-size); }
 .modal-data-panel, .modal-hero-cards, .study-supporting-art { box-shadow: none; }
 .featured-work-copy, .thinking-panel, .study-supporting-art-center { box-shadow: none; }
+.hero-case-studies-link { flex-direction: column; }
+/* Match the existing card-layout container threshold, not a device width. */
+@container (max-width: 819px) { .featured-work-copy .case-study-read { width: 100%; } }
 .modal-icon-grid .card-body i { font-size: var(--nested-icon-size); }
 
 /* Plaques follow the nearest project/section; circles are shared at every scale. */
@@ -130,7 +133,7 @@
 }
 
 /* Supplied Hydra silhouette, with editable vectors showing a system changing theme. */
-.featured-hydra-mark { display: block; width: clamp(5.5rem, 9vw, 8rem); aspect-ratio: 1; background: var(--featured-ink); mask: url('/assets/references/hydra-icon.svg') center / contain no-repeat; }
+.featured-hydra-mark { display: block; width: clamp(5.5rem, 9vw, 8rem); aspect-ratio: 1; background: var(--featured-ink); mask: url('/assets/references/hydra-mark.svg') center / contain no-repeat; }
 .featured-work-card-hydra .featured-work-anchor { border: 0; box-shadow: none; background: #fff8; }
 .featured-work-card-hydra .featured-work-drift { animation: none; }
 .featured-work-card-hydra .featured-work-interaction { transform: none !important; }
@@ -184,16 +187,18 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
 .resume-leadership-grid p { margin: 0; }
 .row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: start; }
-.resume-experience-divider { margin-block: calc(var(--section-rhythm) / 2); }
+.resume-experience-divider { margin-block: var(--rule-gap-section); }
 .resume-experience-divider + .row.resume-columns { margin-top: 0; }
 .resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
 .resume-timeline::before { content: none; }
 .resume-timeline-entry { padding-left: 0; }
 .resume-timeline-entry + .resume-timeline-entry { margin-top: 1.5rem; }
-.resume-experience-card { cursor: pointer; }
+.resume-experience-card { cursor: pointer; outline: 3px solid transparent; outline-offset: -3px; transition: outline-color 220ms ease-out; }
 /* One crisp, inset focus border; no duplicate summary box or focus glow. */
-.resume-experience-card:focus-within { outline: 2px solid color-mix(in srgb, var(--resume-ink) 65%, white); outline-offset: -2px; }
+.resume-experience-card:focus-within { outline-color: color-mix(in srgb, var(--resume-ink) 85%, white); }
 .resume-experience-details summary:focus-visible { outline: none; }
+@media (prefers-reduced-motion: reduce) { .resume-experience-card { transition: none; } }
+@media (forced-colors: active) { .resume-experience-card:focus-within { outline-color: Highlight; } }
 .resume-experience-header { grid-template-columns: 3rem minmax(0,1fr); gap: var(--nested-icon-gap); padding: var(--card-pad-y) var(--card-pad-x) 1rem; align-items: start; }
 .resume-company-mark { display: grid; width: 3rem; height: 3rem; place-items: center; }
 .resume-brand-logo { width: 100%; height: 100%; }
@@ -223,23 +228,30 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 /* Stable varied tones and spans keep reading order intact as the mosaic restacks. */
 .education-mosaic { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.2rem; align-items: start; }
 .education-card {
-  --edu-tone: #dfc4bf; --education-pad-top: clamp(1.4rem, 2.25vw, 1.9375rem);
+  --edu-tone: #dfc4bf; --education-pad-top: 1.375rem; --education-pad-x: 1.375rem;
   container-type: inline-size; display: flex; flex-direction: column; position: relative;
-  gap: 1rem; min-width: 0; padding: var(--education-pad-top) var(--card-pad-x) 1.25rem;
+  gap: 0; min-width: 0; padding: var(--education-pad-top) var(--education-pad-x) 1rem;
   color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone));
 }
 .education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
-.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; }
+.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; padding-bottom: 1.125rem; }
 .education-card header > i { grid-row: 1 / 3; font-size: 2rem; line-height: 1.2; }
 .education-card header > :is(h4,p) { grid-column: 2; }
 .education-card h4 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
 .education-card h4, .education-card p { overflow-wrap: anywhere; }
 .education-card p { margin: 0; }
 .education-card hr { width: 100%; margin: 0; }
-.education-card a { align-self: start; color: inherit; padding: .3rem 0; }
+.education-card a { position: relative; align-self: stretch; color: inherit; padding: .125rem 0 0; margin-top: .875rem; line-height: 1.5; }
+/* Preserve a 44px tap area without making the compact footer visually taller. */
+.education-card a::after { content: ''; position: absolute; inset: -.5625rem 0; }
 @container (max-width: 18rem) {
   .education-card header > i { grid-row: 1; }
   .education-card header > p { grid-column: 1 / -1; }
+}
+@media (max-width: 599.98px) {
+  .education-card header { grid-template-columns: minmax(0,1fr); }
+  .education-card header > i { grid-row: auto; }
+  .education-card header > :is(h4,p) { grid-column: 1; }
 }
 @media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(3,minmax(0,1fr)); } }
@@ -268,7 +280,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-geometry,.project-geometry > i,.thinking-icon) { animation-play-state: running !important; }
 
 /* A sparse UI sheet: independently floating controls and changing button states. */
-.featured-hydra-mark { width: clamp(7rem,10vw,10rem); filter: drop-shadow(.45px 0 currentColor) drop-shadow(-.45px 0 currentColor); }
+.featured-hydra-mark { width: clamp(7rem,10vw,10rem); }
 .hydra-schematic { animation: hydra-theme 18s ease-in-out infinite; }
 .hydra-component { animation: hydra-float calc(7s + var(--component-index)*1.6s) ease-in-out infinite alternate; animation-delay: calc(var(--component-index)*-1.7s); }
 .hydra-sheet-outline { fill: #ffffff12; stroke: currentColor; stroke-width: 1.3; opacity: .52; }

@@ -1414,9 +1414,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
-  /* legacy custom: blur the page behind the whole modal viewport */
-  -webkit-backdrop-filter: blur(10px) saturate(150%);
-  backdrop-filter: blur(10px) saturate(150%);
+  perspective: none;
 }
 .modal[data-state='open'] { animation: modal-fade-in 0.15s linear; }
 .modal[data-state='closed'] { animation: modal-fade-out 0.15s linear forwards; }
@@ -1427,9 +1425,9 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   margin: 0;
   pointer-events: none;
 }
-/* Bootstrap entrance: dialog slides from translateY(-50px), .3s ease-out */
-.modal[data-state='open'] .modal-dialog { animation: modal-dialog-in 0.3s ease-out; }
-.modal[data-state='closed'] .modal-dialog { animation: modal-dialog-out 0.3s ease-out forwards; }
+/* Mobile keeps the established sheet timing. Desktop uses a short, flat entrance. */
+.modal[data-state='open'] .modal-dialog { animation: modal-dialog-in 0.34s cubic-bezier(.2,.78,.25,1); }
+.modal[data-state='closed'] .modal-dialog { animation: modal-dialog-out 0.28s cubic-bezier(.55,0,.8,.25) forwards; }
 
 .modal-fullscreen {
   width: 100vw;
@@ -1502,11 +1500,23 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   position: fixed;
   inset: 0;
   z-index: 1050;
-  background-color: #000;
-  opacity: 0.5;
+  background-color: rgb(38 32 43 / 42%);
+  -webkit-backdrop-filter: blur(18px) saturate(.72);
+  backdrop-filter: blur(18px) saturate(.72);
+  opacity: 1;
+  will-change: opacity;
 }
 .modal-backdrop[data-state='open'] { animation: backdrop-fade-in 0.15s linear; }
 .modal-backdrop[data-state='closed'] { animation: backdrop-fade-out 0.15s linear forwards; }
+
+@media (min-width: 768px) {
+  .modal[data-state='open'] { animation: modal-camera-fade-in .4s linear .045s both; }
+  .modal[data-state='closed'] { animation: modal-camera-fade-out .26s linear forwards; }
+  .modal[data-state='open'] .modal-dialog { animation: modal-camera-dialog-in .4s cubic-bezier(.2,.78,.25,1) .045s both; }
+  .modal[data-state='closed'] .modal-dialog { animation: modal-camera-dialog-out .26s cubic-bezier(.5,0,.78,.2) forwards; }
+  .modal-backdrop[data-state='open'] { animation: modal-camera-backdrop-in .24s linear both; }
+  .modal-backdrop[data-state='closed'] { animation: modal-camera-backdrop-out .2s linear forwards; }
+}
 
 /* One reading surface for every case study: rounded media, quiet glass, clear ink. */
 .modal-content { --modal-ink: #302a38; --modal-rule: #645b7033; color: var(--modal-ink); border-radius: 2rem; border: 1px solid #ffffffb3; background: #faf9fc; box-shadow: 0 24px 80px #302a3833; }
@@ -1582,6 +1592,16 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 .modal-header .btn-close-modal { color: #000; background-color: #ffffffa1; border-color: #fffffff2; }
 .modal-footer .btn-close-modal { color: #000; background-color: #ffffffa1; border-color: #00000069; }
 .modal-content[data-project-id='viva'] .modal-study-content img.img-fluid { padding: 24px; background: #fff; }
+.modal-sheet-grabber { display: none; }
+.modal-image-frame { position: relative; display: inline-grid; width: 100%; max-width: 100%; place-items: center; overflow: hidden; border-radius: inherit; vertical-align: middle; }
+.modal-image-frame > * { grid-area: 1 / 1; }
+.modal-image-frame[data-load-state='loading'] { min-height: clamp(10rem, 34vw, 24rem); background: linear-gradient(105deg, #eee9f1 25%, #f8f6f9 42%, #eee9f1 60%); background-size: 220% 100%; animation: modal-image-loading 1.4s ease-in-out infinite; }
+.modal-image-frame[data-load-state='loading'] > img { opacity: 0; }
+.modal-image-loading { display: none; color: #5a5063; font-size: .875rem; }
+.modal-image-frame[data-load-state='loading'] .modal-image-loading { display: inline; }
+.modal-image-error { display: flex; min-height: 10rem; flex-direction: column; align-items: center; justify-content: center; gap: .75rem; padding: 1rem; color: #463150; background: #f4eff6; text-align: center; }
+.modal-image-frame[data-load-state='error'] > img, .modal-image-frame[data-load-state='error'] .modal-image-loading { display: none; }
+@keyframes modal-image-loading { from { background-position: 100% 0; } to { background-position: -100% 0; } }
 
 .featured-work-card-split-test { --featured-light: #fffdf4; --featured-mid: #f1e8cb; --featured-dark: #cfbb77; --featured-ink: #6d5507; --featured-angle: 139deg; }
 .featured-work-card-call-center-ux { --featured-light: #f4fbfa; --featured-mid: #c6e4df; --featured-dark: #6da79f; --featured-ink: #244f49; --featured-angle: 117deg; }
@@ -1651,12 +1671,20 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   .modal-intro, .modal-featured-hero.featured-work-card { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
 }
 @media (max-width: 767px) {
-  .modal-dialog { padding: .5rem; }
-  .modal-content { border-radius: 1.5rem; }
+  .modal { top: max(.75rem, env(safe-area-inset-top, 0px)); bottom: 0; width: 100%; height: auto; max-height: calc(100dvh - max(.75rem, env(safe-area-inset-top, 0px))); overflow: hidden; perspective: none; }
+  .modal-dialog { height: 100%; padding: 0; }
+  .modal-content { border-radius: 1.5rem 1.5rem 0 0; transform: translateY(var(--modal-swipe-y, 0)); }
+  .modal-content[data-swipe-settling='true'] { transition: transform .24s cubic-bezier(.2,.78,.25,1); }
+  .modal-sheet-grabber { display: grid; position: relative; z-index: 4; flex: 0 0 28px; place-items: center; background: #ffffff91; touch-action: none; cursor: grab; }
+  .modal-sheet-grabber > span { width: 2.75rem; height: 4px; border-radius: 999px; background: #645b7066; }
+  .modal[data-state='open'] .modal-dialog { animation-name: modal-sheet-in; }
+  .modal[data-state='closed'] .modal-dialog { animation-name: modal-sheet-out; }
   .modal-header { padding: .75rem; }
   .modal-title { font-size: 1rem; gap: .5rem; }
   .modal-title img { width: 40px; height: 40px; }
   .modal-body { padding: 1rem; }
+  .modal-footer { min-height: max(var(--modal-mobile-footer-height, 60px), calc(45px + env(safe-area-inset-bottom, 0px))); flex-basis: max(var(--modal-mobile-footer-height, 60px), calc(45px + env(safe-area-inset-bottom, 0px))); padding: 0 .75rem env(safe-area-inset-bottom, 0px); }
+  .modal-footer .btn-close-modal { min-height: 44px; }
   .modal-featured-hero.featured-work-card { padding: 16px; gap: 16px; margin-bottom: 2rem; }
   .modal-project-art { min-height: 248px; }
   .modal-project-art .featured-work-art { min-height: 248px; }
@@ -1670,6 +1698,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
 }
 @media (prefers-reduced-motion: reduce) {
   .modal, .modal-backdrop, .modal .modal-dialog { animation: none !important; }
+  .modal-image-frame[data-load-state='loading'] { animation: none; }
   .modal .progress-bar-animated { animation: none !important; }
   .modal-animated-image canvas { display: inline-block; }
   .modal-animated-image img { display: none; }
@@ -1684,19 +1713,45 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   to   { opacity: 0; }
 }
 @keyframes modal-dialog-in {
-  from { transform: translate(0, -50px); }
-  to   { transform: none; }
+  from { transform: translate3d(0, 12px, -56px) scale(.985); opacity: .55; }
+  to   { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
 }
 @keyframes modal-dialog-out {
-  from { transform: none; }
-  to   { transform: translate(0, -50px); }
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  to   { transform: translate3d(0, 12px, -56px) scale(.985); opacity: .4; }
 }
+@keyframes modal-camera-dialog-in {
+  from { transform: translate3d(0, -18px, 0) scale(.975); opacity: 0; }
+  to { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+}
+@keyframes modal-camera-dialog-out {
+  from { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  to { transform: translate3d(0, -10px, 0) scale(.985); opacity: 0; }
+}
+@keyframes modal-camera-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modal-camera-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes modal-camera-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modal-camera-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes modal-sheet-in { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes modal-sheet-out { from { transform: translateY(0); } to { transform: translateY(100%); } }
 @keyframes backdrop-fade-in {
   from { opacity: 0; }
-  to   { opacity: 0.5; }
+  to   { opacity: 1; }
 }
 @keyframes backdrop-fade-out {
-  from { opacity: 0.5; }
+  from { opacity: 1; }
   to   { opacity: 0; }
 }
 

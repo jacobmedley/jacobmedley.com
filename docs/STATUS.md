@@ -1,5 +1,19 @@
 # Status
 
+## September 20, 2026: Local full-site integration checkpoint, approved final hero and modal behavior
+
+Jacob authorized full-site implementation, brand/marketing copy and the dedicated
+case-study experience in task 01a0bf66, delegated to coordinator 01a0bf67. This
+supersedes the prior planning-only/visual-approval implementation hold and dedicated
+content deferral. Publication remains separate. Integrated `c23b8a3` with full history
+on `codex/full-site-integration-20260920` in owned 6b03. Only expected STATUS
+conflict required reconciliation; all source changes merged without conflict.
+Preserved both status histories. Removed four imported Markdown trailing-space
+line breaks flagged by whitespace validation; report content is unchanged.
+Rollback `80b189a6d665767bf78cd42e0faef78a7571c18f`. Source acceptance is
+historical; combined build/browser checks follow after integration. No push or
+deploy. Final Quiet Prism tweak SHA is still awaited before primitive adoption.
+
 ## September 20, 2026: Local full-site integration checkpoint, responsive foundation
 
 Jacob authorized full-site implementation, brand/marketing copy and the dedicated
@@ -182,6 +196,152 @@ Final commit is recorded in Genesis; tree clean and own lock released at closeou
 Preview8090/PID12432 serves this worktree's out/. Original dirty checkout and
 other services preserved. No push, merge, deployment, added spending or reset.
 Production remains v12.160 /1325c6b. No new publication authorized.
+
+## September 19, 2026: Static-blur modal fall complete locally
+
+Jacob replaced the still-choppy zoom-pan with a flat, bounded entrance. The site
+now remains completely stationary and unfiltered. One fixed viewport backdrop
+uses `blur(18px) saturate(.72)` so the page reads as broad shapes without
+animating the page or blur radius.
+
+The desktop dialog has no perspective, z-depth or filter. It falls 18px while
+fading in and scaling only from .975 to 1 over 400ms, after a 45ms mount delay.
+Close is a 260ms upward fade with a .985 end scale; cleanup completes at 280ms.
+The backdrop fades separately over 240ms. No content or edge is enlarged beyond
+the viewport, resolving the reported transition cropping.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the focused Chromium lifecycle suite pass. The suite
+confirmed `pageTransform: none`, `pageFilter: none`, `dialogFilter: none`, the
+18px backdrop blur, in-bounds desktop geometry, focus/scroll/history restoration,
+project switching, reduced motion, loading/error/retry, and mobile sheets at
+320–390px. It recorded zero long tasks. A separate normal-motion profile in the
+actual in-app browser at 1689x1272 recorded 55 frames over 900ms, a 16.8ms maximum
+gap, no gaps over 25ms and no long tasks. The live browser was restored to its
+original reduced-motion preference afterward.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`94306a2a20f30b09504f55635679cb11d8f75fc3`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+36344 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
+## September 19, 2026: Desktop modal zoom-pan follow-up complete locally
+
+Jacob reversed the desktop scene direction after the 980ms pull-back felt close
+but choppy. The site now pushes quickly toward the camera to scale 1.035 with a
+small up-left pan over 280ms. The modal zooms and pans from a smaller down-right
+frame into its exact resting geometry over 650ms. Close reverses over 520ms.
+
+All animated site/modal filters are removed. The six large page sections now use
+only transform and opacity, eliminating the prior continuous full-page blur and
+saturation raster work. The modal starts at scale .86 rather than an enlarged
+1.1, so its edges move inward instead of being cropped outside the viewport.
+
+At the automated 1440x950 midframe, dialog bounds were
+17.36/9.55/1435.65/945.22 and content bounds were
+76.46/33.18/1376.55/921.58; every edge remained inside the viewport. The site
+was at scale 1.035 and both site/dialog filters were `none`. Beginning, mid and
+settled frames were inspected. The computed entrance clock was exactly 650ms.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the complete focused Chromium suite pass. Open/close,
+reverse, interrupted entrance, immediate study switching, focus trap/return,
+Escape, scroll/history, reduced motion, loading/error/retry and mobile sheets at
+320–390px remain intact. The in-app normal-motion profile confirmed no background
+filters and in-bounds geometry at 1689x1272. A warm one-second sample recorded
+59 frames, one 49.9ms gap and one 51ms long task during modal mount; the sustained
+GPU blur cost is removed, but perfect pacing on every device is not claimed.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`c36e4acc8e46dceb0337b9ea20eca866dfae294c`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+49840 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
+## September 19, 2026: Perceptible desktop modal camera pull-back complete locally
+
+Jacob found the first 340ms desktop modal treatment too quick and shallow to read
+as a camera move. Starting from its exact clean checkpoint `27e361f`, desktop open
+now takes 980ms: the site recedes to a 0.93 scale with 5px blur while the dialog
+crosses from a large 16px-defocused near plane into a sharp reading plane. The
+820ms close reverses that relationship and retains its camera state through exit.
+No literal site split or material redesign was added.
+
+Mobile keeps the established short sheet and now explicitly opts out of desktop
+camera transforms. Verification caught a current 45px menu/52px footer mismatch;
+the footer now matches the measured 45px menu at 320, 360, 375 and 390px while
+retaining a 44px Close control and safe-area expansion. Existing sheet geometry,
+handle-only swipe, header X, internal scrolling and bottom-menu coverage pass.
+
+The focused Chromium suite passes begin/mid/settled focus frames, open, reverse
+close, interrupted entrance, immediate split-test-to-WebMD switching, ten trapped
+Tab presses, Escape/focus return, background isolation, scroll lock/restoration,
+unchanged URL/history, bounded intent preload, slow/error/retry media and reduced
+motion with zero running dialog animation. The inspected midframe measured dialog
+scale 1.017/blur 2.03px and site scale 0.934/blur 4.74px; settled dialog blur was
+zero. A 1.2s headless sample recorded 25 frames, a 133.3ms worst gap under capture
+load, zero long tasks and no page/console errors. This is bounded Chromium evidence,
+not a device frame-rate guarantee.
+
+TypeScript, full authored lint, whitespace, production export, 288 image hashes
+and 104 active references pass on Next 15.5.25. Existing lockfile-identical
+dependencies were reused through an ignored local junction; no dependency download
+or change occurred. Five scoped files including this STATUS changed. Full evidence:
+`docs/motion-modal-refinement-20260919.md` and ignored captures/results under
+`scripts/parity/shots/motion-modal-20260919/`.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback/baseline
+`27e361f243d0588d871b673e54222bbb5a5c6613`; the checkpoint commit follows this
+STATUS-last write and is recorded in Genesis. Preview 8094/PID52716 serves this
+worktree's `out/`; 8090 and 8092 remain untouched. Own lock remains held through
+commit and will then be released. No B edit, copy, push, merge, deployment, added
+spending, reset, model download or local inference. Production remains v12.160 /
+`1325c6b`. Safari, iOS browser chrome, physical devices/safe areas, VoiceOver,
+other engines and full WCAG evaluation remain unverified; no certification claimed.
+
+## September 19, 2026: Hero and modal motion refinements complete locally
+
+Annotations 4 and 9 are implemented on an isolated branch. Jacob Medley and
+Product now reveal directly to their settled roomy brace apertures. Desktop
+case-study modals use a restrained camera retreat/refocus with a symmetric close;
+mobile uses a full-width sheet from a 12px safe top gap to the dynamic viewport
+bottom, covering the fixed menu. Its footer measures and matches the real 71px
+mobile nav footprint, with header X, footer Close and handle-only downward swipe.
+Jacob's corrected over-menu direction supersedes the earlier above-menu brief.
+
+Radix focus trap/return, Escape, outside click, background hiding, body scroll
+lock/restoration, internal modal scrolling and unchanged URL/history behavior
+pass. Reduced motion removes camera/dialog movement. Intent loading is bounded to
+three assets after pointer/keyboard intent and zero modal evidence assets before
+intent; native lazy images now have loading, error and Retry states. No copy,
+case-study narrative, parent foundation selector or B edit changed.
+
+Lockfile-exact Next 15.5.25 on bundled Node 24.19.0 passed TypeScript, authored
+lint, production export, 288 image hashes and 104 active references. The focused
+Chromium suite passed hero dimensions, desktop modal lifecycle, rapid study
+switching, keyboard trap/return, 375x812 touch/swipe, 320x568/360x640/390x664
+short/narrow sheets, delayed/failed/retried media and reduced motion. Screenshots
+were inspected. Safari/iOS browser chrome, physical safe areas, VoiceOver, other
+engines/devices and the final criterion-by-criterion WCAG 2.0 A/AA evaluation
+remain unverified; no certification is claimed.
+
+Local branch `codex/motion-modal-refinement-20260919` from baseline `909ea22`;
+checkpoint commit follows this STATUS-last update and its exact ID is recorded in
+Genesis. Five scoped source/report/test files plus STATUS changed. Parent foundation
+checkpoint `e342d3d` edits separate CSS/assets; integrated hero CTA and complete
+journey testing remain coordinator-owned. Preview 8092/PID44956 serves this task's
+`out/`; parent preview8090 is untouched. Own lock remains held through commit and
+will be released after the checkpoint. No push, merge, deploy or production
+change; production stays v12.160 / `1325c6b`, rollback `f2a6f57`. No added
+spending, local inference, model download or reset. Full evidence:
+`docs/motion-modal-refinement-20260919.md`.
 
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 

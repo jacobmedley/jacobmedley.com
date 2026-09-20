@@ -1,8 +1,10 @@
 # Copy Register
 
-**Status:** edits B0 through B60. All APPLIED unless marked otherwise.
-B60 is approved for the unified Resume card; nothing in it is implemented on the
-published main site yet.
+**Status:** edits B0 through B64. All APPLIED unless marked otherwise.
+B60 and B64 are implemented in the local full-site integration, not published.
+B64 promotes the selected B61/B62/B63 wording from lab to production source and
+supersedes B57's dedicated-page deferral. Historical scope notes below remain
+part of the record; the latest applicable entry governs.
 B58 preserves the long-form leadership source; B59 removed its former placement;
 B60 approves the compressed wording for the unified Resume card.
 B56 records the full local copy pass; B57 limits this release to the main site.
@@ -2073,3 +2075,114 @@ More/Less controls, external-link context, modal Close labels, demo labels, emai
 and footer copy as published in v12.160. Current tool proficiency remains unknown;
 the historical qualifier is why the existing list is safe. A stronger current-use
 claim needs fresh confirmation from Jacob.
+
+
+## B61. Quiet Prism visual-lab card language [APPLIED LOCALLY]
+
+Source: Jacob's selected Quiet Prism direction and September 19 visual-reference
+correction. This supplements the separately approved B60 unified Resume card and
+governs the isolated, unlinked visual-system lab only; it does not revise
+production case-study copy.
+
+The featured WebMD specimen uses the text action `View case study` and the
+distinct closing slogan `People · Process · Better outcomes`. Informational-card
+actions are `Read my approach`, `See how I work`, `Explore experience`, and
+`View education`. The approved card descriptions are the reference wording
+shown in the selected Quiet Prism source. The WebMD heading and summary remain
+registered production wording until the dedicated case-study copy is approved.
+The specimen label is `Informational Cards`, with the heading
+`Clear paths into the work`. The motion note explains that a soft light field
+moves through the waves and freezes for reduced motion.
+
+
+## B62. Quiet Prism final refinement headline and eyebrow [APPLIED LOCALLY]
+
+Source: Jacob's September 19, 2026 focused refinement brief and two references.
+Scope: isolated visual-system lab only. The glass-panel headline is
+`A clearer path to care`; the left journey description remains
+`From plan search to checkout`. The supporting narrative is unchanged.
+
+The current register, lab handoff and all-branch Git history were searched for
+the preferred headline. No documented factual/editorial rejection was found.
+B61 retained the production heading pending copy approval; this direct request
+supersedes that deferral for this lab headline only. It adds no measured outcome.
+
+The left `Case Study` eyebrow is displayed uppercase and tracked, as explicitly
+requested. This is a scoped exception to the prior Title Case guideline; other
+eyebrows retain their existing treatment. The large leadership panel stays as-is;
+its vertical composition is not approved as a canonical production replacement.
+
+
+## B63. Quiet Prism family review and label formatting [APPLIED LOCALLY]
+
+Source: Jacob's September 20 annotations and three motion notes, continued in
+task 01a0bf66. Lab only. Supersedes B62's leadership-layout freeze and removes the
+entire Application Identity Preview rail and its explanatory footer. Existing
+mentorship, expertise and tools wording is preserved. The six existing category
+labels in Expertise and Apps & Tools are bold through the colon, with the
+remainder normal. No arbitrary colon-containing prose is restyled.
+
+The five family selector labels reuse the project titles in lib/data/projects.ts.
+Additional family specimens reuse their existing subtitle, summary and disciplines
+verbatim, with the same View case study action and People / Process / Better
+outcomes footer already registered in B61. WebMD retains B62's lab-only heading.
+The selector's accessible label is Featured case study family. This adds review
+coverage, without changing production narratives or claiming new outcomes.
+
+
+## B64. Full-site Quiet Prism and connected case-study experience [APPLIED LOCALLY]
+
+Source: Jacob's September 20 instruction in task 01a0bf66, turn
+01a0bfb7-e5d4-7122-8950-67022ed30378, delegated to coordinator 01a0bf67:
+update the full site, including brand/marketing copy and the dedicated case-study
+site; refine globally from this point. This supersedes B57's dedicated-page and
+entry-link deferral, and the lab-only implementation hold. Publication remains a
+separate decision. It does not authorize new metrics or external resume edits.
+
+### Existing authority carried forward
+
+Apply B60's four mentorship bullets and How I lead the work exactly. Adopt the
+selected B61/B62/B63 card treatments and their registered interface wording on
+the main site after the final primitive handoff. Keep CASE STUDY as the explicitly
+requested, scoped eyebrow exception. Promote WebMD's A clearer path to care
+heading and the card footer People · Process · Better outcomes. Preserve all five
+project summaries, employment facts, dates, education names and the visible
+historical tools qualifier. The four informational cards use the B61 source copy
+with meaningful main-site destinations, without lab explanatory text.
+
+Reopen the six dedicated-page source deltas from d8d7380 under B56's canonical
+copy-pass manifest: index, CareerStats, OutcomeDashboard, StudyCollection,
+StudyVisual and case-study-site-copy.json. No whole-branch replay. Preserve the
+research-leadership distinction, source-qualified financial figures, qualitative
+outcomes and the original six story URLs. Correct any replacement-character
+encoding damage without changing meaning. Introductory role/scope/working-
+together fragments receive sentence-case capitalization only.
+
+### Connected browsing copy and destinations
+
+- Main selected-work section introduction: Five projects across product, brand,
+  and design systems. Open a project for the work, or read the longer stories
+  behind the decisions.
+- Main selected-work section secondary action: Explore the full case studies.
+  Destination: /case-studies/ in the same tab.
+- Secondary action after the project list: More stories behind the work.
+  Destination: /case-studies/ in the same tab.
+- Dedicated-site home link: Jacob Medley, home. Same-tab navigation; remove the
+  obsolete opens-in-a-new-tab hints and external icons only on internal links.
+- Dedicated-site experience link: About & experience. Destination: /#resume.
+- Dedicated-site footer action: More about Jacob. Destination: /#resume.
+- Homepage skip link: Skip to content.
+- Motion preference: Pause motion / Resume motion. A compact, consistently placed
+  control implements the requested accessible motion behavior across both areas;
+  it supersedes B52's removed-control presentation only to provide a user pause.
+
+The main hero and marketing proposition retain the current B56 copy and Jacob's
+complete signature line. Brand review favors concrete first-person decisions over
+new superlatives. Unsupported current tool proficiency, the unnamed fifth property,
+new outcomes, and proposed restorations remain unclaimed. Exact final copy and
+source parity are verified before marking this entry applied locally.
+
+Local acceptance: six-story JSON matches d8d7380 plus introductory capitalization;
+B60 bullets match exactly; project data and education records are preserved.
+See docs/full-site-integration-20260920.md for implementation, verification and
+remaining browser/assistive-technology limits. No publication has occurred.

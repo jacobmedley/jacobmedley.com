@@ -49,10 +49,10 @@ export default function StudyVisual({ kind }: { kind: string }) {
     return (
       <div className="cs-diagram cs-navigation">
         <div className="cs-diagram-caption">Observe // Understand // Decide</div>
-        <div className="cs-research-question">“Where would I find<br />what I need?”</div>
+          <div className="cs-research-question">How do customers<br />look for products?</div>
         <div className="cs-path-option"><span>Catalog structure</span></div>
-        <div className="cs-path-option selected"><span><small>Stronger Entry Path</small>Shop by Condition</span></div>
-        <div className="cs-diagram-foot">The customer’s problem becomes the starting point.</div>
+          <div className="cs-path-option selected"><span>Shop by Condition</span></div>
+          <div className="cs-diagram-foot">Test finding: customers used their health need as an entry point.</div>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 /* September 12 system: nested surfaces, theme plaques and finite mechanical motion. */
 :root {
+  --rule-max-width: 80%;
   --nested-icon-size: clamp(2rem, 2.1rem + .8vw, 3rem);
   --nested-icon-gap: clamp(1rem, 1.5vw, 1.5rem);
   --hero-name-size: clamp(1.8rem, 1.2rem + 1.856vw, 3.375rem);
@@ -236,9 +237,9 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
 .education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; padding-bottom: 1.125rem; }
 .education-card header > i { grid-row: 1 / 3; font-size: 2rem; line-height: 1.2; }
-.education-card header > :is(h4,p) { grid-column: 2; }
-.education-card h4 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
-.education-card h4, .education-card p { overflow-wrap: anywhere; }
+.education-card header > :is(h3,p) { grid-column: 2; }
+.education-card h3 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
+.education-card h3, .education-card p { overflow-wrap: anywhere; }
 .education-card p { margin: 0; }
 .education-card hr { width: 100%; margin: 0; }
 .education-card a { position: relative; align-self: stretch; color: inherit; padding: .125rem 0 0; margin-top: .875rem; line-height: 1.5; }
@@ -251,7 +252,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 @media (max-width: 599.98px) {
   .education-card header { grid-template-columns: minmax(0,1fr); }
   .education-card header > i { grid-row: auto; }
-  .education-card header > :is(h4,p) { grid-column: 1; }
+  .education-card header > :is(h3,p) { grid-column: 1; }
 }
 @media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(3,minmax(0,1fr)); } }
@@ -447,4 +448,24 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
   .demo-reactive, .demo-reactive::after, .demo-highlight-control button > span { transition: none; }
   .demo-state-copy, .demo-store-banner > span { animation: none; }
   .demo-controls > .demo-help:last-child { display: block; }
+}
+
+/* September 20: shared horizontal rules, centered and capped at 80%.
+   Borders/underlines on interactive controls are not section rules. */
+html body hr,
+html body hr[class] {
+  width: var(--rule-max-width);
+  max-width: var(--rule-max-width);
+  margin-inline: auto;
+  border: 0;
+  height: 1px;
+  background: var(--surface-rule);
+  color: var(--modal-rule, var(--section-ink, currentColor));
+}
+html body hr.light { color: #fff; }
+html body :is(.resume-experience-card, .resume-leadership-grid > li)::before,
+html body :is(.resume-experience-card, .resume-leadership-grid > li)::after,
+html body .resume-experience-details summary::before {
+  left: 10%; right: 10%; width: auto;
+  background: var(--surface-rule);
 }

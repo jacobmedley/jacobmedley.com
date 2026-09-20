@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils'
 
+// Shared source geometry for page waves and quiet card corner crops.
+export const MAIN_WAVE_PATH = 'M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z'
+
 interface WaveSeparatorProps {
   /** 'top' rotates the wave 180° to cap the top of a section (legacy .waves-wrapper.top) */
   position?: 'top' | 'bottom'
@@ -20,7 +23,7 @@ export default function WaveSeparator({
   className,
 }: WaveSeparatorProps) {
   return (
-    <div className={cn('waves-wrapper', position === 'top' && 'top', className)} aria-hidden="true">
+    <div className={cn('waves-wrapper', position === 'top' && 'top', className)} aria-hidden="true" data-motion-root>
       <svg
         className="waves"
         xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +34,7 @@ export default function WaveSeparator({
         <defs>
           <path
             id={waveId}
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            d={MAIN_WAVE_PATH}
           />
         </defs>
         <g className="parallax">

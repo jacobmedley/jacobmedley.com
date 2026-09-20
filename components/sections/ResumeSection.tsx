@@ -1,3 +1,4 @@
+import { CornerWaves } from '@/components/ui/QuietPrism'
 import WaveSeparator from '@/components/ui/WaveSeparator'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ExperienceDisclosure from '@/components/ui/ExperienceDisclosure'
@@ -108,6 +109,13 @@ const experience: ExperienceEntry[] = [
   },
 ]
 
+const mentorship = [
+  'I walk beside junior staff, asking questions until they can name the next step, dependency, or piece they can move now.',
+  'I make authority explicit. People can assess the risk and decide without bringing every next step back for permission.',
+  'I stay available and remove blockers beyond their control.',
+  'We review outcomes together. We change the conditions behind mistakes and understand good results well enough to repeat them.',
+]
+
 const expertise = [
   "Leadership: design practice, hiring, research operations, UX roadmapping, workshop leadership.",
   "Product: UX research, interaction design, information architecture, usability testing, conversion testing, accessibility and WCAG.",
@@ -120,7 +128,7 @@ const tools = [
   "Delivery: Jira, Asana, GitHub, VS Code."
 ]
 
-function SkillList({ items }: { items: string[] }) {
+function SkillList({ items, labelled = false }: { items: string[]; labelled?: boolean }) {
   return (
     <ul className="fa-ul">
       {items.map((skill) => (
@@ -128,7 +136,7 @@ function SkillList({ items }: { items: string[] }) {
           <span className="fa-li">
             <i className="fa-thin fa-angle-right" aria-hidden="true" />
           </span>
-          {skill}
+          {labelled ? <><strong>{skill.slice(0, skill.indexOf(':') + 1)}</strong>{skill.slice(skill.indexOf(':') + 1)}</> : skill}
         </li>
       ))}
     </ul>
@@ -147,7 +155,7 @@ export default function ResumeSection() {
           <div className="row">
             <div className="col-24">
               <div className="resume-belief">
-                <h3>How I approach the work</h3>
+                <h3>How I lead the work</h3>
                 <p className="resume-belief-slogan">There is always a better way, together we can find it.</p>
                 <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
@@ -166,7 +174,7 @@ export default function ResumeSection() {
 
           <hr className="solid-center resume-experience-divider" />
           <div className="row resume-columns">
-            <div className="col-24 col-lg-12">
+            <div className="col-24">
               <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
               <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
                 {experience.map((job) => (
@@ -195,27 +203,24 @@ export default function ResumeSection() {
               </ol>
             </div>
 
-            <div className="col-24 col-lg-12 resume-expertise">
-              <div className="row">
-                <div className="col-24">
-                  <h3 className="mb-6">Expertise</h3>
-                </div>
-                <div className="col-24">
-                  <SkillList items={expertise} />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-24">
-                  <hr className="solid-center my-12" />
-                  <h3 className="mb-6">Apps &amp; Tools</h3>
-                </div>
-                <div className="col-24">
-                  <p className="resume-tools-context">Tools used across these roles</p>
-                  <SkillList items={tools} />
-                </div>
-              </div>
-            </div>
           </div>
+
+          <section className="resume-prism-practice" aria-label="Leadership, expertise and tools" data-motion-root data-atmosphere>
+            <CornerWaves both />
+            <div className="resume-practice-column">
+              <h3><i className="fa-thin fa-people-group" aria-hidden="true" /> Team Building and Mentorship</h3>
+              <SkillList items={mentorship} />
+            </div>
+            <div className="resume-practice-column">
+              <h3><i className="fa-thin fa-bullseye-arrow" aria-hidden="true" /> Expertise</h3>
+              <SkillList items={expertise} labelled />
+            </div>
+            <div className="resume-practice-column">
+              <h3><i className="fa-thin fa-screwdriver-wrench" aria-hidden="true" /> Apps &amp; Tools</h3>
+              <p className="resume-tools-context">Tools used across these roles</p>
+              <SkillList items={tools} labelled />
+            </div>
+          </section>
         </div>
       </div>
 

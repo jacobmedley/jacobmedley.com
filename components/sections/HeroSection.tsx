@@ -1,3 +1,4 @@
+import HomePathways from './HomePathways'
 import WaveSeparator from '@/components/ui/WaveSeparator'
 import KineticHeroIdentity from '@/components/ui/KineticHeroIdentity'
 
@@ -26,6 +27,7 @@ export default function HeroSection() {
         </div>
       </div>
 
+      <div className="container"><HomePathways /></div>
       <WaveSeparator waveId="wave-hi" />
     </>
   )

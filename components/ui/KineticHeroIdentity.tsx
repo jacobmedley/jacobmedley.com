@@ -1,7 +1,7 @@
 'use client'
 
 import { useLayoutEffect, useRef } from 'react'
-import { useReducedMotion } from './MotionControls'
+import { useMotionPaused, useReducedMotion } from './MotionControls'
 
 const ROLES = ['Product', 'UX', 'Systems', 'IxD', 'Human'] as const
 const DURATION = 39000
@@ -41,10 +41,11 @@ export default function KineticHeroIdentity() {
   const rootRef = useRef<HTMLDivElement>(null)
   const elapsedRef = useRef(0)
   const reduced = useReducedMotion()
+  const paused = useMotionPaused()
 
   useLayoutEffect(() => {
     const root = rootRef.current!
-    if (reduced || !root.animate) {
+    if (reduced || paused || !root.animate) {
       root.dataset.heroState = 'static'
       return
     }
@@ -183,7 +184,7 @@ export default function KineticHeroIdentity() {
       resize.disconnect()
       document.removeEventListener('visibilitychange', syncPlayback)
     }
-  }, [reduced])
+  }, [reduced, paused])
 
   return (
     <div ref={rootRef} className="kinetic-identity" data-motion-root data-hero-state="static">

@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import { Fragment, useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -30,18 +32,23 @@ export default function CaseStudiesSection() {
             titleClassName="mb-0"
           />
 
+          <div className="work-introduction">
+            <p>Five projects across product, brand, and design systems. Open a project for the work, or read the longer stories behind the decisions.</p>
+            <Link href="/case-studies/" className="prism-text-link">Explore the full case studies <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link>
+          </div>
+
           <div className="featured-work-grid">
             {caseStudies.map((project, i) => (
               <Fragment key={project.id}>
                 <WorkCard
                   project={project}
-                  reverse={i % 2 === 1}
                   onOpen={setActiveId}
                 />
                 {i < caseStudies.length - 1 && <hr className="solid-center work-separator" />}
               </Fragment>
             ))}
           </div>
+          <p className="work-more-stories"><Link href="/case-studies/" className="prism-text-link">More stories behind the work <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link></p>
         </div>
       </div>
 

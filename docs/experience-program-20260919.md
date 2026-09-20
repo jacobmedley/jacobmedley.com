@@ -1,5 +1,13 @@
 # Experience refinement program — one decision ledger
 
+> September 20 supersession: Jacob authorized full-site implementation, including
+> brand/marketing copy and the dedicated case-study experience, in task 01a0bf66,
+> turn 01a0bfb7-e5d4-7122-8950-67022ed30378. The planning-only/lab-approval hold
+> and dedicated-page deferral below are historical. Current local implementation,
+> accepted source commits, evidence and remaining limits are recorded in
+> [the full-site integration report](full-site-integration-20260920.md).
+> Publication remains separate. This note preserves the original decision history.
+
 Owner/coordinator: Jacob's current task 01a0b75f-e43c-7772-b8ea-d78334ce9284.
 Baseline: main909ea22, live v12.160 / production1325c6b. No new publication authorized.
 Primary handoff location: this file in X:\website-release-20260919. Other tasks

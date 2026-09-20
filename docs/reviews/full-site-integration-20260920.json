@@ -1,0 +1,2168 @@
+{
+  "scope": "Local full-site integration. No publication or blanket WCAG claim.",
+  "branch": "codex/full-site-integration-20260920",
+  "base": "51577f7ff1b2eb1658ffd7edad9a8dfb9e56c6a6",
+  "primitiveSource": "5fba784bac5526205683de8677fd3e3d0ab522d6",
+  "build": {
+    "node": "24.19.0",
+    "next": "15.5.25",
+    "production": "passed",
+    "lint": "app components lib passed",
+    "types": "production build passed",
+    "exportImages": 288,
+    "activeImageReferences": 104,
+    "waveHash": "9abdf71c5c6032fdf5a13fb5ed9e0614d2cdabc2dfbe5e7375061d7e3de558b4"
+  },
+  "axe": {
+    "version": "4.13.0",
+    "tags": [
+      "wcag2a",
+      "wcag2aa"
+    ],
+    "pages": [
+      {
+        "route": "/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 195
+          }
+        ],
+        "passes": 23,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 119
+          }
+        ],
+        "passes": 21,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/one-platform-five-properties/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/building-a-design-function/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 18
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/one-customer-journey/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 17
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/navigation-beyond-opinion/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 17
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/tokens-before-pages/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 17
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      },
+      {
+        "route": "/case-studies/a-checkout-decision-with-receipts/",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ],
+        "passes": 24,
+        "violations": []
+      }
+    ],
+    "dialogs": [
+      {
+        "id": "webmd",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 7
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "dentalplans",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "bumblebeemd",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "hydra",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "opfred",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 10
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "split-test",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 7
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "call-center-ux",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 10
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "marketing-auto",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 7
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "workshops",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 4
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "roadmap",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 6
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "personas",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 5
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "wrong",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 14
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "reveal",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 14
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      },
+      {
+        "id": "viva",
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 7
+          }
+        ],
+        "violations": [],
+        "keyboardScrolled": true
+      }
+    ],
+    "remainingIncomplete": "Gradient/image background contrast requires manual review."
+  },
+  "responsive": [
+    {
+      "route": "/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 305,
+      "width": 320
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 360,
+      "width": 375
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 753,
+      "width": 768
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 977,
+      "width": 992
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "brokenImages": [],
+      "filterDefs": 1,
+      "h1": 1,
+      "pageWidth": 1425,
+      "width": 1440
+    }
+  ],
+  "breakpoints": [
+    {
+      "educationColumns": "520.812px",
+      "padding": "22px 22px 16px",
+      "pageWidth": 584,
+      "width": 599
+    },
+    {
+      "educationColumns": "250.812px 250.812px",
+      "padding": "22px 22px 16px",
+      "pageWidth": 585,
+      "width": 600
+    },
+    {
+      "educationColumns": "310.812px 310.812px",
+      "padding": "22px 22px 16px",
+      "pageWidth": 804,
+      "width": 819
+    },
+    {
+      "educationColumns": "311.312px 311.312px",
+      "padding": "22px 22px 16px",
+      "pageWidth": 805,
+      "width": 820
+    }
+  ],
+  "dialogLifecycle": [
+    {
+      "id": "webmd",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "WebMD"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "dentalplans",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Product Framework and Design System"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "bumblebeemd",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "BumblebeeMD"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "hydra",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Hydra Design System"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "opfred",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "One Park Financial"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "split-test",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "A/B Testing"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "call-center-ux",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "When nobody can take the call"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "marketing-auto",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Data-Driven Personalization"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "workshops",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Team Workshops"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "roadmap",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "UX Roadmaps"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "personas",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Personas"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "wrong",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "The Wrong Campaign"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "reveal",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Reveal Aligners"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    },
+    {
+      "id": "viva",
+      "state": {
+        "backgroundHidden": "true",
+        "blur": "blur(18px) saturate(0.72)",
+        "duration": "0.4s",
+        "focusInside": true,
+        "internalScroll": true,
+        "overflow": false,
+        "pageTransform": "none",
+        "scrollLock": "hidden",
+        "title": "Viva Medicare"
+      },
+      "focusTrapped": true,
+      "focusScrollUrlHistoryRestored": true
+    }
+  ],
+  "mobileDialog": [
+    {
+      "availableWidth": 308,
+      "content": {
+        "bottom": 812,
+        "left": 0,
+        "right": 320,
+        "top": 12
+      },
+      "focusInside": true,
+      "internalWidth": 308,
+      "navTop": 740.625,
+      "pageWidth": 320,
+      "width": 320
+    },
+    {
+      "availableWidth": 363,
+      "content": {
+        "bottom": 812,
+        "left": 0,
+        "right": 375,
+        "top": 12
+      },
+      "focusInside": true,
+      "internalWidth": 363,
+      "navTop": 740.625,
+      "pageWidth": 375,
+      "width": 375
+    },
+    {
+      "availableWidth": 528,
+      "content": {
+        "bottom": 812,
+        "left": 30,
+        "right": 570,
+        "top": 12
+      },
+      "focusInside": true,
+      "internalWidth": 528,
+      "navTop": 740.625,
+      "pageWidth": 600,
+      "width": 600
+    },
+    {
+      "availableWidth": 708,
+      "content": {
+        "bottom": 788,
+        "left": 24,
+        "right": 744,
+        "top": 24
+      },
+      "focusInside": true,
+      "internalWidth": 708,
+      "navTop": 161,
+      "pageWidth": 768,
+      "width": 768
+    }
+  ],
+  "disclosures": [
+    {
+      "i": 0,
+      "open": {
+        "contentHeight": 440,
+        "expanded": "true",
+        "focus": true,
+        "height": 440,
+        "label": "Less about Health-E Commerce, New York, NY (Remote)",
+        "opacity": "1",
+        "open": true
+      },
+      "reversal": true,
+      "closed": true
+    },
+    {
+      "i": 1,
+      "open": {
+        "contentHeight": 1128,
+        "expanded": "true",
+        "focus": true,
+        "height": 1128,
+        "label": "Less about Mutual of America Financial Group, Boca Raton, FL",
+        "opacity": "1",
+        "open": true
+      },
+      "reversal": true,
+      "closed": true
+    },
+    {
+      "i": 2,
+      "open": {
+        "contentHeight": 768,
+        "expanded": "true",
+        "focus": true,
+        "height": 768,
+        "label": "Less about One Park Financial, Coconut Grove, FL",
+        "opacity": "1",
+        "open": true
+      },
+      "reversal": true,
+      "closed": true
+    },
+    {
+      "i": 3,
+      "open": {
+        "contentHeight": 760,
+        "expanded": "true",
+        "focus": true,
+        "height": 760,
+        "label": "Less about DentalPlans.com, Plantation, FL",
+        "opacity": "1",
+        "open": true
+      },
+      "reversal": true,
+      "closed": true
+    },
+    {
+      "i": 4,
+      "open": {
+        "contentHeight": 688,
+        "expanded": "true",
+        "focus": true,
+        "height": 688,
+        "label": "Less about Bluegreen Vacations, Boca Raton, FL",
+        "opacity": "1",
+        "open": true
+      },
+      "reversal": true,
+      "closed": true
+    }
+  ],
+  "motion": {
+    "families": [
+      {
+        "family": "featured",
+        "animations": 15,
+        "exit": 0.9787804717690584,
+        "focusOutline": "3px",
+        "hold": 0.12000000599912194,
+        "peak": 6.929694637119754,
+        "states": [
+          "running"
+        ]
+      },
+      {
+        "family": "howIWork",
+        "animations": 13,
+        "exit": 0.9775657553583796,
+        "focusOutline": "3px",
+        "hold": 0.12000000354340508,
+        "peak": 6.898103336923156,
+        "states": [
+          "running"
+        ]
+      },
+      {
+        "family": "experience",
+        "animations": 7,
+        "exit": 0.9775732321937186,
+        "focusOutline": "3px",
+        "hold": 0.12000000354340508,
+        "peak": 6.898103336923156,
+        "states": [
+          "running"
+        ]
+      },
+      {
+        "family": "education",
+        "animations": 3,
+        "exit": 0.9775210662688668,
+        "focusOutline": "3px",
+        "hold": 0.1200087842283184,
+        "peak": 6.898103336923158,
+        "states": [
+          "running"
+        ]
+      },
+      {
+        "family": "information",
+        "hold": 0.120008837721374,
+        "peak": 6.89689154299383,
+        "states": [
+          "running",
+          "running",
+          "running"
+        ]
+      }
+    ],
+    "pause": {
+      "hero": "static",
+      "running": 0
+    },
+    "resumeHero": {
+      "running": 19,
+      "state": "running"
+    },
+    "reduced": {
+      "running": 0,
+      "controlHidden": "none",
+      "hero": "static",
+      "disclosure": {
+        "animations": 0,
+        "open": true
+      }
+    },
+    "pausedDialog": {
+      "animation": "none",
+      "focusInside": true,
+      "opacity": "1",
+      "closed": true
+    },
+    "pausedDemo": {
+      "before": "ready",
+      "after": "ready",
+      "observedMilliseconds": 20819.29999999702
+    }
+  },
+  "forcedColors": {
+    "color": "rgb(26, 235, 255)",
+    "matches": true,
+    "style": "solid",
+    "width": "3px"
+  },
+  "modalReadingFocus": {
+    "style": "solid",
+    "target": "modal-body",
+    "width": "3px"
+  },
+  "filters": [
+    {
+      "announcement": "6 // Case Studies",
+      "count": 6,
+      "name": "All Work",
+      "pressed": [
+        "All Work"
+      ],
+      "valid": true,
+      "waves": 5
+    },
+    {
+      "announcement": "3 // Case Studies",
+      "count": 3,
+      "name": "Product",
+      "pressed": [
+        "Product"
+      ],
+      "valid": true,
+      "waves": 5
+    },
+    {
+      "announcement": "3 // Case Studies",
+      "count": 3,
+      "name": "Systems",
+      "pressed": [
+        "Systems"
+      ],
+      "valid": true,
+      "waves": 5
+    },
+    {
+      "announcement": "2 // Case Studies",
+      "count": 2,
+      "name": "UX Research",
+      "pressed": [
+        "UX Research"
+      ],
+      "valid": true,
+      "waves": 5
+    },
+    {
+      "announcement": "3 // Case Studies",
+      "count": 3,
+      "name": "Leadership",
+      "pressed": [
+        "Leadership"
+      ],
+      "valid": true,
+      "waves": 17
+    },
+    {
+      "announcement": "1 // Case Study",
+      "count": 1,
+      "name": "Brand",
+      "pressed": [
+        "Brand"
+      ],
+      "valid": true,
+      "waves": 17
+    }
+  ],
+  "navigation": {
+    "storyURL": "http://localhost:8090/case-studies/one-platform-five-properties/",
+    "returnedHome": "http://localhost:8090/",
+    "filterDefinitionCount": 1
+  },
+  "preloading": {
+    "initial": 0,
+    "afterFocus": 3
+  },
+  "imageRetry": {
+    "simulation": "React image error event, followed by real retry request",
+    "before": {
+      "retry": true,
+      "state": "error"
+    },
+    "after": {
+      "loaded": true,
+      "src": "/images/work/webmd-modal/home-dt.png?retry=1",
+      "state": "loaded"
+    }
+  },
+  "renderedContrast": {
+    "method": "Darkest first percentile of inset sampled text background, with text temporarily transparent. Static samples, not exhaustive animated-frame proof. Final foreground substitution explicitly marked; final two mobile cases recaptured.",
+    "positions": [
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "Case Study",
+        "ratio": 8.26,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6312,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "WebMD",
+        "ratio": 8.14,
+        "threshold": 3,
+        "size": 37.6,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6207,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "From plan search to checkout",
+        "ratio": 8.47,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6479,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "Product",
+        "ratio": 6.47,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8314,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "Conversion Optimization",
+        "ratio": 6.15,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7878,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "A clearer path to care",
+        "ratio": 8.46,
+        "threshold": 3,
+        "size": 48,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.6026,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "I led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans.",
+        "ratio": 7.02,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5287,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "View case study",
+        "ratio": 6.67,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.6595,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 1440,
+        "text": "People · Process · Better outcomes",
+        "ratio": 8.56,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.4481,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "Case Study",
+        "ratio": 7.35,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5556,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "DentalPlans.com",
+        "ratio": 7.08,
+        "threshold": 3,
+        "size": 37.6,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5338,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "One platform. Five branded businesses.",
+        "ratio": 7.3,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5519,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "Systems",
+        "ratio": 6.16,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7882,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "Product",
+        "ratio": 5.89,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7525,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "One platform. Five branded businesses.",
+        "ratio": 7.0,
+        "threshold": 3,
+        "size": 48,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.4898,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "I built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two.",
+        "ratio": 6.26,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.466,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "View case study",
+        "ratio": 6.15,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.6041,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 1440,
+        "text": "People · Process · Better outcomes",
+        "ratio": 7.82,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.4049,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "Case Study",
+        "ratio": 9.92,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7676,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "BumblebeeMD",
+        "ratio": 10.01,
+        "threshold": 3,
+        "size": 37.6,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7748,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "Room to build the brand",
+        "ratio": 10.25,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.795,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "Systems",
+        "ratio": 6.97,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8991,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "Brand",
+        "ratio": 6.89,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8883,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "Room to build the brand",
+        "ratio": 10.97,
+        "threshold": 3,
+        "size": 48,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.7963,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "The shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands.",
+        "ratio": 9.42,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7266,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "View case study",
+        "ratio": 8.13,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.8151,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 1440,
+        "text": "People · Process · Better outcomes",
+        "ratio": 13.53,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.7375,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "Case Study",
+        "ratio": 7.41,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5609,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "Hydra",
+        "ratio": 7.74,
+        "threshold": 3,
+        "size": 37.6,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5882,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "From an idea to working parts",
+        "ratio": 7.8,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5931,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "Systems",
+        "ratio": 6.25,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8011,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "Product",
+        "ratio": 6.07,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7758,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "From an idea to working parts",
+        "ratio": 7.84,
+        "threshold": 3,
+        "size": 48,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.5546,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "I built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built.",
+        "ratio": 7.01,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5277,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "View case study",
+        "ratio": 6.57,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.6488,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 1440,
+        "text": "People · Process · Better outcomes",
+        "ratio": 9.44,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.4994,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "Case Study",
+        "ratio": 8.62,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6604,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "One Park Financial",
+        "ratio": 8.7,
+        "threshold": 3,
+        "size": 37.6,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6674,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "From visitor to the right next step",
+        "ratio": 8.7,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6674,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "Product",
+        "ratio": 6.58,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8456,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "UX Research",
+        "ratio": 6.43,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8257,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "From visitor to the right next step",
+        "ratio": 8.61,
+        "threshold": 3,
+        "size": 48,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.6144,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "I led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey.",
+        "ratio": 7.4,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5602,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "View case study",
+        "ratio": 7.1,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.7055,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 1440,
+        "text": "People · Process · Better outcomes",
+        "ratio": 10.07,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.5359,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "Case Study",
+        "ratio": 8.71,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.668,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "WebMD",
+        "ratio": 8.84,
+        "threshold": 3,
+        "size": 28,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.679,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "From plan search to checkout",
+        "ratio": 8.3,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6345,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "Product",
+        "ratio": 6.22,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7973,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "Conversion Optimization",
+        "ratio": 5.92,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7563,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "A clearer path to care",
+        "ratio": 9.17,
+        "threshold": 3,
+        "size": 32,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.6577,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "I led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans.",
+        "ratio": 6.61,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.4952,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "View case study",
+        "ratio": 5.02,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.4845,
+        "pass": true
+      },
+      {
+        "card": "webmd",
+        "width": 375,
+        "text": "People · Process · Better outcomes",
+        "ratio": 5.69,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.2807,
+        "pass": true,
+        "method": "darkest first percentile of text-background crop, 3px inset, text temporarily transparent"
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "Case Study",
+        "ratio": 7.4,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5599,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "DentalPlans.com",
+        "ratio": 7.21,
+        "threshold": 3,
+        "size": 28,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5439,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "One platform. Five branded businesses.",
+        "ratio": 6.68,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5007,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "Systems",
+        "ratio": 5.85,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7469,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "Product",
+        "ratio": 5.58,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7099,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "One platform. Five branded businesses.",
+        "ratio": 8.4,
+        "threshold": 3,
+        "size": 32,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.5979,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "I built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two.",
+        "ratio": 6.18,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.4596,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "View case study",
+        "ratio": 4.58,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.4374,
+        "pass": true
+      },
+      {
+        "card": "dentalplans",
+        "width": 375,
+        "text": "People · Process · Better outcomes",
+        "ratio": 4.96,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.2385,
+        "pass": true,
+        "method": "darkest first percentile of text-background crop, 3px inset, text temporarily transparent"
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "Case Study",
+        "ratio": 8.52,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6522,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "BumblebeeMD",
+        "ratio": 8.89,
+        "threshold": 3,
+        "size": 28,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6829,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "Room to build the brand",
+        "ratio": 10.0,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7746,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "Systems",
+        "ratio": 6.88,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8873,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "Brand",
+        "ratio": 6.83,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8793,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "Room to build the brand",
+        "ratio": 11.65,
+        "threshold": 3,
+        "size": 32,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.8486,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "The shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands.",
+        "ratio": 9.96,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7711,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "View case study",
+        "ratio": 7.53,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.7519,
+        "pass": true
+      },
+      {
+        "card": "bumblebeemd",
+        "width": 375,
+        "text": "People · Process · Better outcomes",
+        "ratio": 12.24,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.662,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "Case Study",
+        "ratio": 8.12,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6193,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "Hydra",
+        "ratio": 7.99,
+        "threshold": 3,
+        "size": 28,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6082,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "From an idea to working parts",
+        "ratio": 7.81,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5941,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "Systems",
+        "ratio": 5.9,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.753,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "Product",
+        "ratio": 5.74,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.7311,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "From an idea to working parts",
+        "ratio": 9.32,
+        "threshold": 3,
+        "size": 32,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.6688,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "I built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built.",
+        "ratio": 7.24,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.5469,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "View case study",
+        "ratio": 5.48,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.5329,
+        "pass": true
+      },
+      {
+        "card": "hydra",
+        "width": 375,
+        "text": "People · Process · Better outcomes",
+        "ratio": 6.98,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.3564,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "Case Study",
+        "ratio": 9.26,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.7133,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "One Park Financial",
+        "ratio": 9.18,
+        "threshold": 3,
+        "size": 28,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.707,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "From visitor to the right next step",
+        "ratio": 8.99,
+        "threshold": 4.5,
+        "size": 17,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.6907,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "Product",
+        "ratio": 6.38,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8192,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "UX Research",
+        "ratio": 6.27,
+        "threshold": 4.5,
+        "size": 13,
+        "fg": "rgb(60, 86, 104)",
+        "backgroundLuminanceP1": 0.8035,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "From visitor to the right next step",
+        "ratio": 10.09,
+        "threshold": 3,
+        "size": 32,
+        "fg": "rgb(48, 44, 56)",
+        "backgroundLuminanceP1": 0.7283,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "I led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey.",
+        "ratio": 7.84,
+        "threshold": 4.5,
+        "size": 18,
+        "fg": "rgb(52, 49, 59)",
+        "backgroundLuminanceP1": 0.596,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "View case study",
+        "ratio": 5.79,
+        "threshold": 4.5,
+        "size": 16,
+        "fg": "rgb(45, 70, 88)",
+        "backgroundLuminanceP1": 0.5664,
+        "pass": true
+      },
+      {
+        "card": "opfred",
+        "width": 375,
+        "text": "People · Process · Better outcomes",
+        "ratio": 7.62,
+        "threshold": 4.5,
+        "size": 14,
+        "fg": "rgb(24, 21, 29)",
+        "backgroundLuminanceP1": 0.3934,
+        "pass": true,
+        "method": "measured background with verified final foreground"
+      }
+    ]
+  },
+  "browserErrors": [],
+  "limitations": [
+    "Physical touch device, Safari and Firefox not tested",
+    "Screen-reader speech not tested",
+    "Native 200 percent browser zoom not achieved; shortcut had no page effect",
+    "Not every historical screenshot or animated frame audited for contrast",
+    "Image error test was event simulation followed by a real retry request",
+    "No publication, production cache or performance check"
+  ]
+}

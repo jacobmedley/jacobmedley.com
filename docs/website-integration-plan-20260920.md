@@ -1,5 +1,13 @@
 # Website integration plan, September 20, 2026
 
+> September 20 supersession: Jacob authorized full-site implementation, including
+> brand/marketing copy and the dedicated case-study experience, in task 01a0bf66,
+> turn 01a0bfb7-e5d4-7122-8950-67022ed30378. The planning-only/lab-approval hold
+> and dedicated-page deferral below are historical. Current local implementation,
+> accepted source commits, evidence and remaining limits are recorded in
+> [the full-site integration report](full-site-integration-20260920.md).
+> Publication remains separate. This note preserves the original decision history.
+
 Owner: **Coordinate website workstreams and merge plan**, task
 `01a0bf67-f456-7e32-b581-a233af6149fe`. Planning checkout: `6b03`, branch
 `codex/website-integration-plan-20260920`. This is a local planning checkpoint.

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useReducedMotion } from './MotionControls'
+import { useMotionPaused, useReducedMotion } from './MotionControls'
 
 const STATES = {
   ready: { label: 'Ready', icon: 'fa-phone-volume', header: 'Ready to help', banner: 'Our team is ready. Call for help choosing a plan.', title: 'Find your dental savings plan.', body: 'Talk to our team or explore plans online.', action: 'View plans', offer: 'No offer. Phone support is available.' },
@@ -21,10 +21,11 @@ export default function CallCenterDemo() {
   const [menu, setMenu] = useState(false)
   const [view, setView] = useState<'home' | 'plans' | 'phone'>('home')
   const reduced = useReducedMotion()
+  const paused = useMotionPaused()
   const current = STATES[state]
 
   useEffect(() => {
-    if (mode !== 'auto' || reduced) return
+    if (mode !== 'auto' || reduced || paused) return
     const root = rootRef.current!
     let visible = false
     let disposed = false
@@ -48,7 +49,7 @@ export default function CallCenterDemo() {
       root.removeEventListener('focusout', onBlur)
       document.removeEventListener('visibilitychange', sync)
     }
-  }, [mode, reduced])
+  }, [mode, reduced, paused])
 
   const choose = (next: Mode) => {
     setMode(next)
@@ -71,7 +72,7 @@ export default function CallCenterDemo() {
       </div>
       <hr className="solid-center rule-heading" />
       <div ref={rootRef} className="call-center-demo modal-section-content" data-state={state} data-highlight={highlight}>
-        <div className="demo-phone" aria-label="Interactive ecommerce phone preview">
+        <div className="demo-phone" role="group" aria-label="Interactive ecommerce phone preview">
           <div className="demo-phone-speaker" aria-hidden="true" />
           <div className="demo-phone-screen">
             <header className="demo-store-header demo-reactive">

@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   icon: string
   /** Color utilities for the header row (e.g. legacy text-second-dark) */
   className?: string
-  /** Extra classes for the h3 (legacy work adds mb-0, education adds text-fourth-light) */
+  /** Extra classes for the h2 (legacy work adds mb-0, education adds text-fourth-light) */
   titleClassName?: string
   /** Extra classes for the icon (education uses text-fourth-light) */
   iconClassName?: string
@@ -83,7 +83,7 @@ export default function SectionHeader({
             <p className="section-heading-icon">
               <i className={cn(icon, iconClassName)} aria-hidden="true" />
             </p>
-            <h3 className={cn('section-heading-title', titleClassName)}>{title}</h3>
+            <h2 className={cn('section-heading-title', titleClassName)}>{title}</h2>
           </div>
         </div>
       </div>

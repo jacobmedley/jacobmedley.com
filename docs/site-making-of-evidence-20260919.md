@@ -1,5 +1,13 @@
 # Making the portfolio — evidence journal, not a finished case study
 
+> September 20 supersession: Jacob authorized full-site implementation, including
+> brand/marketing copy and the dedicated case-study experience, in task 01a0bf66,
+> turn 01a0bfb7-e5d4-7122-8950-67022ed30378. The planning-only/lab-approval hold
+> and dedicated-page deferral below are historical. Current local implementation,
+> accepted source commits, evidence and remaining limits are recorded in
+> [the full-site integration report](full-site-integration-20260920.md).
+> Publication remains separate. This note preserves the original decision history.
+
 Status: foundation verified locally; parallel exploration and testing continue. This document
 records decisions as they happen. It does not claim validated outcomes or WCAG
 conformance. The current program/approval ledger is experience-program-20260919.md.

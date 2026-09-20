@@ -356,7 +356,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                 </Dialog.Close>
               </div>
 
-              <div className="modal-body" ref={bindFeaturedBody}>
+              <div className="modal-body" tabIndex={0} ref={bindFeaturedBody}>
                 <div className="container">{project && <ModalContent project={project} />}</div>
               </div>
 

@@ -1,54 +1,42 @@
-import { cn } from '@/lib/utils'
 import { type Project } from '@/lib/data/projects'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
+import { DirectionalArrow, PrismWave } from './QuietPrism'
+import styles from './QuietPrism.module.css'
 
-interface WorkCardProps {
-  project: Project
-  reverse?: boolean
-  onOpen?: (id: string) => void
+const contextIcons: Record<string, string> = {
+  webmd: 'fa-heart-pulse', dentalplans: 'fa-diagram-project',
+  hydra: 'fa-layer-group', bumblebeemd: 'fa-hexagon', opfred: 'fa-leaf',
 }
 
-export default function WorkCard({
-  project,
-  reverse = false,
-  onOpen,
-}: WorkCardProps) {
-  const open = () => onOpen?.(project.id)
-
+export default function WorkCard({ project, onOpen }: { project: Project; onOpen?: (id: string) => void }) {
   return (
     <div className={`work-item work-item-${project.id} py-2 lg:py-6 2xl:py-12`}>
-      <article
-        className={cn(
-          'featured-work-card',
-          `featured-work-card-${project.id}`,
-          reverse && 'featured-work-card-even',
-        )}
-        data-motion-root
-        data-project-id={project.id}
-      >
+      <article className={`${styles.featuredCard} featured-work-card featured-work-card-${project.id}`}
+        data-motion-root data-atmosphere data-project-id={project.id}>
+        <PrismWave />
         <FeaturedField projectId={project.id} />
-
-        <div className="featured-work-art" aria-hidden="true">
-          <span className="featured-work-anchor">
-            <FeaturedAnchor projectId={project.id} />
-          </span>
+        <div className={`${styles.featuredArt} featured-work-art`}>
+          <span className={styles.featuredContextIcon} aria-hidden="true"><i className={`fa-thin ${contextIcons[project.id]}`} /></span>
+          <span className="featured-work-anchor" aria-hidden="true"><FeaturedAnchor projectId={project.id} /></span>
+          <div className={styles.featuredIdentity}>
+            <p className={styles.eyebrow}>Case Study</p>
+            <h3>{project.title}</h3>
+            <p>{project.subtitle}</p>
+          </div>
         </div>
-
-        <div className="featured-work-copy">
-          <div className="portfolio-badges work-card-badges" aria-label="Disciplines">
-            {project.disciplines.map((discipline) => <span key={discipline}>{discipline}</span>)}
+        <div className={`${styles.featuredCopy} featured-work-copy`}>
+          <span className={styles.featuredExternal} aria-hidden="true"><i className="fa-thin fa-expand" /></span>
+          <div className="portfolio-badges work-card-badges" role="group" aria-label="Disciplines">
+            {project.disciplines.map(discipline => <span key={discipline}>{discipline}</span>)}
           </div>
-          <div className="featured-work-heading">
-            <h4 className="h2">{project.title}</h4>
-            <p className="h5 featured-work-subtitle">{project.subtitle}</p>
-          </div>
+          <div className="featured-work-heading"><h3 className="h2">{project.id === 'webmd' ? 'A clearer path to care' : project.subtitle}</h3></div>
           <p className="featured-work-summary">{project.summary}</p>
-
-          <span className="btn btn-lg btn-second-dark rounded-full action-label case-study-read" aria-hidden="true">
-            Read case study <i className="fa-thin fa-arrow-right" />
-          </span>
+          <div className={styles.featuredFooter}>
+            <span className={styles.featuredLink}>View case study <DirectionalArrow /></span>
+            <span>People <b>·</b> Process <b>·</b> Better outcomes</span>
+          </div>
         </div>
-        <button type="button" className="featured-work-open" onClick={open}
+        <button type="button" className="featured-work-open" onClick={() => onOpen?.(project.id)}
           data-modal-trigger={project.id} aria-label={`Open ${project.title} case study`} />
       </article>
     </div>

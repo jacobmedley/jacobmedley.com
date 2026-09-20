@@ -3,6 +3,13 @@
 import { useEffect, useSyncExternalStore } from 'react'
 
 const getServerSnapshot = () => false
+let motionPaused = false
+const pauseListeners = new Set<() => void>()
+const subscribePause = (listener: () => void) => {
+  pauseListeners.add(listener)
+  return () => { pauseListeners.delete(listener) }
+}
+const getPauseSnapshot = () => motionPaused
 const subscribeReduced = (listener: () => void) => {
   const query = window.matchMedia('(prefers-reduced-motion: reduce)')
   query.addEventListener('change', listener)
@@ -15,10 +22,15 @@ export function useReducedMotion() {
 }
 
 export function useMotionPaused() {
-  return false
+  return useSyncExternalStore(subscribePause, getPauseSnapshot, getServerSnapshot)
 }
 
 export default function MotionControls() {
+  const paused = useMotionPaused()
+  const reduced = useReducedMotion()
+  useEffect(() => {
+    document.documentElement.classList.toggle('motion-paused', paused)
+  }, [paused])
   useEffect(() => {
     const observer = 'IntersectionObserver' in window
       ? new IntersectionObserver((entries) => entries.forEach((entry) => entry.target.classList.toggle('motion-offscreen', !entry.isIntersecting)), { threshold: 0.01 })
@@ -43,5 +55,11 @@ export default function MotionControls() {
     return () => { observer?.disconnect(); mutations.disconnect(); document.removeEventListener('visibilitychange', onVisibilityChange); document.documentElement.classList.remove('motion-hidden') }
   }, [])
 
-  return null
+  return <button type="button" className="site-motion-control" aria-pressed={paused} onClick={() => {
+    motionPaused = !motionPaused
+    pauseListeners.forEach(listener => listener())
+  }} hidden={reduced}>
+    <i className={`fa-thin ${paused ? 'fa-play' : 'fa-pause'}`} aria-hidden="true" />
+    {paused ? 'Resume motion' : 'Pause motion'}
+  </button>
 }

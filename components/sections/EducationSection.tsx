@@ -1,3 +1,4 @@
+import { CornerWaves } from '@/components/ui/QuietPrism'
 import SectionHeader from '@/components/ui/SectionHeader'
 
 const educationItems = [
@@ -74,10 +75,11 @@ export default function EducationSection() {
 
           <div className="education-mosaic">
             {educationItems.map((item, i) => (
-              <article key={item.title} className={`education-card education-tone-${(i * 3 + 1) % 5}`}>
+              <article key={item.title} className={`education-card education-tone-${(i * 3 + 1) % 5}`} data-motion-root data-atmosphere>
+                <CornerWaves />
                 <header>
                   <i className={item.icon} aria-hidden="true" />
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                   <p>{item.source}</p>
                 </header>
                 <hr className="solid-center" />

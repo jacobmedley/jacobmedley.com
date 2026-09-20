@@ -1,5 +1,66 @@
 # Status
 
+## September 20, 2026: Full-site Quiet Prism integration complete locally
+
+Owner: coordinator task 01a0bf67, branch `codex/full-site-integration-20260920`,
+owned 6b03. Jacob's full-site instruction in task 01a0bf66 supersedes the earlier
+planning-only/lab-approval implementation hold and dedicated-page deferral.
+Publication remains separate. No push, main merge, PR or deployment performed.
+
+Integrated B60, foundation and approved final hero/modal histories through merge
+`b1c9a02557fa0cc35348418077733b885146fa49`. Adopted final Quiet Prism primitives
+from `5fba784bac5526205683de8677fd3e3d0ab522d6`, including all four final tweaks,
+without shipping the prototype route. B64 applies the approved wording and six
+B56 dedicated-copy files from d8d7380; six story URLs and factual authorities stay
+intact. Main project data, employment facts and education records are preserved.
+
+The main portfolio and dedicated experience share cards, waves, materials,
+responsive layouts and connected links. Five project dialogs, nine How I work
+examples, five experience disclosures and nine education records remain. B60's
+mentorship and B63's precise label emphasis are implemented. One global pause
+control covers decorative CSS, hero clock, GIF fallback and automatic demo state;
+paused dialogs remain usable. Reduced motion produces zero running animations.
+
+Build, TypeScript, authored-source ESLint and whitespace checks passed. Export
+verification passed for 288 images and 104 references; shared wave hash matches
+source/export. Eight pages passed 40 responsive measurements, with no page
+horizontal overflow. Four additional breakpoint checks preserve education's
+22/22/16px padding and 600px column change. Eight pages and fourteen dialogs have
+zero detected axe WCAG 2 A/AA violations. All fourteen support keyboard opening,
+reading-area scrolling, focus trap, Escape and exact focus/scroll/history return.
+Five disclosures pass keyboard open/close/reversal. Filters, connected navigation,
+bounded three-image preload and simulated error/real retry checks passed.
+
+Acceptance fixed muted text on gradient glass, the sage diagram label, generic
+ARIA labels, main heading hierarchy, missing dialog reading-area focus, legacy
+wave reduced motion, forced-color focus and paused-dialog/hero/demo interactions.
+Ninety rendered contrast positions were reviewed; final mobile footer retests
+measure 5.69:1 and 4.96:1. Sampling is bounded, not proof for every motion frame.
+Full report, source adoption map, rollback points, structured evidence and all 38
+WCAG 2 A/AA coverage entries are in:
+- `docs/full-site-integration-20260920.md`
+- `docs/reviews/full-site-integration-20260920.json`
+- `docs/reviews/full-site-wcag-20260920.md`
+
+Physical touch, Safari/Firefox, screen-reader speech and native 200% browser zoom
+remain unverified. No conformance or live-production performance claim. Jacob's
+global visual/content refinement and publication decision remain. No external
+resume work or private source data was touched.
+
+Preview8090 serves this export, PID52456. Preserved3016 serves6d80, PID12504;
+preserved3000 servesa003, PID16740. Browser media/viewport overrides restored;
+preview remains open. Other checkouts, locks and services were preserved.
+Complete-integration rollback is51577f7ff1b2eb1658ffd7edad9a8dfb9e56c6a6;
+production-adoption rollback isb1c9a02557fa0cc35348418077733b885146fa49.
+
+Final staging also caught an extra blank line at the imported clock file EOF;
+normalized it without changing behavior. STATUS is written last before the local
+checkpoint. Own lock is released after
+commit. The final commit and append-only Genesis receipt are recorded in the task
+handoff; the shared coordinator's CURRENT/card files were not edited. Fresh
+Exchange status at 2026-09-20T17:38:32+00:00 retained fingerprint
+`42245077a5e1119c1835066eb5ca90a4c2db4d993d1c19078c04f01391a8b729`, no conflicts.
+
 ## September 20, 2026: Local full-site integration checkpoint, approved final hero and modal behavior
 
 Jacob authorized full-site implementation, brand/marketing copy and the dedicated

@@ -1,5 +1,7 @@
 'use client'
 
+import { CornerWaves } from '@/components/ui/QuietPrism'
+
 import { useState } from 'react'
 import { projects } from '@/lib/data/projects'
 import { cn } from '@/lib/utils'
@@ -88,11 +90,12 @@ export default function FullStackSection() {
                     `thinking-art-${project.id}`,
                     `featured-work-card-${project.id}`,
                   )}
-                  data-motion-root
+                  data-motion-root data-atmosphere
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
-                  <div className="thinking-badges" aria-label="Disciplines">
+            <CornerWaves />
+                  <div className="thinking-badges" role="group" aria-label="Disciplines">
                     {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline}</span> : null)}
                   </div>
                   <div className={cn('thinking-media', project.thumb ? 'thinking-media-image' : 'thinking-media-icon')} aria-hidden="true">
@@ -110,7 +113,7 @@ export default function FullStackSection() {
                   <div className="thinking-panel">
                     <div className="thinking-copy">
                       <span className="thinking-eyebrow">{cardKickers[project.id] ?? 'Selected work'}</span>
-                      <h6 className="thinking-title">{cardTitles[project.id] ?? project.title}</h6>
+                      <h3 className="thinking-title">{cardTitles[project.id] ?? project.title}</h3>
                     </div>
                     <i className="fa-thin fa-arrow-right thinking-arrow" aria-hidden="true" />
                   </div>

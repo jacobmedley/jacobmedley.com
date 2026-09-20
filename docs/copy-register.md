@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B64. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B68. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2234,3 +2234,11 @@ authorize publication or add password enforcement. All credential, employment,
 project, and outcome copy stays unchanged. References guide visual treatment only.
 The broad crossing translucent wave treatment supersedes the cropped halves in
 B66. Refine the halo, education masonry, and shared card surfaces and borders.
+
+## B68. Short work-card actions [APPLIED LOCALLY]
+
+Shorten card-level case-study actions to `View` when the control opens an
+in-page case-study dialog and `Read` when it navigates to a dedicated reading
+page. Retain the existing graphic right arrow and the card's specific accessible
+name. This does not rename navigation, filters, disclosure controls, or other
+functional actions.

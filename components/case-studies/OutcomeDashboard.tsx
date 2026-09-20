@@ -32,7 +32,7 @@ export default function OutcomeDashboard({ outcomes }: { outcomes: CaseStudyOutc
               </div>
             ))}
           </div>
-          <span className="cs-text-link">Read the case study <Arrow /></span>
+          <span className="cs-text-link">Read <Arrow /></span>
         </div>
       </Link> : null}
       <div className="cs-outcome-grid">
@@ -46,7 +46,7 @@ export default function OutcomeDashboard({ outcomes }: { outcomes: CaseStudyOutc
             <strong>{outcome.value}</strong>
             <span className="cs-outcome-label">{outcome.label}</span>
             <p>{outcome.context}</p>
-            <span className="cs-text-link">Read the case study <Arrow /></span>
+            <span className="cs-text-link">Read <Arrow /></span>
             </div>
           </Link>
         ))}

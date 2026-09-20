@@ -87,7 +87,7 @@ export default function StudyCollection({ studies, outcomes }: { studies: StudyP
           <Link data-motion-root data-atmosphere className={`cs-study-card cs-icon-card thinking-thumb-icon cs-theme-${study.theme}`} key={study.slug} href={`/case-studies/${study.slug}/`} aria-label={`Read ${study.shortTitle}`}>
             <CornerWaves />
             <StudyIconArt kind={study.visual} />
-            <div className="cs-card-copy"><div className="cs-badges" role="group" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read the case study <Arrow /></span></div>
+            <div className="cs-card-copy"><div className="cs-badges" role="group" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read <Arrow /></span></div>
           </Link>
         ))}
       </div>

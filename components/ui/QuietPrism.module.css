@@ -155,6 +155,7 @@
   -webkit-backdrop-filter: blur(5px) saturate(125%);
   backdrop-filter: blur(5px) saturate(125%);
   backdrop-filter: url('#quiet-prism-frost') blur(5px) saturate(125%);
+  background-clip: padding-box;
 }
 
 .filterDefinitions { position: absolute; pointer-events: none; }
@@ -168,15 +169,21 @@
 }
 
 .featuredCopy::after {
-  content: ''; position: absolute; inset: 0; padding: 1px;
+  content: ''; position: absolute; inset: 0;
   border-radius: inherit; pointer-events: none;
-  background: linear-gradient(to bottom left, color-mix(in srgb, var(--featured-ink) 35%, white), #fff);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--featured-ink) 24%, white);
 }
 
-.featuredCopy :global(.portfolio-badges) {
-  padding-right: 1.5rem;
+.featuredMeta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+  width: 100%;
+}
+
+.featuredMeta :global(.portfolio-badges) {
+  margin: 0;
 }
 
 .featuredCopy :global(.portfolio-badges) > span {
@@ -205,11 +212,13 @@
 }
 
 .featuredExternal {
-  position: absolute;
-  top: 1.65rem;
-  right: 1.75rem;
+  display: grid;
+  flex: 0 0 2rem;
+  width: 2rem;
+  min-height: 27px;
+  place-items: center;
   color: #36566b;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
 }
 
 .featuredFooter {
@@ -475,13 +484,8 @@
   pointer-events: none;
   inset: 0;
   border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(115deg, transparent 5%, #fff 38%, #b3cbbdbb 51%, #fff 63%, transparent 95%);
-  background-size: 170% 100%;
-  background-position: calc(50% + var(--atmosphere-shift, 0%)) center;
+  box-shadow: inset 0 0 0 1px #ffffffb8;
   opacity: calc(.2 + var(--atmosphere-shine, 0) * .65);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
   animation: edge-light 27s ease-in-out infinite alternate;
 }
 @keyframes edge-light { from { filter: brightness(.98); } to { filter: brightness(1.08); } }

@@ -1,6 +1,6 @@
 'use client'
 
-import { CornerWaves } from '@/components/ui/QuietPrism'
+import { CornerWaves, DirectionalArrow } from '@/components/ui/QuietPrism'
 
 import { useState } from 'react'
 import { projects } from '@/lib/data/projects'
@@ -115,7 +115,7 @@ export default function FullStackSection() {
                       <span className="thinking-eyebrow">{cardKickers[project.id] ?? 'Selected work'}</span>
                       <h3 className="thinking-title">{cardTitles[project.id] ?? project.title}</h3>
                     </div>
-                    <i className="fa-thin fa-arrow-right thinking-arrow" aria-hidden="true" />
+                    <span className="thinking-arrow" aria-hidden="true"><DirectionalArrow /></span>
                   </div>
                 </button>
               </div>

@@ -1,5 +1,45 @@
 # Status
 
+## September 20, 2026: card-edge and action refinement complete locally
+
+Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,
+branch `codex/card-edge-cta-refinement-20260920`. Started from verified B67
+checkpoint `4f7d863cfa5d6ba8bbf0261d9a31ec4619aa3bcf`. No parent-worktree,
+main, push, merge, PR, publication, or deployment action occurred.
+
+Reworked the shared card edge stack so the outer card owns the rounded clip and
+inset edges replace independently masked one-pixel borders. Inner How I work
+panels no longer rasterize a second rounded bottom edge. All nine panels now
+share a 136px standard minimum and align at the card bottom while allowing the
+longest enlarged-text panel to grow without clipping. B68 shortens dialog actions
+to `View` and dedicated reading-page actions to `Read`, retaining graphic arrows
+and specific accessible names. Featured case-study cards replace the expand
+symbol with a book-open marker in the discipline-badge header row. The existing
+Quiet Prism gradients, broad waves, artwork, copy, modal behavior, hidden More
+stories link, Experience heading state, and education masonry are preserved.
+
+Production build, Next type/build lint, export preparation, 288-image and
+104-reference verification, authored-source ESLint, and Git whitespace checks
+passed. In-app browser checks at 1484x1272, 820x1180, and 390x844 found zero
+horizontal overflow. All nine panels measured 136px at standard sizes; the
+longest enlarged-text panel reflowed to 142.3px inside an unclipped 360px card.
+The SVG arrows measured 24px. The WebMD dialog opened, closed, and returned focus
+to its trigger. Reduced motion was active and browser warnings/errors were zero.
+The external Font Awesome kit was unavailable in the offline static session, so
+the exact new book glyph could not be visually rendered there; its class,
+reserved space, same-row alignment, and semantics were inspected. Detailed
+visual evidence and comparison history are in `design-qa.md`, final result passed.
+
+Preview `http://localhost:8096/` is running from this worktree's export under
+Python PID 12384. Parent preview `http://localhost:8090/`, PID 52456, was
+preserved. Rollback is the baseline commit above; the new local checkpoint follows
+this STATUS-last write. Fresh Exchange status at 2026-09-20T23:36:23Z retained
+fingerprint `060ef0bd99180756bd3dabd9aeae717ff241401a3daea8a6afe558c6127a8268`,
+with no conflicts. The parent change event
+`20260920T232705Z-b7a31926d29d45b2883324e4d899cf86` already records Jacob's
+direction. A unique final update follows the commit. No added spending, reset,
+model download, paid fallback, or local inference ran.
+
 ## September 20, 2026: Wave and card refinement complete locally
 
 Owner: task `01a0bf67-f456-7e32-b581-a233af6149fe`, worktree 6b03,

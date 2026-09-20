@@ -120,8 +120,17 @@
 .kinetic-tail-inner { display: flex; width: max-content; gap: .18em; align-items: center; padding-left: .18em; white-space: nowrap; }
 .kinetic-plus { display: block; margin: 0; animation: none; font-family: ui-monospace, monospace; font-weight: 300; line-height: 1; }
 .kinetic-design { display: block; transform-origin: left center; }
-.kinetic-closing { margin: 1rem 0 0; min-height: 2.8em; opacity: 1; transform: none; transition: none; font-size: var(--hero-cta-size); line-height: 1.4; text-wrap: balance; }
-.hero-rule-wrap { width: 25%; margin-inline: auto; padding-block: var(--rule-gap-heading); }
+.kinetic-closing {
+  --hero-follow-gap: clamp(1rem, 2vh, 1.5rem);
+  display: flex; flex-direction: column; align-items: center; gap: var(--hero-follow-gap);
+  margin: 1rem 0 0; min-height: 2.8em; opacity: 1; transform: none; transition: none;
+  font-size: var(--hero-cta-size); line-height: 1.4; text-wrap: balance;
+}
+.kinetic-closing p { margin: 0; }
+.kinetic-better strong { font-weight: 700; }
+.hero-rule-wrap { width: 25%; margin: 0 auto; padding: 0; }
+.hero-rule-wrap .rule-heading { margin: 0; }
+.hero-case-studies-link { margin: 0; padding: 0; }
 @container (max-width: 26em) {
   .kinetic-stage { min-height: 2.8em; }
   .kinetic-assembly { flex-direction: column; }
@@ -223,7 +232,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-expertise .fa-ul { columns: 1; }
 .resume-expertise li + li { margin-top: .8rem; }
 .resume-tools-context { margin-bottom: 1rem; }
-@media (min-width: 992px) { .row.resume-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,4vw,4rem); } }
+@media (min-width: 992px) { .row.resume-columns { grid-template-columns: minmax(0,1.65fr) minmax(18rem,.85fr); gap: clamp(2rem,4vw,4rem); } }
 @media (max-width: 575px) { .resume-experience-header { grid-template-columns: 2.25rem minmax(0,1fr); gap: 1rem; } .resume-company-mark { width: 2.25rem; height: 2.25rem; } }
 
 /* Stable varied tones and spans keep reading order intact as the mosaic restacks. */
@@ -231,20 +240,20 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .education-card {
   --edu-tone: #dfc4bf; --education-pad-top: 1.375rem; --education-pad-x: 1.375rem;
   container-type: inline-size; display: flex; flex-direction: column; position: relative;
-  gap: 0; min-width: 0; padding: var(--education-pad-top) var(--education-pad-x) 1rem;
+  gap: 0; min-width: 0; overflow: hidden; padding: var(--education-pad-top) var(--education-pad-x);
   color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone));
 }
 .education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
-.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; padding-bottom: 1.125rem; }
+.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: 0 1rem; align-items: start; padding-right: 2.75rem; }
 .education-card header > i { grid-row: 1 / 3; font-size: 2rem; line-height: 1.2; }
 .education-card header > :is(h3,p) { grid-column: 2; }
 .education-card h3 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
 .education-card h3, .education-card p { overflow-wrap: anywhere; }
 .education-card p { margin: 0; }
-.education-card hr { width: 100%; margin: 0; }
-.education-card a { position: relative; align-self: stretch; color: inherit; padding: .125rem 0 0; margin-top: .875rem; line-height: 1.5; }
-/* Preserve a 44px tap area without making the compact footer visually taller. */
-.education-card a::after { content: ''; position: absolute; inset: -.5625rem 0; }
+.education-card a {
+  position: absolute; z-index: 2; top: calc(var(--education-pad-top) - .7rem); right: calc(var(--education-pad-x) - .7rem);
+  display: grid; place-items: center; width: 44px; height: 44px; color: inherit; line-height: 1;
+}
 @container (max-width: 18rem) {
   .education-card header > i { grid-row: 1; }
   .education-card header > p { grid-column: 1 / -1; }

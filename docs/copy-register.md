@@ -2186,3 +2186,23 @@ Local acceptance: six-story JSON matches d8d7380 plus introductory capitalizatio
 B60 bullets match exactly; project data and education records are preserved.
 See docs/full-site-integration-20260920.md for implementation, verification and
 remaining browser/assistive-technology limits. No publication has occurred.
+
+
+## B65. Browser-directed homepage refinements [APPLIED LOCALLY]
+
+Source: Jacob's eleven browser comments in task
+`01a0bf67-f456-7e32-b581-a233af6149fe` on September 20, 2026. This direct
+instruction supersedes B64 only for the named homepage elements. Publication is
+not authorized.
+
+Remove the four informational pathway cards from the production hero. Preserve
+the hero's existing name, role sequence, build paragraph, better-way sentence,
+and selected-work action; make the better-way sentence bold and change only
+their layout, timing, and presentation. Remove the visible word `View` and the
+divider from every education card while preserving each credential title,
+institution, destination, new-tab behavior, and accessible link context.
+
+Add a lock icon to `More stories behind the work` as a visual signal for the
+planned protected destination. Password enforcement, credentials, and routing
+are not specified in this pass and remain unimplemented. No employment,
+leadership, expertise, tool, education, project, or outcome wording changes.

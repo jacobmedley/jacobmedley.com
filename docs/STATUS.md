@@ -1,5 +1,62 @@
 # Status
 
+## September 20, 2026: Browser-comment refinement complete locally
+
+Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch
+`codex/full-site-integration-20260920`, worktree 6b03. Jacob's eleven browser
+comments are implemented as B65 on top of checkpoint
+`df7baebe7cf26a378c41a9f36c70f7842ac6d502`. No push, main merge, PR,
+publication, password system, or deployment was performed.
+
+Removed the four hero pathway cards and the redundant selected-work top wave.
+The hero now fills one small viewport, has a pure-white center, clips exactly
+half its bottom wave, and flows directly into selected work. Its closing sequence
+begins with UX and drops in the build paragraph, bold better-way line, centered
+rule, action label, and arrow in order with equal rule spacing. Reduced motion
+shows the complete settled state.
+
+All five employment cards now form one full-width left column. The unified Team
+Building and Mentorship, Expertise, and Apps & Tools surface sits to its right,
+stacks those sections, and separates them with horizontal rules. Narrow layouts
+stack both columns. Education cards now use equal padding, zero title/source gap,
+clipped corner art, no divider or visible View label, and a 44px external-link
+icon in the top-right. Accessible credential/new-tab labels remain. More stories
+behind the work has a lock icon; password enforcement remains unimplemented
+because no credentials, protected route, or behavior were specified.
+
+Verification actually run: two clean production builds with Next 15.5.25,
+TypeScript/build lint, export preparation, 288-image and 104-reference asset
+verification, authored-source ESLint over app/components/lib, and Git whitespace.
+In-app browser review at 1484x1272 and 390x844 confirmed the full-height hero,
+50% wave crop, zero pathway cards, direct section transition, full-width job
+cards, right stacked practice card, horizontal rules, nine cleaned education
+cards, 44px link targets, and no horizontal overflow. Temporary normal-motion
+emulation confirmed UX/build arrival together at 4.2 seconds and all closing
+elements settled by 5.3 seconds; the original reduced-motion preference and
+viewport were restored. Browser console inspection was not repeated; the build
+and observed layouts reported no runtime failure.
+
+Changed application files: `app/globals.css`, `app/visual-system.css`,
+`app/site-integration.css`, HeroSection, KineticHeroIdentity, CaseStudiesSection,
+ResumeSection and EducationSection; the now-unused HomePathways component was
+removed. Updated B65 in `docs/copy-register.md` and appended detailed evidence to
+`docs/full-site-integration-20260920.md`. This STATUS file is written last before
+the local checkpoint. Rollback is
+`df7baebe7cf26a378c41a9f36c70f7842ac6d502`; the new commit follows in the task
+and Exchange handoff.
+
+Preview `http://localhost:8090/` remains open and serves the rebuilt export from
+this worktree under PID 52456. Existing previews on 3016 and 3000 were preserved.
+Fresh Exchange status at 2026-09-20T21:10:34+00:00 had fingerprint
+`320357d591dbac31c737883762ef092d768354800d9fb8780db38b25e1726c9f`, no
+conflicts, and the intake event
+`20260920T210258Z-d5aee4e1e3b6445bae7441a0bb815af1`. Shared CURRENT and the
+website card remain historical; only the append-only website handoff will be
+written after commit. No peer-awareness claim is made. The user-selected model
+and effort were retained; exact model/effort telemetry and token usage were not
+available to verify, and no added spending, reset, model download, paid fallback,
+or local inference ran.
+
 ## September 20, 2026: Full-site Quiet Prism integration complete locally
 
 Owner: coordinator task 01a0bf67, branch `codex/full-site-integration-20260920`,

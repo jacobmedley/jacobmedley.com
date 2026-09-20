@@ -82,10 +82,8 @@ export default function EducationSection() {
                   <h3>{item.title}</h3>
                   <p>{item.source}</p>
                 </header>
-                <hr className="solid-center" />
-                <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  View <i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" />
-                  <span className="sr-only"> {item.title} (opens in a new tab)</span>
+                <a href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${item.title} (opens in a new tab)`}>
+                  <i className="fa-thin fa-arrow-up-right-from-square" aria-hidden="true" />
                 </a>
               </article>
             ))}

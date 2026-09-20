@@ -7,7 +7,6 @@ import { projects } from '@/lib/data/projects'
 import SectionHeader from '@/components/ui/SectionHeader'
 import WorkCard from '@/components/ui/WorkCard'
 import CaseStudyModal from '@/components/ui/CaseStudyModal'
-import WaveSeparator from '@/components/ui/WaveSeparator'
 
 const byOrder = (a: { order: number }, b: { order: number }) => a.order - b.order
 
@@ -21,8 +20,6 @@ export default function CaseStudiesSection() {
 
   return (
     <section className="my-work">
-      <WaveSeparator position="top" waveId="wave-work" />
-
       <div className="content">
         <div className="container">
           <SectionHeader
@@ -48,7 +45,7 @@ export default function CaseStudiesSection() {
               </Fragment>
             ))}
           </div>
-          <p className="work-more-stories"><Link href="/case-studies/" className="prism-text-link">More stories behind the work <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link></p>
+          <p className="work-more-stories"><Link href="/case-studies/" className="prism-text-link"><i className="fa-thin fa-lock-keyhole work-more-stories-lock" aria-hidden="true" /> More stories behind the work <i className="fa-thin fa-arrow-right" aria-hidden="true" /></Link></p>
         </div>
       </div>
 

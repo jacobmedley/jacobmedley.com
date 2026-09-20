@@ -87,7 +87,6 @@ export default function KineticHeroIdentity() {
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
-      const closingNode = find('.kinetic-closing')
       const tailWidth = find('.kinetic-tail-inner').getBoundingClientRect().width
       const stacked = getComputedStyle(find('.kinetic-assembly')).flexDirection === 'column'
       function track(node: HTMLElement, cues: Cue[]) {
@@ -161,7 +160,19 @@ export default function KineticHeroIdentity() {
       plusCues.push(pose(DURATION,`rotate(${CHANGES.length*180}deg)`))
       track(find('.kinetic-plus'),plusCues)
       track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370+END_SPACE_DURATION,'translateX(.4em)',0),pose(3800+END_SPACE_DURATION,'translateX(0)'),pose(DURATION,'translateX(0)')])
-      track(closingNode,[[0,{opacity:0}],[8000,{opacity:0}],[9600,{opacity:1}],[DURATION,{opacity:1}]])
+      const reveal = (selector: string, start: number) => track(find(selector), [
+        [0, { opacity: 0, transform: 'translateY(-1rem)' }],
+        [start, { opacity: 0, transform: 'translateY(-1rem)' }],
+        [start + 520, { opacity: 1, transform: 'translateY(0)' }],
+        [DURATION, { opacity: 1, transform: 'translateY(0)' }],
+      ])
+      // Start the closing sequence with the first UX role, then let each
+      // element fall softly into its settled position.
+      reveal('.kinetic-build', CHANGES[0])
+      reveal('.kinetic-better', CHANGES[0] + 200)
+      reveal('.hero-rule-wrap', CHANGES[0] + 400)
+      reveal('.hero-case-studies-label', CHANGES[0] + 600)
+      reveal('.hero-case-studies-button', CHANGES[0] + 800)
       animations[0].onfinish = syncPlayback
       syncPlayback()
     }
@@ -206,8 +217,15 @@ export default function KineticHeroIdentity() {
       </div></div>
       <p className="sr-only">Product and design leader</p>
       <div className="kinetic-closing">
-        <p>I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
-        <p>There is always a better way, together we can find it.</p>
+        <p className="kinetic-build">I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
+        <p className="kinetic-better"><strong>There is always a better way, together we can find it.</strong></p>
+        <div className="hero-rule-wrap">
+          <hr className="solid-center rule-heading" />
+        </div>
+        <a className="btn action-label hero-case-studies-link" href="#work" aria-label="Explore selected work">
+          <span className="hero-case-studies-label">Explore selected work</span>
+          <i className="fa-thin fa-circle-arrow-down hero-case-studies-button" aria-hidden="true" />
+        </a>
       </div>
     </div>
   )

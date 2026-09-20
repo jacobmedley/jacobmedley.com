@@ -174,7 +174,7 @@ export default function ResumeSection() {
 
           <hr className="solid-center resume-experience-divider" />
           <div className="row resume-columns">
-            <div className="col-24">
+            <div className="col-24 resume-experience-column">
               <h3 id="resume-experience-heading" className="mb-6">Experience</h3>
               <ol className="resume-timeline" aria-labelledby="resume-experience-heading">
                 {experience.map((job) => (
@@ -203,24 +203,23 @@ export default function ResumeSection() {
               </ol>
             </div>
 
+            <section className="resume-prism-practice" aria-label="Leadership, expertise and tools" data-motion-root data-atmosphere>
+              <CornerWaves both />
+              <div className="resume-practice-column">
+                <h3><i className="fa-thin fa-people-group" aria-hidden="true" /> Team Building and Mentorship</h3>
+                <SkillList items={mentorship} />
+              </div>
+              <div className="resume-practice-column">
+                <h3><i className="fa-thin fa-bullseye-arrow" aria-hidden="true" /> Expertise</h3>
+                <SkillList items={expertise} labelled />
+              </div>
+              <div className="resume-practice-column">
+                <h3><i className="fa-thin fa-screwdriver-wrench" aria-hidden="true" /> Apps &amp; Tools</h3>
+                <p className="resume-tools-context">Tools used across these roles</p>
+                <SkillList items={tools} labelled />
+              </div>
+            </section>
           </div>
-
-          <section className="resume-prism-practice" aria-label="Leadership, expertise and tools" data-motion-root data-atmosphere>
-            <CornerWaves both />
-            <div className="resume-practice-column">
-              <h3><i className="fa-thin fa-people-group" aria-hidden="true" /> Team Building and Mentorship</h3>
-              <SkillList items={mentorship} />
-            </div>
-            <div className="resume-practice-column">
-              <h3><i className="fa-thin fa-bullseye-arrow" aria-hidden="true" /> Expertise</h3>
-              <SkillList items={expertise} labelled />
-            </div>
-            <div className="resume-practice-column">
-              <h3><i className="fa-thin fa-screwdriver-wrench" aria-hidden="true" /> Apps &amp; Tools</h3>
-              <p className="resume-tools-context">Tools used across these roles</p>
-              <SkillList items={tools} labelled />
-            </div>
-          </section>
         </div>
       </div>
 

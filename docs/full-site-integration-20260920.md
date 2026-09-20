@@ -155,3 +155,37 @@ no local inference, new model download, paid fallback or reset redemption ran.
 The user-selected configuration was retained. No verified per-turn cloud-token
 total is available. Final commit, clean-tree/lock result and final Exchange receipt
 are recorded in the task handoff after STATUS is written last and committed.
+
+## Browser-directed refinement checkpoint
+
+Jacob's September 20 browser comments are implemented locally as B65. The hero
+now occupies one full small viewport, keeps a pure-white center field, clips one
+bottom wave at its midpoint, and flows directly into selected work without the
+former second-wave gap. The four pathway cards are removed. The closing hero
+sequence begins with the first UX role and drops in the build paragraph, bold
+better-way line, rule, action label, and arrow in order. The rule uses the same
+gap on both sides. Reduced motion keeps the complete settled state visible.
+
+Experience is a two-part desktop layout: five full-width employment cards in one
+left column and the unified leadership/expertise/tools card on the right. Its
+three sections stack with horizontal rules; narrow layouts return to one column.
+All education cards have equal 22px padding, zero title/source row gap, clipped
+corner art, no divider, and a 44px icon-only external link in the top-right. Link
+names retain the credential title and new-tab context. The secondary case-study
+action now includes a lock icon; password enforcement remains outside this pass.
+
+The production build, type check, build lint, export preparation, 288-image and
+104-reference asset verification, and whitespace check passed. In-app browser
+review at 1484x1272 confirmed a 1272px hero, a 281.83px wave with 140.91px visible,
+no pathway cards, no second top wave, five 819.34px employment cards, a 422.09px
+stacked side card, and horizontal divider backgrounds. Education review confirmed
+nine cards, zero visible View labels, zero card dividers, 22px padding, zero
+title/source gap, clipped overflow, and a 44px link 10.8px from the top/right.
+At 390x844 the hero measured exactly 844px, exposed 43.2px of an 86.39px wave,
+had no horizontal overflow, and each resume/education area used one column. The
+browser enforced reduced motion, so static fallback was inspected there; normal
+motion was then checked with a temporary no-preference emulation. At 4.2 seconds
+UX was 88% visible while the build paragraph was already 83% visible and the
+later elements remained staged above their resting positions. By 5.3 seconds the
+paragraph, bold line, rule, action label, and arrow were fully settled. The
+browser's original reduced-motion preference was restored afterward.

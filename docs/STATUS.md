@@ -1,5 +1,50 @@
 # Status
 
+## September 20, 2026: Integration inventory and merge plan, documentation only
+
+Completed Jacob's requested coordination audit in isolated planning checkout 6b03,
+branch `codex/website-integration-plan-20260920`, from remote main
+`909ea2275104bc73f483ba7f1c5591db4d17a5b1`. See
+[website-integration-plan-20260920.md](website-integration-plan-20260920.md) and
+[machine evidence](reviews/integration-inventory-20260920.json).
+
+Inventoried 16 worktrees and 34 local/tracking refs, read relevant current and
+archived task records, and checked live remote branches, all 11 merged PRs and
+recent verification/deployment runs. Remote main remains 909ea227; last successful
+deployment is 1325c6b / v12.160. This audit did not recheck live pages or caches.
+Older card/art/resume/release work is already in main ancestry. Dashboard8ee1310
+is patch-equivalent and tree-identical to delivered69a6b22. Preserve the original
+dirty main checkout and all retained source/asset branches.
+
+Recommended future order: B60 editorial record a32ee8f, foundation e342d3d,
+Jacob-approved final modal c23b8a3, then reviewed Quiet Prism production adoption.
+Do not replay the superseded306380b modal or merge the broad d8d7380 copy pass.
+Ten copy-branch files already equal main; six dedicated-page deltas stay deferred.
+The active 6d80 refinement task confirmed shared-path ownership and received the
+foundation overlap guidance. Its final SHA and visual approval remain pending.
+The plan separates local integration, final visual/content acceptance, requested
+full WCAG2.0 A+AA evaluation, and an explicit publication decision.
+
+Verification actually run here: read-only ancestry/blob/patch checks, nine
+temporary-file three-way conflict probes, 30 valid commit references, document
+links/fences/JSON and whitespace validation. No new application build or browser
+suite; historical results are labeled in the plan. No B edits or runtime changes.
+Only this STATUS, the plan and inventory JSON changed. Local checkpoint follows
+this STATUS-last edit; exact commit is recorded in the task/Genesis closeout.
+Owned lock released after checkpoint; no other checkout or process operated.
+
+Previews observed15:39UTC: a64d3000/PID16740 and active6d80 3016/PID42132,
+both using a003-linked dependencies. Older3010–3013/8090–8095 reports are stale
+where checked; no such listeners found. This task started no preview.
+No push, PR, merge or deployment. Plan rollback909ea227; future production
+rollback1325c6b. Open: refinement acceptance, production adoption, combined
+verification, deferred content/source questions and publication decision.
+Exchange read15:38:58UTC, fingerprint
+`06fcf5738f9b7dd0f9e48576db5e6e971ce3c6579aa9722ff3767cc5f654a95b`.
+Append-only handoff only; global pointers and other peers' awareness not claimed.
+Actual task Astra/xhigh retained; deterministic local tools, no local inference,
+added spending, downloads, paid fallback or reset. Exact task tokens not measured.
+
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 
 Jacob explicitly requested publication. PR #11 merged as

@@ -1,0 +1,1572 @@
+{
+  "observedUtc": "2026-09-20T15:28:58.935066+00:00",
+  "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+  "method": "Read-only Git ancestry, blob equality, patch equivalence and temporary git merge-file --stdout probes. No merge commit/index/worktree change. Text success is not semantic or runtime acceptance.",
+  "worktrees": [
+    {
+      "path": "C:\\dev\\jacobmedley.com",
+      "head": "a49e4d7a9451cf27442f0e7c14514b76883befab",
+      "branch": "refs/heads/main",
+      "dirty": [
+        "M app/globals.css",
+        " M components/sections/CaseStudiesSection.tsx",
+        " M docs/STATUS.md",
+        " M docs/copy-register.md",
+        "?? .continue/",
+        "?? app/case-studies/",
+        "?? components/case-studies/",
+        "?? docs/case-study-site-copy.json",
+        "?? docs/case-study-site.md",
+        "?? lib/data/case-studies.ts",
+        "?? public/assets/"
+      ],
+      "lock": null
+    },
+    {
+      "path": "C:\\dev\\jacobmedley-brand-wave",
+      "head": "386895537e10a7cdb1aba1ccbaec1a845f403fd2",
+      "branch": "refs/heads/work/portfolio-brand-wave-20260906",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\dev\\jacobmedley-copy-20260917",
+      "head": "d8d7380215d6d861725e625c2f462a7f60b0062a",
+      "branch": "refs/heads/codex/copy-animation-20260917",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\dev\\jacobmedley-handoff",
+      "head": "7dced72b10195bfe3c2b70881dd946fb3e21b573",
+      "branch": "refs/heads/claude/genesis-handoff-protocol-5hzaqj",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\dev\\jacobmedley-launch",
+      "head": "1407dd351256dcd94c7b4556488fc79dee166e40",
+      "branch": "refs/heads/release/portfolio-brand-wave-launch",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\2284\\jacobmedley.com",
+      "head": "a32ee8f9708c494b9b6c6d11c3597fe14356653e",
+      "branch": "refs/heads/codex/main-site-editorial-20260919",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\4b5e\\jacobmedley.com",
+      "head": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "branch": "refs/heads/codex/website-visual-system-20260912",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\5074\\jacobmedley.com",
+      "head": "306380b8baf0f46e9428d8ceee95c92ca2e00608",
+      "branch": "refs/heads/codex/modal-camera-pullback-20260919",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\5a43\\jacobmedley.com",
+      "head": "c23b8a39d801500e8e0ec6d435c26fa38860dc70",
+      "branch": "refs/heads/codex/modal-camera-pullback-refinement-20260919",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\6b03\\jacobmedley.com",
+      "head": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "branch": "refs/heads/codex/website-integration-plan-20260920",
+      "dirty": [],
+      "lock": "FEERAL-AEGIS-R2 | 2026-09-20 | codex-integration-plan-01a0bf67 | docs-only planning"
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\6d80\\jacobmedley.com",
+      "head": "f94afbacde504c22ea2d3db099eb2e45b13dbc33",
+      "branch": "refs/heads/codex/quiet-prism-refinement-20260920",
+      "dirty": [
+        "M app/visual-system-lab/page.tsx",
+        " M components/ui/WaveSeparator.tsx",
+        " M components/visual-lab/VisualSystemLab.tsx",
+        " M docs/copy-register.md",
+        "?? components/ui/useAtmosphericMotion.ts"
+      ],
+      "lock": "codex-quiet-prism-refinement-01a0bf66 | isolated 6d80"
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\6fa6\\jacobmedley.com",
+      "head": "9508686b0f80193e87740d243b2adb2a1cb302d1",
+      "branch": "refs/heads/codex/website-art-layout-20260910",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\8350\\jacobmedley.com",
+      "head": "09c6125f6c25ad3091410905ba438180798f7d94",
+      "branch": "refs/heads/codex/website-refinement-stage1-20260909",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\a003\\jacobmedley.com",
+      "head": "27e361f243d0588d871b673e54222bbb5a5c6613",
+      "branch": "refs/heads/codex/motion-modal-refinement-20260919",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "C:\\Users\\jacob\\.codex\\worktrees\\a64d\\jacobmedley.com",
+      "head": "f94afbacde504c22ea2d3db099eb2e45b13dbc33",
+      "branch": "refs/heads/codex/visual-system-lab-20260919",
+      "dirty": [],
+      "lock": null
+    },
+    {
+      "path": "X:\\website-release-20260919",
+      "head": "e342d3d24c848bc454461afa47c09c949456707d",
+      "branch": "refs/heads/codex/main-site-wrapup-20260919",
+      "dirty": [],
+      "lock": null
+    }
+  ],
+  "refs": [
+    {
+      "ref": "refs/heads/claude/genesis-handoff-protocol-5hzaqj",
+      "sha": "7dced72b10195bfe3c2b70881dd946fb3e21b573",
+      "mergeBase": "a49e4d7a9451cf27442f0e7c14514b76883befab",
+      "mainOnlyCommits": 85,
+      "branchOnlyCommits": 3,
+      "changedPathsFromMergeBase": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "docs/STATUS.md",
+        "docs/genesis-exchange.md",
+        "docs/working-agreement.md"
+      ],
+      "unmergedCommits": [
+        "7dced72b10195bfe3c2b70881dd946fb3e21b573 docs: STATUS after the Exchange records were written",
+        "7d0f3600dac941579ccf4bd443044cd98109c7c0 docs: reconcile handoff protocol against the Exchange rules",
+        "5af8e8d8229e0821dc8419a39156c90c75abd681 docs: single handoff protocol for all agents, Exchange authority split"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/case-study-dashboard-refinement",
+      "sha": "8ee13104b9412ff9c35ce9af1c1ea3abc1c1e9c2",
+      "mergeBase": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+      "mainOnlyCommits": 58,
+      "branchOnlyCommits": 1,
+      "changedPathsFromMergeBase": [
+        "app/case-studies/dashboard.css",
+        "app/case-studies/page.tsx",
+        "components/case-studies/CareerStats.tsx",
+        "components/case-studies/OutcomeDashboard.tsx",
+        "components/case-studies/StudyCollection.tsx",
+        "components/case-studies/StudyIconArt.tsx",
+        "docs/STATUS.md",
+        "docs/annotation-review-20260908.md",
+        "docs/browser-annotation-checkpoint.md",
+        "docs/case-study-dashboard-acceptance.md",
+        "docs/copy-register.md",
+        "docs/stage-prompts-20260908.md",
+        "docs/website-production-plan.md",
+        "docs/website-refinement-plan-20260908.md",
+        "scripts/parity/dashboard-acceptance.mjs"
+      ],
+      "unmergedCommits": [
+        "8ee13104b9412ff9c35ce9af1c1ea3abc1c1e9c2 checkpoint: preserve reviewed dashboard and annotation planning baseline"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/copy-animation-20260917",
+      "sha": "d8d7380215d6d861725e625c2f462a7f60b0062a",
+      "mergeBase": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "mainOnlyCommits": 8,
+      "branchOnlyCommits": 1,
+      "changedPathsFromMergeBase": [
+        "app/case-studies/page.tsx",
+        "app/globals.css",
+        "app/layout.tsx",
+        "app/visual-system.css",
+        "components/case-studies/CareerStats.tsx",
+        "components/case-studies/OutcomeDashboard.tsx",
+        "components/case-studies/StudyCollection.tsx",
+        "components/case-studies/StudyVisual.tsx",
+        "components/nav/NavMain.tsx",
+        "components/sections/EducationSection.tsx",
+        "components/sections/FullStackSection.tsx",
+        "components/sections/HeroSection.tsx",
+        "components/sections/ResumeSection.tsx",
+        "components/ui/CallCenterDemo.tsx",
+        "components/ui/CaseStudyModal.tsx",
+        "components/ui/KineticHeroIdentity.tsx",
+        "components/ui/WorkCard.tsx",
+        "docs/STATUS.md",
+        "docs/case-study-site-copy.json",
+        "docs/copy-pass-20260917.json",
+        "docs/copy-pass-20260917.md",
+        "docs/copy-register.md",
+        "docs/reviews/copy-animation-20260917.json",
+        "lib/data/navigation.ts",
+        "lib/data/projects.ts"
+      ],
+      "unmergedCommits": [
+        "d8d7380215d6d861725e625c2f462a7f60b0062a Apply audited copy and keep the hero role animation running"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/main-site-editorial-20260919",
+      "sha": "a32ee8f9708c494b9b6c6d11c3597fe14356653e",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 2,
+      "changedPathsFromMergeBase": [
+        "docs/STATUS.md",
+        "docs/copy-register.md",
+        "docs/main-site-editorial-review-20260919.md"
+      ],
+      "unmergedCommits": [
+        "a32ee8f9708c494b9b6c6d11c3597fe14356653e Record B60 editorial approval",
+        "4015702d8eb594c043c7d9eaaedefb83f1d0afa8 Document main-site editorial recommendation"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/main-site-wrapup-20260919",
+      "sha": "e342d3d24c848bc454461afa47c09c949456707d",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 1,
+      "changedPathsFromMergeBase": [
+        "app/visual-system.css",
+        "docs/STATUS.md",
+        "docs/experience-program-20260919.md",
+        "docs/site-making-of-evidence-20260919.md",
+        "public/assets/references/hydra-mark.svg"
+      ],
+      "unmergedCommits": [
+        "e342d3d24c848bc454461afa47c09c949456707d Refine responsive card foundation and coordinate experience program"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/modal-camera-pullback-20260919",
+      "sha": "306380b8baf0f46e9428d8ceee95c92ca2e00608",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 2,
+      "changedPathsFromMergeBase": [
+        "app/globals.css",
+        "components/ui/CaseStudyModal.tsx",
+        "components/ui/KineticHeroIdentity.tsx",
+        "docs/STATUS.md",
+        "docs/motion-modal-refinement-20260919.md",
+        "scripts/parity/motion-modal-acceptance-20260919.mjs"
+      ],
+      "unmergedCommits": [
+        "306380b8baf0f46e9428d8ceee95c92ca2e00608 Refine modal camera pull-back",
+        "27e361f243d0588d871b673e54222bbb5a5c6613 Refine hero and modal motion"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/modal-camera-pullback-refinement-20260919",
+      "sha": "c23b8a39d801500e8e0ec6d435c26fa38860dc70",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 4,
+      "changedPathsFromMergeBase": [
+        "app/globals.css",
+        "components/ui/CaseStudyModal.tsx",
+        "components/ui/KineticHeroIdentity.tsx",
+        "docs/STATUS.md",
+        "docs/motion-modal-refinement-20260919.md",
+        "scripts/parity/motion-modal-acceptance-20260919.mjs"
+      ],
+      "unmergedCommits": [
+        "c23b8a39d801500e8e0ec6d435c26fa38860dc70 Refine modal motion for smooth static blur",
+        "94306a2a20f30b09504f55635679cb11d8f75fc3 Optimize modal zoom pan",
+        "c36e4acc8e46dceb0337b9ea20eca866dfae294c Refine modal camera pullback",
+        "27e361f243d0588d871b673e54222bbb5a5c6613 Refine hero and modal motion"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/motion-modal-refinement-20260919",
+      "sha": "27e361f243d0588d871b673e54222bbb5a5c6613",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 1,
+      "changedPathsFromMergeBase": [
+        "app/globals.css",
+        "components/ui/CaseStudyModal.tsx",
+        "components/ui/KineticHeroIdentity.tsx",
+        "docs/STATUS.md",
+        "docs/motion-modal-refinement-20260919.md",
+        "scripts/parity/motion-modal-acceptance-20260919.mjs"
+      ],
+      "unmergedCommits": [
+        "27e361f243d0588d871b673e54222bbb5a5c6613 Refine hero and modal motion"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/portfolio-brand-wave-continuation-20260906",
+      "sha": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+      "mergeBase": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+      "mainOnlyCommits": 58,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/codex/quiet-prism-refinement-20260920",
+      "sha": "f94afbacde504c22ea2d3db099eb2e45b13dbc33",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 5,
+      "changedPathsFromMergeBase": [
+        "app/visual-system-lab/page.tsx",
+        "components/visual-lab/VisualSystemLab.tsx",
+        "components/visual-lab/visual-system-lab.module.css",
+        "design-qa.md",
+        "docs/STATUS.md",
+        "docs/copy-register.md",
+        "docs/visual-system-lab-20260919.md",
+        "public/assets/visual-lab/quiet-prism-wave.png"
+      ],
+      "unmergedCommits": [
+        "f94afbacde504c22ea2d3db099eb2e45b13dbc33 Refine Quiet Prism gradients and disclosure motion",
+        "ea6c283991321c26740390d1497fcf86a136f0bb Refine Quiet Prism card readability and material",
+        "43cc4c3576b8f66f4733bf6ecbdb1ad7c0d9350a Refine Quiet Prism WebMD and info cards",
+        "fceef88592e0b3bb2f2e0780b2b1b41ef55bad1d refine Quiet Prism visual system lab",
+        "cbab9e8809ffa65c1112f56ce99082da4f0066b8 feat: add Quiet Prism visual system lab"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/visual-system-lab-20260919",
+      "sha": "f94afbacde504c22ea2d3db099eb2e45b13dbc33",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 5,
+      "changedPathsFromMergeBase": [
+        "app/visual-system-lab/page.tsx",
+        "components/visual-lab/VisualSystemLab.tsx",
+        "components/visual-lab/visual-system-lab.module.css",
+        "design-qa.md",
+        "docs/STATUS.md",
+        "docs/copy-register.md",
+        "docs/visual-system-lab-20260919.md",
+        "public/assets/visual-lab/quiet-prism-wave.png"
+      ],
+      "unmergedCommits": [
+        "f94afbacde504c22ea2d3db099eb2e45b13dbc33 Refine Quiet Prism gradients and disclosure motion",
+        "ea6c283991321c26740390d1497fcf86a136f0bb Refine Quiet Prism card readability and material",
+        "43cc4c3576b8f66f4733bf6ecbdb1ad7c0d9350a Refine Quiet Prism WebMD and info cards",
+        "fceef88592e0b3bb2f2e0780b2b1b41ef55bad1d refine Quiet Prism visual system lab",
+        "cbab9e8809ffa65c1112f56ce99082da4f0066b8 feat: add Quiet Prism visual system lab"
+      ]
+    },
+    {
+      "ref": "refs/heads/codex/website-art-layout-20260910",
+      "sha": "9508686b0f80193e87740d243b2adb2a1cb302d1",
+      "mergeBase": "9508686b0f80193e87740d243b2adb2a1cb302d1",
+      "mainOnlyCommits": 26,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/codex/website-integration-plan-20260920",
+      "sha": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/codex/website-refinement-stage1-20260909",
+      "sha": "09c6125f6c25ad3091410905ba438180798f7d94",
+      "mergeBase": "09c6125f6c25ad3091410905ba438180798f7d94",
+      "mainOnlyCommits": 47,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/codex/website-visual-system-20260912",
+      "sha": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "mergeBase": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "mainOnlyCommits": 8,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/feat/ai-assistant-case-study",
+      "sha": "72f0abd6129bba4b3e0b294bda71226840b1e42a",
+      "mergeBase": "d8d53451afa1a9e69eb9c4d421fd86f97cb57c2e",
+      "mainOnlyCommits": 116,
+      "branchOnlyCommits": 5,
+      "changedPathsFromMergeBase": [
+        "components/sections/ResumeSection.tsx",
+        "docs/case-studies-sanitized.md",
+        "docs/copy-register.md",
+        "images/work/ai-assistant/brief.png",
+        "images/work/ai-assistant/hero.png",
+        "images/work/ai-assistant/iteration-four.png",
+        "images/work/ai-assistant/iteration-one.png",
+        "images/work/ai-assistant/iteration-three.png",
+        "images/work/ai-assistant/iteration-two.png",
+        "lib/data/projects.ts"
+      ],
+      "unmergedCommits": [
+        "72f0abd6129bba4b3e0b294bda71226840b1e42a fix(resume): rewrite Bluegreen entry, record vendor-name rule",
+        "2980a31234b5145c582c92741f7470477f506daa fix: strip surplus blocks from AI assistant case study",
+        "21508a47fc3d29bc4a6b6d24ae64a731d7cb662c docs(copy-register): record commit hash for D2",
+        "9040d97a4507d5e099093b22856fb9011030f2ff feat(work): flow AI assistant case study copy",
+        "fa834eb086d5ee6d70677e4461c4422c881cbb70 feat(work): scaffold AI assistant case study at position 1"
+      ]
+    },
+    {
+      "ref": "refs/heads/feat/recruiter-portfolio",
+      "sha": "18a97ecd192db6a965ecaafe601479dfb83cc329",
+      "mergeBase": "d8d53451afa1a9e69eb9c4d421fd86f97cb57c2e",
+      "mainOnlyCommits": 116,
+      "branchOnlyCommits": 7,
+      "changedPathsFromMergeBase": [
+        "app/globals.css",
+        "app/portfolio/[slug]/page.tsx",
+        "app/portfolio/layout.tsx",
+        "app/portfolio/page.tsx",
+        "components/portfolio/PortfolioShell.tsx",
+        "components/portfolio/StudyBlocks.tsx",
+        "components/portfolio/StudyCard.tsx",
+        "components/portfolio/StudyFilter.tsx",
+        "components/portfolio/StudyPage.tsx",
+        "components/portfolio/StudySkeleton.tsx",
+        "docs/copy-register.md",
+        "lib/data/portfolio-studies.ts"
+      ],
+      "unmergedCommits": [
+        "18a97ecd192db6a965ecaafe601479dfb83cc329 fix(portfolio): remove em dash from page title",
+        "9eac8a81935d15722c744041e268651961abec5b fix(portfolio): remove em dashes, tag DentalPlans study, record register decisions",
+        "62736064de700a18ecb1ee62845fecb4f8dc26f3 chore(portfolio): remove redundant .htaccess and subdirectory robots.txt",
+        "2697f46d3ceaee453bde8bbc835981fbeb479e24 feat(portfolio): filter chip nav, sticky waves, skeleton transition",
+        "171a524bf368f5850f66605b4975c78aa92d2335 feat(portfolio): weighted grid, study cards, skeleton screen",
+        "03e5ebe99403f0f206f60d6cbe28b31e1929bbf8 feat(portfolio): rebase onto main, rebuild content model, migrate 15 studies",
+        "bd693314c4d314ac10a214748ca3655575e866b5 feat: scaffold isolated recruiter portfolio (draft content)"
+      ]
+    },
+    {
+      "ref": "refs/heads/fix/bluegreen-resume",
+      "sha": "92a33507f939f8c4725a001ef937306be1a2905a",
+      "mergeBase": "92a33507f939f8c4725a001ef937306be1a2905a",
+      "mainOnlyCommits": 115,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/fix/healthe-figures",
+      "sha": "dc70ea273748d0dcd8798259a7ec511dc02b4281",
+      "mergeBase": "dc70ea273748d0dcd8798259a7ec511dc02b4281",
+      "mainOnlyCommits": 108,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/fix/leadership-bullets",
+      "sha": "90d7459e59a05f17a2ae67e7c75e2eb638bb4bb8",
+      "mergeBase": "90d7459e59a05f17a2ae67e7c75e2eb638bb4bb8",
+      "mainOnlyCommits": 102,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "a49e4d7a9451cf27442f0e7c14514b76883befab",
+      "mergeBase": "a49e4d7a9451cf27442f0e7c14514b76883befab",
+      "mainOnlyCommits": 85,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/release/portfolio-brand-wave-launch",
+      "sha": "1407dd351256dcd94c7b4556488fc79dee166e40",
+      "mergeBase": "1407dd351256dcd94c7b4556488fc79dee166e40",
+      "mainOnlyCommits": 63,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/heads/work/portfolio-brand-wave-20260906",
+      "sha": "386895537e10a7cdb1aba1ccbaec1a845f403fd2",
+      "mergeBase": "386895537e10a7cdb1aba1ccbaec1a845f403fd2",
+      "mainOnlyCommits": 83,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/HEAD",
+      "sha": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/bs-5-update",
+      "sha": "bc7a143246893bdf0336f1fcdc54d7dd3a4b180b",
+      "mergeBase": "4e5d9d90a3b3a4a93a013400ab67e992f89006ec",
+      "mainOnlyCommits": 231,
+      "branchOnlyCommits": 27,
+      "changedPathsFromMergeBase": [
+        "JacobMedley-Resume-Current.pdf",
+        "JacobMedley-Resume-Two-Pager.pdf",
+        "components/modal-bee.html",
+        "components/modal-call-center-ux.html",
+        "components/modal-hydra.html",
+        "components/modal-marketing-auto.html",
+        "components/modal-opfred.html",
+        "components/modal-personas.html",
+        "components/modal-product.html",
+        "components/modal-reveal.html",
+        "components/modal-roadmap.html",
+        "components/modal-split-test.html",
+        "components/modal-viva.html",
+        "components/modal-webmd.html",
+        "components/modal-workshops.html",
+        "components/modal-wrong.html",
+        "components/section-hi.html",
+        "components/section-pow-work.html",
+        "components/section-resume.html",
+        "components/section-work-v2.html",
+        "css/styles-freedom-v2.css",
+        "css/styles-freedom.css",
+        "css/styles-v2.css",
+        "css/styles.css",
+        "images/example-timeline.png",
+        "index.html",
+        "interaction-design-concepts/response-times/index.html",
+        "scss/styles.scss",
+        "tokens/brand-colors.json",
+        "tokens/colors.json"
+      ],
+      "unmergedCommits": [
+        "bc7a143246893bdf0336f1fcdc54d7dd3a4b180b refactor: Update resume section content and improve readability",
+        "5020ae19fdfed4c5cd0da577fb3733a57d274eef \t&amp;",
+        "61e88890651e71aeac0243d25b2d202b35081ce4 refactor: Update button style for \"section-hi\" component",
+        "c5711c1f1c9b22643ffeb73f0973c2347e00263c chore: Update button style for \"section-hi\" component",
+        "f79ace3ba97fb5a41e525614bf8f8989fbbe9eaa refactor: Update button style for \"section-hi\" component",
+        "6e73a78c49f6a5bd3adecd7f67b235259f8b3d52 ...",
+        "3ffa2d66b1ed20352ec8e33be5660ded58368fcc chore: Updated Resume",
+        "9ada9e55e3e093f94abac1ce09328f03d125a330 chore: Remove unused Juneteenth icons and SVG files",
+        "e864912fcd619bea5117a819ffb9891e848fc0fc chore: Update CSS for Juneteenth timeline and include script",
+        "12d5ecd74d9814ff10e24d360263352f410354d3 chore: Remove unused Juneteenth icons and SVG files",
+        "d5ea89990ac36072f5aba88cb969b90dda969e9b chore: Optimize CSS for Juneteenth timeline and update include script",
+        "849ecbe398738e7a5d21988be056b72bf594dcd4 chore: Update font families and optimize CSS for Juneteenth timeline",
+        "2d4f8d3be41929305ae6495fe5b36bb26977a5c1 ...",
+        "fbd6cb05496e36f0695a57a6031c9558f594afcf ...",
+        "bb7b4d2fefbb9fdbd836fd2a76623b6316aef9fa chore: Update button close color to black and white",
+        "edda72292e925c842e332a8062413f647f5ba0ed chore: Optimize CSS for Juneteenth timeline and update include script",
+        "84741176fb09f0c7de164aff0fcf75751d8cdc32 ...",
+        "35a712ea9109b78e99bdc130b365426734d0fa14 chore: Optimize CSS for Juneteenth timeline and update include script",
+        "e1f8930f6573dccf8ceb4bf5e223d809b7699c2f chore: Optimize CSS for Juneteenth timeline and update include script",
+        "317e18cd8ae6dc235e6799d658a01a886c5a2f4e chore: Optimize CSS for Juneteenth timeline and update include script",
+        "bfad8ac11886d2446ee5ff589b5f2037cbb090e6 chore: Optimize CSS for Juneteenth timeline and update include script",
+        "923bd224b2a0b5a54bfe0acaa7f10c336900b3b8 ..",
+        "3cd2f4ed4d8a24cdfd4d9ffdda91411792d015d8 ...",
+        "cc817beb9fc601f639c6e6dcff8301d6d3cf83f1 ...",
+        "9da0977363c1d367a820f3f76f95f3429dc193c5 ...",
+        "d2efd07cd525d8f04562c7cea0f09d19a2d35231 ...",
+        "dea16250b9114ed987fbe5dfc8a2dc46bd689344 optimized css added juneteenth timeline"
+      ]
+    },
+    {
+      "ref": "refs/remotes/origin/claude/genesis-handoff-protocol-5hzaqj",
+      "sha": "5af8e8d8229e0821dc8419a39156c90c75abd681",
+      "mergeBase": "a49e4d7a9451cf27442f0e7c14514b76883befab",
+      "mainOnlyCommits": 85,
+      "branchOnlyCommits": 1,
+      "changedPathsFromMergeBase": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "README.md",
+        "docs/STATUS.md",
+        "docs/genesis-exchange.md",
+        "docs/working-agreement.md"
+      ],
+      "unmergedCommits": [
+        "5af8e8d8229e0821dc8419a39156c90c75abd681 docs: single handoff protocol for all agents, Exchange authority split"
+      ]
+    },
+    {
+      "ref": "refs/remotes/origin/codex/main-site-wrapup-20260919",
+      "sha": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/codex/portfolio-brand-wave-continuation-20260906",
+      "sha": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+      "mergeBase": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+      "mainOnlyCommits": 58,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/codex/website-visual-system-20260912",
+      "sha": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "mergeBase": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "mainOnlyCommits": 8,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/feat/recruiter-portfolio",
+      "sha": "62736064de700a18ecb1ee62845fecb4f8dc26f3",
+      "mergeBase": "d8d53451afa1a9e69eb9c4d421fd86f97cb57c2e",
+      "mainOnlyCommits": 116,
+      "branchOnlyCommits": 5,
+      "changedPathsFromMergeBase": [
+        "app/globals.css",
+        "app/portfolio/[slug]/page.tsx",
+        "app/portfolio/layout.tsx",
+        "app/portfolio/page.tsx",
+        "components/portfolio/PortfolioShell.tsx",
+        "components/portfolio/StudyBlocks.tsx",
+        "components/portfolio/StudyCard.tsx",
+        "components/portfolio/StudyFilter.tsx",
+        "components/portfolio/StudyPage.tsx",
+        "components/portfolio/StudySkeleton.tsx",
+        "lib/data/portfolio-studies.ts"
+      ],
+      "unmergedCommits": [
+        "62736064de700a18ecb1ee62845fecb4f8dc26f3 chore(portfolio): remove redundant .htaccess and subdirectory robots.txt",
+        "2697f46d3ceaee453bde8bbc835981fbeb479e24 feat(portfolio): filter chip nav, sticky waves, skeleton transition",
+        "171a524bf368f5850f66605b4975c78aa92d2335 feat(portfolio): weighted grid, study cards, skeleton screen",
+        "03e5ebe99403f0f206f60d6cbe28b31e1929bbf8 feat(portfolio): rebase onto main, rebuild content model, migrate 15 studies",
+        "bd693314c4d314ac10a214748ca3655575e866b5 feat: scaffold isolated recruiter portfolio (draft content)"
+      ]
+    },
+    {
+      "ref": "refs/remotes/origin/main",
+      "sha": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mergeBase": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "mainOnlyCommits": 0,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/release/portfolio-brand-wave-launch",
+      "sha": "1407dd351256dcd94c7b4556488fc79dee166e40",
+      "mergeBase": "1407dd351256dcd94c7b4556488fc79dee166e40",
+      "mainOnlyCommits": 63,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/revert-1-refactor/react-migration",
+      "sha": "8820b3d222f1048f21b8ee6c10c4287e096e26dd",
+      "mergeBase": "8820b3d222f1048f21b8ee6c10c4287e096e26dd",
+      "mainOnlyCommits": 214,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    },
+    {
+      "ref": "refs/remotes/origin/spa-jm-2026",
+      "sha": "003e6bb02ce10dc8cfd9b406fac254523afec73b",
+      "mergeBase": "003e6bb02ce10dc8cfd9b406fac254523afec73b",
+      "mainOnlyCommits": 204,
+      "branchOnlyCommits": 0,
+      "changedPathsFromMergeBase": [],
+      "unmergedCommits": []
+    }
+  ],
+  "conflictProbes": [
+    {
+      "left": "e342d3d",
+      "right": "a32ee8f",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "e342d3d",
+      "right": "c23b8a3",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "e342d3d",
+      "right": "f94afba",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "a32ee8f",
+      "right": "c23b8a3",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "a32ee8f",
+      "right": "f94afba",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/copy-register.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "c23b8a3",
+      "right": "f94afba",
+      "base": "909ea2275104bc73f483ba7f1c5591db4d17a5b1",
+      "overlap": [
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        }
+      ]
+    },
+    {
+      "left": "909ea22",
+      "right": "d8d7380",
+      "base": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "overlap": [
+        {
+          "path": "app/globals.css",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "app/layout.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "app/visual-system.css",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/nav/NavMain.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/sections/EducationSection.tsx",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/sections/FullStackSection.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/sections/HeroSection.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/sections/ResumeSection.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/ui/CallCenterDemo.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/ui/CaseStudyModal.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/ui/KineticHeroIdentity.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/ui/WorkCard.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/copy-pass-20260917.json",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/copy-pass-20260917.md",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/copy-register.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/reviews/copy-animation-20260917.json",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "lib/data/navigation.ts",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "lib/data/projects.ts",
+          "result": "text conflict",
+          "exitCode": 2,
+          "conflictMarkers": 2
+        }
+      ]
+    },
+    {
+      "left": "c23b8a3",
+      "right": "d8d7380",
+      "base": "e2995d7fb703d4641562df1903b70adb3dfca3fc",
+      "overlap": [
+        {
+          "path": "app/globals.css",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "app/layout.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "app/visual-system.css",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/nav/NavMain.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/sections/EducationSection.tsx",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/sections/FullStackSection.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/sections/HeroSection.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/sections/ResumeSection.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "components/ui/CallCenterDemo.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "components/ui/CaseStudyModal.tsx",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/ui/KineticHeroIdentity.tsx",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "components/ui/WorkCard.tsx",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/copy-pass-20260917.json",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/copy-pass-20260917.md",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "docs/copy-register.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/reviews/copy-animation-20260917.json",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "lib/data/navigation.ts",
+          "result": "identical endpoints"
+        },
+        {
+          "path": "lib/data/projects.ts",
+          "result": "text conflict",
+          "exitCode": 2,
+          "conflictMarkers": 2
+        }
+      ]
+    },
+    {
+      "left": "306380b",
+      "right": "c23b8a3",
+      "base": "27e361f243d0588d871b673e54222bbb5a5c6613",
+      "overlap": [
+        {
+          "path": "app/globals.css",
+          "result": "text conflict",
+          "exitCode": 3,
+          "conflictMarkers": 3
+        },
+        {
+          "path": "components/ui/CaseStudyModal.tsx",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/STATUS.md",
+          "result": "text conflict",
+          "exitCode": 1,
+          "conflictMarkers": 1
+        },
+        {
+          "path": "docs/motion-modal-refinement-20260919.md",
+          "result": "text merges",
+          "exitCode": 0,
+          "conflictMarkers": 0
+        },
+        {
+          "path": "scripts/parity/motion-modal-acceptance-20260919.mjs",
+          "result": "text conflict",
+          "exitCode": 4,
+          "conflictMarkers": 4
+        }
+      ]
+    }
+  ],
+  "copyBranchFileDisposition": [
+    {
+      "path": "app/case-studies/page.tsx",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "app/globals.css",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "app/layout.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "app/visual-system.css",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "components/case-studies/CareerStats.tsx",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "components/case-studies/OutcomeDashboard.tsx",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "components/case-studies/StudyCollection.tsx",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "components/case-studies/StudyVisual.tsx",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "components/nav/NavMain.tsx",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "components/sections/EducationSection.tsx",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "components/sections/FullStackSection.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "components/sections/HeroSection.tsx",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "components/sections/ResumeSection.tsx",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "components/ui/CallCenterDemo.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "components/ui/CaseStudyModal.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "components/ui/KineticHeroIdentity.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "components/ui/WorkCard.tsx",
+      "state": "identical to main"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "docs/case-study-site-copy.json",
+      "state": "dedicated delta still absent from main"
+    },
+    {
+      "path": "docs/copy-pass-20260917.json",
+      "state": "identical to main"
+    },
+    {
+      "path": "docs/copy-pass-20260917.md",
+      "state": "identical to main"
+    },
+    {
+      "path": "docs/copy-register.md",
+      "state": "diverged; scoped comparison required"
+    },
+    {
+      "path": "docs/reviews/copy-animation-20260917.json",
+      "state": "identical to main"
+    },
+    {
+      "path": "lib/data/navigation.ts",
+      "state": "identical to main"
+    },
+    {
+      "path": "lib/data/projects.ts",
+      "state": "diverged; scoped comparison required"
+    }
+  ],
+  "dashboardPatchEquivalence": [
+    "- 8ee13104b9412ff9c35ce9af1c1ea3abc1c1e9c2"
+  ],
+  "dashboardReplayTreeEqual": true,
+  "productionToMainPaths": [
+    "docs/STATUS.md",
+    "docs/browser-refinements-20260919.md"
+  ],
+  "originalUntrackedSiteSnapshot": [
+    {
+      "path": "app/case-studies/[slug]/page.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "app/case-studies/case-studies.css",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "app/case-studies/layout.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "app/case-studies/page.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "components/case-studies/Arrow.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "components/case-studies/StudyCollection.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "components/case-studies/StudyShell.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "components/case-studies/StudyVisual.tsx",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "docs/case-study-site-copy.json",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "docs/case-study-site.md",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "lib/data/case-studies.ts",
+      "sameAsPreservationCheckpoint": true,
+      "inPreservationCheckpoint": true
+    },
+    {
+      "path": "public/assets/references/bgv/blue-green-dots.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/bmd/SVG/bmd-hex3.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/bmd/SVG/bmd-icon2.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/bmd/SVG/bmd-mark.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/dp/dp_icon.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/hec/hec-icon.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/hec/hec-logo.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/hydra/HYDRA-ICON.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/hydra/hydra.ai",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/hydra/hydra.png",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/moa/moa-icon.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/moa/mutualofamerica_services_rgb_blue.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/opf/logo.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/opf/opf-icon-color.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/opf/opf-icon-white.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/plus.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    },
+    {
+      "path": "public/assets/references/webmd/webmd_logo_white.svg",
+      "sameAsPreservationCheckpoint": false,
+      "inPreservationCheckpoint": false
+    }
+  ],
+  "originalUntrackedSiteSnapshotNote": "Raw-byte Git blob comparison to b8aac95; CRLF differences can prevent equality. Excludes .continue and all private source data. Differences remain owner-held work, never deletion permission.",
+  "remoteVerification": {
+    "observedUtc": "2026-09-20T15:37:57.513408+00:00",
+    "heads": [
+      "bc7a143246893bdf0336f1fcdc54d7dd3a4b180b\trefs/heads/bs-5-update",
+      "5af8e8d8229e0821dc8419a39156c90c75abd681\trefs/heads/claude/genesis-handoff-protocol-5hzaqj",
+      "909ea2275104bc73f483ba7f1c5591db4d17a5b1\trefs/heads/codex/main-site-wrapup-20260919",
+      "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec\trefs/heads/codex/portfolio-brand-wave-continuation-20260906",
+      "e2995d7fb703d4641562df1903b70adb3dfca3fc\trefs/heads/codex/website-visual-system-20260912",
+      "62736064de700a18ecb1ee62845fecb4f8dc26f3\trefs/heads/feat/recruiter-portfolio",
+      "909ea2275104bc73f483ba7f1c5591db4d17a5b1\trefs/heads/main",
+      "1407dd351256dcd94c7b4556488fc79dee166e40\trefs/heads/release/portfolio-brand-wave-launch",
+      "8820b3d222f1048f21b8ee6c10c4287e096e26dd\trefs/heads/revert-1-refactor/react-migration",
+      "003e6bb02ce10dc8cfd9b406fac254523afec73b\trefs/heads/spa-jm-2026"
+    ],
+    "pullRequests": [
+      {
+        "baseRefName": "main",
+        "headRefName": "codex/main-site-wrapup-20260919",
+        "headRefOid": "cb9ebdfca58cbf37931a8351a353f0c5790407c1",
+        "mergeCommit": {
+          "oid": "1325c6bf31dce1b3483f17da1386d44d610accf2"
+        },
+        "mergedAt": "2026-09-19T03:24:54Z",
+        "number": 11,
+        "state": "MERGED",
+        "title": "Refine main-site experience and education",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/11"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "codex/main-site-wrapup-20260919",
+        "headRefOid": "16d9ffb2045f2b5e24d6b37ed7ae29769bf47f6e",
+        "mergeCommit": {
+          "oid": "7bcb9e0ef60c29fa453bf48164904ebc7813f94c"
+        },
+        "mergedAt": "2026-09-19T02:19:26Z",
+        "number": 10,
+        "state": "MERGED",
+        "title": "Polish main-site copy; defer dedicated case studies",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/10"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "codex/website-visual-system-20260912",
+        "headRefOid": "f1a61efa20c7fed25e4f0d767c0760feb2ed185e",
+        "mergeCommit": {
+          "oid": "64c95cf3682201291b4ec719dda9bd4534b31d8b"
+        },
+        "mergedAt": "2026-09-13T14:50:02Z",
+        "number": 9,
+        "state": "MERGED",
+        "title": "Release portfolio visual system and verified static assets",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/9"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "codex/portfolio-brand-wave-continuation-20260906",
+        "headRefOid": "a5fa6206ce00a54fd13a0550f8b3552cd42f5dec",
+        "mergeCommit": {
+          "oid": "e6b3672f88e5847d84a854f45ae3d29ca8269952"
+        },
+        "mergedAt": "2026-09-08T23:28:27Z",
+        "number": 8,
+        "state": "MERGED",
+        "title": "Refine main-site previews and responsive portfolio cards",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/8"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "release/portfolio-brand-wave-launch",
+        "headRefOid": "1407dd351256dcd94c7b4556488fc79dee166e40",
+        "mergeCommit": {
+          "oid": "588b5501d8f1229338bc34d770de4abc9d47fc5e"
+        },
+        "mergedAt": "2026-09-08T00:05:26Z",
+        "number": 7,
+        "state": "MERGED",
+        "title": "Launch: portfolio brand wave and case-study site",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/7"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "fix/scrollspy",
+        "headRefOid": "65840c150d424403118696830dd903d69f5a5d97",
+        "mergeCommit": {
+          "oid": "1167296a21d076b31d4c436aeb3865d3cd4defff"
+        },
+        "mergedAt": "2026-08-09T23:37:27Z",
+        "number": 6,
+        "state": "MERGED",
+        "title": "fix: replace ratio-based scrollspy with a geometry-based one",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/6"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "chore/copy-audit-phase-1",
+        "headRefOid": "914e35e68ac6a6b632e2ec9e75c01c3102e5df02",
+        "mergeCommit": {
+          "oid": "e95350cdc683444fa504ca9b2eec3d364741a471"
+        },
+        "mergedAt": "2026-08-09T19:57:23Z",
+        "number": 5,
+        "state": "MERGED",
+        "title": "Copy audit phase 1: remaining fixes, alt text, resume, Full-Stack restructure",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/5"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "chore/copy-audit-phase-1",
+        "headRefOid": "d1fdc5cd52d4de799d66ba765aa6ab15056f8f78",
+        "mergeCommit": {
+          "oid": "239dea8a7e859179ac902b20f9a77f73a0d1ea0c"
+        },
+        "mergedAt": "2026-08-02T18:34:17Z",
+        "number": 4,
+        "state": "MERGED",
+        "title": "Chore/copy audit phase 1",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/4"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "spa-jm-2026",
+        "headRefOid": "003e6bb02ce10dc8cfd9b406fac254523afec73b",
+        "mergeCommit": {
+          "oid": "98ae9ddf7d8202d8ba51b0f36bc784e4ebce5f1c"
+        },
+        "mergedAt": "2026-05-21T22:05:51Z",
+        "number": 3,
+        "state": "MERGED",
+        "title": "SPA refactor: data-driven components, WCAG fixes, nav & carousel",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/3"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "revert-1-refactor/react-migration",
+        "headRefOid": "8820b3d222f1048f21b8ee6c10c4287e096e26dd",
+        "mergeCommit": {
+          "oid": "97b089edb60121fde2e102f0ec45f91f55bacea8"
+        },
+        "mergedAt": "2026-04-26T18:49:49Z",
+        "number": 2,
+        "state": "MERGED",
+        "title": "Revert \"Refactor/react migration\"",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/2"
+      },
+      {
+        "baseRefName": "main",
+        "headRefName": "refactor/react-migration",
+        "headRefOid": "88585ec13262d83c2df473e769e6940d4afbc5e3",
+        "mergeCommit": {
+          "oid": "f67f6082753722dfabffee50c50708dbf210c09a"
+        },
+        "mergedAt": "2026-04-26T18:42:42Z",
+        "number": 1,
+        "state": "MERGED",
+        "title": "Refactor/react migration",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/pull/1"
+      }
+    ],
+    "runs": [
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-19T03:24:56Z",
+        "databaseId": 35418473415,
+        "headSha": "1325c6bf31dce1b3483f17da1386d44d610accf2",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/35418473415",
+        "workflowName": "Deploy to SiteGround"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-19T03:23:31Z",
+        "databaseId": 35418408691,
+        "headSha": "cb9ebdfca58cbf37931a8351a353f0c5790407c1",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/35418408691",
+        "workflowName": "Verify static export"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-19T02:19:28Z",
+        "databaseId": 35415309921,
+        "headSha": "7bcb9e0ef60c29fa453bf48164904ebc7813f94c",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/35415309921",
+        "workflowName": "Deploy to SiteGround"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-19T02:18:08Z",
+        "databaseId": 35415247425,
+        "headSha": "16d9ffb2045f2b5e24d6b37ed7ae29769bf47f6e",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/35415247425",
+        "workflowName": "Verify static export"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-13T14:50:05Z",
+        "databaseId": 34763809915,
+        "headSha": "64c95cf3682201291b4ec719dda9bd4534b31d8b",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763809915",
+        "workflowName": "Deploy to SiteGround"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-13T14:48:54Z",
+        "databaseId": 34763751363,
+        "headSha": "f1a61efa20c7fed25e4f0d767c0760feb2ed185e",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763751363",
+        "workflowName": "Verify static export"
+      },
+      {
+        "conclusion": "success",
+        "createdAt": "2026-09-13T14:40:49Z",
+        "databaseId": 34763361743,
+        "headSha": "0dce63f0c1dfb1bf60ee9417b696d0fd2e5c2388",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763361743",
+        "workflowName": "Verify static export"
+      },
+      {
+        "conclusion": "failure",
+        "createdAt": "2026-09-13T14:39:11Z",
+        "databaseId": 34763281764,
+        "headSha": "2a020d89c4f1ad254e2b607731b11321ed388519",
+        "status": "completed",
+        "url": "https://github.com/jacobmedley/jacobmedley.com/actions/runs/34763281764",
+        "workflowName": "Verify static export"
+      }
+    ]
+  },
+  "modalApproval": {
+    "task": "01a0bb11-4163-7263-b6d4-38d791317fbf",
+    "turn": "01a0bb51-ff82-7ab2-94b1-78ad1e8dcdcb",
+    "userText": "Aproved.",
+    "checkpoint": "c23b8a39d801500e8e0ec6d435c26fa38860dc70",
+    "meaning": "Visual acceptance of the preceding modal checkpoint; no publication instruction."
+  },
+  "closeoutExchange": {
+    "observed_utc": "2026-09-20T15:38:58+00:00",
+    "fingerprint": "06fcf5738f9b7dd0f9e48576db5e6e971ce3c6579aa9722ff3767cc5f654a95b",
+    "conflicts": []
+  },
+  "validation": {
+    "commitReferencesChecked": 30,
+    "invalidCommitReferences": [],
+    "temporaryConflictProbes": 9,
+    "applicationBuildsThisTask": 0,
+    "browserTestRunsThisTask": 0,
+    "notes": [
+      "UTF-8 document validator passed after correcting its initial Windows default-encoding error.",
+      "No implementation merges or branch rewrites performed."
+    ]
+  },
+  "previewObservation": {
+    "observedUtc": "2026-09-20T15:39:01Z",
+    "listeners": [
+      {
+        "port": 3000,
+        "pid": 16740,
+        "parentPid": 4372,
+        "ownerWorktree": "a64d",
+        "dependenciesWorktree": "a003"
+      },
+      {
+        "port": 3016,
+        "pid": 42132,
+        "parentPid": 41372,
+        "ownerWorktree": "6d80 (owner-confirmed)",
+        "dependenciesWorktree": "a003"
+      }
+    ],
+    "notListening": [
+      3010,
+      3011,
+      3012,
+      3013,
+      8090,
+      8092,
+      8093,
+      8094,
+      8095
+    ],
+    "servicesChangedByThisTask": false
+  }
+}

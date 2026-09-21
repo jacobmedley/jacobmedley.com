@@ -1,65 +1,126 @@
-# Design QA: Quiet Prism design-system reference
+# Design QA: source-matched Quiet Prism catalog
 
-## Source visual truth
+September 20, 2026. This review supersedes the acceptance claim in `3b2730c`.
+The earlier report remains in Git history and must not be treated as evidence
+that the rejected imitation specimens matched production.
 
-The source is the rendered JacobMedley.com baseline at
-`4c2e482c3a706090773e88dd59e8f01595fe7632`, specifically the existing homepage,
-dedicated case-study pages, and modal patterns implemented by `globals.css`,
-`visual-system.css`, `site-integration.css`, `QuietPrism.module.css`, and the
-case-study styles. This task names and documents those patterns. It does not
-introduce a separate visual direction.
+## Findings and correction history
 
-There is no separate source bitmap to stretch or normalize: the baseline source
-is the live component set being cataloged. The in-app browser reported CSS
-viewports of 1800 x 1250 for desktop, 820 x 1180 for tablet, and 390 x 843 for
-phone. Captured PNG dimensions are 2226 x 12091, 1001 x 12381, and 464 x 17075
-pixels respectively. Visual comparison used like-for-like rendered regions at
-each CSS viewport rather than treating the full-page capture pixels as CSS size.
+- **P1, corrected: invented specimens.** The first reference replaced actual
+  artwork, markup, copy and states with approximations. It also presented the
+  removed pathway cards as current. The rebuilt catalog loads the original
+  routes in a same-origin frame, with their original styles and real interactions.
+  Signal Tile and Animated Image are explicitly retained components. Their
+  separate specimens import the real components and label their supplied props.
+- **P1, corrected: incomplete and incorrect mapping.** Added a searchable catalog
+  of 51 patterns and 169 examples. Source-file checks found and corrected four
+  stale paths. Browser checks corrected seven missing associations, including
+  the Reveal/Wrong information cards, roadmap reference disclosure and unused
+  animated-image branch. The final source-locator sweep resolved all examples.
+- **P2, corrected: focus return from automatic dialog launch.** The reference
+  now focuses the original trigger before activation and restores it after the
+  source dialog's focus scope closes. This changes only reference orchestration.
+- **P2, evidence corrected: screenshot normalization.** Initial captures mixed
+  browser zoom, mismatched viewports and compositor artifacts. They were rejected
+  as comparison evidence. Source and reference were then captured in the same
+  verification tab, with the same CSS viewport and reduced-motion preference.
+  The desktop full-view capture has an incomplete offscreen neighboring card;
+  the focused WebMD comparison excludes that unrelated capture artifact.
 
-## Implementation evidence
+## Source visual truth and comparison evidence
 
-- `docs/reviews/quiet-prism-design-system-desktop.png`
-- `docs/reviews/quiet-prism-design-system-tablet.png`
-- `docs/reviews/quiet-prism-design-system-phone.png`
-- Route: `/design-system/`
-- State: default, pinned hover, focus, active, reduced-motion preview, native
-  Role Ledger open/closed, and emulated operating-system reduced motion
+Source: local `/` at baseline `4c2e482c3a706090773e88dd59e8f01595fe7632`.
+Implementation: local `/design-system/#spotlight-split`.
+Production source was verified unchanged against that baseline by Git diff.
 
-## Findings
+All paths below are relative to `docs/reviews/`.
 
-No actionable P0, P1, or P2 mismatch remains.
+| Evidence | CSS viewport | Saved pixels | State |
+|---|---|---|---|
+| `quiet-prism-catalog-desktop.png` | 1440 × 1200 | 1425 × 1188 | WebMD, reduced motion |
+| `quiet-prism-webmd-source.png` | 1117 × 680 | 1102 × 671 | Same source card, reduced motion |
+| `quiet-prism-webmd-specimen.png` | Frame 1117 × 680 | 1102 × 671 | Normalized frame crop |
+| `quiet-prism-webmd-comparison.png` | Matched frame view | 2204 × 671 | Source left, reference right |
+| `quiet-prism-webmd-detail.png` | Focused card crop | 1858 × 448 | Source left, reference right |
+| `quiet-prism-catalog-tablet.png` | 820 × 1100 | 805 × 1080 | Phone-width specimen |
+| `quiet-prism-phone-source.png` | 390 × 680 | 375 × 654 | Original mobile card |
+| `quiet-prism-phone-specimen.png` | Frame 390 × 680 | 375 × 654 | Normalized frame crop |
+| `quiet-prism-phone-comparison.png` | Matched mobile view | 750 × 654 | Source left, reference right |
+| `quiet-prism-catalog-phone.png` | 390 × 844 | Browser-native capture | Catalog navigation and controls |
 
-- The reference uses the existing Quiet Prism palette, fields, layered waves,
-  glass, inset edges, badges, arrows, cards, and reading surfaces.
-- Eight card families and six modal-relevant patterns have distinctive citation
-  names and direct component or selector mappings.
-- Hover, focus, active, responsive, paused/offscreen, forced-color, and reduced-
-  motion contracts are documented. Disabled is marked undefined because no
-  production Quiet Prism disabled selector or token exists.
-- Desktop, tablet, and phone captures have zero page-level horizontal overflow.
-  At phone width, every visible link and button measures at least 44 CSS pixels
-  in both dimensions where the control is bounded.
-- The state switcher updates `aria-pressed`; Role Ledger opens and reports its
-  expanded state; keyboard focus has a visible 3px tone-aware outline.
-- Operating-system reduced motion resolves the route to zero computed animated
-  elements. Browser warnings and errors are zero.
-- The route is excluded from indexing and is not linked from production
-  navigation. Existing homepage and modal behavior remain unchanged.
+Device scale factor was 1. The browser screenshot output includes a small
+provider resize relative to CSS dimensions. Crop coordinates were scaled using
+the captured PNG/CSS width and height ratios, then the reference crop was
+normalized to the source image dimensions. Raw rectangles are saved in
+`quiet-prism-frame-rect.json` and `quiet-prism-phone-rect.json`. These are visual
+comparisons, not claims of pixel-identical screenshots or timing synchronization.
+The combined desktop detail and mobile comparison images were opened and
+inspected together, not judged from source code alone.
 
-## Comparison history
+### Required fidelity surfaces
 
-The first phone acceptance pass found that standalone Corner Current specimens
-were outside the production `data-atmosphere` wrapper and continued to animate
-under reduced motion. It also found three documentation controls below the
-44-pixel target size. The route-level reduced-motion rule now removes all
-decorative animation and transition, and the back link, close specimen, and
-footer link now expose 44-pixel targets. The final browser pass reports zero
-animated elements under reduced motion and zero undersized visible controls.
+- **Typography:** same URW Form appearance, heading/body hierarchy, weight,
+  line wrapping and tracked eyebrow in the matched card views. Computed styles
+  now expose the source element's actual font stack, size and line height.
+- **Spacing and layout:** the two-column desktop composition and stacked phone
+  composition match. Card radius, inset pane, logo placement, badge wrapping and
+  footer relationships agree. The frame retains the real page's navigation and
+  container; no documentation CSS enters its document.
+- **Colors and tokens:** blue field, translucent pane, subdued outlines and
+  purple/blue text match. Token values are read from the live element, including
+  separate brand, Prism and case-study namespaces. Empty inherited values are
+  omitted rather than invented.
+- **Assets:** the real WebMD anchor, atmospheric artwork, context icon, book icon
+  and arrow are present in both views. No replacement artwork was generated.
+- **Copy:** original project title, subtitle, summary, disciplines, View action
+  and closing footer match. Production content files were not edited.
 
-## Residual test limits
+## Verification actually run
 
-Physical touch, Safari, Firefox, screen-reader speech, and native browser zoom at
-200 percent were not tested. Font Awesome depends on its external kit; layout
-reserves icon space when the kit is unavailable.
+- Production build and type checking passed after the final focus fix. Export
+  preparation checked 288 images and 104 active production asset references.
+- `npx eslint app components lib` and `git diff --check` passed.
+- `node scripts/verify-design-system.mjs`: 51 patterns, 169 examples, 36 token
+  names; no missing files, routes or empty example groups.
+- Browser source sweep: all 169 locators resolved. Every catalog entry was also
+  opened through its navigation link: 51 successful source-location results.
+- Catalog search found three WorkCard-related entries; an unmatched query showed
+  the empty state. Clearing by keyboard restored the full catalog.
+- Fit/Phone selection and measured frame width checked. Desktop, tablet and phone
+  catalog viewports had no horizontal document overflow. Oversized fixed-width
+  specimens intentionally scroll inside their labeled preview region.
+- Original Systems filter selected correctly and rendered three stories and
+  three outcomes. Employment disclosure opened by Enter. Call-center demo changed
+  to Busy. Source Pause motion changed its label to Resume motion and applied
+  `motion-paused`. Dialog Escape dismissed the actual source dialog.
+- Axe WCAG A/AA checks on the catalog shell: zero violations, 28 passing rules,
+  one incomplete rule. Iframes were excluded from this shell audit; it is not a
+  full accessibility certification of the baseline site. Result saved in
+  `quiet-prism-axe.json`.
+- No production source differences under components, lib, homepage, shared styles
+  or dedicated case-study routes relative to the requested baseline.
 
-final result: passed
+## Residual limits and follow-up
+
+- Two transient MutationObserver errors were recorded during page/capture
+  teardown in the verification tab. A fresh five-navigation exception trace did
+  not reproduce them. Their origin is not established; no claim of a completely
+  error-free browser session is made. Treat this as a non-blocking teardown
+  investigation, not a reason to modify another task's production files.
+- The final automatic-dialog focus-return check is recorded in the closeout
+  evidence below. Native screen-reader output, mobile touch gestures, forced
+  colors and injected image-network failures were not exhaustively retested.
+- The catalog intentionally represents the requested baseline. Concurrent modal
+  and focus work is not merged. The modal task's newer rejection was read from
+  Exchange event `20260921T004052Z-bfcd530af1bb42ec97408a203c334fdf`.
+  Its later correction `a785e5c` was reported in event
+  `20260921T010833Z-a7a293cc982a4ff8a71000380b24a599` and remains separate.
+- Verification is local. No publish, live-site audit, or user acceptance implied.
+
+Final closeout: after explicitly reloading the final export, automatic launch
+followed by Escape returned focus to `data-modal-trigger="webmd"`; no dialog
+remained. Earlier in-page hash navigation had retained a cached reference bundle,
+so those pre-reload attempts were not accepted as final-build verification.
+The observed result is saved in `quiet-prism-interactions.json`.
+
+Final result: passed

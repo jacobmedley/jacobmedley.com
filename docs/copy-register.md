@@ -2259,3 +2259,36 @@ Tile, Process Tile, Role Ledger, Practice Stack, Credential Shard, Outcome
 Tile, Story Slate, Reading Sheet, Section Plaque, Evidence Cluster, Metric Lens,
 Value Sheet, and Data Bay. The route marks disabled treatment as undefined
 because the current Quiet Prism source contains no disabled primitive.
+
+### B69a. Source-matched catalog correction [APPLIED LOCALLY]
+
+Source: Jacob's September 20 rejection of the first reference and request for
+Astra review and refinement. Supersedes B69's approximate specimens and its
+acceptance claim. Production copy remains untouched.
+
+Reference heading: `Quiet Prism`. Descriptor: `The source, in context.`
+Introduction: `Browse the actual components, artwork and states used on the site.`
+Version note: `Baseline 4c2e482. Local reference. Separate modal and focus refinements
+are not included.` Controls: `Find a pattern`, `Live example`, `Fit`, `Tablet`,
+`Phone`, `Reset example`, `Locate again`, `Open source page`, `Source & anatomy`,
+`Behavior`, `Responsive`, `Computed styles`, `Tokens`, `Nothing matches this search.`
+
+Retain B69's names where the source supports them. Signal Tile refers to the
+retained BannerCard only and is explicitly marked `Retained, not on the homepage`.
+Additional catalog labels: Brand Palette, Type Scale, Project Artwork, Image Tile,
+Career Snapshot, Outcome Feature, Story Cover, Decision Note, Proof Grid,
+Page Navigation, Filter Rail, Motion Control, Image Frame, Animated Image,
+Supporting Diagram, System Diagram, Icon Grid, Split Narrative, Reference Fold,
+Numbered List, Content Card, Availability Demo, Hero Identity, and Story Navigation.
+
+Catalog explanations may describe inspected source behavior and responsive rules.
+Examples reuse existing public source copy and assets verbatim. No fabricated
+metrics, fake controls, simulated state styling, or new marketing copy. Preview
+controls belong to the reference interface, not to Quiet Prism's production API.
+The retained component uses descriptive documentation labels for its four tones;
+these are demonstration props, not restored pathway copy or current homepage use.
+
+The locator review also classifies Animated Image as retained: the only GIF in
+project brief data does not reach AnimatedStudyImage's active render branch.
+Its retained specimen reuses that existing marketing-automation GIF and alt text.
+Leadership Principles names the four registered About-section reading tiles.

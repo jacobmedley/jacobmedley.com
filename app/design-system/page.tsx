@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import DesignSystemExplorer from './DesignSystemExplorer'
+import { catalog, tokenNames } from './catalog'
 
 export const metadata: Metadata = {
   title: 'Quiet Prism Design System | Jacob Medley',
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function DesignSystemPage() {
-  return <DesignSystemExplorer />
+  return <DesignSystemExplorer patterns={catalog} tokenNames={tokenNames} />
 }

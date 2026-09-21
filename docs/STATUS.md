@@ -1,5 +1,75 @@
 # Status
 
+## September 20, 2026: Astra correction of the design-system reference
+
+Jacob rejected the first reference and asked for review, refinement and correct
+matching. This entry supersedes the earlier reference acceptance below and the
+rejected checkpoint `3b2730cdb166743e97aa5f3b4168f4b183f8b87e`.
+
+Owner: task `01a0c13f-81c9-7182-8332-4c96e75923e5`, isolated worktree e924,
+branch `codex/quiet-prism-design-system-20260920`. Production baseline remains
+`4c2e482c3a706090773e88dd59e8f01595fe7632`. The new local commit follows this
+STATUS-last write and its exact ID is recorded in the append-only Exchange update.
+
+Replaced the imitation specimens with a searchable catalog of 51 named patterns
+and 169 examples. Source pages render directly in a live same-origin frame;
+original containers, artwork, copy, controls and responsive rules are preserved.
+The catalog has source/anatomy mappings, actual variant selection, Fit/820px/390px
+viewports, hash links, search/empty state, computed styles and 36 token names.
+Retained BannerCard and AnimatedStudyImage specimens import the original
+components and are explicitly distinguished from active homepage use. B69a
+records the documentation correction. No production copy was rewritten.
+
+Changed files: `app/design-system/DesignSystemExplorer.tsx`,
+`app/design-system/design-system.module.css`, `app/design-system/page.tsx`, new
+`app/design-system/catalog.ts` and `app/design-system/retained/page.tsx`,
+`docs/copy-register.md`, `design-qa.md`, this status file, the new deterministic
+`scripts/verify-design-system.mjs`, and new `docs/reviews/quiet-prism-*` comparison,
+viewport, accessibility and interaction evidence. Earlier screenshots remain
+historical. One temporary capture-debugging image was removed; no user file was
+deleted. No parent-tree, main, shared component, project-data or dedicated-story
+source file was changed.
+
+Verification actually run: final production build/type checks; authored-source
+ESLint; 288-image/104-reference export checks; Git whitespace and unchanged-source
+checks against baseline; manifest validation; 169 browser source locators;
+navigation through all 51 catalog entries; matched desktop and phone visual
+comparisons; desktop/tablet/phone overflow checks; search/empty/reset; original
+Systems filtering (three stories and outcomes); keyboard employment disclosure;
+Pause motion; Busy demo state; and automatic dialog Escape with focus returned
+to the WebMD source trigger after an explicit final-build reload. Final icon-grid
+variants were also located through the rebuilt interface. The catalog-shell axe
+run found zero violations, 28 passes and one incomplete rule, excluding iframes.
+`design-qa.md` records the actual scope and final result: passed.
+
+Known limits: two transient MutationObserver errors occurred during browser
+teardown/capture; a fresh five-navigation exception trace did not reproduce them.
+Their origin is unproven and no zero-console-error claim is made. Full native
+screen-reader, physical touch, forced-color and injected image-failure testing
+remain unverified. Screenshot provider resizing is normalized and documented;
+no pixel-identical or exhaustive all-state claim is made. Jacob's acceptance is
+still his decision.
+
+Preview remains `http://localhost:8098/design-system/`, existing Python listener
+PID 66232, launcher PID 31448, serving this worktree's `out`. Browser overrides
+were cleared, the temporary verification tab closed, and the user's reference
+tab refreshed. Other services were preserved. No push, merge, PR, deployment or
+publication occurred. Immediate rollback: `3b2730c`; preferred source baseline:
+`4c2e482`. The own tree lock is released after the local checkpoint.
+
+Fresh Exchange acceptance read at 2026-09-21T01:12:36Z:
+`b758f18340f2534b603d3598698ca2f11aef9820841ae15114fd6edac94aa5b0`, no conflicts.
+Read the modal rejection and its subsequent corrective checkpoint `a785e5c`;
+neither that work nor the separate focus refinement is merged here. The new
+Exchange update must supersede this task's earlier acceptance pointer without
+claiming that another task or machine has read it.
+
+Routing: Jacob's selected Astra retained. Deterministic local tooling handled
+inventory, source checks, build, lint and image normalization. No local-model
+inference, model download, paid provider fallback or extra spending occurred.
+The initial 15–25k cloud-token estimate was not a measured usage report; exact
+turn token consumption and actual reasoning-setting telemetry were unavailable.
+
 ## September 20, 2026: Quiet Prism design-system reference complete locally
 
 Owner: task `01a0c13f-81c9-7182-8332-4c96e75923e5`, isolated worktree e924,

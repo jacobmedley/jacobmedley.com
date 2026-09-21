@@ -8,13 +8,13 @@ import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
 import CallCenterDemo from './CallCenterDemo'
+import { CornerWaves } from './QuietPrism'
 import {
   projects,
   type Project,
   type ProjectMedia,
   type ProjectBadge,
   type ProjectMetric,
-  type BrandToken,
   type StyledListBlock,
   type CardBlock,
   type BrandShade,
@@ -24,17 +24,7 @@ import {
   type SplitRowBlock
 } from '@/lib/data/projects'
 
-// Tailwind's scanner needs literal class strings, not `bg-${token}-light/25`.
-const BG_LIGHT_25: Record<BrandToken, string> = {
-  prime: 'bg-prime-light/25',
-  second: 'bg-second-light/25',
-  third: 'bg-third-light/25',
-  fourth: 'bg-fourth-light/25',
-  fifth: 'bg-fifth-light/25',
-  pop: 'bg-pop-light/25'
-}
-
-// Legacy w-25/w-50/w-75/w-100 on media images. Literal map, same reason as BG_LIGHT_25.
+// Literal utility strings keep media widths visible to Tailwind's scanner.
 const WIDTH_PCT_CLASS = { 25: 'w-1/4', 50: 'w-1/2', 75: 'w-3/4', 100: 'w-full' } as const
 
 const BG_SHADE: Record<BrandShade, string> = {
@@ -601,8 +591,8 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       )
     case 'divider':
       return (
-        <div className="row">
-          <div className="col-24 my-12">
+        <div className="row modal-content-divider">
+          <div className="col-24">
             <hr className="solid-center" />
           </div>
         </div>
@@ -679,26 +669,20 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
     case 'metric-grid':
       return (
         <section className="modal-data-panel">
-          <div className="col-24 mt-5">
-            <h4>{block.heading}</h4>
-            <hr className="solid-center rule-heading" />
-          </div>
+          <h4>{block.heading}</h4>
+          <hr className="solid-center rule-heading" />
           <div className="modal-data-grid">
             <div className="modal-metric-grid">
-              {block.metrics.map((metric) => (
-                <MetricStat key={metric.label} metric={metric} />
+              {block.metrics.map((metric, index) => (
+                <MetricStat key={metric.label} metric={metric} index={index} />
               ))}
             </div>
-            <div className="modal-value-card">
-              <h5 className="mb-3">{block.valueCreated.heading}</h5>
-              <ul className="fa-ul">
+            <div className="modal-value-card modal-prism-surface" data-prism-tone="sage">
+              <CornerWaves />
+              <h5>{block.valueCreated.heading}</h5>
+              <ul>
                 {block.valueCreated.items.map((item) => (
-                  <li key={item} className="mb-4">
-                    <span className="fa-li">
-                      <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                    </span>
-                    {item}
-                  </li>
+                  <li key={item}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -733,7 +717,8 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               </div>
             ) : (
               <div key={item.title} className="col mb-4">
-                <div className="card">
+                <div className="card modal-prism-surface">
+                  <CornerWaves />
                   <div className="card-body">
                     <p className="mb-1">
                       <i className={`${item.icon} fa-2x`} aria-hidden="true" />
@@ -782,40 +767,15 @@ const SPLIT_ROW_H_ALIGN = {
 // wouldn't get generated.
 const SPLIT_ROW_REVERSE_CLASS = { md: 'md:flex-row-reverse', lg: 'lg:flex-row-reverse' } as const
 const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as const
-// Section lead-in for the SECOND column. Side-by-side both columns start at
-// the row's top edge and both need it; stacked they are sequential, so this
-// one would land between an image and its own heading. Breakpoint-scoped so
-// it only applies once the row is actually side-by-side. Written out in full
-// because Tailwind cannot see dynamically-built class names.
-const SPLIT_ROW_SECTION_MT_CLASS = { md: 'md:mt-12', lg: 'lg:mt-12' } as const
-
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
-  const hasNarrative = [...block.left, ...block.right].some((c) =>
-    ['text', 'list', 'styled-list', 'card', 'supporting-art', 'icon-grid'].includes(c.type)
-  )
-  /*
-   * SplitRow was the only block type with no margins. Every other top-level
-   * block carries `mb-6`, and a top-level `heading` additionally carries
-   * `mt-12` to open a new section (legacy's `mt-5` on the heading column).
-   * A split-row whose columns contain a heading IS a section opener, but its
-   * heading is rendered by BlockContent — bypassing MediaBlock's wrapper — so
-   * it never received that lead-in. Result: split-row sections got 24px of
-   * separation where heading-led sections got 72px.
-   *
-   * The lead-in goes on the COLUMNS, not the row. Two sibling rows collapse
-   * their adjacent margins (max, not sum), so row-level `mt-12` would yield
-   * only 48px. `.row` is display:flex and flex-item margins never collapse,
-   * so column-level `mt-12` gives the previous row's 24px PLUS 48px = 72px —
-   * identical to the heading block, which does exactly this. Applied to both
-   * columns so `vAlign` keeps image and text aligned to each other.
-   */
+  // One section gap belongs to the row, not each card or artwork column.
   const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
-      <div
-        className={cn(
-          'row mb-6 modal-media-split',
-          (startsSection || hasNarrative) && 'modal-media-split-section',
+    <div
+      className={cn(
+        'row mb-6 modal-media-split',
+        startsSection && 'modal-media-split-section',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
@@ -825,13 +785,10 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
           block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
-          startsSection && 'mt-12',
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
-        {block.left.map((child, i) => (
-          <BlockContent key={i} block={child} />
-        ))}
+        <SplitColumn blocks={block.left} />
       </div>
       {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
           d-block d-lg-none` + hr) before the row's breakpoint turns it
@@ -845,16 +802,28 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
-          startsSection && SPLIT_ROW_SECTION_MT_CLASS[bp],
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >
-        {block.right.map((child, i) => (
-          <BlockContent key={i} block={child} />
-        ))}
+        <SplitColumn blocks={block.right} />
       </div>
     </div>
   )
+}
+
+function SplitColumn({ blocks }: { blocks: ProjectMedia[] }) {
+  const content = blocks.map((child, i) => <BlockContent key={i} block={child} />)
+  // Existing artwork, screenshots, diagrams and cards already own their frame.
+  // Only a prose-only column needs the same single reading surface as the site.
+  const narrativeOnly = blocks.length > 0 && blocks.every((child) =>
+    ['heading', 'text', 'list'].includes(child.type)
+  )
+  return narrativeOnly ? (
+    <div className={cn('modal-prism-surface modal-narrative-card', blocks.every((child) => child.type === 'text') && 'modal-narrative-summary')}>
+      <CornerWaves />
+      {content}
+    </div>
+  ) : <>{content}</>
 }
 
 /**
@@ -896,7 +865,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
   return (
     <div className="row text-center mb-6">
       <div className="col">
-        <div className="progress h-full modal-prism-band">
+        <div className="progress h-full">
           <div className={cn('progress-bar progress-bar-striped w-full p-6', BG_SHADE[band.bg])}>
             <h3 className={cn('mb-4', band.textColor && TEXT_SHADE[band.textColor])}>
               {band.icon && (
@@ -932,7 +901,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full modal-prism-progress" data-motion-root={cell.animated || undefined}>
+    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
           'progress-bar w-full',
@@ -957,7 +926,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
                 {cell.label}
               </strong>
             </p>
-            <div className="progress h-full modal-prism-progress modal-prism-progress-nested">
+            <div className="progress h-full">
               <div
                 className={cn(
                   'progress-bar w-full shadow-[var(--shadow-bs-lg)] py-2',
@@ -1000,7 +969,8 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
     return (
       <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
-          <li key={i} className="modal-info-card">
+          <li key={i} className="modal-info-card modal-prism-surface">
+            <CornerWaves />
             <span className="modal-info-card-icon" aria-hidden="true">
               <i className={item.icon ?? 'fa-thin fa-circle-info'} />
             </span>
@@ -1019,19 +989,16 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
     <ListTag
       className={cn(
         'list-group modal-prism-list',
-        block.numbered && 'list-group-numbered',
-        block.shadow && 'shadow-[var(--shadow-bs-lg)]'
+        block.numbered && 'list-group-numbered'
       )}
     >
       {block.items.map((item, i) => (
         <li
           key={i}
-          className={cn(
-            'list-group-item modal-prism-list-item flex justify-between items-start',
-            item.bg && BG_LIGHT_25[item.bg]
-          )}
+          className="list-group-item modal-prism-list-item modal-prism-surface"
         >
-          <div className="ms-2 me-auto">
+          <CornerWaves />
+          <div>
             {item.label && <div className="font-bold">{item.label}</div>}
             {item.body}
             {item.subItems && (
@@ -1050,7 +1017,8 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
 function CardContent({ block }: { block: CardBlock }) {
   return (
-    <div className={cn('card modal-prism-card', block.shadow && 'shadow-[var(--shadow-bs-lg)]')}>
+    <div className="card modal-prism-card modal-prism-surface">
+      <CornerWaves />
       <div className="card-header">{block.header}</div>
       <div className="card-body">
         {block.rows.map((row) => (
@@ -1066,19 +1034,16 @@ function CardContent({ block }: { block: CardBlock }) {
   )
 }
 
-function MetricStat({ metric }: { metric: ProjectMetric }) {
+const METRIC_TONES = ['gold', 'sage', 'plum', 'slate'] as const
+const METRIC_ICONS = ['fa-chart-line', 'fa-chart-pie', 'fa-users', 'fa-stopwatch'] as const
+
+function MetricStat({ metric, index }: { metric: ProjectMetric; index: number }) {
   return (
-    <div className="modal-metric-card">
-      <h4 className="result mb-0 display-5 fw-bolder">
-        {metric.value}
-        {metric.direction && <small>
-          <i
-            className={`display-3 fa-thin fa-long-arrow-${metric.direction}`}
-            aria-hidden="true"
-          />
-        </small>}
-      </h4>
-      <p className="result-label mt-0">{metric.label}</p>
+    <div className="modal-metric-card modal-prism-surface" data-prism-tone={METRIC_TONES[index % METRIC_TONES.length]}>
+      <CornerWaves />
+      <i className={`modal-metric-icon fa-thin ${METRIC_ICONS[index % METRIC_ICONS.length]}`} aria-hidden="true" />
+      <h4 className="result">{metric.value}</h4>
+      <p className="result-label">{metric.label}</p>
     </div>
   )
 }

@@ -1,0 +1,898 @@
+[
+  {
+    "id": "webmd",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "webmd"
+  },
+  {
+    "id": "dentalplans",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "dentalplans"
+  },
+  {
+    "id": "bumblebeemd",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "bumblebeemd"
+  },
+  {
+    "id": "hydra",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "hydra"
+  },
+  {
+    "id": "opfred",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "opfred"
+  },
+  {
+    "id": "split-test",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "split-test"
+  },
+  {
+    "id": "call-center-ux",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "call-center-ux"
+  },
+  {
+    "id": "marketing-auto",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "marketing-auto"
+  },
+  {
+    "id": "workshops",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "workshops"
+  },
+  {
+    "id": "roadmap",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "roadmap"
+  },
+  {
+    "id": "personas",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "personas"
+  },
+  {
+    "id": "wrong",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "wrong"
+  },
+  {
+    "id": "reveal",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "reveal"
+  },
+  {
+    "id": "viva",
+    "mode": "desktop",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 1440
+    },
+    "wrappedArt": 0,
+    "focusReturned": "viva"
+  },
+  {
+    "id": "webmd",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "webmd"
+  },
+  {
+    "id": "dentalplans",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "dentalplans"
+  },
+  {
+    "id": "bumblebeemd",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "bumblebeemd"
+  },
+  {
+    "id": "hydra",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "hydra"
+  },
+  {
+    "id": "opfred",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "opfred"
+  },
+  {
+    "id": "split-test",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "split-test"
+  },
+  {
+    "id": "call-center-ux",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "call-center-ux"
+  },
+  {
+    "id": "marketing-auto",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "marketing-auto"
+  },
+  {
+    "id": "workshops",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "workshops"
+  },
+  {
+    "id": "roadmap",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "roadmap"
+  },
+  {
+    "id": "personas",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "personas"
+  },
+  {
+    "id": "wrong",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "wrong"
+  },
+  {
+    "id": "reveal",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "reveal"
+  },
+  {
+    "id": "viva",
+    "mode": "tablet",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 1000,
+      "w": 800
+    },
+    "wrappedArt": 0,
+    "focusReturned": "viva"
+  },
+  {
+    "id": "webmd",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "webmd"
+  },
+  {
+    "id": "dentalplans",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "dentalplans"
+  },
+  {
+    "id": "bumblebeemd",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "bumblebeemd"
+  },
+  {
+    "id": "hydra",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "hydra"
+  },
+  {
+    "id": "opfred",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "opfred"
+  },
+  {
+    "id": "split-test",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "split-test"
+  },
+  {
+    "id": "call-center-ux",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "call-center-ux"
+  },
+  {
+    "id": "marketing-auto",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "marketing-auto"
+  },
+  {
+    "id": "workshops",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "workshops"
+  },
+  {
+    "id": "roadmap",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "roadmap"
+  },
+  {
+    "id": "personas",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "personas"
+  },
+  {
+    "id": "wrong",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "wrong"
+  },
+  {
+    "id": "reveal",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "reveal"
+  },
+  {
+    "id": "viva",
+    "mode": "mobile",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "16px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "viva"
+  },
+  {
+    "id": "webmd",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "webmd"
+  },
+  {
+    "id": "dentalplans",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "dentalplans"
+  },
+  {
+    "id": "bumblebeemd",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "bumblebeemd"
+  },
+  {
+    "id": "hydra",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "hydra"
+  },
+  {
+    "id": "opfred",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "opfred"
+  },
+  {
+    "id": "split-test",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "split-test"
+  },
+  {
+    "id": "call-center-ux",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "call-center-ux"
+  },
+  {
+    "id": "marketing-auto",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "marketing-auto"
+  },
+  {
+    "id": "workshops",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "workshops"
+  },
+  {
+    "id": "roadmap",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "roadmap"
+  },
+  {
+    "id": "personas",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "personas"
+  },
+  {
+    "id": "wrong",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "wrong"
+  },
+  {
+    "id": "reveal",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "reveal"
+  },
+  {
+    "id": "viva",
+    "mode": "mobile-200-text",
+    "bodyOverflow": 0,
+    "missingCardIcons": 0,
+    "nestedCards": 0,
+    "overflowCards": [],
+    "viewport": {
+      "dpr": 1,
+      "font": "32px",
+      "h": 840,
+      "w": 390
+    },
+    "wrappedArt": 0,
+    "focusReturned": "viva"
+  }
+]

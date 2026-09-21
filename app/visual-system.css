@@ -191,191 +191,92 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;
 }
 
-/* Quiet Prism content language for every case-study dialog. These shared
-   surfaces replace the remaining generic Bootstrap-era white cards, list
-   groups, striped diagrams, and uncontained split narratives. */
+/* Modal reading cards reuse CareerStats' Quiet Prism surface:
+   dashboard.css .cs-stat, case-studies.css themes, and CornerWaves.
+   Diagram bands and supporting illustrations keep their authored treatment. */
 .modal-study-content {
-  --modal-prism-edge: color-mix(in srgb, var(--featured-ink, #644672) 24%, white);
-  --modal-prism-tint: color-mix(in srgb, var(--featured-mid, #ddcdec) 22%, white);
-  --modal-prism-wash: color-mix(in srgb, var(--featured-light, #f8f5fb) 72%, white);
+  --card-ink: var(--featured-ink, #463150);
+  --card-tint: var(--featured-light, #e8e1ec);
+  --card-line: var(--featured-mid, #c5b6cf);
+  --card-wave: var(--card-line);
 }
+.modal-study-content [data-prism-tone='plum'] { --card-ink: #463150; --card-tint: #e8e1ec; --card-line: #c5b6cf; }
+.modal-study-content [data-prism-tone='sage'] { --card-ink: #365335; --card-tint: #e0e8db; --card-line: #afc1a7; }
+.modal-study-content [data-prism-tone='gold'] { --card-ink: #635315; --card-tint: #f0e8cf; --card-line: #cfc094; }
+.modal-study-content [data-prism-tone='slate'] { --card-ink: #3f5066; --card-tint: #e1e7ee; --card-line: #b5c2d0; }
 
-.modal-study-content :is(.modal-info-card, .modal-metric-card, .modal-value-card, .modal-prism-card, .modal-prism-list-item, .modal-icon-grid .card) {
+.modal-study-content .modal-prism-surface {
+  --card-wave: var(--card-line);
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border: 0;
-  background:
-    radial-gradient(140% 105% at 100% 0%, color-mix(in srgb, var(--featured-mid, #ddcdec) 42%, transparent), transparent 58%),
-    linear-gradient(145deg, #fffffff0, var(--modal-prism-wash));
-  box-shadow: inset 0 1px 1px #fff, inset 0 -1px 1px var(--modal-prism-edge), 0 .7rem 1.8rem #302a380d;
+  min-width: 0;
+  padding: 1.375rem;
+  border: 1px solid color-mix(in srgb, var(--card-line) 55%, transparent);
+  border-radius: var(--prism-radius);
+  color: var(--prism-ink);
+  background: linear-gradient(135deg, #ffffffa8, var(--card-tint));
+  box-shadow: 0 8px 25px #30293605;
 }
+.modal-prism-surface > :not([aria-hidden='true']) { position: relative; z-index: 1; }
+.modal-study-content :is(.modal-info-card, .modal-metric-card, .modal-value-card)::after { content: none; }
+.modal-prism-surface > :last-child { margin-bottom: 0; }
 
-.modal-study-content :is(.modal-info-card, .modal-metric-card, .modal-value-card, .modal-prism-card, .modal-prism-list-item, .modal-icon-grid .card)::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: -3.5rem;
-  right: -3rem;
-  width: 10rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--featured-mid, #ddcdec) 24%, transparent);
-  filter: blur(1px);
-  pointer-events: none;
+/* Flat groups: the dialog and one peer card, never another painted group. */
+.modal-study-content :is(.modal-data-panel, .modal-hero-cards) {
+  padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none;
 }
-
-.modal-study-content :is(.modal-info-card, .modal-metric-card, .modal-value-card, .modal-prism-card, .modal-prism-list-item, .modal-icon-grid .card)::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 1px #ffffffb8;
-  pointer-events: none;
+.modal-data-panel > h4 { margin: 0; }
+.modal-data-grid, .modal-metric-grid { gap: .875rem; }
+.modal-metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@container (max-width: 32rem) { .modal-metric-grid { grid-template-columns: minmax(0, 1fr); } }
+.modal-study-content .modal-metric-card {
+  display: flex; flex-direction: column; align-items: flex-start;
+  min-height: 12.9375rem; text-align: left; color: var(--card-ink);
 }
-
-.modal-info-card {
-  min-height: 8rem;
-  padding: clamp(1rem, 2cqi, 1.35rem);
-  border-radius: 1.2rem;
+.modal-metric-icon { position: relative; z-index: 1; align-self: flex-end; min-height: 1.5rem; font-size: 1.4375rem; line-height: 1; color: var(--card-ink); }
+.modal-metric-card .result {
+  margin: 1.25rem 0 .6875rem;
+  color: var(--card-ink); font-size: clamp(2.625rem, 5cqi, 4rem);
+  line-height: 1; letter-spacing: -.04em; font-weight: 300; overflow-wrap: anywhere;
 }
+.modal-metric-card .result-label { margin: 0; color: inherit; font-size: .875rem; line-height: 1.45; }
+.modal-value-card { display: flex; flex-direction: column; }
+.modal-value-card h5 { margin: 0 0 1.5rem; color: var(--card-ink); font-size: 1.25rem; font-weight: 400; }
+.modal-value-card ul { display: flex; flex: 1; flex-direction: column; justify-content: space-between; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
 
-.modal-info-card-icon {
-  border: 1px solid color-mix(in srgb, var(--featured-ink, #644672) 16%, white);
-  border-radius: 50%;
-  background: #ffffff8c;
-  box-shadow: inset 0 1px 1px #fff;
-}
+/* Only uncontained prose gets a surface. Art and existing cards stay unwrapped. */
+.modal-media-split { row-gap: 1.5rem; }
+.modal-media-split-section, .modal-content-divider { margin-top: var(--section-rhythm); }
+.modal-content-divider { margin-bottom: var(--section-rhythm); }
+.modal-content-divider hr { margin-block: 0; }
+.modal-section-content > .modal-media-split:first-child { margin-top: 0; }
+.modal-narrative-card { height: 100%; }
+.modal-media-split:has(.modal-narrative-summary) { align-items: stretch; }
+.modal-narrative-summary { display: flex; flex-direction: column; justify-content: center; min-height: 12.9375rem; }
+.modal-narrative-card :is(h3,h4,h5) { color: var(--card-ink); font-weight: 400; }
+.modal-narrative-card > :first-child:not([aria-hidden]) { margin-top: 0; }
+.modal-narrative-card .fa-ul { margin-left: 1.25rem; }
+.modal-study-content .modal-section-content { padding-inline: 0; }
 
-.modal-data-panel {
-  overflow: hidden;
-  padding: clamp(1.15rem, 3cqi, 2.2rem);
-  border: 0;
-  border-radius: 1.65rem;
-  background:
-    radial-gradient(75% 110% at 100% 0%, color-mix(in srgb, var(--featured-mid, #ddcdec) 52%, transparent), transparent 72%),
-    linear-gradient(135deg, var(--modal-prism-wash), #ffffffc9 52%, var(--modal-prism-tint));
-  box-shadow: inset 0 0 0 1px #ffffffc7, inset 0 -1px 2px var(--modal-prism-edge), 0 1rem 2.6rem #302a3810;
-}
-
-.modal-data-panel > .col-24:first-child {
-  margin-top: 0;
-}
-
-.modal-metric-grid { align-items: stretch; }
-.modal-metric-card, .modal-value-card { border-radius: 1.2rem; }
-.modal-metric-card { display: grid; align-content: center; min-height: 9rem; }
-.modal-metric-card .result { color: var(--featured-ink, #463150); font-weight: 600; }
-.modal-metric-card .result-label { margin-bottom: 0; color: #504a58; }
-.modal-value-card { padding: clamp(1.2rem, 2.5cqi, 1.75rem); }
-.modal-value-card h5 { color: var(--featured-ink, #463150); font-size: clamp(1.2rem, 2cqi, 1.5rem); font-weight: 500; }
-
-.modal-media-split-section {
-  gap: clamp(1rem, 2.5cqi, 1.6rem) 0;
-  margin-inline: 0;
-  padding: clamp(.4rem, 1cqi, .75rem) 0;
-}
-
-.modal-media-split-section > [class*='col-'] {
-  margin-top: 0;
-  padding: clamp(1.15rem, 2.5cqi, 1.75rem);
-  border-radius: 1.35rem;
-  background:
-    radial-gradient(110% 95% at 100% 0%, color-mix(in srgb, var(--featured-mid, #ddcdec) 34%, transparent), transparent 62%),
-    linear-gradient(145deg, #ffffffe8, var(--modal-prism-wash));
-  box-shadow: inset 0 0 0 1px #ffffffc7, inset 0 -1px 1px var(--modal-prism-edge), 0 .8rem 2rem #302a380c;
-}
-
-.modal-media-split-section > [class*='col-'] > :last-child { margin-bottom: 0; }
-.modal-media-split-section > [class*='col-'] > .modal-section-heading:first-child + hr { margin-top: var(--heading-rhythm); }
-
-.modal-prism-list {
-  display: grid;
-  gap: .8rem;
-  overflow: visible;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.modal-prism-list-item {
-  min-height: 5.5rem;
-  padding: clamp(1rem, 2cqi, 1.35rem);
-  border: 0 !important;
-  border-radius: 1.15rem;
-}
-
-.modal-prism-list-item + .modal-prism-list-item { border-top-width: 0; }
-.modal-prism-list-item > .ms-2 { margin-left: .5rem; }
-.modal-prism-list-item > .ms-2 > .font-bold { color: var(--featured-ink, #463150); font-size: 1.05rem; font-weight: 600; }
-.modal-prism-list.list-group-numbered > .modal-prism-list-item::before {
-  display: grid;
-  flex: 0 0 2.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  place-items: center;
-  margin: -.15rem .25rem 0 0;
-  border: 1px solid var(--modal-prism-edge);
-  border-radius: 50%;
-  color: var(--featured-ink, #463150);
-  background: #ffffff9c;
-  font-weight: 600;
-}
-
-.modal-prism-card { border-radius: 1.35rem; }
-.modal-prism-card .card-header {
-  padding: 1rem 1.25rem;
-  border: 0;
-  color: var(--featured-ink, #463150);
-  background: color-mix(in srgb, var(--featured-mid, #ddcdec) 18%, #ffffffb8);
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-.modal-prism-card .card-body { padding: 1.25rem; background: transparent; }
+.modal-info-card-icon { border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--card-ink); }
+.modal-info-card { align-items: start; }
+.modal-info-card strong { color: var(--card-ink); font-weight: 500; }
+.modal-prism-list { display: grid; gap: .875rem; padding: 0; border: 0; background: none; box-shadow: none; }
+.modal-prism-list-item { display: flex; gap: .75rem; }
+.modal-prism-list-item > div { min-width: 0; }
+.modal-prism-list-item::before { position: relative; z-index: 1; flex: none; min-width: 1.25rem; white-space: nowrap; color: var(--card-ink); }
+.modal-prism-list-item .font-bold { color: var(--card-ink); font-weight: 500; margin-bottom: .35rem; }
+.modal-prism-list-item ul { margin-top: .75rem; }
+.modal-prism-card .card-header { padding: 0 0 1rem; border: 0; background: none; color: var(--card-ink); font-size: 1.25rem; font-weight: 400; }
+.modal-prism-card .card-body { padding: 0; background: none; }
 .modal-prism-card .card-body > div + div { margin-top: 1rem; padding-top: 1rem; background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat; }
-.modal-prism-card .card-body > div > p:last-child { margin-bottom: 0; }
-
-.modal-icon-grid { gap: 1rem 0; }
-.modal-icon-grid > .col { margin-bottom: 0; }
-.modal-icon-grid .card { height: 100%; min-height: 8rem; border-radius: 1.2rem; }
-.modal-icon-grid .card-body { display: grid; align-content: center; gap: .5rem; padding: 1.2rem; }
-.modal-icon-grid .card-body i { color: var(--featured-ink, #463150); }
-
-.modal-study-content :is(.modal-prism-progress, .modal-prism-band) {
-  overflow: hidden;
-  border: 0;
-  border-radius: 1.15rem;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px #ffffffc2, inset 0 -1px 1px var(--modal-prism-edge), 0 .65rem 1.6rem #302a380c;
-}
-
-.modal-study-content :is(.modal-prism-progress, .modal-prism-band) > .progress-bar {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  color: #34313b;
-  background:
-    radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--featured-mid, #ddcdec) 44%, transparent), transparent 62%),
-    linear-gradient(145deg, #ffffffe8, var(--modal-prism-wash));
-  background-image:
-    radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--featured-mid, #ddcdec) 44%, transparent), transparent 62%),
-    linear-gradient(145deg, #ffffffe8, var(--modal-prism-wash));
-}
-
-.modal-study-content .modal-prism-band > .progress-bar { padding: clamp(1rem, 2.5cqi, 1.75rem); }
-.modal-study-content .modal-prism-progress > .progress-bar { min-height: 6rem; padding: 1rem; }
-.modal-study-content .modal-prism-progress-nested > .progress-bar { min-height: 2.8rem; color: var(--featured-ink, #463150); }
-.modal-study-content .progress-bar-animated { animation: none; }
-
-@container (min-width: 768px) {
-  .modal-media-split-section { column-gap: clamp(1rem, 2.5cqi, 1.6rem); flex-wrap: nowrap; }
-}
-
-@container (max-width: 767px) {
-  .modal-media-split-section > [class*='col-'] + [class*='col-'] { margin-top: 1rem; }
-  .modal-metric-grid { grid-template-columns: minmax(0, 1fr); }
+.modal-prism-card .card-body p:last-child { margin-bottom: 0; }
+.modal-icon-grid .modal-prism-surface { height: 100%; }
+.modal-icon-grid .card-body { padding: 0; }
+.modal-icon-grid .card-body i { color: var(--card-ink); }
+@media (prefers-reduced-motion: reduce) {
+  .modal-prism-surface [data-atmosphere-wave] * { animation: none !important; }
 }
 
 /* Four leadership surfaces and an even two-column Resume layout. */

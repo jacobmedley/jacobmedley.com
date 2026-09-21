@@ -1,5 +1,70 @@
 # Status
 
+## September 20, 2026: modal correction grounded in the existing card reference
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. This corrects the rejected
+`0c73d12360c7d502136802a87c92c922832e217c` pass. The acceptance claim in the
+next historical entry is withdrawn; Jacob's four new browser annotations and
+Career at a Glance reference supersede it.
+
+The modal metrics now reuse that reference's actual CornerWaves artwork,
+existing plum/sage/gold/slate palette, thin tinted edge, radius, padding and
+light display figures. The group is an aligned two-by-two grid with a peer
+value card, without an enclosing surface. Removed the introduced circular
+decoration and extra wrappers around supporting illustrations. Only bare
+narrative columns receive a reading card; lists and example cards use the
+same surface. Section spacing uses the existing rhythm. Short Hydra copy and
+its illustration align as peers. Original supporting artwork remains intact.
+The complete progress/framework renderer is restored exactly to
+`4c2e482c3a706090773e88dd59e8f01595fe7632`; no new diagram treatment remains.
+Project data, copy and facts are unchanged. No B edits were applied or skipped.
+
+Changed paths: `components/ui/CaseStudyModal.tsx`, `app/visual-system.css`,
+`design-qa.md`, this status file, and the screenshot/JSON evidence under
+`docs/reviews/modal-correction-20260920/`. No other worktree, homepage card,
+dedicated case-study component, dependency, or shared icon configuration was
+edited. The QA report records the previous rejection and the correction loop.
+
+Final production build, TypeScript/build lint, authored renderer ESLint and
+Git whitespace checks passed. Export checks verified 288 images and 104
+references. A deterministic source comparison confirms the framework region
+matches 4c2e482. Browser checks covered all fourteen dialogs at 1440x1000,
+800x1000, 390x840 and 390x840 with 200% root text: 56 checks, no horizontal
+reading-area overflow, overflowing new cards, nested new surfaces, or extra
+artwork shells. Roadmap disclosure was opened at each size. Escape returned
+focus to each trigger. Actual successive Tab/Shift+Tab stayed in the dialog.
+New card waves stop in reduced motion. Axe detected zero WCAG 2 A/AA violations
+in fourteen dialogs, with gradient contrast explicitly incomplete. Manual
+metric-token checks give 6.17:1 to 9.04:1; visible wave/text placement was also
+reviewed. Native 1x reference/implementation captures were compared together.
+Detailed visual inspection covered metrics, features/journey, Hydra, numbered
+lists/project cards, information cards and the phone metric layout, not every
+historical screen in every study. Browser warning/error log was empty.
+
+Review URL: `http://localhost:8097/`. The existing Font Awesome kit rejects
+the `127.0.0.1` origin with HTTP 403, but loads its original thin icon font on
+localhost. Final evidence uses localhost, actual CSS dimensions and DPR 1;
+earlier zoom-affected or incomplete captures are not acceptance evidence.
+The same existing preview remains: listener PID 45712, Python launcher 65792,
+serving this worktree's `out`. Other previews were not stopped or changed.
+No push, merge, PR, publication or deployment occurred. Preferred rollback is
+4c2e482 above; immediate pre-correction checkpoint is 0c73d12. The final local
+commit follows this STATUS-last write, then the owned lock is released.
+
+Unresolved: Jacob's visual approval; physical touch, screen-reader speech,
+native browser zoom, Safari and Firefox not tested. The 127.0.0.1 kit origin
+restriction remains external; use localhost. No extra spending or reset,
+model download, paid fallback or local inference ran. Cloud usage was
+estimated, not measured; deterministic checks handled the local workload.
+
+Fresh Exchange read/checkpoint: 2026-09-21T01:07:11Z, fingerprint
+`47385a329bae79771e6af94f1f9d20b2e27eedf20d5084df4d7bd55bceb49ba9`, no
+conflicts. Change event `20260921T004052Z-bfcd530af1bb42ec97408a203c334fdf`
+records Jacob's correction. A unique final update will carry the exact commit
+and rollback references. Shared coordinator files remain untouched; this is
+not a claim that other agents have read the update.
+
 ## September 20, 2026: all-modal Quiet Prism content redesign complete locally
 
 Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree

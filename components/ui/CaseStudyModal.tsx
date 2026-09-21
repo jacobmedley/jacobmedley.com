@@ -8,7 +8,6 @@ import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
 import CallCenterDemo from './CallCenterDemo'
-import { CornerWaves } from './QuietPrism'
 import {
   projects,
   type Project,
@@ -49,7 +48,7 @@ const TEXT_SHADE: Record<BrandShade, string> = {
 
 // Legacy col-N spans used by the hydra diagram (24-col grid, unprefixed).
 const COL_SPAN: Record<number, string> = { 6: 'col-6', 12: 'col-12', 18: 'col-18', 24: 'col-24' }
-const ROW_COLS_LG: Record<number, string> = { 4: 'row-cols-lg-4', 5: 'row-cols-lg-5' }
+const ROW_COLS_LG: Record<number, string> = { 3: 'row-cols-lg-3', 4: 'row-cols-lg-4', 5: 'row-cols-lg-5' }
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -678,11 +677,11 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               ))}
             </div>
             <div className="modal-value-card modal-prism-surface" data-prism-tone="sage">
-              <CornerWaves />
               <h5>{block.valueCreated.heading}</h5>
+              <hr className="solid-center modal-value-rule" />
               <ul>
                 {block.valueCreated.items.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}><i className="fa-thin fa-chevron-right" aria-hidden="true" /> <span>{item}</span></li>
                 ))}
               </ul>
             </div>
@@ -718,7 +717,6 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
             ) : (
               <div key={item.title} className="col mb-4">
                 <div className="card modal-prism-surface">
-                  <CornerWaves />
                   <div className="card-body">
                     <p className="mb-1">
                       <i className={`${item.icon} fa-2x`} aria-hidden="true" />
@@ -788,7 +786,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
-        <SplitColumn blocks={block.left} />
+        <SplitColumn blocks={block.left} surface={block.leftSurface} />
       </div>
       {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
           d-block d-lg-none` + hr) before the row's breakpoint turns it
@@ -805,22 +803,16 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >
-        <SplitColumn blocks={block.right} />
+        <SplitColumn blocks={block.right} surface={block.rightSurface} />
       </div>
     </div>
   )
 }
 
-function SplitColumn({ blocks }: { blocks: ProjectMedia[] }) {
+function SplitColumn({ blocks, surface = false }: { blocks: ProjectMedia[]; surface?: boolean }) {
   const content = blocks.map((child, i) => <BlockContent key={i} block={child} />)
-  // Existing artwork, screenshots, diagrams and cards already own their frame.
-  // Only a prose-only column needs the same single reading surface as the site.
-  const narrativeOnly = blocks.length > 0 && blocks.every((child) =>
-    ['heading', 'text', 'list'].includes(child.type)
-  )
-  return narrativeOnly ? (
+  return surface ? (
     <div className={cn('modal-prism-surface modal-narrative-card', blocks.every((child) => child.type === 'text') && 'modal-narrative-summary')}>
-      <CornerWaves />
       {content}
     </div>
   ) : <>{content}</>
@@ -862,12 +854,13 @@ function ProgressDiagram({ block }: { block: ProgressDiagramBlock }) {
 }
 
 function ProgressBandSection({ band }: { band: ProgressBand }) {
+  const isCore = band.heading === 'Core Framework'
   return (
-    <div className="row text-center mb-6">
+    <div className={cn('row text-center mb-6 modal-progress-band', isCore && 'modal-progress-band-core')}>
       <div className="col">
-        <div className="progress h-full">
-          <div className={cn('progress-bar progress-bar-striped w-full p-6', BG_SHADE[band.bg])}>
-            <h3 className={cn('mb-4', band.textColor && TEXT_SHADE[band.textColor])}>
+        <div className="progress h-full modal-progress-frame">
+          <div className={cn('progress-bar progress-bar-striped w-full p-6 modal-progress-band-surface', BG_SHADE[band.bg])}>
+            <h3 className={cn('mb-4 modal-progress-band-heading', band.textColor && TEXT_SHADE[band.textColor])}>
               {band.icon && (
                 <>
                   <i className={band.icon} aria-hidden="true" />
@@ -901,10 +894,10 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
+    <div className="progress h-full modal-progress-frame" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
-          'progress-bar w-full',
+          'progress-bar w-full modal-progress-cell',
           striped && 'progress-bar-striped',
           cell.animated && 'progress-bar-animated',
           BG_SHADE[cell.bg],
@@ -920,13 +913,13 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
               <strong>
                 {cell.icon && (
                   <>
-                    <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" /> <br />
+                    <i className={`${projectIcon(cell.icon)} modal-progress-cell-icon`} aria-hidden="true" /> <br />
                   </>
                 )}
                 {cell.label}
               </strong>
             </p>
-            <div className="progress h-full">
+            <div className="progress h-full modal-progress-frame">
               <div
                 className={cn(
                   'progress-bar w-full shadow-[var(--shadow-bs-lg)] py-2',
@@ -935,7 +928,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
                 )}
               >
                 <strong className="font-bold">
-                  {cell.sub.icon && <i className={`${cell.sub.icon} fa-xl`} aria-hidden="true" />}{' '}
+                  {cell.sub.icon && <i className={`${cell.sub.icon} modal-progress-sub-icon`} aria-hidden="true" />}{' '}
                   {cell.sub.label}
                 </strong>
               </div>
@@ -945,7 +938,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
           <strong className={cn('font-bold', cell.padY === 5 ? 'py-12' : 'py-6')}>
             {cell.icon && (
               <>
-                <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" />
+                <i className={`${projectIcon(cell.icon)} modal-progress-cell-icon`} aria-hidden="true" />
                 <br />
               </>
             )}
@@ -970,7 +963,6 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
       <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
           <li key={i} className="modal-info-card modal-prism-surface">
-            <CornerWaves />
             <span className="modal-info-card-icon" aria-hidden="true">
               <i className={item.icon ?? 'fa-thin fa-circle-info'} />
             </span>
@@ -997,7 +989,6 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
           key={i}
           className="list-group-item modal-prism-list-item modal-prism-surface"
         >
-          <CornerWaves />
           <div>
             {item.label && <div className="font-bold">{item.label}</div>}
             {item.body}
@@ -1018,7 +1009,6 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 function CardContent({ block }: { block: CardBlock }) {
   return (
     <div className="card modal-prism-card modal-prism-surface">
-      <CornerWaves />
       <div className="card-header">{block.header}</div>
       <div className="card-body">
         {block.rows.map((row) => (
@@ -1040,7 +1030,6 @@ const METRIC_ICONS = ['fa-chart-line', 'fa-chart-pie', 'fa-users', 'fa-stopwatch
 function MetricStat({ metric, index }: { metric: ProjectMetric; index: number }) {
   return (
     <div className="modal-metric-card modal-prism-surface" data-prism-tone={METRIC_TONES[index % METRIC_TONES.length]}>
-      <CornerWaves />
       <i className={`modal-metric-icon fa-thin ${METRIC_ICONS[index % METRIC_ICONS.length]}`} aria-hidden="true" />
       <h4 className="result">{metric.value}</h4>
       <p className="result-label">{metric.label}</p>

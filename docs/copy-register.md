@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B68. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B69. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2242,3 +2242,22 @@ in-page case-study dialog and `Read` when it navigates to a dedicated reading
 page. Retain the existing graphic right arrow and the card's specific accessible
 name. This does not rename navigation, filters, disclosure controls, or other
 functional actions.
+
+## B69. Naked-card annotation labels [APPLIED LOCALLY]
+
+Source: Jacob's 24 browser annotations in task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`, September 20, 2026.
+Publication is not authorized. This entry changes only the named interface and
+journey labels; project facts, metrics and narrative stay unchanged.
+
+Remove the visible `Explore selected work` label from the hero while retaining
+that accessible name on the arrow link. Rename the call-center demo's `Highlight`
+switch label to `Sections`; remove its visible binary `0` and `1` without changing
+the switch state or help text.
+
+The first DentalPlans journey stage is `MVP: Initial Launch and Learnings` and its
+diagram eyebrow is `MVP`. The remaining diagram eyebrows are `Iteration 2`,
+`Iteration 3`, and `Iteration 4`. Their accessible descriptions call them
+iterations, not second, third, or fourth MVPs. Existing stage prose continues to
+describe what each release added. No new architecture, causal claim, outcome, or
+technology is introduced.

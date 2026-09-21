@@ -2559,6 +2559,20 @@ Volatile state. Read this first, write it last.
 Durable rulings, wording standards, and figures live in copy-register.md.
 If a fact would still be true in three months, it belongs there, not here.
 
+## 2026-09-21 — modal quiet-prism refinement complete
+
+- Worktree: `C:\Users\jacob\.codex\worktrees\2787\jacobmedley.com`
+- Branch: `codex/modal-content-quiet-prism-20260920`
+- Commit: this task's completion commit follows this status write; starting rollback point is `cb5044bfe1f4e847512bf609a72c74f453174a44`.
+- Scope: implemented Jacob's 24 browser annotations across the homepage hero, selected-work cards, case-study modals, call-center demo, and resume practice card. The modal content now uses flatter prose, quiet naked cards, no modal corner waves, consistent 28 px frames, larger icons, a bullet-based Value Created panel, simplified ecosystem/iteration/flow visuals, and MVP-versus-iteration language.
+- Content authority: `docs/copy-register.md` B69 records the small UI-label and iteration-label changes. No factual metric or narrative claim changed.
+- Files changed: `app/visual-system.css`; `components/sections/ResumeSection.tsx`; `components/ui/{CallCenterDemo,CaseStudyModal,KineticHeroIdentity,StudySupportingArt}.tsx`; `components/ui/QuietPrism.module.css`; `lib/data/projects.ts`; `docs/copy-register.md`; `design-qa.md`; and `docs/reviews/modal-naked-card-20260921/`.
+- Verification: scoped ESLint passed; production `npm run build` passed; 288 exported images and 104 active production references verified; `git diff --check` passed before the final max-width correction and is rerun at handoff; all 14 modal variants passed desktop 1440 × 1000 and mobile 390 × 840 overflow sweeps; representative tablet screenshots reviewed at 900 × 1000; 200% text scaling passed without horizontal overflow; switch toggle, Escape close, and focus return passed; `design-qa.md` ends `DESIGN QA: passed`.
+- Preview: the existing local production preview remains at `http://localhost:8097/`, served from this worktree's `out` directory.
+- Deployment: none. Nothing was pushed, merged, published, or deployed.
+- Rollback: reset or revert to `cb5044bfe1f4e847512bf609a72c74f453174a44`; preserve later unrelated commits if this branch advances.
+- Unresolved: no in-scope P0–P2 issue. Cross-browser testing beyond the embedded Chromium preview remains outside this pass.
+
 ## Surfaces
 
 | Surface | Current | Owner |

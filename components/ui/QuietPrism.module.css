@@ -213,12 +213,12 @@
 
 .featuredExternal {
   display: grid;
-  flex: 0 0 2rem;
-  width: 2rem;
-  min-height: 27px;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  min-height: 2.5rem;
   place-items: center;
   color: #36566b;
-  font-size: 1.15rem;
+  font-size: 2rem;
 }
 
 .featuredFooter {

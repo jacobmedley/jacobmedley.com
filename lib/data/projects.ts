@@ -105,6 +105,8 @@ export interface SplitRowBlock {
   hAlign?: 'start' | 'center' | 'between' | 'end' // legacy justify-content-*, default 'start'
   leftSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for left only
   rightSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for right only
+  leftSurface?: boolean // opt-in reading card; prose columns are flat by default
+  rightSurface?: boolean // opt-in reading card; prose columns are flat by default
   mobileDivider?: boolean // legacy `col-24 py-5 d-block d-lg-none` hr between stacked columns, default false — most legacy rows have none
 }
 
@@ -494,7 +496,7 @@ export const projects: Project[] = [
             textColor: 'white',
             rows: [
               {
-                cols: 5,
+                cols: 3,
                 cells: [
                   { label: 'API Integration', icon: 'fa-thin fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
                   { label: 'Component Libraries', icon: 'fa-thin fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
@@ -533,6 +535,7 @@ export const projects: Project[] = [
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
+        rightSurface: true,
         right: [
           { type: 'heading', text: 'Key Features', level: 4 },
           {
@@ -553,12 +556,12 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'First MVP joining a WordPress storefront, Bootstrap interface, product details, and cart.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'Initial MVP joining a WordPress storefront, Bootstrap interface, product details, and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
         right: [
-          { type: 'heading', text: 'Iteration One: Initial Launch and Learnings', level: 4 },
+          { type: 'heading', text: 'MVP: Initial Launch and Learnings', level: 4 },
           {
             type: 'text',
             text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"'
@@ -582,7 +585,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Second MVP connecting two branded storefronts to shared product data and cart.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two connecting two branded storefronts to shared product data and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -603,7 +606,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Third MVP carrying shared patterns and components through microservices to multiple properties.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three carrying shared patterns and components through microservices to multiple properties.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -623,7 +626,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Fourth MVP flow from ZIP search to results and a dentist profile.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four flow from ZIP search to results and a dentist profile.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -907,6 +910,7 @@ export const projects: Project[] = [
         ],
         leftSpan: 8,
         rightSpan: 12,
+        rightSurface: true,
         vAlign: 'center',
         hAlign: 'center'
       }

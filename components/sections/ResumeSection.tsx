@@ -203,7 +203,7 @@ export default function ResumeSection() {
             </div>
 
             <section className="resume-prism-practice" aria-label="Leadership, expertise and tools" data-motion-root data-atmosphere>
-              <CornerWaves both />
+              <CornerWaves />
               <div className="resume-practice-column">
                 <h3><i className="fa-thin fa-people-group" aria-hidden="true" /> Team Building and Mentorship</h3>
                 <SkillList items={mentorship} />

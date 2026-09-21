@@ -120,8 +120,8 @@ export default function CallCenterDemo() {
           </div>
           <div className="demo-selected-state" aria-live={mode === 'auto' ? 'off' : 'polite'} aria-atomic="true"><Icon name={current.icon} /><div><strong>{current.label}</strong><p>{current.offer}</p></div></div>
           <div className="demo-highlight-control">
-            <label htmlFor="demo-highlight">Highlight</label>
-            <button id="demo-highlight" type="button" role="switch" aria-checked={highlight} aria-describedby="demo-highlight-help" onClick={() => setHighlight(!highlight)}><span aria-hidden="true">{highlight ? '1' : '0'}</span></button>
+            <label htmlFor="demo-highlight">Sections</label>
+            <button id="demo-highlight" type="button" role="switch" aria-checked={highlight} aria-describedby="demo-highlight-help" onClick={() => setHighlight(!highlight)}><span aria-hidden="true" /></button>
           </div>
           <p id="demo-highlight-help" className="demo-help">Emphasize the areas that change.</p>
           <ul className="demo-regions"><li><Icon name="fa-window" />Header</li><li><Icon name="fa-message-lines" />Sitewide banner</li><li><Icon name="fa-image" />Hero</li></ul>

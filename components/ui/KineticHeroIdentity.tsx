@@ -171,8 +171,7 @@ export default function KineticHeroIdentity() {
       reveal('.kinetic-build', CHANGES[0])
       reveal('.kinetic-better', CHANGES[0] + 200)
       reveal('.hero-rule-wrap', CHANGES[0] + 400)
-      reveal('.hero-case-studies-label', CHANGES[0] + 600)
-      reveal('.hero-case-studies-button', CHANGES[0] + 800)
+      reveal('.hero-case-studies-button', CHANGES[0] + 600)
       animations[0].onfinish = syncPlayback
       syncPlayback()
     }
@@ -223,7 +222,6 @@ export default function KineticHeroIdentity() {
           <hr className="solid-center rule-heading" />
         </div>
         <a className="btn action-label hero-case-studies-link" href="#work" aria-label="Explore selected work">
-          <span className="hero-case-studies-label">Explore selected work</span>
           <i className="fa-thin fa-circle-arrow-down hero-case-studies-button" aria-hidden="true" />
         </a>
       </div>

@@ -81,6 +81,7 @@ export interface ProgressBand {
 export interface ProgressDiagramBlock {
   type: 'progress-diagram'
   heading?: string // "The System Framework" + hr solid-center
+  showRule?: boolean // defaults true; false when a nearby composition already supplies the separation
   rows?: ProgressRow[] // flat variant (hydra)
   bands?: ProgressBand[] // banded variant (dentalplans) — exactly one of rows|bands
 }
@@ -107,6 +108,7 @@ export interface SplitRowBlock {
   rightSelfAlign?: 'top' | 'center' | 'bottom' // legacy per-column align-self-*, overrides vAlign for right only
   leftSurface?: boolean // opt-in reading card; prose columns are flat by default
   rightSurface?: boolean // opt-in reading card; prose columns are flat by default
+  surface?: boolean // one shared surface around both columns
   mobileDivider?: boolean // legacy `col-24 py-5 d-block d-lg-none` hr between stacked columns, default false — most legacy rows have none
 }
 
@@ -144,7 +146,8 @@ export type ProjectMedia =
       text: string
       level?: 2 | 3 | 4 | 5
       icon?: string
-      treatment?: 'section'
+      treatment?: 'section' | 'subsection'
+      showRule?: boolean
       // legacy's `hr.my-5 -> icon -> h2 -> hr.my-5` section-break pattern
       // (col gets text-center, leading hr added, trailing hr gets my-12,
       // the usual mt-12 dropped since the leading hr supplies the gap)
@@ -531,7 +534,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform connecting product data, search and APIs, promotions, and deployment.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform connecting plan data, dentist data, search and APIs, promotions, and deployment.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -556,7 +559,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'Initial MVP joining a WordPress storefront, Bootstrap interface, product details, and cart.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'Initial MVP joining a WordPress storefront with manually added plans, a Bootstrap interface, and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -566,7 +569,7 @@ export const projects: Project[] = [
             type: 'text',
             text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"'
           },
-          { type: 'heading', text: 'Plan:', level: 4 },
+          { type: 'heading', text: 'Plan:', level: 4, treatment: 'subsection' },
           {
             type: 'text',
             text: "We started with a single-product flow to test customer response. Engineering built the service that passed the product into the existing cart. I designed the storefront so later versions could support other products and brands."
@@ -575,7 +578,7 @@ export const projects: Project[] = [
             type: 'text',
             text: 'I built a Bootstrap-based WordPress theme covering the home, contact, about, and product detail pages, plus add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
           },
-          { type: 'heading', text: 'Results:', level: 4 },
+          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
           {
             type: 'text',
             text: "The first storefront sold, and leadership asked for a second. That gave us a reason to invest in shared capabilities."
@@ -585,7 +588,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two connecting two branded storefronts to shared product data and cart.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two adding two branded storefronts, shared plan data, and a shared cart to the MVP platform.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -595,7 +598,7 @@ export const projects: Project[] = [
             type: 'text',
             text: "The second site needed the brand experience to continue into the cart. We added a cart that could take each brand’s identity and services for shared product information. Testing could then cover the path from landing page through purchase."
           },
-          { type: 'heading', text: 'Results:', level: 4 },
+          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
           {
             type: 'text',
             text: "The second launch gave us a shared base for later changes. The components could be reused in landing pages and purchase flows, so tests no longer required rebuilding each variant from scratch."
@@ -606,7 +609,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three carrying shared patterns and components through microservices to multiple properties.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three adding shared patterns, components, microservices, and properties to the platform from the first two releases.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -616,7 +619,7 @@ export const projects: Project[] = [
             type: 'text',
             text: "We brought product information into shared services. When engineering added or changed data, every property could use it. Common patterns and components gave the interfaces a consistent way to present it."
           },
-          { type: 'heading', text: 'Delivery', level: 4 },
+          { type: 'heading', text: 'Delivery', level: 4, treatment: 'subsection' },
           {
             type: 'text',
             text: 'We built landing pages, developed content for organic search, and continued testing acquisition and purchase flows.'
@@ -626,7 +629,7 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four flow from ZIP search to results and a dentist profile.' }],
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four adding ZIP search, results, and dentist profiles to the platform built in the first three releases.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -636,7 +639,7 @@ export const projects: Project[] = [
             type: 'text',
             text: "I designed and built the dentist-search interface using the existing patterns and components."
           },
-          { type: 'heading', text: 'Results:', level: 4 },
+          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
           {
             type: 'text',
             text: "The platform gained a dentist-search flow built from the same patterns and components as the storefronts."
@@ -781,7 +784,7 @@ export const projects: Project[] = [
         type: 'split-row',
         left: [
           { type: 'heading', text: 'The Problem', level: 3 },
-          { type: 'heading', text: 'Severe UI Fragmentation', level: 4 },
+          { type: 'heading', text: 'Severe UI Fragmentation', level: 4, showRule: false },
           {
             type: 'text',
             text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
@@ -832,6 +835,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
+          { type: 'heading', text: 'A Shared Language', level: 4, showRule: false },
           {
             type: 'text',
             text: "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products."
@@ -860,7 +864,11 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 12,
-        rightSpan: 12
+        rightSpan: 12,
+        leftSpanXl: 11,
+        rightSpanXl: 11,
+        vAlign: 'center',
+        hAlign: 'center'
       },
       {
         type: 'progress-diagram',
@@ -909,8 +917,8 @@ export const projects: Project[] = [
           }
         ],
         leftSpan: 8,
-        rightSpan: 12,
-        rightSurface: true,
+        rightSpan: 16,
+        surface: true,
         vAlign: 'center',
         hAlign: 'center'
       }

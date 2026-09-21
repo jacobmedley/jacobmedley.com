@@ -485,6 +485,14 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      if (block.treatment === 'subsection') {
+        return (
+          <>
+            <Tag className="modal-subsection-heading">{block.text}</Tag>
+            <hr className="solid-center modal-subsection-rule" />
+          </>
+        )
+      }
       if (block.treatment === 'section' || block.icon) {
         return (
           <>
@@ -505,7 +513,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
             </p>
           )}
           <Tag>{block.text}</Tag>
-          <hr className={cn('solid-center', block.sectionDivider && 'my-12')} />
+          {block.showRule !== false && <hr className={cn('solid-center', block.sectionDivider && 'my-12')} />}
         </>
       )
     }
@@ -773,6 +781,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
     <div
       className={cn(
         'row mb-6 modal-media-split',
+        block.surface && 'modal-prism-surface modal-composite-card',
         startsSection && 'modal-media-split-section',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
@@ -833,7 +842,7 @@ function ProgressDiagram({ block }: { block: ProgressDiagramBlock }) {
         <div className="row">
           <div className="col-24 mt-12">
             <h4>{block.heading}</h4>
-            <hr className="solid-center" />
+            {block.showRule !== false && <hr className="solid-center" />}
           </div>
         </div>
       )}

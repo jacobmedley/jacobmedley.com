@@ -1,5 +1,55 @@
 # Status
 
+## September 21, 2026: browser-comment modal refinement complete
+
+Jacob's thirteen follow-up browser comments are implemented on the DentalPlans
+and Hydra case-study modals. Duplicate Shared Platform and Shared Vocabulary
+labels are removed. The Hydra language explanation now has an `A Shared
+Language` subtitle, is vertically centered, and uses a one-column desktop inset
+that expands before stacking. Why Hydra is one composite card. The unwanted
+fragmentation rule is removed. Plan and Results use a smaller, more closely
+coupled subsection treatment with increased separation from preceding blocks.
+
+DentalPlans now labels Plan Data, adds Dentist Data, removes the separate Product
+node from the MVP, and notes that WordPress used manually added plans. Iteration
+diagrams show the accumulated platform plus the systems added at each stage. The
+Core Framework heading icon is larger than its capability icons. Value Created
+uses equal measured 12px title-to-rule and rule-to-first-bullet spacing. Copy
+authority B70 records every changed visible string and diagram description.
+
+Changed paths: `components/ui/StudySupportingArt.tsx`,
+`components/ui/CaseStudyModal.tsx`, `lib/data/projects.ts`,
+`app/visual-system.css`, `docs/copy-register.md`, `design-qa.md`, this status
+file, and visual/measurement evidence under
+`docs/reviews/modal-followup-20260921/`. No dependencies or unrelated worktrees
+were changed.
+
+Verification actually run: scoped ESLint passed; the final production build,
+type check, static export, 288-image check, and 104-reference check passed;
+`git diff --check` is run after this status write. Browser checks at 1484x1272,
+390x840, and 390px with 200% root text found no DentalPlans or Hydra horizontal
+overflow. The framework icons measured 44px versus 32px, the Hydra language
+columns measured 11/24 each with one-column side offsets, and iteration history
+counts were 3, 6, and 10. Escape closed the modal and restored focus. Browser
+errors and warnings were empty. The QA loop resolved one P1 layout-placement
+issue and one P2 spacing-specificity issue; no P0, P1, or P2 issue remains.
+
+Worktree: `C:\Users\jacob\.codex\worktrees\2787\jacobmedley.com`; branch:
+`codex/modal-content-quiet-prism-20260920`. Starting rollback point:
+`f5398ab110980f48dfd41603785a8f3892b59631`; the final local commit follows
+this status write. Existing preview `http://localhost:8097/#work` remains served
+from this worktree's `out`. No push, merge, PR, publication, or deployment was
+performed. The current site state therefore remains unchanged. No implementation
+work is unresolved in this follow-up; publication remains a separate explicit
+decision.
+
+Fresh Exchange checkpoint at 2026-09-21T12:50:52Z reports no conflicts, with
+fingerprint `8fb0bd529ec08d27a42d6aa904727d297fa1d4ec16aeddbdfe79b2c7715442ef`.
+Direction event `20260921T122844Z-bde940c1e7c14e589f3a131c19588c50`
+records this follow-up. A unique final Exchange update will carry the commit ID,
+verification, deployment state, rollback point, and coordinator handoff; no
+remote acknowledgement is asserted.
+
 ## September 20, 2026: 24-annotation simplification intake; implementation pending
 
 Jacob requests less card-heavy modals, aligned reading flow and naked cards using

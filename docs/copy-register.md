@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B69. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B70. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2261,3 +2261,21 @@ diagram eyebrow is `MVP`. The remaining diagram eyebrows are `Iteration 2`,
 iterations, not second, third, or fourth MVPs. Existing stage prose continues to
 describe what each release added. No new architecture, causal claim, outcome, or
 technology is introduced.
+
+## B70. Platform-diagram and Hydra follow-up labels [APPLIED LOCALLY]
+
+Source: Jacob's 13 browser annotations in task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`, September 21, 2026.
+Publication is not authorized. This entry changes only the annotated diagram and
+section labels; metrics and outcome claims remain unchanged.
+
+Remove the duplicate `Shared Platform` and `Shared Vocabulary` labels above their
+diagrams. Add `A Shared Language` as the subtitle beside Hydra's Nomenclature
+visual. In the platform diagram, use `Plan Data` instead of `Product Data`, add
+`Dentist Data`, and retain Search & API, Promotions, and Deployment.
+
+The MVP diagram removes the standalone `Product` tile. Its WordPress tile carries
+the note `Manually added plans`. Iteration two uses `Shared Plan Data`; the later
+iteration diagrams show the platform already accumulated and the capabilities
+added in that release. This presentation change does not add a technology or
+claim that the narrative does not already support.

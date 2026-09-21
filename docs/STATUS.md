@@ -1,5 +1,49 @@
 # Status
 
+## September 20, 2026: 24-annotation simplification intake; implementation pending
+
+Jacob requests less card-heavy modals, aligned reading flow and naked cards using
+the existing gradient, thin border and 28px radius without waves or extra shells.
+The latest annotations also authorize named homepage/resume/control changes and
+narrow framework typography/radius/grid changes. They supersede the corresponding
+visual decisions in a785e5c; prior technical checks are not approval of this new
+direction. No UI changes were made during this intake.
+
+All 24 annotations are mapped in `docs/modal-naked-card-handoff-20260920.md` to
+two implementation batches plus one focused verification pass. Source inspection
+confirmed the affected owners, the shared Value Created spacing issue, the current
+MVP labels, the existing Hydra mark and the missing three-column renderer mapping.
+The proposed clipped-shadow cause remains unverified. Copy edits must be registered
+before implementation; no B edits were applied or skipped in this checkpoint.
+
+Recommended next configuration is GPT-5.6 Sol / Medium, preserving any user-selected
+setting until Jacob changes it. Current task settings cannot be switched by this
+agent. Intake usage telemetry reports 71% weekly used / 29% remaining; this is not
+a token or dollar balance. Remaining-work forecast is 8k–14k cloud tokens including
+normal verification/repair overhead, not measured savings. No local inference,
+spending, reset, new dependency or download occurred. Pause before implementation
+for the user-controlled configuration change; all 24 requested fixes remain open.
+
+Owner remains task `01a0c13f-81b2-7662-907b-eb7667b3abc9` in worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. Intake source/rollback commit:
+`a785e5c6921c78091d1bafcc47575368886ea8b8`. Only the handoff and this STATUS file
+change in the following local checkpoint. Incoming tree was clean and unlocked;
+own intake lock is released after committing. Other worktrees are untouched.
+
+Verification this turn: source reads, repository/lock checks, deterministic complete
+annotation coverage (1–24), whitespace check, account-usage lookup, and preview
+process identity. No build, browser audit or new visual/behavior test was run for
+this documentation-only intake. Existing `http://localhost:8097/` remains served
+from this worktree's `out` by Python listener 45712 / launcher 65792, unchanged.
+No push, merge, PR, publication or deployment. Latest separate design-system
+checkpoint 304b66c and seam/focus checkpoint 9346cad remain unmerged here.
+
+Fresh Exchange read/checkpoint at 2026-09-21T02:17:10Z reports no sync conflicts;
+fingerprint `259dd88ec5557858f766d5ead259c889965dccea745473d8566673f9e70663f8`.
+New direction event: `20260921T021528Z-4a034fbe74524096ab55a59650bb283a`.
+A unique final update will carry this documentation checkpoint's commit. Shared
+coordinator files were not edited, and no remote acknowledgement is asserted.
+
 ## September 20, 2026: modal correction grounded in the existing card reference
 
 Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree 2787,

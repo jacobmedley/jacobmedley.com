@@ -1,5 +1,50 @@
 # Status
 
+## September 20, 2026: all-modal Quiet Prism content redesign complete locally
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree
+2787, branch `codex/modal-content-quiet-prism-20260920`. Started from Jacob's
+required card-refinement checkpoint
+`4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree, main, push,
+merge, PR, publication, or deployment action occurred.
+
+Replaced the shared modal renderer's remaining Bootstrap-era content surfaces
+with one themed Quiet Prism language across all fourteen dialogs. Narrative
+split rows, metric/value panels, plain and numbered lists, card blocks, icon
+grids, and progress/system diagrams now derive their wash, tint, ink, inset
+edge, radius, and density from each case study's existing theme variables.
+Hydra's loose `Why Hydra?` art-and-paragraph block is a paired composition;
+DentalPlans' four proof metrics, Value Created panel, and framework bands use
+the same hierarchy. Existing images, diagrams, factual copy, labels, modal
+behavior, and dedicated case-study content remain unchanged. No UI-label or
+copy-register change was needed.
+
+Two clean production builds passed Next 15.5.25 compilation, TypeScript/build
+lint, export preparation, and verification of 288 images and 104 active
+references. Authored-source ESLint and Git whitespace checks passed. The
+in-app browser reviewed screenshots from every dialog at desktop and checked
+all fourteen at 390x844 plus 200% root text; every reading area reported zero
+horizontal overflow. Hydra and DentalPlans before/after captures and the
+normalized comparison board are in
+`docs/reviews/modal-quiet-prism-20260920/`. Axe-core 4.11.3 found zero detected
+WCAG 2 A/AA violations in each open dialog. Escape returned exact focus to the
+Hydra trigger, reduced-motion emulation found no active dialog animation
+styles, and browser warnings/errors were zero. Detailed Product Design QA is in
+`design-qa.md`, final result passed. Physical touch, Safari/Firefox, native
+browser zoom, and screen-reader speech remain unverified.
+
+Preview `http://127.0.0.1:8097/` is running from this worktree's export under
+Python launcher PID 65792. Parent previews 8096 and 8090 were preserved.
+Rollback is the baseline commit above; the new local checkpoint follows this
+STATUS-last write. Fresh Exchange status at 2026-09-21T00:11:26Z had fingerprint
+`9177fa3b488dffc87e127d52e66c2e6ef441831bc245db392b448a3cd8393ad6`,
+with no conflicts. Change event
+`20260920T235704Z-99c8fd69b9dd4af088c20578d0f87b39` records this direction.
+The concurrent design-system documentation and seam/focus tasks are separate,
+non-overlapping worktrees and did not alter this scope. A unique final Exchange
+update follows the commit. No added spending, reset, model download, paid
+fallback, or local inference ran.
+
 ## September 20, 2026: card-edge and action refinement complete locally
 
 Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,

@@ -1,78 +1,85 @@
-# Design QA: card-edge and action refinement
+# Design QA: Quiet Prism modal content
 
-**Source visual truth paths**
+Date: September 20, 2026
 
-- `C:\Users\jacob\AppData\Local\Temp\codex-clipboard-60636f9a-7837-4db4-89dd-a68b44e255e1.png`
-- `C:\Users\jacob\AppData\Local\Temp\codex-clipboard-afbf9c59-3fbb-4125-8cc1-cee2722b9378.png`
-- `C:\Users\jacob\AppData\Local\Temp\codex-clipboard-faf11192-6af5-4b2c-9d71-c8d2b87c3550.png`
-- `C:\Users\jacob\AppData\Local\Temp\codex-clipboard-1ce61cfa-ab57-4dce-b27d-1e7ec6c0b700.png`
+Scope: all fourteen case-study dialogs
 
-**Implementation evidence**
+Source truth: Jacob's browser annotations 3 and 5 in task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, plus the source preview at `http://127.0.0.1:8096/`
 
-- `C:\Users\jacob\AppData\Local\Temp\jm-refined-featured-viewport.png`
-- `C:\Users\jacob\AppData\Local\Temp\jm-refined-how-desktop.png`
-- `C:\Users\jacob\AppData\Local\Temp\jm-refined-how-mobile.png`
-- `C:\Users\jacob\AppData\Local\Temp\jm-refined-enlarged-text.png`
-- Combined source/implementation review: `C:\Users\jacob\AppData\Local\Temp\jm-featured-comparison.png`
+Implementation: `http://127.0.0.1:8097/`
+Comparison: `docs/reviews/modal-quiet-prism-20260920/comparison-hydra-dentalplans.png`
 
-Viewport/state: homepage at 1484 × 1272, 820 × 1180, and 390 × 844 CSS pixels,
-device scale factor 1, reduced-motion preference active. Source images are
-900 × 516, 563 × 474, 94 × 123, and 99 × 121 pixel focused crops rather than
-full matching viewports. The comparison therefore normalizes by matching the
-same card regions and interaction state, not by stretching the source crops.
+## Evidence
+
+The source and implementation were captured in the same in-app browser. Hydra's
+`Why Hydra?` block and DentalPlans' outcomes/value area were scrolled into view in
+each version. Source captures are 2000 x 1125 pixels. Implementation captures are
+2250 x 1719 pixels. The comparison board normalizes them into equal-width columns;
+it is a composition comparison, not a pixel-diff claim. The implementation's main
+responsive pass used a 1440 x 1100 CSS viewport. Phone checks used 390 x 844 CSS
+pixels. Browser density was controlled by the in-app surface and was not asserted
+as 1x.
+
+Full-view evidence:
+
+- `docs/reviews/modal-quiet-prism-20260920/source-hydra-desktop.png`
+- `docs/reviews/modal-quiet-prism-20260920/implementation-hydra-desktop.png`
+- `docs/reviews/modal-quiet-prism-20260920/source-dentalplans-desktop.png`
+- `docs/reviews/modal-quiet-prism-20260920/implementation-dentalplans-desktop.png`
+
+Focused region comparison was not needed beyond the matched viewport captures.
+The target defects are large content regions, and their type, spacing, card edges,
+and grouping remain legible in the comparison board.
 
 ## Findings
 
-No actionable P0, P1, or P2 mismatch remains in the requested surfaces.
+No actionable P0, P1, or P2 differences remain.
 
-- Fonts and typography: existing Manrope/URW treatment, weights, wrapping, and
-  hierarchy are preserved. Long How I work titles wrap without clipping.
-- Spacing and layout rhythm: all nine How I work panels measure 136px at the
-  standard desktop and mobile states and share row/card bottoms. In the
-  enlarged-text check, the longest panel grows to 142.3px while the 360px card
-  remains unclipped and bottom aligned.
-- Colors and visual tokens: Quiet Prism theme gradients, broad translucent waves,
-  per-project inks, and glass opacity remain unchanged. Only border compositing
-  changed from masked overlay edges to single inset raster edges.
-- Image quality and asset fidelity: supplied project imagery, crop positions,
-  animated artwork, and wave art are unchanged. Focused comparison confirms the
-  exposed and doubled lower-corner artifacts are gone.
-- Copy and content: B68 limits card actions to `View` or `Read` plus the existing
-  arrow. Specific accessible card names remain intact.
-- Icons: the featured case-study marker now shares the badges' header row and
-  uses the existing Font Awesome kit. The kit was unavailable in the offline
-  static browser session, as were the page's other Font Awesome icons; layout and
-  semantic behavior were still verified.
+- Fonts and typography: existing Manrope/URW hierarchy and factual copy are
+  preserved. Metric emphasis, card headings, supporting labels, and long list
+  text reflow without horizontal overflow at phone width and at 200% root text.
+- Spacing and layout rhythm: Hydra's loose art-and-paragraph row is now one paired
+  prism composition. DentalPlans' metrics, value statement, and framework bands
+  use a consistent inset edge, radius, padding rhythm, and content density.
+- Colors and visual tokens: every new surface derives tint, wash, edge, and ink
+  from each dialog's existing `featured-*` theme variables. No one-off palette
+  was introduced.
+- Image quality and asset fidelity: all existing evidence images, diagrams, crops,
+  and brand art are unchanged. The redesign adds layout surfaces only.
+- Copy and content: no labels, prose, metrics, or factual data changed. No copy
+  register entry was required.
+- Affordances and behavior: dialog opening, reading-area scrolling, Escape close,
+  focus return, and reduced motion are preserved. The Hydra trigger regained focus
+  after Escape. Reduced-motion emulation found no active dialog animation styles.
+- Accessibility: axe-core 4.11.3 found zero WCAG 2 A/AA violations in each of the
+  fourteen open dialogs. This automated result is bounded and is not a conformance
+  claim.
 
 ## Comparison history
 
-Initial evidence showed independently antialiased outer clipping, a rounded
-glass-panel corner, and masked one-pixel borders meeting at the same pixels. It
-also showed unequal lower-panel heights and a long featured-card action.
-
-Fixes applied: removed masked border compositing, made the outer card the sole
-rounded clip, removed the inner panel's duplicate bottom radius, used one inset
-edge, set a shared panel minimum, replaced the dependency-sensitive How I work
-arrow with the existing SVG arrow, shortened B68 actions, and moved the new
-case-study icon into the badge row.
-
-Post-fix browser evidence shows smooth single edges, zero horizontal overflow,
-all nine card bottoms aligned, visible 24px arrows at desktop/mobile/enlarged
-states, and preserved responsive wrapping. The WebMD modal opened, closed, and
-returned focus to `Open WebMD case study`. Browser console warnings/errors: zero.
+Initial evidence showed legacy white cards, stacked gray list groups, striped
+progress panels, loose split narratives, and inconsistent visual density. The
+first implementation introduced themed prism surfaces for the shared card, list,
+metric, value, diagram, and icon-grid families. The Hydra comparison then exposed
+that narrative split rows whose heading sat in the preceding block were not being
+classified as section cards. The renderer was corrected to identify narrative
+content directly. Post-fix Hydra and DentalPlans captures show the intended paired
+composition and unified proof/value hierarchy.
 
 ## Implementation checklist
 
-- [x] Single-edge card compositing
-- [x] View/Read actions and accessible context
-- [x] Case-study icon aligned with discipline badges
-- [x] Equal lower panels with responsive, unclipped wrapping
-- [x] Desktop, tablet, mobile, enlarged-text, interaction, reduced-motion, and console checks
+- [x] Shared Quiet Prism tokens applied to every modal content-block family
+- [x] Hydra narrative split classified and contained
+- [x] DentalPlans metrics, value card, and system bands unified
+- [x] Fourteen desktop dialog screenshots reviewed
+- [x] Fourteen phone-width overflow checks completed
+- [x] Fourteen enlarged-text checks completed
+- [x] Fourteen WCAG 2 A/AA automated checks completed
+- [x] Escape, focus return, reduced motion, scrolling, and console checked
 
 ## Follow-up polish
 
-No P3 visual follow-up is required for this scope. A connected Font Awesome kit
-session may be used to visually confirm the exact book glyph, but its reserved
-space, alignment, and source class are present.
+No P3 visual follow-up is required for this scope. Physical touch, Safari/Firefox,
+native browser zoom, and screen-reader speech remain outside this local pass.
 
 final result: passed

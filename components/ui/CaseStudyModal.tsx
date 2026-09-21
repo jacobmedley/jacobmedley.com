@@ -791,6 +791,9 @@ const SPLIT_ROW_SECTION_MT_CLASS = { md: 'md:mt-12', lg: 'lg:mt-12' } as const
 
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
+  const hasNarrative = [...block.left, ...block.right].some((c) =>
+    ['text', 'list', 'styled-list', 'card', 'supporting-art', 'icon-grid'].includes(c.type)
+  )
   /*
    * SplitRow was the only block type with no margins. Every other top-level
    * block carries `mb-6`, and a top-level `heading` additionally carries
@@ -809,9 +812,10 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
    */
   const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
-    <div
-      className={cn(
-        'row mb-6',
+      <div
+        className={cn(
+          'row mb-6 modal-media-split',
+          (startsSection || hasNarrative) && 'modal-media-split-section',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
@@ -892,7 +896,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
   return (
     <div className="row text-center mb-6">
       <div className="col">
-        <div className="progress h-full">
+        <div className="progress h-full modal-prism-band">
           <div className={cn('progress-bar progress-bar-striped w-full p-6', BG_SHADE[band.bg])}>
             <h3 className={cn('mb-4', band.textColor && TEXT_SHADE[band.textColor])}>
               {band.icon && (
@@ -928,7 +932,7 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
+    <div className="progress h-full modal-prism-progress" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
           'progress-bar w-full',
@@ -953,7 +957,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
                 {cell.label}
               </strong>
             </p>
-            <div className="progress h-full">
+            <div className="progress h-full modal-prism-progress modal-prism-progress-nested">
               <div
                 className={cn(
                   'progress-bar w-full shadow-[var(--shadow-bs-lg)] py-2',
@@ -1014,7 +1018,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
   return (
     <ListTag
       className={cn(
-        'list-group',
+        'list-group modal-prism-list',
         block.numbered && 'list-group-numbered',
         block.shadow && 'shadow-[var(--shadow-bs-lg)]'
       )}
@@ -1023,7 +1027,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
         <li
           key={i}
           className={cn(
-            'list-group-item flex justify-between items-start',
+            'list-group-item modal-prism-list-item flex justify-between items-start',
             item.bg && BG_LIGHT_25[item.bg]
           )}
         >
@@ -1046,7 +1050,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
 function CardContent({ block }: { block: CardBlock }) {
   return (
-    <div className={cn('card', block.shadow && 'shadow-[var(--shadow-bs-lg)]')}>
+    <div className={cn('card modal-prism-card', block.shadow && 'shadow-[var(--shadow-bs-lg)]')}>
       <div className="card-header">{block.header}</div>
       <div className="card-body">
         {block.rows.map((row) => (

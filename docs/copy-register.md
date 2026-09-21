@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B68. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B69. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2242,3 +2242,20 @@ in-page case-study dialog and `Read` when it navigates to a dedicated reading
 page. Retain the existing graphic right arrow and the card's specific accessible
 name. This does not rename navigation, filters, disclosure controls, or other
 functional actions.
+
+## B69. Quiet Prism design-system reference [APPLIED LOCALLY]
+
+Source: Jacob's September 20 design-system documentation request, task
+`01a0c13f-81c9-7182-8332-4c96e75923e5`. The unlinked local reference route is
+named `Quiet Prism`. Its introduction reads: `A field guide to the surfaces,
+edges, cards, actions and motion already in use across JacobMedley.com.` The
+reference may use short specimen labels and neutral explanatory copy, but it
+does not revise homepage, case-study, employment, credential, or modal copy.
+
+Canonical citation names are: Prism Field, Crossing Tide, Corner Current,
+Frost Pane, Inset Light Edge, Tint Edge, Ribbon Rule, Quiet Label, Discipline
+Pebble, Context Medallion, Trail Arrow, Focus Halo, Spotlight Split, Signal
+Tile, Process Tile, Role Ledger, Practice Stack, Credential Shard, Outcome
+Tile, Story Slate, Reading Sheet, Section Plaque, Evidence Cluster, Metric Lens,
+Value Sheet, and Data Bay. The route marks disabled treatment as undefined
+because the current Quiet Prism source contains no disabled primitive.

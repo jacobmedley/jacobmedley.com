@@ -1,5 +1,43 @@
 # Status
 
+## September 20, 2026: Quiet Prism design-system reference complete locally
+
+Owner: task `01a0c13f-81c9-7182-8332-4c96e75923e5`, isolated worktree e924,
+branch `codex/quiet-prism-design-system-20260920`. Started from exact requested
+baseline `4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree, main,
+push, merge, PR, publication, or deployment action occurred.
+
+Added the unlinked, noindex `/design-system/` Quiet Prism reference. It names and
+maps twelve reusable primitives, eight card families, six modal-relevant reading
+patterns, and the current hover, focus, active, paused, offscreen, reduced-motion,
+forced-color, responsive, and accessibility contracts. B69 records the reference
+copy and citation names. Disabled treatment is explicitly undefined because the
+baseline contains no production Quiet Prism disabled primitive. Existing homepage,
+case-study, modal content, navigation, and production behavior are unchanged.
+
+Production build, Next type/build lint, export preparation, 288-image and
+104-reference verification, authored-source ESLint, and Git whitespace checks
+passed. In-app browser screenshots at 1800x1250, 820x1180, and 390x843 CSS
+viewports found zero horizontal overflow. The state switcher, native Role Ledger
+disclosure, keyboard focus, 44px phone targets, console, and operating-system
+reduced motion were checked; reduced motion produced zero computed animated
+elements. `design-qa.md` records the correction of the initial standalone corner-
+wave motion and small documentation targets; final result passed. Screenshot
+evidence is in `docs/reviews/quiet-prism-design-system-*.png`.
+
+Preview `http://localhost:8098/design-system/` is running from this worktree's
+export under Python listener PID 66232, launched by py PID 31448. Other previews
+on 3016, 8090, 8096, and 8097 were
+preserved. Rollback is the baseline commit above; the new local checkpoint follows
+this STATUS-last write. Fresh Exchange status at 2026-09-21T00:10:02Z was
+`eacc038496e0670458cde1cd00247da95ea265ebd923702e1313f1cfd0035a50`, with no
+conflicts. Concurrent tasks own modal-content redesign and shared interactive-card
+focus refinements; this baseline reference intentionally does not absorb either
+scope and will need reconciliation if those separate changes are later adopted.
+Physical touch, Safari, Firefox, screen-reader speech, and native 200% browser
+zoom remain unverified. No added spending, reset, paid fallback, model download,
+or local inference ran. A unique final Exchange update follows the commit.
+
 ## September 20, 2026: card-edge and action refinement complete locally
 
 Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,

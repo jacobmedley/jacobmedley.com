@@ -75,4 +75,45 @@ No P3 visual follow-up is required for this scope. A connected Font Awesome kit
 session may be used to visually confirm the exact book glyph, but its reserved
 space, alignment, and source class are present.
 
+## Follow-up: section seams and shared card focus bloom
+
+**Source visual truth**
+
+- Browser comments 1 and 2 on `http://127.0.0.1:8096/#full-stack`
+  identified the exposed one-pixel strips at the Case Studies → How I work and
+  How I work → About and experience boundaries.
+- Browser comment 4 showed the prior solid featured-card-only focus outline and
+  requested the translucent animated expansion on every card.
+- `C:\Users\jacob\AppData\Local\Temp\codex-clipboard-e95e8043-7372-4565-aafa-d87b931f4415.png`
+  was reviewed at original resolution as supporting edge evidence.
+
+**Final implementation evidence**
+
+- `C:\Users\jacob\AppData\Local\Temp\jm-work-fullstack-seam-final.png`
+- `C:\Users\jacob\AppData\Local\Temp\jm-fullstack-resume-seam-final.png`
+- `C:\Users\jacob\AppData\Local\Temp\jm-card-focus-bloom-final.png`
+
+Initial browser measurement found each rotated top-wave SVG starting 1 CSS
+pixel *inside* its wrapper, exposing the new section background at the join.
+The final build measures a 1 CSS pixel overlap at both joins at desktop,
+tablet, and mobile widths. Visual review of the two final captures confirms the
+waves are flush across the entire viewport with no exposed horizontal strip.
+
+The previous focus treatment was a static opaque outline limited to featured
+work. The final shared state covers all 28 homepage card surfaces—five featured
+case studies, nine How I work tiles, five experience disclosures, and nine
+education cards—plus the card links on the dedicated case-study index and the
+Quiet Prism banner variant. Keyboard verification confirmed the semantic focus
+target remains the nested button/link while the containing card supplies one
+ring. In motion-enabled state, the ring expands from -2px to 10px and settles at
+6px while the card eases from .997 to 1.008 scale and back to 1 over 720ms. In
+reduced-motion state, the same translucent theme-colored ring remains visible
+without animation. Forced-colors retains a `Highlight` outline.
+
+Responsive checks at the default desktop viewport and the project's tablet and
+mobile breakpoints found zero page-level horizontal overflow. Focus traversal
+was verified on featured cards, How I work tiles, experience disclosures,
+education links, and dedicated case-study cards. Temporary viewport and motion
+emulation were reset after verification.
+
 final result: passed

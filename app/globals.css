@@ -1392,7 +1392,12 @@ html:is(.motion-paused, .motion-hidden) .thinking-art-split-test .thinking-geome
 .thinking-panel { border-radius: 0 0 2rem 2rem; }
 /* Overlap rasterized SVG edges at fractional viewport heights. */
 .waves { display: block; height: calc(10vh + 2px); translate: 0 1px; }
-.waves-wrapper.top .waves { translate: 0 -1px; }
+/* The parent rotation reverses the visual direction of translate. Keeping the
+   positive overlap closes the one-pixel section seam on rotated top waves. */
+.waves-wrapper.top .waves { translate: 0 1px; }
+/* This first divider rotates the SVG instead of its wrapper, so its overlap
+   remains in the opposite local direction. */
+#work .work-wave-reverse .waves { translate: 0 -1px; }
 @media (min-width: 768px) { .waves { height: calc(22vh + 2px); } }
 @media (max-width: 767.98px) {
   #hi .waves, #work .work-wave-reverse .waves { height: calc(16vh + 2px); }

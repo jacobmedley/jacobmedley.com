@@ -144,6 +144,53 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 .cs-site .cs-card-copy, .cs-site .cs-icon-copy { z-index: 1; }
 .cs-site .cs-study-card > [aria-hidden='true'], .cs-site .cs-outcome-card > [aria-hidden='true'] { opacity: .65; }
 
+/* One keyboard-focus language for every interactive card surface. The ring
+   blooms beyond the card without changing layout, then settles translucent. */
+.featured-work-card { --card-focus-color: var(--featured-ink, #527b96); }
+.thinking-thumb { --card-focus-color: var(--thinking-ink, #5a4367); }
+.resume-experience-card { --card-focus-color: var(--resume-ink, #4f3864); }
+.education-card { --card-focus-color: #7e3232; }
+.cs-site :is(.cs-featured, .cs-outcome-card, .cs-study-card, .cs-next-study > a:first-of-type) {
+  --card-focus-color: var(--cs-accent, #644672);
+}
+
+@keyframes card-focus-bloom {
+  0% {
+    outline-color: transparent;
+    outline-offset: -2px;
+    scale: .997;
+  }
+  62% {
+    outline-color: color-mix(in srgb, var(--card-focus-color) 42%, transparent);
+    outline-offset: 10px;
+    scale: 1.008;
+  }
+  100% {
+    outline-color: color-mix(in srgb, var(--card-focus-color) 72%, transparent);
+    outline-offset: 6px;
+    scale: 1;
+  }
+}
+
+:is(
+  .featured-work-card:has(.featured-work-open:focus-visible),
+  .thinking-thumb:focus-visible,
+  .resume-experience-card:has(summary:focus-visible),
+  .education-card:has(a:focus-visible),
+  .cs-site .cs-featured:focus-visible,
+  .cs-site .cs-outcome-card:focus-visible,
+  .cs-site .cs-study-card:focus-visible,
+  .cs-site .cs-next-study > a:first-of-type:focus-visible
+) {
+  outline: 2px solid color-mix(in srgb, var(--card-focus-color) 72%, transparent);
+  outline-offset: 6px;
+  animation: card-focus-bloom 720ms cubic-bezier(.16, 1, .3, 1);
+}
+
+:is(.featured-work-open, .education-card a, .resume-experience-details summary):focus-visible {
+  outline: none;
+}
+
 @media (max-width: 767px) {
   .site-motion-control { bottom: calc(68px + env(safe-area-inset-bottom, 0px)); right: 10px; }
   .cs-site ~ .site-motion-control { bottom: 12px; }
@@ -157,11 +204,31 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
   .site-motion-control { display: none; }
   .cs-index::before { animation: none; }
   .waves .parallax > use { animation: none !important; }
+  :is(
+    .featured-work-card:has(.featured-work-open:focus-visible),
+    .thinking-thumb:focus-visible,
+    .resume-experience-card:has(summary:focus-visible),
+    .education-card:has(a:focus-visible),
+    .cs-site .cs-featured:focus-visible,
+    .cs-site .cs-outcome-card:focus-visible,
+    .cs-site .cs-study-card:focus-visible,
+    .cs-site .cs-next-study > a:first-of-type:focus-visible
+  ) { animation: none; }
 }
 @media (forced-colors: active) {
   .resume-prism-practice, .resume-practice-column, .cs-detail .cs-role-grid,
   .cs-detail .cs-at-glance > div, .cs-detail .cs-results-grid > div,
   .site-motion-control { background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  :is(
+    .featured-work-card:has(.featured-work-open:focus-visible),
+    .thinking-thumb:focus-visible,
+    .resume-experience-card:has(summary:focus-visible),
+    .education-card:has(a:focus-visible),
+    .cs-site .cs-featured:focus-visible,
+    .cs-site .cs-outcome-card:focus-visible,
+    .cs-site .cs-study-card:focus-visible,
+    .cs-site .cs-next-study > a:first-of-type:focus-visible
+  ) { outline-color: Highlight; }
 }
 
 .modal-body:focus-visible { outline: 3px solid #644672; outline-offset: -3px; }

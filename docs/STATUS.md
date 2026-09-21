@@ -1,5 +1,52 @@
 # Status
 
+## September 20, 2026: section seams and shared card focus complete locally
+
+Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,
+branch `codex/card-edge-cta-refinement-20260920`. Continued from clean local
+checkpoint `4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree,
+main, push, merge, PR, publication, or deployment action occurred.
+
+Corrected the rotated top-wave overlap at both annotated joins. The Case Studies
+→ How I work and How I work → About and experience SVGs previously began one CSS
+pixel inside their wrappers; both now overlap the section boundary by one CSS
+pixel, including at fractional viewport heights. Replaced the opaque featured-
+card-only focus outline with one theme-colored translucent focus bloom across all
+28 homepage card surfaces, dedicated case-study card links, the next-study card,
+and Quiet Prism banner variant. The 720ms state expands beyond the card, eases the
+surface from .997 to 1.008 scale, and settles without layout movement. Reduced
+motion keeps the same visible ring without animation; forced colors uses
+`Highlight`. Nested buttons, links, and summaries remain the semantic focus
+targets and no duplicate inner focus box is drawn.
+
+Production build with Next 15.5.25, TypeScript/build lint, static export,
+288-image and 104-reference verification, authored-source ESLint over
+app/components/lib, and Git whitespace checks passed. In-app browser checks
+confirmed -1px overlap at both joins at desktop, tablet, and mobile widths with
+zero page-level horizontal overflow. Keyboard focus was verified on featured
+cards, all How I work tiles, experience disclosures, education links, and the
+dedicated case-study featured/outcome cards. Normal-motion emulation measured the
+bloom at -2px → 10px → 6px outline offset and .997 → 1.008 → 1 scale; the original
+reduced-motion preference and browser viewport were restored. Final captures and
+the source-to-implementation review are in `design-qa.md`, final result passed.
+
+Preview `http://127.0.0.1:8096/#full-stack` is running from this worktree's
+rebuilt export under Python PID 40212. Parent preview
+`http://127.0.0.1:8090/`, PID 52456, was preserved. Rollback is the prior local
+checkpoint `4c2e482c3a706090773e88dd59e8f01595fe7632`; the new commit follows
+this STATUS-last write and will be recorded in the append-only Exchange update.
+
+Jacob's modal comments were deliberately kept out of this patch. Two separate
+Codex worktree tasks were queued: `client-new-thread:82e7485c-6b50-4403-b8c2-f26a1f4269a9`
+for named design-system documentation and
+`client-new-thread:c85163d4-f83b-4fad-9c7e-80f8d55abe55` for the full modal
+content redesign. Fresh Exchange acceptance at 2026-09-21T00:10:21Z had
+fingerprint `eacc038496e0670458cde1cd00247da95ea265ebd923702e1313f1cfd0035a50`,
+no conflicts, and intake event
+`20260920T235818Z-e83ecf3c190041f4a6eed3031c7b9f99`. Shared coordinator files
+were not edited; no peer-awareness claim is made. No added spending, reset,
+model download, paid fallback, or local inference ran.
+
 ## September 20, 2026: card-edge and action refinement complete locally
 
 Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,

@@ -1,5 +1,48 @@
 # Status
 
+## September 22, 2026: layout rhythm follow-up complete
+
+Jacob's six browser comments are implemented. DentalPlans iterations two and
+four now present their three added capabilities in one even desktop row; the
+MVP remains the established three-row stack and iteration three remains 2×2.
+At supporting-art widths below 24rem, the diagrams stack to preserve readable
+labels. The Hydra explanation card is centered at a 768px maximum, and the
+standard rule is restored below `A Shared Language`.
+
+The homepage title/rule gaps were caused by a shared measurement feedback loop,
+not intentional section space. `SectionHeader` had observed the surface whose
+minimum height it was changing, allowing fractional rounding to grow `How I
+work` to 433px and `About and experience` to 599px. It now observes the natural
+inner content plus vertical padding. Both reserves are stable at 211px with the
+same measured 84.07px title-to-rule interval.
+
+Changed files: `components/ui/SectionHeader.tsx`, `app/visual-system.css`,
+`lib/data/projects.ts`, `design-qa.md`, this status, and
+`docs/reviews/layout-rhythm-20260922/`. No visible copy or dependency changed.
+
+Verification actually run: scoped ESLint passed; the final production build,
+type check, static export, 288-image check, and 104-reference check passed;
+`git diff --check` passes after this status write. Browser acceptance at
+1376×915 measured three columns for DentalPlans iterations two and four, one
+column for the MVP, two columns for iteration three, a 768px centered Hydra card
+with 0px center delta, the restored HR, and zero diagram overflow. At 390×844,
+all changed diagrams use one column with zero overflow. Modal open/close and
+cross-modal reopening were exercised. Design QA passed with no open P0/P1/P2.
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, worktree 2787, branch
+`codex/modal-content-quiet-prism-20260920`. Rollback point:
+`ee3e45df95a761d660f88281a79ada07713e7f58`. The final local commit follows
+this status write. Existing preview `http://localhost:8097/` remains served from
+this worktree's `out`. No push, merge, PR, publication, or deployment occurred.
+The own lock is released after the local commit. No implementation blocker remains.
+
+Fresh Exchange intake observation: 2026-09-22T04:10:17Z, no conflicts,
+fingerprint `e8da4c49b2bf8641e629e7a199a0b1a2ea10b35a144dd64ac8a0c8044215352f`.
+Changed direction is recorded by event
+`20260922T041040Z-105374fdd60841ecb7ad6c620c11d3cb`. A unique completion
+update will carry the final commit and verification; no remote acknowledgement
+is asserted.
+
 ## September 21, 2026: DentalPlans editorial framework redesign complete
 
 Jacob's sixteen new annotations and instruction to redo only the DentalPlans

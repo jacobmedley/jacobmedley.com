@@ -94,7 +94,7 @@ export interface ProgressDiagramBlock {
 // row.
 export interface SplitRowBlock {
   type: 'split-row'
-  layout?: 'platform-overview' | 'product-iteration'
+  layout?: 'platform-overview' | 'product-iteration' | 'hydra-why'
   left: ProjectMedia[]
   right: ProjectMedia[]
   reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
@@ -842,7 +842,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         left: [
-          { type: 'heading', text: 'A Shared Language', level: 4, showRule: false },
+          { type: 'heading', text: 'A Shared Language', level: 4 },
           {
             type: 'text',
             text: "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products."
@@ -925,6 +925,7 @@ export const projects: Project[] = [
         ],
         leftSpan: 8,
         rightSpan: 16,
+        layout: 'hydra-why',
         surface: true,
         vAlign: 'center',
         hAlign: 'center'

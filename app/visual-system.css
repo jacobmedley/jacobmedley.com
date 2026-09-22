@@ -691,6 +691,7 @@ html body .modal-study-content .modal-value-card h5 + hr.solid-center.modal-valu
 .study-hydra-mark { min-height: 17rem; }
 .study-hydra-mark .featured-hydra-mark { width: clamp(7rem, 42cqi, 11rem); background: var(--featured-ink, #463150); }
 .modal-composite-card { margin-inline: 0; padding: clamp(1.25rem, 2.5cqi, 2rem); }
+.modal-hydra-why { width: min(100%, 48rem); margin-inline: auto; }
 .modal-composite-card .study-hydra-mark { min-height: 12rem; padding: 0; border: 0; background: none; }
 .modal-composite-card .study-hydra-mark .featured-work-card { margin: 0; }
 
@@ -859,9 +860,19 @@ html body .modal-content[data-project-id='dentalplans'] .modal-editorial-copy :i
 .modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(odd):last-child) > span:last-child b {
   width: 100%;
 }
+.modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) > span:last-child b {
+  grid-column: auto;
+  width: 100%;
+}
 .modal-product-iteration [data-supporting-art='dental-mvp-one'] .study-supporting-art-flow {
   grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
+}
+.modal-product-iteration [data-supporting-art='dental-mvp-one'] .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 @media (min-width: 576px) {
@@ -896,4 +907,13 @@ html body .modal-content[data-project-id='dentalplans'] .modal-editorial-copy :i
 @container (max-width: 20rem) {
   .modal-product-iteration .study-iteration-foundation ul,
   .modal-product-iteration .study-supporting-art-flow { grid-template-columns: minmax(0, 1fr); }
+  .modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@container (max-width: 24rem) {
+  .modal-product-iteration .study-supporting-art-flow,
+  .modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

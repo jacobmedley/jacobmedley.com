@@ -271,10 +271,16 @@
   to { transform: translate3d(.8%, 0, 0) scale(1.025); }
 }
 
-.featuredCard:focus-visible,
+@keyframes quiet-prism-focus-bloom {
+  0% { outline-color: transparent; outline-offset: -2px; scale: .997; }
+  62% { outline-color: color-mix(in srgb, var(--focus-tone, #644672) 42%, transparent); outline-offset: 10px; scale: 1.008; }
+  100% { outline-color: color-mix(in srgb, var(--focus-tone, #644672) 72%, transparent); outline-offset: 6px; scale: 1; }
+}
+
 .banner:focus-visible {
-  outline: 3px solid var(--focus-tone, #644672);
-  outline-offset: 4px;
+  outline: 2px solid color-mix(in srgb, var(--focus-tone, #644672) 72%, transparent);
+  outline-offset: 6px;
+  animation: quiet-prism-focus-bloom 720ms cubic-bezier(.16, 1, .3, 1);
 }
 
 .banner {
@@ -400,6 +406,7 @@
   .featuredCard :global(.featured-work-scene) { display: none; }
   .featuredContextIcon { display: grid; }
   .banner:hover, .directionalArrow { translate: none !important; }
+  .banner:focus-visible { animation: none; }
   .edgeShine { display: none; }
 }
 
@@ -518,8 +525,13 @@
   .root .featuredCard:is(:hover, :focus-visible) :global(.featured-work-anchor) { transform: none !important; }
 }
 
-/* Full-card button semantics use a focus ring on their containing article. */
-.featuredCard:has(:focus-visible) { outline: 3px solid var(--focus-tone, #527b96); outline-offset: 4px; }
+/* Full-card button semantics use the shared translucent expansion on their
+   containing article; the overlay button remains the semantic focus target. */
+.featuredCard:has(:focus-visible) {
+  outline: 2px solid color-mix(in srgb, var(--focus-tone, #527b96) 72%, transparent);
+  outline-offset: 6px;
+  animation: quiet-prism-focus-bloom 720ms cubic-bezier(.16, 1, .3, 1);
+}
 .featuredCard { cursor: pointer; }
 
 /* The containing card supplies the single full-card keyboard focus ring. */
@@ -550,4 +562,8 @@
     background: Highlight;
     box-shadow: 0 0 0 .5rem Highlight;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featuredCard:has(:focus-visible) { animation: none; }
 }

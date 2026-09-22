@@ -1,0 +1,226 @@
+{
+  "desktop": {
+    "body": [
+      1308,
+      1308
+    ],
+    "capabilities": [
+      "Plan Data",
+      "Dentist Data",
+      "Search & API",
+      "Microservices",
+      "Promotions",
+      "Deployment"
+    ],
+    "eyebrows": 0,
+    "foundations": [
+      {
+        "icon": "24px",
+        "padding": "22px",
+        "text": "Platform to dateWordPressBootstrapCart"
+      },
+      {
+        "icon": "24px",
+        "padding": "22px",
+        "text": "Platform to dateWordPressBootstrapCartFive BrandsShared Plan DataShared Cart"
+      },
+      {
+        "icon": "24px",
+        "padding": "22px",
+        "text": "Platform to dateWordPressBootstrapCartFive BrandsShared Plan DataShared CartPatternsComponentsMicroservicesProperties"
+      }
+    ],
+    "headings": true,
+    "paragraphLineHeights": [
+      "24px"
+    ],
+    "value": {
+      "bullet": "18px",
+      "margins": [
+        "22px",
+        "22px"
+      ],
+      "title": "22px"
+    },
+    "viewport": [
+      1884,
+      1272
+    ]
+  },
+  "mobile": {
+    "body": [
+      378,
+      378
+    ],
+    "cards": [
+      {
+        "scroll": 344,
+        "width": 344
+      },
+      {
+        "scroll": 346,
+        "width": 346
+      },
+      {
+        "scroll": 346,
+        "width": 346
+      },
+      {
+        "scroll": 346,
+        "width": 346
+      },
+      {
+        "scroll": 346,
+        "width": 346
+      }
+    ],
+    "order": [
+      {
+        "class": "col-24 col-lg-12 modal-editorial-art col-xl-10",
+        "order": "2"
+      },
+      {
+        "class": "col-24 col-lg-12 modal-editorial-copy col-xl-14 self-center",
+        "order": "1"
+      }
+    ],
+    "tiles": [
+      {
+        "scroll": 110,
+        "text": "Plan Data",
+        "width": 110
+      },
+      {
+        "scroll": 110,
+        "text": "Dentist Data",
+        "width": 110
+      },
+      {
+        "scroll": 110,
+        "text": "Search & API",
+        "width": 110
+      },
+      {
+        "scroll": 110,
+        "text": "Microservices",
+        "width": 110
+      },
+      {
+        "scroll": 110,
+        "text": "Promotions",
+        "width": 110
+      },
+      {
+        "scroll": 110,
+        "text": "Deployment",
+        "width": 110
+      }
+    ],
+    "viewport": [
+      390,
+      840
+    ]
+  },
+  "enlarged": {
+    "body": [
+      378,
+      378
+    ],
+    "overflows": [
+      {
+        "client": 94,
+        "scroll": 96,
+        "text": "Search & API"
+      },
+      {
+        "client": 94,
+        "scroll": 116,
+        "text": "Microservices"
+      },
+      {
+        "client": 94,
+        "scroll": 96,
+        "text": "Promotions"
+      },
+      {
+        "client": 94,
+        "scroll": 96,
+        "text": "Deployment"
+      }
+    ]
+  },
+  "tablet": {
+    "body": [
+      948,
+      948
+    ],
+    "cards": [
+      {
+        "client": 885,
+        "scroll": 885
+      },
+      {
+        "client": 887,
+        "scroll": 887
+      },
+      {
+        "client": 887,
+        "scroll": 887
+      },
+      {
+        "client": 887,
+        "scroll": 887
+      },
+      {
+        "client": 887,
+        "scroll": 887
+      }
+    ],
+    "viewport": [
+      1024,
+      900
+    ]
+  },
+  "keyboardFocus": {
+    "active": true,
+    "articleOutline": "none",
+    "buttonOutline": "none",
+    "cueBackground": "rgb(54, 83, 53)",
+    "cueText": "rgb(255, 255, 255)",
+    "focusVisible": true
+  },
+  "keyboardOpen": 1,
+  "focusReturn": "dentalplans",
+  "tabletFinal": {
+    "body": [
+      948,
+      948
+    ],
+    "flow": "185.422px 185.422px",
+    "foundation": "162.422px 162.422px",
+    "viewport": [
+      1024,
+      900
+    ]
+  },
+  "enlargedFinal": {
+    "body": [
+      378,
+      378
+    ],
+    "grid": "224px",
+    "overflows": [],
+    "root": "32px"
+  },
+  "mobileFinal": {
+    "body": [
+      378,
+      378
+    ],
+    "overflows": []
+  },
+  "console": {
+    "errors": [],
+    "warnings": []
+  }
+}

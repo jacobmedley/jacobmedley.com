@@ -1,0 +1,155 @@
+{
+  "origin": "http://localhost:8097",
+  "keyboardTrace": [
+    {
+      "inside": true,
+      "label": "modal-body",
+      "tag": "DIV"
+    },
+    {
+      "inside": true,
+      "label": "btn btn-prime btn-lg rounded-full btn-close-modal",
+      "tag": "BUTTON"
+    },
+    {
+      "inside": true,
+      "label": "Close",
+      "tag": "BUTTON"
+    },
+    {
+      "inside": true,
+      "label": "modal-body",
+      "tag": "DIV"
+    },
+    {
+      "inside": true,
+      "label": "btn btn-prime btn-lg rounded-full btn-close-modal",
+      "tag": "BUTTON"
+    },
+    {
+      "inside": true,
+      "label": "Close",
+      "tag": "BUTTON"
+    },
+    {
+      "inside": true,
+      "label": "modal-body",
+      "tag": "DIV"
+    },
+    {
+      "inside": true,
+      "tag": "BUTTON"
+    }
+  ],
+  "focusReturn": "dentalplans",
+  "axe": [
+    {
+      "id": "webmd",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "dentalplans",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "bumblebeemd",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "hydra",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "opfred",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "split-test",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "call-center-ux",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "marketing-auto",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "workshops",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "roadmap",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "personas",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "wrong",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "reveal",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    {
+      "id": "viva",
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    }
+  ],
+  "reducedMotion": {
+    "matches": true,
+    "newCardWaveAnimation": "none"
+  },
+  "metricContrastOnTint": {
+    "gold": 6.17,
+    "sage": 6.84,
+    "plum": 9.04,
+    "slate": 6.61
+  }
+}

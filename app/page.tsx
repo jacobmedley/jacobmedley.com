@@ -11,7 +11,9 @@ import EducationSection from '@/components/sections/EducationSection'
 export default function Home() {
   return (
     <>
+      <a className="site-skip-link" href="#main-content">Skip to content</a>
       <NavMain />
+      <main id="main-content" tabIndex={-1}>
 
       <section id="hi" className="row-content">
         <HeroSection />
@@ -32,6 +34,7 @@ export default function Home() {
       <div id="education">
         <EducationSection />
       </div>
+      </main>
     </>
   )
 }

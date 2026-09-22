@@ -19,7 +19,7 @@ export default function CaseStudiesSection() {
 
   return (
     <section className="my-work">
-      <WaveSeparator position="top" waveId="wave-work" />
+      <WaveSeparator position="top" waveId="wave-work" className="work-wave-reverse" />
 
       <div className="content">
         <div className="container">
@@ -30,12 +30,15 @@ export default function CaseStudiesSection() {
             titleClassName="mb-0"
           />
 
+          <div className="work-introduction">
+            <p>Five projects across product, brand, and design systems. Open a project for the work, or read the longer stories behind the decisions.</p>
+          </div>
+
           <div className="featured-work-grid">
             {caseStudies.map((project, i) => (
               <Fragment key={project.id}>
                 <WorkCard
                   project={project}
-                  reverse={i % 2 === 1}
                   onOpen={setActiveId}
                 />
                 {i < caseStudies.length - 1 && <hr className="solid-center work-separator" />}

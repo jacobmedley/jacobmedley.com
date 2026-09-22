@@ -143,7 +143,7 @@
 .cs-foundation-parts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; margin-top: 10px; }
 .cs-foundation-parts > span { border: 1px solid #c2b2cd; border-radius: 3px; padding: 9px 3px; font-size: 8px; text-align: center; }
 .cs-practice-heading { font-size: 15px; margin-bottom: 25px; }
-.cs-practice-heading > span { display: block; opacity: .8; }
+.cs-practice-heading > span { display: block; }
 .cs-practice-heading > strong { display: block; font-weight: 500; font-size: 27px; letter-spacing: -.7px; }
 .cs-practice-heading strong span { color: var(--color-third); }
 .cs-practice-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--cs-art-line); border-left: 1px solid var(--cs-art-line); }

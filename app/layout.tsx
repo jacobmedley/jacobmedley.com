@@ -1,8 +1,12 @@
+import { PrismDefinitions } from '@/components/ui/QuietPrism'
+import prismStyles from '@/components/ui/QuietPrism.module.css'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import './visual-system.css'
+import './site-integration.css'
 import MotionControls from '@/components/ui/MotionControls'
+import AtmosphereController from '@/components/ui/AtmosphereController'
 
 export const metadata: Metadata = {
   title: 'Jacob Medley, Product & Design Leader',
@@ -46,7 +50,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body>
+      <body className={prismStyles.root}>
+        <PrismDefinitions />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PC65Z8"
@@ -57,6 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         {children}
         <MotionControls />
+        <AtmosphereController />
       </body>
     </html>
   )

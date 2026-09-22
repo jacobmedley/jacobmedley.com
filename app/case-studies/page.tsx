@@ -27,7 +27,7 @@ export default function CaseStudiesPage() {
       </section>
 
       <StudyCollection studies={previews} outcomes={caseStudyOutcomes} />
-      <section className="cs-perspective cs-container"><span className="cs-eyebrow">A Through-Line</span><hr className="cs-perspective-rule" aria-hidden="true" /><p>“You create velocity by<br className="cs-desktop-break" /> making the work smaller.”</p><hr className="cs-perspective-rule" aria-hidden="true" /><span className="cs-perspective-credit">Jacob Medley // From the platform case study</span></section>
+      <section className="cs-perspective cs-container"><hr className="cs-perspective-rule" aria-hidden="true" /><p>“You create velocity by<br className="cs-desktop-break" /> making the work smaller.”</p><hr className="cs-perspective-rule" aria-hidden="true" /><span className="cs-perspective-credit">Jacob Medley // From the platform case study</span></section>
     </main>
   )
 }

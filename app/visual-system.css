@@ -1,5 +1,6 @@
 /* September 12 system: nested surfaces, theme plaques and finite mechanical motion. */
 :root {
+  --rule-max-width: 80%;
   --nested-icon-size: clamp(2rem, 2.1rem + .8vw, 3rem);
   --nested-icon-gap: clamp(1rem, 1.5vw, 1.5rem);
   --hero-name-size: clamp(1.8rem, 1.2rem + 1.856vw, 3.375rem);
@@ -19,6 +20,9 @@
 .study-supporting-art-flow b > i { font-size: var(--nested-icon-size); }
 .modal-data-panel, .modal-hero-cards, .study-supporting-art { box-shadow: none; }
 .featured-work-copy, .thinking-panel, .study-supporting-art-center { box-shadow: none; }
+.hero-case-studies-link { flex-direction: column; }
+/* Match the existing card-layout container threshold, not a device width. */
+@container (max-width: 819px) { .featured-work-copy .case-study-read { width: 100%; } }
 .modal-icon-grid .card-body i { font-size: var(--nested-icon-size); }
 
 /* Plaques follow the nearest project/section; circles are shared at every scale. */
@@ -116,8 +120,17 @@
 .kinetic-tail-inner { display: flex; width: max-content; gap: .18em; align-items: center; padding-left: .18em; white-space: nowrap; }
 .kinetic-plus { display: block; margin: 0; animation: none; font-family: ui-monospace, monospace; font-weight: 300; line-height: 1; }
 .kinetic-design { display: block; transform-origin: left center; }
-.kinetic-closing { margin: 1rem 0 0; min-height: 2.8em; opacity: 1; transform: none; transition: none; font-size: var(--hero-cta-size); line-height: 1.4; text-wrap: balance; }
-.hero-rule-wrap { width: 25%; margin-inline: auto; padding-block: var(--rule-gap-heading); }
+.kinetic-closing {
+  --hero-follow-gap: clamp(1rem, 2vh, 1.5rem);
+  display: flex; flex-direction: column; align-items: center; gap: var(--hero-follow-gap);
+  margin: 1rem 0 0; min-height: 2.8em; opacity: 1; transform: none; transition: none;
+  font-size: var(--hero-cta-size); line-height: 1.4; text-wrap: balance;
+}
+.kinetic-closing p { margin: 0; }
+.kinetic-better strong { font-weight: 700; }
+.hero-rule-wrap { width: 25%; margin: 0 auto; padding: 0; }
+.hero-rule-wrap .rule-heading { width: 100%; max-width: 100%; margin: 0; }
+.hero-case-studies-link { margin: 0; padding: 0; }
 @container (max-width: 26em) {
   .kinetic-stage { min-height: 2.8em; }
   .kinetic-assembly { flex-direction: column; }
@@ -130,7 +143,7 @@
 }
 
 /* Supplied Hydra silhouette, with editable vectors showing a system changing theme. */
-.featured-hydra-mark { display: block; width: clamp(5.5rem, 9vw, 8rem); aspect-ratio: 1; background: var(--featured-ink); mask: url('/assets/references/hydra-icon.svg') center / contain no-repeat; }
+.featured-hydra-mark { display: block; width: clamp(5.5rem, 9vw, 8rem); aspect-ratio: 1; background: var(--featured-ink); mask: url('/assets/references/hydra-mark.svg') center / contain no-repeat; }
 .featured-work-card-hydra .featured-work-anchor { border: 0; box-shadow: none; background: #fff8; }
 .featured-work-card-hydra .featured-work-drift { animation: none; }
 .featured-work-card-hydra .featured-work-interaction { transform: none !important; }
@@ -178,22 +191,112 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;
 }
 
+/* Modal reading cards reuse CareerStats' Quiet Prism surface:
+   dashboard.css .cs-stat, case-studies.css themes, and CornerWaves.
+   Diagram bands and supporting illustrations keep their authored treatment. */
+.modal-study-content {
+  --card-ink: var(--featured-ink, #463150);
+  --card-tint: var(--featured-light, #e8e1ec);
+  --card-line: var(--featured-mid, #c5b6cf);
+  --card-wave: var(--card-line);
+}
+.modal-study-content [data-prism-tone='plum'] { --card-ink: #463150; --card-tint: #e8e1ec; --card-line: #c5b6cf; }
+.modal-study-content [data-prism-tone='sage'] { --card-ink: #365335; --card-tint: #e0e8db; --card-line: #afc1a7; }
+.modal-study-content [data-prism-tone='gold'] { --card-ink: #635315; --card-tint: #f0e8cf; --card-line: #cfc094; }
+.modal-study-content [data-prism-tone='slate'] { --card-ink: #3f5066; --card-tint: #e1e7ee; --card-line: #b5c2d0; }
+
+.modal-study-content .modal-prism-surface {
+  --card-wave: var(--card-line);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  padding: 1.375rem;
+  border: 1px solid color-mix(in srgb, var(--card-line) 55%, transparent);
+  border-radius: var(--prism-radius);
+  color: var(--prism-ink);
+  background: linear-gradient(135deg, #ffffffa8, var(--card-tint));
+  box-shadow: 0 8px 25px #30293605;
+}
+.modal-prism-surface > :not([aria-hidden='true']) { position: relative; z-index: 1; }
+.modal-study-content :is(.modal-info-card, .modal-metric-card, .modal-value-card)::after { content: none; }
+.modal-prism-surface > :last-child { margin-bottom: 0; }
+
+/* Flat groups: the dialog and one peer card, never another painted group. */
+.modal-study-content :is(.modal-data-panel, .modal-hero-cards) {
+  padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none;
+}
+.modal-data-panel > h4 { margin: 0; }
+.modal-data-grid, .modal-metric-grid { gap: .875rem; }
+.modal-metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@container (max-width: 32rem) { .modal-metric-grid { grid-template-columns: minmax(0, 1fr); } }
+.modal-study-content .modal-metric-card {
+  display: flex; flex-direction: column; align-items: flex-start;
+  min-height: 12.9375rem; text-align: left; color: var(--card-ink);
+}
+.modal-metric-icon { position: relative; z-index: 1; align-self: flex-end; min-height: 1.5rem; font-size: 1.4375rem; line-height: 1; color: var(--card-ink); }
+.modal-metric-card .result {
+  margin: 1.25rem 0 .6875rem;
+  color: var(--card-ink); font-size: clamp(2.625rem, 5cqi, 4rem);
+  line-height: 1; letter-spacing: -.04em; font-weight: 300; overflow-wrap: anywhere;
+}
+.modal-metric-card .result-label { margin: 0; color: inherit; font-size: .875rem; line-height: 1.45; }
+.modal-value-card { display: flex; flex-direction: column; }
+.modal-value-card h5 { margin: 0 0 1.5rem; color: var(--card-ink); font-size: 1.25rem; font-weight: 400; }
+.modal-value-card ul { display: flex; flex: 1; flex-direction: column; justify-content: space-between; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+
+/* Only uncontained prose gets a surface. Art and existing cards stay unwrapped. */
+.modal-media-split { row-gap: 1.5rem; }
+.modal-media-split-section, .modal-content-divider { margin-top: var(--section-rhythm); }
+.modal-content-divider { margin-bottom: var(--section-rhythm); }
+.modal-content-divider hr { margin-block: 0; }
+.modal-section-content > .modal-media-split:first-child { margin-top: 0; }
+.modal-narrative-card { height: 100%; }
+.modal-media-split:has(.modal-narrative-summary) { align-items: stretch; }
+.modal-narrative-summary { display: flex; flex-direction: column; justify-content: center; min-height: 12.9375rem; }
+.modal-narrative-card :is(h3,h4,h5) { color: var(--card-ink); font-weight: 400; }
+.modal-narrative-card > :first-child:not([aria-hidden]) { margin-top: 0; }
+.modal-narrative-card .fa-ul { margin-left: 1.25rem; }
+.modal-study-content .modal-section-content { padding-inline: 0; }
+
+.modal-info-card-icon { border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--card-ink); }
+.modal-info-card { align-items: start; }
+.modal-info-card strong { color: var(--card-ink); font-weight: 500; }
+.modal-prism-list { display: grid; gap: .875rem; padding: 0; border: 0; background: none; box-shadow: none; }
+.modal-prism-list-item { display: flex; gap: .75rem; }
+.modal-prism-list-item > div { min-width: 0; }
+.modal-prism-list-item::before { position: relative; z-index: 1; flex: none; min-width: 1.25rem; white-space: nowrap; color: var(--card-ink); }
+.modal-prism-list-item .font-bold { color: var(--card-ink); font-weight: 500; margin-bottom: .35rem; }
+.modal-prism-list-item ul { margin-top: .75rem; }
+.modal-prism-card .card-header { padding: 0 0 1rem; border: 0; background: none; color: var(--card-ink); font-size: 1.25rem; font-weight: 400; }
+.modal-prism-card .card-body { padding: 0; background: none; }
+.modal-prism-card .card-body > div + div { margin-top: 1rem; padding-top: 1rem; background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat; }
+.modal-prism-card .card-body p:last-child { margin-bottom: 0; }
+.modal-icon-grid .modal-prism-surface { height: 100%; }
+.modal-icon-grid .card-body { padding: 0; }
+.modal-icon-grid .card-body i { color: var(--card-ink); }
+@media (prefers-reduced-motion: reduce) {
+  .modal-prism-surface [data-atmosphere-wave] * { animation: none !important; }
+}
+
 /* Four leadership surfaces and an even two-column Resume layout. */
 .resume-leadership-grid > li { padding: var(--card-pad-y) var(--card-pad-x); gap: var(--nested-icon-gap); background: linear-gradient(125deg, #ffffffd9, color-mix(in srgb, var(--resume-ink) 15%, white)); }
 .resume-leadership-grid h4 { margin: 0; color: var(--resume-ink); font-size: clamp(1.2rem, 1.5vw, 1.5rem); font-weight: 500; line-height: 1.25; }
 .resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
 .resume-leadership-grid p { margin: 0; }
 .row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: start; }
-.resume-experience-divider { margin-block: calc(var(--section-rhythm) / 2); }
+.resume-experience-divider { margin-block: var(--rule-gap-section); }
 .resume-experience-divider + .row.resume-columns { margin-top: 0; }
 .resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
 .resume-timeline::before { content: none; }
 .resume-timeline-entry { padding-left: 0; }
 .resume-timeline-entry + .resume-timeline-entry { margin-top: 1.5rem; }
-.resume-experience-card { cursor: pointer; }
+.resume-experience-card { cursor: pointer; outline: 3px solid transparent; outline-offset: -3px; transition: outline-color 220ms ease-out; }
 /* One crisp, inset focus border; no duplicate summary box or focus glow. */
-.resume-experience-card:focus-within { outline: 2px solid color-mix(in srgb, var(--resume-ink) 65%, white); outline-offset: -2px; }
+.resume-experience-card:focus-within { outline-color: color-mix(in srgb, var(--resume-ink) 85%, white); }
 .resume-experience-details summary:focus-visible { outline: none; }
+@media (prefers-reduced-motion: reduce) { .resume-experience-card { transition: none; } }
+@media (forced-colors: active) { .resume-experience-card:focus-within { outline-color: Highlight; } }
 .resume-experience-header { grid-template-columns: 3rem minmax(0,1fr); gap: var(--nested-icon-gap); padding: var(--card-pad-y) var(--card-pad-x) 1rem; align-items: start; }
 .resume-company-mark { display: grid; width: 3rem; height: 3rem; place-items: center; }
 .resume-brand-logo { width: 100%; height: 100%; }
@@ -217,32 +320,40 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-expertise .fa-ul { columns: 1; }
 .resume-expertise li + li { margin-top: .8rem; }
 .resume-tools-context { margin-bottom: 1rem; }
-@media (min-width: 992px) { .row.resume-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(2rem,4vw,4rem); } }
+@media (min-width: 992px) { .row.resume-columns { grid-template-columns: minmax(0,1.65fr) minmax(18rem,.85fr); gap: clamp(2rem,4vw,4rem); } }
 @media (max-width: 575px) { .resume-experience-header { grid-template-columns: 2.25rem minmax(0,1fr); gap: 1rem; } .resume-company-mark { width: 2.25rem; height: 2.25rem; } }
 
-/* Stable varied tones and spans keep reading order intact as the mosaic restacks. */
-.education-mosaic { display: grid; grid-template-columns: minmax(0,1fr); gap: 1.2rem; align-items: start; }
+/* Native masonry columns follow natural card heights and preserve DOM/tab order. */
+.education-mosaic { --education-gap: 1.2rem; column-count: 1; column-gap: var(--education-gap); }
 .education-card {
-  --edu-tone: #dfc4bf; --education-pad-top: clamp(1.4rem, 2.25vw, 1.9375rem);
+  --edu-tone: #dfc4bf; --education-pad-top: 1.375rem; --education-pad-x: 1.375rem;
   container-type: inline-size; display: flex; flex-direction: column; position: relative;
-  gap: 1rem; min-width: 0; padding: var(--education-pad-top) var(--card-pad-x) 1.25rem;
+  gap: 0; min-width: 0; width: 100%; break-inside: avoid; margin-bottom: var(--education-gap);
+  overflow: hidden; padding: var(--education-pad-top) var(--education-pad-x);
   color: #542f35; border-radius: 1.5rem; background: linear-gradient(125deg, #fff9, var(--edu-tone));
 }
 .education-tone-1 { --edu-tone: #ece0dc; } .education-tone-2 { --edu-tone: #d8c4ce; } .education-tone-3 { --edu-tone: #e8d3c3; } .education-tone-4 { --edu-tone: #e5dcec; }
-.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: .65rem 1rem; align-items: start; }
+.education-card header { display: grid; grid-template-columns: 2.5rem minmax(0,1fr); gap: 0 1rem; align-items: start; padding-right: 2.75rem; }
 .education-card header > i { grid-row: 1 / 3; font-size: 2rem; line-height: 1.2; }
-.education-card header > :is(h4,p) { grid-column: 2; }
-.education-card h4 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
-.education-card h4, .education-card p { overflow-wrap: anywhere; }
+.education-card header > :is(h3,p) { grid-column: 2; }
+.education-card h3 { font-size: clamp(1.15rem,1.35vw,1.4rem); line-height: 1.25; font-weight: 500; margin: 0; }
+.education-card h3, .education-card p { overflow-wrap: anywhere; }
 .education-card p { margin: 0; }
-.education-card hr { width: 100%; margin: 0; }
-.education-card a { align-self: start; color: inherit; padding: .3rem 0; }
+.education-card a {
+  position: absolute; z-index: 2; top: calc(var(--education-pad-top) - .7rem); right: calc(var(--education-pad-x) - .7rem);
+  display: grid; place-items: center; width: 44px; height: 44px; color: inherit; line-height: 1;
+}
 @container (max-width: 18rem) {
   .education-card header > i { grid-row: 1; }
   .education-card header > p { grid-column: 1 / -1; }
 }
-@media (min-width: 600px) { .education-mosaic { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-@media (min-width: 1200px) { .education-mosaic { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 599.98px) {
+  .education-card header { grid-template-columns: minmax(0,1fr); }
+  .education-card header > i { grid-row: auto; }
+  .education-card header > :is(h3,p) { grid-column: 1; }
+}
+@media (min-width: 600px) { .education-mosaic { column-count: 2; } }
+@media (min-width: 1200px) { .education-mosaic { column-count: 3; } }
 /* Dormant compact-header rules must not turn a dark-section title dark on scroll. */
 #education .section-heading-title,
 #education .section-heading-reserve.is-compact .section-heading-title { color: #f5edf0 !important; }
@@ -268,7 +379,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-geometry,.project-geometry > i,.thinking-icon) { animation-play-state: running !important; }
 
 /* A sparse UI sheet: independently floating controls and changing button states. */
-.featured-hydra-mark { width: clamp(7rem,10vw,10rem); filter: drop-shadow(.45px 0 currentColor) drop-shadow(-.45px 0 currentColor); }
+.featured-hydra-mark { width: clamp(7rem,10vw,10rem); }
 .hydra-schematic { animation: hydra-theme 18s ease-in-out infinite; }
 .hydra-component { animation: hydra-float calc(7s + var(--component-index)*1.6s) ease-in-out infinite alternate; animation-delay: calc(var(--component-index)*-1.7s); }
 .hydra-sheet-outline { fill: #ffffff12; stroke: currentColor; stroke-width: 1.3; opacity: .52; }
@@ -435,4 +546,374 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
   .demo-reactive, .demo-reactive::after, .demo-highlight-control button > span { transition: none; }
   .demo-state-copy, .demo-store-banner > span { animation: none; }
   .demo-controls > .demo-help:last-child { display: block; }
+}
+
+/* September 21: naked modal cards and the requested explanatory diagrams. */
+.hero-rule-wrap,
+.hero-case-studies-link { align-self: center; }
+.hero-case-studies-link {
+  display: grid;
+  width: 3rem;
+  min-height: 3rem;
+  place-items: center;
+}
+.hero-case-studies-button { font-size: 2.65rem; line-height: 1; }
+
+/* Shadows belong to the image, so the loaded frame must not clip their edge. */
+.modal-image-frame[data-load-state='loaded'] { overflow: visible; }
+
+.modal-metric-icon { min-height: 2rem; font-size: 2rem; }
+.modal-value-card h5 { margin-bottom: .75rem; }
+html body .modal-study-content .modal-value-card h5 + hr.solid-center.modal-value-rule {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 .75rem;
+}
+.modal-value-card ul {
+  flex: 0 1 auto;
+  justify-content: flex-start;
+  gap: 1.25rem;
+}
+.modal-value-card li {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: .65rem;
+  align-items: start;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.modal-value-card li > i { padding-top: .32em; color: var(--card-ink); font-size: .75rem; }
+
+.modal-progress-frame,
+.modal-progress-frame > .progress-bar {
+  overflow: hidden;
+  border-radius: var(--prism-radius);
+}
+.modal-progress-band-heading { padding-bottom: .75rem; }
+.modal-progress-band-heading > i { display: inline-block; margin-bottom: .35rem; font-size: 2.75rem; line-height: 1; }
+.modal-progress-cell-icon { font-size: 2rem; line-height: 1; }
+.modal-progress-sub-icon { font-size: 1.25rem; line-height: 1; }
+.modal-progress-band-core .modal-progress-cell > strong { font-size: 1rem; }
+
+.modal-study-content .study-supporting-art {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.modal-study-content .study-supporting-art-eyebrow {
+  position: static;
+  margin: 0 0 .75rem;
+  color: var(--featured-ink, #5a5063);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.modal-study-content .study-supporting-art-diagram {
+  position: static;
+  display: block;
+  inset: auto;
+}
+.modal-study-content .study-supporting-art-flow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+}
+.modal-study-content .study-supporting-art-flow > span { display: contents; }
+.modal-study-content .study-supporting-art-flow b,
+.study-ecosystem-center,
+.study-ecosystem-node b,
+.study-hydra-mark {
+  display: grid;
+  min-width: 0;
+  min-height: 8.5rem;
+  grid-template-rows: auto auto;
+  gap: .65rem;
+  place-items: center;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--featured-mid, #c5b6cf) 65%, white);
+  border-radius: var(--prism-radius);
+  color: var(--featured-ink, #463150);
+  background: linear-gradient(145deg, #ffffffdb, color-mix(in srgb, var(--featured-light, #e8e1ec) 82%, white));
+  box-shadow: none;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+.modal-study-content .study-supporting-art-flow b > small {
+  display: block;
+  color: inherit;
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.modal-study-content .study-supporting-art-flow b > i,
+.study-ecosystem-center > i,
+.study-ecosystem-node b > i { margin: 0; transform: none; font-size: 2.5rem; font-weight: 100; }
+
+.study-ecosystem { display: grid; gap: .75rem; }
+.study-ecosystem-center { min-height: 7.25rem; }
+.study-ecosystem-bridge { justify-self: center; color: var(--featured-ink, #645b70); font-size: 1.25rem; }
+.study-ecosystem-nodes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.study-ecosystem-node { display: grid; min-width: 0; }
+.study-ecosystem-node b { min-height: 7.25rem; }
+.study-ecosystem-nodes:has(.study-ecosystem-node:nth-child(odd):last-child) .study-ecosystem-node:last-child {
+  grid-column: 1 / -1;
+  width: calc(50% - .375rem);
+  justify-self: center;
+}
+
+.study-iteration { display: grid; gap: .75rem; }
+.study-iteration-foundation {
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--featured-mid, #c5b6cf) 65%, white);
+  border-radius: var(--prism-radius);
+  color: var(--featured-ink, #463150);
+  background: linear-gradient(145deg, #ffffffdb, color-mix(in srgb, var(--featured-light, #e8e1ec) 82%, white));
+}
+.study-iteration-foundation > strong { display: block; margin-bottom: .75rem; font-size: .875rem; font-weight: 600; }
+.study-iteration-foundation ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem .75rem; margin: 0; padding: 0; list-style: none; }
+.study-iteration-foundation li { display: flex; min-width: 0; align-items: center; gap: .5rem; font-size: .75rem; line-height: 1.3; }
+.study-iteration-foundation li > i { flex: none; width: 1.25rem; font-size: 1rem; text-align: center; }
+.modal-study-content .study-iteration-added { margin: .25rem 0 0; color: var(--featured-ink, #463150); font-size: .75rem; font-weight: 600; }
+.study-supporting-art-is-iteration .study-supporting-art-flow:has(> span:nth-child(odd):last-child) > span:last-child b {
+  grid-column: 1 / -1;
+  width: calc(50% - .375rem);
+  justify-self: center;
+}
+
+.study-hydra-mark { min-height: 17rem; }
+.study-hydra-mark .featured-hydra-mark { width: clamp(7rem, 42cqi, 11rem); background: var(--featured-ink, #463150); }
+.modal-composite-card { margin-inline: 0; padding: clamp(1.25rem, 2.5cqi, 2rem); }
+.modal-hydra-why { width: min(100%, 48rem); margin-inline: auto; }
+.modal-composite-card .study-hydra-mark { min-height: 12rem; padding: 0; border: 0; background: none; }
+.modal-composite-card .study-hydra-mark .featured-work-card { margin: 0; }
+
+.modal-subsection-heading {
+  margin-top: clamp(1.75rem, 3cqi, 2.5rem);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+html body .modal-subsection-heading + .modal-subsection-rule {
+  margin-block: .5rem .75rem;
+}
+
+.modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow {
+  display: flex;
+  align-items: stretch;
+  gap: .5rem;
+}
+.modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow > span {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  align-items: center;
+  gap: .5rem;
+}
+.modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow b { min-height: 8rem; flex: 1 1 auto; }
+.modal-study-content .study-supporting-art-is-flow .study-supporting-art-arrow {
+  display: inline-block;
+  flex: none;
+  margin: 0;
+  color: var(--featured-ink, #645b70);
+  font-size: 1rem;
+  transform: none;
+}
+
+@container (max-width: 28rem) {
+  .study-ecosystem-nodes,
+  .modal-study-content .study-supporting-art-flow { grid-template-columns: minmax(0, 1fr); }
+  .modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow > span { flex-direction: column; }
+  .modal-study-content .study-supporting-art-is-flow .study-supporting-art-arrow { transform: rotate(90deg); }
+  .modal-study-content .study-supporting-art-is-flow .study-supporting-art-flow b { width: 100%; min-height: 6.5rem; }
+  .study-iteration-foundation ul { grid-template-columns: minmax(0, 1fr); }
+  .study-ecosystem-nodes:has(.study-ecosystem-node:nth-child(odd):last-child) .study-ecosystem-node:last-child,
+  .study-supporting-art-is-iteration .study-supporting-art-flow:has(> span:nth-child(odd):last-child) > span:last-child b { width: 100%; }
+}
+
+@media (max-width: 575px) {
+  .demo-highlight-control { flex-direction: row; justify-content: end; gap: .65rem; }
+}
+
+/* September 20: shared horizontal rules, centered and capped at 80%.
+   Borders/underlines on interactive controls are not section rules. */
+html body hr,
+html body hr[class] {
+  width: var(--rule-max-width);
+  max-width: var(--rule-max-width);
+  margin-inline: auto;
+  border: 0;
+  height: 1px;
+  background: var(--surface-rule);
+  color: var(--modal-rule, var(--section-ink, currentColor));
+}
+html body hr.light { color: #fff; }
+html body :is(.resume-experience-card, .resume-leadership-grid > li)::before,
+html body :is(.resume-experience-card, .resume-leadership-grid > li)::after,
+html body .resume-experience-details summary::before {
+  left: 10%; right: 10%; width: auto;
+  background: var(--surface-rule);
+}
+
+/* DentalPlans: editorial reading widths and diagrams that fill their columns.
+   Scoped to this study; the 992px breakpoint matches the existing lg splits. */
+.modal-content[data-project-id='dentalplans'] .modal-intro-copy p,
+.modal-content[data-project-id='dentalplans'] .modal-study-content p:not(.result):not(.display-4) {
+  line-height: 1.5rem;
+}
+.modal-content[data-project-id='dentalplans'] .modal-value-card h5 { font-size: 1.375rem; }
+.modal-content[data-project-id='dentalplans'] .modal-value-card li { font-size: 1.125rem; }
+html body .modal-content[data-project-id='dentalplans'] .modal-value-card ul { margin-block: 1.375rem; }
+html body .modal-content[data-project-id='dentalplans'] .modal-value-card h5 + hr.modal-value-rule {
+  margin-bottom: 0;
+}
+
+.modal-content[data-project-id='dentalplans'] :is(.modal-platform-overview, .modal-product-iteration) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-inline: auto;
+}
+.modal-content[data-project-id='dentalplans'] :is(.modal-editorial-art, .modal-editorial-copy) {
+  grid-column: auto;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+}
+.modal-content[data-project-id='dentalplans'] .modal-platform-overview {
+  padding: clamp(1.375rem, 3cqi, 2.75rem);
+}
+.modal-platform-overview .modal-editorial-copy .modal-narrative-card {
+  padding: clamp(1.375rem, 2.5cqi, 2rem);
+  border: 0;
+  box-shadow: none;
+}
+.modal-platform-overview .study-ecosystem { gap: 0; }
+.modal-platform-overview .study-ecosystem-title {
+  color: var(--featured-ink);
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: center;
+}
+html body .modal-platform-overview .study-ecosystem > hr { margin-block: 1.25rem 1.75rem; }
+.modal-platform-overview .study-ecosystem-nodes {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.modal-platform-overview .study-ecosystem-node b {
+  min-height: 8rem;
+  padding: 1.25rem .5rem;
+  align-content: center;
+  gap: .875rem;
+  font-size: .9375rem;
+}
+.modal-platform-overview .modal-editorial-copy h4 { margin: 0; font-size: 1.375rem; }
+.modal-platform-overview .modal-editorial-copy .fa-ul { margin-bottom: 0; }
+.modal-platform-overview .modal-editorial-copy li { margin-bottom: .75rem; line-height: 1.5rem; }
+.modal-platform-overview .modal-editorial-copy li:last-child { margin-bottom: 0; }
+
+.modal-content[data-project-id='dentalplans'] .modal-product-iteration {
+  max-width: 70rem;
+  padding-block: 1rem;
+}
+.modal-product-iteration .modal-editorial-copy { order: 1; }
+.modal-product-iteration .modal-editorial-art { order: 2; }
+.modal-product-iteration .modal-editorial-copy > h4 { margin-bottom: 0; line-height: 1.3; }
+.modal-product-iteration .modal-editorial-copy > h4:first-child { font-size: 1.5rem; text-wrap: balance; }
+.modal-product-iteration .modal-editorial-copy > .modal-subsection-heading {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+}
+html body .modal-content[data-project-id='dentalplans'] .modal-editorial-copy :is(h4, .modal-subsection-heading) + hr {
+  width: 100%;
+  max-width: 100%;
+  margin: .875rem 0 1rem;
+}
+.modal-product-iteration .modal-editorial-copy > p { margin-bottom: 1rem; }
+.modal-product-iteration .modal-editorial-copy > :last-child { margin-bottom: 0; }
+.modal-product-iteration .study-iteration { width: 100%; gap: 1.25rem; }
+.modal-product-iteration .study-iteration-foundation { padding: 1.375rem; }
+.modal-product-iteration .study-iteration-foundation > strong { margin-bottom: 1.25rem; font-size: 1rem; }
+.modal-product-iteration .study-iteration-foundation ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.25rem; }
+.modal-product-iteration .study-iteration-foundation li { gap: .75rem; font-size: .875rem; line-height: 1.5; }
+.modal-product-iteration .study-iteration-foundation li > i { width: 1.75rem; font-size: 1.5rem; }
+.modal-product-iteration .study-iteration-added { margin: .25rem 0 -.5rem; font-size: .875rem; }
+.modal-product-iteration .study-supporting-art-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.modal-product-iteration .study-supporting-art-flow b {
+  min-height: 8.5rem;
+  padding: 1.5rem;
+  gap: .875rem;
+  align-content: center;
+  font-size: 1rem;
+}
+.modal-product-iteration .study-supporting-art-flow b > small { font-size: .875rem; }
+.modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(odd):last-child) > span:last-child b {
+  width: 100%;
+}
+.modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) > span:last-child b {
+  grid-column: auto;
+  width: 100%;
+}
+.modal-product-iteration [data-supporting-art='dental-mvp-one'] .study-supporting-art-flow {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+.modal-product-iteration [data-supporting-art='dental-mvp-one'] .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 576px) {
+  .modal-platform-overview .study-ecosystem-nodes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 992px) {
+  .modal-content[data-project-id='dentalplans'] .modal-platform-overview {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 4cqi, 3.5rem);
+  }
+  .modal-content[data-project-id='dentalplans'] .modal-product-iteration {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(3rem, 6cqi, 5.5rem);
+    padding-inline: 1.5rem;
+  }
+  .modal-product-iteration .modal-editorial-art { order: 1; }
+  .modal-product-iteration .modal-editorial-copy { order: 2; }
+  .modal-product-iteration.modal-editorial-reverse .modal-editorial-copy { order: 1; }
+  .modal-product-iteration.modal-editorial-reverse .modal-editorial-art { order: 2; }
+  .modal-product-iteration .modal-editorial-copy { max-width: 32rem; justify-self: start; }
+  .modal-product-iteration.modal-editorial-reverse .modal-editorial-copy { justify-self: end; }
+}
+
+/* Each supporting-art block is already an inline-size container. Respond to
+   its actual reading space, including enlarged text, rather than screen width. */
+@container (max-width: 26rem) {
+  .modal-platform-overview .study-ecosystem-nodes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 14rem) {
+  .modal-platform-overview .study-ecosystem-nodes { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 20rem) {
+  .modal-product-iteration .study-iteration-foundation ul,
+  .modal-product-iteration .study-supporting-art-flow { grid-template-columns: minmax(0, 1fr); }
+  .modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@container (max-width: 24rem) {
+  .modal-product-iteration .study-supporting-art-flow,
+  .modal-product-iteration .study-supporting-art-flow:has(> span:nth-child(3):last-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

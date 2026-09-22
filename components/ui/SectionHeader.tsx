@@ -8,7 +8,7 @@ interface SectionHeaderProps {
   icon: string
   /** Color utilities for the header row (e.g. legacy text-second-dark) */
   className?: string
-  /** Extra classes for the h3 (legacy work adds mb-0, education adds text-fourth-light) */
+  /** Extra classes for the h2 (legacy work adds mb-0, education adds text-fourth-light) */
   titleClassName?: string
   /** Extra classes for the icon (education uses text-fourth-light) */
   iconClassName?: string
@@ -31,22 +31,27 @@ export default function SectionHeader({
   const sentinelRef = useRef<HTMLSpanElement>(null)
   const reserveRef = useRef<HTMLDivElement>(null)
   const surfaceRef = useRef<HTMLDivElement>(null)
+  const innerRef = useRef<HTMLDivElement>(null)
   const [compact, setCompact] = useState(false)
 
   useLayoutEffect(() => {
     const reserve = reserveRef.current
     const surface = surfaceRef.current
-    if (!reserve || !surface) return
+    const inner = innerRef.current
+    if (!reserve || !surface || !inner) return
 
     const measure = () => {
       if (!reserve.classList.contains('is-compact')) {
-        reserve.style.setProperty('--section-heading-expanded-height', `${Math.ceil(surface.getBoundingClientRect().height)}px`)
+        const styles = getComputedStyle(surface)
+        const verticalPadding = Number.parseFloat(styles.paddingTop) + Number.parseFloat(styles.paddingBottom)
+        const naturalHeight = Math.ceil(inner.getBoundingClientRect().height + verticalPadding)
+        reserve.style.setProperty('--section-heading-expanded-height', `${naturalHeight}px`)
       }
     }
 
     measure()
     const observer = new ResizeObserver(measure)
-    observer.observe(surface)
+    observer.observe(inner)
     return () => observer.disconnect()
   }, [])
 
@@ -79,11 +84,11 @@ export default function SectionHeader({
       <span ref={sentinelRef} className="section-heading-sentinel" aria-hidden="true" />
       <div ref={reserveRef} className={cn('section-heading-reserve', compact && 'is-compact')}>
         <div ref={surfaceRef} className={cn('section-heading-surface', className)}>
-          <div className="section-heading-inner">
+          <div ref={innerRef} className="section-heading-inner">
             <p className="section-heading-icon">
               <i className={cn(icon, iconClassName)} aria-hidden="true" />
             </p>
-            <h3 className={cn('section-heading-title', titleClassName)}>{title}</h3>
+            <h2 className={cn('section-heading-title', titleClassName)}>{title}</h2>
           </div>
         </div>
       </div>

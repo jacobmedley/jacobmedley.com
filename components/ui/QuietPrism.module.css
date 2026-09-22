@@ -1,0 +1,553 @@
+/* Shared production primitives extracted from Quiet Prism 5fba784. */
+.root {
+  --prism-ink: #34313b;
+  --prism-muted: #676272;
+  --prism-purple: #644672;
+  --prism-blue: #dcecf4;
+  --prism-green: #dce8d8;
+  --prism-gold: #f5e8b8;
+  --prism-rose: #efdddf;
+  --prism-card-body: 1.0625rem;
+  --prism-card-action: 1rem;
+  --prism-card-detail: .875rem;
+  --prism-card-arrow: 1.5rem;
+  --prism-wave-chroma: 1.3;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--prism-purple);
+  font-size: .76rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: .08em;
+  text-transform: none;
+}
+
+.featuredCard {
+  --focus-tone: #527b96;
+  color: var(--prism-ink);
+  text-decoration: none;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(18rem, .88fr) minmax(0, 1.12fr);
+  gap: 0;
+  overflow: hidden;
+  min-height: 28.2rem;
+  padding: 0;
+  border: 1px solid #ffffffcc;
+  border-radius: 1.75rem;
+  background: linear-gradient(145deg, var(--featured-light) 0%, var(--featured-mid) 58%, var(--featured-dark) 100%);
+  box-shadow: 0 1.25rem 3.5rem #37303f14;
+}
+
+.featuredCard > :global(.featured-work-art),
+.featuredCard > :global(.featured-work-copy) {
+  z-index: 3;
+}
+
+.prismWave {
+  position: absolute;
+  z-index: 0;
+  inset: -3% -2%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .72;
+  transform: translate3d(-.75%, 0, 0) scale(1.02);
+  transform-origin: center;
+  animation: prism-drift 36s ease-in-out infinite alternate;
+}
+
+.prismWave img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.featuredCard .prismWave {
+  inset: auto -1.5% -2%;
+  height: 72%;
+  mask-image: linear-gradient(to bottom, transparent, #000 22%);
+  opacity: .94;
+  mix-blend-mode: multiply;
+  animation: featured-light-drift 28s ease-in-out infinite alternate;
+}
+
+.featuredCard .prismWave img {
+  object-position: center bottom;
+}
+
+.featuredCard .prismWave img {
+  filter: saturate(var(--prism-wave-chroma)) contrast(1.06);
+}
+
+.featuredArt {
+  display: grid;
+  grid-template-rows: 4.75rem minmax(12rem, 1fr) auto;
+  place-items: unset;
+  min-height: 26.75rem;
+  padding: 1.5rem 1.4rem 1.35rem 1.6rem;
+}
+
+.featuredContextIcon {
+  display: none;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border: 1px solid #507c9436;
+  border-radius: 50%;
+  background: #edf8fb70;
+  color: #4e7e99;
+  font-size: 2rem;
+}
+
+.featuredArt :global(.featured-work-anchor) {
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.featuredIdentity {
+  grid-row: 3;
+  align-self: end;
+  justify-self: start;
+}
+
+.featuredIdentity h3 {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  margin: .18rem 0 .25rem;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+
+.featuredIdentity .eyebrow {
+  color: #34313b;
+  font-size: .8125rem;
+  letter-spacing: .18em;
+  text-transform: none;
+}
+
+.directionalArrow {
+  flex: none;
+  width: var(--prism-card-arrow);
+  height: var(--prism-card-arrow);
+  transition: translate 420ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.featuredIdentity > p:last-child {
+  margin: 0;
+  color: #34313b;
+  font-size: var(--prism-card-body);
+}
+
+.featuredCopy {
+  align-self: stretch;
+  margin: 1.5rem 1.5rem 1.5rem 0;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  padding-bottom: 1.625rem;
+  border-color: transparent;
+  background: linear-gradient(to bottom left, #ffffffdf, #eff8fc45);
+  box-shadow: inset 0 1px 2px #ffffffed, inset 0 -1px 2px #7897a455, 0 .4rem 1.2rem #36566b12;
+  -webkit-backdrop-filter: blur(5px) saturate(125%);
+  backdrop-filter: blur(5px) saturate(125%);
+  backdrop-filter: url('#quiet-prism-frost') blur(5px) saturate(125%);
+  background-clip: padding-box;
+}
+
+.filterDefinitions { position: absolute; pointer-events: none; }
+.featuredCopy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(to bottom left, #ffffff35, transparent 70%);
+}
+
+.featuredCopy::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--featured-ink) 24%, white);
+}
+
+.featuredMeta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+  width: 100%;
+}
+
+.featuredMeta :global(.portfolio-badges) {
+  margin: 0;
+}
+
+.featuredCopy :global(.portfolio-badges) > span {
+  color: #3c5668;
+  font-size: .8125rem;
+  font-weight: 400;
+  min-height: 27px;
+}
+
+.featuredCopy :global(.featured-work-heading) {
+  width: 100%;
+  max-width: none;
+}
+
+.featuredCopy :global(.h2) {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+}
+
+.featuredCopy :global(.featured-work-summary) {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  color: #34313b;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.featuredExternal {
+  display: grid;
+  flex: 0 0 2.5rem;
+  width: 2.5rem;
+  min-height: 2.5rem;
+  place-items: center;
+  color: #36566b;
+  font-size: 2rem;
+}
+
+.featuredFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1.35rem;
+  color: #6f94a8;
+  background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat;
+}
+
+.featuredFooter > span:last-child {
+  margin-left: auto;
+  color: #18151d;
+  font-size: var(--prism-card-detail);
+  white-space: nowrap;
+}
+
+.featuredFooter > span b {
+  margin-inline: .35rem;
+  font-weight: 400;
+  opacity: .55;
+}
+
+.featuredLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .9rem;
+  min-height: 44px;
+  color: #2d4658;
+  font-size: var(--prism-card-action);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.featuredCard:is(:hover, :focus-visible) .directionalArrow {
+  translate: .3rem 0;
+}
+
+@keyframes prism-drift {
+  to { transform: translate3d(.75%, 0, 0) scale(1.02); }
+}
+
+@keyframes featured-light-drift {
+  from { transform: translate3d(-.6%, 0, 0) scale(1.025); }
+  to { transform: translate3d(.8%, 0, 0) scale(1.025); }
+}
+
+.featuredCard:focus-visible,
+.banner:focus-visible {
+  outline: 3px solid var(--focus-tone, #644672);
+  outline-offset: 4px;
+}
+
+.banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #ffffffd6;
+  box-shadow: 0 .75rem 2rem #37303f0d, inset 0 0 0 1px #ffffff73;
+}
+
+.banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-content: start;
+  min-height: 24rem;
+  width: 100%;
+  border-radius: 1.35rem;
+  padding: 1.35rem;
+  color: inherit;
+  text-align: left;
+  transition: translate 420ms cubic-bezier(.16, 1, .3, 1), box-shadow 520ms cubic-bezier(.16, 1, .3, 1), background-color 520ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.banner[href] {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.banner.gold { --focus-tone: #a78332; --card-ink: #73530f; --card-tint: var(--prism-gold); --card-wave: #caba72; }
+.banner.green { --focus-tone: #5f8062; --card-ink: #346b45; --card-tint: var(--prism-green); --card-wave: #8ca98a; }
+.banner.purple { --focus-tone: #765486; --card-ink: #665181; --card-tint: #ddd2ed; --card-wave: #afa0c4; }
+.banner.rose { --focus-tone: #966872; --card-ink: #87535e; --card-tint: var(--prism-rose); --card-wave: #bd8e93; }
+
+.banner:is(.gold, .green, .purple, .rose) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--card-tint) 80%, #fff) 0%, color-mix(in srgb, var(--card-tint) 48%, #fff) 48%, #fdfcfb 100%);
+}
+
+.banner .bannerCopy > span:last-child {
+  color: #494550;
+  font-size: var(--prism-card-body);
+}
+
+.banner:hover {
+  translate: 0 -.18rem;
+  box-shadow: 0 1rem 2.4rem #37303f13, inset 0 0 0 1px #ffffff8c;
+}
+
+.banner > :not(.cornerTop) {
+  position: relative;
+  z-index: 1;
+}
+
+.bannerContext {
+  display: grid;
+  place-items: center;
+  width: 4.75rem;
+  height: 4.75rem;
+  border: 1px solid #5d536024;
+  border-radius: 50%;
+  background: #ffffff91;
+  color: #5e4767;
+}
+
+.banner .bannerContext {
+  width: 4.5rem;
+  height: 4.5rem;
+  color: var(--card-ink);
+}
+
+.bannerContext i {
+  font-size: 1.8rem;
+}
+
+.bannerCopy {
+  display: grid;
+  align-content: start;
+  gap: .65rem;
+  min-width: 0;
+}
+
+.bannerCopy .eyebrow {
+  color: var(--card-ink);
+  font-size: .72rem;
+  letter-spacing: .16em;
+}
+
+.bannerCopy strong {
+  max-width: 13ch;
+  font-size: clamp(1.35rem, 2vw, 1.72rem);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.bannerCopy > span:last-child {
+  color: #55505e;
+  line-height: 1.45;
+}
+
+.bannerAction {
+  display: inline-flex;
+  align-items: center;
+  align-self: end;
+  justify-self: start;
+  gap: .8rem;
+  color: #353e49;
+  font-size: var(--prism-card-action);
+  font-weight: 500;
+}
+
+.banner[href]:hover .directionalArrow,
+.banner[href]:focus-visible .directionalArrow {
+  translate: .3rem 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .root [data-atmosphere], .root [data-atmosphere] *, .root [data-atmosphere] *::before, .root [data-atmosphere] *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .root .prismWave, .root [data-atmosphere-wave] { transform: none; }
+  .featuredCard :global(.featured-work-scene) { display: none; }
+  .featuredContextIcon { display: grid; }
+  .banner:hover, .directionalArrow { translate: none !important; }
+  .edgeShine { display: none; }
+}
+
+@media (min-width: 821px) and (max-width: 1100px) {
+  .banner {
+    padding: 1rem;
+  }
+
+  .bannerAction {
+    gap: .5rem;
+  }
+}
+
+@media (max-width: 820px) {
+
+  .featuredCard {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .featuredArt {
+    min-height: 24rem;
+    padding: 1.25rem;
+  }
+
+  .featuredCopy {
+    margin: 0 1rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .featuredFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .featuredFooter > span:last-child {
+    margin-left: 0;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .banner {
+    min-height: 22rem;
+    padding: 1.25rem;
+  }
+
+  .bannerContext {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+}
+.cornerTop, .cornerBottom {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: min(100%, 36rem);
+  height: auto;
+  aspect-ratio: 2 / 1;
+  color: var(--card-wave);
+  overflow: hidden;
+}
+.cornerTop { top: 0; right: 0; }
+.cornerBottom { bottom: 0; left: 0; rotate: 180deg; }
+.cornerTop > span, .cornerBottom > span {
+  display: block;
+  width: 104%;
+  margin-left: -2%;
+}
+.cornerTop svg, .cornerBottom svg { width: 100%; height: auto; display: block; }
+.cornerLayer { animation: corner-layer-drift 16s ease-in-out infinite alternate; }
+.cornerLayer:nth-child(2) { animation-duration: 21s; animation-delay: -8s; animation-direction: alternate-reverse; }
+.cornerLayer:nth-child(3) { animation-duration: 25s; animation-delay: -17s; }
+@keyframes corner-layer-drift { from { transform: translate(-8px, -4px); } to { transform: translate(8px, 5px); } }
+.edgeShine {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px #ffffffb8;
+  opacity: calc(.2 + var(--atmosphere-shine, 0) * .65);
+  animation: edge-light 27s ease-in-out infinite alternate;
+}
+@keyframes edge-light { from { filter: brightness(.98); } to { filter: brightness(1.08); } }
+.root .featuredCard :global(.featured-work-scene) { z-index: 1; opacity: .42; }
+.root .featuredCard :global(.featured-work-drift) { animation-duration: 38s; }
+.root .featuredCard :global(.featured-work-anchor) { animation-duration: 24s; transform: none; }
+.root .featuredCard:is(:hover, :focus-visible) :global(.featured-work-anchor) { transform: scale(1.035) !important; }
+.root .featuredCard :global(.featured-work-interaction) { transform: none !important; transition: none; }
+.root .featuredCard :global(.featured-work-drift) { animation-name: atmosphere-orbit; animation-duration: 24s; animation-timing-function: linear; }
+@keyframes atmosphere-orbit {
+  0% { transform: translate(-1%, 0) rotate(-1deg) scale(1.04); }
+  25% { transform: translate(0, -1%) rotate(0deg) scale(1.04); }
+  50% { transform: translate(1%, 0) rotate(1deg) scale(1.04); }
+  75% { transform: translate(0, 1%) rotate(0deg) scale(1.04); }
+  100% { transform: translate(-1%, 0) rotate(-1deg) scale(1.04); }
+}
+.root .featuredCard :global(.hydra-schematic),
+.root .featuredCard :global(.hydra-component),
+.root .featuredCard :global(.hydra-component-button) { animation-duration: 38s; animation-iteration-count: infinite; }
+.root .featuredCard :global(.hydra-component) { animation-duration: calc(12s + var(--component-index) * 2s); }
+.root .featuredCard :global(.featured-work-honeycomb) { opacity: .35; }
+.root .featuredCard :global(.featured-work-honeycomb img) { animation: hex-breathe 26s ease-in-out infinite alternate; animation-delay: calc(var(--hex) * -1.7s); }
+@keyframes hex-breathe { from { transform: rotate(-3deg) scale(.96); } to { transform: rotate(3deg) scale(1.025); } }
+.root .featuredCard :global(.featured-leaves > span) { top: 0; height: 100%; width: 3rem; animation-name: quiet-leaf-fall; will-change: transform; }
+.root .featuredCard :global(.featured-leaves svg) { height: 42px; transform-origin: center; transition: scale 800ms cubic-bezier(.16, 1, .3, 1); }
+.root .featuredCard:is(:hover, :focus-visible) :global(.featured-leaves svg) { scale: 1.2; }
+@keyframes quiet-leaf-fall { from { transform: translate(-24px, -12%); } to { transform: translate(55px, 112%); } }
+@media (prefers-reduced-motion: reduce) {
+  .root .featuredCard :global(.featured-work-anchor),
+  .root .featuredCard:is(:hover, :focus-visible) :global(.featured-work-anchor) { transform: none !important; }
+}
+
+/* Full-card button semantics use a focus ring on their containing article. */
+.featuredCard:has(:focus-visible) { outline: 3px solid var(--focus-tone, #527b96); outline-offset: 4px; }
+.featuredCard { cursor: pointer; }
+
+/* The containing card supplies the single full-card keyboard focus ring. */
+.featuredCard :global(.featured-work-open:focus-visible) { outline: none; }
+
+/* DentalPlans keeps its keyboard cue on the visible action, not the perimeter. */
+.featuredCard:global(.featured-work-card-dentalplans):is(:focus, :focus-visible, :active),
+.featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) { outline: none; }
+.featuredCard:global(.featured-work-card-dentalplans) :global(.featured-work-open):is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: none;
+}
+.featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) .featuredLink {
+  color: #fff;
+  background: #365335;
+  border-radius: .4rem;
+  box-shadow: 0 0 0 .5rem #365335;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.featuredCard:global(.featured-work-card-dentalplans):active .featuredLink { text-decoration: underline; }
+
+@media (forced-colors: active) {
+  .banner:focus-visible, .featuredCard:has(:focus-visible) { outline-color: Highlight; }
+  .featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) .featuredLink {
+    forced-color-adjust: none;
+    color: HighlightText;
+    background: Highlight;
+    box-shadow: 0 0 0 .5rem Highlight;
+  }
+}

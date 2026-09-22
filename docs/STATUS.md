@@ -1,5 +1,58 @@
 # Status
 
+## September 21, 2026: DentalPlans editorial framework redesign complete
+
+Jacob's sixteen new annotations and instruction to redo only the DentalPlans
+product framework are implemented. The platform overview and Key Features form
+one six-capability composition; Microservices is the added capability. The
+journey uses a centered 70rem reading area, balanced columns, full-column art,
+larger foundation icons, and inward, vertically centered prose. The MVP is one
+column of three padded tiles with 24px gaps. All four diagram eyebrows are gone.
+Multi-Brand names the second iteration's capability; later summaries say Five
+Brands. B71 is applied locally, with no skipped copy edits or changed metrics.
+
+Value Created has a 22px title, 18px bullets, and 22px list margins. Paragraph
+leading is 1.5rem and rules sit between headings and their content. These changes
+are scoped throughout DentalPlans, interpreting the annotation's global wording
+within Jacob's final instruction to redo only this study. The layout switches
+to paired columns at the existing 992px breakpoint. Individual diagrams use
+their actual container width for smaller and enlarged-text layouts. The
+DentalPlans homepage card uses a filled, underlined View action for keyboard
+focus; no focus or active perimeter outline is added.
+
+Changed files: `app/visual-system.css`, `components/ui/QuietPrism.module.css`,
+`components/ui/CaseStudyModal.tsx`, `components/ui/StudySupportingArt.tsx`,
+`lib/data/projects.ts`, `docs/copy-register.md`, `design-qa.md`, this status,
+and `docs/reviews/dental-editorial-20260921/`. Shared renderers receive opt-in
+layout variants; other projects remain unchanged. No dependencies added.
+
+Final production build/type check/static export passed, with 288 images and
+104 production references verified. Scoped ESLint passed. Browser verification
+covered 1884x1272, 1024x900, 390x840 and 200% root text at 390px. Final measured
+horizontal overflow is zero; all requested type, margin, padding and icon sizes
+match. Actual Tab, Enter and Escape verified the action cue, opening, closing,
+and focus return. Browser errors and warnings were empty. QA repaired a legacy
+grid-column collision, premature tablet stacking and enlarged-text tile label
+overflow, then recaptured the affected layouts. Details and evidence are in
+`design-qa.md`; no open P0/P1/P2 issue remains. Whitespace is checked after this
+last documentation write. This is scoped QA, not a full-site accessibility audit.
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. Rollback/base:
+`a281fccbe37a9640676133dd49d9333451701599`. The local commit follows this final
+status write and its ID is recorded in the Exchange completion event. The own
+lock is released after committing. Existing Python preview on port 8097 remains
+served from this worktree's `out`; the in-app browser is left on DentalPlans for
+review, with viewport and text-size overrides reset. No merge, push, PR,
+publication or deployment occurred. No implementation blocker remains.
+
+Fresh Exchange acceptance observation: 2026-09-22T02:21:34Z, no conflicts,
+fingerprint `d029c204de7f9a611def3e06dc5607831c87ec5d3bfba7629eb6bdeab302feb3`.
+Changed direction is recorded by event
+`20260922T020804Z-da5b795d8cb1451abe28204ce08e784b`. A unique update carries
+the final commit, verification and rollback point. Shared coordinator files
+were not edited and no remote acknowledgement is asserted.
+
 ## September 21, 2026: browser-comment modal refinement complete
 
 Jacob's thirteen follow-up browser comments are implemented on the DentalPlans

@@ -1,6 +1,99 @@
-# Design QA — modal quiet-prism refinement
+# Design QA: DentalPlans editorial framework
 
 Date: 2026-09-21
+
+## Current review: DentalPlans annotations 1–16
+
+Source visual truth: the sixteen browser annotations in this task, especially
+the Shared Platform composition attached to Comment 9, MVP layout in Comments
+10–11, and iteration layouts in Comments 14–16. The focus-state reference is
+`C:/Users/jacob/AppData/Local/Temp/codex-clipboard-fd2c4c16-dc4b-4db2-81fa-5c074c8168e5.png`.
+The platform sketch is an inline conversation attachment; it has no supplied
+filesystem path. These references are guidance for the authorized DentalPlans
+redesign, not a request to reproduce browser annotation outlines or placeholders.
+
+### Comparison evidence
+
+All implementation paths below are under `docs/reviews/dental-editorial-20260921/`.
+
+- `02-platform-desktop-fixed.png`: six-capability overview and Key Features in
+  one composition, compared with the Comment 9 sketch in the current image context.
+- `03-mvp-desktop.png`: one column of three tiles; heading, rule, then paragraph.
+- `04-iteration-three-desktop.png` and `06-iteration-four-desktop.png`: inward
+  column placement, vertically centered prose, and full-column cumulative diagrams.
+- `09-keyboard-focus-desktop.png`: visible View action cue, no perimeter outline,
+  compared with the attached focus-state screenshot.
+- `10-iteration-tablet-final.png`: balanced two-column diagram at the intermediate width.
+- `07-platform-mobile.png` and `12-iteration-mobile-final.png`: readable mobile tiles.
+- `11-platform-200pct.png`: platform tiles become one column with enlarged text.
+- `13-value-created-desktop.png`: final title, bullets, and list margins.
+- `checks.json`: before/after overflow checks and final computed style measurements.
+
+Desktop screenshots are 1884×1272 pixels at a 1884×1272 CSS viewport, DPR 1;
+tablet is 1024×900 and mobile is 390×840, also DPR 1. The Comment 9 sketch is
+2048×913 including a large white canvas; the supplied focus image is a cropped
+card. Comparisons use the corresponding content regions and proportional
+composition, not canvas edges or an assertion of pixel-exact matching. Focused
+checks cover headings/rules, node labels and icons, the Value Created list, and
+the keyboard cue. The screenshots preserve the real browser-rendered state.
+
+### Findings and repairs
+
+- P1, resolved: legacy `col-24` also mapped to grid-column 24 once the row used
+  CSS Grid, producing zero-width implicit tracks. Explicitly reset grid-column
+  on the two editorial columns. Failure: `01-platform-desktop.png`; repaired:
+  `02-platform-desktop-fixed.png`, with body width and scroll width both 1308px.
+- P2, resolved: the legacy 28rem art query collapsed diagrams too early at tablet
+  widths, making the visual much taller than its prose. The scoped iteration
+  query now collapses at 20rem. Before: `08-iteration-tablet.png`; after:
+  `10-iteration-tablet-final.png`, with two 185px tile tracks.
+- P2, resolved: enlarged text overflowed four platform tile labels. Queries now
+  use the supporting-art container: two columns below 26rem and one below 14rem.
+  `checks.json` records the original overflow and the empty final overflow list;
+  `11-platform-200pct.png` confirms readable single-column tiles.
+
+No actionable P0/P1/P2 issue remains in the requested scope.
+
+### Required fidelity surfaces
+
+- Typography: existing font family and icon family retained. Value Created is
+  22px, its bullets 18px, narrative paragraphs have 1.5rem leading, foundation
+  icons are 24px. The four duplicate art eyebrows are absent. All narrative
+  subsection headings precede their rule and paragraph in DOM and visual order.
+- Spacing/layout: Value Created list margins measure 22px top and bottom;
+  foundation padding is 22px. The desktop journey is capped at 70rem and centered,
+  with equal columns, a fluid gutter, and centered short prose. Diagrams measure
+  exactly the same width as their art columns. MVP tiles have a 24px gap.
+- Colors/tokens: original sage/plum palette, quiet surfaces, 28px radius and thin
+  icon strokes preserved. Keyboard focus uses a dark sage View cue with white
+  text and an underline, including a system-color alternative in forced colors.
+- Assets: existing library icons replace the sketch's placeholder stars. No new
+  raster assets, substitute logos, generated artwork or dependencies were needed.
+- Copy: B71 applied. Multi-Brand identifies the second release's capability;
+  Five Brands appears in both later platform summaries. Microservices is added
+  to the overview. Existing Promotions remains instead of the sketch's duplicate
+  Plan Data label. Narrative and financial metrics are unchanged.
+
+### Verification and limits
+
+Final production build, type checking, static export, 288-image and 104-reference
+checks, scoped ESLint and whitespace checks passed. Browser checks found no
+horizontal overflow at 1884px, 1024px, 390px, or 390px with 200% root text.
+Actual keyboard Tab reaches the DentalPlans button and shows the new action cue;
+Enter opens the dialog; Escape returns focus to that button. Errors/warnings
+were empty. Temporary text and viewport overrides were reset.
+
+The React review found no new hooks, effects, network calls, dependencies, or
+unstable list keys. Shared renderer changes are opt-in data variants; new style
+rules and card focus changes are scoped to DentalPlans. Other studies were not
+redesigned. This is a focused visual and interaction review, not a full-site
+accessibility certification. Publishing remains outside this task.
+
+Implementation checklist: all sixteen annotations addressed; focus repaired;
+responsive repairs recaptured; copy registered; preview running. No P3 follow-up
+is required for this checkpoint.
+
+## Historical QA checkpoints
 
 ## Follow-up QA — browser comments 1–13
 

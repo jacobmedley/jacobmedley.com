@@ -525,6 +525,29 @@
 /* The containing card supplies the single full-card keyboard focus ring. */
 .featuredCard :global(.featured-work-open:focus-visible) { outline: none; }
 
+/* DentalPlans keeps its keyboard cue on the visible action, not the perimeter. */
+.featuredCard:global(.featured-work-card-dentalplans):is(:focus, :focus-visible, :active),
+.featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) { outline: none; }
+.featuredCard:global(.featured-work-card-dentalplans) :global(.featured-work-open):is(:focus, :focus-visible, :active) {
+  outline: none;
+  box-shadow: none;
+}
+.featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) .featuredLink {
+  color: #fff;
+  background: #365335;
+  border-radius: .4rem;
+  box-shadow: 0 0 0 .5rem #365335;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.featuredCard:global(.featured-work-card-dentalplans):active .featuredLink { text-decoration: underline; }
+
 @media (forced-colors: active) {
   .banner:focus-visible, .featuredCard:has(:focus-visible) { outline-color: Highlight; }
+  .featuredCard:global(.featured-work-card-dentalplans):has(:focus-visible) .featuredLink {
+    forced-color-adjust: none;
+    color: HighlightText;
+    background: Highlight;
+    box-shadow: 0 0 0 .5rem Highlight;
+  }
 }

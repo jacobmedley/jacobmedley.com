@@ -781,6 +781,8 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
     <div
       className={cn(
         'row mb-6 modal-media-split',
+        block.layout && `modal-${block.layout}`,
+        block.layout && block.reverse && 'modal-editorial-reverse',
         block.surface && 'modal-prism-surface modal-composite-card',
         startsSection && 'modal-media-split-section',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
@@ -791,6 +793,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
+          block.layout && 'modal-editorial-art',
           block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
@@ -808,6 +811,7 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
+          block.layout && 'modal-editorial-copy',
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}

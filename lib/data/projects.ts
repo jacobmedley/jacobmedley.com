@@ -94,6 +94,7 @@ export interface ProgressDiagramBlock {
 // row.
 export interface SplitRowBlock {
   type: 'split-row'
+  layout?: 'platform-overview' | 'product-iteration'
   left: ProjectMedia[]
   right: ProjectMedia[]
   reverse?: boolean // maps legacy flex-lg-row-reverse (image sits right)
@@ -534,7 +535,9 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform connecting plan data, dentist data, search and APIs, promotions, and deployment.' }],
+        layout: 'platform-overview',
+        surface: true,
+        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform: plan data, dentist data, search and APIs, microservices, promotions, and deployment.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -559,6 +562,7 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
+        layout: 'product-iteration',
         left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'Initial MVP joining a WordPress storefront with manually added plans, a Bootstrap interface, and cart.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
@@ -588,7 +592,8 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two adding two branded storefronts, shared plan data, and a shared cart to the MVP platform.' }],
+        layout: 'product-iteration',
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two adding multi-brand storefronts, shared plan data, and a shared cart to the MVP platform.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -609,7 +614,8 @@ export const projects: Project[] = [
       {
         type: 'split-row',
         reverse: true,
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three adding shared patterns, components, microservices, and properties to the platform from the first two releases.' }],
+        layout: 'product-iteration',
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three adding shared patterns, components, microservices, and properties to a platform now serving five brands.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',
@@ -629,7 +635,8 @@ export const projects: Project[] = [
       { type: 'divider' },
       {
         type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four adding ZIP search, results, and dentist profiles to the platform built in the first three releases.' }],
+        layout: 'product-iteration',
+        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four adding ZIP search, results, and dentist profiles to the five-brand platform built in the first three releases.' }],
         leftSpanXl: 10,
         rightSpanXl: 14,
         rightSelfAlign: 'center',

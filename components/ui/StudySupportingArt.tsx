@@ -13,7 +13,7 @@ const MVP_FOUNDATION: ArtNode[] = [
 
 const ITERATION_TWO_FOUNDATION: ArtNode[] = [
   ...MVP_FOUNDATION,
-  { label: 'Two Brands', icon: 'fa-thin fa-objects-column' },
+  { label: 'Five Brands', icon: 'fa-thin fa-objects-column' },
   { label: 'Shared Plan Data', icon: 'fa-thin fa-database' },
   { label: 'Shared Cart', icon: 'fa-thin fa-cart-shopping' }
 ]
@@ -34,24 +34,25 @@ const ART: Record<SupportingArtKind, ArtDefinition> = {
       { label: 'Plan Data', icon: 'fa-thin fa-database' },
       { label: 'Dentist Data', icon: 'fa-thin fa-user-doctor' },
       { label: 'Search & API', icon: 'fa-thin fa-magnifying-glass' },
+      { label: 'Microservices', icon: 'fa-thin fa-network-wired' },
       { label: 'Promotions', icon: 'fa-thin fa-tags' },
       { label: 'Deployment', icon: 'fa-thin fa-rocket-launch' }
     ]
   },
-  'dental-mvp-one': { eyebrow: 'MVP', mode: 'iteration', nodes: [
+  'dental-mvp-one': { mode: 'iteration', nodes: [
     { label: 'WordPress', icon: 'fa-thin fa-browser', note: 'Manually added plans' },
     { label: 'Bootstrap', icon: 'fa-thin fa-layer-group' },
     { label: 'Cart', icon: 'fa-thin fa-cart-shopping' }
   ] },
-  'dental-mvp-two': { eyebrow: 'Iteration 2', mode: 'iteration', history: MVP_FOUNDATION, nodes: [
-    { label: 'Two Brands', icon: 'fa-thin fa-objects-column' }, { label: 'Shared Plan Data', icon: 'fa-thin fa-database' },
+  'dental-mvp-two': { mode: 'iteration', history: MVP_FOUNDATION, nodes: [
+    { label: 'Multi-Brand', icon: 'fa-thin fa-objects-column' }, { label: 'Shared Plan Data', icon: 'fa-thin fa-database' },
     { label: 'Shared Cart', icon: 'fa-thin fa-cart-shopping' }
   ] },
-  'dental-mvp-three': { eyebrow: 'Iteration 3', mode: 'iteration', history: ITERATION_TWO_FOUNDATION, nodes: [
+  'dental-mvp-three': { mode: 'iteration', history: ITERATION_TWO_FOUNDATION, nodes: [
     { label: 'Patterns', icon: 'fa-thin fa-grid-2' }, { label: 'Components', icon: 'fa-thin fa-cubes' },
     { label: 'Microservices', icon: 'fa-thin fa-network-wired' }, { label: 'Properties', icon: 'fa-thin fa-buildings' }
   ] },
-  'dental-mvp-four': { eyebrow: 'Iteration 4', mode: 'iteration', history: ITERATION_THREE_FOUNDATION, nodes: [
+  'dental-mvp-four': { mode: 'iteration', history: ITERATION_THREE_FOUNDATION, nodes: [
     { label: 'ZIP', icon: 'fa-thin fa-location-dot' }, { label: 'Results', icon: 'fa-thin fa-list' },
     { label: 'Dentist Profile', icon: 'fa-thin fa-user-doctor' }
   ] },
@@ -98,8 +99,8 @@ export default function StudySupportingArt({ kind, alt }: { kind: SupportingArtK
       <div className="study-supporting-art-diagram" aria-hidden="true">
         {art.mode === 'ecosystem' && art.center ? (
           <div className="study-ecosystem">
-            <strong className="study-ecosystem-center"><i className={art.center.icon} />{art.center.label}</strong>
-            <i className="fa-thin fa-arrows-up-down study-ecosystem-bridge" />
+            <strong className="study-ecosystem-title">{art.center.label}</strong>
+            <hr className="solid-center" />
             <div className="study-ecosystem-nodes">
               {art.nodes.map((node) => (
                 <span className="study-ecosystem-node" key={node.label}>

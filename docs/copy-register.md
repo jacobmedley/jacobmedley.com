@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B70. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B71. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2279,3 +2279,23 @@ the note `Manually added plans`. Iteration two uses `Shared Plan Data`; the late
 iteration diagrams show the platform already accumulated and the capabilities
 added in that release. This presentation change does not add a technology or
 claim that the narrative does not already support.
+
+## B71. DentalPlans editorial framework labels [APPLIED LOCALLY]
+
+Source: Jacob's sixteen browser annotations and scoped DentalPlans framework
+redesign request, September 21, 2026, task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`. Publication is not authorized.
+
+Remove the diagram eyebrows MVP, Iteration 2, Iteration 3, and Iteration 4;
+the adjacent narrative titles identify these stages. Rename the second-stage
+capability Two Brands to `Multi-Brand`. The later accumulated platform summaries
+use `Five Brands`, directly correcting the stage count per Jacob's annotation 6.
+This describes the number of brands at those stages, not a new performance metric.
+
+The Shared Platform overview uses six capabilities: `Plan Data`, `Dentist Data`,
+`Search & API`, `Microservices`, `Promotions`, and `Deployment`. Microservices is
+the additional block requested in annotation 9 and is already documented in the
+framework. The sketch's star symbols are icon placeholders; keep the site's
+existing thin icons. Retain Promotions instead of repeating Plan Data from the
+sketch. Preserve all narrative and metric copy. Accessible diagram descriptions
+must reflect these label and stage changes.

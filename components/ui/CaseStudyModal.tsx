@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useCallback, useRef, type ReactNode } from 'react'
+import { Fragment, useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
@@ -9,11 +9,11 @@ import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
 import CallCenterDemo from './CallCenterDemo'
 import {
+  projects,
   type Project,
   type ProjectMedia,
   type ProjectBadge,
   type ProjectMetric,
-  type BrandToken,
   type StyledListBlock,
   type CardBlock,
   type BrandShade,
@@ -23,17 +23,7 @@ import {
   type SplitRowBlock
 } from '@/lib/data/projects'
 
-// Tailwind's scanner needs literal class strings, not `bg-${token}-light/25`.
-const BG_LIGHT_25: Record<BrandToken, string> = {
-  prime: 'bg-prime-light/25',
-  second: 'bg-second-light/25',
-  third: 'bg-third-light/25',
-  fourth: 'bg-fourth-light/25',
-  fifth: 'bg-fifth-light/25',
-  pop: 'bg-pop-light/25'
-}
-
-// Legacy w-25/w-50/w-75/w-100 on media images. Literal map, same reason as BG_LIGHT_25.
+// Literal utility strings keep media widths visible to Tailwind's scanner.
 const WIDTH_PCT_CLASS = { 25: 'w-1/4', 50: 'w-1/2', 75: 'w-3/4', 100: 'w-full' } as const
 
 const BG_SHADE: Record<BrandShade, string> = {
@@ -58,7 +48,7 @@ const TEXT_SHADE: Record<BrandShade, string> = {
 
 // Legacy col-N spans used by the hydra diagram (24-col grid, unprefixed).
 const COL_SPAN: Record<number, string> = { 6: 'col-6', 12: 'col-12', 18: 'col-18', 24: 'col-24' }
-const ROW_COLS_LG: Record<number, string> = { 4: 'row-cols-lg-4', 5: 'row-cols-lg-5' }
+const ROW_COLS_LG: Record<number, string> = { 3: 'row-cols-lg-3', 4: 'row-cols-lg-4', 5: 'row-cols-lg-5' }
 
 interface CaseStudyModalProps {
   project: Project | null
@@ -78,6 +68,84 @@ function projectIcon(icon: string) {
   return alternatives[icon] ?? icon
 }
 
+const intentPreloadCache = new Set<string>()
+const intentProjectCache = new Set<string>()
+let intentListenerUsers = 0
+
+function preloadCaseStudyAssets(projectId: string) {
+  if (intentProjectCache.has(projectId)) return
+  intentProjectCache.add(projectId)
+  const project = projects.find((candidate) => candidate.id === projectId)
+  if (!project) return
+  const sources: string[] = []
+  const visit = (value: unknown) => {
+    if (!value || sources.length >= 3) return
+    if (Array.isArray(value)) {
+      value.forEach(visit)
+      return
+    }
+    if (typeof value !== 'object') return
+    const record = value as Record<string, unknown>
+    if (typeof record.src === 'string' && !sources.includes(record.src)) sources.push(record.src)
+    Object.values(record).forEach(visit)
+  }
+  visit(project.heroBrandImage)
+  visit(project.brief)
+  visit(project.media)
+  sources.slice(0, 3).forEach((src) => {
+    if (intentPreloadCache.has(src)) return
+    intentPreloadCache.add(src)
+    const image = new window.Image()
+    image.decoding = 'async'
+    image.src = src
+  })
+}
+
+function warmCaseStudyFromTarget(target: EventTarget | null) {
+  if (!(target instanceof Element)) return
+  const trigger = target.closest<HTMLElement>('[data-modal-trigger]')
+  if (trigger?.dataset.modalTrigger) preloadCaseStudyAssets(trigger.dataset.modalTrigger)
+}
+
+const onCaseStudyPointerIntent = (event: PointerEvent) => warmCaseStudyFromTarget(event.target)
+const onCaseStudyFocusIntent = (event: FocusEvent) => warmCaseStudyFromTarget(event.target)
+
+function ModalStudyImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  const [attempt, setAttempt] = useState(0)
+  const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading')
+  const retrySrc = attempt === 0 ? src : `${src}${src.includes('?') ? '&' : '?'}retry=${attempt}`
+  return (
+    <span className="modal-image-frame" data-load-state={state} aria-busy={state === 'loading'}>
+      <span className="modal-image-loading" aria-hidden="true">Loading image…</span>
+      {/* eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset */}
+      <img
+        loading="lazy"
+        decoding="async"
+        className={className}
+        src={retrySrc}
+        alt={alt}
+        onLoad={() => setState('loaded')}
+        onError={() => setState('error')}
+      />
+      {state === 'error' && (
+        <span className="modal-image-error" role="alert">
+          Image unavailable.
+          <button
+            type="button"
+            className="btn btn-outline-prime-dark rounded-full"
+            onClick={() => {
+              setState('loading')
+              setAttempt((value) => value + 1)
+            }}
+          >
+            Retry
+          </button>
+        </span>
+      )}
+    </span>
+  )
+}
+
 /**
  * Legacy Bootstrap modal (components/modal-*.html): fullscreen dialog
  * with container-width content, blur behind the modal viewport, fade +
@@ -87,7 +155,110 @@ function projectIcon(icon: string) {
  */
 export default function CaseStudyModal({ project, open, onOpenChange }: CaseStudyModalProps) {
   const returnFocusRef = useRef<HTMLElement | null>(null)
+  const modalRef = useRef<HTMLDivElement | null>(null)
+  const wasOpenRef = useRef(false)
+  const swipeRef = useRef({ pointerId: -1, startY: 0, currentY: 0, startTime: 0 })
   const featured = !!project
+
+  useEffect(() => {
+    intentListenerUsers += 1
+    if (intentListenerUsers === 1) {
+      document.addEventListener('pointerover', onCaseStudyPointerIntent, { passive: true })
+      document.addEventListener('pointerdown', onCaseStudyPointerIntent, { passive: true })
+      document.addEventListener('focusin', onCaseStudyFocusIntent)
+    }
+    return () => {
+      intentListenerUsers -= 1
+      if (intentListenerUsers === 0) {
+        document.removeEventListener('pointerover', onCaseStudyPointerIntent)
+        document.removeEventListener('pointerdown', onCaseStudyPointerIntent)
+        document.removeEventListener('focusin', onCaseStudyFocusIntent)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    let cameraTimer = 0
+    const body = document.body
+    if (open) {
+      body.dataset.modalCamera = 'open'
+      wasOpenRef.current = true
+    } else if (wasOpenRef.current) {
+      body.dataset.modalCamera = 'closing'
+      cameraTimer = window.setTimeout(() => {
+        if (!document.querySelector(".modal[data-state='open']")) delete body.dataset.modalCamera
+      }, 280)
+      wasOpenRef.current = false
+    }
+    return () => window.clearTimeout(cameraTimer)
+  }, [open])
+
+  useEffect(() => {
+    if (!open) return
+    let frame = 0
+    let observer: ResizeObserver | undefined
+    const connect = () => {
+      const modal = modalRef.current
+      if (!modal) {
+        frame = requestAnimationFrame(connect)
+        return
+      }
+      const navigation = document.querySelector<HTMLElement>('#the-menu')
+      const measureNavigation = () => {
+        const height = navigation?.offsetHeight ?? 0
+        modal.style.setProperty('--modal-mobile-footer-height', `${Math.ceil(height)}px`)
+      }
+      measureNavigation()
+      if (navigation) {
+        observer = new ResizeObserver(measureNavigation)
+        observer.observe(navigation)
+      }
+    }
+    connect()
+    return () => {
+      cancelAnimationFrame(frame)
+      observer?.disconnect()
+    }
+  }, [open])
+
+  const setSwipeOffset = (value: number) => {
+    modalRef.current?.querySelector<HTMLElement>('.modal-content')?.style.setProperty('--modal-swipe-y', `${Math.max(0, value)}px`)
+  }
+  const resetSwipe = () => {
+    const content = modalRef.current?.querySelector<HTMLElement>('.modal-content')
+    if (!content) return
+    content.dataset.swipeSettling = 'true'
+    setSwipeOffset(0)
+    window.setTimeout(() => { delete content.dataset.swipeSettling }, 260)
+  }
+  const onSwipePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.button !== 0 || !matchMedia('(max-width: 767px)').matches) return
+    swipeRef.current = { pointerId: event.pointerId, startY: event.clientY, currentY: event.clientY, startTime: performance.now() }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+  const onSwipePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    swipeRef.current.currentY = event.clientY
+    setSwipeOffset(event.clientY - swipeRef.current.startY)
+  }
+  const finishSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    const distance = Math.max(0, swipeRef.current.currentY - swipeRef.current.startY)
+    const duration = Math.max(1, performance.now() - swipeRef.current.startTime)
+    const velocity = distance / duration
+    swipeRef.current.pointerId = -1
+    if (distance > 88 || (distance > 32 && velocity > .65)) {
+      onOpenChange(false)
+      window.setTimeout(() => setSwipeOffset(0), 340)
+    } else {
+      resetSwipe()
+    }
+  }
+  const cancelSwipe = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (swipeRef.current.pointerId !== event.pointerId) return
+    swipeRef.current.pointerId = -1
+    resetSwipe()
+  }
   // Paint outside the native scroll viewport so its transparent gutter cannot
   // crop the artwork. Keep this one field aligned with the scrolling intro.
   const bindFeaturedBody = useCallback((body: HTMLDivElement | null) => {
@@ -117,6 +288,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
       <Dialog.Portal>
         <Dialog.Overlay className="modal-backdrop" />
         <Dialog.Content
+          ref={modalRef}
           aria-describedby={undefined}
           className="modal"
           onOpenAutoFocus={() => {
@@ -134,6 +306,14 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
         >
           <div className="modal-dialog modal-fullscreen md:py-6">
             <div className={cn('modal-content container', featured && 'modal-full-bleed', project && `featured-work-card-${project.id}`, project && !project.thumb && !ORIGINAL_FEATURED_IDS.has(project.id) && 'modal-theme-thinking')} data-project-id={project?.id}>
+              <div
+                className="modal-sheet-grabber"
+                aria-hidden="true"
+                onPointerDown={onSwipePointerDown}
+                onPointerMove={onSwipePointerMove}
+                onPointerUp={finishSwipe}
+                onPointerCancel={cancelSwipe}
+              ><span /></div>
               {featured && project && (
                 <div className={`modal-bleed-field featured-work-card featured-work-card-${project.id}`} data-motion-root aria-hidden="true">
                   <ModalHeroField project={project} />
@@ -165,7 +345,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                 </Dialog.Close>
               </div>
 
-              <div className="modal-body" ref={bindFeaturedBody}>
+              <div className="modal-body" tabIndex={0} ref={bindFeaturedBody}>
                 <div className="container">{project && <ModalContent project={project} />}</div>
               </div>
 
@@ -251,8 +431,7 @@ function BriefFollowup({ project }: { project: Project }) {
       {image.src.endsWith('.gif') ? (
         <AnimatedStudyImage src={image.src} alt={image.alt} />
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element -- existing case-study evidence asset
-        <img loading="lazy" className="img-fluid" src={image.src} alt={image.alt} />
+        <ModalStudyImage className="img-fluid" src={image.src} alt={image.alt} />
       )}
     </div>
   )
@@ -306,6 +485,14 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
   switch (block.type) {
     case 'heading': {
       const Tag = `h${block.level ?? 5}` as 'h2' | 'h3' | 'h4' | 'h5'
+      if (block.treatment === 'subsection') {
+        return (
+          <>
+            <Tag className="modal-subsection-heading">{block.text}</Tag>
+            <hr className="solid-center modal-subsection-rule" />
+          </>
+        )
+      }
       if (block.treatment === 'section' || block.icon) {
         return (
           <>
@@ -326,7 +513,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
             </p>
           )}
           <Tag>{block.text}</Tag>
-          <hr className={cn('solid-center', block.sectionDivider && 'my-12')} />
+          {block.showRule !== false && <hr className={cn('solid-center', block.sectionDivider && 'my-12')} />}
         </>
       )
     }
@@ -354,8 +541,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         // reposition it within the column.
         <div className="text-center">
           <figure className="figure">
-            <img
-              loading="lazy"
+            <ModalStudyImage
               className={cn(
                 'figure-img img-fluid',
                 widthClass,
@@ -370,8 +556,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
         </div>
       ) : (
         <p className="text-center">
-          <img
-            loading="lazy"
+          <ModalStudyImage
             className={cn(
               'img-fluid',
               widthClass,
@@ -413,8 +598,8 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
       )
     case 'divider':
       return (
-        <div className="row">
-          <div className="col-24 my-12">
+        <div className="row modal-content-divider">
+          <div className="col-24">
             <hr className="solid-center" />
           </div>
         </div>
@@ -448,8 +633,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               <i className="fa-thin fa-desktop fa-2x" aria-hidden="true" />
             </p>
             <p>
-              <img
-                loading="lazy"
+              <ModalStudyImage
                 className="img-fluid shadow-[var(--shadow-bs-lg)]"
                 src={block.desktop.src}
                 alt={block.desktop.alt}
@@ -461,8 +645,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               <i className="fa-thin fa-mobile fa-2x" aria-hidden="true" />
             </p>
             <p className="text-center">
-              <img
-                loading="lazy"
+              <ModalStudyImage
                 className="img-fluid shadow-[var(--shadow-bs-lg)]"
                 src={block.mobile.src}
                 alt={block.mobile.alt}
@@ -483,7 +666,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               )}
               <div className={`col-24 col-lg-${block.cols[i] ?? 12}`}>
                 <p>
-                  <img loading="lazy" className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
+                  <ModalStudyImage className="img-fluid shadow-[var(--shadow-bs-lg)]" src={img.src} alt={img.alt} />
                 </p>
               </div>
             </Fragment>
@@ -493,26 +676,20 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
     case 'metric-grid':
       return (
         <section className="modal-data-panel">
-          <div className="col-24 mt-5">
-            <h4>{block.heading}</h4>
-            <hr className="solid-center rule-heading" />
-          </div>
+          <h4>{block.heading}</h4>
+          <hr className="solid-center rule-heading" />
           <div className="modal-data-grid">
             <div className="modal-metric-grid">
-              {block.metrics.map((metric) => (
-                <MetricStat key={metric.label} metric={metric} />
+              {block.metrics.map((metric, index) => (
+                <MetricStat key={metric.label} metric={metric} index={index} />
               ))}
             </div>
-            <div className="modal-value-card">
-              <h5 className="mb-3">{block.valueCreated.heading}</h5>
-              <ul className="fa-ul">
+            <div className="modal-value-card modal-prism-surface" data-prism-tone="sage">
+              <h5>{block.valueCreated.heading}</h5>
+              <hr className="solid-center modal-value-rule" />
+              <ul>
                 {block.valueCreated.items.map((item) => (
-                  <li key={item} className="mb-4">
-                    <span className="fa-li">
-                      <i className="fa-thin fa-angle-right" aria-hidden="true" />
-                    </span>
-                    {item}
-                  </li>
+                  <li key={item}><i className="fa-thin fa-chevron-right" aria-hidden="true" /> <span>{item}</span></li>
                 ))}
               </ul>
             </div>
@@ -547,7 +724,7 @@ function MediaBlock({ block }: { block: ProjectMedia }) {
               </div>
             ) : (
               <div key={item.title} className="col mb-4">
-                <div className="card">
+                <div className="card modal-prism-surface">
                   <div className="card-body">
                     <p className="mb-1">
                       <i className={`${item.icon} fa-2x`} aria-hidden="true" />
@@ -596,36 +773,18 @@ const SPLIT_ROW_H_ALIGN = {
 // wouldn't get generated.
 const SPLIT_ROW_REVERSE_CLASS = { md: 'md:flex-row-reverse', lg: 'lg:flex-row-reverse' } as const
 const SPLIT_ROW_DIVIDER_HIDDEN_CLASS = { md: 'md:hidden', lg: 'lg:hidden' } as const
-// Section lead-in for the SECOND column. Side-by-side both columns start at
-// the row's top edge and both need it; stacked they are sequential, so this
-// one would land between an image and its own heading. Breakpoint-scoped so
-// it only applies once the row is actually side-by-side. Written out in full
-// because Tailwind cannot see dynamically-built class names.
-const SPLIT_ROW_SECTION_MT_CLASS = { md: 'md:mt-12', lg: 'lg:mt-12' } as const
-
 function SplitRow({ block }: { block: SplitRowBlock }) {
   const bp = block.breakpoint ?? 'lg'
-  /*
-   * SplitRow was the only block type with no margins. Every other top-level
-   * block carries `mb-6`, and a top-level `heading` additionally carries
-   * `mt-12` to open a new section (legacy's `mt-5` on the heading column).
-   * A split-row whose columns contain a heading IS a section opener, but its
-   * heading is rendered by BlockContent — bypassing MediaBlock's wrapper — so
-   * it never received that lead-in. Result: split-row sections got 24px of
-   * separation where heading-led sections got 72px.
-   *
-   * The lead-in goes on the COLUMNS, not the row. Two sibling rows collapse
-   * their adjacent margins (max, not sum), so row-level `mt-12` would yield
-   * only 48px. `.row` is display:flex and flex-item margins never collapse,
-   * so column-level `mt-12` gives the previous row's 24px PLUS 48px = 72px —
-   * identical to the heading block, which does exactly this. Applied to both
-   * columns so `vAlign` keeps image and text aligned to each other.
-   */
+  // One section gap belongs to the row, not each card or artwork column.
   const startsSection = [...block.left, ...block.right].some((c) => c.type === 'heading')
   return (
     <div
       className={cn(
-        'row mb-6',
+        'row mb-6 modal-media-split',
+        block.layout && `modal-${block.layout}`,
+        block.layout && block.reverse && 'modal-editorial-reverse',
+        block.surface && 'modal-prism-surface modal-composite-card',
+        startsSection && 'modal-media-split-section',
         SPLIT_ROW_V_ALIGN[block.vAlign ?? 'top'],
         SPLIT_ROW_H_ALIGN[block.hAlign ?? 'start'],
         block.reverse && SPLIT_ROW_REVERSE_CLASS[bp]
@@ -634,14 +793,12 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div
         className={cn(
           `col-24 col-${bp}-${block.leftSpan ?? 12}`,
+          block.layout && 'modal-editorial-art',
           block.leftSpanXl && `col-xl-${block.leftSpanXl}`,
-          startsSection && 'mt-12',
           block.leftSelfAlign && SPLIT_ROW_SELF_ALIGN[block.leftSelfAlign]
         )}
       >
-        {block.left.map((child, i) => (
-          <BlockContent key={i} block={child} />
-        ))}
+        <SplitColumn blocks={block.left} surface={block.leftSurface} />
       </div>
       {/* Legacy's mobile-only divider between stacked columns (`col-24 py-5
           d-block d-lg-none` + hr) before the row's breakpoint turns it
@@ -654,17 +811,24 @@ function SplitRow({ block }: { block: SplitRowBlock }) {
       <div
         className={cn(
           `col-24 col-${bp}-${block.rightSpan ?? 12}`,
+          block.layout && 'modal-editorial-copy',
           block.rightSpanXl && `col-xl-${block.rightSpanXl}`,
-          startsSection && SPLIT_ROW_SECTION_MT_CLASS[bp],
           block.rightSelfAlign && SPLIT_ROW_SELF_ALIGN[block.rightSelfAlign]
         )}
       >
-        {block.right.map((child, i) => (
-          <BlockContent key={i} block={child} />
-        ))}
+        <SplitColumn blocks={block.right} surface={block.rightSurface} />
       </div>
     </div>
   )
+}
+
+function SplitColumn({ blocks, surface = false }: { blocks: ProjectMedia[]; surface?: boolean }) {
+  const content = blocks.map((child, i) => <BlockContent key={i} block={child} />)
+  return surface ? (
+    <div className={cn('modal-prism-surface modal-narrative-card', blocks.every((child) => child.type === 'text') && 'modal-narrative-summary')}>
+      {content}
+    </div>
+  ) : <>{content}</>
 }
 
 /**
@@ -682,7 +846,7 @@ function ProgressDiagram({ block }: { block: ProgressDiagramBlock }) {
         <div className="row">
           <div className="col-24 mt-12">
             <h4>{block.heading}</h4>
-            <hr className="solid-center" />
+            {block.showRule !== false && <hr className="solid-center" />}
           </div>
         </div>
       )}
@@ -703,12 +867,13 @@ function ProgressDiagram({ block }: { block: ProgressDiagramBlock }) {
 }
 
 function ProgressBandSection({ band }: { band: ProgressBand }) {
+  const isCore = band.heading === 'Core Framework'
   return (
-    <div className="row text-center mb-6">
+    <div className={cn('row text-center mb-6 modal-progress-band', isCore && 'modal-progress-band-core')}>
       <div className="col">
-        <div className="progress h-full">
-          <div className={cn('progress-bar progress-bar-striped w-full p-6', BG_SHADE[band.bg])}>
-            <h3 className={cn('mb-4', band.textColor && TEXT_SHADE[band.textColor])}>
+        <div className="progress h-full modal-progress-frame">
+          <div className={cn('progress-bar progress-bar-striped w-full p-6 modal-progress-band-surface', BG_SHADE[band.bg])}>
+            <h3 className={cn('mb-4 modal-progress-band-heading', band.textColor && TEXT_SHADE[band.textColor])}>
               {band.icon && (
                 <>
                   <i className={band.icon} aria-hidden="true" />
@@ -742,10 +907,10 @@ function ProgressBandSection({ band }: { band: ProgressBand }) {
 function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?: boolean }) {
   const striped = cell.striped ?? true
   return (
-    <div className="progress h-full" data-motion-root={cell.animated || undefined}>
+    <div className="progress h-full modal-progress-frame" data-motion-root={cell.animated || undefined}>
       <div
         className={cn(
-          'progress-bar w-full',
+          'progress-bar w-full modal-progress-cell',
           striped && 'progress-bar-striped',
           cell.animated && 'progress-bar-animated',
           BG_SHADE[cell.bg],
@@ -761,13 +926,13 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
               <strong>
                 {cell.icon && (
                   <>
-                    <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" /> <br />
+                    <i className={`${projectIcon(cell.icon)} modal-progress-cell-icon`} aria-hidden="true" /> <br />
                   </>
                 )}
                 {cell.label}
               </strong>
             </p>
-            <div className="progress h-full">
+            <div className="progress h-full modal-progress-frame">
               <div
                 className={cn(
                   'progress-bar w-full shadow-[var(--shadow-bs-lg)] py-2',
@@ -776,7 +941,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
                 )}
               >
                 <strong className="font-bold">
-                  {cell.sub.icon && <i className={`${cell.sub.icon} fa-xl`} aria-hidden="true" />}{' '}
+                  {cell.sub.icon && <i className={`${cell.sub.icon} modal-progress-sub-icon`} aria-hidden="true" />}{' '}
                   {cell.sub.label}
                 </strong>
               </div>
@@ -786,7 +951,7 @@ function ProgressBarCell({ cell, inBand = false }: { cell: ProgressCell; inBand?
           <strong className={cn('font-bold', cell.padY === 5 ? 'py-12' : 'py-6')}>
             {cell.icon && (
               <>
-                <i className={`${projectIcon(cell.icon)} fa-xl`} aria-hidden="true" />
+                <i className={`${projectIcon(cell.icon)} modal-progress-cell-icon`} aria-hidden="true" />
                 <br />
               </>
             )}
@@ -810,7 +975,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
     return (
       <ul className="modal-info-card-grid">
         {block.items.map((item, i) => (
-          <li key={i} className="modal-info-card">
+          <li key={i} className="modal-info-card modal-prism-surface">
             <span className="modal-info-card-icon" aria-hidden="true">
               <i className={item.icon ?? 'fa-thin fa-circle-info'} />
             </span>
@@ -828,20 +993,16 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
   return (
     <ListTag
       className={cn(
-        'list-group',
-        block.numbered && 'list-group-numbered',
-        block.shadow && 'shadow-[var(--shadow-bs-lg)]'
+        'list-group modal-prism-list',
+        block.numbered && 'list-group-numbered'
       )}
     >
       {block.items.map((item, i) => (
         <li
           key={i}
-          className={cn(
-            'list-group-item flex justify-between items-start',
-            item.bg && BG_LIGHT_25[item.bg]
-          )}
+          className="list-group-item modal-prism-list-item modal-prism-surface"
         >
-          <div className="ms-2 me-auto">
+          <div>
             {item.label && <div className="font-bold">{item.label}</div>}
             {item.body}
             {item.subItems && (
@@ -860,7 +1021,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
 function CardContent({ block }: { block: CardBlock }) {
   return (
-    <div className={cn('card', block.shadow && 'shadow-[var(--shadow-bs-lg)]')}>
+    <div className="card modal-prism-card modal-prism-surface">
       <div className="card-header">{block.header}</div>
       <div className="card-body">
         {block.rows.map((row) => (
@@ -876,19 +1037,15 @@ function CardContent({ block }: { block: CardBlock }) {
   )
 }
 
-function MetricStat({ metric }: { metric: ProjectMetric }) {
+const METRIC_TONES = ['gold', 'sage', 'plum', 'slate'] as const
+const METRIC_ICONS = ['fa-chart-line', 'fa-chart-pie', 'fa-users', 'fa-stopwatch'] as const
+
+function MetricStat({ metric, index }: { metric: ProjectMetric; index: number }) {
   return (
-    <div className="modal-metric-card">
-      <h4 className="result mb-0 display-5 fw-bolder">
-        {metric.value}
-        {metric.direction && <small>
-          <i
-            className={`display-3 fa-thin fa-long-arrow-${metric.direction}`}
-            aria-hidden="true"
-          />
-        </small>}
-      </h4>
-      <p className="result-label mt-0">{metric.label}</p>
+    <div className="modal-metric-card modal-prism-surface" data-prism-tone={METRIC_TONES[index % METRIC_TONES.length]}>
+      <i className={`modal-metric-icon fa-thin ${METRIC_ICONS[index % METRIC_ICONS.length]}`} aria-hidden="true" />
+      <h4 className="result">{metric.value}</h4>
+      <p className="result-label">{metric.label}</p>
     </div>
   )
 }

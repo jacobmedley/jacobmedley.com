@@ -1,0 +1,1435 @@
+{
+  "catalogEntries": [
+    {
+      "name": "Spotlight Split",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Process Tile",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Image Tile",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Role Ledger",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Practice Stack",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Leadership Principles",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Credential Shard",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Career Snapshot",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Outcome Feature",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Outcome Tile",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Story Slate",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Signal Tile",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Animated Image",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Prism Field",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Crossing Tide",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Corner Current",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Frost Pane",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Inset Light Edge",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Tint Edge",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Ribbon Rule",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Quiet Label",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Discipline Pebble",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Context Medallion",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Trail Arrow",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Project Artwork",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Brand Palette",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Type Scale",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Reading Sheet",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Section Plaque",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Evidence Cluster",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Metric Lens",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Value Sheet",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Data Bay",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Image Frame",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Supporting Diagram",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "System Diagram",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Icon Grid",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Split Narrative",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Reference Fold",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Numbered List",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Content Card",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Availability Demo",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Story Cover",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Decision Note",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Proof Grid",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Hero Identity",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Page Navigation",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Filter Rail",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Story Navigation",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Focus Halo",
+      "status": "Source located. The page below is live and fully interactive."
+    },
+    {
+      "name": "Motion Control",
+      "status": "Source located. The page below is live and fully interactive."
+    }
+  ],
+  "sourceLocators": [
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "spotlight-split",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "pattern": "spotlight-split",
+      "route": "/",
+      "selector": ".work-item-dentalplans .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "BumblebeeMD",
+      "pattern": "spotlight-split",
+      "route": "/",
+      "selector": ".work-item-bumblebeemd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "pattern": "spotlight-split",
+      "route": "/",
+      "selector": ".work-item-hydra .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "pattern": "spotlight-split",
+      "route": "/",
+      "selector": ".work-item-opfred .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "A/B Testing",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"split-test\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "When nobody can take the call",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"call-center-ux\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Data-Driven Personalization",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"marketing-auto\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Team Workshops",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"workshops\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "UX Roadmaps",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"roadmap\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Personas",
+      "pattern": "process-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"personas\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Reveal",
+      "pattern": "image-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"reveal\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Viva",
+      "pattern": "image-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"viva\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Wrong",
+      "pattern": "image-tile",
+      "route": "/",
+      "selector": "[data-project-id=\"wrong\"] .thinking-thumb"
+    },
+    {
+      "count": 1,
+      "label": "Health-E Commerce",
+      "pattern": "role-ledger",
+      "route": "/",
+      "selector": ".resume-timeline-entry-health .resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "Mutual of America",
+      "pattern": "role-ledger",
+      "route": "/",
+      "selector": ".resume-timeline-entry-mutual .resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "pattern": "role-ledger",
+      "route": "/",
+      "selector": ".resume-timeline-entry-one-park .resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "pattern": "role-ledger",
+      "route": "/",
+      "selector": ".resume-timeline-entry-dentalplans .resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "Bluegreen Vacations",
+      "pattern": "role-ledger",
+      "route": "/",
+      "selector": ".resume-timeline-entry-bluegreen .resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "Complete composition",
+      "pattern": "practice-stack",
+      "route": "/",
+      "selector": ".resume-prism-practice"
+    },
+    {
+      "count": 1,
+      "label": "Four principles",
+      "pattern": "leadership",
+      "route": "/",
+      "selector": ".resume-leadership-grid"
+    },
+    {
+      "count": 1,
+      "label": "Credential 1",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(1)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 2",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(2)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 3",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(3)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 4",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(4)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 5",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(5)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 6",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(6)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 7",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(7)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 8",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(8)"
+    },
+    {
+      "count": 1,
+      "label": "Credential 9",
+      "pattern": "credential-shard",
+      "route": "/",
+      "selector": ".education-card:nth-child(9)"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "prism-field",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "pattern": "prism-field",
+      "route": "/",
+      "selector": ".work-item-dentalplans .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "BumblebeeMD",
+      "pattern": "prism-field",
+      "route": "/",
+      "selector": ".work-item-bumblebeemd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "pattern": "prism-field",
+      "route": "/",
+      "selector": ".work-item-hydra .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "pattern": "prism-field",
+      "route": "/",
+      "selector": ".work-item-opfred .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "Selected-work boundary",
+      "pattern": "crossing-tide",
+      "route": "/",
+      "selector": ".work-wave-reverse"
+    },
+    {
+      "count": 9,
+      "label": "Single corner",
+      "pattern": "corner-current",
+      "route": "/",
+      "selector": ".education-card"
+    },
+    {
+      "count": 1,
+      "label": "Both corners",
+      "pattern": "corner-current",
+      "route": "/",
+      "selector": ".resume-prism-practice"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "frost-pane",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-copy"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "pattern": "frost-pane",
+      "route": "/",
+      "selector": ".work-item-dentalplans .featured-work-copy"
+    },
+    {
+      "count": 1,
+      "label": "BumblebeeMD",
+      "pattern": "frost-pane",
+      "route": "/",
+      "selector": ".work-item-bumblebeemd .featured-work-copy"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "pattern": "frost-pane",
+      "route": "/",
+      "selector": ".work-item-hydra .featured-work-copy"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "pattern": "frost-pane",
+      "route": "/",
+      "selector": ".work-item-opfred .featured-work-copy"
+    },
+    {
+      "count": 5,
+      "label": "Employment card",
+      "pattern": "inset-light-edge",
+      "route": "/",
+      "selector": ".resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "tint-edge",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 9,
+      "label": "Credential",
+      "pattern": "tint-edge",
+      "route": "/",
+      "selector": ".education-card"
+    },
+    {
+      "count": 5,
+      "label": "Section heading",
+      "pattern": "ribbon-rule",
+      "route": "/",
+      "selector": "#work .solid-center"
+    },
+    {
+      "count": 1,
+      "label": "Featured eyebrow",
+      "pattern": "quiet-label",
+      "route": "/",
+      "selector": ".work-item-webmd .QuietPrism_eyebrow__5p2dX"
+    },
+    {
+      "count": 5,
+      "label": "Featured disciplines",
+      "pattern": "discipline-pebble",
+      "route": "/",
+      "selector": ".featured-work-copy [aria-label=\"Disciplines\"]"
+    },
+    {
+      "count": 1,
+      "label": "WebMD context icon",
+      "pattern": "context-medallion",
+      "route": "/",
+      "selector": ".work-item-webmd .QuietPrism_featuredContextIcon__qVIvc"
+    },
+    {
+      "count": 1,
+      "label": "View action",
+      "pattern": "trail-arrow",
+      "route": "/",
+      "selector": ".work-item-webmd .QuietPrism_featuredFooter__Uyfjf"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "project-artwork",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "pattern": "project-artwork",
+      "route": "/",
+      "selector": ".work-item-dentalplans .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "BumblebeeMD",
+      "pattern": "project-artwork",
+      "route": "/",
+      "selector": ".work-item-bumblebeemd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "pattern": "project-artwork",
+      "route": "/",
+      "selector": ".work-item-hydra .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "pattern": "project-artwork",
+      "route": "/",
+      "selector": ".work-item-opfred .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "brand-palette",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 1,
+      "label": "Featured heading",
+      "pattern": "type-scale",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-copy h3"
+    },
+    {
+      "count": 1,
+      "label": "Featured body",
+      "pattern": "type-scale",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-copy p"
+    },
+    {
+      "count": 1,
+      "label": "Homepage identity",
+      "pattern": "hero-identity",
+      "route": "/",
+      "selector": ".hero-title"
+    },
+    {
+      "count": 1,
+      "label": "Homepage section rail",
+      "pattern": "page-navigation",
+      "route": "/",
+      "selector": "#the-menu"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "pattern": "focus-halo",
+      "route": "/",
+      "selector": ".work-item-webmd .featured-work-card"
+    },
+    {
+      "count": 5,
+      "label": "Employment disclosure",
+      "pattern": "focus-halo",
+      "route": "/",
+      "selector": ".resume-experience-card"
+    },
+    {
+      "count": 1,
+      "label": "Homepage pause control",
+      "pattern": "motion-control",
+      "route": "/",
+      "selector": ".site-motion-control"
+    },
+    {
+      "count": 1,
+      "label": "Career figures",
+      "pattern": "career-snapshot",
+      "route": "/case-studies/",
+      "selector": ".cs-career"
+    },
+    {
+      "count": 1,
+      "label": "Platform launch comparison",
+      "pattern": "outcome-feature",
+      "route": "/case-studies/",
+      "selector": ".cs-featured"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "outcome-tile",
+      "route": "/case-studies/",
+      "selector": ".cs-outcome-card[href=\"/case-studies/building-a-design-function/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "outcome-tile",
+      "route": "/case-studies/",
+      "selector": ".cs-outcome-card[href=\"/case-studies/one-customer-journey/\"]"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "outcome-tile",
+      "route": "/case-studies/",
+      "selector": ".cs-outcome-card[href=\"/case-studies/navigation-beyond-opinion/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "outcome-tile",
+      "route": "/case-studies/",
+      "selector": ".cs-outcome-card[href=\"/case-studies/tokens-before-pages/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "outcome-tile",
+      "route": "/case-studies/",
+      "selector": ".cs-outcome-card[href=\"/case-studies/a-checkout-decision-with-receipts/\"]"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/one-platform-five-properties/\"]"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/building-a-design-function/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/one-customer-journey/\"]"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/navigation-beyond-opinion/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/tokens-before-pages/\"]"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "story-slate",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card[href=\"/case-studies/a-checkout-decision-with-receipts/\"]"
+    },
+    {
+      "count": 6,
+      "label": "Story",
+      "pattern": "tint-edge",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card"
+    },
+    {
+      "count": 4,
+      "label": "Case-study eyebrow",
+      "pattern": "quiet-label",
+      "route": "/case-studies/",
+      "selector": ".cs-eyebrow"
+    },
+    {
+      "count": 6,
+      "label": "Story disciplines",
+      "pattern": "discipline-pebble",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card .cs-badges"
+    },
+    {
+      "count": 6,
+      "label": "Read action",
+      "pattern": "trail-arrow",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card .cs-text-link"
+    },
+    {
+      "count": 6,
+      "label": "Story icon artwork",
+      "pattern": "project-artwork",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card"
+    },
+    {
+      "count": 1,
+      "label": "Case-study tokens",
+      "pattern": "brand-palette",
+      "route": "/case-studies/",
+      "selector": ".cs-site"
+    },
+    {
+      "count": 1,
+      "label": "Index heading",
+      "pattern": "type-scale",
+      "route": "/case-studies/",
+      "selector": ".cs-index-hero h1"
+    },
+    {
+      "count": 1,
+      "label": "Case-study header",
+      "pattern": "page-navigation",
+      "route": "/case-studies/",
+      "selector": ".cs-header"
+    },
+    {
+      "count": 1,
+      "label": "All work and discipline filters",
+      "pattern": "filter-rail",
+      "route": "/case-studies/",
+      "selector": ".cs-filters"
+    },
+    {
+      "count": 6,
+      "label": "Story link",
+      "pattern": "focus-halo",
+      "route": "/case-studies/",
+      "selector": ".cs-study-card"
+    },
+    {
+      "count": 1,
+      "label": "Case-study pause control",
+      "pattern": "motion-control",
+      "route": "/case-studies/",
+      "selector": ".site-motion-control"
+    },
+    {
+      "count": 1,
+      "label": "gold",
+      "pattern": "signal-tile",
+      "route": "/design-system/retained/",
+      "selector": "#gold"
+    },
+    {
+      "count": 1,
+      "label": "green",
+      "pattern": "signal-tile",
+      "route": "/design-system/retained/",
+      "selector": "#green"
+    },
+    {
+      "count": 1,
+      "label": "purple",
+      "pattern": "signal-tile",
+      "route": "/design-system/retained/",
+      "selector": "#purple"
+    },
+    {
+      "count": 1,
+      "label": "rose",
+      "pattern": "signal-tile",
+      "route": "/design-system/retained/",
+      "selector": "#rose"
+    },
+    {
+      "count": 1,
+      "label": "Marketing automation GIF",
+      "pattern": "animated-image",
+      "route": "/design-system/retained/",
+      "selector": "#animated-image"
+    },
+    {
+      "count": 7,
+      "label": "Dialog heading",
+      "modal": "webmd",
+      "pattern": "ribbon-rule",
+      "route": "/",
+      "selector": ".modal-study-content .solid-center"
+    },
+    {
+      "count": 1,
+      "label": "Contributions",
+      "modal": "webmd",
+      "pattern": "discipline-pebble",
+      "route": "/",
+      "selector": ".modal-badges"
+    },
+    {
+      "count": 1,
+      "label": "WebMD",
+      "modal": "webmd",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 14,
+      "label": "WebMD",
+      "modal": "webmd",
+      "pattern": "image-frame",
+      "route": "/",
+      "selector": ".modal-study-content .modal-image-frame"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "project-artwork",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "type-scale",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "story-cover",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "decision-note",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "proof-grid",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "At a glance",
+      "pattern": "proof-grid",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-at-glance"
+    },
+    {
+      "count": 1,
+      "label": "One platform. Five properties.",
+      "pattern": "story-navigation",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "Next story",
+      "pattern": "story-navigation",
+      "route": "/case-studies/one-platform-five-properties/",
+      "selector": ".cs-next-study"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "project-artwork",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "type-scale",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "story-cover",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "decision-note",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "proof-grid",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "Building an experience design practice",
+      "pattern": "story-navigation",
+      "route": "/case-studies/building-a-design-function/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "project-artwork",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "type-scale",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "story-cover",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "decision-note",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "proof-grid",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "A shared customer journey",
+      "pattern": "story-navigation",
+      "route": "/case-studies/one-customer-journey/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "project-artwork",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "type-scale",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "story-cover",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "decision-note",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "proof-grid",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "How customers look for products",
+      "pattern": "story-navigation",
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "project-artwork",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "type-scale",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "story-cover",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "decision-note",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "proof-grid",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "A shared foundation for a second brand",
+      "pattern": "story-navigation",
+      "route": "/case-studies/tokens-before-pages/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "project-artwork",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "type-scale",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-detail-deck"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "story-cover",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-detail-cover"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "decision-note",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-decision-callout"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "proof-grid",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-results-grid"
+    },
+    {
+      "count": 1,
+      "label": "A checkout decision with receipts",
+      "pattern": "story-navigation",
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "selector": ".cs-story-sidebar"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "section-plaque",
+      "route": "/",
+      "selector": ".modal-section-heading"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "metric-lens",
+      "route": "/",
+      "selector": ".modal-metric-grid"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "value-sheet",
+      "route": "/",
+      "selector": ".modal-value-card"
+    },
+    {
+      "count": 1,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "data-bay",
+      "route": "/",
+      "selector": ".modal-data-panel"
+    },
+    {
+      "count": 1,
+      "label": "Dental platform",
+      "modal": "dentalplans",
+      "pattern": "supporting-diagram",
+      "route": "/",
+      "selector": "[data-supporting-art=\"dental-platform\"]"
+    },
+    {
+      "count": 22,
+      "label": "DentalPlans.com",
+      "modal": "dentalplans",
+      "pattern": "system-diagram",
+      "route": "/",
+      "selector": ".modal-study-content .progress"
+    },
+    {
+      "count": 1,
+      "label": "BumblebeeMD",
+      "modal": "bumblebeemd",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "modal": "hydra",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "modal": "hydra",
+      "pattern": "supporting-diagram",
+      "route": "/",
+      "selector": "[data-supporting-art=\"hydra\"]"
+    },
+    {
+      "count": 10,
+      "label": "Hydra",
+      "modal": "hydra",
+      "pattern": "system-diagram",
+      "route": "/",
+      "selector": ".modal-study-content .progress"
+    },
+    {
+      "count": 6,
+      "label": "Hydra nomenclature",
+      "modal": "hydra",
+      "pattern": "icon-grid",
+      "route": "/",
+      "selector": ".modal-study-content .card"
+    },
+    {
+      "count": 1,
+      "label": "Hydra",
+      "modal": "hydra",
+      "pattern": "split-narrative",
+      "route": "/",
+      "selector": ".modal-study-content"
+    },
+    {
+      "count": 1,
+      "label": "One Park Financial",
+      "modal": "opfred",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "A/B Testing",
+      "modal": "split-test",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "When nobody can take the call",
+      "modal": "call-center-ux",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 2,
+      "label": "Call-center states",
+      "modal": "call-center-ux",
+      "pattern": "section-plaque",
+      "route": "/",
+      "selector": ".modal-section-heading"
+    },
+    {
+      "count": 1,
+      "label": "Call-center flow",
+      "modal": "call-center-ux",
+      "pattern": "supporting-diagram",
+      "route": "/",
+      "selector": ".study-supporting-art"
+    },
+    {
+      "count": 1,
+      "label": "Call-center availability",
+      "modal": "call-center-ux",
+      "pattern": "availability-demo",
+      "route": "/",
+      "selector": ".call-center-demo"
+    },
+    {
+      "count": 1,
+      "label": "Data-Driven Personalization",
+      "modal": "marketing-auto",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Team Workshops",
+      "modal": "workshops",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Workshop portraits",
+      "modal": "workshops",
+      "pattern": "icon-grid",
+      "route": "/",
+      "selector": ".modal-study-content"
+    },
+    {
+      "count": 1,
+      "label": "UX Roadmaps",
+      "modal": "roadmap",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Roadmap structure",
+      "modal": "roadmap",
+      "pattern": "reference-fold",
+      "route": "/",
+      "selector": ".modal-reference"
+    },
+    {
+      "count": 1,
+      "label": "UX roadmap",
+      "modal": "roadmap",
+      "pattern": "numbered-list",
+      "route": "/",
+      "selector": ".list-group-numbered"
+    },
+    {
+      "count": 1,
+      "label": "UX roadmap",
+      "modal": "roadmap",
+      "pattern": "content-card",
+      "route": "/",
+      "selector": ".modal-study-content .card"
+    },
+    {
+      "count": 1,
+      "label": "Personas",
+      "modal": "personas",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Personas",
+      "modal": "personas",
+      "pattern": "image-frame",
+      "route": "/",
+      "selector": ".modal-image-frame"
+    },
+    {
+      "count": 1,
+      "label": "Reveal",
+      "modal": "reveal",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 2,
+      "label": "Reveal",
+      "modal": "reveal",
+      "pattern": "section-plaque",
+      "route": "/",
+      "selector": ".modal-section-heading"
+    },
+    {
+      "count": 1,
+      "label": "Reveal concepts",
+      "modal": "reveal",
+      "pattern": "evidence-cluster",
+      "route": "/",
+      "selector": ".modal-info-card-grid"
+    },
+    {
+      "count": 1,
+      "label": "Viva",
+      "modal": "viva",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Wrong",
+      "modal": "wrong",
+      "pattern": "reading-sheet",
+      "route": "/",
+      "selector": ".modal-content"
+    },
+    {
+      "count": 1,
+      "label": "Wrong campaign",
+      "modal": "wrong",
+      "pattern": "evidence-cluster",
+      "route": "/",
+      "selector": ".modal-info-card-grid"
+    }
+  ],
+  "finalFocus": {
+    "focus": "webmd",
+    "modal": false
+  }
+}

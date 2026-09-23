@@ -1,0 +1,20 @@
+{
+  "viewport": { "width": 1376, "height": 915, "deviceScaleFactor": 1 },
+  "dentalPlans": {
+    "mvpColumns": 1,
+    "iterationTwoColumns": 3,
+    "iterationThreeColumns": 2,
+    "iterationFourColumns": 3,
+    "horizontalOverflowPixels": 0,
+    "compactViewport": { "width": 390, "height": 844, "diagramColumns": 1, "horizontalOverflowPixels": 0 }
+  },
+  "hydra": {
+    "whyCardWidth": 768,
+    "whyCardCenterDelta": 0,
+    "sharedLanguageRuleTag": "HR"
+  },
+  "sectionHeaders": {
+    "howIWork": { "reserveHeight": 211, "titleToRule": 84.0703125 },
+    "aboutAndExperience": { "reserveHeight": 211, "titleToRule": 84.0703125 }
+  }
+}

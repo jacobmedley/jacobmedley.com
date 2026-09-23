@@ -1,3 +1,4 @@
+import { CornerWaves } from '@/components/ui/QuietPrism'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -31,14 +32,14 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <main id="main-content" tabIndex={-1} className={`cs-detail cs-theme-${study.theme}`}>
       <section className="cs-detail-hero cs-container">
         <Link href="/case-studies/" className="cs-back-link"><i className="fa-thin fa-arrow-left" aria-hidden="true" /> All case studies</Link>
-        <div className="cs-detail-meta"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span>Case Study // {String(index + 1).padStart(2, '0')}</span></div>
+        <div className="cs-detail-meta"><div className="cs-badges" role="group" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><span>Case Study // {String(index + 1).padStart(2, '0')}</span></div>
         <h1>{study.title}</h1><p className="cs-detail-deck">{study.summary}</p>
         <dl className="cs-role-grid"><div><dt>My role</dt><dd>{study.role}</dd></div><div><dt>The scope</dt><dd>{study.scope}</dd></div><div><dt>Working together</dt><dd>{study.collaboration}</dd></div></dl>
       </section>
 
       <div className="cs-container"><div className="cs-detail-cover" aria-hidden="true"><StudyVisual kind={study.visual} /></div><p className="cs-figure-caption">Explanatory reconstruction of the approach, based on the project narrative.</p></div>
 
-      <section className="cs-at-glance cs-container" aria-label="Case study at a glance">{['Problem', 'Solution', 'Result'].map((label, i) => <div key={label}><span className="cs-eyebrow">0{i + 1}{' // '}{label}</span><p>{study.atAGlance[i]}</p></div>)}</section>
+      <section className="cs-at-glance cs-container" aria-label="Case study at a glance">{['Problem', 'Solution', 'Result'].map((label, i) => <div key={label} data-motion-root data-atmosphere><CornerWaves /><span className="cs-eyebrow">0{i + 1}{' // '}{label}</span><p>{study.atAGlance[i]}</p></div>)}</section>
 
       <div className="cs-story-layout cs-container">
         <aside className="cs-story-sidebar"><nav aria-label="In this case study"><span className="cs-eyebrow">In This Story</span>{study.sections.map((section, i) => <a href={`#${section.id}`} key={section.id}><span>0{i + 1}</span><span className="cs-nav-label-full">{section.label}</span><span className="cs-nav-label-mobile">{mobileSectionLabels[section.id] ?? section.label}</span></a>)}</nav><div className="cs-sidebar-note">{study.discipline}</div></aside>

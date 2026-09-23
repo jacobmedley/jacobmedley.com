@@ -1,7 +1,7 @@
 'use client'
 
 import { useLayoutEffect, useRef } from 'react'
-import { useReducedMotion } from './MotionControls'
+import { useMotionPaused, useReducedMotion } from './MotionControls'
 
 const ROLES = ['Product', 'UX', 'Systems', 'IxD', 'Human'] as const
 const DURATION = 39000
@@ -41,10 +41,11 @@ export default function KineticHeroIdentity() {
   const rootRef = useRef<HTMLDivElement>(null)
   const elapsedRef = useRef(0)
   const reduced = useReducedMotion()
+  const paused = useMotionPaused()
 
   useLayoutEffect(() => {
     const root = rootRef.current!
-    if (reduced || !root.animate) {
+    if (reduced || paused || !root.animate) {
       root.dataset.heroState = 'static'
       return
     }
@@ -78,17 +79,14 @@ export default function KineticHeroIdentity() {
       const name = find('.hero-name')
       const words = [...root.querySelectorAll<HTMLElement>('.kinetic-word')]
       const size = parseFloat(getComputedStyle(stage).fontSize)
-      // Reveal with a tight aperture, then add the original resting space.
-      // The remaining .7em belongs outside the braces, beside the + Design tail.
-      const revealGap = size * .08
+      // Open directly to the same roomy aperture used by the settled identity.
+      // This keeps both reveals from visually stopping at the text edges.
       const widths = words.map(word => word.scrollWidth + size * 1.6)
       const nameTextWidth = name.getBoundingClientRect().width
-      const nameWidth = Math.min(nameTextWidth + revealGap, root.clientWidth - size)
       const nameRestWidth = Math.min(nameTextWidth + size * 1.6, root.clientWidth - size)
       const rootTop = root.getBoundingClientRect().top
       const nameY = name.getBoundingClientRect().top - rootTop + name.offsetHeight / 2 - size * .65
       const roleY = stage.getBoundingClientRect().top - rootTop
-      const closingNode = find('.kinetic-closing')
       const tailWidth = find('.kinetic-tail-inner').getBoundingClientRect().width
       const stacked = getComputedStyle(find('.kinetic-assembly')).flexDirection === 'column'
       function track(node: HTMLElement, cues: Cue[]) {
@@ -101,7 +99,7 @@ export default function KineticHeroIdentity() {
       track(find('.h-jakeicon'), [pose(0, 'translateY(-12px)', 0), pose(540, 'translateY(0)'), pose(DURATION, 'translateY(0)')])
       // The mask reads the SAME animated property as the brace width every frame.
       // Only its release is discrete; there is no separately interpolated mask.
-      const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameWidth]]
+      const nameOpening: OpeningCue[] = [[0,0],[FIGMA.spread,0,TURN],[FIGMA.open,nameRestWidth]]
       const masked = (node: HTMLElement, start: number, end: number) => {
         const connected = 'inset(0px calc((100% - var(--hero-aperture)) / 2))'
         const cues: Cue[] = [[0,{clipPath:start === 0 ? connected : 'inset(0px 50%)',easing:'steps(1,end)'}]]
@@ -115,7 +113,7 @@ export default function KineticHeroIdentity() {
       widthCues.push([DURATION,{width:`${widths[FINAL_ROLE]}px`}])
       track(find('.kinetic-bracketed'),widthCues)
       const productWidth = widths[0]-size*.7
-      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,words[0].scrollWidth+revealGap]]
+      const productOpening: OpeningCue[] = [[FIGMA.closed,0,ARRIVE],[FIGMA.product,productWidth]]
       const mechanismOpening: OpeningCue[] = [...nameOpening,[FIGMA.nameRest,nameRestWidth],[FIGMA.landed,nameRestWidth,SNAP],...productOpening,[FIGMA.productRest,productWidth]]
       const mechanismWidth: Cue[] = mechanismOpening.map(([time,width,easing]) => [time,{'--hero-aperture':`${width}px`,...(easing ? {easing} : {})}])
       CHANGES.forEach((time,i)=>mechanismWidth.push([time,{'--hero-aperture':`${widths[i%5]-size*.7}px`}],[time+280,{'--hero-aperture':`${widths[(i+1)%5]-size*.7}px`}]))
@@ -162,7 +160,18 @@ export default function KineticHeroIdentity() {
       plusCues.push(pose(DURATION,`rotate(${CHANGES.length*180}deg)`))
       track(find('.kinetic-plus'),plusCues)
       track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370+END_SPACE_DURATION,'translateX(.4em)',0),pose(3800+END_SPACE_DURATION,'translateX(0)'),pose(DURATION,'translateX(0)')])
-      track(closingNode,[[0,{opacity:0}],[8000,{opacity:0}],[9600,{opacity:1}],[DURATION,{opacity:1}]])
+      const reveal = (selector: string, start: number) => track(find(selector), [
+        [0, { opacity: 0, transform: 'translateY(-1rem)' }],
+        [start, { opacity: 0, transform: 'translateY(-1rem)' }],
+        [start + 520, { opacity: 1, transform: 'translateY(0)' }],
+        [DURATION, { opacity: 1, transform: 'translateY(0)' }],
+      ])
+      // Start the closing sequence with the first UX role, then let each
+      // element fall softly into its settled position.
+      reveal('.kinetic-build', CHANGES[0])
+      reveal('.kinetic-better', CHANGES[0] + 200)
+      reveal('.hero-rule-wrap', CHANGES[0] + 400)
+      reveal('.hero-case-studies-button', CHANGES[0] + 600)
       animations[0].onfinish = syncPlayback
       syncPlayback()
     }
@@ -185,7 +194,7 @@ export default function KineticHeroIdentity() {
       resize.disconnect()
       document.removeEventListener('visibilitychange', syncPlayback)
     }
-  }, [reduced])
+  }, [reduced, paused])
 
   return (
     <div ref={rootRef} className="kinetic-identity" data-motion-root data-hero-state="static">
@@ -207,8 +216,14 @@ export default function KineticHeroIdentity() {
       </div></div>
       <p className="sr-only">Product and design leader</p>
       <div className="kinetic-closing">
-        <p>I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
-        <p>There is always a better way, together we can find it.</p>
+        <p className="kinetic-build">I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
+        <p className="kinetic-better"><strong>There is always a better way, together we can find it.</strong></p>
+        <div className="hero-rule-wrap">
+          <hr className="solid-center rule-heading" />
+        </div>
+        <a className="btn action-label hero-case-studies-link" href="#work" aria-label="Explore selected work">
+          <i className="fa-thin fa-circle-arrow-down hero-case-studies-button" aria-hidden="true" />
+        </a>
       </div>
     </div>
   )

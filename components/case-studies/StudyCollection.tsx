@@ -1,5 +1,7 @@
 'use client'
 
+import { CornerWaves } from '@/components/ui/QuietPrism'
+
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import type { CaseStudy, CaseStudyOutcome } from '@/lib/data/case-studies'
@@ -82,9 +84,10 @@ export default function StudyCollection({ studies, outcomes }: { studies: StudyP
       <div className="cs-section-heading"><h2 id="selected-work-title">Different problems. Deliberate decisions.</h2><span aria-live="polite" aria-atomic="true">{filtered.length}{' // '}{filtered.length === 1 ? 'Case Study' : 'Case Studies'}</span></div>
       <div className="cs-study-grid">
         {filtered.map((study) => (
-          <Link data-motion-root className={`cs-study-card cs-icon-card thinking-thumb-icon cs-theme-${study.theme}`} key={study.slug} href={`/case-studies/${study.slug}/`} aria-label={`Read ${study.shortTitle}`}>
+          <Link data-motion-root data-atmosphere className={`cs-study-card cs-icon-card thinking-thumb-icon cs-theme-${study.theme}`} key={study.slug} href={`/case-studies/${study.slug}/`} aria-label={`Read ${study.shortTitle}`}>
+            <CornerWaves />
             <StudyIconArt kind={study.visual} />
-            <div className="cs-card-copy"><div className="cs-badges" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read <Arrow /></span></div>
+            <div className="cs-card-copy"><div className="cs-badges" role="group" aria-label="Disciplines">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><h3>{study.shortTitle}</h3><p>{study.summary}</p><span className="cs-text-link">Read <Arrow /></span></div>
           </Link>
         ))}
       </div>

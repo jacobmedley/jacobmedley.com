@@ -1,7 +1,12 @@
 # Copy Register
 
-**Status:** edits B0 through B59. All APPLIED unless marked otherwise.
-B58 preserves the leadership draft; B59 removes its placement pending Jacob's review.
+**Status:** edits B0 through B72. All APPLIED unless marked otherwise.
+B60 and B64 are implemented in the local full-site integration, not published.
+B64 promotes the selected B61/B62/B63 wording from lab to production source and
+supersedes B57's dedicated-page deferral. Historical scope notes below remain
+part of the record; the latest applicable entry governs.
+B58 preserves the long-form leadership source; B59 removed its former placement;
+B60 approves the compressed wording for the unified Resume card.
 B56 records the full local copy pass; B57 limits this release to the main site.
 B39 is applied only in the locally committed dashboard. B40 is superseded by B45,
 B41 by B44, and B42 by B46.
@@ -965,8 +970,9 @@ adjective, and repeated "design and development" within one sentence.
 
 Nothing else in the paragraph changed. **Applied.**
 
-## B30. Mentorship and team development [PLACEMENT DEFERRED, see B59]
-**Surface:** Developing people draft preserved under B58, removed from the page under B59.
+## B30. Mentorship and team development [RESOLVED BY B60; NOT IMPLEMENTED]
+**Surface:** B58 preserves the long-form source. B60 carries the approved four-bullet
+version for the unified Resume card. The published page remains unchanged.
 
 Jacob supplied his coaching practice and approved the edited passage on September
 19 UTC. This resolves the main-site source gap. A specific mentee's later outcome
@@ -2020,3 +2026,325 @@ Education uses tighter card padding, source directly beneath the title when the
 card allows, and stacked content on narrow cards. Correct the heading's dark
 color on the dark education background, including after scrolling past the top.
 This remains a local preview pass; no merge, push, or deploy is requested here.
+
+## B60. Main-site editorial consolidation [APPROVED; NOT IMPLEMENTED]
+
+Source: the September 19 main-site editorial workstream in task
+`01a0ba6e-f542-77a3-b0f5-c8172fbdf40a`, using the approved B58 practice,
+Jacob's September 19 experience-program brief, and the published v12.160 source.
+This is one approved pass. It does not revise homepage study summaries,
+employment facts, metrics, education names, dedicated case-study prose, or the
+historical scope of the tools list.
+
+**Approval:** Jacob approved `B60 - Unified Resume Card` in visual-system task
+`01a0ba6e-ce13-7701-a6a9-206e048245ea` on September 19, 2026. The same direction
+selected Quiet Prism, Title Case eyebrows, faded-end rules, tighter eyebrow/title
+spacing, and top alignment for the right-side content icon. Those presentation
+decisions belong to the visual-system workstream. This entry owns the exact wording
+and the `How I lead the work` label. Approval does not authorize publication.
+
+### Team Building and Mentorship
+
+- I walk beside junior staff, asking questions until they can name the next step,
+  dependency, or piece they can move now.
+- I make authority explicit. People can assess the risk and decide without
+  bringing every next step back for permission.
+- I stay available and remove blockers beyond their control.
+- We review outcomes together. We change the conditions behind mistakes and
+  understand good results well enough to repeat them.
+
+These four bullets compress B58 without adding an employer, colleague, metric,
+mentee result, permission claim, or management promise. The third bullet is
+deliberately short. The set belongs above Expertise in the proposed unified side
+card; visual placement remains owned by the visual-system workstream.
+
+### One label correction
+
+In About and experience, change the local heading `How I approach the work` to
+`How I lead the work`. The current page already uses `How I work` for the prior
+section. The new label removes that near-duplicate and more accurately introduces
+the leadership belief, leadership examples, and mentorship material that follow.
+The slogan and body beneath it stay unchanged.
+
+### Preserve the rest
+
+Keep the hero, navigation, five homepage study summaries, How I work introduction
+and teasers, four leadership examples, all employment entries, Expertise wording,
+the visible `Tools used across these roles` qualifier, tool names, education labels,
+More/Less controls, external-link context, modal Close labels, demo labels, email,
+and footer copy as published in v12.160. Current tool proficiency remains unknown;
+the historical qualifier is why the existing list is safe. A stronger current-use
+claim needs fresh confirmation from Jacob.
+
+
+## B61. Quiet Prism visual-lab card language [APPLIED LOCALLY]
+
+Source: Jacob's selected Quiet Prism direction and September 19 visual-reference
+correction. This supplements the separately approved B60 unified Resume card and
+governs the isolated, unlinked visual-system lab only; it does not revise
+production case-study copy.
+
+The featured WebMD specimen uses the text action `View case study` and the
+distinct closing slogan `People · Process · Better outcomes`. Informational-card
+actions are `Read my approach`, `See how I work`, `Explore experience`, and
+`View education`. The approved card descriptions are the reference wording
+shown in the selected Quiet Prism source. The WebMD heading and summary remain
+registered production wording until the dedicated case-study copy is approved.
+The specimen label is `Informational Cards`, with the heading
+`Clear paths into the work`. The motion note explains that a soft light field
+moves through the waves and freezes for reduced motion.
+
+
+## B62. Quiet Prism final refinement headline and eyebrow [APPLIED LOCALLY]
+
+Source: Jacob's September 19, 2026 focused refinement brief and two references.
+Scope: isolated visual-system lab only. The glass-panel headline is
+`A clearer path to care`; the left journey description remains
+`From plan search to checkout`. The supporting narrative is unchanged.
+
+The current register, lab handoff and all-branch Git history were searched for
+the preferred headline. No documented factual/editorial rejection was found.
+B61 retained the production heading pending copy approval; this direct request
+supersedes that deferral for this lab headline only. It adds no measured outcome.
+
+The left `Case Study` eyebrow is displayed uppercase and tracked, as explicitly
+requested. This is a scoped exception to the prior Title Case guideline; other
+eyebrows retain their existing treatment. The large leadership panel stays as-is;
+its vertical composition is not approved as a canonical production replacement.
+
+
+## B63. Quiet Prism family review and label formatting [APPLIED LOCALLY]
+
+Source: Jacob's September 20 annotations and three motion notes, continued in
+task 01a0bf66. Lab only. Supersedes B62's leadership-layout freeze and removes the
+entire Application Identity Preview rail and its explanatory footer. Existing
+mentorship, expertise and tools wording is preserved. The six existing category
+labels in Expertise and Apps & Tools are bold through the colon, with the
+remainder normal. No arbitrary colon-containing prose is restyled.
+
+The five family selector labels reuse the project titles in lib/data/projects.ts.
+Additional family specimens reuse their existing subtitle, summary and disciplines
+verbatim, with the same View case study action and People / Process / Better
+outcomes footer already registered in B61. WebMD retains B62's lab-only heading.
+The selector's accessible label is Featured case study family. This adds review
+coverage, without changing production narratives or claiming new outcomes.
+
+
+## B64. Full-site Quiet Prism and connected case-study experience [APPLIED LOCALLY]
+
+Source: Jacob's September 20 instruction in task 01a0bf66, turn
+01a0bfb7-e5d4-7122-8950-67022ed30378, delegated to coordinator 01a0bf67:
+update the full site, including brand/marketing copy and the dedicated case-study
+site; refine globally from this point. This supersedes B57's dedicated-page and
+entry-link deferral, and the lab-only implementation hold. Publication remains a
+separate decision. It does not authorize new metrics or external resume edits.
+
+### Existing authority carried forward
+
+Apply B60's four mentorship bullets and How I lead the work exactly. Adopt the
+selected B61/B62/B63 card treatments and their registered interface wording on
+the main site after the final primitive handoff. Keep CASE STUDY as the explicitly
+requested, scoped eyebrow exception. Promote WebMD's A clearer path to care
+heading and the card footer People · Process · Better outcomes. Preserve all five
+project summaries, employment facts, dates, education names and the visible
+historical tools qualifier. The four informational cards use the B61 source copy
+with meaningful main-site destinations, without lab explanatory text.
+
+Reopen the six dedicated-page source deltas from d8d7380 under B56's canonical
+copy-pass manifest: index, CareerStats, OutcomeDashboard, StudyCollection,
+StudyVisual and case-study-site-copy.json. No whole-branch replay. Preserve the
+research-leadership distinction, source-qualified financial figures, qualitative
+outcomes and the original six story URLs. Correct any replacement-character
+encoding damage without changing meaning. Introductory role/scope/working-
+together fragments receive sentence-case capitalization only.
+
+### Connected browsing copy and destinations
+
+- Main selected-work section introduction: Five projects across product, brand,
+  and design systems. Open a project for the work, or read the longer stories
+  behind the decisions.
+- Main selected-work section secondary action: Explore the full case studies.
+  Destination: /case-studies/ in the same tab.
+- Secondary action after the project list: More stories behind the work.
+  Destination: /case-studies/ in the same tab.
+- Dedicated-site home link: Jacob Medley, home. Same-tab navigation; remove the
+  obsolete opens-in-a-new-tab hints and external icons only on internal links.
+- Dedicated-site experience link: About & experience. Destination: /#resume.
+- Dedicated-site footer action: More about Jacob. Destination: /#resume.
+- Homepage skip link: Skip to content.
+- Motion preference: Pause motion / Resume motion. A compact, consistently placed
+  control implements the requested accessible motion behavior across both areas;
+  it supersedes B52's removed-control presentation only to provide a user pause.
+
+The main hero and marketing proposition retain the current B56 copy and Jacob's
+complete signature line. Brand review favors concrete first-person decisions over
+new superlatives. Unsupported current tool proficiency, the unnamed fifth property,
+new outcomes, and proposed restorations remain unclaimed. Exact final copy and
+source parity are verified before marking this entry applied locally.
+
+Local acceptance: six-story JSON matches d8d7380 plus introductory capitalization;
+B60 bullets match exactly; project data and education records are preserved.
+See docs/full-site-integration-20260920.md for implementation, verification and
+remaining browser/assistive-technology limits. No publication has occurred.
+
+
+## B65. Browser-directed homepage refinements [APPLIED LOCALLY]
+
+Source: Jacob's eleven browser comments in task
+`01a0bf67-f456-7e32-b581-a233af6149fe` on September 20, 2026. This direct
+instruction supersedes B64 only for the named homepage elements. Publication is
+not authorized.
+
+Remove the four informational pathway cards from the production hero. Preserve
+the hero's existing name, role sequence, build paragraph, better-way sentence,
+and selected-work action; make the better-way sentence bold and change only
+their layout, timing, and presentation. Remove the visible word `View` and the
+divider from every education card while preserving each credential title,
+institution, destination, new-tab behavior, and accessible link context.
+
+Add a lock icon to `More stories behind the work` as a visual signal for the
+planned protected destination. Password enforcement, credentials, and routing
+are not specified in this pass and remain unimplemented. No employment,
+leadership, expertise, tool, education, project, or outcome wording changes.
+
+
+## B66. Selected-work correction [APPLIED LOCALLY]
+
+Source: Jacob's September 20 browser correction in task
+`01a0bf67-f456-7e32-b581-a233af6149fe`. Publication is not authorized.
+
+Remove the introductory `Explore the full case studies` action from the selected-
+work section. The later `More stories behind the work` action remains. Render the
+repeated work-card eyebrow as `Case Study` in Title Case. This supersedes B62 and
+B64 only where they allowed the ordinary words `CASE STUDY` as an all-caps
+typographic exception; Jacob's style guide forbids that treatment.
+
+Restore the reversed wave at the selected-work section boundary. The hero shows
+one half of the wave and the top of selected work shows its flipped counterpart,
+with no blank band between them. This changes presentation only.
+
+## B67. Wave and card visual refinement [APPLIED LOCALLY]
+
+Source: Jacob's seven follow-up browser comments and reference images on
+September 20, task `01a0bf67-f456-7e32-b581-a233af6149fe`.
+Remove the duplicate visible `Experience` heading above employment history while
+retaining its accessible list label. Hide `More stories behind the work` until
+the case studies are complete and the site is password protected. This does not
+authorize publication or add password enforcement. All credential, employment,
+project, and outcome copy stays unchanged. References guide visual treatment only.
+The broad crossing translucent wave treatment supersedes the cropped halves in
+B66. Refine the halo, education masonry, and shared card surfaces and borders.
+
+## B68. Short work-card actions [APPLIED LOCALLY]
+
+Shorten card-level case-study actions to `View` when the control opens an
+in-page case-study dialog and `Read` when it navigates to a dedicated reading
+page. Retain the existing graphic right arrow and the card's specific accessible
+name. This does not rename navigation, filters, disclosure controls, or other
+functional actions.
+
+## B69. Naked-card annotation labels [APPLIED LOCALLY]
+
+Source: Jacob's 24 browser annotations in task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`, September 20, 2026.
+Publication is not authorized. This entry changes only the named interface and
+journey labels; project facts, metrics and narrative stay unchanged.
+
+Remove the visible `Explore selected work` label from the hero while retaining
+that accessible name on the arrow link. Rename the call-center demo's `Highlight`
+switch label to `Sections`; remove its visible binary `0` and `1` without changing
+the switch state or help text.
+
+The first DentalPlans journey stage is `MVP: Initial Launch and Learnings` and its
+diagram eyebrow is `MVP`. The remaining diagram eyebrows are `Iteration 2`,
+`Iteration 3`, and `Iteration 4`. Their accessible descriptions call them
+iterations, not second, third, or fourth MVPs. Existing stage prose continues to
+describe what each release added. No new architecture, causal claim, outcome, or
+technology is introduced.
+
+## B70. Platform-diagram and Hydra follow-up labels [APPLIED LOCALLY]
+
+Source: Jacob's 13 browser annotations in task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`, September 21, 2026.
+Publication is not authorized. This entry changes only the annotated diagram and
+section labels; metrics and outcome claims remain unchanged.
+
+Remove the duplicate `Shared Platform` and `Shared Vocabulary` labels above their
+diagrams. Add `A Shared Language` as the subtitle beside Hydra's Nomenclature
+visual. In the platform diagram, use `Plan Data` instead of `Product Data`, add
+`Dentist Data`, and retain Search & API, Promotions, and Deployment.
+
+The MVP diagram removes the standalone `Product` tile. Its WordPress tile carries
+the note `Manually added plans`. Iteration two uses `Shared Plan Data`; the later
+iteration diagrams show the platform already accumulated and the capabilities
+added in that release. This presentation change does not add a technology or
+claim that the narrative does not already support.
+
+## B71. DentalPlans editorial framework labels [APPLIED LOCALLY]
+
+Source: Jacob's sixteen browser annotations and scoped DentalPlans framework
+redesign request, September 21, 2026, task
+`01a0c13f-81b2-7662-907b-eb7667b3abc9`. Publication is not authorized.
+
+Remove the diagram eyebrows MVP, Iteration 2, Iteration 3, and Iteration 4;
+the adjacent narrative titles identify these stages. Rename the second-stage
+capability Two Brands to `Multi-Brand`. The later accumulated platform summaries
+use `Five Brands`, directly correcting the stage count per Jacob's annotation 6.
+This describes the number of brands at those stages, not a new performance metric.
+
+The Shared Platform overview uses six capabilities: `Plan Data`, `Dentist Data`,
+`Search & API`, `Microservices`, `Promotions`, and `Deployment`. Microservices is
+the additional block requested in annotation 9 and is already documented in the
+framework. The sketch's star symbols are icon placeholders; keep the site's
+existing thin icons. Retain Promotions instead of repeating Plan Data from the
+sketch. Preserve all narrative and metric copy. Accessible diagram descriptions
+must reflect these label and stage changes.
+## B72. Quiet Prism design-system reference [APPLIED LOCALLY]
+
+Source: Jacob's September 20 design-system documentation request, task
+`01a0c13f-81c9-7182-8332-4c96e75923e5`. The unlinked local reference route is
+named `Quiet Prism`. Its introduction reads: `A field guide to the surfaces,
+edges, cards, actions and motion already in use across JacobMedley.com.` The
+reference may use short specimen labels and neutral explanatory copy, but it
+does not revise homepage, case-study, employment, credential, or modal copy.
+
+Canonical citation names are: Prism Field, Crossing Tide, Corner Current,
+Frost Pane, Inset Light Edge, Tint Edge, Ribbon Rule, Quiet Label, Discipline
+Pebble, Context Medallion, Trail Arrow, Focus Halo, Spotlight Split, Signal
+Tile, Process Tile, Role Ledger, Practice Stack, Credential Shard, Outcome
+Tile, Story Slate, Reading Sheet, Section Plaque, Evidence Cluster, Metric Lens,
+Value Sheet, and Data Bay. The route marks disabled treatment as undefined
+because the current Quiet Prism source contains no disabled primitive.
+
+### B72a. Source-matched catalog correction [APPLIED LOCALLY]
+
+Source: Jacob's September 20 rejection of the first reference and request for
+Astra review and refinement. Supersedes B72's approximate specimens and its
+acceptance claim. Production copy remains untouched.
+
+Reference heading: `Quiet Prism`. Descriptor: `The source, in context.`
+Introduction: `Browse the actual components, artwork and states used on the site.`
+Version note: `Baseline 4c2e482. Local reference. Separate modal and focus refinements
+are not included.` Controls: `Find a pattern`, `Live example`, `Fit`, `Tablet`,
+`Phone`, `Reset example`, `Locate again`, `Open source page`, `Source & anatomy`,
+`Behavior`, `Responsive`, `Computed styles`, `Tokens`, `Nothing matches this search.`
+
+Retain B72's names where the source supports them. Signal Tile refers to the
+retained BannerCard only and is explicitly marked `Retained, not on the homepage`.
+Additional catalog labels: Brand Palette, Type Scale, Project Artwork, Image Tile,
+Career Snapshot, Outcome Feature, Story Cover, Decision Note, Proof Grid,
+Page Navigation, Filter Rail, Motion Control, Image Frame, Animated Image,
+Supporting Diagram, System Diagram, Icon Grid, Split Narrative, Reference Fold,
+Numbered List, Content Card, Availability Demo, Hero Identity, and Story Navigation.
+
+Catalog explanations may describe inspected source behavior and responsive rules.
+Examples reuse existing public source copy and assets verbatim. No fabricated
+metrics, fake controls, simulated state styling, or new marketing copy. Preview
+controls belong to the reference interface, not to Quiet Prism's production API.
+The retained component uses descriptive documentation labels for its four tones;
+these are demonstration props, not restored pathway copy or current homepage use.
+
+The locator review also classifies Animated Image as retained: the only GIF in
+project brief data does not reach AnimatedStudyImage's active render branch.
+Its retained specimen reuses that existing marketing-automation GIF and alt text.
+Leadership Principles names the four registered About-section reading tiles.

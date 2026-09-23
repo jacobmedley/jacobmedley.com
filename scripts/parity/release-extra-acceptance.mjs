@@ -9,7 +9,7 @@ async function load(p,url){await p.goto(base+url,{waitUntil:'networkidle'});awai
 async function measure(p,scope='body'){return p.locator(scope).evaluate(n=>{
 const r=n.getBoundingClientRect(), vw=document.documentElement.clientWidth;
 const text=[];for(const e of n.querySelectorAll('h1,h2,h3,h4,p,button,a,li,strong,.study-supporting-art-orbit > span,.study-supporting-art-center')){
-const s=getComputedStyle(e),r=e.getBoundingClientRect();if(!r.width||!r.height||s.visibility==='hidden'||s.display==='none')continue;
+const s=getComputedStyle(e),r=e.getBoundingClientRect();if(!e.textContent.trim()||e.closest('.sr-only')||!r.width||!r.height||s.visibility==='hidden'||s.display==='none')continue;
 if(e.scrollWidth>e.clientWidth+2 && e.clientWidth>0 && !['inline','contents'].includes(s.display) && s.overflowX!=='auto')text.push({tag:e.tagName,cls:e.className,text:e.textContent.trim().slice(0,55),client:e.clientWidth,scroll:e.scrollWidth});}
 return {pageOverflow:document.documentElement.scrollWidth-vw,bodyOverflow:n.scrollWidth-n.clientWidth,box:[r.x,r.width],text:text.slice(0,35)};});}
 try{

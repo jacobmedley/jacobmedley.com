@@ -1,0 +1,170 @@
+{
+  "desktopDental": {
+    "body": [
+      1308,
+      1308
+    ],
+    "cardIcons": [
+      "32px",
+      "32px",
+      "32px"
+    ],
+    "eyebrows": [
+      "MVP",
+      "Iteration 2",
+      "Iteration 3",
+      "Iteration 4"
+    ],
+    "frameworkHeadingIcons": [
+      "44px",
+      "44px",
+      "44px"
+    ],
+    "iterationHistory": [
+      3,
+      6,
+      10
+    ],
+    "platform": [
+      "Plan Data",
+      "Dentist Data",
+      "Search & API",
+      "Promotions",
+      "Deployment"
+    ],
+    "size": {
+      "h": 1272,
+      "w": 1484
+    },
+    "subtitles": [
+      {
+        "size": "18px",
+        "text": "Plan:"
+      },
+      {
+        "size": "18px",
+        "text": "Results:"
+      },
+      {
+        "size": "18px",
+        "text": "Results:"
+      },
+      {
+        "size": "18px",
+        "text": "Delivery"
+      },
+      {
+        "size": "18px",
+        "text": "Results:"
+      }
+    ]
+  },
+  "mobileDental": {
+    "body": [
+      378,
+      378
+    ],
+    "content": [
+      378,
+      378
+    ],
+    "historyCounts": [
+      3,
+      6,
+      10
+    ],
+    "overflow": false,
+    "platformNodes": 5
+  },
+  "mobileHydra": {
+    "body": [
+      378,
+      378
+    ],
+    "content": [
+      378,
+      378
+    ],
+    "overflow": false,
+    "sharedRule": false,
+    "why": [
+      344,
+      344
+    ],
+    "whySurface": true
+  },
+  "scaled": {
+    "hydra": {
+      "body": [
+        378,
+        378
+      ],
+      "content": [
+        378,
+        378
+      ],
+      "overflow": false
+    },
+    "dental": {
+      "body": [
+        378,
+        378
+      ],
+      "content": [
+        378,
+        378
+      ],
+      "overflow": false
+    }
+  },
+  "sharedLanguage": {
+    "align": "center",
+    "found": true,
+    "left": {
+      "bottom": 896.328125,
+      "height": 270,
+      "left": 165.375,
+      "right": 737,
+      "top": 626.328125,
+      "width": 571.625,
+      "x": 165.375,
+      "y": 626.328125
+    },
+    "right": {
+      "bottom": 985.328125,
+      "height": 448,
+      "left": 737,
+      "right": 1308.625,
+      "top": 537.328125,
+      "width": 571.625,
+      "x": 737,
+      "y": 537.328125
+    },
+    "row": {
+      "bottom": 985.328125,
+      "height": 448,
+      "left": 113.40625,
+      "right": 1360.59375,
+      "top": 537.328125,
+      "width": 1247.1875,
+      "x": 113.40625,
+      "y": 537.328125
+    }
+  },
+  "valueSpacing": {
+    "gaps": {
+      "ruleToBullet": 12,
+      "titleToRule": 12
+    },
+    "margins": {
+      "ruleBottom": "12px",
+      "ruleTop": "0px",
+      "titleBottom": "12px"
+    }
+  },
+  "focusReturn": {
+    "open": false,
+    "project": "dentalplans"
+  },
+  "console": []
+}

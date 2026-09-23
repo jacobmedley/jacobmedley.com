@@ -1,5 +1,1086 @@
 # Status
 
+## September 22, 2026: full-site release candidate reviewed
+
+The approved final tips from the modal/layout (`bfe6ac0`), shared card
+focus/seam (`9346cad`), and source-backed design-system (`304b66c`) workstreams
+are integrated over `origin/main` at `909ea22`. Their histories remain intact in
+merge commits `78d0ed6`, `d1ea9f6`, and `1f0db1b`; rejected intermediate visual
+treatments remain historical only. Copy-register numbering was reconciled by
+retaining the modal B69-B71 entries and assigning the catalog work B72/B72a.
+
+Release review found and repaired four 200%-text squeeze cases in the resume
+practice headings, full-stack card titles, a prior-role line, and the call-center
+demo. Resume columns now wrap from intrinsic text-aware bases; constrained cards
+and demo actions reflow without changing their normal desktop proportions. Two
+browser harnesses were also made deterministic: normal-motion scenarios now
+request that preference explicitly, transition geometry is sampled at a fixed
+animation time, and performance gates use frame-gap/long-task signals rather
+than a host-dependent raw frame count. The broad visible-text collector ignores
+only intentional `.sr-only` geometry and empty icon-only controls.
+
+Verification actually run on the integrated production export: `npm ci`,
+TypeScript, authored-source ESLint, production build/static export, 288 exported
+images, 104 active production references, and `npm audit --audit-level=high`
+all passed. The design-system verifier passed 51 patterns, 169 examples, and 36
+tokens. Integrated Chromium acceptance passed 13 route/viewport checks, all 14
+dialogs, all 169 catalog locators, shared card focus, Escape close/focus return,
+broken-image, overlay, and overflow checks. Dedicated 200%-text acceptance
+passed five widths plus all 14 dialogs. Motion/modal acceptance passed desktop,
+mobile, reduced-motion, slow/error/retry, focus, history, and scroll behavior.
+The broad matrix completed 240 reflow cases, 182 modal resizes, 90 direct-route
+reflow cases, 20 compact-state checks, and 14 touch paths with no visible-text
+or page-overflow failure. Details are in `design-qa.md` and ignored artifacts
+under `scripts/parity/shots/release-integration-20260922/`.
+
+The historical sticky-position suite is not applicable because the current CSS
+deliberately keeps sticky section positioning dormant for visual review; the
+live compact-state behavior is covered by the broad matrix. Automated review
+used Chromium against the production export and is not a physical Safari or
+screen-reader audit. The local Node 22.11 host emitted one engine warning for a
+transitive package that requests 22.13+, while the repository CI uses supported
+Node 20; install, lint, type check, build, and audit still passed.
+
+Owner: task `01a0cb34-ac9b-7803-904e-5eb683bd08d2`, branch
+`codex/release-full-site-20260922`, isolated worktree
+`C:\dev\jacobmedley.com\w`. Rollback point: `909ea22`. The original checkout's
+documented Sep 5 local work remains untouched. The final release-review commit,
+push, and deployment PR follow this status write. Merging to `main` is the
+separate production deployment action and is not authorized by this review.
+
+Fresh Exchange observation: 2026-09-23T00:21:22Z, no conflicts, fingerprint
+`d8197ff33a8e5b506988b0a49db892698a264e82c54020ae001a77eafb1f2628`.
+Jacob's deployment-PR direction is recorded as event
+`20260923T001118Z-1545bbe0ba8247c8aee7990fe8ce7468`. A completion update will
+record the final commit, PR, verification, and rollback point; no remote peer
+acknowledgement is asserted.
+
+## September 22, 2026: layout rhythm follow-up complete
+
+Jacob's six browser comments are implemented. DentalPlans iterations two and
+four now present their three added capabilities in one even desktop row; the
+MVP remains the established three-row stack and iteration three remains 2×2.
+At supporting-art widths below 24rem, the diagrams stack to preserve readable
+labels. The Hydra explanation card is centered at a 768px maximum, and the
+standard rule is restored below `A Shared Language`.
+
+The homepage title/rule gaps were caused by a shared measurement feedback loop,
+not intentional section space. `SectionHeader` had observed the surface whose
+minimum height it was changing, allowing fractional rounding to grow `How I
+work` to 433px and `About and experience` to 599px. It now observes the natural
+inner content plus vertical padding. Both reserves are stable at 211px with the
+same measured 84.07px title-to-rule interval.
+
+Changed files: `components/ui/SectionHeader.tsx`, `app/visual-system.css`,
+`lib/data/projects.ts`, `design-qa.md`, this status, and
+`docs/reviews/layout-rhythm-20260922/`. No visible copy or dependency changed.
+
+Verification actually run: scoped ESLint passed; the final production build,
+type check, static export, 288-image check, and 104-reference check passed;
+`git diff --check` passes after this status write. Browser acceptance at
+1376×915 measured three columns for DentalPlans iterations two and four, one
+column for the MVP, two columns for iteration three, a 768px centered Hydra card
+with 0px center delta, the restored HR, and zero diagram overflow. At 390×844,
+all changed diagrams use one column with zero overflow. Modal open/close and
+cross-modal reopening were exercised. Design QA passed with no open P0/P1/P2.
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, worktree 2787, branch
+`codex/modal-content-quiet-prism-20260920`. Rollback point:
+`ee3e45df95a761d660f88281a79ada07713e7f58`. The final local commit follows
+this status write. Existing preview `http://localhost:8097/` remains served from
+this worktree's `out`. No push, merge, PR, publication, or deployment occurred.
+The own lock is released after the local commit. No implementation blocker remains.
+
+Fresh Exchange intake observation: 2026-09-22T04:10:17Z, no conflicts,
+fingerprint `e8da4c49b2bf8641e629e7a199a0b1a2ea10b35a144dd64ac8a0c8044215352f`.
+Changed direction is recorded by event
+`20260922T041040Z-105374fdd60841ecb7ad6c620c11d3cb`. A unique completion
+update will carry the final commit and verification; no remote acknowledgement
+is asserted.
+
+## September 21, 2026: DentalPlans editorial framework redesign complete
+
+Jacob's sixteen new annotations and instruction to redo only the DentalPlans
+product framework are implemented. The platform overview and Key Features form
+one six-capability composition; Microservices is the added capability. The
+journey uses a centered 70rem reading area, balanced columns, full-column art,
+larger foundation icons, and inward, vertically centered prose. The MVP is one
+column of three padded tiles with 24px gaps. All four diagram eyebrows are gone.
+Multi-Brand names the second iteration's capability; later summaries say Five
+Brands. B71 is applied locally, with no skipped copy edits or changed metrics.
+
+Value Created has a 22px title, 18px bullets, and 22px list margins. Paragraph
+leading is 1.5rem and rules sit between headings and their content. These changes
+are scoped throughout DentalPlans, interpreting the annotation's global wording
+within Jacob's final instruction to redo only this study. The layout switches
+to paired columns at the existing 992px breakpoint. Individual diagrams use
+their actual container width for smaller and enlarged-text layouts. The
+DentalPlans homepage card uses a filled, underlined View action for keyboard
+focus; no focus or active perimeter outline is added.
+
+Changed files: `app/visual-system.css`, `components/ui/QuietPrism.module.css`,
+`components/ui/CaseStudyModal.tsx`, `components/ui/StudySupportingArt.tsx`,
+`lib/data/projects.ts`, `docs/copy-register.md`, `design-qa.md`, this status,
+and `docs/reviews/dental-editorial-20260921/`. Shared renderers receive opt-in
+layout variants; other projects remain unchanged. No dependencies added.
+
+Final production build/type check/static export passed, with 288 images and
+104 production references verified. Scoped ESLint passed. Browser verification
+covered 1884x1272, 1024x900, 390x840 and 200% root text at 390px. Final measured
+horizontal overflow is zero; all requested type, margin, padding and icon sizes
+match. Actual Tab, Enter and Escape verified the action cue, opening, closing,
+and focus return. Browser errors and warnings were empty. QA repaired a legacy
+grid-column collision, premature tablet stacking and enlarged-text tile label
+overflow, then recaptured the affected layouts. Details and evidence are in
+`design-qa.md`; no open P0/P1/P2 issue remains. Whitespace is checked after this
+last documentation write. This is scoped QA, not a full-site accessibility audit.
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. Rollback/base:
+`a281fccbe37a9640676133dd49d9333451701599`. The local commit follows this final
+status write and its ID is recorded in the Exchange completion event. The own
+lock is released after committing. Existing Python preview on port 8097 remains
+served from this worktree's `out`; the in-app browser is left on DentalPlans for
+review, with viewport and text-size overrides reset. No merge, push, PR,
+publication or deployment occurred. No implementation blocker remains.
+
+Fresh Exchange acceptance observation: 2026-09-22T02:21:34Z, no conflicts,
+fingerprint `d029c204de7f9a611def3e06dc5607831c87ec5d3bfba7629eb6bdeab302feb3`.
+Changed direction is recorded by event
+`20260922T020804Z-da5b795d8cb1451abe28204ce08e784b`. A unique update carries
+the final commit, verification and rollback point. Shared coordinator files
+were not edited and no remote acknowledgement is asserted.
+
+## September 21, 2026: browser-comment modal refinement complete
+
+Jacob's thirteen follow-up browser comments are implemented on the DentalPlans
+and Hydra case-study modals. Duplicate Shared Platform and Shared Vocabulary
+labels are removed. The Hydra language explanation now has an `A Shared
+Language` subtitle, is vertically centered, and uses a one-column desktop inset
+that expands before stacking. Why Hydra is one composite card. The unwanted
+fragmentation rule is removed. Plan and Results use a smaller, more closely
+coupled subsection treatment with increased separation from preceding blocks.
+
+DentalPlans now labels Plan Data, adds Dentist Data, removes the separate Product
+node from the MVP, and notes that WordPress used manually added plans. Iteration
+diagrams show the accumulated platform plus the systems added at each stage. The
+Core Framework heading icon is larger than its capability icons. Value Created
+uses equal measured 12px title-to-rule and rule-to-first-bullet spacing. Copy
+authority B70 records every changed visible string and diagram description.
+
+Changed paths: `components/ui/StudySupportingArt.tsx`,
+`components/ui/CaseStudyModal.tsx`, `lib/data/projects.ts`,
+`app/visual-system.css`, `docs/copy-register.md`, `design-qa.md`, this status
+file, and visual/measurement evidence under
+`docs/reviews/modal-followup-20260921/`. No dependencies or unrelated worktrees
+were changed.
+
+Verification actually run: scoped ESLint passed; the final production build,
+type check, static export, 288-image check, and 104-reference check passed;
+`git diff --check` is run after this status write. Browser checks at 1484x1272,
+390x840, and 390px with 200% root text found no DentalPlans or Hydra horizontal
+overflow. The framework icons measured 44px versus 32px, the Hydra language
+columns measured 11/24 each with one-column side offsets, and iteration history
+counts were 3, 6, and 10. Escape closed the modal and restored focus. Browser
+errors and warnings were empty. The QA loop resolved one P1 layout-placement
+issue and one P2 spacing-specificity issue; no P0, P1, or P2 issue remains.
+
+Worktree: `C:\Users\jacob\.codex\worktrees\2787\jacobmedley.com`; branch:
+`codex/modal-content-quiet-prism-20260920`. Starting rollback point:
+`f5398ab110980f48dfd41603785a8f3892b59631`; the final local commit follows
+this status write. Existing preview `http://localhost:8097/#work` remains served
+from this worktree's `out`. No push, merge, PR, publication, or deployment was
+performed. The current site state therefore remains unchanged. No implementation
+work is unresolved in this follow-up; publication remains a separate explicit
+decision.
+
+Fresh Exchange checkpoint at 2026-09-21T12:50:52Z reports no conflicts, with
+fingerprint `8fb0bd529ec08d27a42d6aa904727d297fa1d4ec16aeddbdfe79b2c7715442ef`.
+Direction event `20260921T122844Z-bde940c1e7c14e589f3a131c19588c50`
+records this follow-up. A unique final Exchange update will carry the commit ID,
+verification, deployment state, rollback point, and coordinator handoff; no
+remote acknowledgement is asserted.
+
+## September 20, 2026: 24-annotation simplification intake; implementation pending
+
+Jacob requests less card-heavy modals, aligned reading flow and naked cards using
+the existing gradient, thin border and 28px radius without waves or extra shells.
+The latest annotations also authorize named homepage/resume/control changes and
+narrow framework typography/radius/grid changes. They supersede the corresponding
+visual decisions in a785e5c; prior technical checks are not approval of this new
+direction. No UI changes were made during this intake.
+
+All 24 annotations are mapped in `docs/modal-naked-card-handoff-20260920.md` to
+two implementation batches plus one focused verification pass. Source inspection
+confirmed the affected owners, the shared Value Created spacing issue, the current
+MVP labels, the existing Hydra mark and the missing three-column renderer mapping.
+The proposed clipped-shadow cause remains unverified. Copy edits must be registered
+before implementation; no B edits were applied or skipped in this checkpoint.
+
+Recommended next configuration is GPT-5.6 Sol / Medium, preserving any user-selected
+setting until Jacob changes it. Current task settings cannot be switched by this
+agent. Intake usage telemetry reports 71% weekly used / 29% remaining; this is not
+a token or dollar balance. Remaining-work forecast is 8k–14k cloud tokens including
+normal verification/repair overhead, not measured savings. No local inference,
+spending, reset, new dependency or download occurred. Pause before implementation
+for the user-controlled configuration change; all 24 requested fixes remain open.
+
+Owner remains task `01a0c13f-81b2-7662-907b-eb7667b3abc9` in worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. Intake source/rollback commit:
+`a785e5c6921c78091d1bafcc47575368886ea8b8`. Only the handoff and this STATUS file
+change in the following local checkpoint. Incoming tree was clean and unlocked;
+own intake lock is released after committing. Other worktrees are untouched.
+
+Verification this turn: source reads, repository/lock checks, deterministic complete
+annotation coverage (1–24), whitespace check, account-usage lookup, and preview
+process identity. No build, browser audit or new visual/behavior test was run for
+this documentation-only intake. Existing `http://localhost:8097/` remains served
+from this worktree's `out` by Python listener 45712 / launcher 65792, unchanged.
+No push, merge, PR, publication or deployment. Latest separate design-system
+checkpoint 304b66c and seam/focus checkpoint 9346cad remain unmerged here.
+
+Fresh Exchange read/checkpoint at 2026-09-21T02:17:10Z reports no sync conflicts;
+fingerprint `259dd88ec5557858f766d5ead259c889965dccea745473d8566673f9e70663f8`.
+New direction event: `20260921T021528Z-4a034fbe74524096ab55a59650bb283a`.
+A unique final update will carry this documentation checkpoint's commit. Shared
+coordinator files were not edited, and no remote acknowledgement is asserted.
+
+## September 20, 2026: modal correction grounded in the existing card reference
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree 2787,
+branch `codex/modal-content-quiet-prism-20260920`. This corrects the rejected
+`0c73d12360c7d502136802a87c92c922832e217c` pass. The acceptance claim in the
+next historical entry is withdrawn; Jacob's four new browser annotations and
+Career at a Glance reference supersede it.
+
+The modal metrics now reuse that reference's actual CornerWaves artwork,
+existing plum/sage/gold/slate palette, thin tinted edge, radius, padding and
+light display figures. The group is an aligned two-by-two grid with a peer
+value card, without an enclosing surface. Removed the introduced circular
+decoration and extra wrappers around supporting illustrations. Only bare
+narrative columns receive a reading card; lists and example cards use the
+same surface. Section spacing uses the existing rhythm. Short Hydra copy and
+its illustration align as peers. Original supporting artwork remains intact.
+The complete progress/framework renderer is restored exactly to
+`4c2e482c3a706090773e88dd59e8f01595fe7632`; no new diagram treatment remains.
+Project data, copy and facts are unchanged. No B edits were applied or skipped.
+
+Changed paths: `components/ui/CaseStudyModal.tsx`, `app/visual-system.css`,
+`design-qa.md`, this status file, and the screenshot/JSON evidence under
+`docs/reviews/modal-correction-20260920/`. No other worktree, homepage card,
+dedicated case-study component, dependency, or shared icon configuration was
+edited. The QA report records the previous rejection and the correction loop.
+
+Final production build, TypeScript/build lint, authored renderer ESLint and
+Git whitespace checks passed. Export checks verified 288 images and 104
+references. A deterministic source comparison confirms the framework region
+matches 4c2e482. Browser checks covered all fourteen dialogs at 1440x1000,
+800x1000, 390x840 and 390x840 with 200% root text: 56 checks, no horizontal
+reading-area overflow, overflowing new cards, nested new surfaces, or extra
+artwork shells. Roadmap disclosure was opened at each size. Escape returned
+focus to each trigger. Actual successive Tab/Shift+Tab stayed in the dialog.
+New card waves stop in reduced motion. Axe detected zero WCAG 2 A/AA violations
+in fourteen dialogs, with gradient contrast explicitly incomplete. Manual
+metric-token checks give 6.17:1 to 9.04:1; visible wave/text placement was also
+reviewed. Native 1x reference/implementation captures were compared together.
+Detailed visual inspection covered metrics, features/journey, Hydra, numbered
+lists/project cards, information cards and the phone metric layout, not every
+historical screen in every study. Browser warning/error log was empty.
+
+Review URL: `http://localhost:8097/`. The existing Font Awesome kit rejects
+the `127.0.0.1` origin with HTTP 403, but loads its original thin icon font on
+localhost. Final evidence uses localhost, actual CSS dimensions and DPR 1;
+earlier zoom-affected or incomplete captures are not acceptance evidence.
+The same existing preview remains: listener PID 45712, Python launcher 65792,
+serving this worktree's `out`. Other previews were not stopped or changed.
+No push, merge, PR, publication or deployment occurred. Preferred rollback is
+4c2e482 above; immediate pre-correction checkpoint is 0c73d12. The final local
+commit follows this STATUS-last write, then the owned lock is released.
+
+Unresolved: Jacob's visual approval; physical touch, screen-reader speech,
+native browser zoom, Safari and Firefox not tested. The 127.0.0.1 kit origin
+restriction remains external; use localhost. No extra spending or reset,
+model download, paid fallback or local inference ran. Cloud usage was
+estimated, not measured; deterministic checks handled the local workload.
+
+Fresh Exchange read/checkpoint: 2026-09-21T01:07:11Z, fingerprint
+`47385a329bae79771e6af94f1f9d20b2e27eedf20d5084df4d7bd55bceb49ba9`, no
+conflicts. Change event `20260921T004052Z-bfcd530af1bb42ec97408a203c334fdf`
+records Jacob's correction. A unique final update will carry the exact commit
+and rollback references. Shared coordinator files remain untouched; this is
+not a claim that other agents have read the update.
+
+## September 20, 2026: all-modal Quiet Prism content redesign complete locally
+
+Owner: task `01a0c13f-81b2-7662-907b-eb7667b3abc9`, isolated worktree
+2787, branch `codex/modal-content-quiet-prism-20260920`. Started from Jacob's
+required card-refinement checkpoint
+`4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree, main, push,
+merge, PR, publication, or deployment action occurred.
+
+Replaced the shared modal renderer's remaining Bootstrap-era content surfaces
+with one themed Quiet Prism language across all fourteen dialogs. Narrative
+split rows, metric/value panels, plain and numbered lists, card blocks, icon
+grids, and progress/system diagrams now derive their wash, tint, ink, inset
+edge, radius, and density from each case study's existing theme variables.
+Hydra's loose `Why Hydra?` art-and-paragraph block is a paired composition;
+DentalPlans' four proof metrics, Value Created panel, and framework bands use
+the same hierarchy. Existing images, diagrams, factual copy, labels, modal
+behavior, and dedicated case-study content remain unchanged. No UI-label or
+copy-register change was needed.
+
+Two clean production builds passed Next 15.5.25 compilation, TypeScript/build
+lint, export preparation, and verification of 288 images and 104 active
+references. Authored-source ESLint and Git whitespace checks passed. The
+in-app browser reviewed screenshots from every dialog at desktop and checked
+all fourteen at 390x844 plus 200% root text; every reading area reported zero
+horizontal overflow. Hydra and DentalPlans before/after captures and the
+normalized comparison board are in
+`docs/reviews/modal-quiet-prism-20260920/`. Axe-core 4.11.3 found zero detected
+WCAG 2 A/AA violations in each open dialog. Escape returned exact focus to the
+Hydra trigger, reduced-motion emulation found no active dialog animation
+styles, and browser warnings/errors were zero. Detailed Product Design QA is in
+`design-qa.md`, final result passed. Physical touch, Safari/Firefox, native
+browser zoom, and screen-reader speech remain unverified.
+
+Preview `http://127.0.0.1:8097/` is running from this worktree's export under
+Python launcher PID 65792. Parent previews 8096 and 8090 were preserved.
+Rollback is the baseline commit above; the new local checkpoint follows this
+STATUS-last write. Fresh Exchange status at 2026-09-21T00:11:26Z had fingerprint
+`9177fa3b488dffc87e127d52e66c2e6ef441831bc245db392b448a3cd8393ad6`,
+with no conflicts. Change event
+`20260920T235704Z-99c8fd69b9dd4af088c20578d0f87b39` records this direction.
+The concurrent design-system documentation and seam/focus tasks are separate,
+non-overlapping worktrees and did not alter this scope. A unique final Exchange
+update follows the commit. No added spending, reset, model download, paid
+fallback, or local inference ran.
+## September 20, 2026: section seams and shared card focus complete locally
+
+Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,
+branch `codex/card-edge-cta-refinement-20260920`. Continued from clean local
+checkpoint `4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree,
+main, push, merge, PR, publication, or deployment action occurred.
+
+Corrected the rotated top-wave overlap at both annotated joins. The Case Studies
+→ How I work and How I work → About and experience SVGs previously began one CSS
+pixel inside their wrappers; both now overlap the section boundary by one CSS
+pixel, including at fractional viewport heights. Replaced the opaque featured-
+card-only focus outline with one theme-colored translucent focus bloom across all
+28 homepage card surfaces, dedicated case-study card links, the next-study card,
+and Quiet Prism banner variant. The 720ms state expands beyond the card, eases the
+surface from .997 to 1.008 scale, and settles without layout movement. Reduced
+motion keeps the same visible ring without animation; forced colors uses
+`Highlight`. Nested buttons, links, and summaries remain the semantic focus
+targets and no duplicate inner focus box is drawn.
+
+Production build with Next 15.5.25, TypeScript/build lint, static export,
+288-image and 104-reference verification, authored-source ESLint over
+app/components/lib, and Git whitespace checks passed. In-app browser checks
+confirmed -1px overlap at both joins at desktop, tablet, and mobile widths with
+zero page-level horizontal overflow. Keyboard focus was verified on featured
+cards, all How I work tiles, experience disclosures, education links, and the
+dedicated case-study featured/outcome cards. Normal-motion emulation measured the
+bloom at -2px → 10px → 6px outline offset and .997 → 1.008 → 1 scale; the original
+reduced-motion preference and browser viewport were restored. Final captures and
+the source-to-implementation review are in `design-qa.md`, final result passed.
+
+Preview `http://127.0.0.1:8096/#full-stack` is running from this worktree's
+rebuilt export under Python PID 40212. Parent preview
+`http://127.0.0.1:8090/`, PID 52456, was preserved. Rollback is the prior local
+checkpoint `4c2e482c3a706090773e88dd59e8f01595fe7632`; the new commit follows
+this STATUS-last write and will be recorded in the append-only Exchange update.
+
+Jacob's modal comments were deliberately kept out of this patch. Two separate
+Codex worktree tasks were queued: `client-new-thread:82e7485c-6b50-4403-b8c2-f26a1f4269a9`
+for named design-system documentation and
+`client-new-thread:c85163d4-f83b-4fad-9c7e-80f8d55abe55` for the full modal
+content redesign. Fresh Exchange acceptance at 2026-09-21T00:10:21Z had
+fingerprint `eacc038496e0670458cde1cd00247da95ea265ebd923702e1313f1cfd0035a50`,
+no conflicts, and intake event
+`20260920T235818Z-e83ecf3c190041f4a6eed3031c7b9f99`. Shared coordinator files
+were not edited; no peer-awareness claim is made. No added spending, reset,
+model download, paid fallback, or local inference ran.
+## September 20, 2026: Astra correction of the design-system reference
+
+Jacob rejected the first reference and asked for review, refinement and correct
+matching. This entry supersedes the earlier reference acceptance below and the
+rejected checkpoint `3b2730cdb166743e97aa5f3b4168f4b183f8b87e`.
+
+Owner: task `01a0c13f-81c9-7182-8332-4c96e75923e5`, isolated worktree e924,
+branch `codex/quiet-prism-design-system-20260920`. Production baseline remains
+`4c2e482c3a706090773e88dd59e8f01595fe7632`. The new local commit follows this
+STATUS-last write and its exact ID is recorded in the append-only Exchange update.
+
+Replaced the imitation specimens with a searchable catalog of 51 named patterns
+and 169 examples. Source pages render directly in a live same-origin frame;
+original containers, artwork, copy, controls and responsive rules are preserved.
+The catalog has source/anatomy mappings, actual variant selection, Fit/820px/390px
+viewports, hash links, search/empty state, computed styles and 36 token names.
+Retained BannerCard and AnimatedStudyImage specimens import the original
+components and are explicitly distinguished from active homepage use. B72a
+records the documentation correction. No production copy was rewritten.
+
+Changed files: `app/design-system/DesignSystemExplorer.tsx`,
+`app/design-system/design-system.module.css`, `app/design-system/page.tsx`, new
+`app/design-system/catalog.ts` and `app/design-system/retained/page.tsx`,
+`docs/copy-register.md`, `design-qa.md`, this status file, the new deterministic
+`scripts/verify-design-system.mjs`, and new `docs/reviews/quiet-prism-*` comparison,
+viewport, accessibility and interaction evidence. Earlier screenshots remain
+historical. One temporary capture-debugging image was removed; no user file was
+deleted. No parent-tree, main, shared component, project-data or dedicated-story
+source file was changed.
+
+Verification actually run: final production build/type checks; authored-source
+ESLint; 288-image/104-reference export checks; Git whitespace and unchanged-source
+checks against baseline; manifest validation; 169 browser source locators;
+navigation through all 51 catalog entries; matched desktop and phone visual
+comparisons; desktop/tablet/phone overflow checks; search/empty/reset; original
+Systems filtering (three stories and outcomes); keyboard employment disclosure;
+Pause motion; Busy demo state; and automatic dialog Escape with focus returned
+to the WebMD source trigger after an explicit final-build reload. Final icon-grid
+variants were also located through the rebuilt interface. The catalog-shell axe
+run found zero violations, 28 passes and one incomplete rule, excluding iframes.
+`design-qa.md` records the actual scope and final result: passed.
+
+Known limits: two transient MutationObserver errors occurred during browser
+teardown/capture; a fresh five-navigation exception trace did not reproduce them.
+Their origin is unproven and no zero-console-error claim is made. Full native
+screen-reader, physical touch, forced-color and injected image-failure testing
+remain unverified. Screenshot provider resizing is normalized and documented;
+no pixel-identical or exhaustive all-state claim is made. Jacob's acceptance is
+still his decision.
+
+Preview remains `http://localhost:8098/design-system/`, existing Python listener
+PID 66232, launcher PID 31448, serving this worktree's `out`. Browser overrides
+were cleared, the temporary verification tab closed, and the user's reference
+tab refreshed. Other services were preserved. No push, merge, PR, deployment or
+publication occurred. Immediate rollback: `3b2730c`; preferred source baseline:
+`4c2e482`. The own tree lock is released after the local checkpoint.
+
+Fresh Exchange acceptance read at 2026-09-21T01:12:36Z:
+`b758f18340f2534b603d3598698ca2f11aef9820841ae15114fd6edac94aa5b0`, no conflicts.
+Read the modal rejection and its subsequent corrective checkpoint `a785e5c`;
+neither that work nor the separate focus refinement is merged here. The new
+Exchange update must supersede this task's earlier acceptance pointer without
+claiming that another task or machine has read it.
+
+Routing: Jacob's selected Astra retained. Deterministic local tooling handled
+inventory, source checks, build, lint and image normalization. No local-model
+inference, model download, paid provider fallback or extra spending occurred.
+The initial 15–25k cloud-token estimate was not a measured usage report; exact
+turn token consumption and actual reasoning-setting telemetry were unavailable.
+
+## September 20, 2026: Quiet Prism design-system reference complete locally
+
+Owner: task `01a0c13f-81c9-7182-8332-4c96e75923e5`, isolated worktree e924,
+branch `codex/quiet-prism-design-system-20260920`. Started from exact requested
+baseline `4c2e482c3a706090773e88dd59e8f01595fe7632`. No parent-worktree, main,
+push, merge, PR, publication, or deployment action occurred.
+
+Added the unlinked, noindex `/design-system/` Quiet Prism reference. It names and
+maps twelve reusable primitives, eight card families, six modal-relevant reading
+patterns, and the current hover, focus, active, paused, offscreen, reduced-motion,
+forced-color, responsive, and accessibility contracts. B72 records the reference
+copy and citation names. Disabled treatment is explicitly undefined because the
+baseline contains no production Quiet Prism disabled primitive. Existing homepage,
+case-study, modal content, navigation, and production behavior are unchanged.
+
+Production build, Next type/build lint, export preparation, 288-image and
+104-reference verification, authored-source ESLint, and Git whitespace checks
+passed. In-app browser screenshots at 1800x1250, 820x1180, and 390x843 CSS
+viewports found zero horizontal overflow. The state switcher, native Role Ledger
+disclosure, keyboard focus, 44px phone targets, console, and operating-system
+reduced motion were checked; reduced motion produced zero computed animated
+elements. `design-qa.md` records the correction of the initial standalone corner-
+wave motion and small documentation targets; final result passed. Screenshot
+evidence is in `docs/reviews/quiet-prism-design-system-*.png`.
+
+Preview `http://localhost:8098/design-system/` is running from this worktree's
+export under Python listener PID 66232, launched by py PID 31448. Other previews
+on 3016, 8090, 8096, and 8097 were
+preserved. Rollback is the baseline commit above; the new local checkpoint follows
+this STATUS-last write. Fresh Exchange status at 2026-09-21T00:10:02Z was
+`eacc038496e0670458cde1cd00247da95ea265ebd923702e1313f1cfd0035a50`, with no
+conflicts. Concurrent tasks own modal-content redesign and shared interactive-card
+focus refinements; this baseline reference intentionally does not absorb either
+scope and will need reconciliation if those separate changes are later adopted.
+Physical touch, Safari, Firefox, screen-reader speech, and native 200% browser
+zoom remain unverified. No added spending, reset, paid fallback, model download,
+or local inference ran. A unique final Exchange update follows the commit.
+
+## September 20, 2026: card-edge and action refinement complete locally
+
+Owner: task `01a0c125-1e07-7d31-ae3f-034e84f6259d`, isolated worktree 4f93,
+branch `codex/card-edge-cta-refinement-20260920`. Started from verified B67
+checkpoint `4f7d863cfa5d6ba8bbf0261d9a31ec4619aa3bcf`. No parent-worktree,
+main, push, merge, PR, publication, or deployment action occurred.
+
+Reworked the shared card edge stack so the outer card owns the rounded clip and
+inset edges replace independently masked one-pixel borders. Inner How I work
+panels no longer rasterize a second rounded bottom edge. All nine panels now
+share a 136px standard minimum and align at the card bottom while allowing the
+longest enlarged-text panel to grow without clipping. B68 shortens dialog actions
+to `View` and dedicated reading-page actions to `Read`, retaining graphic arrows
+and specific accessible names. Featured case-study cards replace the expand
+symbol with a book-open marker in the discipline-badge header row. The existing
+Quiet Prism gradients, broad waves, artwork, copy, modal behavior, hidden More
+stories link, Experience heading state, and education masonry are preserved.
+
+Production build, Next type/build lint, export preparation, 288-image and
+104-reference verification, authored-source ESLint, and Git whitespace checks
+passed. In-app browser checks at 1484x1272, 820x1180, and 390x844 found zero
+horizontal overflow. All nine panels measured 136px at standard sizes; the
+longest enlarged-text panel reflowed to 142.3px inside an unclipped 360px card.
+The SVG arrows measured 24px. The WebMD dialog opened, closed, and returned focus
+to its trigger. Reduced motion was active and browser warnings/errors were zero.
+The external Font Awesome kit was unavailable in the offline static session, so
+the exact new book glyph could not be visually rendered there; its class,
+reserved space, same-row alignment, and semantics were inspected. Detailed
+visual evidence and comparison history are in `design-qa.md`, final result passed.
+
+Preview `http://localhost:8096/` is running from this worktree's export under
+Python PID 12384. Parent preview `http://localhost:8090/`, PID 52456, was
+preserved. Rollback is the baseline commit above; the new local checkpoint follows
+this STATUS-last write. Fresh Exchange status at 2026-09-20T23:36:23Z retained
+fingerprint `060ef0bd99180756bd3dabd9aeae717ff241401a3daea8a6afe558c6127a8268`,
+with no conflicts. The parent change event
+`20260920T232705Z-b7a31926d29d45b2883324e4d899cf86` already records Jacob's
+direction. A unique final update follows the commit. No added spending, reset,
+model download, paid fallback, or local inference ran.
+
+## September 20, 2026: Wave and card refinement complete locally
+
+Owner: task `01a0bf67-f456-7e32-b581-a233af6149fe`, worktree 6b03,
+branch `codex/full-site-integration-20260920`. B67 implements Jacob's latest
+seven browser annotations. Broad, independently phased translucent waves now
+join without a seam across the hero and selected-work sections. The white halo
+has a longer falloff. Education uses naturally sized masonry columns with equal
+gaps. The duplicate Experience heading and later case-study link are removed.
+Featured glass panels have brighter top-right corners; How I work cards have
+themed diagonal surfaces, inverse gradient borders, and arrows beside wrapped
+titles. Existing copy and artwork are preserved.
+
+Production build, type/build lint, static export, 288-image/104-reference asset
+verification, authored-source ESLint, and Git whitespace checks passed. Browser
+review at 1484x1272, 820x1180, and 390x844 confirmed 3/2/1 education columns with
+19.2px gaps, 16px arrow clearance, no horizontal overflow, and a zero-gap wave
+boundary. The A/B Testing dialog opens, closes, and returns focus to its card.
+Reduced-motion preference was preserved. Full-cycle animation and screen-reader
+testing were not repeated. Detailed changed files and evidence are in
+`docs/browser-visual-refinement-20260920.md`.
+
+Preview `http://localhost:8090/` remains running as PID 52456 against this
+worktree's rebuilt export. Browser viewport restored. Other previews preserved.
+No push, main merge, PR, or deployment. Rollback:
+`27bd62c8cd6edb246ff477b5bc2ea33a8c989e7b`. Case-study completion and password
+protection remain separate pending work. No added spending or local inference.
+
+Exchange acceptance fingerprint at 2026-09-20T18:24:01-04:00:
+`32238b3b064a17aa073466701e44e82174456d254e0224840ca89873a26101c1`,
+no conflicts; change event `20260920T221532Z-2d8d4fbcb7f84315879147e9993fb5e8`.
+STATUS is the last source write before the local checkpoint. A unique Exchange
+update follows that commit. Shared coordinator-owned records remain untouched.
+
+## September 20, 2026: Selected-work browser corrections complete locally
+
+Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch
+`codex/full-site-integration-20260920`, worktree 6b03. B66 implements Jacob's
+three follow-up browser corrections and supersedes the matching parts of B62,
+B64, and the prior B65 interpretation. No push, main merge, PR, publication, or
+deployment was performed.
+
+The hero retains its clipped upper wave half. Selected work again begins with the
+flipped counterpart, clipped to half-height, with a measured zero-pixel boundary
+gap. The introductory `Explore the full case studies` link is removed. All five
+work cards display `Case Study` in Title Case; the CSS uppercase override is gone,
+matching the standing prohibition on all-caps ordinary labels. The later locked
+`More stories behind the work` action remains.
+
+Verification actually run: production build with Next 15.5.25, TypeScript/build
+lint, export preparation, 288-image and 104-reference asset verification,
+authored-source ESLint over app/components/lib, and Git whitespace. In-app browser
+review at 1484x1272 measured the flipped wave half at 139.91px; 390x844 measured
+42.19px. Both joined the hero at a zero-pixel gap with no horizontal overflow.
+The rendered page had no introductory case-study link and five `Case Study`
+eyebrows with `text-transform: none`. The temporary mobile viewport was reset and
+the preview returned to the page top.
+
+Changed files: `app/globals.css`, `components/sections/CaseStudiesSection.tsx`,
+`components/ui/QuietPrism.module.css`, `docs/copy-register.md`, and
+`docs/full-site-integration-20260920.md`; this STATUS file is written last before
+the checkpoint. Rollback is `4f198855323546ce4dd4eba3948fd2fe5fda684e`.
+Preview `http://localhost:8090/` remains open under PID 52456 and serves the
+rebuilt export. Existing previews on 3016 and 3000 were preserved.
+
+Fresh Exchange status at 2026-09-20T21:37:13+00:00 had fingerprint
+`6186b5cff5cb0b9bed9e21a104b4a7d1d64619568f25033ca51d6fee76fe305f`, no
+conflicts, and change event
+`20260920T213513Z-5e90839238de4820883aec8659529196`. A final append-only update
+follows the local commit. Shared CURRENT and the website card were not edited; no
+peer-awareness claim is made. No added spending, reset, model download, paid
+fallback, or local inference ran.
+
+## September 20, 2026: Browser-comment refinement complete locally
+
+Owner: coordinator task `01a0bf67-f456-7e32-b581-a233af6149fe`, branch
+`codex/full-site-integration-20260920`, worktree 6b03. Jacob's eleven browser
+comments are implemented as B65 on top of checkpoint
+`df7baebe7cf26a378c41a9f36c70f7842ac6d502`. No push, main merge, PR,
+publication, password system, or deployment was performed.
+
+Removed the four hero pathway cards and the redundant selected-work top wave.
+The hero now fills one small viewport, has a pure-white center, clips exactly
+half its bottom wave, and flows directly into selected work. Its closing sequence
+begins with UX and drops in the build paragraph, bold better-way line, centered
+rule, action label, and arrow in order with equal rule spacing. Reduced motion
+shows the complete settled state.
+
+All five employment cards now form one full-width left column. The unified Team
+Building and Mentorship, Expertise, and Apps & Tools surface sits to its right,
+stacks those sections, and separates them with horizontal rules. Narrow layouts
+stack both columns. Education cards now use equal padding, zero title/source gap,
+clipped corner art, no divider or visible View label, and a 44px external-link
+icon in the top-right. Accessible credential/new-tab labels remain. More stories
+behind the work has a lock icon; password enforcement remains unimplemented
+because no credentials, protected route, or behavior were specified.
+
+Verification actually run: two clean production builds with Next 15.5.25,
+TypeScript/build lint, export preparation, 288-image and 104-reference asset
+verification, authored-source ESLint over app/components/lib, and Git whitespace.
+In-app browser review at 1484x1272 and 390x844 confirmed the full-height hero,
+50% wave crop, zero pathway cards, direct section transition, full-width job
+cards, right stacked practice card, horizontal rules, nine cleaned education
+cards, 44px link targets, and no horizontal overflow. Temporary normal-motion
+emulation confirmed UX/build arrival together at 4.2 seconds and all closing
+elements settled by 5.3 seconds; the original reduced-motion preference and
+viewport were restored. Browser console inspection was not repeated; the build
+and observed layouts reported no runtime failure.
+
+Changed application files: `app/globals.css`, `app/visual-system.css`,
+`app/site-integration.css`, HeroSection, KineticHeroIdentity, CaseStudiesSection,
+ResumeSection and EducationSection; the now-unused HomePathways component was
+removed. Updated B65 in `docs/copy-register.md` and appended detailed evidence to
+`docs/full-site-integration-20260920.md`. This STATUS file is written last before
+the local checkpoint. Rollback is
+`df7baebe7cf26a378c41a9f36c70f7842ac6d502`; the new commit follows in the task
+and Exchange handoff.
+
+Preview `http://localhost:8090/` remains open and serves the rebuilt export from
+this worktree under PID 52456. Existing previews on 3016 and 3000 were preserved.
+Fresh Exchange status at 2026-09-20T21:10:34+00:00 had fingerprint
+`320357d591dbac31c737883762ef092d768354800d9fb8780db38b25e1726c9f`, no
+conflicts, and the intake event
+`20260920T210258Z-d5aee4e1e3b6445bae7441a0bb815af1`. Shared CURRENT and the
+website card remain historical; only the append-only website handoff will be
+written after commit. No peer-awareness claim is made. The user-selected model
+and effort were retained; exact model/effort telemetry and token usage were not
+available to verify, and no added spending, reset, model download, paid fallback,
+or local inference ran.
+
+## September 20, 2026: Full-site Quiet Prism integration complete locally
+
+Owner: coordinator task 01a0bf67, branch `codex/full-site-integration-20260920`,
+owned 6b03. Jacob's full-site instruction in task 01a0bf66 supersedes the earlier
+planning-only/lab-approval implementation hold and dedicated-page deferral.
+Publication remains separate. No push, main merge, PR or deployment performed.
+
+Integrated B60, foundation and approved final hero/modal histories through merge
+`b1c9a02557fa0cc35348418077733b885146fa49`. Adopted final Quiet Prism primitives
+from `5fba784bac5526205683de8677fd3e3d0ab522d6`, including all four final tweaks,
+without shipping the prototype route. B64 applies the approved wording and six
+B56 dedicated-copy files from d8d7380; six story URLs and factual authorities stay
+intact. Main project data, employment facts and education records are preserved.
+
+The main portfolio and dedicated experience share cards, waves, materials,
+responsive layouts and connected links. Five project dialogs, nine How I work
+examples, five experience disclosures and nine education records remain. B60's
+mentorship and B63's precise label emphasis are implemented. One global pause
+control covers decorative CSS, hero clock, GIF fallback and automatic demo state;
+paused dialogs remain usable. Reduced motion produces zero running animations.
+
+Build, TypeScript, authored-source ESLint and whitespace checks passed. Export
+verification passed for 288 images and 104 references; shared wave hash matches
+source/export. Eight pages passed 40 responsive measurements, with no page
+horizontal overflow. Four additional breakpoint checks preserve education's
+22/22/16px padding and 600px column change. Eight pages and fourteen dialogs have
+zero detected axe WCAG 2 A/AA violations. All fourteen support keyboard opening,
+reading-area scrolling, focus trap, Escape and exact focus/scroll/history return.
+Five disclosures pass keyboard open/close/reversal. Filters, connected navigation,
+bounded three-image preload and simulated error/real retry checks passed.
+
+Acceptance fixed muted text on gradient glass, the sage diagram label, generic
+ARIA labels, main heading hierarchy, missing dialog reading-area focus, legacy
+wave reduced motion, forced-color focus and paused-dialog/hero/demo interactions.
+Ninety rendered contrast positions were reviewed; final mobile footer retests
+measure 5.69:1 and 4.96:1. Sampling is bounded, not proof for every motion frame.
+Full report, source adoption map, rollback points, structured evidence and all 38
+WCAG 2 A/AA coverage entries are in:
+- `docs/full-site-integration-20260920.md`
+- `docs/reviews/full-site-integration-20260920.json`
+- `docs/reviews/full-site-wcag-20260920.md`
+
+Physical touch, Safari/Firefox, screen-reader speech and native 200% browser zoom
+remain unverified. No conformance or live-production performance claim. Jacob's
+global visual/content refinement and publication decision remain. No external
+resume work or private source data was touched.
+
+Preview8090 serves this export, PID52456. Preserved3016 serves6d80, PID12504;
+preserved3000 servesa003, PID16740. Browser media/viewport overrides restored;
+preview remains open. Other checkouts, locks and services were preserved.
+Complete-integration rollback is51577f7ff1b2eb1658ffd7edad9a8dfb9e56c6a6;
+production-adoption rollback isb1c9a02557fa0cc35348418077733b885146fa49.
+
+Final staging also caught an extra blank line at the imported clock file EOF;
+normalized it without changing behavior. STATUS is written last before the local
+checkpoint. Own lock is released after
+commit. The final commit and append-only Genesis receipt are recorded in the task
+handoff; the shared coordinator's CURRENT/card files were not edited. Fresh
+Exchange status at 2026-09-20T17:38:32+00:00 retained fingerprint
+`42245077a5e1119c1835066eb5ca90a4c2db4d993d1c19078c04f01391a8b729`, no conflicts.
+
+## September 20, 2026: Local full-site integration checkpoint, approved final hero and modal behavior
+
+Jacob authorized full-site implementation, brand/marketing copy and the dedicated
+case-study experience in task 01a0bf66, delegated to coordinator 01a0bf67. This
+supersedes the prior planning-only/visual-approval implementation hold and dedicated
+content deferral. Publication remains separate. Integrated `c23b8a3` with full history
+on `codex/full-site-integration-20260920` in owned 6b03. Only expected STATUS
+conflict required reconciliation; all source changes merged without conflict.
+Preserved both status histories. Removed four imported Markdown trailing-space
+line breaks flagged by whitespace validation; report content is unchanged.
+Rollback `80b189a6d665767bf78cd42e0faef78a7571c18f`. Source acceptance is
+historical; combined build/browser checks follow after integration. No push or
+deploy. Final Quiet Prism tweak SHA is still awaited before primitive adoption.
+
+## September 20, 2026: Local full-site integration checkpoint, responsive foundation
+
+Jacob authorized full-site implementation, brand/marketing copy and the dedicated
+case-study experience in task 01a0bf66, delegated to coordinator 01a0bf67. This
+supersedes the prior planning-only/visual-approval implementation hold and dedicated
+content deferral. Publication remains separate. Integrated `e342d3d` with full history
+on `codex/full-site-integration-20260920` in owned 6b03. Only expected STATUS
+conflict required reconciliation; all source changes merged without conflict.
+Preserved both status histories. Rollback `b7ce8146029e12f1aba0891fff596a8e2b915546`. Source acceptance is
+historical; combined build/browser checks follow after integration. No push or
+deploy. Final Quiet Prism tweak SHA is still awaited before primitive adoption.
+
+## September 20, 2026: Local full-site integration checkpoint, approved B60 editorial record
+
+Jacob authorized full-site implementation, brand/marketing copy and the dedicated
+case-study experience in task 01a0bf66, delegated to coordinator 01a0bf67. This
+supersedes the prior planning-only/visual-approval implementation hold and dedicated
+content deferral. Publication remains separate. Integrated `a32ee8f` with full history
+on `codex/full-site-integration-20260920` in owned 6b03. Only expected STATUS
+conflict required reconciliation; all source changes merged without conflict.
+Preserved both status histories. Rollback `51577f7ff1b2eb1658ffd7edad9a8dfb9e56c6a6`. Source acceptance is
+historical; combined build/browser checks follow after integration. No push or
+deploy. Final Quiet Prism tweak SHA is still awaited before primitive adoption.
+
+## September 20, 2026: Final Quiet Prism source pinned in integration plan
+
+Updated the documentation-only plan after the refinement owner's final handoff.
+Source is `c1e8dc605aa66e208f446d464588ac7f9e92ce53` on
+`codex/quiet-prism-refinement-20260920`; verified 6d80 clean with lock released.
+Its implementation is complete. Jacob's final visual approval and production
+adoption remain pending; no merge or publication was authorized.
+
+The plan now records the ten-file adoption map, B63's lab-only scope, preserved
+foundation requirements and the explicit classed-HR selector. Three new
+temporary-file conflict probes found foundation/refinement CSS merges textually,
+STATUS conflicts in all three comparisons, and an editorial copy-register
+conflict. Combined behavior still needs testing on a future integration tree.
+Inspected five retained owner evidence files and the committed report; no
+application build or browser suite was rerun here. Document checks passed for
+48 commit references, local links, fences, JSON and whitespace. Validation's
+initial broad reference matcher was corrected to exclude dates and task IDs.
+
+Only the integration plan, inventory JSON and this STATUS changed, with STATUS
+written last. Branch remains `codex/website-integration-plan-20260920`; final
+checkpoint SHA follows in the task/Genesis handoff. Follow-up rollback is
+`bd0f6bd44dc7b50b0167369f0c9dac67a82c8cd1`. Source rollback is `f94afba`.
+Own lock is released after checkpoint. No other checkout changed.
+
+Verified existing previews: 3016 serves 6d80's final static export, listener
+PID 46540 / parent 27272, bound to 127.0.0.1; 3000 remains PID 16740 / parent 4372.
+This task started or stopped no server. No push, PR, merge or deployment.
+Open work: visual approval, scoped production adoption, combined acceptance,
+deferred content and an explicit publication decision. Physical touch, other
+browser engines and screen-reader coverage remain owner-reported limitations.
+
+Fresh Exchange read included final event
+`20260920T155202Z-69295f7dae2c46c98a5451e64905247f`; status at 15:58:27 UTC
+confirmed fingerprint
+`93a4266c068fe1577d6022cd6ac032d1bebe1d16c48597a729009e9a42ec17ed`.
+Append-only final update follows the commit; no shared coordinator file edited.
+
+## September 20, 2026: Integration inventory and merge plan, documentation only
+
+Completed Jacob's requested coordination audit in isolated planning checkout 6b03,
+branch `codex/website-integration-plan-20260920`, from remote main
+`909ea2275104bc73f483ba7f1c5591db4d17a5b1`. See
+[website-integration-plan-20260920.md](website-integration-plan-20260920.md) and
+[machine evidence](reviews/integration-inventory-20260920.json).
+
+Inventoried 16 worktrees and 34 local/tracking refs, read relevant current and
+archived task records, and checked live remote branches, all 11 merged PRs and
+recent verification/deployment runs. Remote main remains 909ea227; last successful
+deployment is 1325c6b / v12.160. This audit did not recheck live pages or caches.
+Older card/art/resume/release work is already in main ancestry. Dashboard8ee1310
+is patch-equivalent and tree-identical to delivered69a6b22. Preserve the original
+dirty main checkout and all retained source/asset branches.
+
+Recommended future order: B60 editorial record a32ee8f, foundation e342d3d,
+Jacob-approved final modal c23b8a3, then reviewed Quiet Prism production adoption.
+Do not replay the superseded306380b modal or merge the broad d8d7380 copy pass.
+Ten copy-branch files already equal main; six dedicated-page deltas stay deferred.
+The active 6d80 refinement task confirmed shared-path ownership and received the
+foundation overlap guidance. Its final SHA and visual approval remain pending.
+The plan separates local integration, final visual/content acceptance, requested
+full WCAG2.0 A+AA evaluation, and an explicit publication decision.
+
+Verification actually run here: read-only ancestry/blob/patch checks, nine
+temporary-file three-way conflict probes, 30 valid commit references, document
+links/fences/JSON and whitespace validation. No new application build or browser
+suite; historical results are labeled in the plan. No B edits or runtime changes.
+Only this STATUS, the plan and inventory JSON changed. Local checkpoint follows
+this STATUS-last edit; exact commit is recorded in the task/Genesis closeout.
+Owned lock released after checkpoint; no other checkout or process operated.
+
+Previews observed15:39UTC: a64d3000/PID16740 and active6d80 3016/PID42132,
+both using a003-linked dependencies. Older3010–3013/8090–8095 reports are stale
+where checked; no such listeners found. This task started no preview.
+No push, PR, merge or deployment. Plan rollback909ea227; future production
+rollback1325c6b. Open: refinement acceptance, production adoption, combined
+verification, deferred content/source questions and publication decision.
+Exchange read15:38:58UTC, fingerprint
+`06fcf5738f9b7dd0f9e48576db5e6e971ce3c6579aa9722ff3767cc5f654a95b`.
+Append-only handoff only; global pointers and other peers' awareness not claimed.
+Actual task Astra/xhigh retained; deterministic local tools, no local inference,
+added spending, downloads, paid fallback or reset. Exact task tokens not measured.
+
+## September 19, 2026: Main-site editorial recommendation ready, local only
+
+**Approval update:** Jacob explicitly approved `B60 - Unified Resume Card` in
+visual-system task 01a0ba6e-ce13-7701-a6a9-206e048245ea. B60 now records the four
+Team Building and Mentorship bullets and `How I lead the work` as approved but not
+implemented. Quiet Prism and the related Title Case eyebrow, faded-rule, spacing,
+and icon-alignment choices remain owned by the visual workstream. This approval
+does not authorize publication, and no application source changed in this record.
+
+The main-site editorial workstream completed one consolidated recommendation
+against published baseline 909ea22 / v12.160. B60 registers four approved Team
+Building and Mentorship bullets derived only from B58 and Jacob's September 19
+brief, plus the approved label change from `How I approach the work` to
+`How I lead the work`. Nothing is implemented in application source.
+
+The 39-row source and decision inventory is in
+`docs/main-site-editorial-review-20260919.md`. It reviews the hero, introductions,
+homepage teasers, experience, Expertise, historical Apps & Tools, education labels,
+and main UI microcopy. Its recommendation is to preserve the remaining published
+copy. Dedicated case-study pages and long modal narratives were excluded. Current
+tool proficiency remains unverified; the existing historical qualifier stays.
+
+Deterministic checks confirm four registered bullets, four report bullets, exact
+parity between them, one B60 entry, all proposed source phrases present, and clean
+Git whitespace. The new report has no em dash or weak-ownership phrase. One broad
+style-pattern hit is the table-header noun `Surface`, not the banned verb. No build,
+browser, preview, or accessibility scan was run because no application file changed.
+This is not a WCAG claim; the full WCAG 2.0 A and AA evaluation remains after
+integration by design.
+
+Changed files: copy register, editorial review, and this status. Local branch
+`codex/main-site-editorial-20260919`; rollback 909ea22. No push, merge, deploy,
+service change, paid fallback, model download, reset, or added spending. The
+recommended Astra/high configuration could not be verified from task metadata;
+no switch is claimed. The fixed local review workflow did not cover this new
+inventory, so no local inference was dispatched. Exchange was rechecked unchanged
+at 2026-09-19T16:16:58Z, fingerprint
+bf2a05b77509126c7c48c09b365260d84d08b4469911e592d61449358e7064b3, with no
+sync conflict and no remote-awareness claim. Final commit is recorded in the
+append-only Exchange update; this task's lock is released after checkpointing.
+
+Editorial approval is complete. The parent coordinator owns integration and any
+later implementation; publication remains a separate decision.
+
+## September 19, 2026: Local foundation complete; three refinement tasks created
+
+Jacob's new ten-annotation program is coordinated in
+experience-program-20260919.md. Foundation annotations1,2,3,5,7,8 are complete:
+education22px top/sides16px bottom with mobile icon stacking and compact footer;
+one smooth3px employer-toned focus border; stacked hero action; full section-rule
+spacing; container-based full-width featured CTA; supplied Hydra SVG. No copy B
+edit applied or skipped. No broader material redesign was rolled into production.
+
+Production build/type/lint/export passed,288 image hashes/104 references passed,
+diff check passed. In-app checks at320/375/599/600/614/768/1024/1376px found no
+horizontal overflow. Keyboard disclosure, contextual focus, reduced motion and
+forced colors checked; six screenshots inspected. Full WCAG2.0 A+AA evaluation
+is deliberately post-integration, not claimed complete. Detailed evidence and
+limitations are in site-making-of-evidence-20260919.md.
+
+Two implementation tasks and one editorial task were created in isolated worktrees.
+Visual task01a0ba6e-ce13-7701-a6a9-206e048245ea has three options awaiting Jacob's
+selection. Motion task01a0ba6e-e37a-7ee3-bff1-63b5baf86fa5 is testing its first
+implementation. Editorial task01a0ba6e-f542-77a3-b0f5-c8172fbdf40a completed its
+39-row review at4015702: preserve published copy, with four mentorship bullets
+and one heading change proposed as B60 pending approval. No integration yet.
+Editorial's Genesis helper failed to record its checkpoint; parent carries it
+into the coordination update. Visual task reports missing app-brand kit assets.
+
+Own five-file checkpoint: app/visual-system.css, supplied hydra-mark.svg, program
+ledger, making-of journal and this status record. Branch
+codex/main-site-wrapup-20260919 in X:\website-release-20260919; rollback909ea22.
+Final commit is recorded in Genesis; tree clean and own lock released at closeout.
+Preview8090/PID12432 serves this worktree's out/. Original dirty checkout and
+other services preserved. No push, merge, deployment, added spending or reset.
+Production remains v12.160 /1325c6b. No new publication authorized.
+
+## September 19, 2026: Static-blur modal fall complete locally
+
+Jacob replaced the still-choppy zoom-pan with a flat, bounded entrance. The site
+now remains completely stationary and unfiltered. One fixed viewport backdrop
+uses `blur(18px) saturate(.72)` so the page reads as broad shapes without
+animating the page or blur radius.
+
+The desktop dialog has no perspective, z-depth or filter. It falls 18px while
+fading in and scaling only from .975 to 1 over 400ms, after a 45ms mount delay.
+Close is a 260ms upward fade with a .985 end scale; cleanup completes at 280ms.
+The backdrop fades separately over 240ms. No content or edge is enlarged beyond
+the viewport, resolving the reported transition cropping.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the focused Chromium lifecycle suite pass. The suite
+confirmed `pageTransform: none`, `pageFilter: none`, `dialogFilter: none`, the
+18px backdrop blur, in-bounds desktop geometry, focus/scroll/history restoration,
+project switching, reduced motion, loading/error/retry, and mobile sheets at
+320–390px. It recorded zero long tasks. A separate normal-motion profile in the
+actual in-app browser at 1689x1272 recorded 55 frames over 900ms, a 16.8ms maximum
+gap, no gaps over 25ms and no long tasks. The live browser was restored to its
+original reduced-motion preference afterward.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`94306a2a20f30b09504f55635679cb11d8f75fc3`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+36344 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
+## September 19, 2026: Desktop modal zoom-pan follow-up complete locally
+
+Jacob reversed the desktop scene direction after the 980ms pull-back felt close
+but choppy. The site now pushes quickly toward the camera to scale 1.035 with a
+small up-left pan over 280ms. The modal zooms and pans from a smaller down-right
+frame into its exact resting geometry over 650ms. Close reverses over 520ms.
+
+All animated site/modal filters are removed. The six large page sections now use
+only transform and opacity, eliminating the prior continuous full-page blur and
+saturation raster work. The modal starts at scale .86 rather than an enlarged
+1.1, so its edges move inward instead of being cropped outside the viewport.
+
+At the automated 1440x950 midframe, dialog bounds were
+17.36/9.55/1435.65/945.22 and content bounds were
+76.46/33.18/1376.55/921.58; every edge remained inside the viewport. The site
+was at scale 1.035 and both site/dialog filters were `none`. Beginning, mid and
+settled frames were inspected. The computed entrance clock was exactly 650ms.
+
+Production build, TypeScript, full authored lint, whitespace, 288 image hashes,
+104 active references and the complete focused Chromium suite pass. Open/close,
+reverse, interrupted entrance, immediate study switching, focus trap/return,
+Escape, scroll/history, reduced motion, loading/error/retry and mobile sheets at
+320–390px remain intact. The in-app normal-motion profile confirmed no background
+filters and in-bounds geometry at 1689x1272. A warm one-second sample recorded
+59 frames, one 49.9ms gap and one 51ms long task during modal mount; the sustained
+GPU blur cost is removed, but perfect pacing on every device is not claimed.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback
+`c36e4acc8e46dceb0337b9ea20eca866dfae294c`; the follow-up commit follows this
+STATUS-last write. Five scoped files including STATUS changed. Preview 8094/PID
+49840 serves this worktree; 8090/8092 were untouched. No copy/B edit, dependency,
+push, merge, deployment, added spending or local inference. Own lock remains held
+through commit and will then be released. Full evidence remains in
+`docs/motion-modal-refinement-20260919.md`. Safari, physical devices, VoiceOver,
+other engines and full WCAG evaluation remain unverified.
+
+## September 19, 2026: Perceptible desktop modal camera pull-back complete locally
+
+Jacob found the first 340ms desktop modal treatment too quick and shallow to read
+as a camera move. Starting from its exact clean checkpoint `27e361f`, desktop open
+now takes 980ms: the site recedes to a 0.93 scale with 5px blur while the dialog
+crosses from a large 16px-defocused near plane into a sharp reading plane. The
+820ms close reverses that relationship and retains its camera state through exit.
+No literal site split or material redesign was added.
+
+Mobile keeps the established short sheet and now explicitly opts out of desktop
+camera transforms. Verification caught a current 45px menu/52px footer mismatch;
+the footer now matches the measured 45px menu at 320, 360, 375 and 390px while
+retaining a 44px Close control and safe-area expansion. Existing sheet geometry,
+handle-only swipe, header X, internal scrolling and bottom-menu coverage pass.
+
+The focused Chromium suite passes begin/mid/settled focus frames, open, reverse
+close, interrupted entrance, immediate split-test-to-WebMD switching, ten trapped
+Tab presses, Escape/focus return, background isolation, scroll lock/restoration,
+unchanged URL/history, bounded intent preload, slow/error/retry media and reduced
+motion with zero running dialog animation. The inspected midframe measured dialog
+scale 1.017/blur 2.03px and site scale 0.934/blur 4.74px; settled dialog blur was
+zero. A 1.2s headless sample recorded 25 frames, a 133.3ms worst gap under capture
+load, zero long tasks and no page/console errors. This is bounded Chromium evidence,
+not a device frame-rate guarantee.
+
+TypeScript, full authored lint, whitespace, production export, 288 image hashes
+and 104 active references pass on Next 15.5.25. Existing lockfile-identical
+dependencies were reused through an ignored local junction; no dependency download
+or change occurred. Five scoped files including this STATUS changed. Full evidence:
+`docs/motion-modal-refinement-20260919.md` and ignored captures/results under
+`scripts/parity/shots/motion-modal-20260919/`.
+
+Local branch `codex/modal-camera-pullback-refinement-20260919`, rollback/baseline
+`27e361f243d0588d871b673e54222bbb5a5c6613`; the checkpoint commit follows this
+STATUS-last write and is recorded in Genesis. Preview 8094/PID52716 serves this
+worktree's `out/`; 8090 and 8092 remain untouched. Own lock remains held through
+commit and will then be released. No B edit, copy, push, merge, deployment, added
+spending, reset, model download or local inference. Production remains v12.160 /
+`1325c6b`. Safari, iOS browser chrome, physical devices/safe areas, VoiceOver,
+other engines and full WCAG evaluation remain unverified; no certification claimed.
+
+## September 19, 2026: Hero and modal motion refinements complete locally
+
+Annotations 4 and 9 are implemented on an isolated branch. Jacob Medley and
+Product now reveal directly to their settled roomy brace apertures. Desktop
+case-study modals use a restrained camera retreat/refocus with a symmetric close;
+mobile uses a full-width sheet from a 12px safe top gap to the dynamic viewport
+bottom, covering the fixed menu. Its footer measures and matches the real 71px
+mobile nav footprint, with header X, footer Close and handle-only downward swipe.
+Jacob's corrected over-menu direction supersedes the earlier above-menu brief.
+
+Radix focus trap/return, Escape, outside click, background hiding, body scroll
+lock/restoration, internal modal scrolling and unchanged URL/history behavior
+pass. Reduced motion removes camera/dialog movement. Intent loading is bounded to
+three assets after pointer/keyboard intent and zero modal evidence assets before
+intent; native lazy images now have loading, error and Retry states. No copy,
+case-study narrative, parent foundation selector or B edit changed.
+
+Lockfile-exact Next 15.5.25 on bundled Node 24.19.0 passed TypeScript, authored
+lint, production export, 288 image hashes and 104 active references. The focused
+Chromium suite passed hero dimensions, desktop modal lifecycle, rapid study
+switching, keyboard trap/return, 375x812 touch/swipe, 320x568/360x640/390x664
+short/narrow sheets, delayed/failed/retried media and reduced motion. Screenshots
+were inspected. Safari/iOS browser chrome, physical safe areas, VoiceOver, other
+engines/devices and the final criterion-by-criterion WCAG 2.0 A/AA evaluation
+remain unverified; no certification is claimed.
+
+Local branch `codex/motion-modal-refinement-20260919` from baseline `909ea22`;
+checkpoint commit follows this STATUS-last update and its exact ID is recorded in
+Genesis. Five scoped source/report/test files plus STATUS changed. Parent foundation
+checkpoint `e342d3d` edits separate CSS/assets; integrated hero CTA and complete
+journey testing remain coordinator-owned. Preview 8092/PID44956 serves this task's
+`out/`; parent preview8090 is untouched. Own lock remains held through commit and
+will be released after the checkpoint. No push, merge, deploy or production
+change; production stays v12.160 / `1325c6b`, rollback `f2a6f57`. No added
+spending, local inference, model download or reset. Full evidence:
+`docs/motion-modal-refinement-20260919.md`.
+
 ## September 19, 2026: LIVE — experience and education refinements, v12.160
 
 Jacob explicitly requested publication. PR #11 merged as
@@ -1831,6 +2912,20 @@ throughout; every session since has worked from its own worktree.
 Volatile state. Read this first, write it last.
 Durable rulings, wording standards, and figures live in copy-register.md.
 If a fact would still be true in three months, it belongs there, not here.
+
+## 2026-09-21 — modal quiet-prism refinement complete
+
+- Worktree: `C:\Users\jacob\.codex\worktrees\2787\jacobmedley.com`
+- Branch: `codex/modal-content-quiet-prism-20260920`
+- Commit: this task's completion commit follows this status write; starting rollback point is `cb5044bfe1f4e847512bf609a72c74f453174a44`.
+- Scope: implemented Jacob's 24 browser annotations across the homepage hero, selected-work cards, case-study modals, call-center demo, and resume practice card. The modal content now uses flatter prose, quiet naked cards, no modal corner waves, consistent 28 px frames, larger icons, a bullet-based Value Created panel, simplified ecosystem/iteration/flow visuals, and MVP-versus-iteration language.
+- Content authority: `docs/copy-register.md` B69 records the small UI-label and iteration-label changes. No factual metric or narrative claim changed.
+- Files changed: `app/visual-system.css`; `components/sections/ResumeSection.tsx`; `components/ui/{CallCenterDemo,CaseStudyModal,KineticHeroIdentity,StudySupportingArt}.tsx`; `components/ui/QuietPrism.module.css`; `lib/data/projects.ts`; `docs/copy-register.md`; `design-qa.md`; and `docs/reviews/modal-naked-card-20260921/`.
+- Verification: scoped ESLint passed; production `npm run build` passed; 288 exported images and 104 active production references verified; `git diff --check` passed before the final max-width correction and is rerun at handoff; all 14 modal variants passed desktop 1440 × 1000 and mobile 390 × 840 overflow sweeps; representative tablet screenshots reviewed at 900 × 1000; 200% text scaling passed without horizontal overflow; switch toggle, Escape close, and focus return passed; `design-qa.md` ends `DESIGN QA: passed`.
+- Preview: the existing local production preview remains at `http://localhost:8097/`, served from this worktree's `out` directory.
+- Deployment: none. Nothing was pushed, merged, published, or deployed.
+- Rollback: reset or revert to `cb5044bfe1f4e847512bf609a72c74f453174a44`; preserve later unrelated commits if this branch advances.
+- Unresolved: no in-scope P0–P2 issue. Cross-browser testing beyond the embedded Chromium preview remains outside this pass.
 
 ## Surfaces
 

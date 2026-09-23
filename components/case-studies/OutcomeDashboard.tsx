@@ -1,3 +1,4 @@
+import { CornerWaves } from '@/components/ui/QuietPrism'
 import Link from 'next/link'
 import type { CaseStudyOutcome } from '@/lib/data/case-studies'
 import Arrow from './Arrow'
@@ -14,12 +15,12 @@ export default function OutcomeDashboard({ outcomes }: { outcomes: CaseStudyOutc
     <section className="cs-container cs-featured-section cs-outcomes" id="filtered-outcomes" aria-labelledby="outcomes-title">
       <div className="cs-featured-label">
         <span className="cs-eyebrow" id="outcomes-title">Selected Outcomes</span>
-        <span>{String(outcomes.length).padStart(2, '0')}{' // Sourced Records'}</span>
+        <span>{outcomes.length} {outcomes.length === 1 ? 'case study' : 'case studies'}</span>
       </div>
-      {featured ? <Link className={`cs-featured cs-theme-${featured.theme}`} href={`/case-studies/${featured.slug}/`}>
+      {featured ? <Link data-motion-root data-atmosphere className={`cs-featured cs-theme-${featured.theme}`} href={`/case-studies/${featured.slug}/`}>
         <div className="cs-featured-art" aria-hidden="true"><StudyVisual kind={featured.visual} /></div>
         <div className="cs-featured-copy">
-          <div className="cs-badges" aria-label="Disciplines">{featured.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          <div className="cs-badges" role="group" aria-label="Disciplines">{featured.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           <h2>{featured.shortTitle}</h2>
           <p>{featured.context}</p>
           <div className="cs-launch-comparison" role="img" aria-label={`${featured.value} ${featured.label}`}>
@@ -31,20 +32,21 @@ export default function OutcomeDashboard({ outcomes }: { outcomes: CaseStudyOutc
               </div>
             ))}
           </div>
-          <span className="cs-text-link">See the source story <Arrow /></span>
+          <span className="cs-text-link">Read <Arrow /></span>
         </div>
       </Link> : null}
       <div className="cs-outcome-grid">
         {supporting.map((outcome) => (
-          <Link data-motion-root className={`cs-icon-card cs-outcome-card thinking-thumb-icon cs-theme-${outcome.theme}`} href={`/case-studies/${outcome.slug}/`} key={outcome.slug}>
+          <Link data-motion-root data-atmosphere className={`cs-icon-card cs-outcome-card thinking-thumb-icon cs-theme-${outcome.theme}`} href={`/case-studies/${outcome.slug}/`} key={outcome.slug}>
+            <CornerWaves />
             <StudyIconArt kind={outcome.visual} />
             <div className="cs-icon-copy">
-            <div className="cs-badges" aria-label="Disciplines">{outcome.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+            <div className="cs-badges" role="group" aria-label="Disciplines">{outcome.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
             <span className="cs-outcome-type">Qualitative outcome</span>
             <strong>{outcome.value}</strong>
             <span className="cs-outcome-label">{outcome.label}</span>
             <p>{outcome.context}</p>
-            <span className="cs-text-link">See the source story <Arrow /></span>
+            <span className="cs-text-link">Read <Arrow /></span>
             </div>
           </Link>
         ))}

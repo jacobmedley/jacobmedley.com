@@ -47,7 +47,7 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 }
 .resume-practice-column { position: relative; z-index: 1; min-width: 0; padding: 1.25rem .75rem; }
 .resume-practice-column + .resume-practice-column { background: linear-gradient(90deg, transparent, #94849b55 18%, #94849b55 82%, transparent) center top / 88% 1px no-repeat; }
-.resume-practice-column h3 { display: flex; align-items: start; gap: .75rem; font-size: clamp(1.25rem, 1.6vw, 1.6rem); line-height: 1.25; margin: 0 0 1.5rem; }
+.resume-practice-column h3 { display: flex; min-width: 0; align-items: start; gap: .75rem; font-size: clamp(1.25rem, 1.6vw, 1.6rem); line-height: 1.25; margin: 0 0 1.5rem; overflow-wrap: anywhere; word-break: break-word; }
 .resume-practice-column h3 i { flex-shrink: 0; margin-top: .15em; color: #71577e; }
 .resume-practice-column .fa-ul { margin: 0; padding: 0; list-style: none; }
 .resume-practice-column .fa-li { display: none; }
@@ -69,6 +69,7 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 .thinking-thumb {
   --thinking-tint: #ece2f1; --thinking-line: #aa95bc; --thinking-ink: #5a4367;
   --card-wave: var(--thinking-line);
+  container-type: inline-size;
   background: linear-gradient(to bottom left, #fffdfc, var(--thinking-tint));
   border-radius: var(--prism-radius);
   clip-path: none;
@@ -110,6 +111,10 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 .thinking-thumb .thinking-badges { z-index: 3; }
 .thinking-item { display: flex; }
 .thinking-item .thinking-thumb { height: auto; min-height: 360px; }
+@container (max-width: 14em) {
+  .thinking-thumb .thinking-panel { grid-template-columns: minmax(0, 1fr); }
+  .thinking-thumb .thinking-arrow { justify-self: end; }
+}
 
 /* The dedicated experience shares the same materials and reading hierarchy. */
 .cs-site { --cs-paper: #fbfaf8; --cs-muted: #594d62; }

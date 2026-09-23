@@ -284,10 +284,11 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-leadership-grid h4 { margin: 0; color: var(--resume-ink); font-size: clamp(1.2rem, 1.5vw, 1.5rem); font-weight: 500; line-height: 1.25; }
 .resume-leadership-grid hr { margin-block: var(--heading-rhythm); }
 .resume-leadership-grid p { margin: 0; }
-.row.resume-columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: start; }
+.row.resume-columns { display: flex; flex-wrap: wrap; gap: 3rem; margin-inline: 0; margin-top: var(--section-rhythm); align-items: flex-start; }
 .resume-experience-divider { margin-block: var(--rule-gap-section); }
 .resume-experience-divider + .row.resume-columns { margin-top: 0; }
-.resume-columns > [class*='col-'] { grid-column: auto; width: 100%; padding: 0; min-width: 0; }
+.resume-columns > [class*='col-'] { flex: 1.65 1 28rem; width: auto; padding: 0; min-width: 0; }
+.resume-columns > .resume-prism-practice { flex: .85 1 18rem; min-width: 0; }
 .resume-timeline::before { content: none; }
 .resume-timeline-entry { padding-left: 0; }
 .resume-timeline-entry + .resume-timeline-entry { margin-top: 1.5rem; }
@@ -320,7 +321,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .resume-expertise .fa-ul { columns: 1; }
 .resume-expertise li + li { margin-top: .8rem; }
 .resume-tools-context { margin-bottom: 1rem; }
-@media (min-width: 992px) { .row.resume-columns { grid-template-columns: minmax(0,1.65fr) minmax(18rem,.85fr); gap: clamp(2rem,4vw,4rem); } }
+@media (min-width: 992px) { .row.resume-columns { gap: clamp(2rem,4vw,4rem); } }
 @media (max-width: 575px) { .resume-experience-header { grid-template-columns: 2.25rem minmax(0,1fr); gap: 1rem; } .resume-company-mark { width: 2.25rem; height: 2.25rem; } }
 
 /* Native masonry columns follow natural card heights and preserve DOM/tab order. */
@@ -490,7 +491,7 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .demo-primary { display: flex; align-items: center; justify-content: center; gap: .75rem; width: 100%; min-height: 2.75rem; border: 0; border-radius: .5rem; background: var(--demo-ink); color: white; padding: .7rem; font-weight: 600 !important; }
 .demo-store-plans { padding: 1rem; }
 .demo-plan-tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .6rem; margin-top: .7rem; }
-.demo-plan-tiles button { display: grid; place-items: center; gap: .5rem; min-width: 0; border: 1px solid #d7d2dd; border-radius: .65rem; background: #faf9fc; padding: .8rem .3rem; }
+.demo-plan-tiles button { display: grid; place-items: center; gap: .5rem; min-width: 0; border: 1px solid #d7d2dd; border-radius: .65rem; background: #faf9fc; padding: .8rem .3rem; overflow-wrap: anywhere; word-break: break-word; }
 .demo-plan-tiles i { font-size: 1.4rem; color: #7a7384; }
 .demo-controls { min-width: 0; color: #44394d; }
 .demo-eyebrow { display: block; font-size: .8rem; margin-bottom: .6rem; }
@@ -541,6 +542,9 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
   .demo-selected-state > i { font-size: 1.25rem; }
   .demo-selected-state p { font-size: .75rem; }
   .demo-highlight-control { padding-top: .85rem; border: 0; flex-direction: column; gap: .3rem; justify-content: center; font-size: .75rem; }
+}
+@container (max-width: 12em) {
+  .demo-plan-tiles { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .demo-reactive, .demo-reactive::after, .demo-highlight-control button > span { transition: none; }

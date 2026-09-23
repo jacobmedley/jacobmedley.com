@@ -1,5 +1,60 @@
 # Status
 
+## September 22, 2026: full-site release candidate reviewed
+
+The approved final tips from the modal/layout (`bfe6ac0`), shared card
+focus/seam (`9346cad`), and source-backed design-system (`304b66c`) workstreams
+are integrated over `origin/main` at `909ea22`. Their histories remain intact in
+merge commits `78d0ed6`, `d1ea9f6`, and `1f0db1b`; rejected intermediate visual
+treatments remain historical only. Copy-register numbering was reconciled by
+retaining the modal B69-B71 entries and assigning the catalog work B72/B72a.
+
+Release review found and repaired four 200%-text squeeze cases in the resume
+practice headings, full-stack card titles, a prior-role line, and the call-center
+demo. Resume columns now wrap from intrinsic text-aware bases; constrained cards
+and demo actions reflow without changing their normal desktop proportions. Two
+browser harnesses were also made deterministic: normal-motion scenarios now
+request that preference explicitly, transition geometry is sampled at a fixed
+animation time, and performance gates use frame-gap/long-task signals rather
+than a host-dependent raw frame count. The broad visible-text collector ignores
+only intentional `.sr-only` geometry and empty icon-only controls.
+
+Verification actually run on the integrated production export: `npm ci`,
+TypeScript, authored-source ESLint, production build/static export, 288 exported
+images, 104 active production references, and `npm audit --audit-level=high`
+all passed. The design-system verifier passed 51 patterns, 169 examples, and 36
+tokens. Integrated Chromium acceptance passed 13 route/viewport checks, all 14
+dialogs, all 169 catalog locators, shared card focus, Escape close/focus return,
+broken-image, overlay, and overflow checks. Dedicated 200%-text acceptance
+passed five widths plus all 14 dialogs. Motion/modal acceptance passed desktop,
+mobile, reduced-motion, slow/error/retry, focus, history, and scroll behavior.
+The broad matrix completed 240 reflow cases, 182 modal resizes, 90 direct-route
+reflow cases, 20 compact-state checks, and 14 touch paths with no visible-text
+or page-overflow failure. Details are in `design-qa.md` and ignored artifacts
+under `scripts/parity/shots/release-integration-20260922/`.
+
+The historical sticky-position suite is not applicable because the current CSS
+deliberately keeps sticky section positioning dormant for visual review; the
+live compact-state behavior is covered by the broad matrix. Automated review
+used Chromium against the production export and is not a physical Safari or
+screen-reader audit. The local Node 22.11 host emitted one engine warning for a
+transitive package that requests 22.13+, while the repository CI uses supported
+Node 20; install, lint, type check, build, and audit still passed.
+
+Owner: task `01a0cb34-ac9b-7803-904e-5eb683bd08d2`, branch
+`codex/release-full-site-20260922`, isolated worktree
+`C:\dev\jacobmedley.com\w`. Rollback point: `909ea22`. The original checkout's
+documented Sep 5 local work remains untouched. The final release-review commit,
+push, and deployment PR follow this status write. Merging to `main` is the
+separate production deployment action and is not authorized by this review.
+
+Fresh Exchange observation: 2026-09-23T00:21:22Z, no conflicts, fingerprint
+`d8197ff33a8e5b506988b0a49db892698a264e82c54020ae001a77eafb1f2628`.
+Jacob's deployment-PR direction is recorded as event
+`20260923T001118Z-1545bbe0ba8247c8aee7990fe8ce7468`. A completion update will
+record the final commit, PR, verification, and rollback point; no remote peer
+acknowledgement is asserted.
+
 ## September 22, 2026: layout rhythm follow-up complete
 
 Jacob's six browser comments are implemented. DentalPlans iterations two and

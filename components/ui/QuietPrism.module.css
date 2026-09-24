@@ -117,7 +117,7 @@
   display: flex;
   gap: .75rem;
   align-items: center;
-  margin: .18rem 0 .25rem;
+  margin: .18rem 0 0;
   font-size: clamp(1.75rem, 3vw, 2.35rem);
   font-weight: 400;
   line-height: 1;
@@ -136,12 +136,6 @@
   width: var(--prism-card-arrow);
   height: var(--prism-card-arrow);
   transition: translate 420ms cubic-bezier(.16, 1, .3, 1);
-}
-
-.featuredIdentity > p:last-child {
-  margin: 0;
-  color: #34313b;
-  font-size: var(--prism-card-body);
 }
 
 .featuredCopy {
@@ -176,7 +170,7 @@
 
 .featuredMeta {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: .75rem;
   width: 100%;
@@ -484,6 +478,10 @@
 .cornerLayer { animation: corner-layer-drift 16s ease-in-out infinite alternate; }
 .cornerLayer:nth-child(2) { animation-duration: 21s; animation-delay: -8s; animation-direction: alternate-reverse; }
 .cornerLayer:nth-child(3) { animation-duration: 25s; animation-delay: -17s; }
+.cornerSoftened > span { filter: blur(20px); }
+.cornerSoftened .cornerLayer { animation-duration: 8s; }
+.cornerSoftened .cornerLayer:nth-child(2) { animation-duration: 10.5s; animation-delay: -4s; }
+.cornerSoftened .cornerLayer:nth-child(3) { animation-duration: 12.5s; animation-delay: -8.5s; }
 @keyframes corner-layer-drift { from { transform: translate(-8px, -4px); } to { transform: translate(8px, 5px); } }
 .edgeShine {
   position: absolute;

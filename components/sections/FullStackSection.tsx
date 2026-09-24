@@ -94,7 +94,7 @@ export default function FullStackSection() {
                   onClick={() => setActiveId(project.id)}
                   data-modal-trigger={project.id}
                 >
-            <CornerWaves />
+                  {project.thumb ? <CornerWaves /> : null}
                   <div className="thinking-badges" role="group" aria-label="Disciplines">
                     {project.disciplines.map((discipline) => discipline ? <span key={discipline}>{discipline}</span> : null)}
                   </div>

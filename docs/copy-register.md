@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B72. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B75. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -1645,6 +1645,14 @@ The shared control uses the registered labels **Pause motion** and **Resume moti
 It is available on both the homepage and standalone case-study surface, with the
 current state exposed through `aria-pressed`.
 
+## B73. Remove the shared motion control [APPLIED]
+
+Source: Jacob's September 23, 2026 direct request.
+
+The visible **Pause motion** / **Resume motion** control is removed from the site.
+Automatic offscreen, hidden-document, and operating-system reduced-motion behavior
+remains. This supersedes B43 for the current interface.
+
 ## B44. Comparable homepage featured-study excerpts [APPLIED]
 
 Source: Jacob's September 9 browser comment 4. Scope: the five homepage featured
@@ -2348,3 +2356,77 @@ The locator review also classifies Animated Image as retained: the only GIF in
 project brief data does not reach AnimatedStudyImage's active render branch.
 Its retained specimen reuses that existing marketing-automation GIF and alt text.
 Leadership Principles names the four registered About-section reading tiles.
+
+## B74. Viva thumbnail discipline [APPLIED LOCALLY]
+
+Source: Jacob's September 23, 2026 browser annotation. Publication is not
+authorized.
+
+The Viva thumbnail disciplines are `Brand` and `Visual`. This replaces
+`UX Research` on that thumbnail; the project narrative and contribution badges
+remain unchanged.
+
+## B75. WebMD and DentalPlans case-study copy [APPLIED LOCALLY]
+
+Source: Jacob's approved copy and scope guardrails, September 23, 2026.
+Publication is not authorized. Apply the wording exactly, without polishing or
+reinterpretation.
+
+### Canonical themes
+
+- WebMD: `Speed to Market`
+- DentalPlans: `Building for Scale`
+- BumblebeeMD: `Reuse by Design`
+- Hydra: `A Shared Language`
+- One Park Financial: `Behavior Into Decisions`
+
+These five themes are the current canonical set. This entry does not revise the
+BumblebeeMD, Hydra, or One Park Financial narrative.
+
+### WebMD
+
+Main card headline: `Trust Meets Commerce`
+
+Main card paragraph:
+
+> WebMD had the audience and brand equity. DentalPlans had the plans and ecommerce infrastructure. I designed and built the experience that brought them together, from finding a plan through checkout.
+
+Modal opening heading: `From Campaign to Commerce`
+
+Modal opening copy:
+
+> WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine. A product marketing lead and I built the campaign, designed the experience, and launched the site. It started generating revenue the day it went live.
+
+WebMD is the two-person launch effort: Product Marketing Lead and Jacob.
+
+### DentalPlans
+
+Main card headline: `From Storefront to Platform`
+
+Main card paragraph:
+
+> What began as one boot-strapped ecommerce site became a proprietary platform the company owned outright. Shared product data, reusable components, promotions, and deployment supported five branded properties and cut launch time from six weeks to two. The value stayed with us. We were building the asset, not renting the code.
+
+Modal opening heading: `How Fast Can You Stand Up a Website?`
+
+Modal opening copy:
+
+> It started with a simple question: “You know WordPress, right? How fast can you stand up a website?”
+>
+> DentalPlans.com wanted dedicated storefronts for product partners. We had minimal engineering support, so the first site was deliberately lean. It tested whether customers would buy through a focused brand experience.
+>
+> They did. The next problem was scale.
+>
+> I led product design and front-end development for the platform that followed, turning repeated work into capabilities each new property could reuse.
+
+DentalPlans is the larger platform effort with minimal engineering support during
+the initial MVP. Remove the obsolete card, opening, and value-list descriptions
+that call the platform a two-person or part-time-engineer project. Preserve the
+existing five-property and six-weeks-to-two facts, metrics, imagery, diagrams,
+contribution labels, navigation, and layout.
+
+### Shared title treatment
+
+Every featured case-study title treatment contains only `Case Study` and the case
+study name. The former third title line does not render. Card headlines remain in
+the separate frosted copy panel.

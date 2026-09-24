@@ -1,5 +1,130 @@
 # Status
 
+## September 23, 2026: local modal, motion, and responsive wave refinements
+
+Jacob's latest browser comments are implemented in the main checkout as
+uncommitted local work. The visible Pause motion control is removed while the
+offscreen, hidden-document, and operating-system reduced-motion behavior remains.
+The A/B Testing modal uses twelve larger, independently animated triangle layers
+spanning the full hero behind its frosted copy panel. The approved rollout now
+also covers Personalization with twelve extended rotating rays, Facilitation with
+eleven expanding rings, and Research Synthesis with ten drifting evidence cards.
+The remaining modal heroes are unchanged. UX Roadmaps shows its reference content
+without the `Roadmap structure` disclosure, and the project-card rules use the
+card's themed line color. The Case Studies metadata icon is now the thin briefcase
+on all five cards, with its badges vertically centered. Per-project
+thumbnail-to-modal palette matching remains in the same local change set. Copy
+register B73 supersedes B43 for the visible motion control.
+
+The six icon-based How I work cards no longer render the shared top-right corner
+wave; the three photo cards retain it. Work-history cards and the leadership,
+expertise, and tools sidebar now use a resume-specific corner treatment with
+`blur(20px)` and animation durations reduced by half. Full-width section waves
+now use a width-responsive `clamp(6rem, 11vw, 13rem)` height instead of viewport
+height, keeping their crest shallow on tall mid-width screens while preserving
+the existing layered path and motion.
+
+The Facilitation card now converges its rings on keyboard focus or pointer hover,
+then grows them slowly from the lightbulb center. Its modal uses the same focal
+point at desktop and in the stacked mobile sheet; the first ring measures within
+1px of the medallion center on desktop and 2px on mobile, while the outer ring
+spans beyond the hero width. The Personas modal now uses the thumbnail's ten
+circle layers and signals instead of the unrelated document-panel pattern. Viva's
+thumbnail disciplines are `Brand` and `Visual` under copy-register B74. The Case
+Studies content wrapper has the requested 58px bottom padding at every viewport.
+
+The gap annotation came from the older `http://localhost:8098/` preview. On current
+main at `http://localhost:3000/`, browser geometry measures the final featured card
+and the How I work section boundary at the same coordinate, a structural gap of
+0px, so no new spacing override was added.
+
+All five featured case-study cards now keep only the `Case Study` label and the
+project name in the artwork identity. The former third-line subtitle is hidden in
+that location while remaining available in the card's larger frosted copy panel
+and in project data.
+
+Copy register B75 records Jacob's approved WebMD and DentalPlans wording before
+production implementation. WebMD now uses `Trust Meets Commerce`, the approved
+card paragraph, and the `From Campaign to Commerce` modal opening, including the
+Product Marketing Lead and Jacob launch split. DentalPlans now uses `From
+Storefront to Platform`, the approved card paragraph, and the four-paragraph `How
+Fast Can You Stand Up a Website?` opening. Its obsolete part-time-engineer and
+two-person-platform descriptions are removed; the existing five-property and
+six-weeks-to-two facts remain. The five canonical themes are stored with the
+featured project data. BumblebeeMD, Hydra, and One Park Financial narrative copy
+is unchanged.
+
+Changed files: `app/design-system/catalog.ts`, `app/globals.css`, `app/layout.tsx`,
+`app/site-integration.css`, `app/visual-system.css`,
+`components/sections/FullStackSection.tsx`,
+`components/sections/ResumeSection.tsx`,
+`components/ui/CaseStudyModal.tsx`, `components/ui/MotionControls.tsx`,
+`components/ui/ExperienceDisclosure.tsx`, `components/ui/ProjectGeometry.tsx`,
+`components/ui/QuietPrism.module.css`, `components/ui/QuietPrism.tsx`,
+`components/ui/WorkCard.tsx`, `lib/data/projects.ts`, `docs/copy-register.md`,
+and this status.
+
+Verification actually run: focused authored-source ESLint, TypeScript with
+`--noEmit --incremental false`, and `git diff --check` pass. Browser acceptance at
+the normal 1285px viewport confirms no rendered motion control, a 0px section gap,
+twelve A/B layers from 384px through 1396px, changing transforms over time, and
+the 6px frosted-panel backdrop filter. UX Roadmaps renders a visible `SECTION`, no
+disclosure or `Roadmap structure` label, and themed gradient project-card rules.
+The five featured cards render five briefcases and no book icons. Desktop browser
+acceptance confirms 12 Personalization rays, 11 Facilitation rings, and 10 Research
+Synthesis cards, with each animation changing over time and each field visible
+through the frosted copy panel. At 390x844, all five reviewed dialogs have zero
+horizontal overflow; visual review passed, and the browser console has no errors.
+Focused TypeScript and ESLint checks also pass after the latest wave changes.
+Browser acceptance confirms zero corner-wave elements across the six icon cards
+and one retained on each photo card; both resume treatments compute to
+`blur(20px)`, use an 8-second lead layer, and change transform over time. The
+Experience-to-Education separator measures 98px at 390px, 116px at 1040px,
+143px at 1285px, and 210px at 1890px. Visual review at 1040px and 1285px shows
+a low smooth crest; boundary gap and horizontal overflow are 0px at mobile and
+wide desktop. `git diff --check` passes.
+Latest browser acceptance at 1658x1270 confirms eleven Workshop modal rings
+centered on the lightbulb, with the 1,328px outer layer spanning a 1,308px hero.
+The card focus state uses `workshop-center-ripple`, starts its lead ring at 24px,
+and grows it to 61px during the sampled 900ms. Personas renders ten circular
+layers at desktop and mobile with no horizontal overflow. At 390x844, both
+modal focal points remain centered and the dialog width is 390px. The Viva card
+renders `Brand` and `Visual`, and the Case Studies content computes to exactly
+58px bottom padding. Live browser acceptance confirms each of the five featured
+cards has exactly two artwork-identity children, with no subtitle rendered there.
+TypeScript, focused ESLint, and `git diff --check` pass. Copy acceptance confirms
+zero production-source hits for the superseded WebMD and DentalPlans card copy,
+and each modal renders its registered heading without `Project Brief`. At desktop
+and 390x844, both cards and modals have zero horizontal overflow; WebMD contains
+the approved two-person launch wording, while DentalPlans contains neither the
+two-person-platform nor part-time-engineer claim and still renders the five-property
+and six-to-two facts. The production build passes for 13 pages, 288 exported images,
+and 104 active references. The port-3000 development preview was restarted after
+the build and returns HTTP 200.
+
+Publication is explicitly authorized by Jacob's September 23 request to clean up,
+merge, and push. The reviewed release branch is
+`codex/modal-copy-refinements-release-20260923`, based on
+`9cc2ec705ae78e068cae13f2831b14983aa0c27a`; refreshed `origin/main` matches that
+base exactly. Pre-publish authored-source ESLint, TypeScript, `git diff --check`,
+the production build/export, and `npm audit --audit-level=high` pass. The workflow
+still uses Node 20 and `dangerous-clean-slate: false`. The eight public content
+routes and both protected legacy deep paths respond before deployment; this host
+receives a server-level 403 for the homepage while an independent web fetch returns
+the live pre-release page. Preview: `http://localhost:3000/`. Rollback point:
+`9cc2ec705ae78e068cae13f2831b14983aa0c27a`; stash `stash@{0}` remains untouched.
+
+Fresh final-acceptance Exchange read: 2026-09-24T02:05:04Z, fingerprint
+`48d1770454ce95f7969578cca9ede6229179cd944b0b671d0efd5f98315c3cd5`, no conflicts,
+remote freshness not asserted. The Exchange record helper repeatedly hung before
+creating the earlier events and hung again while recording this latest direction,
+so shared
+coordination was not updated; a connected coordinator must record this direction
+and checkpoint from the repository status. No remote acknowledgement is claimed.
+The B75 copy checkpoint reread at 2026-09-24T03:01:38Z returned the same fingerprint
+and no conflicts. Its change-event record attempt also hung and was stopped without
+creating an event; this status remains the complete coordinator handoff.
+
 ## September 22, 2026: full-site release candidate reviewed
 
 The approved final tips from the modal/layout (`bfe6ac0`), shared card

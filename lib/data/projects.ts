@@ -208,7 +208,8 @@ export interface Project {
   disciplines: [PortfolioDiscipline, PortfolioDiscipline?]
   visible: boolean // false = removed from render, data retained
   order: number
-  subtitle?: string // feature-card strapline (p.h5)
+  caseStudyTheme?: string // canonical editorial theme for featured case studies
+  subtitle?: string // feature-card headline
   summary: string // feature-card summary
   icon?: string // FA icon for work thumbs
   thumb?: ProjectImage // visual-design thumb background
@@ -244,15 +245,17 @@ export const projects: Project[] = [
     display: 'feature',
     disciplines: ['Product', 'Conversion Optimization'],
     order: 1,
+    caseStudyTheme: 'Speed to Market',
     title: 'WebMD',
-    subtitle: "From plan search to checkout",
+    subtitle: 'Trust Meets Commerce',
     cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: "I led design and front-end development for a branded experience where people could find, compare, and buy dental savings plans.",
+    summary: 'WebMD had the audience and brand equity. DentalPlans had the plans and ecommerce infrastructure. I designed and built the experience that brought them together, from finding a plan through checkout.',
     visible: true,
+    briefHeading: 'From Campaign to Commerce',
     brief: {
       image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
       paragraphs: [
-        "WebMD’s brand and DentalPlans’ products needed one commerce experience. We had less than eight weeks to plan and launch. I led UX/UI design and front-end development across plan search, comparison, cart, and checkout. We launched in six weeks."
+        'WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine. A product marketing lead and I built the campaign, designed the experience, and launched the site. It started generating revenue the day it went live.'
       ]
     },
     contributions: [
@@ -362,20 +365,24 @@ export const projects: Project[] = [
     display: 'feature',
     disciplines: ['Systems', 'Product'],
     order: 2,
+    caseStudyTheme: 'Building for Scale',
     title: 'DentalPlans.com',
-    subtitle: "One platform. Five branded businesses.",
+    subtitle: 'From Storefront to Platform',
     cardImage: {
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: "I built the shared commerce platform behind five branded sites with a part-time engineer. Launching a property went from six weeks to two.",
+    summary: 'What began as one boot-strapped ecommerce site became a proprietary platform the company owned outright. Shared product data, reusable components, promotions, and deployment supported five branded properties and cut launch time from six weeks to two. The value stayed with us. We were building the asset, not renting the code.',
     modalTitle: 'Product Framework and Design System',
     visible: true,
+    briefHeading: 'How Fast Can You Stand Up a Website?',
     brief: {
       image: { src: '/images/work/dpprod-modal/brief.png', alt: '' },
       paragraphs: [
-        "DentalPlans.com wanted dedicated storefronts for product partners. The first site tested whether customers would buy through a focused brand experience. Once it sold, the next question was how to add brands without copying the manual work.",
-        "I led product design and front-end development for the platform that followed. Each release replaced repeated work with a capability the next site could use. I built and maintained it with a part-time engineer."
+        'It started with a simple question: “You know WordPress, right? How fast can you stand up a website?”',
+        'DentalPlans.com wanted dedicated storefronts for product partners. We had minimal engineering support, so the first site was deliberately lean. It tested whether customers would buy through a focused brand experience.',
+        'They did. The next problem was scale.',
+        'I led product design and front-end development for the platform that followed, turning repeated work into capabilities each new property could reuse.'
       ]
     },
     contributions: [
@@ -422,7 +429,6 @@ export const projects: Project[] = [
           heading: 'Value Created',
           items: [
   "Five properties on one platform",
-  "Two people built and maintained the platform",
   "Four experience designers covered the properties",
   "The company owned the custom platform"
 ]
@@ -661,6 +667,7 @@ export const projects: Project[] = [
     display: 'feature',
     disciplines: ['Systems', 'Brand'],
     order: 3,
+    caseStudyTheme: 'Reuse by Design',
     title: 'BumblebeeMD',
     subtitle: "Room to build the brand",
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
@@ -761,6 +768,7 @@ export const projects: Project[] = [
     display: 'feature',
     disciplines: ['Systems', 'Product'],
     order: 4,
+    caseStudyTheme: 'A Shared Language',
     title: 'Hydra',
     subtitle: "From an idea to working parts",
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
@@ -938,6 +946,7 @@ export const projects: Project[] = [
     display: 'feature',
     disciplines: ['Product', 'UX Research'],
     order: 5,
+    caseStudyTheme: 'Behavior Into Decisions',
     title: 'One Park Financial',
     subtitle: "From visitor to the right next step",
     cardImage: {
@@ -1502,7 +1511,7 @@ export const projects: Project[] = [
     id: 'viva',
     section: 'work',
     display: 'thumb',
-    disciplines: ['Brand', 'UX Research'],
+    disciplines: ['Brand', 'Visual'],
     order: 13,
     title: 'Viva',
     thumb: { src: '/images/work/viva-modal/vs-3.png', alt: 'Viva Medicare brand campaign concept' },

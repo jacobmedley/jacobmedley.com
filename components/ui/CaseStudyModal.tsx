@@ -1161,21 +1161,20 @@ function renderMedia(media: ProjectMedia[], contributions: ProjectBadge[]) {
     }
     if (b0.type === 'text' && b1?.type === 'styled-list' && b2?.type === 'text' && b3?.type === 'card') {
       nodes.push(
-        <details className="modal-reference" key={i}>
-          <summary>Roadmap structure</summary>
+        <section className="modal-reference" key={i}>
           <div className="row">
-          <div className="col-24 col-md-12">
-            <p>{b0.text}</p>
-            <hr className="solid-center" />
-            <StyledListContent block={b1} />
+            <div className="col-24 col-md-12">
+              <p>{b0.text}</p>
+              <hr className="solid-center" />
+              <StyledListContent block={b1} />
+            </div>
+            <div className="col-24 col-md-12">
+              <p>{b2.text}</p>
+              <hr className="solid-center" />
+              <CardContent block={b3} />
+            </div>
           </div>
-          <div className="col-24 col-md-12">
-            <p>{b2.text}</p>
-            <hr className="solid-center" />
-            <CardContent block={b3} />
-          </div>
-          </div>
-        </details>
+        </section>
       )
       i += 3
       continue

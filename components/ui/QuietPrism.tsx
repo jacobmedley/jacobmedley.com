@@ -36,7 +36,7 @@ export function PrismWave({ priority = false }: { priority?: boolean }) {
 }
 
 // Crop the original wave diagonally into the corner, with independent layers.
-export function CornerWaves({ both = false }: { both?: boolean }) {
+export function CornerWaves({ both = false, softened = false }: { both?: boolean; softened?: boolean }) {
   const artwork = <svg viewBox="0 0 400 200" fill="currentColor" focusable="false">
     <g transform="translate(410 220) rotate(205)">
       <g className={styles.cornerLayer}><path d={MAIN_WAVE_PATH} opacity=".3" transform="translate(160 25) scale(2.4 2) rotate(-5)" /></g>
@@ -44,9 +44,10 @@ export function CornerWaves({ both = false }: { both?: boolean }) {
       <g className={styles.cornerLayer}><path d={MAIN_WAVE_PATH} opacity=".24" transform="translate(140 61) scale(2.5 1.5) rotate(-8)" /></g>
     </g>
   </svg>
+  const treatmentClass = softened ? styles.cornerSoftened : undefined
   return <>
-    <span className={styles.cornerTop} aria-hidden="true"><span data-atmosphere-wave>{artwork}</span></span>
-    {both ? <span className={styles.cornerBottom} aria-hidden="true"><span data-atmosphere-wave>{artwork}</span></span> : null}
+    <span className={`${styles.cornerTop} ${treatmentClass ?? ''}`} aria-hidden="true"><span data-atmosphere-wave>{artwork}</span></span>
+    {both ? <span className={`${styles.cornerBottom} ${treatmentClass ?? ''}`} aria-hidden="true"><span data-atmosphere-wave>{artwork}</span></span> : null}
   </>
 }
 

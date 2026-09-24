@@ -56,6 +56,7 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 .resume-practice-column strong { font-weight: 650; }
 .resume-practice-column .resume-tools-context { font-size: .875rem; color: #625b6c; margin-top: -.6rem; }
 .resume-experience-card { isolation: isolate; overflow: hidden; border-radius: var(--prism-radius); }
+#work > .my-work > .content { padding-bottom: 58px; }
 .resume-experience-card > header, .resume-experience-card > details, .resume-disclosure-plus { position: relative; z-index: 1; }
 .resume-experience-card .resume-disclosure-plus { position: absolute; }
 .education-card { isolation: isolate; }
@@ -76,10 +77,13 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
   background-clip: padding-box;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, .1), inset 0 0 0 1px color-mix(in srgb, var(--thinking-line) 62%, white);
 }
-.thinking-art-call-center-ux, .thinking-art-roadmap { --thinking-tint: #eee4bd; --thinking-line: #c3ad65; --thinking-ink: #705a16; }
-.thinking-art-marketing-auto, .thinking-art-personas { --thinking-tint: #dce5ef; --thinking-line: #91a7c1; --thinking-ink: #425d7b; }
-.thinking-art-workshops, .thinking-art-viva { --thinking-tint: #dce8d8; --thinking-line: #9cb395; --thinking-ink: #3e603e; }
-.thinking-art-wrong { --thinking-tint: #eddbd9; --thinking-line: #c79896; --thinking-ink: #803e3e; }
+.thinking-art-call-center-ux, .thinking-art-roadmap,
+.featured-work-card-call-center-ux, .featured-work-card-roadmap { --thinking-tint: #eee4bd; --thinking-line: #c3ad65; --thinking-ink: #705a16; }
+.thinking-art-marketing-auto, .thinking-art-personas,
+.featured-work-card-marketing-auto, .featured-work-card-personas { --thinking-tint: #dce5ef; --thinking-line: #91a7c1; --thinking-ink: #425d7b; }
+.thinking-art-workshops, .thinking-art-viva,
+.featured-work-card-workshops, .featured-work-card-viva { --thinking-tint: #dce8d8; --thinking-line: #9cb395; --thinking-ink: #3e603e; }
+.thinking-art-wrong, .featured-work-card-wrong { --thinking-tint: #eddbd9; --thinking-line: #c79896; --thinking-ink: #803e3e; }
 .thinking-thumb::after {
   content: none;
 }

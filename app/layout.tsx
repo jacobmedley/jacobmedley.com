@@ -5,7 +5,7 @@ import Script from 'next/script'
 import './globals.css'
 import './visual-system.css'
 import './site-integration.css'
-import MotionControls from '@/components/ui/MotionControls'
+import MotionObserver from '@/components/ui/MotionControls'
 import AtmosphereController from '@/components/ui/AtmosphereController'
 
 export const metadata: Metadata = {
@@ -61,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {children}
-        <MotionControls />
+        <MotionObserver />
         <AtmosphereController />
       </body>
     </html>

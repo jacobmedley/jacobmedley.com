@@ -71,7 +71,7 @@ export default function ExperienceDisclosure({ company, header, children }: { co
       summary?.focus({ preventScroll: true })
       summary?.click()
     }}>
-      <CornerWaves both />
+      <CornerWaves both softened />
       <span className={prismStyles.edgeShine} aria-hidden="true" />
       {header}
       <span className="resume-disclosure-plus" aria-hidden="true" />

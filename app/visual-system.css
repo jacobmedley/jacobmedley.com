@@ -53,7 +53,7 @@
 .modal-badges-technologies .badge-work i { color: inherit; }
 .modal-badges:not(.modal-badges-technologies) .badge-work { color: #302a38; background: transparent; }
 .thinking-thumb-icon { background: linear-gradient(var(--featured-angle), var(--featured-light), var(--featured-mid) 58%, var(--featured-dark)); }
-.modal-bleed-field.featured-work-card { background-size: 125% 125%; animation: modal-brand-gradient 32s ease-in-out 2 alternate forwards; }
+.modal-bleed-field.featured-work-card { background-size: 125% 125%; animation: modal-brand-gradient 32s ease-in-out infinite alternate; }
 .modal-bleed-field .featured-work-drift { animation-duration: 36s; }
 .modal-bleed-field .featured-work-interaction { transform: none !important; }
 
@@ -270,7 +270,11 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .modal-prism-list-item ul { margin-top: .75rem; }
 .modal-prism-card .card-header { padding: 0 0 1rem; border: 0; background: none; color: var(--card-ink); font-size: 1.25rem; font-weight: 400; }
 .modal-prism-card .card-body { padding: 0; background: none; }
-.modal-prism-card .card-body > div + div { margin-top: 1rem; padding-top: 1rem; background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat; }
+.modal-prism-card .card-body > div + div {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  background: linear-gradient(90deg, transparent, var(--card-line) 24%, var(--card-line) 76%, transparent) center top / var(--rule-max-width) 1px no-repeat;
+}
 .modal-prism-card .card-body p:last-child { margin-bottom: 0; }
 .modal-icon-grid .modal-prism-surface { height: 100%; }
 .modal-icon-grid .card-body { padding: 0; }
@@ -359,18 +363,104 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 #education .section-heading-title,
 #education .section-heading-reserve.is-compact .section-heading-title { color: #f5edf0 !important; }
 
-/* The same warm geometry runs in both surfaces; independent periods avoid lockstep. */
-.modal-theme-thinking, .modal-theme-thinking .modal-bleed-field, .modal-theme-thinking .modal-featured-hero { --featured-light: #f8f7ee; --featured-mid: #e7dfb9; --featured-dark: #d6ca8e; --featured-ink: #695512; }
-.modal-theme-thinking .modal-card-field { color: #7f640a; --art-center-y: 50%; }
+/* Modal heroes inherit the same palette as their matching thinking thumbnail. */
+.modal-theme-thinking {
+  --thinking-tint: #ece2f1; --thinking-line: #aa95bc; --thinking-ink: #5a4367;
+  --featured-light: #fffdfc; --featured-mid: color-mix(in srgb, var(--thinking-tint) 55%, white);
+  --featured-dark: var(--thinking-tint); --featured-ink: var(--thinking-ink);
+}
+.modal-theme-thinking .modal-bleed-field {
+  background: linear-gradient(to bottom left, #fffdfc, var(--thinking-tint));
+}
+.modal-theme-thinking .modal-card-field { color: var(--thinking-ink); --art-center-y: 50%; }
+.modal-theme-thinking .thinking-geometry > i { border-color: color-mix(in srgb, var(--thinking-line) 65%, transparent); }
+.modal-theme-thinking .personalization-rays > b { color: var(--thinking-line); background: color-mix(in srgb, var(--thinking-line) 65%, transparent); }
+.modal-theme-thinking .project-geometry-split-test > i { background: color-mix(in srgb, var(--thinking-line) calc(17% - var(--layer) * 2%), transparent); }
 .modal-theme-thinking .project-geometry { inset: 0; height: 100%; transform: none; }
 .modal-theme-thinking .personalization-rays, .modal-theme-thinking .roadmap-maze { height: 100%; }
 .modal-theme-thinking .project-geometry-split-test > i, .modal-theme-thinking .project-geometry-workshops > i { left: 50%; top: 50%; }
+.modal-theme-thinking:is(.featured-work-card-workshops, .featured-work-card-personas) .modal-card-field {
+  --modal-art-center-x: 50%;
+  --modal-art-center-y: 32%;
+}
 .project-geometry { --art-center-y: 43%; }
 .project-geometry-roadmap > i { border-radius: 50%; border: 1px solid #7f640a18; inset: auto !important; left: 50% !important; top: 43% !important; width: calc(140px + var(--layer)*60px) !important; height: auto !important; aspect-ratio: 1; transform: translate(-50%,-50%); }
 .project-geometry-roadmap .roadmap-maze path { stroke-dasharray: 28 5; animation: maze-travel 7s linear infinite; }
 @keyframes maze-travel { to { stroke-dashoffset: -66; } }
 .project-geometry-workshops > i, .project-geometry-roadmap > i { animation: geometry-breathe calc(8s + var(--layer)*.8s) ease-in-out infinite alternate !important; animation-delay: calc(var(--layer)*-.9s) !important; }
 @keyframes geometry-breathe { from { scale: .92; opacity: .65; } to { scale: 1.13; opacity: 1; } }
+.modal-theme-thinking.featured-work-card-split-test .project-geometry-split-test > i {
+  left: 50% !important;
+  top: 50%;
+  width: calc(24rem + var(--layer) * 5.75rem);
+  animation: modal-triangle-drift calc(14s + var(--layer) * .55s) ease-in-out infinite alternate !important;
+  animation-delay: calc(var(--layer) * -.85s) !important;
+  filter: blur(calc(var(--layer) * .08px));
+}
+@keyframes modal-triangle-drift {
+  from { transform: translate(-52%, -49%) rotate(calc(var(--layer) * 13deg - 7deg)) scale(.96); }
+  to { transform: translate(-48%, -51%) rotate(calc(var(--layer) * 13deg + 7deg)) scale(1.04); }
+}
+.modal-theme-thinking.featured-work-card-marketing-auto .personalization-rays {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  animation: modal-personalization-spin 38s linear infinite !important;
+  animation-play-state: running !important;
+}
+.modal-theme-thinking.featured-work-card-marketing-auto .personalization-rays > b {
+  width: min(78cqi, 58rem);
+  opacity: calc(.42 - var(--ray-index) * .012);
+  animation: modal-ray-breathe calc(10s + var(--ray-index) * .45s) ease-in-out infinite alternate !important;
+  animation-delay: calc(var(--ray-index) * -.8s) !important;
+}
+@keyframes modal-personalization-spin { to { rotate: 360deg; } }
+@keyframes modal-ray-breathe {
+  from { translate: -1.5rem .75rem; scale: .94 1; }
+  to { translate: 1.5rem -.75rem; scale: 1.06 1; }
+}
+.modal-theme-thinking.featured-work-card-workshops .project-geometry-workshops > i {
+  display: block;
+  left: var(--modal-art-center-x) !important;
+  top: var(--modal-art-center-y);
+  width: calc(18rem + var(--layer) * 6.5rem);
+  height: auto;
+  aspect-ratio: 1;
+  border-width: 1px;
+  border-radius: 50%;
+  animation: modal-workshop-ripple calc(12s + var(--layer) * .65s) ease-in-out infinite alternate !important;
+  animation-delay: calc(var(--layer) * -.9s) !important;
+}
+@keyframes modal-workshop-ripple {
+  from { transform: translate(-51%, -49%) scale(.92); opacity: .34; }
+  to { transform: translate(-49%, -51%) scale(1.08); opacity: .82; }
+}
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i {
+  display: block;
+  aspect-ratio: 1;
+  border-width: 1px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  animation: modal-persona-circle-drift calc(12s + var(--layer) * .7s) ease-in-out infinite alternate !important;
+  animation-delay: calc(var(--layer) * -.85s) !important;
+}
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(1) { left: var(--modal-art-center-x); top: var(--modal-art-center-y); width: min(30cqi, 25rem); transform: translate(-50%, -50%); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(2) { left: calc(var(--modal-art-center-x) - 19%); top: var(--modal-art-center-y); width: min(15cqi, 12rem); transform: translate(-50%, -50%); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(3) { left: calc(var(--modal-art-center-x) + 19%); top: var(--modal-art-center-y); width: min(15cqi, 12rem); transform: translate(-50%, -50%); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(4) { left: calc(var(--modal-art-center-x) - 9%); top: calc(var(--modal-art-center-y) - 29%); width: clamp(1.75rem, 3.5cqi, 3.5rem); background: #ffffff61; }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(5) { left: calc(var(--modal-art-center-x) + 10%); top: calc(var(--modal-art-center-y) - 32%); width: clamp(1.25rem, 2.5cqi, 2.5rem); background: #ffffff80; }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(6) { left: calc(var(--modal-art-center-x) + 22%); top: calc(var(--modal-art-center-y) + 20%); width: clamp(2rem, 4cqi, 4rem); background: #ffffff4d; }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(n + 7) { left: var(--modal-art-center-x); top: var(--modal-art-center-y); transform: translate(-50%, -50%); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(7) { width: min(42cqi, 34rem); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(8) { width: min(58cqi, 47rem); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(9) { width: min(76cqi, 62rem); }
+.modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i:nth-child(10) { width: min(98cqi, 80rem); }
+@keyframes modal-persona-circle-drift {
+  from { scale: .94; opacity: .32; }
+  to { scale: 1.06; opacity: .72; }
+}
 .thinking-item { --icon-period: 8.7s; --icon-offset: -1.3s; }
 .thinking-item:nth-child(2n) { --icon-period: 11.3s; --icon-offset: -4.8s; }
 .thinking-item:nth-child(3n) { --icon-period: 9.4s; --icon-offset: -2.7s; }
@@ -422,10 +512,20 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .kinetic-identity[data-hero-state='static'] .kinetic-static-brace.is-right { right: 0; left: auto; }
 .kinetic-closing p { margin: 0; }
 .kinetic-closing p + p { margin-top: .65em; }
-.modal-reference > summary, .resume-expertise summary { cursor: pointer; padding-block: .75rem; font-weight: 600; }
+.resume-expertise summary { cursor: pointer; padding-block: .75rem; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .resume-experience-details .resume-disclosure-chevron { transition: none; }
   .project-geometry, .project-geometry *, .thinking-thumb-icon .thinking-icon, .modal-project-icon-anchor > i, .hydra-schematic, .hydra-schematic * { animation: none !important; }
+  .modal-theme-thinking.featured-work-card-split-test .project-geometry-split-test > i {
+    animation: none !important;
+    filter: none;
+  }
+  .modal-theme-thinking.featured-work-card-marketing-auto .personalization-rays,
+  .modal-theme-thinking.featured-work-card-marketing-auto .personalization-rays > b,
+  .modal-theme-thinking.featured-work-card-workshops .project-geometry-workshops > i,
+  .modal-theme-thinking.featured-work-card-personas .project-geometry-personas > i {
+    animation: none !important;
+  }
 }
 
 
@@ -437,6 +537,25 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 @media (min-width: 992px) {
   .modal-theme-thinking .personalization-rays { left: 25%; }
   .modal-theme-thinking .project-geometry-workshops > i, .modal-theme-thinking .project-geometry-split-test > i, .modal-theme-thinking .project-geometry-roadmap > i { left: 25% !important; }
+  .modal-theme-thinking.featured-work-card-split-test .project-geometry-split-test > i { left: 50% !important; }
+  .modal-theme-thinking.featured-work-card-marketing-auto .personalization-rays { left: 50%; }
+  .modal-theme-thinking:is(.featured-work-card-workshops, .featured-work-card-personas) .modal-card-field {
+    --modal-art-center-x: 22%;
+    --modal-art-center-y: calc(50% + 3rem);
+  }
+  .modal-theme-thinking.featured-work-card-workshops .project-geometry-workshops > i { left: var(--modal-art-center-x) !important; }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(.motion-paused):not(.motion-hidden) .thinking-thumb-icon.thinking-art-workshops:not(.motion-offscreen):is(:hover, :focus-visible) .project-geometry-workshops > i {
+    rotate: none;
+    animation: workshop-center-ripple calc(12s + var(--layer) * .65s) cubic-bezier(.22, .7, .25, 1) infinite !important;
+    animation-delay: calc(var(--layer) * -.35s) !important;
+  }
+}
+@keyframes workshop-center-ripple {
+  0% { transform: translate(-50%, -50%) scale(.18); opacity: .2; }
+  70%, 100% { transform: translate(-50%, -50%) scale(1.16); opacity: .82; }
 }
 @media (max-width: 575px) {
   .resume-experience-card, .education-card { --card-pad-x: 20px; }

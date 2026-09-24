@@ -21,7 +21,6 @@ export default function WorkCard({ project, onOpen }: { project: Project; onOpen
           <div className={styles.featuredIdentity}>
             <p className={styles.eyebrow}>Case Study</p>
             <h3>{project.title}</h3>
-            <p>{project.subtitle}</p>
           </div>
         </div>
         <div className={`${styles.featuredCopy} featured-work-copy`}>
@@ -29,9 +28,9 @@ export default function WorkCard({ project, onOpen }: { project: Project; onOpen
             <div className="portfolio-badges work-card-badges" role="group" aria-label="Disciplines">
               {project.disciplines.map(discipline => <span key={discipline}>{discipline}</span>)}
             </div>
-            <span className={styles.featuredExternal} aria-hidden="true"><i className="fa-thin fa-book-open" /></span>
+            <span className={styles.featuredExternal} aria-hidden="true"><i className="fa-thin fa-briefcase" /></span>
           </div>
-          <div className="featured-work-heading"><h3 className="h2">{project.id === 'webmd' ? 'A clearer path to care' : project.subtitle}</h3></div>
+          <div className="featured-work-heading"><h3 className="h2">{project.subtitle}</h3></div>
           <p className="featured-work-summary">{project.summary}</p>
           <div className={styles.featuredFooter}>
             <span className={styles.featuredLink}>View <DirectionalArrow /></span>

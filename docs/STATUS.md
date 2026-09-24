@@ -102,16 +102,25 @@ and six-to-two facts. The production build passes for 13 pages, 288 exported ima
 and 104 active references. The port-3000 development preview was restarted after
 the build and returns HTTP 200.
 
-Publication is explicitly authorized by Jacob's September 23 request to clean up,
-merge, and push. The reviewed release branch is
-`codex/modal-copy-refinements-release-20260923`, based on
-`9cc2ec705ae78e068cae13f2831b14983aa0c27a`; refreshed `origin/main` matches that
-base exactly. Pre-publish authored-source ESLint, TypeScript, `git diff --check`,
-the production build/export, and `npm audit --audit-level=high` pass. The workflow
-still uses Node 20 and `dangerous-clean-slate: false`. The eight public content
-routes and both protected legacy deep paths respond before deployment; this host
-receives a server-level 403 for the homepage while an independent web fetch returns
-the live pre-release page. Preview: `http://localhost:3000/`. Rollback point:
+Publication was explicitly authorized by Jacob's September 23 request to clean up,
+merge, and push. Release commit `3854697` was merged to `main` as `0e4782a` and
+pushed from the reviewed `codex/modal-copy-refinements-release-20260923` branch.
+GitHub Actions run `35950415665` completed successfully in 1m5s, including the
+static build and FTP deployment. The workflow retained `dangerous-clean-slate:
+false`; GitHub emitted a non-blocking notice that its Node 20 actions are being
+forced onto Node 24 and a future `ubuntu-latest` migration notice.
+
+Post-deploy checks return HTTP 200 for the homepage, case-study index, all six
+generated case-study routes, `/musings/`, and
+`/interaction-design-concepts/response-times/`. The homepage response has a
+September 24 03:12:38 UTC `Last-Modified` value, `Cache-Control: no-cache,
+must-revalidate`, and `X-Proxy-Cache-Info: DT:1`. Production contains `Trust Meets
+Commerce`, `From Storefront to Platform`, and both exact approved card paragraphs;
+the superseded card headlines, `Project Brief`, and `Pause motion` are absent.
+The exported production bundle contains both approved modal headings and their
+registered scope language. Local scoped browser acceptance already covered both
+modal openings, responsive layouts, and removal of every featured-card third
+identity line. Preview: `http://localhost:3000/`. Rollback point:
 `9cc2ec705ae78e068cae13f2831b14983aa0c27a`; stash `stash@{0}` remains untouched.
 
 Fresh final-acceptance Exchange read: 2026-09-24T02:05:04Z, fingerprint

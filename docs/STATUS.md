@@ -1,5 +1,47 @@
 # Status
 
+## September 25, 2026: approved case-study copy deployed live
+
+Jacob explicitly requested live deployment and confirmed copy only. Production
+main was fast-forwarded from `d93386be2a35f734acdee340056c3212f2847eb6` to
+`30ee89492e07e09d91c7e5cff5f6434ad731f670`, containing B76 implementation
+commit `35e8369` and its status follow-up. The release diff contains only
+`lib/data/projects.ts`, `docs/copy-register.md`, and `docs/STATUS.md`.
+The Health-E Commerce decision-system commit `7cb2386` was excluded; its
+checkout and existing preview were preserved.
+
+GitHub Actions deployment run `36181640760` completed successfully in 54 seconds:
+https://github.com/jacobmedley/jacobmedley.com/actions/runs/36181640760
+The production build and FTP upload passed, with `dangerous-clean-slate: false`.
+Existing local TypeScript, focused lint, exact-copy, build, and browser acceptance
+were reused after verifying that the release's application source was unchanged
+from the tested copy checkpoint. The release diff check passed. No ADA/WCAG
+sweep was run.
+
+Live browser acceptance confirms the three exact approved card paragraphs and
+modal openings, unchanged WebMD and DentalPlans openings, no generic Project
+Brief opening, no two-person DentalPlans claim, exactly two artwork-title
+children on all five cards, and no unpublished Health-E card. Normal curl
+requests return HTTP 200 for the homepage, case-study index, `/musings/`, and
+`/interaction-design-concepts/response-times/`. The homepage Last-Modified is
+2026-09-25 19:46:36 UTC, matching this deployment, with `Cache-Control: no-cache,
+must-revalidate` and `X-Proxy-Cache-Info: DT:1`. No stale cache was observed.
+The initial PowerShell HTTP client received 403; the browser and documented
+curl client independently returned the working site.
+
+Release checkout: `X:\wcopy-20260925`, on
+`codex/approved-case-study-copy-20260924` for this documentation-only closeout.
+The lock is released after its commit. No release preview was started. The
+original checkout remains on `codex/decision-system-case-study-20260925` at
+`7cb2386`. Rollback point: `d93386be2a35f734acdee340056c3212f2847eb6`.
+
+Fresh final Exchange observation: 2026-09-25T19:49:37Z, fingerprint
+`617497acc304b7cf0ff4d830f841e589b01a70374624a05be1a4247bbbdb27b2`,
+no conflicts; remote receipt is not asserted. Deployment authorization is saved
+as change event `20260925T194519Z-bf4afef020d94a3687dc8baab9b55eff`.
+The final update follows the documentation commit and records the production
+revision, verification, rollback point, and excluded Health-E work.
+
 ## September 24, 2026: approved case-study copy for three featured projects
 
 Jacob's approved BumblebeeMD, Hydra, and One Park Financial card headlines,

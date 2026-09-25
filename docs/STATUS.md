@@ -12,11 +12,12 @@ WebMD, and DentalPlans were not edited. No ADA/WCAG sweep was performed, per
 Jacob's direction during QA.
 
 Worktree: `C:\dev\jacobmedley.com`. Branch:
-`codex/approved-case-study-copy-20260924`. The local completion commit follows
-this status write. Files changed: `docs/copy-register.md`,
+`codex/approved-case-study-copy-20260924`. Copy checkpoint `35e8369` was pushed
+to its matching origin branch at Jacob's request on September 24. This status
+follow-up is a documentation-only checkpoint. Files changed: `docs/copy-register.md`,
 `lib/data/projects.ts`, and this status. Rollback point:
-`d93386be2a35f734acdee340056c3212f2847eb6`. No push, merge, or deployment
-was requested or performed.
+`d93386be2a35f734acdee340056c3212f2847eb6`. No merge or deployment was
+requested or performed.
 
 Verification actually run: B76's seven approved paragraphs and six headings
 match the production source; TypeScript (`--noEmit --incremental false`),
@@ -31,12 +32,13 @@ preview was started by this task.
 Genesis Exchange was freshly read before implementation and final acceptance;
 the final local observation was 2026-09-25T03:09:49Z, fingerprint
 `48d1770454ce95f7969578cca9ede6229179cd944b0b671d0efd5f98315c3cd5`,
-with no conflicts and no remote-freshness claim. The `change` record helper
-timed out without creating an inbox record. A completion `update` will be
-attempted after commit; if it also fails, the connected coordinator needs to
-record Jacob's B76 direction, final commit, changed paths, verification,
-deployment state, and rollback point from this entry. Shared coordination is
-not claimed updated yet.
+with no conflicts and no remote-freshness claim. The `change` and completion
+`update` record attempts both timed out without creating an inbox
+record. The push checkpoint reread at 2026-09-25T03:13:28Z returned the same
+fingerprint and no conflicts. The connected coordinator needs to record Jacob's
+B76 direction and subsequent branch-push request, copy checkpoint `35e8369`,
+changed paths, verification, deployment state, and rollback point from this
+entry. Shared coordination is not claimed updated.
 
 ## September 23, 2026: local modal, motion, and responsive wave refinements
 

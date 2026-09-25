@@ -1,5 +1,43 @@
 # Status
 
+## September 24, 2026: approved case-study copy for three featured projects
+
+Jacob's approved BumblebeeMD, Hydra, and One Park Financial card headlines,
+card paragraphs, modal opening headings, and opening paragraphs are registered
+verbatim in B76 and implemented in `lib/data/projects.ts`. B76 supersedes earlier
+wording only on those surfaces. The five B75 themes remain unchanged. The
+shared card and modal components, two-line case-study artwork titles, metrics,
+contributions, imagery, layouts, dedicated narratives beyond the openings,
+WebMD, and DentalPlans were not edited. No ADA/WCAG sweep was performed, per
+Jacob's direction during QA.
+
+Worktree: `C:\dev\jacobmedley.com`. Branch:
+`codex/approved-case-study-copy-20260924`. The local completion commit follows
+this status write. Files changed: `docs/copy-register.md`,
+`lib/data/projects.ts`, and this status. Rollback point:
+`d93386be2a35f734acdee340056c3212f2847eb6`. No push, merge, or deployment
+was requested or performed.
+
+Verification actually run: B76's seven approved paragraphs and six headings
+match the production source; TypeScript (`--noEmit --incremental false`),
+focused ESLint, `git diff --check`, and the production build passed. The build
+exported 13 pages and verified 288 images and 104 active references. A scoped
+local browser review confirmed all three new card headings and modal openings,
+unchanged WebMD and DentalPlans headings, no `Project Brief` opening label in
+those five modals, and two artwork-title children on all five featured cards.
+The temporary static preview on port 8090 was stopped after review. No other
+preview was started by this task.
+
+Genesis Exchange was freshly read before implementation and final acceptance;
+the final local observation was 2026-09-25T03:09:49Z, fingerprint
+`48d1770454ce95f7969578cca9ede6229179cd944b0b671d0efd5f98315c3cd5`,
+with no conflicts and no remote-freshness claim. The `change` record helper
+timed out without creating an inbox record. A completion `update` will be
+attempted after commit; if it also fails, the connected coordinator needs to
+record Jacob's B76 direction, final commit, changed paths, verification,
+deployment state, and rollback point from this entry. Shared coordination is
+not claimed updated yet.
+
 ## September 23, 2026: local modal, motion, and responsive wave refinements
 
 Jacob's latest browser comments are implemented in the main checkout as

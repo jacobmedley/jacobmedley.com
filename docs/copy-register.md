@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B75. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B76. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2430,3 +2430,64 @@ contribution labels, navigation, and layout.
 Every featured case-study title treatment contains only `Case Study` and the case
 study name. The former third title line does not render. Card headlines remain in
 the separate frosted copy panel.
+
+## B76. BumblebeeMD, Hydra, and One Park Financial case-study copy [APPLIED LOCALLY]
+
+Source: Jacob's approved case-study copy session, September 24, 2026.
+Scope: the main card headline and paragraph, and the modal opening heading and
+paragraphs, for BumblebeeMD, Hydra, and One Park Financial. This entry supersedes
+earlier wording only where these exact surfaces differ. It does not change the
+canonical themes in B75, the two-line case-study title treatment, dedicated
+case-study narratives outside these openings, or WebMD and DentalPlans copy.
+Implementation status: applied locally; publication is not authorized by this
+copy request.
+
+### BumblebeeMD
+
+Theme: `Reuse by Design`
+
+Main card headline: `More Room for the Brand`
+
+Main card paragraph:
+
+> The shared platform gave us something valuable: less time rebuilding commerce and more time shaping the brand, refining the interface, and improving the experience. BumblebeeMD used that foundation to create a distinct digital health experience without starting over.
+
+Modal opening heading: `The Platform Got Out of the Way`
+
+Modal opening copy:
+
+> BumblebeeMD was a digital health brand built on an ecommerce foundation we already owned. Product data, commerce, and core patterns were already in place, so the work could move closer to the customer.
+>
+> We focused on the brand, refined the UI, and shaped an experience that felt specific to BumblebeeMD while still inheriting the machinery underneath it.
+
+### Hydra
+
+Theme: `A Shared Language`
+
+Main card headline: `Failure to Communicate`
+
+Main card paragraph:
+
+> Product, marketing, and engineering were describing the same interface in different ways. I built Hydra to give them one vocabulary, pairing reusable patterns with front-end components across brands and technology stacks.
+
+Modal opening heading: `Three Teams. One Vocabulary.`
+
+Modal opening copy:
+
+> The fragmentation was bigger than inconsistent UI. Product, marketing, and engineering had different names and patterns for the same things. I built the case for a shared system, secured executive backing, and shipped Hydra. Work that had taken two sprints could land in one.
+
+### One Park Financial
+
+Theme: `Behavior Into Decisions`
+
+Main card headline: `Read the Signals`
+
+Main card paragraph:
+
+> I redesigned One Park Financial's corporate website and lead flow using Hydra as the foundation. Visitor behavior, device performance, heat maps, and scroll maps gave each interface decision something concrete to answer.
+
+Modal opening heading: `The Funnel Was Talking`
+
+Modal opening copy:
+
+> The redesign started with evidence. Visitor behavior, device performance, heat maps, and scroll maps showed how people were moving through the experience. I used those signals to shape the site and lead flow, then worked across PPC, SEO, and affiliate channels on conversion strategy.

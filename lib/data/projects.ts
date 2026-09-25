@@ -669,17 +669,18 @@ export const projects: Project[] = [
     order: 3,
     caseStudyTheme: 'Reuse by Design',
     title: 'BumblebeeMD',
-    subtitle: "Room to build the brand",
+    subtitle: 'More Room for the Brand',
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: "The shared platform gave us the parts. We could spend our time on BumblebeeMD’s identity and customer experience, then launch on the same foundation as the other brands.",
+    summary: 'The shared platform gave us something valuable: less time rebuilding commerce and more time shaping the brand, refining the interface, and improving the experience. BumblebeeMD used that foundation to create a distinct digital health experience without starting over.',
     modalTitle: 'BumblebeeMD',
     visible: true,
+    briefHeading: 'The Platform Got Out of the Way',
     brief: {
       image: { src: '/images/work/bmd-modal/brief.png', alt: '' },
       paragraphs: [
-  "BumblebeeMD was a DentalPlans.com sub-brand built on the shared commerce platform. The product data, components, and purchase flow were already there.",
-  "That gave us room to work on the brand: its identity, the interface, and how the experience should feel. We could carry those decisions into working pages without rebuilding the commerce underneath them."
-]
+        'BumblebeeMD was a digital health brand built on an ecommerce foundation we already owned. Product data, commerce, and core patterns were already in place, so the work could move closer to the customer.',
+        'We focused on the brand, refined the UI, and shaped an experience that felt specific to BumblebeeMD while still inheriting the machinery underneath it.'
+      ]
     },
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
@@ -770,16 +771,16 @@ export const projects: Project[] = [
     order: 4,
     caseStudyTheme: 'A Shared Language',
     title: 'Hydra',
-    subtitle: "From an idea to working parts",
+    subtitle: 'Failure to Communicate',
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: "I built a shared set of interface patterns and components across products. Teams could assemble the next experience from parts already designed and built.",
+    summary: 'Product, marketing, and engineering were describing the same interface in different ways. I built Hydra to give them one vocabulary, pairing reusable patterns with front-end components across brands and technology stacks.',
     modalTitle: 'Hydra Design System',
     visible: true,
+    briefHeading: 'Three Teams. One Vocabulary.',
     brief: {
       image: { src: '/images/work/hydra/brief.png', alt: '' },
       paragraphs: [
-        "I built Hydra to give products on different technology stacks one design language. The work covered reusable interface patterns, front-end components, and brand settings.",
-        "I showed the SVP of Marketing and the CTO where the interfaces had fragmented and proposed a shared system. Their backing gave the work a path across departments."
+        'The fragmentation was bigger than inconsistent UI. Product, marketing, and engineering had different names and patterns for the same things. I built the case for a shared system, secured executive backing, and shipped Hydra. Work that had taken two sprints could land in one.'
       ]
     },
     contributions: [
@@ -948,21 +949,19 @@ export const projects: Project[] = [
     order: 5,
     caseStudyTheme: 'Behavior Into Decisions',
     title: 'One Park Financial',
-    subtitle: "From visitor to the right next step",
+    subtitle: 'Read the Signals',
     cardImage: {
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'
     },
-    summary: "I led the website and lead-flow redesign. We could change the flow in hours and carry each test ID with the lead, following what changed across the customer journey.",
+    summary: "I redesigned One Park Financial's corporate website and lead flow using Hydra as the foundation. Visitor behavior, device performance, heat maps, and scroll maps gave each interface decision something concrete to answer.",
     visible: true,
+    briefHeading: 'The Funnel Was Talking',
     brief: {
       image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
       paragraphs: [
-  "I led the website and lead-flow redesign with the CEO and SVP of Marketing. The work also put the Hydra design system into the corporate website.",
-  "I analyzed how visitors moved through the existing site before making design decisions. Google Analytics showed which devices dominated and how each performed for lead conversion and engagement. Heat maps and scroll maps showed which UI elements and content people engaged with, and which they scrolled straight past.",
-  "We could add, remove, or change steps in the lead flow in hours. Each lead carried its test ID, so we could follow a variant through the customer journey.",
-  "An additional step routed applicants to the next appropriate channel: agents for higher-value leads, an online experience for lower-value leads, and willing partners for applicants outside our risk criteria."
-]
+        'The redesign started with evidence. Visitor behavior, device performance, heat maps, and scroll maps showed how people were moving through the experience. I used those signals to shape the site and lead flow, then worked across PPC, SEO, and affiliate channels on conversion strategy.'
+      ]
     },
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },

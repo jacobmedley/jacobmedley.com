@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B76. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B77. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -40,12 +40,9 @@ the register will drift.
 | Designed PDF | resume workstream | rebuild after v1r6 |
 | LinkedIn | Jacob, manual | UNMANAGED, not in register |
 
-Canonical figures, verified against 2025-JIRA-Assets-Count.xlsx:
-  assets +72%, hours +6.6%, output per hour +62%,
-  output per person +48%, contributing people 18 to 21
-
-Round the set from one source at one time. A 70% numerator against ratios
-derived from 72.4% makes the arithmetic fail a check a reader will perform.
+Current-employer operating figures and their source workbook are private and are
+not carried in this public register. See private reconciliation REC-0064 and
+REC-0065. Do not recover them from repository history for public copy.
 
 Title standard: "Product Design" is constant. Seniority varies by target.
 Website brand title: "Product & Design Leader," per Jacob, September 6, 2026.
@@ -90,45 +87,14 @@ run shorter. It must never contradict this.
 
 ## Health-E Commerce
 
-**Director of User and Experience Design**, Feb 2026 to present
-**Director of Design**, Feb 2025 to Feb 2026
-New York, NY (Remote)
+**PUBLICATION HOLD.** Detailed current-employer role dates, team structure,
+staffing, budgets, function-growth details, and operating metrics are private.
+They are intentionally omitted from this public register.
 
-> I joined Health-E Commerce to restructure creative marketing and build an
-> experience design practice the company had never had. Four direct reports, a team
-> of seven, and seven contractors across creative marketing, design systems, and UX.
-> Rather than absorbing more requests, I applied systems thinking and UX research
-> methods to find the right problems, then rebuilt intake, process, and creative
-> operations around them. Peak season, the highest revenue period of the year, tested
-> the operating model. Creative output rose about 72% year over year on a 6.6%
-> increase in production hours. Output per hour went up about 62% and output per
-> person about 48%. The gain came from rebuilt process and workflow, not proportional
-> labor.
->
-> Once creative operations held, we split the department. A new creative director
-> took the creative team and I took everything else, moving full time to the
-> experience design side, a function that had not existed. I defined the practice and
-> the role, then hired the first XD designer into it. The function grew from one
-> direct report to two full-time designers and a contractor.
->
-> Owned the company Figma account including contract renewal, through a large influx
-> of product and engineering seats. After the split I kept everything outside the
-> creative team, ran a seat and usage audit, and got Figma reclassified as a
-> company-wide tool rather than a department one, moving a standing administrative
-> load off design. Own the tooling and research budget and propose the headcount the
-> function needs.
+Private provenance: REC-0064 and REC-0065.
 
-**Resolved.** Baseline is the prior year's peak season, same period comparison.
-Attribution: owned the intake, process, and creative operations redesign that
-absorbed the demand.
-
-**Decision: publish, framed as contribution.** The wording is deliberate. "Creative
-delivery held through" states what you did. The record peak is context, not a claim
-of causation. The earlier proposed phrasing put the company's sales result in the
-same clause as your headcount number, which reads as taking credit for revenue you
-did not own. This version survives the interview question "so you drove the sales
-record?" with a clean answer: no, we made sure creative was never the bottleneck
-while it happened.
+Public surfaces that still carry those details must be reconciled separately;
+do not source them from repository history.
 
 ## Mutual of America Financial Group
 
@@ -347,27 +313,19 @@ Never guess a replacement anchor.
 
 ## B1. Named credit removal [APPLIED], commit 68c7ef9
 
-`projects.ts`, the J.R. Hernandez anchor. Link and name removed. Now reads:
+A named colleague reference was removed from project copy and replaced with
+function-level attribution. The colleague's identity is private and has been
+removed from this public audit trail.
 
-> Testing ran as a standing partnership with product marketing. They owned hypothesis and traffic, I owned the variant and the read.
+Private provenance: REC-0069.
 
----
+## B2. Health-E paragraph one [APPLIED], commit c917fe8; later reconciled
 
-## B2. Health-E paragraph one [APPLIED], commit c917fe8; figures corrected by B17
+Current-employer operating copy from this historical edit has been removed from
+the public register. The implementation history remains valid, but the underlying
+private wording, figures, and business context are not reproduced here.
 
-**File:** `components/sections/ResumeSection.tsx`
-
-**FIND:** the entire sentence beginning `The first year closed with roughly a 70% increase in output`. B0 already altered nearby text, so build the anchor from current file state.
-
-**REPLACE WITH (original, 2026-07):**
-
-> The systems and process work was put to the test during peak season, the highest revenue period of the year. Demand rose about 70% year over year. We met it with about a 7% increase in contractor headcount, and creative delivery held through the strongest peak in the company&apos;s history.
-
-**Superseded.** Both figures in the original REPLACE WITH text above were wrong against the source analysis: the 70% was delivered creative output (assets produced), not demand, and the "7%" was actually 6.6% and measured production hours, not contractor headcount. (The headcount change figure cited here at the time, "16.7% (18 to 21)," was briefly flagged as wrong by B31 — B31 was itself wrong; see B34, which reverts to the original 16.7%, 18 to 21.) See B17 for the full correction, source figures, and caveats, and B34 for the final headcount and assets-per-person figures. The text now standing in the file is:
-
-> Peak season, the highest revenue period of the year, tested the operating model. Creative output rose about 70% year over year on a 6.6% increase in production hours. Output per hour went up about 62% and output per person about 48%. The gain came from rebuilt process and workflow, not proportional labor.
-
-**Note:** the record peak is context, not a causation claim. See Section A for why the wording is deliberate. **Resolved, 2026-08-22:** verified Section A (lines ~49-51) carries the corrected figures — "Creative output rose about 70% year over year on a 6.6% increase in production hours" — matching the site resume. The open flag was stale; B17's correction did reach Section A.
+Private provenance: REC-0064.
 
 ## B3. Mutual of America paragraph three [APPLIED], commit c917fe8
 **File:** `components/sections/ResumeSection.tsx`
@@ -416,17 +374,10 @@ was made.
 ## B7. Year-only date formatting [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
 
-**Exception: Health-E Commerce keeps month-level dates.** Its two roles sit
-inside one employer within the same year (`Feb 2025 to Feb 2026`, `Feb 2026 to
-present`); collapsing both to `2025 to Present` makes the promotion read as a
-typo. The year-only rule exists for the boundary between employers, e.g. One
-Park ending and Mutual of America beginning. Health-E's two roles are nowhere
-near that boundary, so the exception does not weaken the rule.
+Former-employer entries use year-only dates. Current-employer date detail is
+private and is intentionally omitted from this public register.
 
-Every other employer stays year-only: One Park reads `2021 to 2022`, Mutual of
-America reads `2023 to 2025`, DentalPlans reads `2015 to 2021`, Bluegreen
-reads `2011 to 2015`. Verified against `ResumeSection.tsx` current state; no
-changes needed there. No month-level dates anywhere outside Health-E.
+Private provenance: REC-0064.
 
 ## B8. The 47% error [APPLIED — superseded by B11 and B12], commit c917fe8
 **Files:** `components/sections/ResumeSection.tsx` and `lib/data/projects.ts`
@@ -506,43 +457,14 @@ Confirmed the FIND matched exactly once, on the object carrying `value: '47%'`.
 ## B13. Colleague name sweep [APPLIED], commit f2f0995
 **Files:** `lib/data/projects.ts`, `components/sections/ResumeSection.tsx`
 
-Originally a discovery pass with no edits applied; resolution added and
-applied in a follow-up run (see below). B10 surfaced a named colleague
-(Tiffany Tibbets, in the pre-edit BumblebeeMD summary) that had been
-published without being caught by the anonymization rule. Full sweep of both
-files for any personal name that is not Jacob Medley, read for context rather
-than by regex alone.
+The sweep found real colleague references in project history. Those references
+were removed from public project copy and credit was moved to functions rather
+than named individuals. The colleague identities and verbatim pre-edit lines have
+also been removed from this public audit trail.
 
-**Findings, three distinct names, four occurrences:**
+Historical/literary figures and fictional research personas are unaffected.
 
-| File | Line | Surrounding text | Read |
-|---|---|---|---|
-| `lib/data/projects.ts` | 529 | `Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"` | Real named colleague, quoted directly. Same category as the J.R. Hernandez removal in B1 and the Tiffany Tibbets removal in B10. |
-| `lib/data/projects.ts` | 1298 | `I am a strong planner and lean hard into planning the work and working the plan. To quote Robert Burns - "The best-laid schemes of mice and men often go awry," so be ready to pivot.` | Historical/literary figure (poet), quoted for a proverb. Not a colleague or employer detail. Flagged for completeness since it matches the name pattern, not because it raises the same anonymization concern. |
-| `lib/data/projects.ts` | 1380, 1382, 1385 | `alt: 'Example persona card for Frugal Francine'` (1380); `One standout example was "Frugal Francine," a persona representing cost-conscious consumers who seek maximum value for their money.` (1382); `briefHeading: 'What Frugal Francine Taught Us'` (1385) | Fictional UX research persona, not a real person. Flagged for completeness, same reasoning as Robert Burns. |
-
-`components/sections/ResumeSection.tsx`: zero matches. No personal name besides
-Jacob Medley appears anywhere in that file.
-
-**Resolution:**
-
-- **Bill Chase (`projects.ts:529`):** name removed, quote kept. Credit moved
-  to the function, not the person.
-
-  **FIND:**
-
-  > Our SVP of Marketing, Bill Chase, asked, "You know WordPress, right? How fast can you stand up a website?"
-
-  **REPLACE WITH:**
-
-  > Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"
-
-- **Robert Burns (`projects.ts:1298`):** reviewed and cleared. Historical
-  figure, quoted for a proverb, not a colleague or employer detail. No edit
-  made. **Future sweeps should not re-flag this line.**
-- **Frugal Francine (`projects.ts:1380, 1382, 1385`):** reviewed and cleared.
-  Fictional UX research persona, not a real person. No edit made. **Future
-  sweeps should not re-flag these lines.**
+Private provenance: REC-0069.
 
 ## B14. Dangling subject in the B4 sentence [APPLIED], commit f2f0995
 **File:** `components/sections/ResumeSection.tsx`
@@ -604,100 +526,34 @@ rule that governs case study content.
 
 ## B17. Health-E figures corrected, measurement caveat recorded [APPLIED]
 
-**File:** `components/sections/ResumeSection.tsx`, amending B2.
+The detailed current-employer figures, source-workbook references, population
+breakdowns, and measurement caveats formerly recorded here are private. They have
+been removed from the public register rather than preserved as an audit trail.
 
-Two claims in the live B2 text were checked against a source analysis held
-outside the repo (`C:\dev\_private\jacobmedley-source-data\assets-counts` —
-not read for this edit beyond the figures already extracted; it holds
-unscrubbed data including personal names). Both were wrong:
-
-- The "70%" was delivered creative output (assets produced), not demand.
-- The "about a 7% increase in contractor headcount" was actually a 6.6%
-  increase in total production hours, not contractor headcount.
-
-**MEASUREMENT CAVEAT — original figures confirmed correct, 2026-08-23 (see
-B34).** B31 (2026-08-23, same day) briefly recorded these as wrong and
-replaced them with figures derived from raw roster-row counts. That was the
-error — see B34. The figures originally recorded here stand:
-
-- Assets: ~1,145 prior peak to ~1,974.5 current, about 72%
-- Creative headcount: 18 to 21 contributing people, about 16.7%
-- Production hours: 680 to 725, about 6.6%
-- Assets per hour: about 62%, derived
-- Assets per person: about 48%, derived
-
-Some monthly counts were EXTRAPOLATED, not directly counted. These are
-directional year-over-year comparisons, not audited metrics. Never harden
-them into precision they do not have.
-
-Assets per hour is the strongest figure. It is a pure productivity ratio,
-independent of headcount. If only one number survives a future compression,
-keep that one.
-
-Source file holds personal names. None may appear in any deliverable.
-
-**RESOLVED, 2026-08-23 (see B34).** Previously PENDING CONFIRMATION: the
-register elsewhere describes the Health-E team as seven FTE plus seven
-contractors, fourteen people, which did not, on its face, reconcile with the
-"18 to 21" creative headcount figure then recorded here. Resolution: 18 to 21
-is correct and is not a different population from the wider figure — it is
-the wider figure. (B31 briefly restated this as 20/22 and as a population
-mismatch; both claims in B31 were wrong — see B34.) The separate "seven FTE
-plus seven contractors" figure describes Jacob's direct reporting line, which
-is a subset of the 18-to-21 contributing-people figure for the whole creative
-org during peak season. Different scopes, not contradictory. Neither number
-contradicts the other and both may stand, though they should not appear in
-the same sentence.
-
-**New rule, previously unwritten, answered:** former employers may be named
-when the reference is positive. Internal detail, colleague names, and
-business condition stay barred regardless of employer or era. Confirmed by
-Jacob.
+Private provenance: REC-0064 and REC-0065.
 
 ## B18. Health-E team composition [APPLIED]
-**File:** `components/sections/ResumeSection.tsx`
 
-**FIND** (match count 1): the two sentences beginning `I joined Health-E
-Commerce` through `...creative operations around them.`
+Current-employer team structure, staffing counts, contractor mix, and related
+historical corrections are private and are intentionally omitted from this
+public register.
 
-**REPLACE WITH:**
-
-> I joined Health-E Commerce to restructure creative marketing and build an experience design practice the company had never had. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. Rather than absorbing more requests, I applied systems thinking and UX research methods to find the right problems, then rebuilt intake, process, and creative operations around them.
-
-**Register note, amended 2026-08-23, corrected same day, then re-verified
-same day (see B34).** Seven contractors on Jacob's direct team: five creative
-marketing, one design systems, one UX. This is a subset of the wider
-creative-org contractor count during peak season. The wider-population figure
-went through two states in one day: B31's "eleven contractors, flat both
-years" was wrong (row-count error); this was briefly marked unverified; B34
-has since re-derived it against contributing humans: **11 contractors in
-2024, 10 in 2025** (down one), with employees up four to compensate for the
-larger headcount increase. See B34 for the full breakdown. This wider figure
-is not published anywhere on the site. Jacob's current team contractor count
-is separately unknown and must not be stated either.
+Private provenance: REC-0064 and REC-0065.
 
 ## B19. Health-E department split [APPLIED]
-**File:** `components/sections/ResumeSection.tsx`
 
-**Reported before editing, current second paragraph:**
+Current-employer function-growth and staffing details from this historical edit
+are private and are intentionally omitted from this public register.
 
-> With creative operations stable, we split the department and I moved full time to building the experience design side of the business, a function that had not previously existed. I defined the practice and hired the company's first dedicated XD/UX designer.
+Private provenance: REC-0064.
 
-**FIND** match count 1. **REPLACE WITH:**
+## B20. Health-E tooling governance [APPLIED]
 
-> Once creative operations held, we split the department. A new creative director took the creative team and I took everything else, moving full time to the experience design side, a function that had not existed. I defined the practice and the role, then hired the first XD designer into it. Started the year with one direct report and will finish it with three.
+Current-employer tooling-governance, budget, seat, and headcount-planning details
+from this historical edit are private and are intentionally omitted from this
+public register.
 
-## B20. Health-E Figma governance, new paragraph [APPLIED]
-**File:** `components/sections/ResumeSection.tsx`
-
-Appended as a new third paragraph to the Health-E entry, same JSX pattern as
-the others:
-
-> Owned the company Figma account including contract renewal, through a large influx of product and engineering seats. After the split I kept everything outside the creative team, ran a seat and usage audit, and got Figma reclassified as a company-wide tool rather than a department one, moving a standing administrative load off design. Own the tooling and research budget and propose the headcount the function needs.
-
-**Register note:** budget scope is UserTesting, design tooling, and team
-education. "Propose the headcount the function needs" is deliberate. Do not
-later substitute "own headcount planning." That would be an overclaim.
+Private provenance: REC-0064.
 
 ## B21. Mutual of America, service designer credit [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
@@ -727,15 +583,9 @@ corpus," so neither was touched.
 ## B23. One Park Financial, full entry [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`
 
-**Reported before editing, current entry in full:**
+Public-safe copy retained from this edit:
 
-> At One Park Financial, I oversaw and developed all design processes and workflows, establishing best practices for UX and UI design and usability testing. I collaborated with teams across marketing, product, and engineering, conducting workshops to drive problem-solving and innovation. Partnering with Channel Managers specializing in PPC, SEO, and Affiliate marketing, I helped establish their conversion rate optimization strategies to maximize user engagement and conversion rates.
->
-> I evangelized the need for a design system, partnering with the SVP of Marketing to secure executive buy-in for the project. This led to the creation of the Hydra Design System, a unified pattern and component library. This empowered the company to design and engineer rapidly and "fail fast," improving business goals and user experience.
-
-**REPLACE WITH (four paragraphs, replacing the prior two):**
-
-> Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.
+> Design leadership inside the marketing organization, reporting to the SVP.
 >
 > Built the case for a unified pattern library and design system, then shipped it. Product, marketing, and engineering had been describing the same components three different ways. Delivery time halved, with work that had taken two sprints landing in one.
 >
@@ -743,16 +593,10 @@ corpus," so neither was touched.
 >
 > Owned design process and set the usability testing practice. Worked with PPC, SEO, and affiliate channels on conversion rate strategy across acquisition funnels.
 
-**REGISTER NOTE, recorded verbatim:** the durability sentence in paragraph
-three must not be edited toward the fuller story. The underlying situation
-involves a company-wide contraction, which the register's own rule bars from
-published copy. The sentence states what the artifact did and nothing about
-anyone's decisions. The fuller account is verbal interview material only.
+Private staffing and business-condition context formerly preserved beside this
+entry has been removed from the public register.
 
-**Note:** Section A never carried prose for this entry (only title, dates,
-and location) — this predates B23 and is not a regression from it. Not
-backfilled here since it wasn't asked for; flagging so it isn't mistaken for
-an oversight.
+Private provenance: REC-0067.
 
 ## B24. Sr. becomes Senior [APPLIED]
 **Files:** `components/sections/ResumeSection.tsx`,
@@ -870,11 +714,9 @@ split evenly into seven, so the column break moves; no other layout change:
 1. **Design Systems** — Built token foundations so brand identity became
    configuration instead of a build. One system carried five ecommerce properties,
    with one source of truth for products and providers behind all of them.
-2. **Accessibility** — An automated auditing pipeline covering structure, landmarks,
-   alt text, ARIA, keyboard operability, and rendered contrast. Per-page review
-   dropped from days to hours, and it runs on a schedule against production.
-   **[RETIRED 2026-09-05 — bullet deleted, do not reimplement. See ACCESSIBILITY
-   CLAIM, RETIRED in Section D. The wording above is audit trail only.]**
+2. **Accessibility** — A retired claim was removed from production copy and from
+   this public audit trail. Accessibility and WCAG remain valid competencies.
+   Private provenance: REC-0066.
 3. **Research and Measurement** — Set a usability testing practice at ten
    participants per round and a HEART-based KPI framework, so design decisions
    arrived with evidence attached and outcomes had a number to move.
@@ -987,50 +829,13 @@ and it is absent from every surface. Flagged as missing evidence in the resume r
 as well. **This is the largest content gap in the document.** Needs source material
 from Jacob before anything can be written. Do not invent specifics to fill it.
 
-## B31. Health-E headcount and assets-per-person figures corrected [SUPERSEDED, see B34]
-**Files:** `components/sections/ResumeSection.tsx`; `docs/copy-register.md`
-Section A; amends B17's MEASUREMENT CAVEAT.
+## B31. Health-E measurement correction [SUPERSEDED, see B34]
 
-**REVERTED, same day, 2026-08-23. This entire entry was wrong — see B34.**
-The source read behind this edit counted raw rows in the workbook's "Head
-Count and Hours" tab without checking for zero-hour, NULL, or duplicate
-entries: a 2024 row with 0 logged hours, a 2024 NULL row (maternity leave),
-and a 2025 duplicate name were each counted as a person. The correct method
-counts contributing humans, not roster rows, which gives 18 (prior peak) and
-21 (current peak) — restoring B17's original figures exactly. Kept below as a
-historical record, not as current guidance. Do not implement anything from
-this entry.
+The private current-employer figures, roster interpretation, leave context, and
+source-data details previously preserved in this superseded entry have been
+removed from the public register.
 
-B17's headcount figure (18 to 21 people, about 16.7%) and the assets-per-person
-figure derived from it (about 48%) were both wrong. Corrected against Jacob's
-verified source spreadsheets, authoritative over the prior figures:
-
-```
-Prior peak:   20 people, 680 hours, 11 contractors,  9 employees
-Current peak: 22 people, 725 hours, 11 contractors, 11 employees
-
-headcount          +10%    (earlier 18 to 21 / +16.7% was WRONG)
-hours              +6.6%   (correct, unchanged)
-assets    ~1,145 to ~1,974.5, +72%
-assets per hour    +62%    (correct, unchanged)
-assets per person  +57%    (earlier 48% was WRONG, derived from bad headcount)
-```
-
-Both rows reconcile exactly to their stated hour totals.
-
-**Contractor count was flat at eleven, both years.** The two added people
-between prior and current peak were both employees. No framing may credit
-contractor growth for any part of the increase.
-
-**One prior-year row shows NULL hours, maternity leave.** That is why 680 is
-the correct prior-peak hour total rather than an understated one — it already
-excludes a contributor who was out.
-
-**Assets per hour remains the strongest figure.** A pure productivity ratio,
-independent of headcount, unaffected by the headcount correction. If only one
-number survives a future compression, keep that one.
-
-**Applied, then reverted same day — see B34.**
+Private provenance: REC-0064 and REC-0065.
 
 ## B33. Design Leadership bullet corrected — one function, not two [APPLIED]
 **File:** `components/sections/ResumeSection.tsx`, `leadershipRight` array.
@@ -1061,98 +866,14 @@ function" (Design Leadership). Both are the same stylistic-tic class as
 `single`/`attached`/`carried`, not the exempted domain-noun class. Flagged for a
 follow-up edit; not blocking this merge per instruction to proceed.
 
-## B34. B31 reverted — headcount and assets-per-person restored to B17's original figures [APPLIED]
-**Files:** `components/sections/ResumeSection.tsx`; `docs/copy-register.md`
-Section A; corrects B31; amends B17's MEASUREMENT CAVEAT and RESOLVED note;
-amends B18's register note.
+## B34. Health-E measurement reconciliation [APPLIED]
 
-B31's correction was itself wrong. Jacob identified the error against the
-source workbook (`2025-JIRA-Assets-Count.xlsx`, tab "Head Count and Hours"):
-B31 counted raw roster rows. The correct method counts contributing humans:
+The final current-employer measurement reconciliation is maintained privately.
+This public register no longer carries the figures, roster rows, colleague names,
+leave information, contractor/employee splits, workbook identifiers, or unresolved
+duplicate-row analysis.
 
-```
-2024: 20 rows — Lee logged 0 hours, Kamila NULL for maternity leave
-      = 18 contributing people
-2025: 22 rows — "Meghan" appears twice (duplicate entry)
-      = 21 unique contributing people
-```
-
-**Restored, final figures — these match B17's original numbers exactly:**
-
-```
-Prior peak:   18 contributing people, 680 hours
-Current peak: 21 contributing people, 725 hours
-
-headcount          +16.7%  (18 to 21 — B31's "20 to 22, +10%" was WRONG)
-hours              +6.6%   (correct throughout, never changed)
-output             ~1,145 to ~1,974.5, +72%
-output per hour    +62%    (correct throughout, never changed)
-output per person  +48%    (B31's "+57%" was WRONG, derived from bad headcount)
-```
-
-**Advisor error, recorded per instruction:** the 20-to-22 reading was an
-advisor error — counting workbook rows without checking for zero-hour, NULL,
-or duplicate-name entries. Not a data problem; a counting-method problem. The
-source data itself was fine.
-
-**Noun corrected, 2026-08-23 (same day, follow-up).** Both the resume sentence
-and Section A said "assets per hour" / "assets per person." Corrected to
-"output per hour" / "output per person" in both, character-for-character
-match verified. This table's row labels above are updated to match; earlier
-quotes elsewhere in this register that describe what a past version of the
-file said (B2's superseded text, B17's original caveat) keep "assets" where
-that's what was actually live at the time — not touched retroactively.
-
-**Contractor/employee split, re-derived against contributing humans (not
-published — recorded for reference only):**
-
-```
-2024: 18 contributing — 11 contractors, 7 employees
-2025: 21 contributing — 10 contractors, 11 employees
-```
-
-Contractors went **down** by one; employees went **up** by four. B31's "flat
-at eleven both years" claim was wrong, from the same row-count error as the
-headcount figure. Neither number is published anywhere on the site. Both are
-now correct and available if a future edit needs them — see B18, whose
-contractor note previously marked this figure unverified; that note is
-updated below to point here rather than restate "unverified."
-
-**Open question — do not resolve by picking one side.** Deduplicating the
-repeated 2025 name ("Meghan" appears twice) drops the hours total from 725 to
-685 — exactly one 40-hour row. Two readings are both consistent with part of
-the workbook and neither is consistent with all of it:
-
-- Two different people are both named Meghan, headcount is genuinely 22, and
-  725 hours is correct as summed.
-- One "Meghan" row is a duplicate entry (not two people), headcount is 21,
-  and the hours total should be 685, not 725.
-
-The workbook as read cannot support both "725 hours" and "21 people" at once
-under the contributing-humans method — one of those two numbers is off by
-exactly one 40-hour employee. **Published figures are unaffected either way:**
-725 hours and +6.6% are what the source states outright (not derived from the
-headcount reconciliation), and output-per-hour holds regardless of which
-reading is correct. Flagging for Jacob to confirm with the PM who built the
-tab, not resolving it here.
-
-**Applied:**
-
-- `ResumeSection.tsx` and Section A of this file (character-for-character
-  match): `assets per person about 57%` → `assets per person about 48%`, then
-  same-day: `assets per hour` / `assets per person` → `output per hour` /
-  `output per person`.
-- B31: marked SUPERSEDED, kept as historical record, not deleted.
-- B17's MEASUREMENT CAVEAT: restored to original figures, no longer points to
-  B31 as a correction.
-- B17's RESOLVED note: "20 (prior peak) and 22 (current peak)" corrected to
-  18/21; the underlying scope-distinction reasoning (Jacob's direct team vs.
-  the wider creative org) still holds and was not itself wrong.
-- B18's contractor note: updated to point here for the re-derived, verified
-  (but unpublished) contractor/employee split, instead of stating the figure
-  is unverified.
-
-Source file holds personal names. None may appear in any deliverable.
+Private provenance: REC-0064, REC-0065, and REC-0061.
 
 ## B35. Hero title standard set; "Digital Strategist" retired [APPLIED]
 **File:** `components/sections/HeroSection.tsx`
@@ -1496,58 +1217,16 @@ and this session's Design Leadership rewrite (B37) replaced it again, so no
 live copy anywhere still carries the "review model" phrasing this study
 would have sourced.
 
-**ACCESSIBILITY CLAIM, RETIRED 2026-09-05.** Never reuse in any wording:
+**ACCESSIBILITY CLAIM, RETIRED 2026-09-05.**
 
-> "Built an automated accessibility auditing pipeline"
-> "runs on a schedule against production"
-> "runs on a schedule against the live site"
-> "a two-person function can now flag critical issues before launch"
-> "per-page review dropped from days to hours"
-> "automated auditing for structure, landmarks, alt text, ARIA, keyboard
-> operability, motion guards, and rendered contrast"
-> "Vendor line item replaced by owned capability"
+The retired claim, its implementation details, its recalled outcome language, and
+the removed case-study audit trail are private and are intentionally not reproduced
+in this public register.
 
-What is true: Jacob devised a process letting a non-technical person run a
-script against an unpublished page before launch, catching work nothing else
-was catching. Full automation is in progress. He dropped the claim entirely
-as weak beside the rest of his record, and removed the case study built on it
-rather than rewrite it.
+Publicly allowed: accessibility and WCAG as competencies. The retired case study
+must not be restored.
 
-"Per-page review dropped from days to hours" is a recollection, confirmed by
-Jacob 2026-09-05. Under `data-reporting.md` question 5 it cannot publish as a
-figure on any surface in any wording.
-
-Still allowed: accessibility and WCAG as a competency. No pipeline, no
-automation, no schedule.
-
-Ruling: `The-Hunt/rules/canonical-figures.md`, "Health-E Commerce, the ADA
-scan: DROPPED".
-
-**BUY THE AUDIT OR BUILD THE MACHINE, REMOVED.** The case study built on the
-retired claim. Removed entirely rather than rewritten, per Jacob's ruling
-2026-09-05. Removed from `docs/case-studies-sanitized.md`, Part One: AI as
-Working Capacity (was the first study in that part, immediately before "Four
-Documents, One Checkout, Zero Agreement"). Sanitized study count: 15 before
-removal (7 Part One, 8 Part Two), **14 after (6 Part One, 8 Part Two)**; this
-file's own header was updated in the same commit to read "Fourteen case
-studies. Six where AI carries the work, eight on core craft."
-
-The matching resume card was deleted from `components/sections/ResumeSection.tsx`,
-`leadershipLeft` (title `'Accessibility'`). Leadership cards: 7 before, 6 after
-(3 left, 3 right). The `'Accessibility Standards (WCAG)'` skills chip stays —
-competency, not capability claim.
-
-Also exists on `feat/recruiter-portfolio`, `lib/data/portfolio-studies.ts`,
-`title: 'Buy the Audit or Build the Machine'` (confirmed via `git show`, branch
-not checked out). **That branch needs the same removal** — not done here, since
-this task's scope was `main` only. No reference to it in `lib/data/projects.ts`.
-No other sanitized study references it or its claims.
-
-Also carried on `feat/ai-assistant-case-study`, `docs/case-studies-sanitized.md`,
-where the study sits at line 78 and that branch's header still reads "Seventeen
-case studies. Eight where AI carries the work, nine on core craft" (confirmed via
-`git show`, branch not checked out). **That branch needs the same removal and a
-header correction** when it merges. Neither branch was edited by this task.
+Private provenance: REC-0066.
 
 ## Response-time specification, canonical
 
@@ -1608,19 +1287,34 @@ appear in a third.
 
 ---
 
+
+## B77. Public-register privacy scrub [APPLIED]
+
+Private reconciliation identified material that had been removed from live copy
+but was still exposed by this public audit file. This pass removes the sensitive
+details themselves while preserving neutral provenance.
+
+Removed from this public register:
+- current-employer role/date and operating detail covered by REC-0064/0065;
+- real colleague identities covered by REC-0069;
+- retired accessibility implementation/outcome detail covered by REC-0066;
+- private One Park staffing/business-condition context covered by REC-0067;
+- private DentalPlans internal-cost and business-condition detail covered by REC-0068.
+
+The private `jacobmedley/knowledge` reconcile ledgers remain the authoritative
+history. Do not reconstruct removed details from public git history for new copy.
+
+---
+
 # Section F: Cuts from the delivered DentalPlans draft
 
 Three items were removed before publishing. Each is recoverable if you disagree.
 
-1. **The infrastructure figure, roughly twenty-seven thousand a year.** A former
-   employer's internal cost detail. The surrounding sentence makes the same argument
-   without it: budget went to marketing the properties rather than hosting them.
+1. **Private internal-cost detail.** Removed before publication and removed from
+   this public audit trail. Private provenance: REC-0068.
 
-2. **"In a company that changed hands under private equity ownership during those
-   years."** Section A's own rule bars characterizing an employer's business
-   condition, and this one applies to former employers too. It also narrows
-   identification considerably when combined with sector, property count, and era.
-   The ownership argument survives intact in the sentence that follows it.
+2. **Private ownership/business-condition detail.** Removed before publication and
+   removed from this public audit trail. Private provenance: REC-0068.
 
 3. **Sector markers.** The handoff justified dental references on the grounds that
    the sanitized file "already reference[s] dental procedures." It does not. The only

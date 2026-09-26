@@ -251,13 +251,13 @@ associate level in 2002, so Digital Media was the correct available path.
 
 ## Concurrency
 
-**CONCURRENCY NOTE.** The 72% rounding fix, the future-tense fix, the
-data-reporting rounding rule, the assistant wording standard, and the
+**CONCURRENCY NOTE.** A current-employer metric correction, the future-tense
+fix, the data-reporting rounding rule, the assistant wording standard, and the
 `EducationSection.tsx` degree-level fix were all found already applied in the
 working tree but uncommitted, meaning a parallel session edited the same
 tree. Two separate parallel edits were found mid-task: the first set
-(Health-E figures, future tense, rounding rule, wording standard) was already
-in place when this task began; the second (`EducationSection.tsx`) appeared
+(current-employer copy, future tense, rounding rule, wording standard) was
+already in place when this task began; the second (`EducationSection.tsx`) appeared
 between one read of the tree and the next within this same session. Correct
 work, no conflict, but uncommitted edits are invisible to every other session
 and to the live site, and a second edit landing between two reads inside one

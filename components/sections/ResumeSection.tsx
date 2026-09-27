@@ -79,7 +79,7 @@ const experience: ExperienceEntry[] = [
     company: 'One Park Financial, Coconut Grove, FL',
     logo: '/assets/featured/opf-icon-color.svg',
     tone: 'one-park',
-    roles: [{ title: 'Director UX/UI & Product Design', period: '2021 to 2022' }],
+    roles: [{ title: 'Director of UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
       'Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.',
       'Built the case for a unified pattern library and design system, then shipped it. Product, marketing, and engineering had been describing the same components three different ways. Delivery time halved, with work that had taken two sprints landing in one.',

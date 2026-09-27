@@ -93,8 +93,9 @@ They are intentionally omitted from this public register.
 
 Private provenance: REC-0064 and REC-0065.
 
-Public surfaces that still carry those details must be reconciled separately;
-do not source them from repository history.
+The public site now omits the detailed current-employer entry until a
+public-safe version is explicitly approved. Do not reconstruct the removed details
+from repository history.
 
 ## Mutual of America Financial Group
 

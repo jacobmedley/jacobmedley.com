@@ -32,9 +32,10 @@ Current authority/source files changed during the reconciliation cleanup include
 
 Verification in this chat was source-level: exact stale phrases and private-detail
 anchors were checked directly against current GitHub file contents after the edits.
-No local build, browser run, or deployment verification was performed in this chat.
-REC-0060 remains intentionally open pending Jacob's later ruling on which additional
-Mutual of America requirements shipped.
+No local build or browser run was performed. GitHub Actions Deploy to SiteGround run
+#57 (`36358895432`) completed successfully for commit `a3d94cd`, which contains
+the reconciled application/content source. REC-0060 remains intentionally open
+pending Jacob's later ruling on which additional Mutual of America requirements shipped.
 
 
 ## September 24, 2026: approved case-study copy for three featured projects

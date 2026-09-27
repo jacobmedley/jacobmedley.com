@@ -116,7 +116,7 @@ best-in-class, thought leader, strategic vision, transformative, curated, meticu
 
 ## Jacob's own lines, available for reuse
 
-- There is always a better way, together we can find it. **This is the full slogan and the second clause is not optional.** An earlier rule recorded the single-clause form as correct. That was wrong. The comma splice is deliberate and characteristic.
+- There is always a better way, together we will find it. **This is the full slogan and the second clause is not optional.** REC-0071 settles `will` as the canonical verb. The comma splice is deliberate and characteristic.
 - You create velocity by making the work smaller. **No longer capped at two appearances,
   see "Making the work smaller is a thesis, not a capped line" below.**
 - Everything is designed, everything.

@@ -49,21 +49,6 @@ type ExperienceEntry = {
 // Text ported verbatim from components/section-resume.html
 const experience: ExperienceEntry[] = [
   {
-    company: 'Health-E Commerce, New York, NY (Remote)',
-    logo: '/assets/references/hec-icon.svg',
-    tone: 'health',
-    highlighted: true,
-    roles: [
-      { title: 'Director of User and Experience Design', period: 'Feb 2026 to Present' },
-      { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
-    ],
-    paragraphs: [
-      "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated.",
-      "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor.",
-      "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs.",
-    ],
-  },
-  {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
     logo: '/assets/references/moa-icon.svg',
     tone: 'mutual',
@@ -81,7 +66,7 @@ const experience: ExperienceEntry[] = [
     tone: 'one-park',
     roles: [{ title: 'Director of UX/UI & Product Design', period: '2021 to 2022' }],
     paragraphs: [
-      'Design leadership inside the marketing organization, reporting to the SVP. Three contract reports covering engineering, visual design, and graphic design, with two full-time roles approved and in recruiting.',
+      'Design leadership inside the marketing organization, reporting to the SVP.',
       'Built the case for a unified pattern library and design system, then shipped it. Product, marketing, and engineering had been describing the same components three different ways. Delivery time halved, with work that had taken two sprints landing in one.',
       'The system was complete enough that the product ran for about a year afterward with no design resource, on one engineer and one product manager.',
       'Owned design process and set the usability testing practice. Worked with PPC, SEO, and affiliate channels on conversion rate strategy across acquisition funnels.',
@@ -93,7 +78,7 @@ const experience: ExperienceEntry[] = [
     tone: 'dentalplans',
     roles: [{ title: 'Senior Manager of UX & UI Design / Product Manager', period: '2015 to 2021' }],
     paragraphs: [
-      "The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to two. Five properties ran on it.\nI built and maintained the platform with a part-time offshore engineer. Four experience designers covered the properties.",
+      "The first property was a WordPress theme with sale pricing typed in by hand, one product at a time. It sold, and the company wanted four more. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to two. Five properties ran on it.\nI built and maintained the core ecommerce framework with a part-time offshore engineer. Other designers launched the individual properties, while the internal engineering team built the microservices and APIs the framework connected to.",
       "I led UX, UI, and front-end work across the commerce funnel. Source attribution meant the page said what the ad promised: promotion, copy, and messaging changed by traffic source, down to individual affiliate IDs. In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The company owned the custom platform.",
     ],
   },
@@ -156,7 +141,7 @@ export default function ResumeSection() {
             <div className="col-24">
               <div className="resume-belief">
                 <h3>How I lead the work</h3>
-                <p className="resume-belief-slogan">There is always a better way, together we can find it.</p>
+                <p className="resume-belief-slogan">There is always a better way, together we will find it.</p>
                 <p className="resume-leadership-intro">{designLeadershipIntro}</p>
               </div>
               <hr className="solid-center resume-belief-divider" />

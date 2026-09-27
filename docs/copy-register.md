@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B77. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B78. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -184,7 +184,7 @@ belongs in the DentalPlans modal in `projects.ts`.
 
 ## One Park Financial
 
-**Director UX/UI & Product Design**, 2021 to 2022
+**Director of UX/UI & Product Design**, 2021 to 2022
 Coconut Grove, FL
 
 ## Employment date handling
@@ -354,13 +354,11 @@ in the file is:
 
 > The platform was built and owned outright, with nothing licensed beneath it.
 
-## B5. One Park Financial employment entry [APPLIED], commit c917fe8
+## B5. One Park Financial employment entry [SUPERSEDED BY B78]
 **File:** `components/sections/ResumeSection.tsx`
 
-Entry existed with an extra "of" (`Director of UX/UI & Product Design`).
-Corrected to match Section A exactly:
-
-> Director UX/UI & Product Design, 2021 to 2022, Coconut Grove, FL
+An earlier normalization removed `of` after `Director`. Jacob later ruled the
+canonical title is `Director of UX/UI & Product Design`. See B78.
 
 ## B6. BumblebeeMD employment removal [APPLIED], commit c917fe8, verified no-op
 **File:** `components/sections/ResumeSection.tsx`
@@ -1303,6 +1301,19 @@ Removed from this public register:
 
 The private `jacobmedley/knowledge` reconcile ledgers remain the authoritative
 history. Do not reconstruct removed details from public git history for new copy.
+
+---
+
+## B78. One Park title ruling [APPLIED]
+
+Source: Jacob ruling, REC-0073.
+
+Canonical title for One Park Financial:
+
+> Director of UX/UI & Product Design
+
+This supersedes B5 and any current-surface variant that omits `of` after
+`Director`.
 
 ---
 

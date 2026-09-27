@@ -3,7 +3,7 @@
     "eyebrow": "Jacob Medley // Selected Work",
     "title": "The thinking behind the work.",
     "description": "I build products, teams, and systems around the people using them. These stories show the decisions I made and what the work changed.",
-    "closing": "There is always a better way, together we can find it."
+    "closing": "There is always a better way, together we will find it."
   },
   "studies": [
     {
@@ -18,11 +18,11 @@
       "discipline": "Platform strategy · Design systems · Delivery",
       "theme": "plum",
       "visual": "platform",
-      "summary": "I built a shared commerce platform with a part-time engineer. A fully branded property went from six weeks to launch to two.",
+      "summary": "I built the core shared commerce framework with a part-time engineer. A fully branded property went from six weeks to launch to two.",
       "role": "Product and design lead; front-end development.",
       "scope": "Brand experience, platform roadmap, and the commerce funnel.",
-      "collaboration": "A part-time engineer built and maintained the platform with me; four experience designers covered the properties.",
-      "source": "docs/case-studies-sanitized.md: The Alternative to Five Sites Was Five Teams; docs/copy-register.md: Section A, DentalPlans; B26; B27",
+      "collaboration": "A part-time engineer and I built and maintained the core framework. Other designers launched the individual properties; internal engineering supplied the microservices and APIs it connected to.",
+      "source": "docs/case-studies-sanitized.md: The Alternative to Five Sites Was Five Teams; docs/copy-register.md: Section A, DentalPlans; B79",
       "proof": [
         {
           "value": "6 → 2",
@@ -59,7 +59,7 @@
           "paragraphs": [
             "I argued for a platform and phased the work deliberately. A full rewrite would have been difficult to fund. Each release replaced a piece of manual labor with a capability the next property could reuse.",
             "Brand configuration came into the content management layer. Theme tokens separated each storefront's identity from the application underneath it. Shared product and provider data meant engineering could add information once and every site would inherit it.",
-            "I owned the experience through marketing pages, cart, and checkout, along with the front-end build. The platform was built and maintained by me and a part-time offshore engineer."
+            "I owned the roadmap, experience, and front-end build for the core ecommerce framework. A part-time engineer and I built and maintained the framework and its enhancements. Other designers launched the individual branded properties, while the internal engineering team built the microservices and APIs the framework connected to."
           ],
           "decision": "Remove repeated work before adding the next storefront."
         },
@@ -86,7 +86,7 @@
           "paragraphs": [
             "Launching a fully branded property fell from six weeks to two. Five properties ran on the platform.",
             "In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company's growth increment in that year.",
-            "Four experience designers covered the properties. Automation absorbed repetitive updates, leaving people time for the decisions that changed the experience."
+            "Other designers launched the branded properties while the core framework absorbed repetitive updates, leaving more time for the decisions that changed each experience."
           ],
           "takeaway": "You create velocity by making the work smaller."
         }

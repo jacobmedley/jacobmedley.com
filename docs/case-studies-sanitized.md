@@ -323,7 +323,7 @@ If UX never appears in the numbers, eventually someone asks why it appears in th
 
 ## The Alternative to Five Sites Was Five Teams
 
-**Skim:** A single-brand storefront hand-edited product by product, rebuilt as a platform. Token-based theming, source attribution, one-button deploys, one source of truth. Launch time fell from six weeks to two. Five properties, two builders. In one measured year the platform carried 47% of company revenue growth.
+**Skim:** A single-brand storefront hand-edited product by product, rebuilt as a platform. Token-based theming, source attribution, one-button deploys, one source of truth. Launch time fell from six weeks to two. Five properties. I built the core framework with a part-time engineer; other designers launched the branded sites, while internal engineering supplied the microservices and APIs. In one measured year the platform carried 47% of company revenue growth.
 
 The first version was embarrassing and it was supposed to be.
 
@@ -349,7 +349,7 @@ Scheduled promotions with multi-phase logic, retiring the hand-typed strikethrou
 
 Campaign and source attribution, so promotion, copy, and messaging changed according to where a visitor arrived from. Search engines, social, email, paid, and specific affiliate identifiers each got their own treatment, and the site spoke in the language of the ad that brought the person there.
 
-The whole funnel, marketing pages through cart and checkout, owned outright. No licensed platform underneath it, no vendor holding the roadmap.
+The custom platform covered the whole funnel, from marketing pages through cart and checkout.
 
 And a deployment pipeline with one button per environment. Development, staging, production. One property or all of them.
 
@@ -359,15 +359,15 @@ Standing up a fully branded ecommerce property went from six weeks to two. A 66%
 
 One of the five was later retired. Winding it down cost about as little as standing it up, which is the half of the argument nobody makes when they are asking for a new site. A platform that makes launches cheap makes mistakes cheap too.
 
-The platform was built and maintained by two people. Me and a part-time offshore engineer. It ran on the smallest team supporting any property in the company.
+The core ecommerce framework was built and maintained by me and a part-time offshore engineer. Other designers launched the branded properties. The internal engineering team built the microservices and APIs the framework connected to.
 
-Ownership was the argument, and cost made it possible. Infrastructure ran on dedicated hardware with redundancy and managed support, which left budget where it was needed, on marketing the properties rather than hosting them. The platform was an asset the business held outright. No licensing, no vendor roadmap, no dependency someone else could reprice.
+Ownership was part of the value. The platform was a proprietary asset the business owned, so the roadmap stayed with us. We were building the asset, not renting the platform code.
 
 In one measured year the properties accounted for 47% of the company's revenue growth, 27% of total lead capture, and 20% of overall revenue. Smaller in absolute revenue than the core marketplace, and a disproportionate share of the growth, which is what a growth lever looks like when it is working.
 
 **The staffing argument underneath the technical one**
 
-Four experience designers covered all of it. Two reporting to me on a dotted line, one at my level, and the engineer direct.
+Other designers launched the individual branded properties. I owned the roadmap, the core framework, and hands-on design and front-end work; the part-time engineer worked with me on the framework.
 
 The default path to five storefronts is five teams. Every additional property brings its own content updates, its own promotion calendar, its own deployment, its own bugs, and the headcount request follows about six months later.
 

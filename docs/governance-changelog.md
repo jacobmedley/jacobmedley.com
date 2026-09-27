@@ -25,6 +25,11 @@ slogan and the second clause is not optional.** An earlier rule recorded the
 single-clause form as correct. That was wrong. The comma splice is deliberate and
 characteristic."
 
+**Later ruling, REC-0071:** the canonical verb is now `will`, not `can`.
+Current form: "There is always a better way, together we will find it." This later
+Jacob ruling supersedes the verb in the historical correction above; the second
+clause and deliberate comma splice remain required.
+
 **Why it matters more than one line of copy.** The rule came over unexamined from the
 original `voice-rules.md`. It was applied against Jacob's own redline, which had the
 full slogan, and it cut the better half. A rule that says a person's own signature line

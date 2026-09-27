@@ -981,7 +981,7 @@ seven bullets before this edit. Nothing removed, nothing to reconcile.
 an experience design function where none existed and hired into it. Set a
 review model that ends in decisions instead of opinions.") is replaced with:
 
-> Twenty years of one belief: there is always a better way, together we can find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.
+> Twenty years of one belief: there is always a better way, together we will find it. Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.
 
 Deliberately the longest bullet in the set. This also closes both B33 flags:
 the bullet no longer opens with "Built" (resolving the opener collision with
@@ -1119,7 +1119,7 @@ this register.
 
 Jacob's direct instruction: the navigation link for `#full-stack` reads `Full Stack`.
 The section heading remains `Full Stack Designer`. The hero slogan reads
-`I believe there's always a better way, together we can find it.` The rest of the
+`I believe there's always a better way, together we will find it.` The rest of the
 introductory paragraph is unchanged. These supersede the earlier navigation label
 and the extra conjunction in the hero slogan.
 
@@ -1438,7 +1438,7 @@ placement on the website. External resume documents remain separately owned.
 - Remove the visible Design Leadership heading.
 - Headline: `Twenty years. One belief.`
 - Subheadline, matching the existing registered hero slogan:
-  `I believe there's always a better way, together we can find it.`
+  `I believe there's always a better way, together we will find it.`
 - Body, unchanged after the former opening sentence:
 
 > Put the human at the center and the missing piece shows itself. Sometimes it is the customer facing a gap nobody owned. Sometimes it is the person serving that customer, working around a tool that was never built. I design the process, system, or function that removes it. A platform that scaled five businesses without scaling the people behind them. A design practice where engineers and marketers had been making the interface calls. Scale comes from making the work smaller, not from adding to it.

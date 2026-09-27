@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B78. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B79. All APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -182,6 +182,13 @@ stated 20%.
 source of the unattributed 66% figure appearing on the PDFs and the live site. It
 belongs in the DentalPlans modal in `projects.ts`.
 
+**Core framework scope, REC-0076:** Jacob and a part-time offshore engineer built
+and maintained the core ecommerce framework and its enhancements. Jacob owned the
+roadmap and vision and did hands-on design and development. Other designers launched
+the individual branded properties. The internal engineering team built the
+microservices and APIs the framework connected to. Keep the focused core-framework
+build distinct from the full delivery ecosystem.
+
 ## One Park Financial
 
 **Director of UX/UI & Product Design**, 2021 to 2022
@@ -352,7 +359,7 @@ Closing sentence added to the DentalPlans paragraph. Original wording shipped
 here had a dangling subject (see B14); the corrected sentence that now stands
 in the file is:
 
-> The platform was built and owned outright, with nothing licensed beneath it.
+> The company owned the custom platform.
 
 ## B5. One Park Financial employment entry [SUPERSEDED BY B78]
 **File:** `components/sections/ResumeSection.tsx`
@@ -477,7 +484,7 @@ Register wording error, not an implementation error.
 
 **REPLACE WITH:**
 
-> The platform was built and owned outright, with nothing licensed beneath it.
+> The company owned the custom platform.
 
 B4 above has been amended to carry this corrected sentence rather than the
 broken one.
@@ -1250,9 +1257,8 @@ It is 0.4 seconds. Fix at source. 0.4ms reads as unserious to any engineer.
 `/interaction-design-concepts/response-times/`, and a `musings/` post cites Nielsen's
 thresholds and links to it. Worth referencing from the case study.
 
-**CONFIRM BEFORE PUBLISHING.** These numbers have now been stated three ways across
-this project: 0.1/1/8, then 0.1/1/5/8, now 0.1-0.4/3/7/10. This version is treated as
-final. Say so explicitly before it reaches a PDF or a case study.
+**FINAL, confirmed by Jacob.** REC-0059 settles the specification at
+0.1–0.4 / 3 / 7 / 10. No additional confirmation gate remains.
 
 # Reconciliation protocol
 
@@ -1314,6 +1320,22 @@ Canonical title for One Park Financial:
 
 This supersedes B5 and any current-surface variant that omits `of` after
 `Director`.
+
+---
+
+## B79. Reconciliation corrections [APPLIED]
+
+Source: REC-0059, REC-0071, REC-0075, and REC-0076.
+
+- Response timing is final at 0.1–0.4 / 3 / 7 / 10; the old confirmation gate is removed.
+- The site slogan uses `There is always a better way, together we will find it.`
+- WebMD's focused two-week site build is distinct from the full launch; do not call
+  the whole launch a two-person effort.
+- DentalPlans' core ecommerce framework was built and maintained by Jacob and a
+  part-time engineer. Other designers launched branded properties, and internal
+  engineering supplied the microservices and APIs.
+- Ownership language stays bounded to a proprietary/company-owned custom platform.
+  Do not claim that nothing beneath it was licensed.
 
 ---
 
@@ -2071,7 +2093,7 @@ The Viva thumbnail disciplines are `Brand` and `Visual`. This replaces
 `UX Research` on that thumbnail; the project narrative and contribution badges
 remain unchanged.
 
-## B75. WebMD and DentalPlans case-study copy [APPLIED LOCALLY]
+## B75. WebMD and DentalPlans case-study copy [APPLIED; SCOPE CORRECTED BY B79]
 
 Source: Jacob's approved copy and scope guardrails, September 23, 2026.
 Publication is not authorized. Apply the wording exactly, without polishing or
@@ -2100,9 +2122,10 @@ Modal opening heading: `From Campaign to Commerce`
 
 Modal opening copy:
 
-> WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine. A product marketing lead and I built the campaign, designed the experience, and launched the site. It started generating revenue the day it went live.
+> WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine. I wireframed and designed the site in a focused two-week build while the Director of Online Marketing was away. It was complete and live when the director returned. The following two weeks were campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one.
 
-WebMD is the two-person launch effort: Product Marketing Lead and Jacob.
+REC-0075 separates the focused site build from the full launch. Do not describe
+the entire WebMD launch as a two-person effort.
 
 ### DentalPlans
 
@@ -2118,17 +2141,17 @@ Modal opening copy:
 
 > It started with a simple question: “You know WordPress, right? How fast can you stand up a website?”
 >
-> DentalPlans.com wanted dedicated storefronts for product partners. We had minimal engineering support, so the first site was deliberately lean. It tested whether customers would buy through a focused brand experience.
+> DentalPlans.com wanted dedicated storefronts for product partners. The first site was deliberately lean. It tested whether customers would buy through a focused brand experience.
 >
 > They did. The next problem was scale.
 >
-> I led product design and front-end development for the platform that followed, turning repeated work into capabilities each new property could reuse.
+> I owned the roadmap, product design, and front-end development for the core ecommerce framework that followed. A part-time engineer and I built and maintained that framework and its enhancements.
+>
+> Other designers launched the individual branded properties. The internal engineering team built the microservices and APIs the framework connected to.
 
-DentalPlans is the larger platform effort with minimal engineering support during
-the initial MVP. Remove the obsolete card, opening, and value-list descriptions
-that call the platform a two-person or part-time-engineer project. Preserve the
-existing five-property and six-weeks-to-two facts, metrics, imagery, diagrams,
-contribution labels, navigation, and layout.
+REC-0076 distinguishes the focused core-framework build from the full delivery
+ecosystem. Preserve the five-property and six-weeks-to-two facts, metrics, imagery,
+diagrams, contribution labels, navigation, and layout.
 
 ### Shared title treatment
 

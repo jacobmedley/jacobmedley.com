@@ -47,7 +47,7 @@ try {
     })
     results.resume.push({ width, ...resume })
     assert.equal(resume.title, 'Twenty years. One belief.')
-    assert.equal(resume.slogan, "I believe there's always a better way, together we can find it.")
+    assert.equal(resume.slogan, "There is always a better way, together we will find it.")
     assert.equal(resume.size, '18px')
     assert.equal(resume.bullets, 5)
     assert.ok(resume.divider && !resume.oldHeading && resume.overflow === 0)

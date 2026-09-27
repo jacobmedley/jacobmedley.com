@@ -1,5 +1,42 @@
 # Status
 
+## September 27, 2026: career reconciliation and public-copy cleanup
+
+Career reconciliation is current through REC-0083; REC-0084 is the next global
+reconciliation number.
+
+This pass aligned the public site and current content authorities to the latest
+settled rulings:
+- current-employer titles, dates, staffing, operating metrics, budget detail, and
+  function-growth detail were removed from the public experience section pending an
+  explicitly approved public-safe version;
+- One Park now uses `Director of UX/UI & Product Design`, with private staffing and
+  recruiting context removed;
+- WebMD now separates Jacob's focused two-week site build from the broader launch
+  involving the Director of Online Marketing and SVP of Marketing;
+- DentalPlans now distinguishes the core ecommerce framework built by Jacob and a
+  part-time engineer from branded-site launches by other designers and the
+  microservices/APIs supplied by internal engineering;
+- the slogan is `There is always a better way, together we will find it.`;
+- the Mutual of America response-time specification is final at
+  0.1–0.4 / 3 / 7 / 10 with no remaining confirmation gate;
+- the public copy register, STATUS, and canonical-figures record no longer reproduce
+  the publication-boundary material closed by REC-0077 through REC-0083.
+
+Current authority/source files changed during the reconciliation cleanup include
+`docs/copy-register.md`, `docs/voice-and-tone.md`,
+`docs/governance-changelog.md`, `docs/case-studies-sanitized.md`,
+`docs/case-study-site-copy.json`, `components/sections/ResumeSection.tsx`,
+`components/ui/KineticHeroIdentity.tsx`, `lib/data/projects.ts`,
+`app/design-system/catalog.ts`, and the active slogan acceptance expectation.
+
+Verification in this chat was source-level: exact stale phrases and private-detail
+anchors were checked directly against current GitHub file contents after the edits.
+No local build, browser run, or deployment verification was performed in this chat.
+REC-0060 remains intentionally open pending Jacob's later ruling on which additional
+Mutual of America requirements shipped.
+
+
 ## September 24, 2026: approved case-study copy for three featured projects
 
 Jacob's approved BumblebeeMD, Hydra, and One Park Financial card headlines,
@@ -83,16 +120,12 @@ project name in the artwork identity. The former third-line subtitle is hidden i
 that location while remaining available in the card's larger frosted copy panel
 and in project data.
 
-Copy register B75 records Jacob's approved WebMD and DentalPlans wording before
-production implementation. WebMD now uses `Trust Meets Commerce`, the approved
-card paragraph, and the `From Campaign to Commerce` modal opening, including the
-Product Marketing Lead and Jacob launch split. DentalPlans now uses `From
-Storefront to Platform`, the approved card paragraph, and the four-paragraph `How
-Fast Can You Stand Up a Website?` opening. Its obsolete part-time-engineer and
-two-person-platform descriptions are removed; the existing five-property and
-six-weeks-to-two facts remain. The five canonical themes are stored with the
-featured project data. BumblebeeMD, Hydra, and One Park Financial narrative copy
-is unchanged.
+Copy register B75 records the September 23 copy checkpoint. Its team-scope
+language was later superseded by REC-0075, REC-0076, and B79. Current WebMD copy
+separates the focused two-week site build from the broader launch. Current
+DentalPlans copy distinguishes the core framework build from branded-site delivery
+and the internal engineering services it connected to. The five-property and
+six-weeks-to-two facts and the five canonical themes remain unchanged.
 
 Changed files: `app/design-system/catalog.ts`, `app/globals.css`, `app/layout.tsx`,
 `app/site-integration.css`, `app/visual-system.css`,
@@ -132,15 +165,12 @@ modal focal points remain centered and the dialog width is 390px. The Viva card
 renders `Brand` and `Visual`, and the Case Studies content computes to exactly
 58px bottom padding. Live browser acceptance confirms each of the five featured
 cards has exactly two artwork-identity children, with no subtitle rendered there.
-TypeScript, focused ESLint, and `git diff --check` pass. Copy acceptance confirms
-zero production-source hits for the superseded WebMD and DentalPlans card copy,
-and each modal renders its registered heading without `Project Brief`. At desktop
-and 390x844, both cards and modals have zero horizontal overflow; WebMD contains
-the approved two-person launch wording, while DentalPlans contains neither the
-two-person-platform nor part-time-engineer claim and still renders the five-property
-and six-to-two facts. The production build passes for 13 pages, 288 exported images,
-and 104 active references. The port-3000 development preview was restarted after
-the build and returns HTTP 200.
+TypeScript, focused ESLint, and `git diff --check` passed at that historical
+checkpoint. Copy acceptance then confirmed the B75 wording and responsive behavior.
+The WebMD/DentalPlans team-scope assertions from that checkpoint were later
+superseded by REC-0075, REC-0076, and B79; those older checks are not evidence for
+the current corrected wording. The production build at that checkpoint passed for
+13 pages, 288 exported images, and 104 active references.
 
 Publication was explicitly authorized by Jacob's September 23 request to clean up,
 merge, and push. Release commit `3854697` was merged to `main` as `0e4782a` and

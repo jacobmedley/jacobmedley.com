@@ -255,7 +255,9 @@ export const projects: Project[] = [
     brief: {
       image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
       paragraphs: [
-        'WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine. A product marketing lead and I built the campaign, designed the experience, and launched the site. It started generating revenue the day it went live.'
+        'WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine.',
+        'I wireframed and designed the site in a focused two-week build while the Director of Online Marketing was away. It was complete and live when the director returned.',
+        'The following two weeks were campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one.'
       ]
     },
     contributions: [
@@ -380,9 +382,10 @@ export const projects: Project[] = [
       image: { src: '/images/work/dpprod-modal/brief.png', alt: '' },
       paragraphs: [
         'It started with a simple question: “You know WordPress, right? How fast can you stand up a website?”',
-        'DentalPlans.com wanted dedicated storefronts for product partners. We had minimal engineering support, so the first site was deliberately lean. It tested whether customers would buy through a focused brand experience.',
+        'DentalPlans.com wanted dedicated storefronts for product partners. The first site was deliberately lean. It tested whether customers would buy through a focused brand experience.',
         'They did. The next problem was scale.',
-        'I led product design and front-end development for the platform that followed, turning repeated work into capabilities each new property could reuse.'
+        'I owned the roadmap, product design, and front-end development for the core ecommerce framework that followed. A part-time engineer and I built and maintained that framework and its enhancements.',
+        'Other designers launched the individual branded properties. The internal engineering team built the microservices and APIs the framework connected to.'
       ]
     },
     contributions: [
@@ -429,7 +432,9 @@ export const projects: Project[] = [
           heading: 'Value Created',
           items: [
   "Five properties on one platform",
-  "Four experience designers covered the properties",
+  "Core framework built by Jacob and a part-time engineer",
+  "Other designers launched the individual properties",
+  "Internal engineering supplied the microservices and APIs",
   "The company owned the custom platform"
 ]
         }

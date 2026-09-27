@@ -3129,30 +3129,15 @@ Not in this pull request, deliberately:
     diverge from the branch versions by 23 to 84 lines each. They are an earlier
     iteration of the same feature. Left untouched; they belong to whoever wrote them.
 
-**For the Coordinator, Aug 31. The accessibility claim is dropped, not corrected. The repo
-still carries it.**
+**Accessibility retirement: public-repo cleanup complete.**
 
-*Checked September 7: both action items below now appear satisfied. The retirement is
-recorded in copy-register.md at "ACCESSIBILITY CLAIM, RETIRED 2026-09-05", and none of
-the three retired strings appears in `docs/case-studies-sanitized.md` or anywhere else
-outside that register entry and this note. Left standing rather than closed, because
-closing another session's open item is not this session's call.*
+The retired accessibility case/claim is not active portfolio or resume content.
+Accessibility and WCAG may still appear as competencies, but the retired claim and
+its implementation/outcome details must not be restored or reproduced in public
+documentation.
 
-The masters said "Built an automated accessibility auditing pipeline ... runs on a schedule
-against production." Jacob corrected the facts, then dropped the whole claim: he devised a
-process letting a non-technical person run a script against an unpublished page, automation
-still in progress, and his read is that it is weak beside the rest of the record.
-
-Retired, never reuse: "Built an automated accessibility auditing pipeline," "runs on a
-schedule against production," "a two-person function can now flag critical issues before
-launch."
-
-Still allowed: accessibility and WCAG as a competency. No pipeline, no automation, no
-schedule.
-
-  - docs/case-studies-sanitized.md carries the retired wording. Remove it.
-  - docs/copy-register.md should record the retirement so it cannot come back.
-  - Full history is in The-Hunt/rules/canonical-figures.md.
+The public copy register records the cleanup under B77. Private rationale and
+historical detail live only in the private knowledge reconciliation at REC-0066.
 
 The resume workstream cleared its own masters and unsent files. It does not write the repo,
 so both items above are the Coordinator's.

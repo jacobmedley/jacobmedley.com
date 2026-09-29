@@ -117,7 +117,7 @@ export default function DesignSystemExplorer({patterns,tokenNames}:{patterns:Pat
     <a className={styles.skip} href="#pattern-detail">Skip to selected pattern</a>
     <header className={styles.header}>
       <a className={styles.brand} href="#spotlight-split" onClick={()=>choose('spotlight-split')}>Quiet Prism<span>Design reference</span></a>
-      <p>Baseline <code>4c2e482</code><span>Local reference · September 20, 2026</span></p>
+      <p>Live site reference<span>Examples load the current site routes.</span></p>
       <a className={styles.sourceLink} href="/" target="_blank" rel="noopener noreferrer">Open site ↗<span className={styles.srOnly}> in a new tab</span></a>
     </header>
     <div className={styles.layout}>
@@ -142,7 +142,7 @@ export default function DesignSystemExplorer({patterns,tokenNames}:{patterns:Pat
           <div className={styles.previewFooter}><span>{inspection?`${inspection.width} × ${inspection.height} CSS px`:'Source viewport'} · No scaling</span><button type="button" onClick={()=>void locate()}>Locate again</button><a href={example.route} target="_blank" rel="noopener noreferrer">Open source page ↗<span className={styles.srOnly}> in a new tab</span></a></div>
           <p className={styles.status} role="status">{status}</p>
         </section>
-        <p className={styles.explanation}>This frame loads the original route and scrolls to the selected element. Its page layout, artwork, copy and interactions come from the site itself. Scroll inside it to see neighboring content. Separate modal and focus refinements are not included in this baseline.</p>
+        <p className={styles.explanation}>This frame loads a site route and scrolls to the selected element. Layout, artwork, copy, and interactions come from that page. Scroll inside the frame to see the surrounding content.</p>
         <div className={styles.notes}><section><h2>Behavior</h2><p>{pattern.behavior}</p></section><section><h2>Responsive</h2><p>{pattern.responsive}</p></section></div>
         <section className={styles.source}><h2>Source &amp; anatomy</h2><div className={styles.sourceColumns}><div><h3>Implementation</h3><ul>{pattern.sources.map(path=><li key={path}><code>{path}</code></li>)}</ul></div><div><h3>Parts and selectors</h3><ul>{pattern.anatomy.map(part=><li key={part}><code>{part}</code></li>)}</ul><h3>Located element</h3><code className={styles.selector}>{example.selector}</code></div></div></section>
         <details className={styles.computed}><summary>Computed styles</summary><p>Read from the located source element at the current preview width.</p>{inspection?<dl>{inspection.values.map(([name,value])=><div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl>:<p>Available after the source element loads.</p>}</details>

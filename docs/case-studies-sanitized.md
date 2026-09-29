@@ -1,404 +1,215 @@
-# Case Studies: Sanitized Source
+# Case studies: editorial source
 
-**Status:** Cleared for public site and gated portfolio
-**Rule set:** No PII. No company specifics. No identifiable dates. No named individuals. No internal codenames.
-
-Fourteen case studies. Six where AI carries the work, eight on core craft. Use whole, or pull sections.
-
----
-
-# Part One: AI as Working Capacity
-
----
+Editorially reviewed. Existing publication boundaries remain in force. This file is not blanket permission to publish a study.
 
 ## Four Documents, One Checkout, Zero Agreement
 
-**Skim:** Conflicting specs at the payment step. Resolved in a day with a documented decision trail instead of another meeting cycle.
+**Skim:** Conflicting checkout requirements resolved with a documented decision and a traceable superseded record.
 
-Checkout is the money step. A customer committing to a telehealth subscription with a consult fee attached, deciding in that moment whether this feels legitimate.
+The checkout requirements disagreed at the point where a customer would see the price. Some called for an itemized consult fee. The latest meeting directive and the design called for one combined price.
 
-Four requirements documents said show the consult fee itemized, broken out on its own line. The most recent meeting directive and the design said show one combined price. Both were written down. Both had authors who believed they were current.
+Engineering could build either and point to a written source. The conflict needed an experience owner.
 
-Engineering could build either. Whichever they picked, someone was going to call it wrong after the fact.
+I used AI to compare the requirements, meeting transcripts, and ticket history. It identified contradictions across the records. I chose the combined price, matching a checkout pattern already converting with customers.
 
-You can call it a spec conflict right up until it changes what appears beside the Buy button.
+I documented the direction and linked the requirements it replaced to their sources. Refund messaging remained an explicit dependency. It needed to agree with the combined-price model.
 
-**What I did**
-
-Fed the full requirements corpus to AI and had it read everything at once. Specification pages, meeting transcripts, ticket history. Forty source documents is exactly the sort of reading problem where human working memory begins quietly dropping plates.
-
-AI surfaced the contradictions. I made the call.
-
-Single combined price, matching a checkout pattern already converting with real customers. Documented the decision, tagged all four superseded requirements with their sources, and flagged the open dependency: refund messaging had to match the combined-price model or we would create a new conflict solving the old one.
-
-**Why it stuck**
-
-The decision closed in a day instead of circling through another meeting cycle. Engineering built once. The superseded trail meant nobody could reopen it three weeks later on a hunch.
-
-A checkout question accidentally gave us a governance answer. It established that design makes experience calls and owns them, with receipts, rather than offering opinions and waiting.
+Engineering built against the record without another meeting cycle. The refund dependency stayed open.
 
 ---
 
-## Reporting Should Not Cost a Headcount
+## Reporting Without Another Status Meeting
 
-**Skim:** Status, goals, and priority scans automated from live systems. Hours per week down to minutes. No workstream dropped at a two-to-seven ratio.
+**Skim:** Operational reporting built from work records, with a repeatable route to leadership visibility.
 
-A new function, two people, roughly half-allocated to one major program, accountable across seven-plus initiatives.
+Status reporting was competing with delivery. The information existed across work systems, but somebody still had to collect it, reconcile it, and turn it into an update.
 
-Do the math on status reporting alone. Rollups, goal tracking, leadership visibility, cross-project scanning. There was a headcount-shaped hole in the operating work, and it competed directly with the work people actually hired us to do.
+I built a reporting process around those records. Rollups, goal tracking, and priority scans could start from current work instead of somebody’s recollection of the week.
 
-Nobody gets promoted for status decks. But leadership blindness is fatal, so it cannot simply be dropped.
+The process pulled together ticket activity, messages, and calendar context. It also made incoming work easier to notice when another team added it without a separate conversation.
 
-**The operational layer**
-
-I built reporting that runs on live data instead of memory.
-
-A tri-weekly rollup pulling straight from the ticket system, chat, and calendar, formatted and ready to post. Performance and goal updates generated from actual work records, not recollection. Quarterly goals built directly from live ticket data. Cross-project priority scans that surface what needs attention, including tickets other teams file into ours without telling anyone.
-
-**What came of it**
-
-Leadership visibility held without recurring status meetings. Reporting overhead went from hours a week to minutes. Nothing dropped, at a ratio where dropping things is the expected outcome.
-
-Every team I have worked on is lean and covering more ground than its headcount suggests. Teams short on capacity have a curious habit of prescribing themselves more meetings. Automate the reporting layer instead and design time goes back to design.
-
-Eventually, nobody had to ask whether the work was under control. That is a useful reputation to acquire.
+Leadership had a repeatable view of the work. Reporting no longer needed to be reconstructed from memory for each update.
 
 ---
 
-## Finance-Grade Answers From a Design Team
+## A Licensing Question for Design
 
-**Skim:** Software license spend analysis for marketing leadership. Seat allocation, external accounts, and waste identified. Analysis to leadership deck in a fraction of typical turnaround.
+**Skim:** A software-seat review that connected account records to the people and teams using them.
 
-Marketing leadership needed answers about design software spend. Who holds paid seats. Which departments they sit in. Where the waste is hiding.
+Marketing leadership wanted to understand design software spend. The questions concerned seat ownership, department allocation, and accounts that needed review.
 
-Budget questions, not design questions. The raw material was a seat export and an HR employee index, two files that answer nothing on their own and everything when joined correctly.
+A license export described access. An employee index described the organization. I joined them so the questions could be answered against the same record.
 
-**How it ran**
+I organized the findings into a leadership deck, with the conclusions first and the method available behind them. The review identified external accounts and a basis for license cleanup.
 
-Structured analysis joining the seat export against the employee index, then five specific business questions answered with defensible numbers. Packaged as a fourteen-slide deck built for a leadership audience, meaning conclusions first and methodology available if asked.
-
-Paid seat split established at roughly half marketing, half everyone else. Forty-one external guest accounts identified, most of which nobody had inventoried. Concrete basis for cleanup and renewal negotiation.
-
-**What it turned into**
-
-I thought I was answering a budget question. I was also changing the team's job description by a few degrees.
-
-Design moved a few seats upstream. The organization changed its idea of our lane after watching us operate outside it without hitting anything.
+Leadership had a record to use in seat-allocation and renewal discussions.
 
 ---
 
 ## A Retrospective Built on Evidence, Not Memory
 
-**Skim:** Forensic launch timeline assembled from system records. Twelve contradictions documented with sources. Blameless format. Unestimated work identified as the systemic gap.
+**Skim:** A source-linked launch review that found categories of work missing from the estimate.
 
-A six-week product launch closed with a senior leadership process review scheduled.
+Post-launch memory is a poor database with excellent confidence. A process review was coming, and people had different recollections of the timeline.
 
-Post-launch memory is a poor database with excellent confidence. Everyone arrives with a version of events shaped by where they sat and what went badly for them personally, and the loudest recollection tends to win. That produces a blame session, and a blame session teaches an organization to hide problems rather than surface them.
+I used AI to assemble a timeline from tickets, documentation, messages, and screenshots. Each entry stayed attached to a source. Contradictions were recorded alongside the evidence that exposed them.
 
-**Building the record**
+I turned that record into visual review panels. The conversation could stay on the process and the work, with a shared record in front of everyone.
 
-AI assembled a forensic timeline from ticket history, documentation pages, chat records, and screenshots. Every entry traced to a source. Twelve contradictions and pivots surfaced, each one anchored to evidence rather than recollection.
+The estimate had excluded wireframing. Reusable component design and content-template work were also missing from the timeline.
 
-I translated it into visual review panels with friction markers, structured so the conversation stays on the process and off the people.
-
-Memory makes people defend themselves. Evidence gives everyone a third object to look at.
-
-Two facts landed on the record that had been circulating as informal knowledge. The creative estimate excluded wireframing entirely. Wireframing, reusable component design, and content template work appeared in no timeline, anywhere, on any version of the plan.
-
-**Why that finding is the whole story**
-
-The failure was pleasantly impersonal: whole categories of work had never entered the estimate. The team was measured against a schedule that never included what they were doing.
-
-Once we found the omission, the remedy became rather boring. Estimate it next time.
-
-A blameless account can still have sharp edges. Ours had citations. A timestamp is not infallible, but it is wonderfully indifferent to office politics.
+Whole categories of work had never entered the estimate. The remedy became rather boring. Estimate them next time.
 
 ---
 
 ## Measuring the Thing That Measures Everything
 
-**Skim:** AI usage instrumented across twelve task types. Time saved, quality, and risk logged per use. Team survey synthesized. Adoption decisions made on data.
+**Skim:** A repeatable way to examine where AI was useful, what it cost, and where it created risk.
 
-"It feels faster" is a poor unit of measure.
+“It feels faster” is a poor unit of measure. I wanted to know where AI was earning its electricity.
 
-AI usage was expanding faster than our ability to explain whether any of it was useful. I needed to know where the machine was genuinely earning its electricity.
+I built a usage tracker that recorded the task, time saved, frequency, quality, effort, and a specific risk note. The note forced each use case to name what could go wrong.
 
-**The instrument**
+I also brought team survey responses into a review of how people were using AI. The work considered adoption alongside quality and risk, instead of treating more usage as the result.
 
-A usage tracker covering twelve task types across six categories, spanning research, design, business writing, presentation work, and design system work. Every row logs time saved, frequency, quality rating, effort saved, and a specific risk note.
-
-The risk note is mandatory. Every logged use case names what could go wrong with it, and every AI-assisted deliverable gets director review before it reaches leadership. A verbal guardrail is mostly a preference with witnesses, so I wrote them down.
-
-Separately, a formatted team report analyzing survey responses across seven people.
-
-**What the numbers said**
-
-Individual tasks saved up to eight hours each. Coding was the dominant use case at seventy-one percent of respondents. Collective savings landed around 690 minutes per cycle. Daily usage across every respondent, unanimous on both would-use-again and would-recommend.
-
-They were numbers I was willing to put in front of finance without developing a sudden interest in changing the subject.
-
-Measurement gave the habit handles. Other people could finally pick it up, inspect it, copy it, or decide it was nonsense. And we needed the savings on paper before they quietly disappeared into everyone's expectations.
+The record gave us something to inspect and discuss. AI-assisted deliverables still went through review before reaching leadership.
 
 ---
 
 ## Catching Conflicts Before Anyone Writes Code
 
-**Skim:** Same forensic method as the checkout decision, moved earlier in the lifecycle. Five conflicts resolved before build started.
+**Skim:** The source-comparison method moved earlier, into the gap between the brief, wireframe, and component library.
 
-A landing page redesign sitting at the intersection of three artifacts. Creative brief, wireframe specifications, component library. Different authors, different weeks, all under launch pressure.
+A landing-page redesign had a creative brief, wireframe specifications, and a component library. Each document described part of the work, but they did not agree on every decision.
 
 We had three sources of truth, which is an ambitious number of truths for one landing page.
 
-**Running it early**
+I used the source-comparison method from the checkout review before the build started. AI compared the artifacts and produced a record of contradictions for resolution.
 
-Same cross-referencing method proven on the checkout conflict, applied before build instead of during it. AI reconciled all three artifacts against each other and surfaced five documented conflicts, queued for resolution before a single component got built.
-
-**The shift**
-
-Resolve the argument while it still has a Delete key. Everyone knows this. Almost nobody organizes around it, because catching conflicts early requires doing work when nothing appears to be wrong yet.
-
-Same machinery, installed at a much better point in the plumbing. The technique stayed put. The timing graduated.
-
----
-
-# Part Two: Core Craft
+The conflicts could be discussed while they were still changes to a document. Resolve the argument while it still has a Delete key.
 
 ---
 
 ## Four Executives, Four Different Customer Journeys
 
-**Skim:** Cross-functional journey workshop with C-level participation. Custom board system, moderator guide, scenario matrix. Reusable assets, not a one-off event.
+**Skim:** A working session that followed the customer across departments and examined the handoffs with their owners present.
 
-A major integration touching marketing, digital health, engineering, and the core commerce experience.
+The integration crossed marketing, digital health, engineering, and commerce. Each leader held a different part of the customer journey. No shared view covered first awareness through subscription and refill.
 
-Every leader held a piece of the customer journey and believed they held the whole thing. The organization had divided the journey into departments. Customers had declined to do the same.
+I built a board system for the session, wrote a moderator guide, and prepared a scenario matrix. Concrete customer situations gave the group something to follow across departmental boundaries.
 
-No shared end-to-end view existed of how a customer moves from first awareness to subscription to refill.
+I led the walk-through. When a handoff failed, the people responsible for both sides were present to examine it.
 
-**Designing the session**
-
-Built a custom board system for this specific session rather than pulling a generic template, because a template shapes the conversation toward whatever the template was originally for.
-
-Wrote a moderator guide so facilitation quality did not depend on how sharp I happened to be that morning. Constructed a scenario matrix so the group worked concrete customer situations. The matrix kept the conversation attached to gravity.
-
-**What came out**
-
-A documented end-to-end journey map with C-level participation and buy-in. Handoff failures surfaced live, in the room, with the owners of both sides present. That conversation does not happen over email.
-
-The assets outlived the session. Board system, moderator guide, and scenario matrix all exist for future journey work.
-
-The workshop mattered partly because the people in the room had budgets attached to their opinions. And it demonstrated that design runs executive working sessions, not just screens.
+The group produced an end-to-end journey and a record of the gaps. The boards, guide, and scenarios remained available for future sessions.
 
 ---
 
 ## Navigation Decisions Were Being Made on Taste
 
-**Skim:** Moderated usability study, ten participants. Evidence-backed IA findings feeding a navigation redesign. Established the research template.
+**Skim:** Moderated research used to guide the catalog’s entry points and document menu-discovery problems.
 
-Site navigation was being decided by preference. Mega menu, category structure, shop-by paths, none of it tested against a single real user.
+Navigation choices were being discussed internally without testing them against people using the site. Knowing the catalog made the structure look more obvious than it was.
 
-Navigation is the front door to every product page in the catalog. Getting it wrong does not cost you one page, it costs you findability across everything behind it. Deciding that on taste is an expensive habit.
+I led moderated usability research into the navigation and information architecture. The study examined entry paths and how people discovered and used the mega menu.
 
-**The study**
+Testing supported Shop by Condition as an entry point and documented discoverability problems in the menu. I brought those findings into the redesign.
 
-Moderated usability testing with ten participants against the navigation and information architecture, synthesized into a report built to feed a decision rather than sit in a folder.
-
-Shop by Condition outperformed the alternative entry paths, which told us users arrive thinking about their problem, not our catalog structure. The mega menu had discoverability and visibility failures that no amount of internal debate had surfaced.
-
-**The recurring trap**
-
-We were testing the menu on people who already knew where the kitchen was. Expertise had become a blindfold with excellent credentials.
-
-My field has elegant terms for this. Cognitive load. Mental models. If those words do not mean anything to you, that is exactly the point, and it is the same gap a first-time visitor hits on our navigation.
-
-The durable result was procedural: preference had lost its monopoly.
+The team gained evidence for the decision and a report format for its next study. Preference lost its monopoly.
 
 ---
 
-## Reframing a Scope Fight as a Staffing Question
+## A Scope Decision With a Staffing Gate
 
-**Skim:** One page ended a circling launch scope debate. Phasing paths with staffing implications. Recommended path adopted with the hire as an explicit gate.
+**Skim:** Phasing options made the relationship between launch scope and staffing explicit.
 
-Leadership was debating launch scope. Everything at once, or phase it.
+Leadership was debating whether to launch the full scope or phase the work. The conversation had developed a stable orbit.
 
-The conversation had developed a stable orbit. Every stakeholder owned a different piece of the scope, and every piece is the important one when you own it.
+I set out the phasing paths on one page, with their staffing implications attached. The recommendation made the next phase conditional on the required hire.
 
-**Changing the question**
+That changed what the group needed to decide. Scope and staffing could be considered together, with an explicit gate instead of an assumed capacity.
 
-One page. Phasing paths laid out with their staffing implications attached, so the tradeoff became visible instead of theoretical.
-
-Recommended phasing weight loss first, with a full-stack designer hire named as the explicit gate to phase two. Not a suggestion, a gate. Phase two starts when the person starts.
-
-Written for a VP audience, which means short, decision-ready, tradeoffs on the surface.
-
-**The outcome**
-
-A circling debate converted into a bounded, decidable resourcing question. The recommended path was adopted with the hire formally tied to phase two.
-
-Scope could expand indefinitely. Staffing had the courtesy to be finite.
-
-A debate that refuses to resolve is often answering the wrong question very diligently.
+The recommended path was adopted with the hire tied to the next phase.
 
 ---
 
 ## Tokens Before Surface Area
 
-**Skim:** Design token foundation and second brand theme on a shared commerce platform. Accessibility enforced at the token layer. Built before the pages, not after.
+**Skim:** A documented design foundation for a second brand, built before its page count grew.
 
-A second brand needed to live inside an existing commerce platform. The company had no design system at all.
+A second brand needed to live inside an existing commerce platform. Without a shared foundation, every page would carry another set of styling decisions.
 
-Without a token layer, every surface for the new brand gets hand-styled. Every brand adjustment becomes a manual hunt through files. Inconsistency compounds with each page, and it compounds quietly, so you do not notice until the cleanup is enormous.
+I defined color, typography, and spacing tokens, then layered the brand over that base. I documented button variants and their accessibility constraints.
 
-The first layer was going to either save us work or manufacture it.
+I evaluated a component foundation and recorded the recommendation and reasoning. The next designer had a place to start and a record of why the choices had been made.
 
-**The build**
-
-Theme tokens covering color, typography, and spacing, with the new brand theme layered on top of the base. Four button variants with accessibility flags baked into the tokens rather than checked afterward. Evaluated a component substrate and documented the recommendation with reasoning.
-
-Governance model established first, so the system leads the build instead of chasing it.
-
-**What it bought**
-
-The new brand launched coherent, on shared infrastructure, instead of arriving as a pile of one-off styles nobody could maintain.
-
-Accessibility stopped depending on somebody remembering to be virtuous on page seventeen.
-
-Brand changes now happen once, at the token layer, rather than page by page. And the incoming designer inherits a documented foundation to build against on day one instead of a folder of conventions living in someone's head.
-
-Everything is designed, everything. Including whether your next page is easy or expensive.
+The brand launched on shared infrastructure. Brand adjustments could happen in the token layer. Testing the finished experience remained necessary; the tokens did not settle every accessibility question.
 
 ---
 
 ## Estimates That Excluded the Work
 
-**Skim:** Cross-functional prioritization workshop. Timeline math corrected on the record. Unestimated work named as the structural gap. Agreed system authored by the CMO.
+**Skim:** A prioritization workshop made missing work visible and produced an agreed approach for the next round.
 
-Landing page work was contested ground. Which pages, what order, what timeline, built by whom.
+Landing-page work was being discussed in terms of which pages, what order, and what timeline. The estimates did not include every category of work the team needed to do.
 
-Estimates were circulating that quietly excluded entire categories of work. Not maliciously, just by habit, because the excluded work is invisible to people who do not do it.
+I ran a prioritization session with cross-functional leadership, then turned the output into summaries and a process record.
 
-**Facilitation, then the carpentry**
+The discussion confirmed that the creative estimate excluded wireframing. Component design and content-template work were missing from the timeline too.
 
-Ran a prioritization and alignment workshop with cross-functional leadership. The session produced raw material. I stayed for the carpentry: executive summaries, a process document, and talking points for the follow-up one-on-one.
+The marketing executive proposed the template structure that became the agreed approach. That authorship mattered: the process had an executive co-owner.
 
-Two corrections landed on the record during the session. The creative estimate excluded wireframing entirely, confirmed by the person who owned the estimate. And wireframing, reusable component design, and content template work appeared in no timeline anywhere, which nobody had said out loud before.
-
-The CMO proposed the two-template wireframe structure that became the agreed system.
-
-**Why authorship matters**
-
-That last detail is not incidental. The system had an executive co-owner before it had a chance to become "the UX process." My recommendation could be reconsidered. One carrying her handwriting was harder to dislodge.
-
-The facilitator has an unusual job: engineer the collision, then avoid standing in the crater.
-
-Future timelines have to account for wireframing, components, and templates now, because the omission is documented and cannot be quietly repeated.
+The record gave future estimates a list of work they needed to include.
 
 ---
 
 ## Making UX Visible in the Numbers
 
-**Skim:** KPI framework pairing experience metrics to business outcomes. Scorecard across three data sources. Voice of customer program replacing NPS with CSAT and CES.
+**Skim:** An experience scorecard and customer-feedback plan that connected research questions to business outcomes.
 
-Design had an accounting problem. Value went in; attribution did not come back out.
+Experience quality needed a standing way to be measured. Joint conversion results answered some questions, but they did not provide a complete view of the customer experience.
 
-Conversion and test wins were joint efforts reported entirely through another team. Worse, the company had no standing way to measure experience quality at all. No framework, no instruments, no customer feedback program.
+I built a framework that paired experience measures with business outcomes. The scorecard drew on real user monitoring, moderated testing, and survey data. I used each source for the questions it could answer.
 
-**Building the measurement layer**
+I also evaluated a customer-feedback approach focused on satisfaction and effort at particular interactions. That included a vendor recommendation.
 
-A standing KPI framework structured on the HEART model, pairing experience metrics directly to business outcomes so the connection is explicit rather than implied.
-
-A scorecard drawing on three data sources: real user monitoring, moderated testing, and survey data. Each instrument had a blind spot, so I did not give any of them sole custody of the truth.
-
-A voice of customer program replacing NPS with CSAT and CES, including a structured vendor evaluation. NPS tells you a number moved. CSAT and CES tell you which experience caused it, which is the only version a designer can act on.
-
-**Result**
-
-A repeatable scorecard connecting experience to business outcomes, and a feedback program ready for instrumentation with a vendor recommendation attached.
-
-Experience work now reports under its own name instead of being absorbed.
-
-If UX never appears in the numbers, eventually someone asks why it appears in the budget.
+The scorecard was repeatable. The feedback program was ready for instrumentation, which remained a next step.
 
 ---
 
-## The Alternative to Five Sites Was Five Teams
+## One Platform, Five Properties
 
-**Skim:** A single-brand storefront hand-edited product by product, rebuilt as a platform. Token-based theming, source attribution, one-button deploys, one source of truth. Launch time fell from six weeks to two. Five properties. I built the core framework with a part-time engineer; other designers launched the branded sites, while internal engineering supplied the microservices and APIs. In one measured year the platform carried 47% of company revenue growth.
+**Skim:** A shared commerce framework that cut a branded-property launch from six weeks to two.
 
-The first version was embarrassing and it was supposed to be.
+The first storefront had sale pricing typed in by hand, one product at a time. It sold, and leadership wanted more properties. Repeating the site would also repeat the maintenance.
 
-A branded storefront on an off-the-shelf theme, sitting alongside the core marketplace. Sale pricing and strikethrough values were typed in by hand, per product, every time a promotion changed. The question it existed to answer was narrow: will people buy from a focused brand experience rather than from a marketplace showing them everything at once.
+I brought a roadmap for a shared platform. Each release replaced a manual task with a capability the next property could use.
 
-They did. Within a year the thing became part of core business, and leadership wanted more of them.
+Brand settings and theme tokens separated identity from the application. Shared product and provider data let every property use information from the same services. Scheduled promotions replaced hand-edited offers.
 
-That is the moment where a team usually agrees, clones the repository, and inherits the manual work five times over.
+Source attribution connected the storefront to acquisition. Promotion, copy, and messaging changed by traffic source, down to affiliate identifiers. The page said what the ad promised.
 
-**What I argued for instead**
+The framework covered marketing pages through cart and checkout. Deployment could target one property or all of them.
 
-I pushed back and brought a roadmap. Not a bigger version of the site. The machine that makes sites.
+I owned the roadmap, experience, and front-end work for the core framework. A part-time engineer and I built and maintained it. Other designers launched the branded properties. Internal engineering built the microservices and APIs we connected to.
 
-Phased deliberately, because the alternative was a rewrite nobody would fund. Each release traded a piece of manual labor for a capability, and each capability made the next site cheaper than the one before it.
+A fully branded property went from six weeks to launch to two. Five properties ran on the platform.
 
-A content management layer with a brand section, so identity became configuration rather than a build.
+In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company’s revenue-growth increment in that year.
 
-Token-based theming, which meant an entirely bespoke storefront could be assembled without touching the underlying application.
-
-One source of truth for products, providers, locations, and reviews, consumed by every property. As engineering exposed new data, every site inherited it at once.
-
-Scheduled promotions with multi-phase logic, retiring the hand-typed strikethrough that started all of this.
-
-Campaign and source attribution, so promotion, copy, and messaging changed according to where a visitor arrived from. Search engines, social, email, paid, and specific affiliate identifiers each got their own treatment, and the site spoke in the language of the ad that brought the person there.
-
-The custom platform covered the whole funnel, from marketing pages through cart and checkout.
-
-And a deployment pipeline with one button per environment. Development, staging, production. One property or all of them.
-
-**What it cost and what it returned**
-
-Standing up a fully branded ecommerce property went from six weeks to two. A 66% reduction, and it held across five properties.
-
-One of the five was later retired. Winding it down cost about as little as standing it up, which is the half of the argument nobody makes when they are asking for a new site. A platform that makes launches cheap makes mistakes cheap too.
-
-The core ecommerce framework was built and maintained by me and a part-time offshore engineer. Other designers launched the branded properties. The internal engineering team built the microservices and APIs the framework connected to.
-
-Ownership was part of the value. The platform was a proprietary asset the business owned, so the roadmap stayed with us. We were building the asset, not renting the platform code.
-
-In one measured year the properties accounted for 47% of the company's revenue growth, 27% of total lead capture, and 20% of overall revenue. Smaller in absolute revenue than the core marketplace, and a disproportionate share of the growth, which is what a growth lever looks like when it is working.
-
-**The staffing argument underneath the technical one**
-
-Other designers launched the individual branded properties. I owned the roadmap, the core framework, and hands-on design and front-end work; the part-time engineer worked with me on the framework.
-
-The default path to five storefronts is five teams. Every additional property brings its own content updates, its own promotion calendar, its own deployment, its own bugs, and the headcount request follows about six months later.
-
-We did not boil the ocean and we did not staff up to survive our own success. Automation absorbed the repetitive work, and the people spent their hours on the parts where judgment changes the outcome.
-
-You create velocity by making the work smaller.
+The company owned the custom platform. Shared capabilities absorbed work that would otherwise recur across the properties. You create velocity by making the work smaller.
 
 ---
 
 ## Building the Function That Was Not There
 
-**Skim:** Design system, research practice, review model, measurement framework, and facilitation capability. All net-new in year one, alongside shipping a major integration.
+**Skim:** A design practice built alongside delivery, with foundations the next project could use.
 
-No prior team. No design system. No research practice. No operating model. No measurement.
+A product integration was moving forward before a design practice existed. There was no design system, research practice, or experience-measurement framework to inherit.
 
-A function standing up from zero while simultaneously shipping a major product integration and covering seven-plus workstreams with two people.
+I made the foundations part of the delivery work. The token layer had governance. Research came with a repeatable report format. Executive workshops had prepared boards, a moderator guide, and scenarios.
 
-Visible work has an unfair advantage: people clap for it. Infrastructure rarely gets applause. It would have been easy to spend the year shipping screens and leave the machinery untouched.
+I also built an experience scorecard and prepared a customer-feedback program with a vendor recommendation. Instrumentation remained a next step.
 
-**What got built alongside the delivery work**
-
-A token foundation with governance, before the surface area scaled. A usability testing practice with a repeatable report format. A review operating model with rules and routing. A KPI framework and customer feedback program. Executive facilitation capability with reusable assets.
-
-**The through line**
-
-Successful UX often leaves very poor trophies. Nobody praises a review that ended cleanly, a timeline that included all the work, or a page that inherited its brand automatically.
+Subsequent work could use those materials. The team had documented decisions and working formats to begin from.
 
 The artifact was stability. Portfolio photography remains challenging.
-
-If the second version costs as much as the first, I probably have not finished designing the first one. Wherever the work repeated, I tried to leave machinery behind.
-
-I like decisions to leave a paper trail and dead arguments to remain dead.
-
-There is always a better way.

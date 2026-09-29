@@ -11,7 +11,7 @@ import AtmosphereController from '@/components/ui/AtmosphereController'
 export const metadata: Metadata = {
   title: 'Jacob Medley, Product & Design Leader',
   description:
-    'Jacob Medley, product and design leader. Explore work in design leadership, shared commerce platforms, research, and AI product experiences.',
+    'Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

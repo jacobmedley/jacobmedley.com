@@ -187,3 +187,13 @@ Recorded because a rule that suppresses a genuine through-line is doing the
 opposite of its job. This is the third rule in this file written without
 provenance that turned out to constrain Jacob's own voice, after the slogan
 truncation and "corpus" over "warehouse."
+
+## September 29, 2026: reviewed website direction (B87)
+
+The current site positions Jacob as a product and design leader and coach. Describe the actual decisions, ownership, and team responsibilities. Retain historical hands-on work when material to the story. Do not relabel it as delegation or management.
+
+Individual case studies no longer carry Tools or Technologies inventories. This overrides older instructions to retain an inventory merely as evidence of period context. Material implementation mechanisms, formal course names, employment records, and diagram labels remain eligible when accurate.
+
+Positive former-employer names and the official Hydra name remain permitted under the existing resolved naming rules. The anonymous reading pages remain anonymous. No new publication permission is created by this review.
+
+Do not claim that edited writing will pass an AI detector. No detector service was used and no text was sent to an outside detector.

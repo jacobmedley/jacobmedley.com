@@ -32,7 +32,7 @@ const cardKickers: Record<string, string> = {
 const cardTitles: Record<string, string> = {
   'split-test': 'Testing the experience',
   'call-center-ux': 'When nobody can take the call',
-  'marketing-auto': 'A small team. A campaign built for scale.',
+  'marketing-auto': 'One campaign, several audiences',
   workshops: 'Getting teams to a shared decision',
   roadmap: 'Choosing what comes next',
   personas: 'Understanding the people buying the product',
@@ -65,8 +65,7 @@ export default function FullStackSection() {
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
               <p className="display-1 full-stack-intro">
-                The work ranges from a customer stuck on hold to a team deciding what to build next.
-                These examples show how I approach both.
+                Sometimes the next step belongs to a customer. Sometimes a team needs to decide what to build. These examples show how I approach the work, including the visual ideas that grew out of it.
               </p>
             </div>
           </div>

@@ -17,7 +17,7 @@ export default function StudyVisual({ kind }: { kind: string }) {
           ))}
         </div>
         <div className="cs-connectors"><i /><i /><i /><i /><i /></div>
-        <div className="cs-foundation"><span className="cs-foundation-icon">✳</span><div><strong>One commerce platform</strong><span>Designed once. Inherited by every property.</span></div></div>
+        <div className="cs-foundation"><span className="cs-foundation-icon">✳</span><div><strong>One commerce platform</strong><span>Shared capabilities across the properties.</span></div></div>
         <div className="cs-foundation-parts"><span>Theme tokens</span><span>Shared data</span><span>Promotions</span><span>Deployment</span></div>
       </div>
     )
@@ -52,7 +52,7 @@ export default function StudyVisual({ kind }: { kind: string }) {
           <div className="cs-research-question">How do customers<br />look for products?</div>
         <div className="cs-path-option"><span>Catalog structure</span></div>
           <div className="cs-path-option selected"><span>Shop by Condition</span></div>
-          <div className="cs-diagram-foot">Test finding: customers used their health need as an entry point.</div>
+          <div className="cs-diagram-foot">Researching the catalog entry points</div>
       </div>
     )
   }

@@ -1,5 +1,57 @@
 # Status
 
+## September 29, 2026: complete reviewed copy package, local checkpoint
+
+B80–B87 are APPLIED locally after registration and verification. The complete
+September 28 review packet is implemented: homepage and published experience,
+14 project dialogs, six reading pages, 14 source narratives, shared interface
+copy, image descriptions, design-reference wording and writing governance.
+The five approved featured cards, B79 reconciliation, publication holds, original
+images, formal employment records, proof indexes and canonical slogan remain intact.
+No additional reading routes were published.
+
+- Worktree: `C:\Users\jacob\.codex\worktrees\reviewed-copy\jacobmedley.com`.
+- Branch: `codex/reviewed-copy-implementation-20260929`.
+- Checkpoint: the commit containing this STATUS entry and the linked implementation
+  report; resolve its exact ID with `git log -1` on this branch.
+- Packet parent: `49d92c0ce18bf2b79ba8e16713e6cd5d40bf04a4`.
+- Reviewed application base / rollback: `3973411562db116044a337de7586b236ea306260`.
+- No push, merge to main, PR, or deployment. Remote main still equals the reviewed
+  base after the acceptance fetch. Other checkouts and worktrees were preserved.
+- Local checkpoint is intended to be clean with this session's lock released at
+  closeout. The isolated worktree remains available for Jacob's review.
+- Running preview: `http://localhost:8090/`, Python PID 64316, serving this
+  worktree's `out/`, bound to loopback. Use localhost for the licensed icons.
+
+Passed: TypeScript, focused authored TS/TSX lint, final production build/static
+export, export asset checks (288 images / 104 active references), nine focused
+reviewed-copy source groups, design-reference checks, and diff whitespace checks.
+Browser review covered all 14 dialogs and all six reading pages on desktop,
+mobile and enlarged root text; all six reading pages also passed actual 200%
+text enlargement. Focus/close/return, image loading, headings, navigation, reduced
+motion, homepage disclosures and the demo controls were checked. The demo's cycle
+measured 5.008 seconds, distinct from the original five-minute feed.
+
+Scoped fixes resolved a narrow Hydra mark overflow and enlarged reading-text
+wrapping/anchor issues. Two additional inaccurate BumblebeeMD image descriptions
+were registered under B86 before correction. No reviewed edit was skipped.
+
+One transient MutationObserver console error occurred around design-reference
+navigation in the long-running browser session; a fresh-tab check did not reproduce
+it, and no related functional failure was observed. This is recorded, not claimed
+as a clean console run. No full accessibility certification, cross-browser audit,
+financial workbook reaudit, live-site or access-gate verification was performed.
+
+Genesis Exchange remains retired/read-only under Jacob's current direction.
+No inbox or coordinator-owned record was written and no other agent was notified.
+The complete local coordinator handoff, changed-scope map, verification evidence,
+preview command and limits are in
+[IMPLEMENTATION.md](reviews/all-copy-review-20260928/IMPLEMENTATION.md).
+
+Next: Jacob reviews the local preview/checkpoint. Any publication is a separate
+explicit request with fresh pre-publish checks. No implementation work remains
+for the reviewed package; the transient console observation is documented above.
+
 ## September 27, 2026: career reconciliation and public-copy cleanup
 
 Career reconciliation is current through REC-0083; REC-0084 is the next global

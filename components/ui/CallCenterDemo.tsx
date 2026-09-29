@@ -5,7 +5,7 @@ import { useMotionPaused, useReducedMotion } from './MotionControls'
 
 const STATES = {
   ready: { label: 'Ready', icon: 'fa-phone-volume', header: 'Ready to help', banner: 'Our team is ready. Call for help choosing a plan.', title: 'Find your dental savings plan.', body: 'Talk to our team or explore plans online.', action: 'View plans', offer: 'No offer. Phone support is available.' },
-  busy: { label: 'Busy', icon: 'fa-clock', header: 'High call volume', banner: 'Skip the wait. Explore plans online while the team is unavailable.', title: 'Keep smiling. Skip the wait.', body: 'Our team is busy. You can explore plans online.', action: 'View plans', offer: 'Example busy state.' },
+  busy: { label: 'Busy', icon: 'fa-clock', header: 'High call volume', banner: 'Skip the wait. Explore plans online while the team is unavailable.', title: 'Explore plans while we’re busy.', body: 'Our team is busy. You can explore plans online.', action: 'View plans', offer: 'Example busy state.' },
   closed: { label: 'Closed', icon: 'fa-moon', header: 'Call center closed', banner: 'The call center is closed. You can explore plans online.', title: 'Your next step is online.', body: 'Explore dental savings plans online.', action: 'View plans', offer: 'Example closed state.' },
 } as const
 type State = keyof typeof STATES
@@ -111,8 +111,8 @@ export default function CallCenterDemo() {
         </div>
         <div className="demo-controls">
           <span className="demo-eyebrow">Illustrative interaction demo</span>
-          <h5>Call center</h5>
-          <p>Watch the site respond to call-center availability.</p>
+          <h5>When availability changes</h5>
+          <p>This demonstration shows how the site responds to call-center availability. The original status feed checked every five minutes; this preview cycles every five seconds.</p>
           <div className="demo-state-buttons" role="group" aria-label="Call center state">
             {(['auto', ...ORDER] as const).map(option => <button key={option} type="button" aria-pressed={mode === option} onClick={() => choose(option)}>
               <Icon name={option === 'auto' ? 'fa-arrows-rotate' : STATES[option].icon} />{option === 'auto' ? 'Auto' : STATES[option].label}
@@ -120,7 +120,7 @@ export default function CallCenterDemo() {
           </div>
           <div className="demo-selected-state" aria-live={mode === 'auto' ? 'off' : 'polite'} aria-atomic="true"><Icon name={current.icon} /><div><strong>{current.label}</strong><p>{current.offer}</p></div></div>
           <div className="demo-highlight-control">
-            <label htmlFor="demo-highlight">Sections</label>
+            <label htmlFor="demo-highlight">Highlight changing sections</label>
             <button id="demo-highlight" type="button" role="switch" aria-checked={highlight} aria-describedby="demo-highlight-help" onClick={() => setHighlight(!highlight)}><span aria-hidden="true" /></button>
           </div>
           <p id="demo-highlight-help" className="demo-help">Emphasize the areas that change.</p>

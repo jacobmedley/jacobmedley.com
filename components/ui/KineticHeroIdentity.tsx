@@ -214,9 +214,9 @@ export default function KineticHeroIdentity() {
         <span className="kinetic-brace kinetic-brace-left" /><span className="kinetic-brace kinetic-brace-right" />
         <span className="kinetic-type-brace is-left">{'{'}</span><span className="kinetic-type-brace is-right">{'}'}</span>
       </div></div>
-      <p className="sr-only">Product and design leader</p>
+      <p className="kinetic-role">Product &amp; Design Leader</p>
       <div className="kinetic-closing">
-        <p className="kinetic-build">I build the teams and systems that make the work smaller, so people can launch sooner, learn faster, and grow what works.</p>
+        <p className="kinetic-build">I lead product and design teams. I make the work smaller and give people the authority to move it forward.</p>
         <p className="kinetic-better"><strong>There is always a better way, together we will find it.</strong></p>
         <div className="hero-rule-wrap">
           <hr className="solid-center rule-heading" />

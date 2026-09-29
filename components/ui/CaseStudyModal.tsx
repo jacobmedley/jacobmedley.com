@@ -438,11 +438,8 @@ function BriefFollowup({ project }: { project: Project }) {
 }
 
 /*
- * Legacy modal copy occasionally carries an inline anchor (e.g. the J.R.
- * Hernandez LinkedIn link in modal-split-test.html 40). Prose in the data
- * layer is plain `string`, so links are authored markdown-style as
- * `[label](https://url)` and expanded here. Strings without the marker are
- * returned untouched, so every existing paragraph renders exactly as before.
+ * Project prose can contain Markdown-style links. Expand them into anchors
+ * while leaving other text unchanged.
  */
 const INLINE_LINK_SPLIT = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g
 

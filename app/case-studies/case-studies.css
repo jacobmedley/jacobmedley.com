@@ -232,6 +232,7 @@
 .cs-at-glance > div + div { padding-left: 32px; border-left: 1px solid var(--cs-line); }
 .cs-at-glance .cs-eyebrow { font-size: 14px; color: var(--cs-accent); }
 .cs-at-glance p { font-size: 16px; line-height: 1.55; margin-top: 12px; }
+.cs-detail { overflow-wrap: anywhere; }
 .cs-story-layout { display: grid; grid-template-columns: 220px minmax(0, 720px); justify-content: space-between; gap: 60px; padding-top: 76px; }
 .cs-story-sidebar { align-self: start; position: sticky; top: 35px; }
 .cs-story-sidebar nav { display: flex; flex-direction: column; }
@@ -261,6 +262,7 @@
 .cs-next-study { padding-block: 42px 70px; border-top: 1px solid var(--cs-line); }
 .cs-next-study > .cs-eyebrow { color: var(--cs-muted); }
 .cs-next-study > a:not(.cs-text-link) { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 24px 30px; }
+.cs-next-study > a > div { min-width: 0; }
 .cs-next-study > a > div > span { font-size: 12px; color: var(--cs-muted); }
 .cs-next-study h2 { font-size: clamp(25px, 3vw, 40px); line-height: 1.2; font-weight: 500; letter-spacing: -1px; margin-top: 10px; }
 .cs-next-study .cs-open-circle { width: 56px; height: 56px; }
@@ -367,19 +369,19 @@
   .cs-at-glance p { font-size: 15px; margin-top: 8px; }
   .cs-story-layout { display: block; padding-top: 0; }
   .cs-story-sidebar { position: sticky; top: 0; z-index: 10; background: var(--cs-paper); padding-block: 10px; border-bottom: 1px solid var(--cs-line); margin-bottom: 40px; }
-  .cs-story-sidebar nav { flex-direction: row; justify-content: space-between; gap: 6px; }
+  .cs-story-sidebar nav { flex-direction: row; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
   .cs-story-sidebar nav > .cs-eyebrow, .cs-sidebar-note { display: none; }
-  .cs-story-sidebar nav a { padding: 10px 3px; font-size: 10px; border-bottom: 0; }
+  .cs-story-sidebar nav a { flex: 1 1 min-content; overflow-wrap: normal; padding: 10px 3px; font-size: 10px; border-bottom: 0; }
   .cs-story-sidebar nav a > span { display: none; }
   .cs-story-sidebar nav a .cs-nav-label-full { display: none; }
   .cs-story-sidebar nav a .cs-nav-label-mobile { display: inline; font-size: inherit; color: inherit; }
-  .cs-story-section { scroll-margin-top: 78px; margin-bottom: 40px; padding-bottom: 40px; }
+  .cs-story-section { scroll-margin-top: 13rem; margin-bottom: 40px; padding-bottom: 40px; }
   .cs-story-section h2 { font-size: 29px; }
   .cs-story-section > p:not(.cs-eyebrow) { font-size: 16px; line-height: 1.8; }
   .cs-decision-callout { padding: 23px; }
   .cs-decision-callout > p { font-size: 18px; }
   .cs-results-grid { display: block; padding-block: 10px; }
-  .cs-results-grid > div { display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--cs-line); }
+  .cs-results-grid > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: baseline; gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--cs-line); }
   .cs-results-grid dt { font-size: 23px; letter-spacing: -.5px; }
   .cs-results-grid dd { font-size: 12px; margin-top: 0; }
   .cs-story-section blockquote { font-size: 24px; }

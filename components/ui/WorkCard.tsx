@@ -34,7 +34,6 @@ export default function WorkCard({ project, onOpen }: { project: Project; onOpen
           <p className="featured-work-summary">{project.summary}</p>
           <div className={styles.featuredFooter}>
             <span className={styles.featuredLink}>View <DirectionalArrow /></span>
-            <span>People <b>·</b> Process <b>·</b> Better outcomes</span>
           </div>
         </div>
         <button type="button" className="featured-work-open" onClick={() => onOpen?.(project.id)}

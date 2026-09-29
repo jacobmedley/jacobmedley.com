@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B79. All APPLIED unless marked otherwise.
+**Status:** edits B0 through B87. B80–B87 APPLIED locally (not deployed); earlier edits APPLIED unless marked otherwise.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -2220,3 +2220,1397 @@ Modal opening heading: `The Funnel Was Talking`
 Modal opening copy:
 
 > The redesign started with evidence. Visitor behavior, device performance, heat maps, and scroll maps showed how people were moving through the experience. I used those signals to shape the site and lead flow, then worked across PPC, SEO, and affiliate channels on conversion strategy.
+
+---
+
+# September 29, 2026: reviewed whole-site copy implementation
+
+Source: Jacob's direct implementation request and the complete repository review packet
+at `49d92c0ce18bf2b79ba8e16713e6cd5d40bf04a4`, reviewed against
+`3973411562db116044a337de7586b236ea306260`. B80 through B87 were unoccupied.
+The full replacement copy and scope are registered below before application.
+These entries supersede older prose only on the stated website surfaces. B79
+factual rulings, privacy holds, and separately owned external records remain in force.
+Implementation: APPLIED locally after source, build, and rendered acceptance on September 29, 2026. See `docs/reviews/all-copy-review-20260928/IMPLEMENTATION.md` for evidence and limits.
+Instructions and evidence-placement notes are not public copy. No publication is authorized.
+
+## B80. Leadership direction and individual-study tools [APPLIED]
+
+Position Jacob as a product and design leader and coach. Describe actual judgment, ownership, delegation, and systems. Do not manufacture management responsibility for historical hands-on work.
+
+Remove Tools and Technologies inventories from every individual case study. The current modal renderer already omits them; clean up the remaining active data and other consumers. Do not add replacement tool badges. Keep historically material implementation detail where it explains a decision. This is not a ban on architecture labels, course titles, or employment-history references.
+
+Keep the separate resume tools list unchanged. The explicit removal decision applies to individual case studies, not credentials or external resume workstreams.
+
+Keep the five approved card headlines, themes, and paragraphs below verbatim. Their following narratives are revised under the whole-copy-review authorization. Case-study artwork titles retain two lines: Case Study and the project name.
+
+Keep the focused WebMD build separate from broader campaign work. Keep the DentalPlans core framework separate from branded-site delivery and internal engineering services. Do not invent uplift, revenue, test winners, accessibility compliance, or completion claims.
+
+The six anonymous reading pages remain anonymous. Eight other source narratives remain unrendered. A gated or sanitized label is not proof of access control or permission to publish private details. No merge to main or publication is authorized by this handoff.
+
+## B81. Homepage, leadership, and online experience [APPLIED]
+
+### Hero
+
+**Visible role:** Product & Design Leader
+
+I lead product and design teams. I make the work smaller and give people the authority to move it forward.
+
+There is always a better way, together we will find it.
+
+Implementation: make the already approved role visible near the hero copy. Preserve the animated identity and reduced-motion behavior. Avoid duplicate screen-reader announcements.
+
+### Case studies introduction
+
+Selected work across products, brands, and design systems. Open a project to see the decisions and the work they produced.
+
+### How I work
+
+Sometimes the next step belongs to a customer. Sometimes a team needs to decide what to build. These examples show how I approach the work, including the visual ideas that grew out of it.
+
+### How I lead the work
+
+A customer experience is capped by what the people delivering it can actually do. I follow the problem back through the decisions and dependencies behind it. I set direction and ownership, then work on the conditions the team needs to deliver.
+
+Remove the repeated slogan here. Do not substitute another slogan.
+
+**Product judgment**
+
+I led experience research for a conversational assistant. Accuracy, uncertainty, and the route to human support were product decisions, with consequences for the person asking the question.
+
+**Shared systems**
+
+I look for work the next project would otherwise repeat. Brand settings, common patterns, and reusable product data give teams a foundation they can use again.
+
+**Evidence for decisions**
+
+I use research and experimentation to examine a decision. Business results belong beside that work, with enough context to explain what changed and what was actually measured.
+
+**People with authority**
+
+I make ownership explicit. People should know which decisions they can make and where they need another owner. I stay available without becoming the approval path for every next step.
+
+### Team building and mentorship
+
+- I walk beside junior staff, asking questions until they can name the next step, dependency, or piece they can move now.
+- I make authority explicit. People can assess the risk and decide without bringing every next step back for permission.
+- I stay available and remove blockers beyond their control.
+- We review outcomes together. We change the conditions behind mistakes and understand good results well enough to repeat them.
+
+### Expertise
+
+- Leadership: design practice, coaching, hiring, research operations, UX roadmapping, and executive facilitation.
+- Product: customer research, interaction design, information architecture, usability testing, conversion testing, and accessibility.
+- Systems: design systems, shared commerce platforms, brand architecture, and delivery practices.
+
+Retain the separately scoped resume tools list and its historical context.
+
+### Mutual of America Financial Group, Boca Raton, FL
+
+Retain **Senior UX Designer**, **2023 to 2025**.
+
+I led experience research and scoping for one internally built conversational assistant with two deployments. One served internal representatives through Salesforce, with a service designer on that work. The other lived on the public website. Retirement and financial account information made accuracy, security, and escalation central to the design.
+
+I raised hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.
+
+I wrote requirements for response feedback, system status, failures, human escalation, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. The assistant was taking the opening minutes of a service conversation.
+
+I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.
+
+### One Park Financial, Coconut Grove, FL
+
+Retain **Director of UX/UI & Product Design**, **2021 to 2022**.
+
+I led design within marketing, reporting to the SVP.
+
+I built the case for a shared pattern library and design system, secured backing, and shipped it. Product, marketing, and engineering had been describing the same components in different ways. Work that had taken two sprints could land in one.
+
+The product later ran for about a year without a dedicated design resource.
+
+I owned the design process and set the usability-testing practice. I worked across paid search, organic search, and affiliate channels on conversion strategy for the acquisition funnels.
+
+### DentalPlans.com, Plantation, FL
+
+Retain **Senior Manager of UX & UI Design / Product Manager**, **2015 to 2021**.
+
+The first storefront had sale pricing typed in by hand, one product at a time. It sold, and the company wanted more properties. I brought a roadmap for shared brand settings, scheduled promotions, product and provider data, and deployment. A fully branded property went from six weeks to launch to two.
+
+I owned the core ecommerce framework and built and maintained it with a part-time engineer. Other designers launched the branded properties. Internal engineering built the microservices and APIs the framework connected to.
+
+I led UX, UI, and front-end work across the commerce funnel. Source attribution meant the page said what the ad promised: promotion, copy, and messaging changed by traffic source, down to individual affiliate IDs.
+
+Five properties ran on the platform. In one measured year, finance credited them with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The company owned the custom platform.
+
+### Bluegreen Vacations, Boca Raton, FL
+
+Retain **Senior Digital Designer**, **2011 to 2015**.
+
+I evaluated the digital signage platforms and designed how the systems would connect. Four Winds Interactive handled signage and kiosks, Adobe Scene7 supplied dynamic media, and Aprimo Marketing Studio handled campaign operations. WordPress was the authoring surface.
+
+Campaign content had to cover 48 resorts, four seasons, and several personas. I owned UX and UI for an approach using a central asset library and shared data, so content variants could be reused across properties.
+
+The work involved a PHP engineer, a data engineer, an outside consultant, and the marketing managers who would use it. The publishing path had to make sense to people who had not built the integration.
+
+### Education and metadata
+
+Retain all nine credential names, issuers, links, degree details, and the contact address. These are factual records, not a tool-fluency section. Do not rewrite course titles to make them sound more senior.
+
+**Page title:** Jacob Medley, Product & Design Leader
+
+**Description:** Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.
+
+## B82. Five featured case studies [APPLIED]
+
+### WebMD
+
+**Theme:** Speed to Market
+
+**Card headline:** Trust Meets Commerce
+
+WebMD had the audience and brand equity. DentalPlans had the plans and ecommerce infrastructure. I designed and built the experience that brought them together, from finding a plan through checkout.
+
+Retain that card verbatim. Replace the opener and body with the following.
+
+#### From Campaign to Commerce
+
+When WebMD and DentalPlans.com became part of Internet Brands, we had a new route to customers. People were already visiting WebMD to understand a health or dental concern. We could connect a relevant dental need with a way to act on it.
+
+This strategy put a dental savings experience in that path. People could move from researching care to comparing plans, finding a dentist, and purchasing.
+
+**Contributions:** Product Design · UX Strategy · Prototyping · Front-end / Implementation
+
+#### The Strategy
+
+The entry point mattered. A person researching a dental need had a different question from someone already choosing a plan. I shaped the journey around the decision they were ready to make.
+
+**Intent**
+
+Start with people already researching a relevant dental need.
+
+**Relevance**
+
+Introduce DentalPlans as a solution when it matched what the customer was trying to accomplish.
+
+**Commerce**
+
+Create a clear path from learning to comparing plans, finding a dentist, and purchasing.
+
+Placement: immediately after the opener, using the existing informational-card treatment. These are conceptual cards, not a metric grid. Keep all seven original desktop/mobile pairs.
+
+#### Recognize Intent
+
+The homepage introduced dental savings and gave visitors a way to start looking. It needed to answer a basic question before asking for a purchase: is this relevant to the care I need?
+
+Evidence: homepage desktop and mobile pair. Search entry belongs here; search results belong in the next chapter.
+
+#### Support the Decision
+
+Choosing a plan meant answering more than a pricing question. Customers also needed to know which dentists participated.
+
+Plan search, comparison, and detail pages let people examine their options. Dentist search kept the provider question inside the same journey.
+
+Evidence: Plan Search Results, Plan Compare, Plan Details, and Dentist Search Results pairs.
+
+#### Move to Action
+
+The dentist profile gave people a specific provider to review. Cart and checkout then took the selected plan through purchase.
+
+Evidence: Dentist Details and Cart / checkout pairs.
+
+#### From design to revenue
+
+I wireframed and designed the site in two weeks. It was complete and live when the Director of Online Marketing returned.
+
+The following two weeks covered campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one.
+
+This completes the approved request to add substance to the main-site WebMD story. Do not create another WebMD route in this pass. Preserve the difference between the live site and the subsequent campaign work.
+
+### DentalPlans.com
+
+**Theme:** Building for Scale
+
+**Card headline:** From Storefront to Platform
+
+What began as one boot-strapped ecommerce site became a proprietary platform the company owned outright. Shared product data, reusable components, promotions, and deployment supported five branded properties and cut launch time from six weeks to two. The value stayed with us. We were building the asset, not renting the code.
+
+Retain that card verbatim. Replace the opener and narrative with the following.
+
+#### How Fast Can You Stand Up a Website?
+
+It started with a small request: “You know WordPress, right? How fast can you stand up a website?”
+
+The first storefront tested whether customers would buy through a focused brand experience. They did. More sites were now on the table, along with every manual update the first one needed.
+
+I owned the roadmap for the shared commerce framework that followed. Each release removed a piece of repeated work and left a capability the next property could use.
+
+**Contributions:** Product Ownership · Design Systems · UX & UI Design · Front-end Development
+
+#### What the properties produced
+
+In one measured year, finance credited the properties with the revenue and lead-capture shares below. Launch time is measured per property.
+
+- 47% of company revenue growth
+- 20% of overall company revenue
+- 27% of total company lead capture
+- 6 to 2 weeks to launch a property
+
+The growth figure is a share of the company’s revenue-growth increment in that year.
+
+#### What changed
+
+- Five branded properties shared the framework.
+- Each brand kept its own identity.
+- Product information and promotions could be reused.
+- The company owned the custom platform.
+
+#### Work the next site could reuse
+
+- Shared interface patterns and components
+- Brand identity kept separate from the application
+- Product information, dentist search, and cart services
+- Scheduled offers and expiry
+- Source attribution across acquisition channels
+- Documentation for designers and developers
+- Deployment for one property or all of them
+
+**Diagram heading:** How the platform fit together
+
+#### Start with one storefront
+
+We began with a single-product flow. Engineering built the service that passed the product into the existing cart. I designed the storefront with room for other products and brands.
+
+The first site sold, and leadership asked for a second. That gave the next release a reason to exist.
+
+Evidence: existing initial-MVP illustration.
+
+#### Carry the brand through checkout
+
+The second site needed its identity to continue into the cart. We added a cart that could take each brand’s treatment and services for shared product information.
+
+Common components could be used in landing pages and purchase flows. Testing a variant no longer meant rebuilding every part of it.
+
+Evidence: existing iteration-two illustration.
+
+#### Let every property inherit the update
+
+Product information moved into shared services. When engineering added or changed data, every property could use it. The interfaces used common patterns to present it.
+
+Acquisition work continued alongside the platform: landing pages, content for organic search, and tests across the purchase flow.
+
+Evidence: existing iteration-three illustration.
+
+#### Add dentist search without starting over
+
+I designed and built the dentist-search interface from the existing patterns and components. The platform could take another customer task without needing another set of interface conventions.
+
+Evidence: existing iteration-four illustration.
+
+#### Who built what
+
+A part-time engineer and I built and maintained the core framework and its enhancements. Other designers launched the branded properties. Internal engineering built the microservices and APIs the framework connected to.
+
+Keep the metrics, original platform diagrams, and four release illustrations. The results context stays adjacent to the numbers. Keep the credit paragraph visible; do not replace it with the value statements.
+
+### BumblebeeMD
+
+**Theme:** Reuse by Design
+
+**Card headline:** More Room for the Brand
+
+The shared platform gave us something valuable: less time rebuilding commerce and more time shaping the brand, refining the interface, and improving the experience. BumblebeeMD used that foundation to create a distinct digital health experience without starting over.
+
+Retain that card verbatim. Replace the opener and narrative with the following.
+
+#### The Platform Got Out of the Way
+
+BumblebeeMD needed to feel like its own digital health brand. Reusing the platform did not settle the visual decisions.
+
+We worked through the homepage, content pages, and the smaller interface details, including buttons, inputs, and icons. Shared commerce patterns gave that work a foundation.
+
+**Contributions:** Product Design · Design Leadership · Prototyping
+
+#### The first impression
+
+The homepage brought the brand into the customer’s first view of the product. Layout, imagery, and the interface treatment needed to work together on desktop and mobile.
+
+Evidence: existing homepage and lifestyle imagery. Preserve the original desktop/mobile association.
+
+#### A brand beyond the homepage
+
+Content pages needed the same attention. The brand had to remain recognizable as people moved further into the experience.
+
+Evidence: existing content-page and family imagery.
+
+#### The details people use
+
+Buttons, inputs, and icons carried the visual language into the working interface. These were the parts people would meet repeatedly.
+
+Evidence: existing buttons, inputs, and both icon sheets.
+
+Remove the unsupported Usability Testing badge. This does not assert that no testing occurred. It avoids using an unsubstantiated badge as case-specific evidence. Do not present BumblebeeMD as an employer or independent venture. Do not restore the superseded retirement-led opening.
+
+### Hydra
+
+**Theme:** A Shared Language
+
+**Card headline:** Failure to Communicate
+
+Product, marketing, and engineering were describing the same interface in different ways. I built Hydra to give them one vocabulary, pairing reusable patterns with front-end components across brands and technology stacks.
+
+Retain that card verbatim. Replace the opener and narrative with the following.
+
+#### Three Teams. One Vocabulary.
+
+The adoption constraint mattered. A shared interface could not depend on replacing the applications underneath it.
+
+I secured executive backing for Hydra and kept the changes in the front end. Product, marketing, and engineering could work from the same patterns across brands and back-end codebases.
+
+**Contributions:** Design Systems · Design Leadership · Systems Analysis · UI Engineering
+
+#### Eight ways to draw a button
+
+There were eight button treatments across the product. Error messages had their own variations in copy and presentation. The same action could look different from one part of the experience to the next.
+
+Every variant became another thing to design, build, and maintain.
+
+Evidence: existing button-fragmentation image and both error/input images.
+
+#### Give the components names people can share
+
+I defined the interface patterns and a vocabulary designers and engineers could both use. Elements, controls, components, modules, templates, and pages described how the system fit together.
+
+Evidence: existing nomenclature grid.
+
+#### Keep the applications, share the interface
+
+The changes stayed in the front-end markup. Applications could adopt the interface without replacing their functional back-end code.
+
+Variables controlled color, type, and treatment for each brand. Core patterns stayed shared, and applications could take design-system updates independently.
+
+Evidence: existing system diagram and both UI-element sheets.
+
+#### What the system left behind
+
+Work that had taken two sprints could land in one. The product later ran for about a year without a dedicated design resource.
+
+#### Why Hydra?
+
+Hydra had many heads and one body. The shared patterns served several products and brands.
+
+Evidence: existing Hydra supporting illustration.
+
+The two-sprints-to-one and about-one-year statements describe the design system and product continuity. Do not attach them to the corporate-site redesign or invent a universal delivery-speed improvement.
+
+### One Park Financial
+
+**Theme:** Behavior Into Decisions
+
+**Card headline:** Read the Signals
+
+I redesigned One Park Financial's corporate website and lead flow using Hydra as the foundation. Visitor behavior, device performance, heat maps, and scroll maps gave each interface decision something concrete to answer.
+
+Retain that card verbatim. Replace the opener and narrative with the following.
+
+#### The Funnel Was Talking
+
+The work extended beyond the corporate website. I owned the design process and usability-testing practice, and worked across paid search, organic search, and affiliate channels on conversion strategy.
+
+The redesign brought that work into the website and lead flow. Hydra supplied the interface patterns.
+
+**Contributions:** Product Design · User Research · Prototyping · Design Leadership
+
+#### Examine the entry point
+
+I used visitor behavior and device performance to decide where to look, then heat maps and scroll maps to examine the page. The homepage comparison shows the interface before and after that work.
+
+Evidence: existing homepage before/after pair.
+
+#### Explain the service
+
+The How It Works and About Us pages were part of the same experience. I reviewed them alongside the homepage and lead flow.
+
+Evidence: existing How It Works and About Us before/after pairs.
+
+#### Carry the experience into the next step
+
+The process module and responsive homepage show how the design was applied across the website. The shared system behind those interfaces is covered in the Hydra case study.
+
+Evidence: existing Our Process module before/after pair and full-homepage desktop/mobile pair.
+
+No conversion-lift figure is available in the cleared site record. The prose describes the research, scope, and redesign without inventing one.
+
+## B83. Nine supporting project stories [APPLIED]
+
+### split-test | Testing the experience
+
+#### What we tested, and why
+
+Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results.
+
+The examples here show the questions we tested and the designs we put in front of customers.
+
+**Contributions:** Experimentation · UX Strategy · Data Analysis · Implementation
+
+#### WebMD imagery
+
+The hypothesis was that imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site.
+
+Evidence: existing control and variants 1, 2, and 3.
+
+#### Savings calculator
+
+This test examined whether additional product information and a recognizable spokesperson might change customer response.
+
+Evidence: existing control and variant 1.
+
+Keep neutral Control and Variant labels. A source filename containing winner is not evidence of a measured winner. Do not introduce a lift, significance claim, or isolated causal explanation.
+
+### call-center-ux | When nobody can take the call
+
+**Summary:** I connected the website’s call invitation to call-center availability, working with the service leader, engineering, and business intelligence on the status feed.
+
+#### A phone number is a promise
+
+Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader and researched the platform’s API.
+
+I worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable.
+
+**Contributions:** Project Leadership
+
+#### Make the message match availability
+
+The feed checked call-center status every five minutes. The website changed its messaging and visual indicators, and we logged status changes and calls.
+
+A promotional code appeared only when the call center was unavailable.
+
+Evidence: existing status-flow illustration and illustrative interaction demo.
+
+### marketing-auto | One campaign, several audiences
+
+**Summary:** I led the design and development of a campaign whose content and incentives changed by audience and campaign stage.
+
+#### Content that followed the customer
+
+A campaign spanning several brands needed different content for different audiences and stages. I led its design and development across the touchpoints.
+
+The work connected marketing, business analysis, and data teams around shared data and reusable content.
+
+**Contributions:** UX & UI Design · Responsive Design · Design Leadership · Integration Strategy
+
+#### Give campaign managers control
+
+Content and incentives changed by audience and by where the customer was in the campaign. Campaign managers could manage those variants through the system.
+
+Evidence: existing before/after campaign email images.
+
+### workshops | Getting teams to a shared decision
+
+#### Design the decision before the session
+
+I start with the decision the group needs to make. Then I design the session around the people who can make it.
+
+The work has included customer journeys, product direction, and conversion-testing plans. I prepare the activities and materials so the group leaves with something the team can use afterward.
+
+**Contributions:** Workshop Facilitation
+
+#### Workshops in practice
+
+Keep the existing three workshop images and use these corresponding labels: Creative brainstorming; UX/UI strategy; Conversion-testing strategy.
+
+### roadmap | Choosing what comes next
+
+#### Are we there yet?
+
+I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start.
+
+The example shows the structure I used for a UX roadmap at One Park Financial. Project details are obscured.
+
+The plan has to survive new information. Visible dependencies make it possible to change the sequence when the scope changes.
+
+**Contributions:** UX Roadmapping
+
+#### What the roadmap needs to say
+
+**Title**
+
+Name the work and its purpose.
+
+**Owner**
+
+Identify who maintains the roadmap and answers questions about it.
+
+**Goal**
+
+State the business or customer outcome the work is intended to change.
+
+**Sequence**
+
+Use Now, Next, and Later to show priority. These are not delivery dates.
+
+**Initiatives**
+
+- Project name
+- Who needs the work
+- The need
+- Business objective
+- Dependencies
+
+#### A project on the roadmap
+
+**Who needs it**
+
+Name the people who will use or benefit from the work.
+
+**Need**
+
+State the problem the project must solve.
+
+**Business objective**
+
+Describe the intended outcome and how the team will judge it.
+
+**Owners and dependencies**
+
+Name who is responsible and whose work must happen first.
+
+#### Roadmap example
+
+Project details are obscured.
+
+Retain the reference-panel layout, project-card example, and roadmap image. Remove the unnecessary year and vendor-led heading from the case narrative; keep employment dates unchanged.
+
+### personas | Understanding the people buying the product
+
+#### A cost-conscious customer persona
+
+I worked with business intelligence and product marketing on persona materials for the DentalPlans audience. Frugal Francine represented customers weighing dental-plan choices around cost and value.
+
+The card brought demographics, motivations, preferences, channels, and reasons to buy into one reference for the team.
+
+**Contributions:** Persona Collaboration · Visual Design
+
+Frugal Francine is the existing fictional persona, not a colleague. Do not claim a new study, validated segmentation, or predictive accuracy.
+
+### reveal | The Choice Is Clear
+
+**Summary:** I developed copy and visual concepts for Reveal Clear Aligners around the idea of clarity.
+
+#### Clarity as a creative idea
+
+For Reveal Clear Aligners, I developed copy and visual concepts around clarity. Each execution needed to make sense on its own while belonging to the same campaign.
+
+**Contributions:** Concept Development · Collaboration · Visual Design
+
+#### Three expressions of clarity
+
+**Yup, It's That Clear:**
+
+State the idea with plain confidence.
+
+**So Clear, Like It's Not Even There:**
+
+Play with how little the aligner is meant to be noticed.
+
+**OMG, Your Aligner Is Showing:**
+
+Use visibility as the provocation.
+
+#### The concept in the work
+
+Keep all existing Reveal campaign images. Remove the additional hero paragraph that explains the same clarity theme a second time. Keep inline contributions and original campaign wording within the artwork.
+
+### viva | Viva Medicare
+
+**Summary:** I developed the Viva Medicare brand through research and cross-functional branding exercises. These examples show my visual explorations.
+
+#### A brand taking shape
+
+I developed a brand for Medicare and Medicare Supplement plans, working from product and customer research. Executive leadership and a cross-functional team took part in the branding exercises.
+
+The marks, palettes, and interface treatments shown here are my work. They document the directions explored for the brand.
+
+**Contributions:** Concept Development · Collaboration · Visual Design
+
+#### The mark
+
+Keep existing stacked and inline logo lockups.
+
+#### Color and visual direction
+
+Keep the existing color study and visual-style options.
+
+#### The brand in the interface
+
+Keep existing homepage hero concepts, buttons, inputs, and navigation images.
+
+### wrong | The Wrong Campaign
+
+**Summary:** A campaign concept for people researching dental care and worrying about cost.
+
+#### Challenge the assumption, keep the person
+
+The campaign addressed people researching crowns, fillings, and root canals who were concerned about cost. Its job was to introduce dental savings plans as another option.
+
+“Wrong” was the creative device. The design question was whether a blunt challenge could earn attention without making the person feel blamed.
+
+**Contributions:** Design Leadership · Collaboration · Visual Design
+
+#### The idea in the work
+
+Headlines carried the challenge. The visual variants included different ages and family situations. The landing page and hero versions were prepared for conversion testing.
+
+Keep all existing hero variants and the full landing page. Remove the redundant Campaign Concept label and the three short explanatory cards that repeat the prose. Retain the artwork as historical creative work. Do not claim a measured conversion improvement.
+
+## B84. Reading-page collection and six complete narratives [APPLIED]
+
+Read the adjacent CODEX-HANDOFF before applying. Preserve existing slugs, categories, tags, visual themes, proof indexes, and section IDs. This document supplies replacement prose, not new routes. The introductory paragraph after each card title is its `summary`.
+
+**Eyebrow:** Jacob Medley // Selected work
+
+**Title:** The thinking behind the work.
+
+**Description:** These stories follow the decisions behind the work: what I took ownership of, who I worked with, and what changed. Some led to a product. Others changed how the team could work.
+
+**Closing:** There is always a better way, together we will find it.
+
+## One platform. Five properties.
+
+**Existing route:** `/case-studies/one-platform-five-properties/`
+
+**Card title:** One platform. Five properties.
+
+I owned the roadmap for a shared commerce platform. Launching a branded property went from six weeks to two.
+
+**My role:** Product and design lead
+
+**Scope:** Platform roadmap, brand experience, and the commerce funnel
+
+**Collaboration:** A part-time engineer and I built and maintained the core framework. Other designers launched the properties; internal engineering supplied the microservices and APIs.
+
+**Discipline:** Platform strategy · Design systems · Delivery
+
+### At a glance
+
+- Each new storefront would inherit the first site’s manual work.
+- I phased a shared platform around the capabilities later properties could reuse.
+- A branded property went from six weeks to launch to two. Five properties used the platform.
+
+### Proof, in existing index order
+
+- **6 → 2:** weeks to launch a property
+- **5:** properties on one platform
+- **47%:** of company revenue growth in one measured year
+
+### The first site sold. Its manual work would multiply.
+
+Navigation label: **The first site**. Keep section ID `problem`.
+
+The first storefront had sale pricing and strikethrough values typed in by hand, product by product, every time a promotion changed.
+
+It answered the question it was built for: would customers buy through a focused brand experience? They did. Leadership wanted more properties, and copying the site would carry those updates into every new one.
+
+### I brought a roadmap for the work we could stop doing.
+
+Navigation label: **The roadmap**. Keep section ID `approach`.
+
+I argued for a platform and phased the work. Each release replaced a manual task with something the next property could reuse.
+
+Brand settings moved into the content management layer. Shared product and provider data meant engineering could add information once and every property could use it. Scheduled promotions replaced hand-edited offers.
+
+I owned the roadmap, experience, and front-end work for the core framework. A part-time engineer and I built and maintained it. Other designers launched the branded properties. The internal engineering team built the microservices and APIs we connected to.
+
+**Decision:** Build the shared capability before repeating the task on another property.
+
+### Each brand kept its identity.
+
+Navigation label: **The platform**. Keep section ID `solution`.
+
+Theme tokens separated brand choices from the application. A property could change its visual identity without becoming another copy of the code to maintain.
+
+Source attribution connected acquisition to the storefront. Promotion, copy, and messaging changed with the visitor’s source, down to individual affiliate identifiers. The page said what the ad promised.
+
+Deployment could target one property or all of them. The same framework covered marketing pages through cart and checkout.
+
+- Brand identity as configuration
+- Shared product and provider data
+- Scheduled offers across the commerce flow
+- Deployment for one property or all of them
+
+### The next launch had a starting point.
+
+Navigation label: **What changed**. Keep section ID `results`.
+
+Launching a fully branded property fell from six weeks to two. Five properties ran on the platform.
+
+In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company’s revenue-growth increment in that year.
+
+The company owned the custom platform. Its designers could spend more time on the parts that made each brand distinct, while the framework handled work the properties had in common.
+
+> You create velocity by making the work smaller.
+
+## Building an experience design practice
+
+**Existing route:** `/case-studies/building-a-design-function/`
+
+**Card title:** Building an experience design practice
+
+I built a design practice alongside a product integration, leaving research, systems, and measurement the team could use again.
+
+**My role:** Experience design practice lead
+
+**Scope:** Design foundations, research, measurement, and executive facilitation
+
+**Collaboration:** Work across product, engineering, marketing, and leadership.
+
+**Discipline:** Practice building · Governance · Research
+
+### At a glance
+
+- The integration started before the design practice existed.
+- I built reusable foundations inside the delivery work.
+- The team gained documented tokens, a research format, an experience scorecard, and workshop materials.
+
+### Proof, in existing index order
+
+- **Systems:** a token foundation with governance
+- **Research:** a repeatable testing practice
+- **Measurement:** an experience scorecard
+
+### Delivery could not wait for the practice.
+
+Navigation label: **The starting point**. Keep section ID `problem`.
+
+There was no existing design system, research practice, or experience-measurement framework. The function had to take shape while a product integration moved forward.
+
+Spending all our attention on the immediate screens would leave the next project with the same missing foundations.
+
+### Where work repeated, I left something the team could use.
+
+Navigation label: **Building alongside delivery**. Keep section ID `approach`.
+
+I built the token foundation before the page count grew. Usability testing came with a report format for later studies. Executive workshops had a board system, moderator guide, and scenario matrix.
+
+Measurement needed its own structure. I paired experience measures with business outcomes and drew on real user monitoring, moderated testing, and survey data. Each source answered a different question.
+
+**Decision:** Treat the foundations as part of delivering the product.
+
+### Give the next person a starting point.
+
+Navigation label: **The working practice**. Keep section ID `solution`.
+
+The team had documented tokens, a research-report format, an experience scorecard, and materials for executive workshops.
+
+The customer feedback program had a vendor recommendation and was ready for instrumentation.
+
+- Documented design decisions
+- Research the next study could build on
+- Experience measures tied to business questions
+- Workshop materials available after the meeting
+
+### The work outlived the first project.
+
+Navigation label: **What remained**. Keep section ID `results`.
+
+Subsequent work could use the foundations already written down. The team did not have to begin with an empty research report or invent another workshop format.
+
+The artifact was stability. Portfolio photography remains challenging.
+
+## Four executives, four different customer journeys.
+
+**Existing route:** `/case-studies/one-customer-journey/`
+
+**Card title:** A shared customer journey
+
+I designed and ran a working session that put the owners of the customer journey in the same room to examine its handoffs.
+
+**My role:** Workshop designer and facilitator
+
+**Scope:** Customer scenarios, the end-to-end journey, and cross-functional handoffs
+
+**Collaboration:** Executive participants across marketing, digital health, engineering, and commerce.
+
+**Discipline:** Executive facilitation · Journey mapping
+
+### At a glance
+
+- Each department held only part of the journey.
+- The working session followed concrete customer situations across departments.
+- The group documented the end-to-end journey and examined the gaps with their owners present.
+
+### Proof, in existing index order
+
+- **Shared view:** a documented end-to-end journey
+- **Handoffs:** examined with both owners present
+- **Reusable:** boards, guide, and scenario matrix
+
+### Customers had declined to organize themselves into departments.
+
+Navigation label: **The handoffs**. Keep section ID `problem`.
+
+The integration crossed marketing, digital health, engineering, and commerce. Each leader held a different part of the journey. No shared view covered first awareness through subscription and refill.
+
+Where those views stopped, the customer changed hands. That was where we needed the conversation.
+
+### I designed the conversation before the session.
+
+Navigation label: **The preparation**. Keep section ID `approach`.
+
+I built a board system for the integration and wrote a moderator guide. The session needed enough structure to work without depending on my improvisation.
+
+A scenario matrix kept the group on concrete customer situations. We could follow a person through the experience and examine what happened at each handoff.
+
+**Decision:** Put the owners of both sides of a handoff in the same conversation.
+
+### Follow the customer, then examine the gap.
+
+Navigation label: **In the room**. Keep section ID `solution`.
+
+I used the scenarios to walk the group through the journey. When a handoff failed, the people responsible for both sides were present to discuss it.
+
+The moderator guide kept the discussion on the customer situation and the work between departments.
+
+- A board system for the integration
+- Concrete customer scenarios
+- Both sides of the handoff present
+
+### A journey the group could return to.
+
+Navigation label: **The record**. Keep section ID `results`.
+
+The session produced a documented end-to-end journey and a record of the gaps discussed. The boards, guide, and scenario matrix remained available for later sessions.
+
+## How customers look for products
+
+**Existing route:** `/case-studies/navigation-beyond-opinion/`
+
+**Card title:** How customers look for products
+
+I led customer research into navigation and used the findings to guide category structure and shop-by paths.
+
+**My role:** Research direction and synthesis
+
+**Scope:** Navigation, category structure, and shop-by paths
+
+**Collaboration:** Research findings prepared for the team making navigation and information-architecture decisions.
+
+**Discipline:** Usability research · Information architecture
+
+### At a glance
+
+- Navigation decisions depended on internal preference.
+- Moderated testing examined how people entered the catalog and used the menu.
+- The findings informed the redesign and left a repeatable research-report format.
+
+### Proof, in existing index order
+
+- **Customer needs:** an entry point into the catalog
+- **Findability:** mega menu problems documented
+- **Evidence:** research feeding the redesign
+
+### We knew the catalog. Our customers did not.
+
+Navigation label: **The question**. Keep section ID `problem`.
+
+Category structure, mega menu choices, and shop-by paths were being debated internally. They had not been tested against people using the navigation.
+
+Knowing where a product lives changes how easy it looks to find. We needed to see the experience without that advantage.
+
+### Watch where people try to enter.
+
+Navigation label: **The study**. Keep section ID `approach`.
+
+I led moderated usability research into the navigation and information architecture. The study examined entry paths and whether people could discover and use the mega menu.
+
+**Decision:** Use observed behavior to guide the catalog’s entry points.
+
+### The customer’s need was a useful starting point.
+
+Navigation label: **The findings**. Keep section ID `solution`.
+
+Testing supported Shop by Condition as an entry point. It also exposed discoverability problems in the mega menu.
+
+I brought those findings into the redesign and organized the report around the decisions the team needed to make.
+
+- Shop by Condition as an entry point
+- Menu-discovery problems documented
+- Findings attached to design decisions
+
+### Preference lost its monopoly.
+
+Navigation label: **What changed**. Keep section ID `results`.
+
+The team had observed customer behavior to work from. It also had a research-report format for the next study.
+
+## A shared foundation for a second brand
+
+**Existing route:** `/case-studies/tokens-before-pages/`
+
+**Card title:** A shared foundation for a second brand
+
+I defined the brand rules and documented the shared design foundation before the page count grew.
+
+**My role:** Design-system foundation and governance
+
+**Scope:** Theme tokens, brand treatment, button variants, and component evaluation
+
+**Collaboration:** A documented foundation for the next designer and the shared commerce build.
+
+**Discipline:** Design tokens · Brand architecture · Governance
+
+### At a glance
+
+- A second brand needed a home on a platform without a design system.
+- I defined theme tokens and the rules for using them before more pages were built.
+- The brand launched on shared infrastructure with a documented foundation for later design work.
+
+### Proof, in existing index order
+
+- **Shared base:** color, typography, and spacing
+- **Brand layer:** a theme on existing infrastructure
+- **Governance:** decisions documented before the build
+
+### Every page could become another place to fix the brand.
+
+Navigation label: **Before the pages**. Keep section ID `problem`.
+
+A second brand needed to live inside an existing commerce platform. There was no design system.
+
+If each page carried its own styles, every brand adjustment would require another search through pages and files.
+
+### Decide what the pages should inherit.
+
+Navigation label: **The shared decisions**. Keep section ID `approach`.
+
+I defined color, typography, and spacing tokens, then layered the brand over that base. Button variants had documented accessibility constraints.
+
+I evaluated a component foundation and recorded the recommendation and reasoning. The next designer needed more than a set of unexplained values.
+
+**Decision:** Document the shared decisions before they spread across the interface.
+
+### Give the brand a place to change.
+
+Navigation label: **The foundation**. Keep section ID `solution`.
+
+The theme separated brand choices from the underlying platform. Tokens and button variants had a documented foundation that another designer could use.
+
+Accessibility constraints were recorded with those decisions. They did not replace testing the finished experience.
+
+- Base tokens for shared choices
+- A brand theme over the base
+- Accessibility constraints with button variants
+- A component recommendation with its reasoning
+
+### The next designer inherited the reasoning.
+
+Navigation label: **The handoff**. Keep section ID `results`.
+
+The brand launched on the shared infrastructure. Brand adjustments could happen at the token layer, and the next designer had the decisions and their reasoning documented.
+
+## Four documents, one checkout, zero agreement.
+
+**Existing route:** `/case-studies/a-checkout-decision-with-receipts/`
+
+**Card title:** A checkout decision with receipts
+
+I resolved conflicting checkout requirements and recorded the decision engineering should build. AI compared the sources; I owned the call.
+
+**My role:** Experience decision owner
+
+**Scope:** Checkout price presentation and requirements reconciliation
+
+**Collaboration:** Engineering and product stakeholders working from conflicting written requirements.
+
+**Discipline:** Experience strategy · AI-assisted analysis · Decision ownership
+
+### At a glance
+
+- Written requirements disagreed on how to present the consult fee.
+- I compared the sources with AI, chose the experience, and recorded what the decision replaced.
+- Engineering built against the decision without another meeting cycle. Refund messaging remained an open dependency.
+
+### Proof, in existing index order
+
+- **One price:** a combined checkout presentation
+- **Traceable:** superseded requirements documented
+- **Implementation:** engineering built from the recorded decision
+
+### Both versions were written down. Both looked current.
+
+Navigation label: **The conflict**. Keep section ID `problem`.
+
+Requirements called for an itemized consult fee. The latest meeting directive and the design called for one combined price. Engineering could build either and point to a written source.
+
+The disagreement would change what a customer saw beside the Buy button. It needed an owner and a decision.
+
+### Read the sources together, then make the call.
+
+Navigation label: **The decision**. Keep section ID `approach`.
+
+I used AI to compare the requirements, meeting transcripts, and ticket history. Reading the records together exposed the contradictions.
+
+I chose a combined price, matching a checkout pattern already converting with customers. AI identified the contradictions; the experience decision was mine.
+
+**Decision:** Use a combined price and identify the requirements it supersedes.
+
+### Give engineering something it can build against.
+
+Navigation label: **The record**. Keep section ID `solution`.
+
+I documented the combined-price direction and linked the superseded requirements to their sources. The record explained what changed and why.
+
+Refund messaging remained a dependency. It needed to match the price model so the next part of the experience did not contradict the checkout.
+
+- Combined-price direction recorded
+- Superseded requirements linked to sources
+- Refund messaging left as an explicit dependency
+
+### The record held the answer.
+
+Navigation label: **After the decision**. Keep section ID `results`.
+
+Engineering built against the recorded direction without another meeting cycle. Refund messaging remained open.
+
+## B85. Source narratives [APPLIED]
+
+These replace prose in `docs/case-studies-sanitized.md`. They are source-file revisions, not additional routes. The eight stories not currently rendered remain unrendered. Remove the old blanket cleared claim from the file header. Publication clearance is governed per surface by the current register and privacy rulings. Do not print a directory of private details removed.
+
+Use this source-file header:
+
+> # Case studies: editorial source
+>
+> Editorially reviewed. Existing publication boundaries remain in force. This file is not blanket permission to publish a study.
+
+Where a heading changes, update active provenance references without rewriting historical decision records.
+
+### Four Documents, One Checkout, Zero Agreement
+
+Original heading unchanged.
+
+**Skim:** Conflicting checkout requirements resolved with a documented decision and a traceable superseded record.
+
+The checkout requirements disagreed at the point where a customer would see the price. Some called for an itemized consult fee. The latest meeting directive and the design called for one combined price.
+
+Engineering could build either and point to a written source. The conflict needed an experience owner.
+
+I used AI to compare the requirements, meeting transcripts, and ticket history. It identified contradictions across the records. I chose the combined price, matching a checkout pattern already converting with customers.
+
+I documented the direction and linked the requirements it replaced to their sources. Refund messaging remained an explicit dependency. It needed to agree with the combined-price model.
+
+Engineering built against the record without another meeting cycle. The refund dependency stayed open.
+
+### Reporting Without Another Status Meeting
+
+Locate original heading: Reporting Should Not Cost a Headcount.
+
+**Skim:** Operational reporting built from work records, with a repeatable route to leadership visibility.
+
+Status reporting was competing with delivery. The information existed across work systems, but somebody still had to collect it, reconcile it, and turn it into an update.
+
+I built a reporting process around those records. Rollups, goal tracking, and priority scans could start from current work instead of somebody’s recollection of the week.
+
+The process pulled together ticket activity, messages, and calendar context. It also made incoming work easier to notice when another team added it without a separate conversation.
+
+Leadership had a repeatable view of the work. Reporting no longer needed to be reconstructed from memory for each update.
+
+### A Licensing Question for Design
+
+Locate original heading: Finance-Grade Answers From a Design Team.
+
+**Skim:** A software-seat review that connected account records to the people and teams using them.
+
+Marketing leadership wanted to understand design software spend. The questions concerned seat ownership, department allocation, and accounts that needed review.
+
+A license export described access. An employee index described the organization. I joined them so the questions could be answered against the same record.
+
+I organized the findings into a leadership deck, with the conclusions first and the method available behind them. The review identified external accounts and a basis for license cleanup.
+
+Leadership had a record to use in seat-allocation and renewal discussions.
+
+### A Retrospective Built on Evidence, Not Memory
+
+Original heading unchanged.
+
+**Skim:** A source-linked launch review that found categories of work missing from the estimate.
+
+Post-launch memory is a poor database with excellent confidence. A process review was coming, and people had different recollections of the timeline.
+
+I used AI to assemble a timeline from tickets, documentation, messages, and screenshots. Each entry stayed attached to a source. Contradictions were recorded alongside the evidence that exposed them.
+
+I turned that record into visual review panels. The conversation could stay on the process and the work, with a shared record in front of everyone.
+
+The estimate had excluded wireframing. Reusable component design and content-template work were also missing from the timeline.
+
+Whole categories of work had never entered the estimate. The remedy became rather boring. Estimate them next time.
+
+### Measuring the Thing That Measures Everything
+
+Original heading unchanged.
+
+**Skim:** A repeatable way to examine where AI was useful, what it cost, and where it created risk.
+
+“It feels faster” is a poor unit of measure. I wanted to know where AI was earning its electricity.
+
+I built a usage tracker that recorded the task, time saved, frequency, quality, effort, and a specific risk note. The note forced each use case to name what could go wrong.
+
+I also brought team survey responses into a review of how people were using AI. The work considered adoption alongside quality and risk, instead of treating more usage as the result.
+
+The record gave us something to inspect and discuss. AI-assisted deliverables still went through review before reaching leadership.
+
+### Catching Conflicts Before Anyone Writes Code
+
+Original heading unchanged.
+
+**Skim:** The source-comparison method moved earlier, into the gap between the brief, wireframe, and component library.
+
+A landing-page redesign had a creative brief, wireframe specifications, and a component library. Each document described part of the work, but they did not agree on every decision.
+
+We had three sources of truth, which is an ambitious number of truths for one landing page.
+
+I used the source-comparison method from the checkout review before the build started. AI compared the artifacts and produced a record of contradictions for resolution.
+
+The conflicts could be discussed while they were still changes to a document. Resolve the argument while it still has a Delete key.
+
+### Four Executives, Four Different Customer Journeys
+
+Original heading unchanged.
+
+**Skim:** A working session that followed the customer across departments and examined the handoffs with their owners present.
+
+The integration crossed marketing, digital health, engineering, and commerce. Each leader held a different part of the customer journey. No shared view covered first awareness through subscription and refill.
+
+I built a board system for the session, wrote a moderator guide, and prepared a scenario matrix. Concrete customer situations gave the group something to follow across departmental boundaries.
+
+I led the walk-through. When a handoff failed, the people responsible for both sides were present to examine it.
+
+The group produced an end-to-end journey and a record of the gaps. The boards, guide, and scenarios remained available for future sessions.
+
+### Navigation Decisions Were Being Made on Taste
+
+Original heading unchanged.
+
+**Skim:** Moderated research used to guide the catalog’s entry points and document menu-discovery problems.
+
+Navigation choices were being discussed internally without testing them against people using the site. Knowing the catalog made the structure look more obvious than it was.
+
+I led moderated usability research into the navigation and information architecture. The study examined entry paths and how people discovered and used the mega menu.
+
+Testing supported Shop by Condition as an entry point and documented discoverability problems in the menu. I brought those findings into the redesign.
+
+The team gained evidence for the decision and a report format for its next study. Preference lost its monopoly.
+
+### A Scope Decision With a Staffing Gate
+
+Locate original heading: Reframing a Scope Fight as a Staffing Question.
+
+**Skim:** Phasing options made the relationship between launch scope and staffing explicit.
+
+Leadership was debating whether to launch the full scope or phase the work. The conversation had developed a stable orbit.
+
+I set out the phasing paths on one page, with their staffing implications attached. The recommendation made the next phase conditional on the required hire.
+
+That changed what the group needed to decide. Scope and staffing could be considered together, with an explicit gate instead of an assumed capacity.
+
+The recommended path was adopted with the hire tied to the next phase.
+
+### Tokens Before Surface Area
+
+Original heading unchanged.
+
+**Skim:** A documented design foundation for a second brand, built before its page count grew.
+
+A second brand needed to live inside an existing commerce platform. Without a shared foundation, every page would carry another set of styling decisions.
+
+I defined color, typography, and spacing tokens, then layered the brand over that base. I documented button variants and their accessibility constraints.
+
+I evaluated a component foundation and recorded the recommendation and reasoning. The next designer had a place to start and a record of why the choices had been made.
+
+The brand launched on shared infrastructure. Brand adjustments could happen in the token layer. Testing the finished experience remained necessary; the tokens did not settle every accessibility question.
+
+### Estimates That Excluded the Work
+
+Original heading unchanged.
+
+**Skim:** A prioritization workshop made missing work visible and produced an agreed approach for the next round.
+
+Landing-page work was being discussed in terms of which pages, what order, and what timeline. The estimates did not include every category of work the team needed to do.
+
+I ran a prioritization session with cross-functional leadership, then turned the output into summaries and a process record.
+
+The discussion confirmed that the creative estimate excluded wireframing. Component design and content-template work were missing from the timeline too.
+
+The marketing executive proposed the template structure that became the agreed approach. That authorship mattered: the process had an executive co-owner.
+
+The record gave future estimates a list of work they needed to include.
+
+### Making UX Visible in the Numbers
+
+Original heading unchanged.
+
+**Skim:** An experience scorecard and customer-feedback plan that connected research questions to business outcomes.
+
+Experience quality needed a standing way to be measured. Joint conversion results answered some questions, but they did not provide a complete view of the customer experience.
+
+I built a framework that paired experience measures with business outcomes. The scorecard drew on real user monitoring, moderated testing, and survey data. I used each source for the questions it could answer.
+
+I also evaluated a customer-feedback approach focused on satisfaction and effort at particular interactions. That included a vendor recommendation.
+
+The scorecard was repeatable. The feedback program was ready for instrumentation, which remained a next step.
+
+### One Platform, Five Properties
+
+Locate original heading: The Alternative to Five Sites Was Five Teams.
+
+**Skim:** A shared commerce framework that cut a branded-property launch from six weeks to two.
+
+The first storefront had sale pricing typed in by hand, one product at a time. It sold, and leadership wanted more properties. Repeating the site would also repeat the maintenance.
+
+I brought a roadmap for a shared platform. Each release replaced a manual task with a capability the next property could use.
+
+Brand settings and theme tokens separated identity from the application. Shared product and provider data let every property use information from the same services. Scheduled promotions replaced hand-edited offers.
+
+Source attribution connected the storefront to acquisition. Promotion, copy, and messaging changed by traffic source, down to affiliate identifiers. The page said what the ad promised.
+
+The framework covered marketing pages through cart and checkout. Deployment could target one property or all of them.
+
+I owned the roadmap, experience, and front-end work for the core framework. A part-time engineer and I built and maintained it. Other designers launched the branded properties. Internal engineering built the microservices and APIs we connected to.
+
+A fully branded property went from six weeks to launch to two. Five properties ran on the platform.
+
+In one measured year, finance credited the properties with 47% of company revenue growth, 27% of total lead capture, and 20% of overall revenue. The growth figure is a share of the company’s revenue-growth increment in that year.
+
+The company owned the custom platform. Shared capabilities absorbed work that would otherwise recur across the properties. You create velocity by making the work smaller.
+
+### Building the Function That Was Not There
+
+Original heading unchanged.
+
+**Skim:** A design practice built alongside delivery, with foundations the next project could use.
+
+A product integration was moving forward before a design practice existed. There was no design system, research practice, or experience-measurement framework to inherit.
+
+I made the foundations part of the delivery work. The token layer had governance. Research came with a repeatable report format. Executive workshops had prepared boards, a moderator guide, and scenarios.
+
+I also built an experience scorecard and prepared a customer-feedback program with a vendor recommendation. Instrumentation remained a next step.
+
+Subsequent work could use those materials. The team had documented decisions and working formats to begin from.
+
+The artifact was stability. Portfolio photography remains challenging.
+
+## B86. Shared interface copy and descriptions [APPLIED]
+
+### Featured card footer
+
+In `components/ui/WorkCard.tsx`, remove the repeated `People · Process · Better outcomes` footer text. Keep `View`, the arrow, and the accessible case-study trigger. The removed text adds no case-specific information and implies an outcome even on studies without a measured result.
+
+### Reading-page labels
+
+In `app/case-studies/[slug]/page.tsx`:
+
+- Replace `The scope` with `Scope`.
+- Replace `Working together` with `Collaboration`.
+- Replace `In This Story` with `In this story`.
+- Replace `Next Case Study` with `Next case study`.
+- Use the authored section labels in desktop and mobile navigation. Preserve existing section IDs and anchors. Remove the hardcoded mobile Problem/Journey/Solution/Results override where it would contradict those labels.
+
+Retain `All case studies`, `My role`, `The Decision`, and `View all case studies`. Retain the caption `Explanatory reconstruction of the approach, based on the project narrative.`
+
+The at-a-glance Problem/Solution/Result labels are navigational summaries, not instructions to use an identical prose structure.
+
+### Study illustrations
+
+In `components/case-studies/StudyVisual.tsx`:
+
+- Locate the platform line below `One commerce platform`. Replace with: `Shared capabilities across the properties.`
+- Locate the navigation illustration caption. Replace with: `Researching the catalog entry points`.
+
+Retain the other explanatory labels, anonymous context, and reconstruction disclaimer. Do not redraw diagrams or manufacture original project artifacts.
+
+### Call-center demonstration
+
+In `components/ui/CallCenterDemo.tsx`:
+
+- Section heading: `When availability changes`
+- Busy-state example hero title: `Explore plans while we’re busy.`
+- Switch label: `Highlight changing sections`
+- Introductory explanation beside the state controls: `This demonstration shows how the site responds to call-center availability. The original status feed checked every five minutes; this preview cycles every five seconds.`
+
+Retain `Illustrative interaction demo`, `Ready`, `Busy`, `Closed`, `Auto`, `Reduced motion: choose a state to preview it.`, and `Auto cycles every 5 seconds. Choose a state to stop.`
+
+Do not present these example messages as verbatim historical campaign copy or as a connection to a live call center. The source status-feed interval and demo interval describe different things.
+
+### Image descriptions
+
+In `lib/data/projects.ts`, use source context to locate these existing images. Confirm their identities visually during implementation before applying the descriptions. This editorial pass did not inspect their pixels.
+
+- BumblebeeMD mobile content page: `BumblebeeMD content page, mobile`
+- First BumblebeeMD icon sheet: `BumblebeeMD icon designs, first sheet`
+- Second BumblebeeMD icon sheet: `BumblebeeMD icon designs, second sheet`
+- First Hydra UI-elements sheet: `Hydra interface elements, first sheet`
+- Second Hydra UI-elements sheet: `Hydra interface elements, second sheet`
+- Three workshop images currently repeating Content Strategy: corresponding labels `Creative brainstorming`, `UX/UI strategy`, `Conversion-testing strategy`.
+- Obscured roadmap: `UX roadmap example with project details obscured`
+
+Keep other accurate descriptions. Do not infer study findings from an asset filename.
+
+### Inline-link parser comment
+
+In `components/ui/CaseStudyModal.tsx`, locate the explanatory comment above the inline-link parser that uses a colleague as an example. Replace only the comment with:
+
+> Project prose can contain Markdown-style links. Expand them into anchors while leaving other text unchanged.
+
+Do not alter the parser or repeat the colleague’s identity in a commit message.
+
+### Design reference
+
+In `app/design-system/DesignSystemExplorer.tsx`, replace the hardcoded historic baseline/date with:
+
+**Header:** Live site reference
+
+**Detail:** Examples load the current site routes.
+
+Replace the explanation below the frame with:
+
+> This frame loads a site route and scrolls to the selected element. Layout, artwork, copy, and interactions come from that page. Scroll inside the frame to see the surrounding content.
+
+Remove the claim that later modal and focus refinements are excluded from a historic baseline. Do not invent a current commit label.
+
+In `app/design-system/catalog.ts`, replace the relevant descriptions:
+
+**Focus Halo description:** Keyboard focus treatments from the source page. Inspect the selected example in its page context.
+
+**Corner Current behavior:** The source controls the decorative layers. Operating-system reduced-motion preferences are respected.
+
+**Animated Image behavior:** The retained image example uses the source’s motion handling. Request reduced motion to inspect its still treatment.
+
+**Hero Identity behavior:** The visual role sequence is decorative. The source provides a readable role and a reduced-motion fallback.
+
+Remove other catalog wording that instructs visitors to use a visible Pause motion control that the source no longer renders. Retain technical pattern names, selectors, and source references. Do not describe these editorial changes as browser-tested behavior.
+
+### Retained interface copy
+
+Retain clear functional labels, filter names, result counts, loading/error/retry/close copy, career-experience labels, contact details, and the full slogan in the reading-page footer. Keep the qualitative-outcome label. Do not rewrite metadata as marketing promises.
+
+The reviewed sources include `lib/data/navigation.ts`, `components/nav/NavMain.tsx`, `components/case-studies/StudyShell.tsx`, `StudyCollection.tsx`, `OutcomeDashboard.tsx`, `CareerStats.tsx`, and `components/ui/CaseStudyModal.tsx`.
+
+### B86 implementation finding — 2026-09-29 [APPLIED]
+
+The required visual identity check found two further BumblebeeMD assets carrying
+the same inaccurate `BumblebeeMD Homepage Desktop` description. The defect-class
+sweep found these two remaining instances. Their pixels show image treatments and
+plan-selection boxes, respectively. Register these source-context corrections
+before applying them; preserve the original images and embedded campaign text:
+
+- `/images/work/bmd-modal/images.png`: `BumblebeeMD image treatments`
+- `/images/work/bmd-modal/buy-box.png`: `BumblebeeMD plan-selection boxes`
+
+## B87. Writing-governance clarification [APPLIED]
+
+Append a dated clarification to the writing governance. Do not erase historical decisions.
+
+The current site positions Jacob as a product and design leader and coach. Describe the actual decisions, ownership, and team responsibilities. Retain historical hands-on work when material to the story. Do not relabel it as delegation or management.
+
+Individual case studies no longer carry Tools or Technologies inventories. This overrides older instructions to retain an inventory merely as evidence of period context. Material implementation mechanisms, formal course names, employment records, and diagram labels remain eligible when accurate.
+
+Positive former-employer names and the official Hydra name remain permitted under the existing resolved naming rules. The anonymous reading pages remain anonymous. No new publication permission is created by this review.
+
+Do not claim that edited writing will pass an AI detector. No detector service was used and no text was sent to an outside detector.

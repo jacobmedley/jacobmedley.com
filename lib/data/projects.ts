@@ -230,7 +230,6 @@ export interface Project {
   // fixed post-brief slot so a `{ type: 'contributions' }` media block can
   // render them at the correct position instead.
   inlineContributions?: boolean
-  technologies: ProjectBadge[]
   heroMedia?: ProjectMedia[] // supporting prose/lists that belong inside the hero copy panel
   heroCards?: StyledListItem[] // full-width concept/information cards in the top hero
   heroCardsHeading?: string
@@ -253,111 +252,218 @@ export const projects: Project[] = [
     visible: true,
     briefHeading: 'From Campaign to Commerce',
     brief: {
-      image: { src: '/images/work/webmd-modal/brief-2.png', alt: '' },
-      paragraphs: [
-        'WebMD brought the audience and brand equity. DentalPlans brought the product and ecommerce engine.',
-        'I wireframed and designed the site in a focused two-week build while the Director of Online Marketing was away. It was complete and live when the director returned.',
-        'The following two weeks were campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one.'
+      "image": {
+        "src": "/images/work/webmd-modal/brief-2.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "When WebMD and DentalPlans.com became part of Internet Brands, we had a new route to customers. People were already visiting WebMD to understand a health or dental concern. We could connect a relevant dental need with a way to act on it.",
+        "This strategy put a dental savings experience in that path. People could move from researching care to comparing plans, finding a dentist, and purchasing."
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
-      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
-      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
-    ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
-      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
+      {
+        "icon": "fa-thin fa-pen-ruler",
+        "label": "Product Design"
+      },
+      {
+        "icon": "fa-thin fa-lightbulb",
+        "label": "UX Strategy"
+      },
+      {
+        "icon": "fa-thin fa-ruler-triangle",
+        "label": "Prototyping"
+      },
+      {
+        "icon": "fa-thin fa-user-check",
+        "label": "Front-end / Implementation"
+      }
     ],
     media: [
-      { type: 'heading', text: 'Homepage' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/home-dt.png',
-          alt: 'WebMD dental savings homepage, desktop'
+        "type": "heading",
+        "text": "The Strategy",
+        "level": 3,
+        "icon": "fa-thin fa-lightbulb"
+      },
+      {
+        "type": "text",
+        "text": "The entry point mattered. A person researching a dental need had a different question from someone already choosing a plan. I shaped the journey around the decision they were ready to make."
+      },
+      {
+        "type": "styled-list",
+        "items": [
+          {
+            "icon": "fa-thin fa-magnifying-glass",
+            "label": "Intent",
+            "body": "Start with people already researching a relevant dental need."
+          },
+          {
+            "icon": "fa-thin fa-lightbulb",
+            "label": "Relevance",
+            "body": "Introduce DentalPlans as a solution when it matched what the customer was trying to accomplish."
+          },
+          {
+            "icon": "fa-thin fa-cart-shopping",
+            "label": "Commerce",
+            "body": "Create a clear path from learning to comparing plans, finding a dentist, and purchasing."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Recognize Intent",
+        "level": 3,
+        "icon": "fa-thin fa-magnifying-glass"
+      },
+      {
+        "type": "text",
+        "text": "The homepage introduced dental savings and gave visitors a way to start looking. It needed to answer a basic question before asking for a purchase: is this relevant to the care I need?"
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/home-dt.png",
+          "alt": "WebMD dental savings homepage, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/home-mb.png',
-          alt: 'WebMD dental savings homepage, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/home-mb.png",
+          "alt": "WebMD dental savings homepage, mobile"
         }
       },
-      { type: 'heading', text: 'Plan Search Results' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/plan-search-dt.png',
-          alt: 'WebMD plan search results, desktop'
+        "type": "heading",
+        "text": "Support the Decision",
+        "level": 3,
+        "icon": "fa-thin fa-list-check"
+      },
+      {
+        "type": "text",
+        "text": "Choosing a plan meant answering more than a pricing question. Customers also needed to know which dentists participated."
+      },
+      {
+        "type": "text",
+        "text": "Plan search, comparison, and detail pages let people examine their options. Dentist search kept the provider question inside the same journey."
+      },
+      {
+        "type": "heading",
+        "text": "Plan Search Results",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/plan-search-dt.png",
+          "alt": "WebMD plan search results, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/plan-search-mb.png',
-          alt: 'WebMD plan search results, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/plan-search-mb.png",
+          "alt": "WebMD plan search results, mobile"
         }
       },
-      { type: 'heading', text: 'Plan Compare' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/plan-compare-dt.png',
-          alt: 'WebMD plan comparison view, desktop'
+        "type": "heading",
+        "text": "Plan Compare",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/plan-compare-dt.png",
+          "alt": "WebMD plan comparison view, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/plan-compare-mb.png',
-          alt: 'WebMD plan comparison view, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/plan-compare-mb.png",
+          "alt": "WebMD plan comparison view, mobile"
         }
       },
-      { type: 'heading', text: 'Plan Details' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/plan-details-dt.png',
-          alt: 'WebMD plan details page, desktop'
+        "type": "heading",
+        "text": "Plan Details",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/plan-details-dt.png",
+          "alt": "WebMD plan details page, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/plan-details-mb.png',
-          alt: 'WebMD plan details page, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/plan-details-mb.png",
+          "alt": "WebMD plan details page, mobile"
         }
       },
-      { type: 'heading', text: 'Dentist Search Results' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/dentist-search-dt.png',
-          alt: 'WebMD dentist search results, desktop'
+        "type": "heading",
+        "text": "Dentist Search Results",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/dentist-search-dt.png",
+          "alt": "WebMD dentist search results, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/dentist-search-mb.png',
-          alt: 'WebMD dentist search results, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/dentist-search-mb.png",
+          "alt": "WebMD dentist search results, mobile"
         }
       },
-      { type: 'heading', text: 'Dentist Details' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/dentist-profile-dt.png',
-          alt: 'WebMD dentist profile page, desktop'
+        "type": "heading",
+        "text": "Move to Action",
+        "level": 3,
+        "icon": "fa-thin fa-cart-shopping"
+      },
+      {
+        "type": "text",
+        "text": "The dentist profile gave people a specific provider to review. Cart and checkout then took the selected plan through purchase."
+      },
+      {
+        "type": "heading",
+        "text": "Dentist Details",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/dentist-profile-dt.png",
+          "alt": "WebMD dentist profile page, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/dentist-profile-mb.png',
-          alt: 'WebMD dentist profile page, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/dentist-profile-mb.png",
+          "alt": "WebMD dentist profile page, mobile"
         }
       },
-      { type: 'heading', text: 'Cart' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/webmd-modal/cart-dt.png',
-          alt: 'WebMD shopping cart and checkout, desktop'
+        "type": "heading",
+        "text": "Cart",
+        "level": 4
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/webmd-modal/cart-dt.png",
+          "alt": "WebMD shopping cart and checkout, desktop"
         },
-        mobile: {
-          src: '/images/work/webmd-modal/cart-mb.png',
-          alt: 'WebMD shopping cart and checkout, mobile'
+        "mobile": {
+          "src": "/images/work/webmd-modal/cart-mb.png",
+          "alt": "WebMD shopping cart and checkout, mobile"
         }
+      },
+      {
+        "type": "heading",
+        "text": "From design to revenue",
+        "level": 3,
+        "icon": "fa-thin fa-chart-line"
+      },
+      {
+        "type": "text",
+        "text": "I wireframed and designed the site in two weeks. It was complete and live when the Director of Online Marketing returned."
+      },
+      {
+        "type": "text",
+        "text": "The following two weeks covered campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one."
       }
     ]
   },
@@ -379,13 +485,14 @@ export const projects: Project[] = [
     visible: true,
     briefHeading: 'How Fast Can You Stand Up a Website?',
     brief: {
-      image: { src: '/images/work/dpprod-modal/brief.png', alt: '' },
-      paragraphs: [
-        'It started with a simple question: “You know WordPress, right? How fast can you stand up a website?”',
-        'DentalPlans.com wanted dedicated storefronts for product partners. The first site was deliberately lean. It tested whether customers would buy through a focused brand experience.',
-        'They did. The next problem was scale.',
-        'I owned the roadmap, product design, and front-end development for the core ecommerce framework that followed. A part-time engineer and I built and maintained that framework and its enhancements.',
-        'Other designers launched the individual branded properties. The internal engineering team built the microservices and APIs the framework connected to.'
+      "image": {
+        "src": "/images/work/dpprod-modal/brief.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "It started with a small request: “You know WordPress, right? How fast can you stand up a website?”",
+        "The first storefront tested whether customers would buy through a focused brand experience. They did. More sites were now on the table, along with every manual update the first one needed.",
+        "I owned the roadmap for the shared commerce framework that followed. Each release removed a piece of repeated work and left a capability the next property could use."
       ]
     },
     contributions: [
@@ -394,110 +501,106 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
       { icon: 'fa-thin fa-laptop-code', label: 'Front-end Development' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
-      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fa-thin fa-elephant', label: 'PHP' },
-      { icon: 'fa-thin fa-gear-code', label: 'DevOps Pipelines' },
-      { icon: 'fa-brands fa-git-alt', label: 'GIT' },
-      { icon: 'fa-thin fa-webhook', label: 'APIs' }
-    ],
     media: [
       {
-        type: 'metric-grid',
-        heading: "Finance-attributed shares from one measured year; launch time per property",
-        metrics: [
-  {
-    "value": "47%",
-    "label": "of company revenue growth"
-  },
-  {
-    "value": "20%",
-    "label": "of overall company revenue"
-  },
-  {
-    "value": "27%",
-    "label": "of total company lead capture"
-  },
-  {
-    "value": "6 to 2",
-    "label": "weeks to launch a property",
-    "direction": "down"
-  }
-],
-        valueCreated: {
-          heading: 'Value Created',
-          items: [
-  "Five properties on one platform",
-  "Core framework built by Jacob and a part-time engineer",
-  "Other designers launched the individual properties",
-  "Internal engineering supplied the microservices and APIs",
-  "The company owned the custom platform"
-]
+        "type": "text",
+        "text": "In one measured year, finance credited the properties with the revenue and lead-capture shares below. Launch time is measured per property."
+      },
+      {
+        "type": "metric-grid",
+        "heading": "What the properties produced",
+        "metrics": [
+          {
+            "value": "47%",
+            "label": "of company revenue growth"
+          },
+          {
+            "value": "20%",
+            "label": "of overall company revenue"
+          },
+          {
+            "value": "27%",
+            "label": "of total company lead capture"
+          },
+          {
+            "value": "6 to 2",
+            "label": "weeks to launch a property",
+            "direction": "down"
+          }
+        ],
+        "valueCreated": {
+          "heading": "What changed",
+          "items": [
+            "Five branded properties shared the framework.",
+            "Each brand kept its own identity.",
+            "Product information and promotions could be reused.",
+            "The company owned the custom platform."
+          ]
         }
       },
       {
-        type: 'progress-diagram',
-        heading: 'The System Framework',
-        bands: [
+        "type": "text",
+        "text": "The growth figure is a share of the company’s revenue-growth increment in that year."
+      },
+      {
+        "type": "progress-diagram",
+        "heading": "How the platform fit together",
+        "bands": [
           {
-            heading: 'Partner storefront examples',
-            icon: 'fa-thin fa-box',
-            bg: 'dark-subtle',
-            textColor: 'black',
-            rows: [
+            "heading": "Partner storefront examples",
+            "icon": "fa-thin fa-box",
+            "bg": "dark-subtle",
+            "textColor": "black",
+            "rows": [
               {
-                cols: 4,
-                cells: [
+                "cols": 4,
+                "cells": [
                   {
-                    label: 'Cigna',
-                    icon: 'fa-thin fa-box',
-                    bg: 'second',
-                    striped: false,
-                    sub: {
-                      icon: 'fa-thin fa-palette',
-                      label: 'Brand Theme',
-                      bg: 'second-light',
-                      textColor: 'second-dark'
+                    "label": "Cigna",
+                    "icon": "fa-thin fa-box",
+                    "bg": "second",
+                    "striped": false,
+                    "sub": {
+                      "icon": "fa-thin fa-palette",
+                      "label": "Brand Theme",
+                      "bg": "second-light",
+                      "textColor": "second-dark"
                     }
                   },
                   {
-                    label: 'Aetna',
-                    icon: 'fa-thin fa-box',
-                    bg: 'prime',
-                    striped: false,
-                    sub: {
-                      icon: 'fa-thin fa-palette',
-                      label: 'Brand Theme',
-                      bg: 'prime-light',
-                      textColor: 'prime-dark'
+                    "label": "Aetna",
+                    "icon": "fa-thin fa-box",
+                    "bg": "prime",
+                    "striped": false,
+                    "sub": {
+                      "icon": "fa-thin fa-palette",
+                      "label": "Brand Theme",
+                      "bg": "prime-light",
+                      "textColor": "prime-dark"
                     }
                   },
                   {
-                    label: 'WebMD',
-                    icon: 'fa-thin fa-box',
-                    bg: 'third',
-                    striped: false,
-                    sub: {
-                      icon: 'fa-thin fa-palette',
-                      label: 'Brand Theme',
-                      bg: 'third-light',
-                      textColor: 'third-dark'
+                    "label": "WebMD",
+                    "icon": "fa-thin fa-box",
+                    "bg": "third",
+                    "striped": false,
+                    "sub": {
+                      "icon": "fa-thin fa-palette",
+                      "label": "Brand Theme",
+                      "bg": "third-light",
+                      "textColor": "third-dark"
                     }
                   },
                   {
-                    label: "Partner storefront",
-                    icon: 'fa-thin fa-box',
-                    bg: 'fourth',
-                    striped: false,
-                    sub: {
-                      icon: 'fa-thin fa-palette',
-                      label: 'Brand Theme',
-                      bg: 'fourth-light',
-                      textColor: 'fourth-dark'
+                    "label": "Partner storefront",
+                    "icon": "fa-thin fa-box",
+                    "bg": "fourth",
+                    "striped": false,
+                    "sub": {
+                      "icon": "fa-thin fa-palette",
+                      "label": "Brand Theme",
+                      "bg": "fourth-light",
+                      "textColor": "fourth-dark"
                     }
                   }
                 ]
@@ -505,164 +608,274 @@ export const projects: Project[] = [
             ]
           },
           {
-            heading: 'Core Framework',
-            icon: 'fa-thin fa-boxes-stacked',
-            bg: 'fifth-dark',
-            textColor: 'white',
-            rows: [
+            "heading": "Core Framework",
+            "icon": "fa-thin fa-boxes-stacked",
+            "bg": "fifth-dark",
+            "textColor": "white",
+            "rows": [
               {
-                cols: 3,
-                cells: [
-                  { label: 'API Integration', icon: 'fa-thin fa-webhook', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Component Libraries', icon: 'fa-thin fa-square-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Pattern Library', icon: 'fa-thin fa-layer-group', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'CMS', icon: 'fa-brands fa-wordpress-simple', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Pipelines', icon: 'fa-thin fa-gear-code', bg: 'fifth-light', textColor: 'fifth-dark', striped: false },
-                  { label: 'Documentation', icon: 'fa-thin fa-book', bg: 'fifth-light', textColor: 'fifth-dark', striped: false }
+                "cols": 3,
+                "cells": [
+                  {
+                    "label": "API Integration",
+                    "icon": "fa-thin fa-webhook",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  },
+                  {
+                    "label": "Component Libraries",
+                    "icon": "fa-thin fa-square-code",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  },
+                  {
+                    "label": "Pattern Library",
+                    "icon": "fa-thin fa-layer-group",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  },
+                  {
+                    "label": "CMS",
+                    "icon": "fa-brands fa-wordpress-simple",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  },
+                  {
+                    "label": "Pipelines",
+                    "icon": "fa-thin fa-gear-code",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  },
+                  {
+                    "label": "Documentation",
+                    "icon": "fa-thin fa-book",
+                    "bg": "fifth-light",
+                    "textColor": "fifth-dark",
+                    "striped": false
+                  }
                 ]
               }
             ]
           },
           {
-            heading: 'Microservices',
-            icon: 'fa-thin fa-webhook',
-            bg: 'fifth-light',
-            textColor: 'fifth-dark',
-            rows: [
+            "heading": "Microservices",
+            "icon": "fa-thin fa-webhook",
+            "bg": "fifth-light",
+            "textColor": "fifth-dark",
+            "rows": [
               {
-                cols: 5,
-                cells: [
-                  { label: 'Plan Details', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Dentist Search', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Lead Create', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false },
-                  { label: 'Call Center Status', icon: 'fa-thin fa-headset', bg: 'fifth', striped: false },
-                  { label: 'Google Maps (API)', icon: 'fa-thin fa-webhook', bg: 'fifth', striped: false }
+                "cols": 5,
+                "cells": [
+                  {
+                    "label": "Plan Details",
+                    "icon": "fa-thin fa-webhook",
+                    "bg": "fifth",
+                    "striped": false
+                  },
+                  {
+                    "label": "Dentist Search",
+                    "icon": "fa-thin fa-webhook",
+                    "bg": "fifth",
+                    "striped": false
+                  },
+                  {
+                    "label": "Lead Create",
+                    "icon": "fa-thin fa-webhook",
+                    "bg": "fifth",
+                    "striped": false
+                  },
+                  {
+                    "label": "Call Center Status",
+                    "icon": "fa-thin fa-headset",
+                    "bg": "fifth",
+                    "striped": false
+                  },
+                  {
+                    "label": "Google Maps (API)",
+                    "icon": "fa-thin fa-webhook",
+                    "bg": "fifth",
+                    "striped": false
+                  }
                 ]
               }
             ]
           }
         ]
       },
-      { type: 'divider' },
       {
-        type: 'split-row',
-        layout: 'platform-overview',
-        surface: true,
-        left: [{ type: 'supporting-art', kind: 'dental-platform', alt: 'Shared ecommerce platform: plan data, dentist data, search and APIs, microservices, promotions, and deployment.' }],
-        leftSpanXl: 10,
-        rightSpanXl: 14,
-        rightSelfAlign: 'center',
-        rightSurface: true,
-        right: [
-          { type: 'heading', text: 'Key Features', level: 4 },
+        "type": "divider"
+      },
+      {
+        "type": "split-row",
+        "layout": "platform-overview",
+        "surface": true,
+        "left": [
           {
-            type: 'list',
-            items: [
-  "Shared design patterns and front-end components for updates and testing across properties.",
-  "Brand settings separated identity from the application.",
-  "Services supplied product information, dentist search, and cart functions.",
-  "Scheduled promotions handled offer versions and expiry.",
-  "Source tracking covered paid search, affiliates, and organic traffic.",
-  "Documentation supported designers and developers.",
-  "Deployment could target one property or all of them."
-]
+            "type": "supporting-art",
+            "kind": "dental-platform",
+            "alt": "Shared ecommerce platform: plan data, dentist data, search and APIs, microservices, promotions, and deployment."
+          }
+        ],
+        "leftSpanXl": 10,
+        "rightSpanXl": 14,
+        "rightSelfAlign": "center",
+        "rightSurface": true,
+        "right": [
+          {
+            "type": "heading",
+            "text": "Work the next site could reuse",
+            "level": 3
+          },
+          {
+            "type": "list",
+            "items": [
+              "Shared interface patterns and components",
+              "Brand identity kept separate from the application",
+              "Product information, dentist search, and cart services",
+              "Scheduled offers and expiry",
+              "Source attribution across acquisition channels",
+              "Documentation for designers and developers",
+              "Deployment for one property or all of them"
+            ]
           }
         ]
       },
-      { type: 'heading', text: 'The Journey', level: 2, icon: 'fa-thin fa-map-location-dot', sectionDivider: true },
       {
-        type: 'split-row',
-        reverse: true,
-        layout: 'product-iteration',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-one', alt: 'Initial MVP joining a WordPress storefront with manually added plans, a Bootstrap interface, and cart.' }],
-        leftSpanXl: 10,
-        rightSpanXl: 14,
-        rightSelfAlign: 'center',
-        right: [
-          { type: 'heading', text: 'MVP: Initial Launch and Learnings', level: 4 },
+        "type": "split-row",
+        "reverse": true,
+        "layout": "product-iteration",
+        "left": [
           {
-            type: 'text',
-            text: 'With limited resources and a busy engineering team, the marketing and design team had to take the lead. Our SVP of Marketing asked, "You know WordPress, right? How fast can you stand up a website?"'
+            "type": "supporting-art",
+            "kind": "dental-mvp-one",
+            "alt": "Initial MVP joining a WordPress storefront with manually added plans, a Bootstrap interface, and cart."
+          }
+        ],
+        "leftSpanXl": 10,
+        "rightSpanXl": 14,
+        "rightSelfAlign": "center",
+        "right": [
+          {
+            "type": "heading",
+            "text": "Start with one storefront",
+            "level": 3
           },
-          { type: 'heading', text: 'Plan:', level: 4, treatment: 'subsection' },
           {
-            type: 'text',
-            text: "We started with a single-product flow to test customer response. Engineering built the service that passed the product into the existing cart. I designed the storefront so later versions could support other products and brands."
+            "type": "text",
+            "text": "We began with a single-product flow. Engineering built the service that passed the product into the existing cart. I designed the storefront with room for other products and brands."
           },
           {
-            type: 'text',
-            text: 'I built a Bootstrap-based WordPress theme covering the home, contact, about, and product detail pages, plus add-to-cart functionality. Future updates were anticipated, allowing the theme to adapt to different products and pass information to the shopping cart.'
-          },
-          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
-          {
-            type: 'text',
-            text: "The first storefront sold, and leadership asked for a second. That gave us a reason to invest in shared capabilities."
+            "type": "text",
+            "text": "The first site sold, and leadership asked for a second. That gave the next release a reason to exist."
           }
         ]
       },
-      { type: 'divider' },
       {
-        type: 'split-row',
-        layout: 'product-iteration',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-two', alt: 'Iteration two adding multi-brand storefronts, shared plan data, and a shared cart to the MVP platform.' }],
-        leftSpanXl: 10,
-        rightSpanXl: 14,
-        rightSelfAlign: 'center',
-        right: [
-          { type: 'heading', text: 'Iteration Two: Scaling and Optimization', level: 4 },
+        "type": "divider"
+      },
+      {
+        "type": "split-row",
+        "layout": "product-iteration",
+        "left": [
           {
-            type: 'text',
-            text: "The second site needed the brand experience to continue into the cart. We added a cart that could take each brand’s identity and services for shared product information. Testing could then cover the path from landing page through purchase."
+            "type": "supporting-art",
+            "kind": "dental-mvp-two",
+            "alt": "Iteration two adding multi-brand storefronts, shared plan data, and a shared cart to the MVP platform."
+          }
+        ],
+        "leftSpanXl": 10,
+        "rightSpanXl": 14,
+        "rightSelfAlign": "center",
+        "right": [
+          {
+            "type": "heading",
+            "text": "Carry the brand through checkout",
+            "level": 3
           },
-          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
           {
-            type: 'text',
-            text: "The second launch gave us a shared base for later changes. The components could be reused in landing pages and purchase flows, so tests no longer required rebuilding each variant from scratch."
+            "type": "text",
+            "text": "The second site needed its identity to continue into the cart. We added a cart that could take each brand’s treatment and services for shared product information."
+          },
+          {
+            "type": "text",
+            "text": "Common components could be used in landing pages and purchase flows. Testing a variant no longer meant rebuilding every part of it."
           }
         ]
       },
-      { type: 'divider' },
       {
-        type: 'split-row',
-        reverse: true,
-        layout: 'product-iteration',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-three', alt: 'Iteration three adding shared patterns, components, microservices, and properties to a platform now serving five brands.' }],
-        leftSpanXl: 10,
-        rightSpanXl: 14,
-        rightSelfAlign: 'center',
-        right: [
-          { type: 'heading', text: 'Iteration Three: Integrating Learnings and Microservices', level: 4 },
+        "type": "divider"
+      },
+      {
+        "type": "split-row",
+        "reverse": true,
+        "layout": "product-iteration",
+        "left": [
           {
-            type: 'text',
-            text: "We brought product information into shared services. When engineering added or changed data, every property could use it. Common patterns and components gave the interfaces a consistent way to present it."
+            "type": "supporting-art",
+            "kind": "dental-mvp-three",
+            "alt": "Iteration three adding shared patterns, components, microservices, and properties to a platform now serving five brands."
+          }
+        ],
+        "leftSpanXl": 10,
+        "rightSpanXl": 14,
+        "rightSelfAlign": "center",
+        "right": [
+          {
+            "type": "heading",
+            "text": "Let every property inherit the update",
+            "level": 3
           },
-          { type: 'heading', text: 'Delivery', level: 4, treatment: 'subsection' },
           {
-            type: 'text',
-            text: 'We built landing pages, developed content for organic search, and continued testing acquisition and purchase flows.'
+            "type": "text",
+            "text": "Product information moved into shared services. When engineering added or changed data, every property could use it. The interfaces used common patterns to present it."
+          },
+          {
+            "type": "text",
+            "text": "Acquisition work continued alongside the platform: landing pages, content for organic search, and tests across the purchase flow."
           }
         ]
       },
-      { type: 'divider' },
       {
-        type: 'split-row',
-        layout: 'product-iteration',
-        left: [{ type: 'supporting-art', kind: 'dental-mvp-four', alt: 'Iteration four adding ZIP search, results, and dentist profiles to the five-brand platform built in the first three releases.' }],
-        leftSpanXl: 10,
-        rightSpanXl: 14,
-        rightSelfAlign: 'center',
-        right: [
-          { type: 'heading', text: 'Iteration Four: Dentist Search Feature', level: 4 },
+        "type": "divider"
+      },
+      {
+        "type": "split-row",
+        "layout": "product-iteration",
+        "left": [
           {
-            type: 'text',
-            text: "I designed and built the dentist-search interface using the existing patterns and components."
+            "type": "supporting-art",
+            "kind": "dental-mvp-four",
+            "alt": "Iteration four adding ZIP search, results, and dentist profiles to the five-brand platform built in the first three releases."
+          }
+        ],
+        "leftSpanXl": 10,
+        "rightSpanXl": 14,
+        "rightSelfAlign": "center",
+        "right": [
+          {
+            "type": "heading",
+            "text": "Add dentist search without starting over",
+            "level": 3
           },
-          { type: 'heading', text: 'Results:', level: 4, treatment: 'subsection' },
           {
-            type: 'text',
-            text: "The platform gained a dentist-search flow built from the same patterns and components as the storefronts."
+            "type": "text",
+            "text": "I designed and built the dentist-search interface from the existing patterns and components. The platform could take another customer task without needing another set of interface conventions."
           }
         ]
+      },
+      {
+        "type": "heading",
+        "text": "Who built what",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "A part-time engineer and I built and maintained the core framework and its enhancements. Other designers launched the branded properties. Internal engineering built the microservices and APIs the framework connected to."
       }
     ]
   },
@@ -681,90 +894,195 @@ export const projects: Project[] = [
     visible: true,
     briefHeading: 'The Platform Got Out of the Way',
     brief: {
-      image: { src: '/images/work/bmd-modal/brief.png', alt: '' },
-      paragraphs: [
-        'BumblebeeMD was a digital health brand built on an ecommerce foundation we already owned. Product data, commerce, and core patterns were already in place, so the work could move closer to the customer.',
-        'We focused on the brand, refined the UI, and shaped an experience that felt specific to BumblebeeMD while still inheriting the machinery underneath it.'
+      "image": {
+        "src": "/images/work/bmd-modal/brief.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "BumblebeeMD needed to feel like its own digital health brand. Reusing the platform did not settle the visual decisions.",
+        "We worked through the homepage, content pages, and the smaller interface details, including buttons, inputs, and icons. Shared commerce patterns gave that work a foundation."
       ]
     },
     contributions: [
-      { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
-      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
-      { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
-      { icon: 'fa-thin fa-user-check', label: 'Usability Testing' },
-    ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' },
-      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
+      {
+        "icon": "fa-thin fa-pen-ruler",
+        "label": "Product Design"
+      },
+      {
+        "icon": "fa-thin fa-lightbulb",
+        "label": "Design Leadership"
+      },
+      {
+        "icon": "fa-thin fa-ruler-triangle",
+        "label": "Prototyping"
+      }
     ],
     media: [
-      { type: 'heading', text: 'Homepage' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'image', src: '/images/work/bmd-modal/home-dt.png', alt: 'BumblebeeMD homepage, desktop' },
-          { type: 'image', src: '/images/work/bmd-modal/gran-ma-w.png', alt: 'BumblebeeMD homepage lifestyle photography', flush: true }
+        "type": "heading",
+        "text": "The first impression",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "The homepage brought the brand into the customer’s first view of the product. Layout, imagery, and the interface treatment needed to work together on desktop and mobile."
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/home-dt.png",
+            "alt": "BumblebeeMD homepage, desktop"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/gran-ma-w.png",
+            "alt": "BumblebeeMD homepage lifestyle photography",
+            "flush": true
+          }
         ],
-        right: [{ type: 'image', src: '/images/work/bmd-modal/home-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
-        leftSpan: 18,
-        rightSpan: 6
-      },
-      { type: 'heading', text: 'Content Page' },
-      {
-        type: 'split-row',
-        left: [
-          { type: 'image', src: '/images/work/bmd-modal/content-dt.png', alt: 'BumblebeeMD content page, desktop' },
-          { type: 'image', src: '/images/work/bmd-modal/family.png', alt: 'BumblebeeMD family lifestyle photography', flush: true }
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/home-mb.png",
+            "alt": "BumblebeeMD Homepage Mobile"
+          }
         ],
-        right: [{ type: 'image', src: '/images/work/bmd-modal/content-mb.png', alt: 'BumblebeeMD Homepage Mobile' }],
-        leftSpan: 18,
-        rightSpan: 6
+        "leftSpan": 18,
+        "rightSpan": 6
       },
-      { type: 'heading', text: 'UI Components & Style' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'Buttons' },
-          { type: 'image', src: '/images/work/bmd-modal/buttons.png', alt: 'BumblebeeMD button component styles', flush: true }
+        "type": "heading",
+        "text": "A brand beyond the homepage",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "Content pages needed the same attention. The brand had to remain recognizable as people moved further into the experience."
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/content-dt.png",
+            "alt": "BumblebeeMD content page, desktop"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/family.png",
+            "alt": "BumblebeeMD family lifestyle photography",
+            "flush": true
+          }
         ],
-        right: [
-          { type: 'heading', text: 'Inputs' },
-          { type: 'image', src: '/images/work/bmd-modal/inputs.png', alt: 'BumblebeeMD form input component styles', flush: true }
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/content-mb.png",
+            "alt": "BumblebeeMD content page, mobile"
+          }
         ],
-        leftSpan: 12,
-        rightSpan: 12
+        "leftSpan": 18,
+        "rightSpan": 6
       },
-      { type: 'heading', text: 'Icons' },
       {
-        type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/bmd-modal/icons-01.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }],
-        right: [{ type: 'image', src: '/images/work/bmd-modal/icons-02.png', alt: 'BumblebeeMD Homepage Desktop', flush: true }],
-        leftSpan: 12,
-        rightSpan: 12
+        "type": "heading",
+        "text": "The details people use",
+        "level": 3
       },
-      { type: 'heading', text: 'Image Treatments' },
       {
-        type: 'image',
-        src: '/images/work/bmd-modal/images.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        flush: true
+        "type": "text",
+        "text": "Buttons, inputs, and icons carried the visual language into the working interface. These were the parts people would meet repeatedly."
       },
-      { type: 'heading', text: '"Buy Box" Treatments' },
       {
-        type: 'image',
-        src: '/images/work/bmd-modal/buy-box.png',
-        alt: 'BumblebeeMD Homepage Desktop',
-        flush: true
+        "type": "split-row",
+        "left": [
+          {
+            "type": "heading",
+            "text": "Buttons"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/buttons.png",
+            "alt": "BumblebeeMD button component styles",
+            "flush": true
+          }
+        ],
+        "right": [
+          {
+            "type": "heading",
+            "text": "Inputs"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/inputs.png",
+            "alt": "BumblebeeMD form input component styles",
+            "flush": true
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
       },
-      { type: 'heading', text: 'Wireframes' },
       {
-        type: 'image-pair',
-        desktop: { src: '/images/work/bmd-modal/home-wf-dt.png', alt: 'BumblebeeMD homepage wireframe, desktop' },
-        mobile: { src: '/images/work/bmd-modal/home-wf-mb.png', alt: 'BumblebeeMD homepage wireframe, mobile' }
+        "type": "heading",
+        "text": "Icons"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/icons-01.png",
+            "alt": "BumblebeeMD icon designs, first sheet",
+            "flush": true
+          }
+        ],
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/bmd-modal/icons-02.png",
+            "alt": "BumblebeeMD icon designs, second sheet",
+            "flush": true
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "heading",
+        "text": "Image Treatments"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/bmd-modal/images.png",
+        "alt": "BumblebeeMD image treatments",
+        "flush": true
+      },
+      {
+        "type": "heading",
+        "text": "\"Buy Box\" Treatments"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/bmd-modal/buy-box.png",
+        "alt": "BumblebeeMD plan-selection boxes",
+        "flush": true
+      },
+      {
+        "type": "heading",
+        "text": "Wireframes"
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/bmd-modal/home-wf-dt.png",
+          "alt": "BumblebeeMD homepage wireframe, desktop"
+        },
+        "mobile": {
+          "src": "/images/work/bmd-modal/home-wf-mb.png",
+          "alt": "BumblebeeMD homepage wireframe, mobile"
+        }
       }
     ]
   },
@@ -783,9 +1101,13 @@ export const projects: Project[] = [
     visible: true,
     briefHeading: 'Three Teams. One Vocabulary.',
     brief: {
-      image: { src: '/images/work/hydra/brief.png', alt: '' },
-      paragraphs: [
-        'The fragmentation was bigger than inconsistent UI. Product, marketing, and engineering had different names and patterns for the same things. I built the case for a shared system, secured executive backing, and shipped Hydra. Work that had taken two sprints could land in one.'
+      "image": {
+        "src": "/images/work/hydra/brief.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "The adoption constraint mattered. A shared interface could not depend on replacing the applications underneath it.",
+        "I secured executive backing for Hydra and kept the changes in the front end. Product, marketing, and engineering could work from the same patterns across brands and back-end codebases."
       ]
     },
     contributions: [
@@ -794,155 +1116,267 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Systems Analysis' },
       { icon: 'fa-thin fa-laptop-code', label: 'UI Engineering' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/SASS' },
-      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
-    ],
     media: [
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'The Problem', level: 3 },
-          { type: 'heading', text: 'Severe UI Fragmentation', level: 4, showRule: false },
+        "type": "split-row",
+        "left": [
           {
-            type: 'text',
-            text: 'Each phase was on a different tech stack and off-brand to boot. There were eight variants of buttons. It got worse from there. Identical components that did the same thing looked different throughout. Error messaging was created ad hoc for each element, with various visual treatments and copy. To add a layer of complexity, it had to support multiple sub-brands.'
+            "type": "heading",
+            "text": "Eight ways to draw a button",
+            "level": 3
           },
           {
-            type: 'text',
-            text: "The same action could look different from one part of the product to the next. Teams also had more variants to design, build, and maintain."
-          }
-        ],
-        right: [
+            "type": "text",
+            "text": "There were eight button treatments across the product. Error messages had their own variations in copy and presentation. The same action could look different from one part of the experience to the next."
+          },
           {
-            type: 'image',
-            src: '/images/work/hydra/ui-rag.png',
-            alt: 'Eight inconsistent button treatments across products',
-            caption: 'UX/UI Fragmentation: Button Treatments',
-            flush: true
+            "type": "text",
+            "text": "Every variant became another thing to design, build, and maintain."
           }
         ],
-        leftSpan: 14,
-        rightSpan: 10,
-        vAlign: 'center'
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/hydra/ui-rag.png",
+            "alt": "Eight inconsistent button treatments across products",
+            "caption": "UX/UI Fragmentation: Button Treatments",
+            "flush": true
+          }
+        ],
+        "leftSpan": 14,
+        "rightSpan": 10,
+        "vAlign": "center"
       },
       {
-        type: 'split-row',
-        left: [
+        "type": "split-row",
+        "left": [
           {
-            type: 'image',
-            src: '/images/work/hydra/error-01.png',
-            alt: 'Inconsistent error message and input field treatments, first set',
-            caption: 'UX/UI Fragmentation: Error and Input Treatments (1 of 2)',
-            flush: true
+            "type": "image",
+            "src": "/images/work/hydra/error-01.png",
+            "alt": "Inconsistent error message and input field treatments, first set",
+            "caption": "UX/UI Fragmentation: Error and Input Treatments (1 of 2)",
+            "flush": true
           }
         ],
-        right: [
+        "right": [
           {
-            type: 'image',
-            src: '/images/work/hydra/error-02.png',
-            alt: 'Inconsistent error message and input field treatments, second set',
-            caption: 'UX/UI Fragmentation: Error and Input Treatments (2 of 2)',
-            flush: true
+            "type": "image",
+            "src": "/images/work/hydra/error-02.png",
+            "alt": "Inconsistent error message and input field treatments, second set",
+            "caption": "UX/UI Fragmentation: Error and Input Treatments (2 of 2)",
+            "flush": true
           }
         ],
-        leftSpan: 12,
-        rightSpan: 12,
-        breakpoint: 'md'
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "breakpoint": "md"
       },
-      { type: 'heading', text: 'The Rise of Hydra' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'A Shared Language', level: 4 },
+        "type": "split-row",
+        "left": [
           {
-            type: 'text',
-            text: "I defined shared interface patterns and a vocabulary designers and engineers could both use. Brand settings let the same components take on different identities across the products."
+            "type": "heading",
+            "text": "Give the components names people can share",
+            "level": 3
           },
           {
-            type: 'text',
-            text: "I kept the changes in the front-end markup. The applications could adopt the shared interface without replacing their functional back-end code."
-          },
-          {
-            type: 'text',
-            text: "Variables controlled color, type, and interface treatment for each brand. The core patterns stayed shared, and applications could take design-system updates independently."
+            "type": "text",
+            "text": "I defined the interface patterns and a vocabulary designers and engineers could both use. Elements, controls, components, modules, templates, and pages described how the system fit together."
           }
         ],
-        right: [
-          { type: 'text', text: 'Nomenclature' },
+        "right": [
           {
-            type: 'icon-grid',
-            items: [
-              { icon: 'fa-thin fa-image', title: 'Elements' },
-              { icon: 'fa-thin fa-toggle-on', title: 'Controls' },
-              { icon: 'fa-thin fa-sliders', title: 'Components' },
-              { icon: 'fa-thin fa-sidebar', title: 'Modules' },
-              { icon: 'fa-thin fa-table-layout', title: 'Templates' },
-              { icon: 'fa-thin fa-browsers', title: 'Pages' }
+            "type": "text",
+            "text": "Nomenclature"
+          },
+          {
+            "type": "icon-grid",
+            "items": [
+              {
+                "icon": "fa-thin fa-image",
+                "title": "Elements"
+              },
+              {
+                "icon": "fa-thin fa-toggle-on",
+                "title": "Controls"
+              },
+              {
+                "icon": "fa-thin fa-sliders",
+                "title": "Components"
+              },
+              {
+                "icon": "fa-thin fa-sidebar",
+                "title": "Modules"
+              },
+              {
+                "icon": "fa-thin fa-table-layout",
+                "title": "Templates"
+              },
+              {
+                "icon": "fa-thin fa-browsers",
+                "title": "Pages"
+              }
             ]
           }
         ],
-        leftSpan: 12,
-        rightSpan: 12,
-        leftSpanXl: 11,
-        rightSpanXl: 11,
-        vAlign: 'center',
-        hAlign: 'center'
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "leftSpanXl": 11,
+        "rightSpanXl": 11,
+        "vAlign": "center",
+        "hAlign": "center"
       },
       {
-        type: 'progress-diagram',
-        heading: 'The System Framework',
-        rows: [
-          { cells: [{ label: 'Consistent UX/UI', bg: 'third', animated: true, span: 24 }] },
+        "type": "heading",
+        "text": "Keep the applications, share the interface",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "The changes stayed in the front-end markup. Applications could adopt the interface without replacing their functional back-end code."
+      },
+      {
+        "type": "text",
+        "text": "Variables controlled color, type, and treatment for each brand. Core patterns stayed shared, and applications could take design-system updates independently."
+      },
+      {
+        "type": "progress-diagram",
+        "heading": "The System Framework",
+        "rows": [
           {
-            cells: [
-              { label: 'App One', bg: 'prime', span: 6 },
-              { label: 'App Two', bg: 'prime', span: 6 },
-              { label: 'Main Website', bg: 'prime', span: 6 },
-              { label: 'Sub Website', bg: 'second', span: 6 }
+            "cells": [
+              {
+                "label": "Consistent UX/UI",
+                "bg": "third",
+                "animated": true,
+                "span": 24
+              }
             ]
           },
           {
-            cells: [
-              { label: 'Main Brand', bg: 'prime', span: 18 },
-              { label: 'Sub Brand', bg: 'second', span: 6 }
+            "cells": [
+              {
+                "label": "App One",
+                "bg": "prime",
+                "span": 6
+              },
+              {
+                "label": "App Two",
+                "bg": "prime",
+                "span": 6
+              },
+              {
+                "label": "Main Website",
+                "bg": "prime",
+                "span": 6
+              },
+              {
+                "label": "Sub Website",
+                "bg": "second",
+                "span": 6
+              }
             ]
           },
-          { cells: [{ label: 'Design System', bg: 'fourth-light', span: 24 }] },
           {
-            cells: [
-              { label: 'C#', bg: 'fourth', span: 12, padY: 5 },
-              { label: 'PHP', bg: 'fourth-dark', span: 12, padY: 5 }
+            "cells": [
+              {
+                "label": "Main Brand",
+                "bg": "prime",
+                "span": 18
+              },
+              {
+                "label": "Sub Brand",
+                "bg": "second",
+                "span": 6
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "label": "Design System",
+                "bg": "fourth-light",
+                "span": 24
+              }
+            ]
+          },
+          {
+            "cells": [
+              {
+                "label": "C#",
+                "bg": "fourth",
+                "span": 12,
+                "padY": 5
+              },
+              {
+                "label": "PHP",
+                "bg": "fourth-dark",
+                "span": 12,
+                "padY": 5
+              }
             ]
           }
         ]
       },
-      { type: 'heading', text: 'UI Elements' },
       {
-        type: 'split-row',
-        left: [{ type: 'image', src: '/images/work/hydra/hydra-ui-01.png', alt: "Big'ol Hydra", flush: true }],
-        right: [{ type: 'image', src: '/images/work/hydra/hydra-ui-02.png', alt: "Big'ol Hydra", flush: true }],
-        leftSpan: 12,
-        rightSpan: 12
+        "type": "heading",
+        "text": "UI Elements"
       },
-      { type: 'heading', text: 'Why Hydra?' },
       {
-        type: 'split-row',
-        left: [{ type: 'supporting-art', kind: 'hydra', alt: 'Hydra connecting shared interface patterns and components across brands and technology stacks.' }],
-        right: [
+        "type": "split-row",
+        "left": [
           {
-            type: 'text',
-            text: "Hydra had many heads and one body. The system’s shared patterns served several products and brands."
+            "type": "image",
+            "src": "/images/work/hydra/hydra-ui-01.png",
+            "alt": "Hydra interface elements, first sheet",
+            "flush": true
           }
         ],
-        leftSpan: 8,
-        rightSpan: 16,
-        layout: 'hydra-why',
-        surface: true,
-        vAlign: 'center',
-        hAlign: 'center'
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/hydra/hydra-ui-02.png",
+            "alt": "Hydra interface elements, second sheet",
+            "flush": true
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "heading",
+        "text": "What the system left behind",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "Work that had taken two sprints could land in one. The product later ran for about a year without a dedicated design resource."
+      },
+      {
+        "type": "heading",
+        "text": "Why Hydra?"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "supporting-art",
+            "kind": "hydra",
+            "alt": "Hydra connecting shared interface patterns and components across brands and technology stacks."
+          }
+        ],
+        "right": [
+          {
+            "type": "text",
+            "text": "Hydra had many heads and one body. The shared patterns served several products and brands."
+          }
+        ],
+        "leftSpan": 8,
+        "rightSpan": 16,
+        "layout": "hydra-why",
+        "surface": true,
+        "vAlign": "center",
+        "hAlign": "center"
       }
     ]
   },
@@ -963,9 +1397,13 @@ export const projects: Project[] = [
     visible: true,
     briefHeading: 'The Funnel Was Talking',
     brief: {
-      image: { src: '/images/work/opf-modal/brief-2.png', alt: '' },
-      paragraphs: [
-        'The redesign started with evidence. Visitor behavior, device performance, heat maps, and scroll maps showed how people were moving through the experience. I used those signals to shape the site and lead flow, then worked across PPC, SEO, and affiliate channels on conversion strategy.'
+      "image": {
+        "src": "/images/work/opf-modal/brief-2.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "The work extended beyond the corporate website. I owned the design process and usability-testing practice, and worked across paid search, organic search, and affiliate channels on conversion strategy.",
+        "The redesign brought that work into the website and lead flow. Hydra supplied the interface patterns."
       ]
     },
     contributions: [
@@ -974,82 +1412,168 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-ruler-triangle', label: 'Prototyping' },
       { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-brands fa-laravel', label: 'Laravel & Statamic' },
-      { icon: 'fa-brands fa-bootstrap', label: 'Bootstrap' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS/LESS' },
-      { icon: 'fa-brands fa-git-alt', label: 'GIT' }
-    ],
     media: [
-      { type: 'heading', text: 'Homepage' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/brief-befor.png', alt: 'One Park Financial homepage, before redesign' }
-        ],
-        right: [
-          { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/brief.png', alt: 'One Park Financial homepage, after redesign' }
-        ],
-        leftSpan: 12,
-        rightSpan: 12,
-        breakpoint: 'md'
+        "type": "heading",
+        "text": "Examine the entry point",
+        "level": 3
       },
-      { type: 'heading', text: 'How It Works' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/hiw-before.png', alt: 'One Park Financial How It Works page, before redesign' }
-        ],
-        right: [
-          { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/hiw.png', alt: 'One Park Financial How It Works page, after redesign' }
-        ],
-        leftSpan: 12,
-        rightSpan: 12
+        "type": "text",
+        "text": "I used visitor behavior and device performance to decide where to look, then heat maps and scroll maps to examine the page. The homepage comparison shows the interface before and after that work."
       },
-      { type: 'heading', text: 'About Us' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/about-us-before.png', alt: 'One Park Financial About Us page, before redesign' }
+        "type": "split-row",
+        "left": [
+          {
+            "type": "text",
+            "text": "Before"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/brief-befor.png",
+            "alt": "One Park Financial homepage, before redesign"
+          }
         ],
-        right: [
-          { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/about.png', alt: 'One Park Financial About Us page, after redesign' }
+        "right": [
+          {
+            "type": "text",
+            "text": "After"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/brief.png",
+            "alt": "One Park Financial homepage, after redesign"
+          }
         ],
-        leftSpan: 12,
-        rightSpan: 12
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "breakpoint": "md"
       },
-      { type: 'heading', text: 'Module: Our Process' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'text', text: 'Before' },
-          { type: 'image', src: '/images/work/opf-modal/mod-proc-before.png', alt: 'One Park Financial Our Process module, before redesign' }
-        ],
-        right: [
-          { type: 'text', text: 'After' },
-          { type: 'image', src: '/images/work/opf-modal/mod-proc-after.png', alt: 'One Park Financial Our Process module, after redesign' }
-        ],
-        leftSpan: 12,
-        rightSpan: 12
+        "type": "heading",
+        "text": "Explain the service",
+        "level": 3
       },
-      { type: 'heading', text: 'Full Homepage' },
       {
-        type: 'image-pair',
-        desktop: {
-          src: '/images/work/opf-modal/home-dt.png',
-          alt: 'One Park Financial full homepage, desktop'
+        "type": "text",
+        "text": "The How It Works and About Us pages were part of the same experience. I reviewed them alongside the homepage and lead flow."
+      },
+      {
+        "type": "heading",
+        "text": "How It Works"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "text",
+            "text": "Before"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/hiw-before.png",
+            "alt": "One Park Financial How It Works page, before redesign"
+          }
+        ],
+        "right": [
+          {
+            "type": "text",
+            "text": "After"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/hiw.png",
+            "alt": "One Park Financial How It Works page, after redesign"
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "heading",
+        "text": "About Us"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "text",
+            "text": "Before"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/about-us-before.png",
+            "alt": "One Park Financial About Us page, before redesign"
+          }
+        ],
+        "right": [
+          {
+            "type": "text",
+            "text": "After"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/about.png",
+            "alt": "One Park Financial About Us page, after redesign"
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "heading",
+        "text": "Carry the experience into the next step",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "The process module and responsive homepage show how the design was applied across the website. The shared system behind those interfaces is covered in the Hydra case study."
+      },
+      {
+        "type": "heading",
+        "text": "Module: Our Process"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "text",
+            "text": "Before"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/mod-proc-before.png",
+            "alt": "One Park Financial Our Process module, before redesign"
+          }
+        ],
+        "right": [
+          {
+            "type": "text",
+            "text": "After"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/opf-modal/mod-proc-after.png",
+            "alt": "One Park Financial Our Process module, after redesign"
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "heading",
+        "text": "Full Homepage"
+      },
+      {
+        "type": "image-pair",
+        "desktop": {
+          "src": "/images/work/opf-modal/home-dt.png",
+          "alt": "One Park Financial full homepage, desktop"
         },
-        mobile: {
-          src: '/images/work/opf-modal/home-mb.png',
-          alt: 'One Park Financial full homepage, mobile'
+        "mobile": {
+          "src": "/images/work/opf-modal/home-mb.png",
+          "alt": "One Park Financial full homepage, mobile"
         }
       }
     ]
@@ -1060,19 +1584,26 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Conversion Optimization', 'Product'],
     order: 6,
-    title: 'A/B Testing',
+    title: "Testing the experience",
     icon: 'fa-thin fa-vial',
     visible: true,
     summary: '',
     briefHeading: "What we tested, and why",
     briefVariant: 'narrow',
     brief: {
-      images: [
-        { src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage control' },
-        { src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, variant V1' }
+      "images": [
+        {
+          "src": "/images/work/webmd-modal/control.png",
+          "alt": "WebMD homepage control"
+        },
+        {
+          "src": "/images/work/webmd-modal/winner.png",
+          "alt": "WebMD homepage, variant V1"
+        }
       ],
-      paragraphs: [
-        "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results."
+      "paragraphs": [
+        "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results.",
+        "The examples here show the questions we tested and the designs we put in front of customers."
       ]
     },
     contributions: [
@@ -1081,100 +1612,146 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-chart-mixed', label: 'Data Analysis' },
       { icon: 'fa-thin fa-code', label: 'Implementation' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-bullseye-arrow', label: 'Adobe Target' },
-      { icon: 'fa-brands fa-wordpress-simple', label: 'WordPress' }
-    ],
     media: [
       {
-        type: 'split-row',
-        reverse: true,
-        left: [
+        "type": "split-row",
+        "reverse": true,
+        "left": [
           {
-            type: 'image',
-            src: '/images/work/split01-modal/web-md-thumb.png',
-            alt: '',
-            shape: 'circle',
-            bordered: true
+            "type": "image",
+            "src": "/images/work/split01-modal/web-md-thumb.png",
+            "alt": "",
+            "shape": "circle",
+            "bordered": true
           }
         ],
-        right: [
-          { type: 'heading', text: 'WebMD Demographic Test' },
+        "right": [
           {
-            type: 'text',
-            text: "Hypothesis: imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site."
+            "type": "heading",
+            "text": "WebMD imagery",
+            "level": 3
+          },
+          {
+            "type": "text",
+            "text": "The hypothesis was that imagery featuring younger adults might fit the WebMD audience better than the imagery used on the core DentalPlans site."
           }
         ],
-        leftSpan: 12,
-        rightSpan: 12,
-        leftSpanXl: 8,
-        rightSpanXl: 10,
-        hAlign: 'center',
-        vAlign: 'center'
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "leftSpanXl": 8,
+        "rightSpanXl": 10,
+        "hAlign": "center",
+        "vAlign": "center"
       },
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'Control' },
-          { type: 'image', src: '/images/work/webmd-modal/control.png', alt: 'WebMD homepage, control variant' }
-        ],
-        right: [
-          { type: 'heading', text: "Variant 1" },
-          { type: 'image', src: '/images/work/webmd-modal/winner.png', alt: 'WebMD homepage, variant V1' }
-        ],
-        leftSpan: 12,
-        rightSpan: 12
-      },
-      {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: "Variant 2" },
-          { type: 'image', src: '/images/work/webmd-modal/v2.png', alt: 'WebMD homepage, variant V2' }
-        ],
-        right: [
-          { type: 'heading', text: "Variant 3" },
-          { type: 'image', src: '/images/work/webmd-modal/v3.png', alt: 'WebMD homepage, variant V3' }
-        ],
-        leftSpan: 12,
-        rightSpan: 12
-      },
-      {
-        type: 'split-row',
-        left: [
+        "type": "split-row",
+        "left": [
           {
-            type: 'image',
-            src: '/images/work/split01-modal/sc-thumb.png',
-            alt: '',
-            shape: 'circle',
-            bordered: true
+            "type": "heading",
+            "text": "Control"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/webmd-modal/control.png",
+            "alt": "WebMD homepage, control variant"
           }
         ],
-        right: [
-          { type: 'heading', text: 'Savings Calculator' },
+        "right": [
           {
-            type: 'text',
-            text: "Hypothesis: additional product information and a recognizable spokesperson might change customer response."
+            "type": "heading",
+            "text": "Variant 1"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/webmd-modal/winner.png",
+            "alt": "WebMD homepage, variant V1"
           }
         ],
-        leftSpan: 12,
-        rightSpan: 12,
-        leftSpanXl: 8,
-        rightSpanXl: 10,
-        hAlign: 'center',
-        vAlign: 'center'
+        "leftSpan": 12,
+        "rightSpan": 12
       },
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'Control' },
-          { type: 'image', src: '/images/work/split01-modal/sc-control.png', alt: 'Savings calculator landing page, control variant' }
+        "type": "split-row",
+        "left": [
+          {
+            "type": "heading",
+            "text": "Variant 2"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/webmd-modal/v2.png",
+            "alt": "WebMD homepage, variant V2"
+          }
         ],
-        right: [
-          { type: 'heading', text: "Variant 1" },
-          { type: 'image', src: '/images/work/split01-modal/sc-winner.png', alt: 'Savings calculator landing page, variant V1' }
+        "right": [
+          {
+            "type": "heading",
+            "text": "Variant 3"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/webmd-modal/v3.png",
+            "alt": "WebMD homepage, variant V3"
+          }
         ],
-        leftSpan: 12,
-        rightSpan: 12
+        "leftSpan": 12,
+        "rightSpan": 12
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "image",
+            "src": "/images/work/split01-modal/sc-thumb.png",
+            "alt": "",
+            "shape": "circle",
+            "bordered": true
+          }
+        ],
+        "right": [
+          {
+            "type": "heading",
+            "text": "Savings calculator",
+            "level": 3
+          },
+          {
+            "type": "text",
+            "text": "This test examined whether additional product information and a recognizable spokesperson might change customer response."
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "leftSpanXl": 8,
+        "rightSpanXl": 10,
+        "hAlign": "center",
+        "vAlign": "center"
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "heading",
+            "text": "Control"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/split01-modal/sc-control.png",
+            "alt": "Savings calculator landing page, control variant"
+          }
+        ],
+        "right": [
+          {
+            "type": "heading",
+            "text": "Variant 1"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/split01-modal/sc-winner.png",
+            "alt": "Savings calculator landing page, variant V1"
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12
       }
     ]
   },
@@ -1188,30 +1765,39 @@ export const projects: Project[] = [
     icon: 'fa-thin fa-headset',
     modalTitle: "When nobody can take the call",
     visible: true,
-    summary: "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable.",
+    summary: "I connected the website’s call invitation to call-center availability, working with the service leader, engineering, and business intelligence on the status feed.",
+    briefHeading: "A phone number is a promise",
     brief: {
-      image: { src: '/images/work/ccux-modal/flow.png', alt: 'Call center availability API flow diagram' },
-      paragraphs: [
-        "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader, researched the platform’s API, and worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
+      "image": {
+        "src": "/images/work/ccux-modal/flow.png",
+        "alt": "Call center availability API flow diagram"
+      },
+      "paragraphs": [
+        "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader and researched the platform’s API.",
+        "I worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
       ]
     },
     contributions: [
       { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Leadership' },
     ],
-    technologies: [
-      {
-        icon: 'fa-thin fa-project-diagram',
-        label: 'API'
-      },
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Target' }
-    ],
     media: [
-      { type: 'heading', text: 'Messaging and State Change', level: 4, icon: 'fa-thin fa-message-lines', treatment: 'section' },
       {
-        type: 'text',
-        text: 'Our API checked the status of the call center every five minutes and updated the messaging with visual indicators on the website. We logged the status changes and calls for tracking. We had a unique promotional code that would only appear when the call center was not available.'
+        "type": "heading",
+        "text": "Make the message match availability",
+        "level": 3,
+        "icon": "fa-thin fa-message-lines"
       },
-      { type: 'call-center-states' }
+      {
+        "type": "text",
+        "text": "The feed checked call-center status every five minutes. The website changed its messaging and visual indicators, and we logged status changes and calls."
+      },
+      {
+        "type": "text",
+        "text": "A promotional code appeared only when the call center was unavailable."
+      },
+      {
+        "type": "call-center-states"
+      }
     ]
   },
   {
@@ -1220,15 +1806,20 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Product'],
     order: 8,
-    title: 'Data-Driven Personalization',
+    title: "One campaign, several audiences",
     icon: 'fa-thin fa-bullseye-arrow',
-    modalTitle: 'Data-Driven Personalization',
+    modalTitle: "One campaign, several audiences",
     visible: true,
-    summary: "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign.",
+    summary: "I led the design and development of a campaign whose content and incentives changed by audience and campaign stage.",
+    briefHeading: "Content that followed the customer",
     brief: {
-      image: { src: '/images/work/ma-modal/automation.gif', alt: 'Animated walkthrough of the marketing automation workflow' },
-      paragraphs: [
-        "I led design and development for a personalized marketing campaign spanning several brands and touchpoints. Content and incentives changed by audience and by where the customer was in the campaign."
+      "image": {
+        "src": "/images/work/ma-modal/automation.gif",
+        "alt": "Animated walkthrough of the marketing automation workflow"
+      },
+      "paragraphs": [
+        "A campaign spanning several brands needed different content for different audiences and stages. I led its design and development across the touchpoints.",
+        "The work connected marketing, business analysis, and data teams around shared data and reusable content."
       ]
     },
     contributions: [
@@ -1237,35 +1828,47 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
       { icon: 'fa-thin fa-solar-system', label: 'Integration Strategy' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' },
-      { icon: 'fa-thin fa-drafting-compass', label: 'Adobe Scene7' },
-      { icon: 'fa-thin fa-drafting-compass', label: 'Aprimo' },
-      { icon: 'fa-thin fa-code', label: 'HTML' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'CSS' },
-      { icon: 'fa-thin fa-brackets-curly', label: 'JS' }
-    ],
     media: [
-      { type: 'heading', text: 'Results' },
       {
-        type: 'text',
-        text: "I worked with marketing, business analysis, and data teams to build the campaign around the platform’s shared data and reusable content. Campaign managers could manage variants through the system."
+        "type": "heading",
+        "text": "Give campaign managers control",
+        "level": 3
       },
       {
-        type: 'split-row',
-        left: [
-          { type: 'heading', text: 'Before' },
-          { type: 'image', src: '/images/work/ma-modal/ma-36.png', alt: 'Personalized campaign email, before optimization', flush: true }
+        "type": "text",
+        "text": "Content and incentives changed by audience and by where the customer was in the campaign. Campaign managers could manage those variants through the system."
+      },
+      {
+        "type": "split-row",
+        "left": [
+          {
+            "type": "heading",
+            "text": "Before"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/ma-modal/ma-36.png",
+            "alt": "Personalized campaign email, before optimization",
+            "flush": true
+          }
         ],
-        right: [
-          { type: 'heading', text: 'After' },
-          { type: 'image', src: '/images/work/ma-modal/ma-3b.png', alt: 'Personalized campaign email, after optimization', flush: true }
+        "right": [
+          {
+            "type": "heading",
+            "text": "After"
+          },
+          {
+            "type": "image",
+            "src": "/images/work/ma-modal/ma-3b.png",
+            "alt": "Personalized campaign email, after optimization",
+            "flush": true
+          }
         ],
-        leftSpan: 12,
-        rightSpan: 12,
-        leftSpanXl: 8,
-        rightSpanXl: 8,
-        hAlign: 'center'
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "leftSpanXl": 8,
+        "rightSpanXl": 8,
+        "hAlign": "center"
       }
     ]
   },
@@ -1275,46 +1878,57 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Leadership'],
     order: 9,
-    title: 'Team Workshops',
+    title: "Getting teams to a shared decision",
     icon: 'fa-thin fa-screen-users',
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/workshop/ideas.jpg', alt: 'Workshop wall covered in sticky notes from a brainstorming session' },
-      paragraphs: [
-        "I design workshops around the decision the group needs to make. The work has included customer journeys, product direction, and conversion-testing plans, with people from different disciplines in the room. I prepare the activities and materials so the session can produce something the team can use afterward.",
+      "image": {
+        "src": "/images/work/workshop/ideas.jpg",
+        "alt": "Workshop wall covered in sticky notes from a brainstorming session"
+      },
+      "paragraphs": [
+        "I start with the decision the group needs to make. Then I design the session around the people who can make it.",
+        "The work has included customer journeys, product direction, and conversion-testing plans. I prepare the activities and materials so the group leaves with something the team can use afterward."
       ]
     },
-    briefHeading: 'Solving the Right Problems',
+    briefHeading: "Design the decision before the session",
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Workshop Facilitation' },
     ],
-    technologies: [
-      { icon: 'fa-thin fa-chalkboard', label: 'Whiteboard' },
-      { icon: 'fa-thin fa-marker', label: 'Dry Erase Markers' },
-      { icon: 'fa-thin fa-notes', label: 'Post-it Notes' },
-      { icon: 'fa-thin fa-brain', label: 'Brains' }
-    ],
     media: [
-      { type: 'heading', text: 'Types of Workshops I’ve Facilitated' },
       {
-        type: 'icon-grid',
-        items: [
+        "type": "heading",
+        "text": "Workshops in practice",
+        "level": 3
+      },
+      {
+        "type": "icon-grid",
+        "items": [
           {
-            image: { src: '/images/work/workshop/cover.jpg', alt: 'Content Strategy' },
-            title: 'Creative Brainstorming'
+            "image": {
+              "src": "/images/work/workshop/cover.jpg",
+              "alt": "Creative brainstorming"
+            },
+            "title": "Creative brainstorming"
           },
           {
-            image: { src: '/images/work/workshop/cover-02.jpg', alt: 'Content Strategy' },
-            title: 'UX/UI Strategy'
+            "image": {
+              "src": "/images/work/workshop/cover-02.jpg",
+              "alt": "UX/UI strategy"
+            },
+            "title": "UX/UI strategy"
           },
           {
-            image: { src: '/images/work/workshop/planning.jpg', alt: 'Content Strategy' },
-            title: 'CRO Testing Strategy'
+            "image": {
+              "src": "/images/work/workshop/planning.jpg",
+              "alt": "Conversion-testing strategy"
+            },
+            "title": "Conversion-testing strategy"
           }
         ],
-        cols: 1,
-        colsLg: 3
+        "cols": 1,
+        "colsLg": 3
       }
     ]
   },
@@ -1324,87 +1938,110 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Product', 'Leadership'],
     order: 10,
-    title: 'UX Roadmaps',
+    title: "Choosing what comes next",
     icon: 'fa-thin fa-mouse-field',
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/roadmap/rm.jpg', alt: 'Obfuscated UX roadmap in Lucidchart' },
-      paragraphs: [
+      "image": {
+        "src": "/images/work/roadmap/rm.jpg",
+        "alt": "UX roadmap example with project details obscured"
+      },
+      "paragraphs": [
         "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start.",
-        'I built the 2022 UX Roadmap for One Park Financial using the framework detailed under “Example UX Roadmap.”',
-        "The plan has to survive new information. I make the dependencies visible so a change in scope can lead to a new sequence."
+        "The example shows the structure I used for a UX roadmap at One Park Financial. Project details are obscured.",
+        "The plan has to survive new information. Visible dependencies make it possible to change the sequence when the scope changes."
       ]
     },
     briefHeading: 'Are we there yet?',
     contributions: [
       { icon: 'fa-thin fa-map', label: 'UX Roadmapping' },
     ],
-    technologies: [{ icon: 'fa-thin fa-chalkboard', label: 'Lucidchart' }],
     media: [
-      { type: 'heading', text: 'Example UX Roadmap: obfuscated for client protection' },
-      { type: 'text', text: 'Structure and Components' },
       {
-        type: 'styled-list',
-        numbered: true,
-        shadow: true,
-        items: [
+        "type": "text",
+        "text": "What the roadmap needs to say"
+      },
+      {
+        "type": "styled-list",
+        "numbered": true,
+        "shadow": true,
+        "items": [
           {
-            label: 'Roadmap Title:',
-            body: 'A name that is memorable and resonates with the top-level goals if possible.',
-            bg: 'prime'
+            "label": "Title",
+            "bg": "prime",
+            "body": "Name the work and its purpose."
           },
           {
-            label: 'Roadmap Owner:',
-            body: 'Set accountability and identify a point person for questions about the roadmap.',
-            bg: 'second'
+            "label": "Owner",
+            "bg": "second",
+            "body": "Identify who maintains the roadmap and answers questions about it."
           },
           {
-            label: 'High-Level Goals/Vision:',
-            body: 'Larger company strategy, vision, or specific goals that the roadmap aligns to.',
-            bg: 'third'
+            "label": "Goal",
+            "bg": "third",
+            "body": "State the business or customer outcome the work is intended to change."
           },
           {
-            label: 'Timeline:',
-            body: 'Now → Next → Later (note: these are not specific dates, but what should be tackled first).',
-            bg: 'fourth'
+            "label": "Sequence",
+            "bg": "fourth",
+            "body": "Use Now, Next, and Later to show priority. These are not delivery dates."
           },
           {
-            label: 'Specific Projects or Initiatives:',
-            bg: 'pop',
-            subItems: [
-              'Project Title / Number',
-              'Beneficiary',
-              'Need',
-              'Business Objectives',
-              'Team Dependencies'
+            "label": "Initiatives",
+            "bg": "pop",
+            "subItems": [
+              "Project name",
+              "Who needs the work",
+              "The need",
+              "Business objective",
+              "Dependencies"
             ]
           }
         ]
       },
-      { type: 'text', text: 'Project Card:' },
       {
-        type: 'card',
-        shadow: true,
-        header: 'Project Title',
-        rows: [
+        "type": "text",
+        "text": "A project on the roadmap"
+      },
+      {
+        "type": "card",
+        "shadow": true,
+        "header": "Project Title",
+        "rows": [
           {
-            label: 'Beneficiary:',
-            body: 'The prioritized recipient(s) of the work (e.g., Merchants, Agents, Internal Stakeholders)'
+            "label": "Who needs it",
+            "body": "Name the people who will use or benefit from the work."
           },
-          { label: 'Need:', body: 'The problem that will be solved or the purpose.' },
           {
-            label: 'Business Objective(s):',
-            body: "The intended business outcome and how the team will judge success."
+            "label": "Need",
+            "body": "State the problem the project must solve."
           },
-          { label: 'Team:', body: 'Who is involved.' }
+          {
+            "label": "Business objective",
+            "body": "Describe the intended outcome and how the team will judge it."
+          },
+          {
+            "label": "Owners and dependencies",
+            "body": "Name who is responsible and whose work must happen first."
+          }
         ]
       },
-      // Legacy kept label + hr + image in one column with mt-5 (modal-roadmap
-      // .html:133-137) — a title for the chart below, not a caption for the
-      // block above. `heading` restores the h3, the rule, and the lead-in.
-      { type: 'heading', text: 'Obfuscated Lucidchart' },
-      { type: 'image', src: '/images/work/roadmap/l-chart.jpg', alt: 'Lucid Chart', flush: true }
+      {
+        "type": "heading",
+        "text": "Roadmap example",
+        "level": 3
+      },
+      {
+        "type": "text",
+        "text": "Project details are obscured."
+      },
+      {
+        "type": "image",
+        "src": "/images/work/roadmap/l-chart.jpg",
+        "alt": "UX roadmap example with project details obscured",
+        "flush": true
+      }
     ]
   },
   {
@@ -1413,22 +2050,31 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['UX Research', 'Product'],
     order: 11,
-    title: 'Personas',
+    title: "Understanding the people buying the product",
     icon: 'fa-thin fa-masks-theater',
     visible: true,
     summary: '',
     brief: {
-      image: { src: '/images/work/kitchen-sink/Persona-Cards.png', alt: 'Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy.' },
-      paragraphs: [
-        "I worked with business intelligence and product marketing on personas for the DentalPlans audience. One was Frugal Francine, representing customers who weighed dental-plan choices around cost and value."
+      "image": {
+        "src": "/images/work/kitchen-sink/Persona-Cards.png",
+        "alt": "Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy."
+      },
+      "paragraphs": [
+        "I worked with business intelligence and product marketing on persona materials for the DentalPlans audience. Frugal Francine represented customers weighing dental-plan choices around cost and value.",
+        "The card brought demographics, motivations, preferences, channels, and reasons to buy into one reference for the team."
       ]
     },
     briefHeading: "A cost-conscious customer persona",
     contributions: [
-      { icon: 'fa-thin fa-handshake', label: 'Project Collaboration' },
-      { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
+      {
+        "icon": "fa-thin fa-handshake",
+        "label": "Persona Collaboration"
+      },
+      {
+        "icon": "fa-thin fa-fill-drip",
+        "label": "Visual Design"
+      }
     ],
-    technologies: [{ icon: 'fa-thin fa-drafting-compass', label: 'Adobe Suite' }],
     media: []
   },
   {
@@ -1437,15 +2083,19 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Brand', 'Visual'],
     order: 12,
-    title: 'Reveal',
+    title: "The Choice Is Clear",
     thumb: { src: '/images/work/kitchen-sink/reveal-cover.png', alt: 'Reveal Aligners campaign, The choice is clear' },
     modalTitle: 'Reveal Aligners',
     visible: true,
-    summary: "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on.",
+    summary: "I developed copy and visual concepts for Reveal Clear Aligners around the idea of clarity.",
+    briefHeading: "Clarity as a creative idea",
     brief: {
-      image: { src: '/images/work/kitchen-sink/reveal-cover.jpg', alt: '' },
-      paragraphs: [
-        "For Reveal Clear Aligners, I developed copy and visual concepts around the idea of clarity. The examples below show the campaign directions I worked on."
+      "image": {
+        "src": "/images/work/kitchen-sink/reveal-cover.jpg",
+        "alt": ""
+      },
+      "paragraphs": [
+        "For Reveal Clear Aligners, I developed copy and visual concepts around clarity. Each execution needed to make sense on its own while belonging to the same campaign."
       ]
     },
     contributions: [
@@ -1454,60 +2104,68 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
     inlineContributions: true,
-    technologies: [],
-    heroCardsHeading: 'The thinking behind the idea',
+    heroCardsHeading: "Three expressions of clarity",
     heroCardsIcon: 'fa-thin fa-brain',
     heroCards: [
       {
-        icon: 'fa-thin fa-lightbulb-on',
-        label: "Yup, It's That Clear:",
-        body: "A direct statement of the campaign’s clarity idea."
+        "icon": "fa-thin fa-lightbulb-on",
+        "label": "Yup, It's That Clear:",
+        "body": "State the idea with plain confidence."
       },
       {
-        icon: 'fa-thin fa-lightbulb-on',
-        label: "So Clear, Like It's Not Even There:",
-        body: "A playful expression of subtle appearance."
+        "icon": "fa-thin fa-lightbulb-on",
+        "label": "So Clear, Like It's Not Even There:",
+        "body": "Play with how little the aligner is meant to be noticed."
       },
       {
-        icon: 'fa-thin fa-lightbulb-on',
-        label: 'OMG, Your Aligner Is Showing:',
-        body: "A deliberately provocative concept about visibility."
+        "icon": "fa-thin fa-lightbulb-on",
+        "label": "OMG, Your Aligner Is Showing:",
+        "body": "Use visibility as the provocation."
       }
     ],
     heroMedia: [
       {
-        type: 'text',
-        text: 'Each concept had to sit inside one overarching campaign theme while standing on its own in a paid placement. The through-line was simple: the choice of Reveal Clear Aligners was, itself, clear.'
-      },
-      { type: 'contributions' },
+        "type": "contributions"
+      }
     ],
     media: [
-      { type: 'heading', text: 'Visual expression of the concept', level: 4, icon: 'fa-thin fa-fill-drip', treatment: 'section' },
       {
-        type: 'image-row',
-        images: [
-          {
-            src: '/images/work/kitchen-sink/reveal-clear-01.jpg',
-            alt: 'Reveal Clear Aligners campaign concept, clarity theme, first execution'
-          },
-          {
-            src: '/images/work/kitchen-sink/reveal-clear-02.jpg',
-            alt: 'Reveal Clear Aligners campaign concept, clarity theme, second execution'
-          }
-        ],
-        cols: [ 12, 12 ],
-        mobileDivider: true
+        "type": "heading",
+        "text": "The concept in the work",
+        "level": 4,
+        "icon": "fa-thin fa-fill-drip",
+        "treatment": "section"
       },
       {
-        type: 'image-row',
-        images: [
+        "type": "image-row",
+        "images": [
           {
-            src: '/images/work/kitchen-sink/reveal-omg-01.jpg',
-            alt: 'Reveal Clear Aligners campaign concept, OMG Your Aligner Is Showing'
+            "src": "/images/work/kitchen-sink/reveal-clear-01.jpg",
+            "alt": "Reveal Clear Aligners campaign concept, clarity theme, first execution"
+          },
+          {
+            "src": "/images/work/kitchen-sink/reveal-clear-02.jpg",
+            "alt": "Reveal Clear Aligners campaign concept, clarity theme, second execution"
           }
         ],
-        cols: [ 12 ],
-        mobileDivider: true
+        "cols": [
+          12,
+          12
+        ],
+        "mobileDivider": true
+      },
+      {
+        "type": "image-row",
+        "images": [
+          {
+            "src": "/images/work/kitchen-sink/reveal-omg-01.jpg",
+            "alt": "Reveal Clear Aligners campaign concept, OMG Your Aligner Is Showing"
+          }
+        ],
+        "cols": [
+          12
+        ],
+        "mobileDivider": true
       }
     ]
   },
@@ -1517,16 +2175,20 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Brand', 'Visual'],
     order: 13,
-    title: 'Viva',
+    title: "Viva Medicare",
     thumb: { src: '/images/work/viva-modal/vs-3.png', alt: 'Viva Medicare brand campaign concept' },
     modalTitle: 'Viva Medicare',
     visible: true,
-    summary: 'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
+    summary: "I developed the Viva Medicare brand through research and cross-functional branding exercises. These examples show my visual explorations.",
+    briefHeading: "A brand taking shape",
     brief: {
-      image: { src: '/images/work/viva-modal/brief.png', alt: '' },
-      paragraphs: [
-        'I developed a brand for Medicare and Medicare Supplement plans, grounded in our product and customer research. Working with executive leadership and a cross-functional team, I ran the concept through several rounds of branding exercises.',
-        "The marks, palettes, and interface treatments shown here are my work. These variations show the directions explored for the brand."
+      "image": {
+        "src": "/images/work/viva-modal/brief.png",
+        "alt": ""
+      },
+      "paragraphs": [
+        "I developed a brand for Medicare and Medicare Supplement plans, working from product and customer research. Executive leadership and a cross-functional team took part in the branding exercises.",
+        "The marks, palettes, and interface treatments shown here are my work. They document the directions explored for the brand."
       ]
     },
     contributions: [
@@ -1534,80 +2196,115 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
       { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
-    technologies: [],
     media: [
-      { type: 'heading', text: 'Logo Design' },
       {
-        type: 'split-row',
-        left: [
-          { type: 'image', src: '/images/work/viva-modal/logo-design-stack.png', alt: 'Viva Medicare logo, stacked lockup', flush: true }
-        ],
-        right: [
-          { type: 'image', src: '/images/work/viva-modal/logo-design-inline.png', alt: 'Viva Medicare logo, inline lockup', flush: true }
-        ],
-        leftSpan: 12,
-        rightSpan: 12,
-        vAlign: 'center'
-      },
-      { type: 'heading', text: 'Color Study' },
-      {
-        type: 'image',
-        src: '/images/work/viva-modal/colors.png',
-        alt: 'Viva Medicare color study',
-        flush: true
-      },
-      { type: 'heading', text: 'Visual Style and Tone' },
-      {
-        type: 'image',
-        src: '/images/work/viva-modal/vs-1.png',
-        alt: 'Viva Medicare visual style exploration, option one'
+        "type": "heading",
+        "text": "The mark",
+        "level": 3
       },
       {
-        type: 'image-row',
-        images: [
+        "type": "split-row",
+        "left": [
           {
-            src: '/images/work/viva-modal/vs-2.png',
-            alt: 'Viva Medicare visual style exploration, option two'
-          },
-          {
-            src: '/images/work/viva-modal/vs-3.png',
-            alt: 'Viva Medicare visual style exploration, option three'
+            "type": "image",
+            "src": "/images/work/viva-modal/logo-design-stack.png",
+            "alt": "Viva Medicare logo, stacked lockup",
+            "flush": true
           }
         ],
-        cols: [ 12, 12 ]
+        "right": [
+          {
+            "type": "image",
+            "src": "/images/work/viva-modal/logo-design-inline.png",
+            "alt": "Viva Medicare logo, inline lockup",
+            "flush": true
+          }
+        ],
+        "leftSpan": 12,
+        "rightSpan": 12,
+        "vAlign": "center"
       },
-      { type: 'heading', text: 'Homepage Hero Concepts' },
       {
-        type: 'image',
-        src: '/images/work/viva-modal/hero-1.png',
-        alt: 'Viva Medicare hero concept, option one'
+        "type": "heading",
+        "text": "Color and visual direction",
+        "level": 3
       },
       {
-        type: 'image',
-        src: '/images/work/viva-modal/hero-2.png',
-        alt: 'Viva Medicare hero concept, option two'
+        "type": "image",
+        "src": "/images/work/viva-modal/colors.png",
+        "alt": "Viva Medicare color study",
+        "flush": true
       },
-      { type: 'heading', text: 'UI Components & Style' },
-      { type: 'heading', text: 'Buttons' },
       {
-        type: 'image',
-        src: '/images/work/viva-modal/buttons.png',
-        alt: 'Viva Medicare button styles',
-        flush: true
+        "type": "image",
+        "src": "/images/work/viva-modal/vs-1.png",
+        "alt": "Viva Medicare visual style exploration, option one"
       },
-      { type: 'heading', text: 'Inputs' },
       {
-        type: 'image',
-        src: '/images/work/viva-modal/inputs.png',
-        alt: 'Viva Medicare form input styles',
-        flush: true
+        "type": "image-row",
+        "images": [
+          {
+            "src": "/images/work/viva-modal/vs-2.png",
+            "alt": "Viva Medicare visual style exploration, option two"
+          },
+          {
+            "src": "/images/work/viva-modal/vs-3.png",
+            "alt": "Viva Medicare visual style exploration, option three"
+          }
+        ],
+        "cols": [
+          12,
+          12
+        ]
       },
-      { type: 'heading', text: 'Navigation' },
       {
-        type: 'image',
-        src: '/images/work/viva-modal/nav.png',
-        alt: 'Viva Medicare navigation design',
-        flush: true
+        "type": "heading",
+        "text": "The brand in the interface",
+        "level": 3
+      },
+      {
+        "type": "image",
+        "src": "/images/work/viva-modal/hero-1.png",
+        "alt": "Viva Medicare hero concept, option one"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/viva-modal/hero-2.png",
+        "alt": "Viva Medicare hero concept, option two"
+      },
+      {
+        "type": "heading",
+        "text": "UI Components & Style"
+      },
+      {
+        "type": "heading",
+        "text": "Buttons"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/viva-modal/buttons.png",
+        "alt": "Viva Medicare button styles",
+        "flush": true
+      },
+      {
+        "type": "heading",
+        "text": "Inputs"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/viva-modal/inputs.png",
+        "alt": "Viva Medicare form input styles",
+        "flush": true
+      },
+      {
+        "type": "heading",
+        "text": "Navigation"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/viva-modal/nav.png",
+        "alt": "Viva Medicare navigation design",
+        "flush": true
       }
     ]
   },
@@ -1617,100 +2314,104 @@ export const projects: Project[] = [
     display: 'thumb',
     disciplines: ['Brand', 'Visual'],
     order: 14,
-    title: 'Wrong',
+    title: "The Wrong Campaign",
     thumb: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: 'The Wrong campaign portrait' },
     heroBrandImage: { src: '/assets/featured/dentalplans-icon.svg', alt: 'DentalPlans.com' },
     modalTitle: 'The Wrong Campaign',
     visible: true,
-    summary: "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option.",
+    summary: "A campaign concept for people researching dental care and worrying about cost.",
+    briefHeading: "Challenge the assumption, keep the person",
     brief: {
-      image: { src: '/images/work/kitchen-sink/wrong-cover.jpg', alt: '' },
-      paragraphs: [
-        "The campaign addressed people searching for crowns, fillings, and root canals who were concerned about cost. Its task was to introduce dental savings plans as another option.",
-        'Campaign Concept:',
-        "The campaign challenged the assumption that dental care was out of reach. “WRONG” was the creative device. The design question was whether that provocation could earn attention without making the person feel blamed."
+      "image": {
+        "src": "/images/work/kitchen-sink/wrong-cover.jpg",
+        "alt": ""
+      },
+      "paragraphs": [
+        "The campaign addressed people researching crowns, fillings, and root canals who were concerned about cost. Its job was to introduce dental savings plans as another option.",
+        "“Wrong” was the creative device. The design question was whether a blunt challenge could earn attention without making the person feel blamed."
       ]
     },
-    briefLabels: ['Campaign Concept:'],
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
       { icon: 'fa-thin fa-fill-drip', label: 'Visual Design' },
     ],
-    technologies: [],
     media: [
-      { type: 'text', text: 'Visual and Messaging Strategy:' },
       {
-        type: 'styled-list',
-        items: [
-          {
-            icon: 'fa-thin fa-eye',
-            label: 'Visual Approach:',
-            body: "Bold headlines carried the campaign message."
-          },
-          {
-            icon: 'fa-thin fa-people-group',
-            label: 'Inclusivity:',
-            body: "The visual variants showed adults of different ages and backgrounds."
-          },
-          {
-            icon: 'fa-thin fa-flag-checkered',
-            label: 'Execution:',
-            body: "The landing page and hero versions below were prepared for conversion testing."
-          }
-        ]
+        "type": "heading",
+        "text": "The idea in the work",
+        "level": 3
       },
-      { type: 'heading', text: 'Hero Variants for Testing' },
       {
-        type: 'image-row',
-        images: [
+        "type": "text",
+        "text": "Headlines carried the challenge. The visual variants included different ages and family situations. The landing page and hero versions were prepared for conversion testing."
+      },
+      {
+        "type": "heading",
+        "text": "Hero Variants for Testing"
+      },
+      {
+        "type": "image-row",
+        "images": [
           {
-            src: '/images/work/kitchen-sink/wrong-hero-hip-lady.jpg',
-            alt: 'Wrong campaign hero, younger woman'
+            "src": "/images/work/kitchen-sink/wrong-hero-hip-lady.jpg",
+            "alt": "Wrong campaign hero, younger woman"
           },
           {
-            src: '/images/work/kitchen-sink/wrong-hero-hip-senior.jpg',
-            alt: 'Wrong campaign hero, active senior man'
+            "src": "/images/work/kitchen-sink/wrong-hero-hip-senior.jpg",
+            "alt": "Wrong campaign hero, active senior man"
           }
         ],
-        cols: [ 12, 12 ],
-        mobileDivider: true
+        "cols": [
+          12,
+          12
+        ],
+        "mobileDivider": true
       },
       {
-        type: 'image-row',
-        images: [
+        "type": "image-row",
+        "images": [
           {
-            src: '/images/work/kitchen-sink/wrong-hero-kid.jpg',
-            alt: 'Wrong campaign hero, child'
+            "src": "/images/work/kitchen-sink/wrong-hero-kid.jpg",
+            "alt": "Wrong campaign hero, child"
           },
           {
-            src: '/images/work/kitchen-sink/wrong-hero-family.jpg',
-            alt: 'Wrong campaign hero, family'
+            "src": "/images/work/kitchen-sink/wrong-hero-family.jpg",
+            "alt": "Wrong campaign hero, family"
           }
         ],
-        cols: [ 12, 12 ],
-        mobileDivider: true
+        "cols": [
+          12,
+          12
+        ],
+        "mobileDivider": true
       },
       {
-        type: 'image-row',
-        images: [
+        "type": "image-row",
+        "images": [
           {
-            src: '/images/work/kitchen-sink/wrong-hero-senior-single.jpg',
-            alt: 'Wrong campaign hero, senior woman'
+            "src": "/images/work/kitchen-sink/wrong-hero-senior-single.jpg",
+            "alt": "Wrong campaign hero, senior woman"
           },
           {
-            src: '/images/work/kitchen-sink/wrong-hero-senior-couple.jpg',
-            alt: 'Wrong campaign hero, senior couple'
+            "src": "/images/work/kitchen-sink/wrong-hero-senior-couple.jpg",
+            "alt": "Wrong campaign hero, senior couple"
           }
         ],
-        cols: [ 12, 12 ],
-        mobileDivider: true
+        "cols": [
+          12,
+          12
+        ],
+        "mobileDivider": true
       },
-      { type: 'heading', text: 'Full Landing Page' },
       {
-        type: 'image',
-        src: '/images/work/kitchen-sink/wrong-full-lp.jpg',
-        alt: 'Wrong campaign full landing page'
+        "type": "heading",
+        "text": "Full Landing Page"
+      },
+      {
+        "type": "image",
+        "src": "/images/work/kitchen-sink/wrong-full-lp.jpg",
+        "alt": "Wrong campaign full landing page"
       }
     ]
   }

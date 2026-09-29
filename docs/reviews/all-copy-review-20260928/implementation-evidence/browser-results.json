@@ -1,0 +1,1516 @@
+{
+  "modals": [
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "webmd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 16,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "dentalplans",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "dental-platform",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-one",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-two",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-three",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-four",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "bumblebeemd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 40,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "hydra",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 6,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "hydra",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "opfred",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 12,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "split-test",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "call-center-ux",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 1,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "call-center",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "marketing-auto",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 3,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "workshops",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 4,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "roadmap",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "personas",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "wrong",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "reveal",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 5,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 1440,
+      "textScale": 1,
+      "id": "viva",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 13,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "webmd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 16,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "dentalplans",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "dental-platform",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-one",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-two",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-three",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-four",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "bumblebeemd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 40,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "hydra",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 6,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "hydra",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "opfred",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 12,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "split-test",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "call-center-ux",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 1,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "call-center",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "marketing-auto",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 3,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "workshops",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 4,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "roadmap",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "personas",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "wrong",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "reveal",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 5,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 390,
+      "textScale": 1,
+      "id": "viva",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 13,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "webmd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 16,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "dentalplans",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "dental-platform",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-one",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-two",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-three",
+          "overflow": 0
+        },
+        {
+          "kind": "dental-mvp-four",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "bumblebeemd",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 40,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "opfred",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 12,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "split-test",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "call-center-ux",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 1,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "call-center",
+          "overflow": 0
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "marketing-auto",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 3,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "workshops",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 4,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "roadmap",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "personas",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 2,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "wrong",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 9,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "reveal",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 5,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "viva",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 13,
+      "textClips": [],
+      "arts": []
+    },
+    {
+      "width": 320,
+      "textScale": 2,
+      "id": "hydra",
+      "overflow": 0,
+      "focusedInside": true,
+      "brokenImages": [],
+      "imageCount": 6,
+      "textClips": [],
+      "arts": [
+        {
+          "kind": "hydra",
+          "overflow": 0
+        }
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "slug": "one-platform-five-properties",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The first site",
+          "href": "#problem",
+          "exists": true,
+          "width": 57.34375,
+          "scrollWidth": 57
+        },
+        {
+          "text": "The roadmap",
+          "href": "#approach",
+          "exists": true,
+          "width": 64.640625,
+          "scrollWidth": 65
+        },
+        {
+          "text": "The platform",
+          "href": "#solution",
+          "exists": true,
+          "width": 61.953125,
+          "scrollWidth": 62
+        },
+        {
+          "text": "What changed",
+          "href": "#results",
+          "exists": true,
+          "width": 71.0625,
+          "scrollWidth": 71
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/building-a-design-function/"
+    },
+    {
+      "slug": "building-a-design-function",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The starting point",
+          "href": "#problem",
+          "exists": true,
+          "width": 56.34375,
+          "scrollWidth": 56
+        },
+        {
+          "text": "Building alongside delivery",
+          "href": "#approach",
+          "exists": true,
+          "width": 82.46875,
+          "scrollWidth": 82
+        },
+        {
+          "text": "The working practice",
+          "href": "#solution",
+          "exists": true,
+          "width": 65.203125,
+          "scrollWidth": 65
+        },
+        {
+          "text": "What remained",
+          "href": "#results",
+          "exists": true,
+          "width": 50.984375,
+          "scrollWidth": 51
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-customer-journey/"
+    },
+    {
+      "slug": "one-customer-journey",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The handoffs",
+          "href": "#problem",
+          "exists": true,
+          "width": 64.59375,
+          "scrollWidth": 65
+        },
+        {
+          "text": "The preparation",
+          "href": "#approach",
+          "exists": true,
+          "width": 77.828125,
+          "scrollWidth": 78
+        },
+        {
+          "text": "In the room",
+          "href": "#solution",
+          "exists": true,
+          "width": 57.25,
+          "scrollWidth": 57
+        },
+        {
+          "text": "The record",
+          "href": "#results",
+          "exists": true,
+          "width": 53.046875,
+          "scrollWidth": 53
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/navigation-beyond-opinion/"
+    },
+    {
+      "slug": "navigation-beyond-opinion",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The question",
+          "href": "#problem",
+          "exists": true,
+          "width": 63.125,
+          "scrollWidth": 63
+        },
+        {
+          "text": "The study",
+          "href": "#approach",
+          "exists": true,
+          "width": 48.390625,
+          "scrollWidth": 48
+        },
+        {
+          "text": "The findings",
+          "href": "#solution",
+          "exists": true,
+          "width": 59.828125,
+          "scrollWidth": 60
+        },
+        {
+          "text": "What changed",
+          "href": "#results",
+          "exists": true,
+          "width": 72.828125,
+          "scrollWidth": 73
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/tokens-before-pages/"
+    },
+    {
+      "slug": "tokens-before-pages",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "Before the pages",
+          "href": "#problem",
+          "exists": true,
+          "width": 66.453125,
+          "scrollWidth": 66
+        },
+        {
+          "text": "The shared decisions",
+          "href": "#approach",
+          "exists": true,
+          "width": 79.34375,
+          "scrollWidth": 79
+        },
+        {
+          "text": "The foundation",
+          "href": "#solution",
+          "exists": true,
+          "width": 60.0625,
+          "scrollWidth": 60
+        },
+        {
+          "text": "The handoff",
+          "href": "#results",
+          "exists": true,
+          "width": 49.140625,
+          "scrollWidth": 49
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/a-checkout-decision-with-receipts/"
+    },
+    {
+      "slug": "a-checkout-decision-with-receipts",
+      "width": 320,
+      "textScale": 2,
+      "overflow": -12,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The conflict",
+          "href": "#problem",
+          "exists": true,
+          "width": 56.65625,
+          "scrollWidth": 57
+        },
+        {
+          "text": "The decision",
+          "href": "#approach",
+          "exists": true,
+          "width": 61.046875,
+          "scrollWidth": 61
+        },
+        {
+          "text": "The record",
+          "href": "#solution",
+          "exists": true,
+          "width": 52.859375,
+          "scrollWidth": 53
+        },
+        {
+          "text": "After the decision",
+          "href": "#results",
+          "exists": true,
+          "width": 84.4375,
+          "scrollWidth": 84
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-platform-five-properties/"
+    },
+    {
+      "slug": "one-platform-five-properties",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nThe first site",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nThe roadmap",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nThe platform",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nWhat changed",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/building-a-design-function/"
+    },
+    {
+      "slug": "building-a-design-function",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nThe starting point",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nBuilding alongside delivery",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nThe working practice",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nWhat remained",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-customer-journey/"
+    },
+    {
+      "slug": "one-customer-journey",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nThe handoffs",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nThe preparation",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nIn the room",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nThe record",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/navigation-beyond-opinion/"
+    },
+    {
+      "slug": "navigation-beyond-opinion",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nThe question",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nThe study",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nThe findings",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nWhat changed",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/tokens-before-pages/"
+    },
+    {
+      "slug": "tokens-before-pages",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nBefore the pages",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nThe shared decisions",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nThe foundation",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nThe handoff",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/a-checkout-decision-with-receipts/"
+    },
+    {
+      "slug": "a-checkout-decision-with-receipts",
+      "width": 1440,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "01\nThe conflict",
+          "href": "#problem",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "02\nThe decision",
+          "href": "#approach",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "03\nThe record",
+          "href": "#solution",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        },
+        {
+          "text": "04\nAfter the decision",
+          "href": "#results",
+          "exists": true,
+          "width": 220,
+          "scrollWidth": 220
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-platform-five-properties/"
+    },
+    {
+      "slug": "one-platform-five-properties",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The first site",
+          "href": "#problem",
+          "exists": true,
+          "width": 61.640625,
+          "scrollWidth": 62
+        },
+        {
+          "text": "The roadmap",
+          "href": "#approach",
+          "exists": true,
+          "width": 86.765625,
+          "scrollWidth": 87
+        },
+        {
+          "text": "The platform",
+          "href": "#solution",
+          "exists": true,
+          "width": 83.984375,
+          "scrollWidth": 84
+        },
+        {
+          "text": "What changed",
+          "href": "#results",
+          "exists": true,
+          "width": 84.609375,
+          "scrollWidth": 85
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/building-a-design-function/"
+    },
+    {
+      "slug": "building-a-design-function",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The starting point",
+          "href": "#problem",
+          "exists": true,
+          "width": 74.421875,
+          "scrollWidth": 74
+        },
+        {
+          "text": "Building alongside delivery",
+          "href": "#approach",
+          "exists": true,
+          "width": 83.828125,
+          "scrollWidth": 84
+        },
+        {
+          "text": "The working practice",
+          "href": "#solution",
+          "exists": true,
+          "width": 75.859375,
+          "scrollWidth": 76
+        },
+        {
+          "text": "What remained",
+          "href": "#results",
+          "exists": true,
+          "width": 82.890625,
+          "scrollWidth": 83
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-customer-journey/"
+    },
+    {
+      "slug": "one-customer-journey",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The handoffs",
+          "href": "#problem",
+          "exists": true,
+          "width": 82.921875,
+          "scrollWidth": 83
+        },
+        {
+          "text": "The preparation",
+          "href": "#approach",
+          "exists": true,
+          "width": 96.15625,
+          "scrollWidth": 96
+        },
+        {
+          "text": "In the room",
+          "href": "#solution",
+          "exists": true,
+          "width": 66.546875,
+          "scrollWidth": 67
+        },
+        {
+          "text": "The record",
+          "href": "#results",
+          "exists": true,
+          "width": 71.375,
+          "scrollWidth": 71
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/navigation-beyond-opinion/"
+    },
+    {
+      "slug": "navigation-beyond-opinion",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The question",
+          "href": "#problem",
+          "exists": true,
+          "width": 83.515625,
+          "scrollWidth": 84
+        },
+        {
+          "text": "The study",
+          "href": "#approach",
+          "exists": true,
+          "width": 68.78125,
+          "scrollWidth": 69
+        },
+        {
+          "text": "The findings",
+          "href": "#solution",
+          "exists": true,
+          "width": 80.21875,
+          "scrollWidth": 80
+        },
+        {
+          "text": "What changed",
+          "href": "#results",
+          "exists": true,
+          "width": 84.484375,
+          "scrollWidth": 84
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/tokens-before-pages/"
+    },
+    {
+      "slug": "tokens-before-pages",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "Before the pages",
+          "href": "#problem",
+          "exists": true,
+          "width": 69.5625,
+          "scrollWidth": 70
+        },
+        {
+          "text": "The shared decisions",
+          "href": "#approach",
+          "exists": true,
+          "width": 81.3125,
+          "scrollWidth": 81
+        },
+        {
+          "text": "The foundation",
+          "href": "#solution",
+          "exists": true,
+          "width": 89.9375,
+          "scrollWidth": 90
+        },
+        {
+          "text": "The handoff",
+          "href": "#results",
+          "exists": true,
+          "width": 76.1875,
+          "scrollWidth": 76
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/a-checkout-decision-with-receipts/"
+    },
+    {
+      "slug": "a-checkout-decision-with-receipts",
+      "width": 390,
+      "textScale": 1,
+      "overflow": -15,
+      "h1Count": 1,
+      "nav": [
+        {
+          "text": "The conflict",
+          "href": "#problem",
+          "exists": true,
+          "width": 77.984375,
+          "scrollWidth": 78
+        },
+        {
+          "text": "The decision",
+          "href": "#approach",
+          "exists": true,
+          "width": 82.421875,
+          "scrollWidth": 82
+        },
+        {
+          "text": "The record",
+          "href": "#solution",
+          "exists": true,
+          "width": 74.1875,
+          "scrollWidth": 74
+        },
+        {
+          "text": "After the decision",
+          "href": "#results",
+          "exists": true,
+          "width": 82.40625,
+          "scrollWidth": 82
+        }
+      ],
+      "textClips": [],
+      "next": "/case-studies/one-platform-five-properties/"
+    }
+  ],
+  "home": [
+    {
+      "width": 1440,
+      "rootFont": "16px",
+      "overflow": 0,
+      "clippedText": []
+    },
+    {
+      "width": 390,
+      "rootFont": "16px",
+      "overflow": 0,
+      "clippedText": []
+    },
+    {
+      "width": 320,
+      "rootFont": "32px",
+      "overflow": 0,
+      "clippedText": []
+    },
+    {
+      "width": 1440,
+      "expandedExperience": 4,
+      "overflow": 0,
+      "clippedText": []
+    },
+    {
+      "width": 390,
+      "expandedExperience": 4,
+      "overflow": 0,
+      "clippedText": []
+    }
+  ],
+  "demo": {
+    "Ready": {
+      "state": "ready",
+      "pressed": "Ready",
+      "title": "Find your dental savings plan."
+    },
+    "Busy": {
+      "state": "busy",
+      "pressed": "Busy",
+      "title": "Explore plans while we’re busy."
+    },
+    "Closed": {
+      "state": "closed",
+      "pressed": "Closed",
+      "title": "Your next step is online."
+    },
+    "highlight": "true",
+    "menu": 1,
+    "destination": 1,
+    "auto": {
+      "state": "busy",
+      "cycleMs": "5008",
+      "intro": "This demonstration shows how the site responds to call-center availability. The original status feed checked every five minutes; this preview cycles every five seconds."
+    },
+    "reducedStart": {
+      "time": 53412.70000001788,
+      "state": "ready",
+      "help": [
+        "Emphasize the areas that change.",
+        "Reduced motion: choose a state to preview it."
+      ]
+    },
+    "reducedEnd": {
+      "time": 71663.30000001192,
+      "state": "ready"
+    }
+  },
+  "motion": {
+    "hero": {
+      "state": "static",
+      "animations": 0,
+      "role": "Product & Design Leader",
+      "closingOpacity": "1"
+    },
+    "keyboardInside": true,
+    "closeButtonFocusReturn": "webmd"
+  },
+  "failures": [],
+  "enlargedReading": [
+    {
+      "slug": "one-platform-five-properties",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    },
+    {
+      "slug": "building-a-design-function",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    },
+    {
+      "slug": "one-customer-journey",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    },
+    {
+      "slug": "navigation-beyond-opinion",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    },
+    {
+      "slug": "tokens-before-pages",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    },
+    {
+      "slug": "a-checkout-decision-with-receipts",
+      "overflow": 0,
+      "clips": [],
+      "paragraphSize": "32px",
+      "anchorClear": true
+    }
+  ],
+  "resolvedFindings": [
+    "Hydra mark exceeded its container by 54px at 320px/200% root size; constrained the mark and grid track.",
+    "Actual 200% reading text overflowed headings and proof rows; wrapped long words, constrained grid tracks, and enlarged anchor clearance."
+  ],
+  "cards": [
+    {
+      "id": "webmd",
+      "height": 449.1875,
+      "overflow": 0
+    },
+    {
+      "id": "dentalplans",
+      "height": 476.859375,
+      "overflow": 0
+    },
+    {
+      "id": "bumblebeemd",
+      "height": 450.765625,
+      "overflow": 0
+    },
+    {
+      "id": "hydra",
+      "height": 450.765625,
+      "overflow": 0
+    },
+    {
+      "id": "opfred",
+      "height": 450.765625,
+      "overflow": 0
+    },
+    {
+      "id": "split-test",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "call-center-ux",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "marketing-auto",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "workshops",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "roadmap",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "personas",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "wrong",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "reveal",
+      "height": 360,
+      "overflow": 0
+    },
+    {
+      "id": "viva",
+      "height": 360,
+      "overflow": 0
+    }
+  ],
+  "filters": [
+    {
+      "selected": "All Work",
+      "cards": 6,
+      "overflow": 0
+    },
+    {
+      "selected": "Product",
+      "cards": 3,
+      "overflow": 0
+    },
+    {
+      "selected": "Systems",
+      "cards": 3,
+      "overflow": 0
+    },
+    {
+      "selected": "UX Research",
+      "cards": 2,
+      "overflow": 0
+    },
+    {
+      "selected": "Leadership",
+      "cards": 3,
+      "overflow": 0
+    },
+    {
+      "selected": "Brand",
+      "cards": 1,
+      "overflow": 0
+    }
+  ],
+  "designReference": {
+    "header": "Quiet Prism\nDesign reference\n\nLive site reference\nExamples load the current site routes.\n\nOpen site ↗\nin a new tab",
+    "role": "Product & Design Leader",
+    "status": "Source located. The page below is live and fully interactive.",
+    "description": [
+      "The actual name, rotating role sequence and selected-work action from the homepage.",
+      "This frame loads a site route and scrolls to the selected element. Layout, artwork, copy, and interactions come from that page. Scroll inside the frame to see the surrounding content."
+    ]
+  },
+  "logs": [
+    {
+      "level": "error",
+      "message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+      "timestamp": "2026-09-29T05:01:27.084Z"
+    }
+  ],
+  "freshTabLogs": [],
+  "observedAt": "2026-09-29T05:03:56.796Z",
+  "base": "3973411562db116044a337de7586b236ea306260",
+  "scope": "Local static production export, Chromium in-app browser; no deployment or accessibility certification.",
+  "consoleObservation": "One MutationObserver TypeError occurred during the long-lived browser session around design-reference navigation. It did not recur in a fresh tab covering the design reference, WebMD open/close, and a reading page. Cause unconfirmed; no related functional failure observed."
+}

@@ -811,8 +811,8 @@ html body .modal-study-content .modal-value-card h5 + hr.solid-center.modal-valu
   justify-self: center;
 }
 
-.study-hydra-mark { min-height: 17rem; }
-.study-hydra-mark .featured-hydra-mark { width: clamp(7rem, 42cqi, 11rem); background: var(--featured-ink, #463150); }
+.study-hydra-mark { min-height: 17rem; grid-template-columns: minmax(0, 1fr); }
+.study-hydra-mark .featured-hydra-mark { width: min(100%, clamp(7rem, 42cqi, 11rem)); background: var(--featured-ink, #463150); }
 .modal-composite-card { margin-inline: 0; padding: clamp(1.25rem, 2.5cqi, 2rem); }
 .modal-hydra-why { width: min(100%, 48rem); margin-inline: auto; }
 .modal-composite-card .study-hydra-mark { min-height: 12rem; padding: 0; border: 0; background: none; }

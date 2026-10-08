@@ -1,5 +1,20 @@
 # Status
 
+## October 8, 2026: authorized release prepared
+
+Jacob requested closeout and production publication. B80-B87 at cb28ab3 and the
+October 3 Font Awesome documentation are included. The older decision-system
+draft remains local under the later publication hold; it is excluded from release.
+
+Fresh build/export, type checks, focused lint, nine source acceptance groups,
+design-system verification and 42 desktop/mobile browser checks passed. All 28
+dialog focus-return checks passed after waiting for close/unmount. No page errors.
+Detailed scope, evidence, disposition and coordination: docs/reviews/release-20261008.md.
+Rollback: 3973411562db116044a337de7586b236ea306260. Publication is authorized;
+this entry records preparation, with deployment verification to follow.
+Worktree: reviewed-copy; branch codex/reviewed-copy-implementation-20260929.
+Task lock held during publication. Temporary loopback preview: 8090.
+Genesis Exchange remains retired/read-only; no shared record was written.
 ## September 29, 2026: complete reviewed copy package, local checkpoint
 
 B80–B87 are APPLIED locally after registration and verification. The complete

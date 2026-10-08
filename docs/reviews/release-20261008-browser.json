@@ -1,0 +1,355 @@
+{
+  "checks": [
+    {
+      "page": "home",
+      "width": 1440,
+      "overflow": 0,
+      "newCopy": true
+    },
+    {
+      "modal": "webmd",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "dentalplans",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "bumblebeemd",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "hydra",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "opfred",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "split-test",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "call-center-ux",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "marketing-auto",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "workshops",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "roadmap",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "personas",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "wrong",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "reveal",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "viva",
+      "width": 1440,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "story": "one-platform-five-properties",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "building-a-design-function",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "one-customer-journey",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "navigation-beyond-opinion",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "tokens-before-pages",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "a-checkout-decision-with-receipts",
+      "width": 1440,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "page": "home",
+      "width": 390,
+      "overflow": 0,
+      "newCopy": true
+    },
+    {
+      "modal": "webmd",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "dentalplans",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "bumblebeemd",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "hydra",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "opfred",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "split-test",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "call-center-ux",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "marketing-auto",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "workshops",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "roadmap",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "personas",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "wrong",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "reveal",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "modal": "viva",
+      "width": 390,
+      "overflow": 0,
+      "bodyOverflow": 0,
+      "broken": 0,
+      "focus": true,
+      "returned": true
+    },
+    {
+      "story": "one-platform-five-properties",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "building-a-design-function",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "one-customer-journey",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "navigation-beyond-opinion",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "tokens-before-pages",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    },
+    {
+      "story": "a-checkout-decision-with-receipts",
+      "width": 390,
+      "overflow": 0,
+      "h1": 1,
+      "anchors": true
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "focusCheck": "Wait for Radix close/unmount and focus restoration, up to 3 seconds."
+}

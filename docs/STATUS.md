@@ -1,5 +1,29 @@
 # Status
 
+## October 8, 2026: outstanding release published and verified
+
+B80-B87 and the Font Awesome documentation are published in application release
+0b3f8f8f2467198345268492d895500795c5fd11. Deployment run 37805680336 succeeded;
+ordinary live GET verified new copy, cache MISS and matching October 8 timestamp.
+Live mobile dialog/focus and reading-page checks passed, with no page errors or
+overflow. The blog and interaction-design deep URL both still return 200.
+
+Fresh validation: production build/type checking, focused lint, nine reviewed-copy
+groups, design-system verification, 42 desktop/mobile browser checks, all 28 dialog
+focus-return checks and 191 internal-link references passed. Full evidence and
+scope: docs/reviews/release-20261008.md and release-20261008-browser.json.
+
+The older unpublished draft is preserved locally at 78a34d3, excluded under the
+current publication hold. No new B edits were authored. No outstanding release
+blocker remains; future public-safe draft approval is separate from refinements.
+Rollback: 3973411562db116044a337de7586b236ea306260, restored by a new revert commit.
+
+Release worktree: codex/reviewed-copy-implementation-20260929. This documentation
+closeout is committed with [skip ci]; it leaves the deployed application unchanged.
+The main checkout is advanced to published main for refinements, with a clean tree.
+Task locks are released and task preview 8090 stopped after closeout. The unrelated
+8091 gated preview is untouched. Other worktrees/branches are preserved.
+Genesis STATE freshly read; retired Exchange not written or claimed synchronized.
 ## October 8, 2026: authorized release prepared
 
 Jacob requested closeout and production publication. B80-B87 at cb28ab3 and the

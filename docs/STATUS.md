@@ -1,5 +1,30 @@
 # Status
 
+## October 8, 2026: corrected featured themes and slogan break
+
+B94 corrects B93's mistaken generic footer restoration. WorkCard now renders
+existing project.caseStudyTheme values, matching all five approved B75 themes.
+The hero slogan has a mandatory break after "way,"; weight and fade are unchanged.
+
+Production build/lint/types/static export passed; 288 images and 104 references
+verified. Browser checks at desktop 1087px and phone 390px confirmed all five
+correct themes, footer fit, the mandatory slogan break and no horizontal overflow.
+Browser warnings/errors empty. Diff check passed; React change review is limited
+to two JSX substitutions with no state, effect, dependency or timing changes.
+No new automated tests or broad regression audit needed for this copy/layout fix.
+
+Files: components/ui/WorkCard.tsx, components/ui/KineticHeroIdentity.tsx,
+docs/copy-register.md and this status. Branch: codex/main-site-refinements-20261008.
+Local checkpoint follows; exact hash and complete handoff are outside the repo at
+C:/dev/_handoffs/footer-correction-20261008/update.md. Rollback: 022615a.
+Preview http://localhost:8090/ runs hidden on loopback, PID 65696, serving out/.
+Own prior preview PID 65200 was verified and stopped for export, then replaced.
+No push, merge or deployment. Protected portfolio release remains separate and
+unfinished as previously recorded. No outstanding implementation for this fix.
+Genesis STATE reread; retired Exchange untouched and coordinator receipt unverified.
+STATUS written last; own lock released after the clean local checkpoint.
+
+
 ## October 8, 2026: five main-site browser refinements
 
 Restored the short featured-card line left of View; white active navigation with

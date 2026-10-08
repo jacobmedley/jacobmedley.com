@@ -223,7 +223,7 @@ export default function KineticHeroIdentity() {
       </div></div>
       <p className="kinetic-role">Product &amp; Design Leader</p>
       <div className="kinetic-closing">
-        <p className="kinetic-better">There is always a better way, together we will find it.</p>
+        <p className="kinetic-better">There is always a better way,<br />together we will find it.</p>
         <div className="hero-rule-wrap">
           <hr className="solid-center rule-heading" />
         </div>

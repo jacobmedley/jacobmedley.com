@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** B0 through B87 and B93. B80–B87 published October 8, 2026; B93 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
+**Status:** B0 through B87 and B93–B94. B80–B87 published October 8, 2026; B93–B94 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -3627,3 +3627,16 @@ a lighter weight, and fade it in slowly after the opening word sequence.
 Navigation active labels/icons are white against contrast-checked backgrounds.
 The plus turns clockwise when the word aperture contracts and counterclockwise
 when it expands. B88-B92 remain reserved for the separate private portfolio.
+
+
+## B94. Featured theme correction and slogan line break [APPLIED LOCALLY]
+
+Jacob's October 8 browser review corrects B93's mistaken restoration of the
+shared footer. Use the existing B75 canonical themes from project.caseStudyTheme:
+WebMD: Speed to Market; DentalPlans: Building for Scale; BumblebeeMD: Reuse by
+Design; Hydra: A Shared Language; One Park Financial: Behavior Into Decisions.
+Render each theme to the left of View. No new copy is authored.
+
+Keep the slogan wording, weight and fade unchanged; insert a mandatory line break
+after “way,” so “together we will find it.” starts on the next line at every width.
+This supersedes B93 only for the footer text and slogan line layout.

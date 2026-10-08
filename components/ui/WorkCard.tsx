@@ -33,7 +33,7 @@ export default function WorkCard({ project, onOpen }: { project: Project; onOpen
           <div className="featured-work-heading"><h3 className="h2">{project.subtitle}</h3></div>
           <p className="featured-work-summary">{project.summary}</p>
           <div className={styles.featuredFooter}>
-            <span className={styles.featuredTheme}>People <b>·</b> Process <b>·</b> Better outcomes</span>
+            <span className={styles.featuredTheme}>{project.caseStudyTheme}</span>
             <span className={styles.featuredLink}>View <DirectionalArrow /></span>
           </div>
         </div>

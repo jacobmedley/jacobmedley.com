@@ -1,0 +1,18 @@
+.story { min-width: 0; color: #34313b; padding-block: 1rem 3rem; }
+.story > * { margin-block: 0 1.5rem; }
+.story .prose, .heading { max-width: 48rem; margin-inline: auto; line-height: 1.65; }
+.story .heading { margin-top: 3rem; margin-bottom: 1rem; font-size: 1.6rem; line-height: 1.3; font-weight: 500; }
+.metadata { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 48rem; margin-inline: auto; padding-bottom: 2rem; border-bottom: 1px solid #61467725; }
+.metadata dt { font-size: .85rem; color: #614677; margin-bottom: .4rem; }
+.metadata dd { margin: 0; line-height: 1.5; }
+.evidence { padding: clamp(1rem, 3vw, 2rem); border: 1px solid #61467725; border-radius: 1.5rem; background: linear-gradient(135deg, #f7f3fa, #fff); }
+.evidence h3 { font-size: 1.3rem; margin-bottom: 1.25rem; font-weight: 500; }
+.evidence figcaption { margin-top: 1.25rem; font-size: .85rem; line-height: 1.6; color: #5b6068; }
+.nodes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.nodes > * { min-width: 0; border: 1px solid #61467725; padding: 1rem; border-radius: 1rem; background: #ffffffc0; }
+.nodes p { margin: .75rem 0 0; line-height: 1.5; }
+.page { max-width: 76rem; margin: auto; padding: clamp(1rem, 4vw, 3rem); }
+.hero { padding-block: 3rem; max-width: 48rem; margin: auto; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-block: 1rem; }
+.hero p { line-height: 1.65; }
+@media (max-width: 700px) { .nodes, .metadata { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }

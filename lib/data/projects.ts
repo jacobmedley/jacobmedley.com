@@ -1,3 +1,5 @@
+import aiStudy from '@/docs/ai-chat-study.json'
+
 // Auto-ported from the legacy modal HTML files (components/modal-*.html).
 // Adding a project: add ONE object here (+ its images under /images).
 // Removing a project: flip `visible` to false — data is retained.
@@ -238,6 +240,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'ai-chat', section: 'work', display: 'feature', visible: true, order: 6,
+    disciplines: ['Product', 'UX Research'], title: aiStudy.identity,
+    modalTitle: aiStudy.title, subtitle: aiStudy.title, summary: aiStudy.summary,
+    caseStudyTheme: aiStudy.theme, icon: 'fa-thin fa-brain',
+    briefHeading: aiStudy.title, brief: { paragraphs: [aiStudy.summary] },
+    contributions: [{ icon: 'fa-thin fa-cube', label: 'Product' }, { icon: 'fa-thin fa-brain', label: 'UX Research' }],
+    media: [],
+  },
   {
     id: 'webmd',
     section: 'work',

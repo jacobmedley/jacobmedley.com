@@ -12,6 +12,7 @@ const FEATURED_ICONS: Record<string, string[]> = {
 }
 
 export function FeaturedAnchor({ projectId }: { projectId: string }) {
+  if (projectId === 'ai-chat') return <i className="fa-thin fa-brain featured-work-icon" aria-hidden="true" />
   if (projectId === 'hydra') return <span className="featured-hydra-mark" aria-hidden="true" />
   if (projectId === 'opfred') {
     return (
@@ -68,6 +69,7 @@ export function FeaturedField({ projectId }: { projectId: string }) {
     <div className="featured-work-scene" aria-hidden="true">
       <div className="featured-work-interaction">
         <div className="featured-work-drift">
+          {projectId === 'ai-chat' ? <div className="ai-study-rings">{Array.from({ length: 6 }, (_, i) => <span key={i} style={{ '--ring': i } as CSSProperties} />)}</div> : null}
           {projectId === 'hydra' ? <DesignSystem /> : null}
           {projectId === 'opfred' ? <FallingLeaves /> : null}
           {icons.map((icon, index) => (

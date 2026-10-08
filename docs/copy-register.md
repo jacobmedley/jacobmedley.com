@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** B0 through B87 and B93–B94. B80–B87 published October 8, 2026; B93–B94 published October 8, 2026 in fa2c5f1 (B94 corrects B93 footer wording). Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
+**Status:** B0 through B87 and B93–B95. B80–B87 published October 8, 2026; B93–B94 published October 8, 2026 in fa2c5f1 (B94 corrects B93 footer wording). B95 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -3640,3 +3640,18 @@ Render each theme to the left of View. No new copy is authored.
 Keep the slogan wording, weight and fade unchanged; insert a mandatory line break
 after “way,” so “together we will find it.” starts on the next line at every width.
 This supersedes B93 only for the footer text and slogan line layout.
+
+
+## B95. AI chat study on the main site [APPLIED LOCALLY]
+
+Jacob requested moving the reviewed P03 AI chat case study to the main site on
+October 8. This supersedes the private-only placement for this study alone.
+Canonical selected copy: docs/ai-chat-study.json, copied verbatim from P03 in the
+reviewed final handoff. It contains the title, summary, role, collaboration,
+outcome, all 28 narrative/asset blocks and five reconstruction captions/alt texts.
+Retain the existing identity “AI product design” and theme “Usability before launch”.
+The main feature opens the shared modal and links to a standalone reading page.
+Customer, timing and representative demos retain their reviewed illustrative
+content, human-review behavior and reconstruction labels. No other private study,
+related-study record, source packet or original account material is included.
+No new factual claims, metrics or shipped-feature claims. No deployment this pass.

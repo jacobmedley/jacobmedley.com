@@ -1,0 +1,156 @@
+{
+  "title": "How Not to Launch an AI-Powered Product",
+  "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
+  "summary": "A launch lesson in usability: I defined how an assistant should handle uncertainty, waiting, and failure, then secured tracking to see whether people kept using it.",
+  "role": "Senior individual contributor leading experience research and scoping",
+  "collaboration": "Service design and an applied AI specialist.",
+  "outcome": "A subset of requirements shipped. Customer engagement fell after early interest; internal adoption remained low. The record links these observations with speed, friction, and accuracy concerns without isolating a causal effect.",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "The assistant launched. Customers tried it. Continued use was harder to earn."
+    },
+    {
+      "type": "paragraph",
+      "text": "I led experience research and scoping for one internally built assistant with two deployments. Customers encountered it on the public site. Service and account-management representatives used it inside their working console."
+    },
+    {
+      "type": "paragraph",
+      "text": "The technology had a job to do. So did the experience around it. People needed an answer they could trust, some indication that their question had been received, and somewhere useful to go when the assistant could not help."
+    },
+    {
+      "type": "paragraph",
+      "text": "My lesson from the launch was straightforward: usability belongs in the launch criteria. Putting it behind the technology leaves the remaining work with the person asking."
+    },
+    {
+      "type": "heading",
+      "text": "An answer it should never have given"
+    },
+    {
+      "type": "paragraph",
+      "text": "In testing, we asked for an account balance. The assistant returned a specific figure with supporting detail. The required response was a referral to an account manager."
+    },
+    {
+      "type": "paragraph",
+      "text": "I traced the answer to a sample account statement in the source documentation. The warehouse contained an example of the precise thing the assistant was not supposed to produce."
+    },
+    {
+      "type": "paragraph",
+      "text": "The source material belonged in the experience discussion. A neatly presented answer could still be wrong. What the system received, and what it could read from those files, affected the customer long before the sentence appeared."
+    },
+    {
+      "type": "asset",
+      "assetId": "P03-E"
+    },
+    {
+      "type": "heading",
+      "text": "Ten seconds needed a plan"
+    },
+    {
+      "type": "paragraph",
+      "text": "This assistant stood in for the opening minutes of a service conversation. It had to remain courteous and helpful, including when it failed."
+    },
+    {
+      "type": "paragraph",
+      "text": "I specified acknowledgment between 0.1 and 0.4 seconds. At three seconds, a holding message. At seven, thanks for waiting and an apology."
+    },
+    {
+      "type": "paragraph",
+      "text": "At ten seconds, or immediately on a stall or critical error, the assistant had to say it could not answer and offer a route to help. A related article, the correct support channel, or an account manager. The person should not have to keep rephrasing a question the system had already lost."
+    },
+    {
+      "type": "paragraph",
+      "text": "Those timings were project requirements. They describe the experience I specified, not a universal limit on human patience or a measured production response time."
+    },
+    {
+      "type": "asset",
+      "assetId": "P03-A"
+    },
+    {
+      "type": "asset",
+      "assetId": "P03-C"
+    },
+    {
+      "type": "paragraph",
+      "text": "Streaming, suggested follow-up questions, and escalation paths were also part of the recommendations. Their presence in a specification does not make them shipped features."
+    },
+    {
+      "type": "heading",
+      "text": "The representative had a different job"
+    },
+    {
+      "type": "paragraph",
+      "text": "An internal representative needed the history of the issue and a summary of what had already been tried. Relevant references belonged near the reply. Language alerts needed to appear while the person could still review what they were about to send."
+    },
+    {
+      "type": "paragraph",
+      "text": "Those requirements put assistance around the conversation. The representative retained responsibility for the response."
+    },
+    {
+      "type": "asset",
+      "assetId": "P03-B"
+    },
+    {
+      "type": "heading",
+      "text": "What the tracking said"
+    },
+    {
+      "type": "paragraph",
+      "text": "A subset of the requirements shipped. I secured tracking on the customer-facing assistant before launch."
+    },
+    {
+      "type": "paragraph",
+      "text": "Customers found it and used it. Engagement then fell away, with the decline correlated with response speed and interaction friction. Internal adoption stayed low, with representatives citing accuracy and waiting."
+    },
+    {
+      "type": "paragraph",
+      "text": "The record does not isolate the effect of each feature, and it supplies no numerical uplift to claim. It does show that initial interest was not enough to sustain use."
+    },
+    {
+      "type": "asset",
+      "assetId": "P03-D"
+    },
+    {
+      "type": "paragraph",
+      "text": "The launch changed how I would frame readiness for this kind of product. The service behavior belongs in the acceptance criteria, including what happens when the system cannot answer. Measurement belongs there too, so the team can distinguish a first visit from continued use."
+    },
+    {
+      "type": "paragraph",
+      "text": "No matter how valuable something is, if it is not usable, it is not used."
+    }
+  ],
+  "identity": "AI product design",
+  "theme": "Usability before launch",
+  "assets": {
+    "P03-A": {
+      "id": "P03-A",
+      "name": "Customer assistant",
+      "caption": "Reconstructed from documented requirements. Layout recreated for the portfolio; sample content. This is not a record of what shipped.",
+      "alt": "Customer assistant. Reconstructed from documented requirements. Layout recreated for the portfolio; sample content. This is not a record of what shipped."
+    },
+    "P03-B": {
+      "id": "P03-B",
+      "name": "Representative workspace",
+      "caption": "Reconstructed from documented requirements. The representative reviews the suggested reply; conversation and reference text are illustrative.",
+      "alt": "Representative workspace. Reconstructed from documented requirements. The representative reviews the suggested reply; conversation and reference text are illustrative."
+    },
+    "P03-C": {
+      "id": "P03-C",
+      "name": "Timing demonstration",
+      "caption": "Reconstructed from the documented project specification. This replay is an interaction demonstration, not a production performance measurement.",
+      "alt": "Timing demonstration. Reconstructed from the documented project specification. This replay is an interaction demonstration, not a production performance measurement."
+    },
+    "P03-D": {
+      "id": "P03-D",
+      "name": "Requirement and outcome record",
+      "caption": "The record distinguishes specified behavior, the shipped subset, and observed use. It does not isolate a causal effect for each feature.",
+      "alt": "Requirement and outcome record. The record distinguishes specified behavior, the shipped subset, and observed use. It does not isolate a causal effect for each feature."
+    },
+    "P03-E": {
+      "id": "P03-E",
+      "name": "Account-balance finding",
+      "caption": "Reconstructed explanation of the testing finding. No original account document or balance is shown.",
+      "alt": "Account-balance finding. Reconstructed explanation of the testing finding. No original account document or balance is shown."
+    }
+  }
+}

@@ -4,6 +4,7 @@ import PersonalizationRays from '@/components/ui/PersonalizationRays'
 import RoadmapMaze from '@/components/ui/RoadmapMaze'
 import type { CSSProperties } from 'react'
 const artwork: Record<string, { pattern: string; icon: string }> = {
+  'ai-chat': { pattern: 'personas', icon: 'fa-brain' },
   platform: { pattern: 'roadmap', icon: 'fa-layer-group' },
   practice: { pattern: 'workshops', icon: 'fa-lightbulb' },
   journey: { pattern: 'call-center-ux', icon: 'fa-headset' },

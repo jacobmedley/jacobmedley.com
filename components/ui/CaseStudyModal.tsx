@@ -2,6 +2,7 @@
 
 import { Fragment, useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
 import * as Dialog from '@radix-ui/react-dialog'
+import dynamic from 'next/dynamic'
 import { cn } from '@/lib/utils'
 import { FeaturedAnchor, FeaturedField } from './FeaturedArtwork'
 import AnimatedStudyImage from './AnimatedStudyImage'
@@ -291,6 +292,13 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
           ref={modalRef}
           aria-describedby={undefined}
           className="modal"
+          onEscapeKeyDown={(event) => {
+            const nestedDialog = modalRef.current?.querySelector<HTMLDialogElement>('dialog[open]')
+            if (nestedDialog) {
+              event.preventDefault()
+              nestedDialog.close()
+            }
+          }}
           onOpenAutoFocus={() => {
             returnFocusRef.current = document.activeElement as HTMLElement | null
           }}
@@ -389,7 +397,9 @@ function ContributionsSection({ contributions }: { contributions: ProjectBadge[]
   )
 }
 
-const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred'])
+const AIStudyContent = dynamic(() => import('@/components/case-studies/AIStudyContent'))
+
+const ORIGINAL_FEATURED_IDS = new Set(['webmd', 'dentalplans', 'bumblebeemd', 'hydra', 'opfred', 'ai-chat'])
 const BRIEF_FOLLOWUP_IDS = new Set(['call-center-ux', 'personas'])
 
 function ModalHeroField({ project }: { project: Project }) {
@@ -1056,7 +1066,7 @@ function ModalContent({ project }: { project: Project }) {
         className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
         data-motion-root={featured || undefined}
       >
-        {(project.brief.image || project.brief.images) && (
+        {(project.brief.image || project.brief.images || project.id === 'ai-chat') && (
           <div className="modal-intro-art">
             {originalFeatured ? (
               <div className="modal-project-art" aria-hidden="true">
@@ -1116,7 +1126,7 @@ function ModalContent({ project }: { project: Project }) {
             </div>
           )}
           <BriefFollowup project={project} />
-          {renderMedia(project.media, project.contributions)}
+          {project.id === 'ai-chat' ? <AIStudyContent /> : renderMedia(project.media, project.contributions)}
         </div>
       ) : renderMedia(project.media, project.contributions)}
     </>

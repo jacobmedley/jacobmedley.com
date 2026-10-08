@@ -811,7 +811,7 @@ html body .modal-study-content .modal-value-card h5 + hr.solid-center.modal-valu
   justify-self: center;
 }
 
-.study-hydra-mark { min-height: 17rem; grid-template-columns: minmax(0, 1fr); }
+.study-hydra-mark { width: 100%; min-height: 17rem; grid-template-columns: minmax(0, 1fr); }
 .study-hydra-mark .featured-hydra-mark { width: min(100%, clamp(7rem, 42cqi, 11rem)); background: var(--featured-ink, #463150); }
 .modal-composite-card { margin-inline: 0; padding: clamp(1.25rem, 2.5cqi, 2rem); }
 .modal-hydra-why { width: min(100%, 48rem); margin-inline: auto; }
@@ -1040,3 +1040,10 @@ html body .modal-content[data-project-id='dentalplans'] .modal-editorial-copy :i
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* AI study shares the main-site featured card and modal treatments. */
+.featured-work-card-ai-chat { --featured-light: #f6f1fb; --featured-mid: #ddd1e9; --featured-dark: #aa91bd; --featured-ink: #614677; }
+.ai-study-rings { position: absolute; inset: 0; display: grid; place-items: center; }
+.ai-study-rings > span { position: absolute; width: calc(25% + var(--ring) * 23%); aspect-ratio: 1; border: 1px solid #61467730; border-radius: 50%; animation: ai-study-orbit 18s ease-in-out infinite alternate; animation-delay: calc(var(--ring) * -2s); }
+@keyframes ai-study-orbit { to { transform: translate(3%, -4%) scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .ai-study-rings > span { animation: none; } }

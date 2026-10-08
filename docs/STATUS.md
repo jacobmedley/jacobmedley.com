@@ -1,5 +1,51 @@
 # Status
 
+## October 8, 2026: AI chat study moved into the main site, Hydra visual restored
+
+Jacob requested the reviewed AI chat study on the main site and reported a
+missing Hydra visual. B95 applies the selected P03 narrative and five assets
+verbatim from the reviewed final handoff, without other private studies or raw
+account/source material. The study now has a sixth homepage featured card using
+the shared modal pattern, a collection entry and a standalone reading route at
+/case-studies/how-not-to-launch-an-ai-powered-product/. Both customer and
+representative demos, timing controls, findings and reconstruction labels remain.
+The private checkout is preserved; the main-site build has no private runtime,
+file-loader, environment-variable or portfolio-route dependency.
+
+Hydra's supporting mark existed but its intrinsic grid container collapsed to
+zero width. An explicit full width restores it; verified 176px on desktop and
+about 118px on mobile. Nested native demo dialogs now handle Escape before the
+outer Radix modal, returning focus to the inner trigger without closing the story.
+
+Validation: final production build/lint/type/export and diff checks passed;
+288 images and 104 references verified. All 23 narrative blocks and five asset
+captions match the reviewed P03 data and rendered reading-page export. Main-site
+modal and reading route/collection link work. Browser desktop and 390px modal
+checks found no horizontal overflow. Balance referral, replay to ten-second
+failure exit, immediate critical-error exit, representative suggested reply and
+local sample send, nested Escape/focus return and outer Escape/focus return
+passed. Hydra/mobile and AI/desktop/mobile screenshots reviewed. Console warnings
+and errors empty. React review retained timer/listener cleanup and lazy-loaded
+the modal story. No live AI, account integration or new dependencies introduced.
+
+During validation, the reading-page home anchor triggered the existing Next lint
+rule; converted it to Link. One Python read used the default Windows codepage and
+failed before edits; retried explicitly as UTF-8. Nested Escape initially closed
+both dialogs; fixed and retested. No general accessibility certification, full-site
+regression or cross-browser/device audit. Reading route was checked on desktop;
+mobile demo checks were in the main-site modal.
+
+Branch: codex/ai-study-main-20261008, based on main ee33fe4. Local checkpoint only;
+no push, merge or deployment for this request. Source scope and exact checkpoint:
+C:/dev/_handoffs/ai-main-hydra-20261008/update.md. Rollback: ee33fe4 through a new
+revert or return to the baseline branch. Main/public deployment remains unchanged.
+Preview http://localhost:8090/ serves the new out/ on loopback, hidden PID 58224.
+Own prior preview PIDs 71188 and 71428 verified before stopping for exports.
+Genesis STATE fresh; retired Exchange untouched; coordinator receipt unverified.
+STATUS written last; lock released after the clean local checkpoint. No remaining
+implementation for this request; production publication remains a separate step.
+
+
 ## October 8, 2026: main-site refinements deployed and verified
 
 Jacob explicitly requested deployment. Main was fast-forwarded from e0415ec to

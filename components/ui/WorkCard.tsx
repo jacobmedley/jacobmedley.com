@@ -4,7 +4,7 @@ import { DirectionalArrow, PrismWave } from './QuietPrism'
 import styles from './QuietPrism.module.css'
 
 const contextIcons: Record<string, string> = {
-  webmd: 'fa-heart-pulse', dentalplans: 'fa-diagram-project',
+  'ai-chat': 'fa-brain', webmd: 'fa-heart-pulse', dentalplans: 'fa-diagram-project',
   hydra: 'fa-layer-group', bumblebeemd: 'fa-hexagon', opfred: 'fa-leaf',
 }
 

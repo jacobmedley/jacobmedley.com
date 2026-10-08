@@ -1,3 +1,4 @@
+import aiStudy from '@/docs/ai-chat-study.json'
 import type { Metadata } from 'next'
 import { caseStudies, caseStudyIntro, caseStudyOutcomes } from '@/lib/data/case-studies'
 import StudyCollection from '@/components/case-studies/StudyCollection'
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 
 export default function CaseStudiesPage() {
   const previews = caseStudies.map(({ slug, shortTitle, category, tags, theme, visual, summary }) => ({ slug, shortTitle, category, tags, theme, visual, summary }))
+
+  previews.push({ slug: aiStudy.suggestedSlug, shortTitle: aiStudy.title, category: 'Product', tags: ['Product', 'UX Research'], theme: 'plum', visual: 'ai-chat', summary: aiStudy.summary })
 
   return (
     <main id="main-content" className="cs-index" tabIndex={-1}>

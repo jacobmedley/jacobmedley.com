@@ -1,5 +1,39 @@
 # Status
 
+## October 8, 2026: main-site refinements deployed and verified
+
+Jacob explicitly requested deployment. Main was fast-forwarded from e0415ec to
+fa2c5f1cfc9d1175755647b8b56da9bf9ce1c494 and pushed. GitHub Actions deployment
+37823506406 completed successfully at 18:21:40 UTC. B93/B94 refinements are live:
+white active navigation with darker green/gold, revised hero motion and thin
+two-line slogan, removed hero paragraph, five canonical themes beside View, and
+inline footers on mobile. No private portfolio routes were included.
+
+Exact-source local build and responsive evidence were verified before publication;
+CI repeated build/export successfully. Ordinary live GET at 18:22:52 UTC returned
+200, X-Proxy-Cache MISS, Last-Modified 18:21:32 UTC and the new markup. No purge
+needed. Live 390px check confirmed five aligned footer rows, correct themes, no
+overlap/overflow, thin slogan with break, and removed paragraph. Hydra dialog
+open/Escape/focus return passed. Active Experience label/icon are white on
+rgb(66,102,65). Browser warnings/errors empty. Both /musings/ and
+/interaction-design-concepts/response-times/ still return 200. No new full-site
+regression or accessibility certification is claimed. CI emitted non-blocking
+action-runtime and upcoming runner-image deprecation notices.
+
+Application files: app/globals.css, app/visual-system.css,
+components/ui/KineticHeroIdentity.tsx, components/ui/QuietPrism.module.css,
+components/ui/WorkCard.tsx. Documentation: copy-register and STATUS. The unrelated
+castle backlog addition/removal cancels out of the final published tree.
+Rollback: e0415ec8a7ddbb394c13e0ebbbe30221e9908de0 through a new revert commit;
+never force-push. Branch main; this documentation closeout uses [skip ci].
+Exact final checkpoint and live evidence: C:/dev/_handoffs/deploy-refinements-20261008/.
+Local preview remains http://localhost:8090/, hidden loopback PID 71188 serving out/.
+Own lock released after clean closeout. Other worktrees/previews preserved.
+Genesis STATE freshly read; retired Exchange untouched; coordinator receipt
+unverified. Protected portfolio packaging/authentication/deployment remains a
+separate unfinished release. No outstanding work for this main-site deployment.
+
+
 ## October 8, 2026: inline featured footers and branch push
 
 Jacob authorized proceeding after inspection of the unrelated castle backlog

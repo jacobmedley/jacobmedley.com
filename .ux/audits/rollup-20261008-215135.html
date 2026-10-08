@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UX audit roll-up — AI study card, reading flow and mobile demonstrations</title><style>
+:root{color-scheme:light dark;
+--bg:#fbfbfc;--fg:#16161a;--mut:#6b7076;--card:#ffffff;--line:#e8e8ec;--link:#2563eb;
+--shadow:0 1px 2px rgba(18,18,28,.04),0 2px 6px rgba(18,18,28,.06);
+--s4:#ef4444;--s3:#f97316;--s2:#eab308;--s2ink:#1a1a1a;--s1:#94a3b8;--s1ink:#1a1a1a;
+--c4:#dc2626;--c3:#ea580c;--c2:#a16207;--c1:#64748b;}
+@media(prefers-color-scheme:dark){:root{
+--bg:#0f0f12;--fg:#e9e9ec;--mut:#9a9aa2;--card:#17181c;--line:#2a2b31;--link:#7aa2f7;
+--shadow:0 1px 2px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.35);
+--c4:#f87171;--c3:#fb923c;--c2:#eab308;--c1:#94a3b8;}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:800px;margin:0 auto;padding:2.8rem 1.2rem 5rem}
+.report-head{margin-bottom:.4rem}
+.eyebrow{text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;font-weight:800;color:var(--fg)}
+h1{font-size:1.65rem;line-height:1.22;margin:.4rem 0 .6rem;letter-spacing:-.015em}
+.target code{background:transparent;border:0;color:var(--mut);font-size:.84rem;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.chip{font-size:.73rem;background:var(--card);border:1px solid var(--line);
+border-radius:999px;padding:.16rem .65rem;color:var(--mut);box-shadow:var(--shadow)}
+/* severity summary — larger boxed cells, bold ramp: colour number + top accent */
+.sevrow{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.6rem 0 2.6rem}
+.scell{flex:1 1 0;min-width:100px;background:var(--card);border:1px solid var(--line);
+border-top:3px solid var(--line);border-radius:13px;padding:.8rem .9rem;box-shadow:var(--shadow);
+display:flex;flex-direction:column;gap:.25rem}
+.scell b{font-size:1.85rem;line-height:1;font-weight:800;font-variant-numeric:tabular-nums}
+.scell span{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:700}
+.scell.off{opacity:.5}.scell.total{border-top-color:var(--fg)}
+.scell.sev4{border-top-color:var(--s4)}.scell.sev4 b{color:var(--c4)}
+.scell.sev3{border-top-color:var(--s3)}.scell.sev3 b{color:var(--c3)}
+.scell.sev2{border-top-color:var(--s2)}.scell.sev2 b{color:var(--c2)}
+.scell.sev1{border-top-color:var(--s1)}.scell.sev1 b{color:var(--c1)}
+section.md{margin:0 0 1.6rem}
+h2{font-size:1.2rem;font-weight:750;margin:2.5rem 0 .9rem;letter-spacing:-.01em}
+h3{font-size:1rem;margin:1.2rem 0 .5rem}h4{font-size:.9rem;margin:1rem 0 .4rem;color:var(--mut)}
+p{margin:.55rem 0}a{color:var(--link)}
+code{background:var(--card);border:1px solid var(--line);border-radius:5px;
+padding:.05rem .35rem;font-size:.85em}
+blockquote{margin:.5rem 0;padding:.3rem 0 .3rem .9rem;border-left:3px solid var(--line);color:var(--mut)}
+ul,ol{margin:.5rem 0;padding-left:1.3rem}li{margin:.25rem 0}
+table{border-collapse:separate;border-spacing:0;width:100%;margin:.9rem 0;font-size:.9rem;
+display:block;overflow-x:auto;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+th,td{border-bottom:1px solid var(--line);padding:.5rem .7rem;text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}th{background:var(--card);font-size:.78rem;text-transform:uppercase;
+letter-spacing:.03em;color:var(--mut)}
+/* finding cards — soft-shadowed, no stripe; the bold badge carries the severity colour */
+.finding{background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:var(--shadow)}
+.finding header{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.finding h3{margin:0;font-size:1.02rem;font-weight:680}
+.badge{font-size:.7rem;font-weight:800;letter-spacing:.02em;color:#fff;border-radius:6px;
+padding:.16rem .5rem;white-space:nowrap;text-transform:uppercase}
+.badge.sev4{background:var(--s4)}.badge.sev3{background:var(--s3)}
+.badge.sev2{background:var(--s2);color:var(--s2ink)}.badge.sev1{background:var(--s1);color:var(--s1ink)}
+.finding dl{margin:.85rem 0 0;display:grid;grid-template-columns:5.5rem 1fr;gap:.4rem .9rem}
+.finding dt{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut);
+font-weight:700;padding-top:.15rem}
+.finding dd{margin:0}.finding dd p:first-child{margin-top:0}
+.shot{margin:.8rem 0;text-align:center}
+.shot img{max-width:100%;max-height:540px;height:auto;border:1px solid var(--line);
+border-radius:10px;box-shadow:var(--shadow);display:inline-block}
+.shot figcaption{font-size:.74rem;color:var(--mut);margin-top:.4rem}
+.missing{display:inline-block;font-size:.78rem;color:var(--mut);background:var(--card);
+border:1px dashed var(--line);border-radius:6px;padding:.15rem .5rem}
+.none{color:var(--mut)}
+/* walkthrough flipbook */
+.flip{background:var(--card);border:1px solid var(--line);border-radius:14px;
+box-shadow:var(--shadow);padding:.85rem;margin:1.1rem 0}
+.flip:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.flip-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+color:var(--mut);margin:.15rem .2rem .65rem}
+.frames{position:relative}
+.frame{display:none;margin:0}.frame.is-active{display:block}
+.frame img{width:100%;max-height:560px;height:auto;object-fit:contain;background:var(--bg);
+border:1px solid var(--line);border-radius:10px;display:block}
+.frame figcaption{font-size:.84rem;color:var(--fg);margin-top:.65rem;line-height:1.5}
+.frame figcaption b{font-weight:700}
+.flip-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:.7rem}
+.flip-nav button{background:var(--card);border:1px solid var(--line);border-radius:9px;
+width:2.1rem;height:2.1rem;font-size:1.2rem;line-height:1;cursor:pointer;color:var(--fg)}
+.flip-nav button:hover{border-color:var(--link);color:var(--link)}
+.counter{font-size:.8rem;color:var(--mut);font-variant-numeric:tabular-nums;
+min-width:3.6rem;text-align:center}
+.dots{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-top:.55rem}
+.dot{width:.5rem;height:.5rem;border-radius:50%;border:0;padding:0;cursor:pointer;
+background:var(--line)}.dot.is-active{background:var(--fg)}
+/* banners: cuj pass, provenance */
+.banner{display:flex;gap:.6rem;align-items:baseline;border:1px solid var(--line);
+border-left-width:4px;border-radius:12px;padding:.75rem 1rem;margin:.2rem 0 1.5rem;
+font-size:.9rem;box-shadow:var(--shadow)}
+.banner .b-ico{font-size:1rem;line-height:1.4}
+.banner b{font-weight:750}
+.banner.pass{background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.35);border-left-color:#22c55e}
+.banner.warn{background:rgba(234,179,8,.12);border-color:rgba(234,179,8,.4);border-left-color:#eab308}
+.banner.info{background:rgba(148,163,184,.13);border-color:rgba(148,163,184,.4);border-left-color:#94a3b8}
+.banner.go{background:rgba(34,197,94,.10);border-color:rgba(34,197,94,.4);border-left-color:#22c55e}
+.banner.nogo{background:rgba(239,68,68,.10);border-color:rgba(239,68,68,.4);border-left-color:#ef4444}
+.banner.verdict{font-size:1rem;padding:.9rem 1.1rem}
+.banner.verdict b{font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+/* evidence fallback gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem}
+.tile{margin:0;background:var(--card);border:1px solid var(--line);border-radius:10px;
+padding:.5rem;box-shadow:var(--shadow)}
+.tile img{width:100%;max-height:220px;height:auto;object-fit:contain;background:var(--bg);
+border:1px solid var(--line);border-radius:7px;display:block}
+.tile figcaption{font-size:.72rem;color:var(--mut);margin-top:.35rem;word-break:break-all}
+</style></head><body><main class="wrap"><header class="report-head"><div class="eyebrow">UX audit roll-up</div><h1>AI study card, reading flow and mobile demonstrations</h1><div class="target"><code>http://localhost:8090/</code></div><div class="chips"><span class="chip">2026-10-08 21:51:35+00:00</span><span class="chip">1 auditors</span></div></header>
+<div class="banner verdict nogo"><span class="b-ico">🔴</span><div><b>NO-GO</b> — suite verdict; detail below.</div></div>
+<section class="md"><p>Baseline 96e461e: fix mobile demo feedback separation before accepting this revision.</p>
+<table><thead><tr><th>Auditor</th><th>Sev4</th><th>Sev3</th><th>Sev2</th><th>Sev1</th><th>Report</th></tr></thead><tbody><tr><td>Usability</td><td>0</td><td>1</td><td>1</td><td>1</td><td><a href="usability-20261008-215135.html">Findings</a></td></tr></tbody></table>
+<p>Priority: connect controls with responses; remove repeated evidence and improve section navigation; unify card treatments. Findings are deduplicated in the member report. This baseline verdict does not describe subsequent implementation.</p>
+<p>Journey verification skipped because .ux/cujs is absent. Dedicated accessibility auditor unavailable; no conformance claim. Performance not requested. AI heuristic lens does not apply to a deterministic reconstruction. Local preview required no authentication. Source and one mobile interaction were inspected; full demo and desktop checks remain for implementation verification.</p></section></main><script>
+document.querySelectorAll('.flip').forEach(function(flip){
+  var frames=flip.querySelectorAll('.frame'),dots=flip.querySelectorAll('.dot'),
+      counter=flip.querySelector('.counter'),n=frames.length,cur=0;
+  if(n<2)return;
+  function show(i){cur=(i%n+n)%n;
+    frames.forEach(function(f,j){f.classList.toggle('is-active',j===cur);});
+    dots.forEach(function(d,j){d.classList.toggle('is-active',j===cur);});
+    if(counter)counter.textContent=(cur+1)+' / '+n;}
+  var p=flip.querySelector('.prev'),x=flip.querySelector('.next');
+  if(p)p.addEventListener('click',function(){show(cur-1);});
+  if(x)x.addEventListener('click',function(){show(cur+1);});
+  dots.forEach(function(d){d.addEventListener('click',function(){show(+d.dataset.i);});});
+  flip.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){show(cur-1);e.preventDefault();}
+    else if(e.key==='ArrowRight'){show(cur+1);e.preventDefault();}});
+});
+</script></body></html>

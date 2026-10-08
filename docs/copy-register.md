@@ -3655,3 +3655,34 @@ Customer, timing and representative demos retain their reviewed illustrative
 content, human-review behavior and reconstruction labels. No other private study,
 related-study record, source packet or original account material is included.
 No new factual claims, metrics or shipped-feature claims. No deployment this pass.
+
+## B96. AI study reading and mobile-demo revision [APPLIED LOCALLY]
+
+Jacob's October 8 annotations authorize a new visual treatment and shorter reading
+flow. Preserve the B95 title, identity, theme, role, collaboration and evidence limits.
+CSS capitalizes shared card identities and themes; summaries hide at the existing
+single-column breakpoint. The revised opening and section copy is registered here
+before implementation:
+
+- Opening: “The assistant launched. Customers tried it. Continued use was harder to earn.”
+- Context: “I led experience research and scoping for one assistant in two places: the public site and the console used by service and account-management representatives.”
+- Account finding: “In testing, the assistant returned a specific account balance. It should have referred the question to an account manager.” / “I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid.”
+- Waiting: “I specified what the assistant should do while people waited, and how it should help when it could not answer.” / “Acknowledge within 0.1 to 0.4 seconds. Give a holding message at three seconds, then thanks and an apology at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help.” / “These are project requirements, not measured production response times or a universal limit on patience.”
+- Scope note: “Streaming, follow-up questions and escalation paths were recommendations. The record does not establish which individual features shipped.”
+- Representative: “Representatives needed the conversation history, a summary of what had been tried, references and language alerts beside the draft. They retained responsibility for the reply.”
+- Tracking: “I secured tracking on the customer-facing assistant before launch. A subset of the requirements shipped.” / “Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low; representatives cited accuracy and waiting.” / “The record does not isolate each feature’s effect or support a numerical uplift claim.”
+- Closing: “Service behavior belongs in the launch criteria, including the route to help when the assistant cannot answer. Tracking must distinguish a first visit from continued use.”
+
+Section headings retained: An answer it should never have given; Ten seconds needed
+a plan; The representative had a different job; What the tracking said.
+Navigation labels: The finding; Waiting and failure; Human review; What shipped.
+Demo labels: Try the response states; Reconstruction; Scenario; Replay 10 seconds;
+Stop replay; Critical error; Reset; 0.2 s / Received; 3 s / Holding; 7 s / Waiting;
+10 s / Get help; Conversation context; Review the reply; Apply suggested referral;
+Add reply to sample; Added to sample; View reference; Reset example.
+All sample messages, source finding, human review gate and reconstruction captions
+remain from B95. Short instruction: “Choose a state to see the response, or replay
+the wait.” No live AI or actual messages. Remove the repeated timing link/figure
+and redundant closing Outcome section; retain evidence once where it belongs.
+The outcome caption retains its causal limit once, followed by: “No numerical
+uplift is established.” Demo figure headings follow the reading-page hierarchy.

@@ -1043,7 +1043,7 @@ html body .modal-content[data-project-id='dentalplans'] .modal-editorial-copy :i
 
 /* AI study shares the main-site featured card and modal treatments. */
 .featured-work-card-ai-chat { --featured-light: #f6f1fb; --featured-mid: #ddd1e9; --featured-dark: #aa91bd; --featured-ink: #614677; }
-.ai-study-rings { position: absolute; inset: 0; display: grid; place-items: center; }
-.ai-study-rings > span { position: absolute; width: calc(25% + var(--ring) * 23%); aspect-ratio: 1; border: 1px solid #61467730; border-radius: 50%; animation: ai-study-orbit 18s ease-in-out infinite alternate; animation-delay: calc(var(--ring) * -2s); }
-@keyframes ai-study-orbit { to { transform: translate(3%, -4%) scale(1.08); } }
-@media (prefers-reduced-motion: reduce) { .ai-study-rings > span { animation: none; } }
+/* Conversation paths echo the source, waiting and human-handoff decisions. */
+.ai-conversation-mark { width: 68%; height: 68%; color: #614677; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ai-conversation-field { position: absolute; inset: 0; width: 100%; height: 100%; stroke: #614677; stroke-width: 1.2; opacity: .24; }
+.ai-conversation-field g { fill: #f9f4ff; }

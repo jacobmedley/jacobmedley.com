@@ -17,10 +17,10 @@ const stages: Record<Exclude<Stage, 'pending'>, { name: string; message: string;
 }
 
 const rail: { stage: Stage; time: string; label: string }[] = [
-  { stage: 'ack', time: '0.1 to 0.4 seconds', label: 'Acknowledge the question' },
-  { stage: 'hold', time: '3 seconds', label: 'Give a holding message' },
-  { stage: 'patience', time: '7 seconds', label: 'Thank them for waiting' },
-  { stage: 'failure', time: '10 seconds or failure', label: 'Offer a route to help' },
+  { stage: 'ack', time: '0.2 s', label: 'Received' },
+  { stage: 'hold', time: '3 s', label: 'Holding' },
+  { stage: 'patience', time: '7 s', label: 'Waiting' },
+  { stage: 'failure', time: '10 s', label: 'Get help' },
 ]
 
 const dialogs: Record<DialogKind, { title: string; text: string }> = {
@@ -44,7 +44,8 @@ function DemoDialog({ kind, setKind, dialogRef, triggerRef }: {
   </dialog>
 }
 
-export function CustomerExperience({ customer, timing }: { customer: StudyAsset; timing: StudyAsset }) {
+export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { customer: StudyAsset; timing: StudyAsset; headingLevel?: 'h3' | 'h4' }) {
+  const Heading = headingLevel
   const [stage, setStage] = useState<Stage>('failure')
   const [scenario, setScenario] = useState<'delay' | 'balance'>('delay')
   const [running, setRunning] = useState(false)
@@ -126,31 +127,39 @@ export function CustomerExperience({ customer, timing }: { customer: StudyAsset;
 
   return <div className={styles.customerSequence} id="ai-customer-demo">
     <figure className={styles.figure} aria-label={customer.alt}>
-      <div className={`${styles.panel} ${styles.customerPanel}`}>
-        <div className={styles.panelHead}><span className={styles.panelSymbol} aria-hidden="true">◌</span><div><h3>Customer assistant</h3><p>Public-site deployment</p></div><span className={styles.chip}>Sample</span></div>
-        <div className={styles.customerBody}>
-          <p className={styles.welcome}>Hello. How can I help?</p>
-          <p className={styles.customerQuestion}>{scenario === 'balance' ? 'What is my account balance?' : 'Where can I find help with my account?'}</p>
-          <p className={styles.assistantMeta}>Assistant <span aria-hidden="true">·</span> {state?.name ?? 'Question sent'}</p>
-          <div className={styles.assistantMessage} role="status" aria-live="polite" aria-atomic="true">
-            {stage === 'ack' ? <><span className={styles.visuallyHidden}>{state?.message}</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></> : state?.message ?? 'The question has been sent.'}
+      <div className={styles.panel}>
+        <div className={styles.panelHead}><div><Heading>Try the response states</Heading><p>Choose a state to see the response, or replay the wait.</p></div><span className={styles.chip}>Reconstruction</span></div>
+        <div className={styles.demoBody}>
+          <div className={styles.controls}>
+            <label htmlFor="ai-scenario">Scenario</label>
+            <select id="ai-scenario" value={scenario} onChange={event => {
+              const value = event.target.value as 'delay' | 'balance'
+              stopRun(); setScenario(value); setStage(value === 'balance' ? 'balance' : 'failure')
+              setElapsed(value === 'balance' ? 'Review state · Referral' : 'Review state · 10 s')
+            }}><option value="delay">Slow response</option><option value="balance">Account-balance request</option></select>
           </div>
-          {showHelp && <div className={styles.helpActions}><button type="button" className={styles.primary} onClick={(event) => openDialog('contact', event.currentTarget)}>Contact account manager</button><button type="button" onClick={(event) => openDialog('articles', event.currentTarget)}>Browse help articles</button></div>}
-          <div className={styles.composer}><span>Choose a scenario below</span><button type="button" aria-label="About this conversation demonstration" onClick={(event) => openDialog('demo', event.currentTarget)}>?</button></div>
-          <p className={styles.smallNote}>No live AI, account connection, or support contact.</p>
+          <div className={styles.stateRail} role="group" aria-label="Select a response state">{rail.map(item => <button type="button" key={item.stage} aria-pressed={scenario === 'delay' && stage === item.stage} onClick={() => selectStage(item.stage)}><strong>{item.time}</strong><span>{item.label}</span></button>)}</div>
+          <div className={styles.replayRow}>
+            <button type="button" className={styles.primary} disabled={scenario === 'balance'} onClick={runScenario}>{running ? 'Stop replay' : 'Replay 10 seconds'}</button>
+            <span aria-live="off">{elapsed}</span>
+          </div>
+          <div className={styles.chat}>
+            <p className={styles.customerQuestion}>{scenario === 'balance' ? 'What is my account balance?' : 'Where can I find help with my account?'}</p>
+            <p className={styles.assistantMeta}>Assistant · {state?.name ?? 'Question sent'}</p>
+            <div className={styles.assistantMessage} role="status" aria-live="polite" aria-atomic="true">
+              {stage === 'ack' ? <><span className={styles.visuallyHidden}>{state?.message}</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></> : state?.message ?? 'The question has been sent.'}
+            </div>
+            {showHelp && <div className={styles.helpActions}><button type="button" onClick={event => openDialog('contact',event.currentTarget)}>Contact account manager</button><button type="button" onClick={event => openDialog('articles',event.currentTarget)}>Browse help articles</button></div>}
+          </div>
+          <div className={styles.secondaryControls}>
+            <button type="button" onClick={() => { stopRun(); setScenario('delay'); setStage('critical'); setElapsed('Immediate failure exit') }}>Critical error</button>
+            <button type="button" onClick={reset}>Reset</button>
+            <button type="button" aria-label="About this conversation demonstration" onClick={event => openDialog('demo',event.currentTarget)}>About this demo</button>
+          </div>
         </div>
-        <div className={styles.panelFoot}>Specified behavior shown for review. Delivery of each feature was not established.</div>
+        <div className={styles.panelFoot}>No live AI, account connection, or support contact.</div>
       </div>
-      <figcaption>{customer.caption}</figcaption>
-    </figure>
-    <figure className={styles.figure} aria-label={timing.alt}>
-      <div className={styles.timingPanel}>
-        <div className={styles.timingHead}><div><h3>The response-time specification</h3><p>Select a state or replay the waiting sequence. A critical error exits immediately.</p></div><span aria-live="off">{elapsed}</span></div>
-        <div className={styles.stateRail} role="group" aria-label="Select a response state">{rail.map((item) => <button type="button" key={item.stage} aria-pressed={stage === item.stage} onClick={() => selectStage(item.stage)}><strong>{item.time}</strong><span>{item.label}</span></button>)}</div>
-        <div className={styles.controls}><label htmlFor="ai-scenario">Scenario</label><select id="ai-scenario" value={scenario} onChange={(event) => { const value = event.target.value as 'delay' | 'balance'; stopRun(); setScenario(value); setStage(value === 'balance' ? 'balance' : 'failure'); setElapsed(value === 'balance' ? 'Review state · Referral' : 'Review state · 10 s') }}><option value="delay">Slow response</option><option value="balance">Account-balance request</option></select><button type="button" className={styles.primary} onClick={runScenario}>{running ? 'Stop replay' : 'Run scenario'}</button><button type="button" onClick={() => { stopRun(); setStage('critical'); setElapsed('Immediate failure exit') }}>Trigger critical error</button><button type="button" onClick={reset}>Reset demonstration</button></div>
-        <p className={styles.smallNote}>Timing values are project requirements. The replay is approximate and does not measure a live model.</p>
-      </div>
-      <figcaption>{timing.caption}</figcaption>
+      <figcaption>{customer.caption} {timing.caption}</figcaption>
     </figure>
     <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef} />
   </div>
@@ -159,7 +168,8 @@ export function CustomerExperience({ customer, timing }: { customer: StudyAsset;
 const suggested = 'Please contact your account manager to confirm your account balance.'
 const initialDraft = 'Your current balance is...'
 
-export function RepresentativeExperience({ asset }: { asset: StudyAsset }) {
+export function RepresentativeExperience({ asset, headingLevel = 'h4' }: { asset: StudyAsset; headingLevel?: 'h3' | 'h4' }) {
+  const Heading = headingLevel
   const [draft, setDraft] = useState(initialDraft)
   const [sent, setSent] = useState(false)
   const [status, setStatus] = useState('The example alert is simulated. It is not a compliance certification.')
@@ -176,16 +186,28 @@ export function RepresentativeExperience({ asset }: { asset: StudyAsset }) {
   }
 
   return <figure className={styles.figure} aria-label={asset.alt} id="ai-representative-demo">
-    <div className={styles.panel}>
-      <div className={styles.panelHead}><span className={styles.panelSymbol} aria-hidden="true">▦</span><div><h3>Representative workspace</h3><p>Context, conversation, and assistance in one view</p></div><span className={styles.chip}>Internal deployment</span></div>
-      <div className={styles.workspace}>
-        <aside className={styles.context} aria-label="Conversation context"><p className={styles.smallLabel}>Conversation context</p><h4>Account question</h4><p>Customer needs help with account-specific information.</p><div className={styles.summary}><span className={styles.smallLabel}>Session summary</span><p>The customer asked about a balance. No verified account data is available in this demonstration.</p></div><p className={styles.smallLabel}>Prior context</p><div className={styles.history}><p><strong>Question received</strong>Looking for account information.</p><p><strong>Next route</strong>Account manager can confirm details.</p></div></aside>
-        <section className={styles.conversation} aria-label="Representative conversation"><div className={styles.conversationTop}><h4>Customer conversation</h4><span className={styles.chip}>Sample</span></div><p className={styles.personRole}>Customer</p><p className={styles.message}>Can you tell me my account balance?</p><p className={styles.personRole}>Representative</p><p className={`${styles.message} ${styles.reply}`}>Let me check the right way to help.</p>{sent && <><p className={styles.personRole}>Representative</p><p className={`${styles.message} ${styles.reply}`}>{suggested}</p></>}<label htmlFor="ai-reply-draft" className={styles.replyTitle}>Draft reply</label><div className={`${styles.draftBox} ${isSuggested ? styles.ready : ''}`}><textarea ref={textareaRef} id="ai-reply-draft" value={draft} onChange={(event) => { setDraft(event.target.value); setStatus('The draft needs representative review. Nothing has been sent.') }} spellCheck={false} /><p>{isSuggested ? 'Suggested referral applied. Ready for representative review.' : 'Review the assistance panel before sending.'}</p></div><div className={styles.sendRow}><span>The representative owns the reply.</span><button type="button" className={styles.primary} disabled={!isSuggested || sent} onClick={() => { if (draft.trim() !== suggested) return; setSent(true); setStatus('Reply added to the sample conversation. No message was sent to a real person.') }}>Add reply to sample conversation</button></div><p className={styles.smallNote} role="status">{status}</p><button type="button" className={styles.resetLink} onClick={() => { setDraft(initialDraft); setSent(false); setStatus('The example alert is simulated. It is not a compliance certification.') }}>Reset example</button></section>
-        <aside className={styles.assist} aria-label="Assistant support for representative"><h4>Assistant support</h4><div className={`${styles.alert} ${isSuggested ? styles.alertReady : ''}`}><strong>{isSuggested ? 'Suggested wording applied' : 'Account information'}</strong><p>{isSuggested ? 'The suggested referral is in the draft. Review it before sending.' : 'The draft starts an account-specific answer. Refer this question to the account manager.'}</p><span>Simulated language alert</span></div><p className={styles.smallLabel}>Suggested reply</p><p>{suggested}</p><button type="button" onClick={() => { setDraft(suggested); setStatus('Suggested wording applied. Nothing has been sent.'); textareaRef.current?.focus() }}>Use suggested reply</button><div className={styles.reference}><p className={styles.smallLabel}>Related reference</p><p>Account-specific questions<br />Referral guidance</p><button type="button" onClick={(event) => openReference(event.currentTarget)}>View reference excerpt</button><p className={styles.smallNote}>Illustrative reference. No original policy text reproduced.</p></div></aside>
+    <div className={`${styles.panel} ${styles.workspace}`}>
+      <div className={styles.panelHead}><div><Heading>Review the reply</Heading><p>The representative owns the response.</p></div><span className={styles.chip}>Reconstruction</span></div>
+      <div className={styles.demoBody}>
+        <details className={styles.context}><summary>Conversation context</summary><p>The customer asked about a balance. No verified account data is available in this demonstration.</p><p>Next route: an account manager can confirm details.</p><button type="button" onClick={event => openReference(event.currentTarget)}>View reference</button></details>
+        <p className={styles.customerQuestion}>Can you tell me my account balance?</p>
+        <div className={`${styles.alert} ${isSuggested ? styles.alertReady : ''}`}>
+          <strong>{isSuggested ? 'Suggested wording applied' : 'Account information'}</strong>
+          <p>{isSuggested ? 'Review the referral before adding it to the sample.' : 'The draft starts an account-specific answer. Refer this question to the account manager.'}</p>
+          <button type="button" onClick={() => { setDraft(suggested); setSent(false); setStatus('Suggested wording applied. Nothing has been sent.'); textareaRef.current?.focus({preventScroll:true}) }}>Apply suggested referral</button>
+        </div>
+        <label htmlFor="ai-reply-draft" className={styles.replyTitle}>Draft reply</label>
+        <div className={`${styles.draftBox} ${isSuggested ? styles.ready : ''}`}><textarea ref={textareaRef} id="ai-reply-draft" value={draft} onChange={event => { setDraft(event.target.value); setSent(false); setStatus('The draft needs representative review. Nothing has been sent.') }} spellCheck={false}/></div>
+        <div className={styles.sendRow}>
+          <button type="button" className={styles.primary} disabled={!isSuggested || sent} onClick={() => { if(draft.trim() !== suggested) return; setSent(true); setStatus('Reply added to the sample conversation. No message was sent to a real person.') }}>{sent ? 'Added to sample' : 'Add reply to sample'}</button>
+          <button type="button" onClick={() => { setDraft(initialDraft); setSent(false); setStatus('The example alert is simulated. It is not a compliance certification.') }}>Reset example</button>
+        </div>
+        <p className={styles.smallNote} role="status">{status}</p>
+        {sent && <div className={styles.sentReply}><span>Representative</span><p>{suggested}</p></div>}
       </div>
-      <div className={styles.panelFoot}>Reconstructed from requirements for context summaries, language alerts, relevant references, and a representative-reviewed reply. The original screen layout was not recovered.</div>
+      <div className={styles.panelFoot}>Simulated language alert. The original screen layout was not recovered.</div>
     </div>
     <figcaption>{asset.caption}</figcaption>
-    <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef} />
+    <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef}/>
   </figure>
 }

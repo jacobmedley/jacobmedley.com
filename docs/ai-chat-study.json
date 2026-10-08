@@ -152,5 +152,26 @@
       "caption": "Reconstructed explanation of the testing finding. No original account document or balance is shown.",
       "alt": "Account-balance finding. Reconstructed explanation of the testing finding. No original account document or balance is shown."
     }
+  },
+  "editorial": {
+    "opening": "The assistant launched. Customers tried it. Continued use was harder to earn.",
+    "context": "I led experience research and scoping for one assistant in two places: the public site and the console used by service and account-management representatives.",
+    "finding": [
+      "In testing, the assistant returned a specific account balance. It should have referred the question to an account manager.",
+      "I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid."
+    ],
+    "waiting": [
+      "I specified what the assistant should do while people waited, and how it should help when it could not answer.",
+      "Acknowledge within 0.1 to 0.4 seconds. Give a holding message at three seconds, then thanks and an apology at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help.",
+      "These are project requirements, not measured production response times or a universal limit on patience."
+    ],
+    "scopeNote": "Streaming, follow-up questions and escalation paths were recommendations. The record does not establish which individual features shipped.",
+    "representative": "Representatives needed the conversation history, a summary of what had been tried, references and language alerts beside the draft. They retained responsibility for the reply.",
+    "tracking": [
+      "I secured tracking on the customer-facing assistant before launch. A subset of the requirements shipped.",
+      "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low; representatives cited accuracy and waiting.",
+      "The record does not isolate each feature’s effect or support a numerical uplift claim."
+    ],
+    "closing": "Service behavior belongs in the launch criteria, including the route to help when the assistant cannot answer. Tracking must distinguish a first visit from continued use."
   }
 }

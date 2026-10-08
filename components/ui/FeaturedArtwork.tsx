@@ -12,7 +12,7 @@ const FEATURED_ICONS: Record<string, string[]> = {
 }
 
 export function FeaturedAnchor({ projectId }: { projectId: string }) {
-  if (projectId === 'ai-chat') return <i className="fa-thin fa-brain featured-work-icon" aria-hidden="true" />
+  if (projectId === 'ai-chat') return <svg className="ai-conversation-mark" viewBox="0 0 160 160" fill="none" aria-hidden="true"><path d="M27 32h76a13 13 0 0 1 13 13v35a13 13 0 0 1-13 13H62L40 111V93H27a13 13 0 0 1-13-13V45a13 13 0 0 1 13-13Z"/><path d="M79 103h39l22 18V80a13 13 0 0 0-13-13"/><path d="M36 54h56M36 70h34"/><circle cx="101" cy="123" r="3"/><circle cx="85" cy="123" r="3"/><circle cx="69" cy="123" r="3"/></svg>
   if (projectId === 'hydra') return <span className="featured-hydra-mark" aria-hidden="true" />
   if (projectId === 'opfred') {
     return (
@@ -69,7 +69,7 @@ export function FeaturedField({ projectId }: { projectId: string }) {
     <div className="featured-work-scene" aria-hidden="true">
       <div className="featured-work-interaction">
         <div className="featured-work-drift">
-          {projectId === 'ai-chat' ? <div className="ai-study-rings">{Array.from({ length: 6 }, (_, i) => <span key={i} style={{ '--ring': i } as CSSProperties} />)}</div> : null}
+          {projectId === 'ai-chat' ? <svg className="ai-conversation-field" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice" fill="none"><path d="M-30 95H160Q190 95 190 125V205Q190 235 220 235H430M80 610V470Q80 440 110 440H245Q275 440 275 410V340M520-20V105Q520 135 550 135H720Q750 135 750 165V295H930M400 620V470Q400 440 430 440H630Q660 440 660 410V360H910"/><g><rect x="105" y="62" width="76" height="48" rx="12"/><rect x="677" y="112" width="88" height="55" rx="12"/><rect x="585" y="410" width="96" height="60" rx="12"/><circle cx="80" cy="520" r="12"/><circle cx="520" cy="66" r="12"/></g><path d="M123 80h38m-38 12h24M697 132h46m-46 13h28M606 431h51m-51 15h32"/></svg> : null}
           {projectId === 'hydra' ? <DesignSystem /> : null}
           {projectId === 'opfred' ? <FallingLeaves /> : null}
           {icons.map((icon, index) => (

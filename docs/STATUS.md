@@ -1,5 +1,59 @@
 # Status
 
+## October 8, 2026: AI study refinement and focused UX audit
+
+Jacob requested CSS title case, hidden summaries at the single-column breakpoint,
+a distinct AI card and a scannable story with connected mobile demonstrations.
+B96 registers the shortened editorial copy. Four sections and jump links replace
+the long linear reading flow; evidence appears once. Shared card identities and
+footer themes use CSS capitalization; all six featured summaries hide at <=820px.
+The AI medallion now depicts a conversation, with a matching background path.
+Customer controls and replies share one panel. Representative guidance, apply
+button, draft and local sample-send stay adjacent; secondary context expands.
+The human-review gate, source limits, reconstruction labels, timing requirements,
+causal caveats and timer cleanup remain. No live AI or account connection added.
+
+Baseline audit: .ux/audits/usability-20261008-215135.md and rendered HTML/index/
+rollup. Three findings (one severity 3, one severity 2, one severity 1) precede the
+fixes; the baseline no-go verdict is historical, not a post-fix release verdict.
+The mobile control change originally put feedback above the viewport (y=-98).
+After the fix, controls and feedback remain visible together at 390x844 and
+320x740. Representative apply keeps the draft visible and focused. The source
+and rendering checks address all three findings in the inspected scope.
+
+Verification actually run: final production build/lint/types/export passed;
+288 images and 104 production references checked. Git diff check passed. Thirteen
+editorial strings matched B96. Browser tests: 820px summaries hidden, 821px shown;
+320px/390px modal and homepage without horizontal overflow; desktop 977px/1280px
+card and 1280px reading page; section links focus headings; 0.2/3/7 second states,
+10-second replay completion, critical exit, balance referral, reset, native help
+and reference dialogs, nested Escape/focus return, outer Escape/focus return,
+suggested referral, local sample send and unreviewed-draft send prevention.
+Browser warnings/errors empty. Reduced motion and ordinary artwork inspected;
+viewport/media overrides reset. React review retained lazy loading and effect
+cleanup, removed unused demo CSS, and corrected reading-page heading levels.
+
+Audit validator, index validator, HTML renderer and before/after footprint checks
+passed. Default and bundled Python lacked PyYAML; existing Genesis pipeline venv
+had pinned 6.0.3 and ran the helpers without installation or Genesis changes.
+One combined delete/add patch was rejected before mutation and replaced with an
+anchored edit. One browser probe used TypeScript syntax; corrected to JavaScript.
+No stored journeys, dedicated accessibility provider or performance audit; no
+full WCAG certification or full-site regression. Existing private portfolio and
+production remain unchanged. Original B95 blocks remain as reviewed source;
+B96 editorial is the active reading copy.
+
+Branch codex/ai-study-main-20261008; local checkpoint only, no push/deploy.
+Exact final commit, changed files and proof images: C:/dev/_handoffs/ai-refine-20261008/update.md.
+Rollback baseline: 96e461eb7e5e04b449fafe055f3ef209930a7b25 through a new revert.
+Hidden preview PID 60692 serves out/ at http://localhost:8090/. Previous preview
+PIDs 58224 and 46604 were path/command verified before stopping for builds.
+Genesis STATE freshly read; retired Exchange untouched; coordinator receipt
+unverified. STATUS written last; own lock released after committing. Remaining:
+Jacob's visual review and separate publication authorization; broader device and
+accessibility coverage remains unverified.
+
+
 ## October 8, 2026: AI chat study moved into the main site, Hydra visual restored
 
 Jacob requested the reviewed AI chat study on the main site and reported a

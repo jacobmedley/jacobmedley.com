@@ -1,20 +1,32 @@
 # Status
 
-## October 8, 2026: Amrons castle backlog vision
+## October 8, 2026: inline featured footers and branch push
 
-Jacob's Amrons castle idea is recorded in `docs/ideas.md` as an unscheduled,
-unbranched product vision. It covers a reusable, themable agent visualisation;
-full-screen castle mode and sidebar; improved stats/reporting and layout density;
-Genesis animated branding; tileable forest, fairy/fish refinement, Loki and Thor
-characters, custom names and interactions; Office, Castle, Orcs, Factory and AI
-robot factory themes; onboarding and cross-platform distribution. A seven-stage
-roadmap and open decisions were added. No implementation, preview, deployment or
-copy-register change was made.
+Jacob authorized proceeding after inspection of the unrelated castle backlog
+commit and pending reversal, and requested a push. All featured footers now keep
+the approved theme left and View right in one flex row at every breakpoint.
+The theme can wrap within its column on narrow phones; View stays intact.
+No copy changes or new B edits. B94 remains applied.
 
-Verification: `git diff --check` passed and the new backlog section was reviewed
-in the working tree. Branch: `codex/main-site-refinements-20261008`. The Genesis
-Exchange is retired/read-only, so no shared inbox record was written or claimed.
-The local tree lock is held until checkpoint commit, then released.
+Production build/lint/type/static export passed, including 288 images and 104
+references. Browser checks at 320px, 390px and 735px passed: all five footers
+remain rows, no overlap or page overflow; at 390px both edges and vertical centers
+match. Hydra mobile screenshot reviewed. Browser warnings/errors empty. Diff
+check passed. No full regression or cross-browser audit repeated.
+
+Files: components/ui/QuietPrism.module.css, this status, and the previously pending
+docs/ideas.md castle-note removal. The matching pending status-note removal is
+preserved. Branch: codex/main-site-refinements-20261008. Commit and push result
+are recorded externally at C:/dev/_handoffs/inline-footer-20261008/update.md.
+Rollback: 2892a0f for code; preserve the approved documentation reversal.
+Preview http://localhost:8090/ runs hidden on loopback, PID 71188, serving out/.
+Prior preview PID 65696 was verified and stopped for export, then replaced.
+Push targets the review branch only; no merge to main or production deployment.
+Protected portfolio release remains separate and unfinished. No remaining work
+for the inline-footer request. Genesis STATE freshly read; retired Exchange not
+written, coordinator receipt unverified. STATUS written last; own lock released
+following checkpoint and push verification.
+
 
 ## October 8, 2026: corrected featured themes and slogan break
 

@@ -220,7 +220,7 @@
   align-items: center;
   justify-content: space-between;
   gap: .5rem 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   margin-top: auto;
   padding-top: 1.35rem;
@@ -229,6 +229,7 @@
 }
 
 .featuredTheme {
+  min-width: 0;
   color: #18151d;
   font-size: var(--prism-card-detail);
   white-space: nowrap;
@@ -241,6 +242,7 @@
 }
 
 .featuredLink {
+  flex-shrink: 0;
   margin-left: auto;
   display: inline-flex;
   align-items: center;
@@ -433,13 +435,6 @@
     margin: 0 1rem 1rem;
     padding: 1.5rem;
   }
-
-  .featuredFooter {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .featuredLink { margin-left: 0; }
 
   .featuredTheme {
     white-space: normal;

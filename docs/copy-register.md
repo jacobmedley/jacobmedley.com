@@ -1,6 +1,6 @@
 # Copy Register
 
-**Status:** edits B0 through B87. B80–B87 APPLIED locally (not deployed); earlier edits APPLIED unless marked otherwise.
+**Status:** B0 through B87 and B93. B80–B87 published October 8, 2026; B93 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
 B60 and B64 are implemented in the local full-site integration, not published.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -3614,3 +3614,16 @@ Individual case studies no longer carry Tools or Technologies inventories. This 
 Positive former-employer names and the official Hydra name remain permitted under the existing resolved naming rules. The anonymous reading pages remain anonymous. No new publication permission is created by this review.
 
 Do not claim that edited writing will pass an AI detector. No detector service was used and no text was sent to an outside detector.
+
+
+## B93. October 8 main-site browser refinements [APPLIED LOCALLY]
+
+Jacob's direct browser annotations supersede the earlier homepage placements.
+Remove the hero paragraph beginning "I lead product and design teams." Restore
+"People · Process · Better outcomes" in each featured-card footer, to the left
+of View. This is existing approved wording from the prior card; no new claim.
+Keep "There is always a better way, together we will find it." verbatim, use
+a lighter weight, and fade it in slowly after the opening word sequence.
+Navigation active labels/icons are white against contrast-checked backgrounds.
+The plus turns clockwise when the word aperture contracts and counterclockwise
+when it expands. B88-B92 remain reserved for the separate private portfolio.

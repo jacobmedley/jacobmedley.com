@@ -8,7 +8,7 @@ const DURATION = 39000
 const CHANGES = [4000, 5000, 6000, 7000, 8000, 11000, 14000, 17000, 20000, 23000, 26000, 29000, 32000, 35000, 38000]
 const FINAL_ROLE = CHANGES.length % ROLES.length
 // Continue after Product and the closing copy are revealed; never replay the intro.
-const LOOP_START = 9600
+const LOOP_START = 10800
 const END_SPACE_DURATION = 180
 type Cue = [number, Keyframe]
 
@@ -156,8 +156,14 @@ export default function KineticHeroIdentity() {
       })
       track(find('.kinetic-tail'),[[0,{width:'0px'}],[3100+END_SPACE_DURATION,{width:'0px'}],[3650+END_SPACE_DURATION,{width:`${tailWidth}px`}],[DURATION,{width:`${tailWidth}px`}]])
       const plusCues=[pose(0,'rotate(0deg)',0),pose(3150+END_SPACE_DURATION,'rotate(0deg)',0),pose(3550+END_SPACE_DURATION,'rotate(0deg)')]
-      CHANGES.forEach((time,i)=>plusCues.push(pose(time,`rotate(${i*180}deg)`),pose(time+280,`rotate(${(i+1)*180}deg)`)))
-      plusCues.push(pose(DURATION,`rotate(${CHANGES.length*180}deg)`))
+      let plusAngle = 0
+      CHANGES.forEach((time,i) => {
+        plusCues.push(pose(time,`rotate(${plusAngle}deg)`))
+        // Turn with the aperture: clockwise inward, counterclockwise outward.
+        plusAngle += widths[(i+1)%ROLES.length] < widths[i%ROLES.length] ? 180 : -180
+        plusCues.push(pose(time+280,`rotate(${plusAngle}deg)`))
+      })
+      plusCues.push(pose(DURATION,`rotate(${plusAngle}deg)`))
       track(find('.kinetic-plus'),plusCues)
       track(find('.kinetic-design'),[pose(0,'translateX(.4em)',0),pose(3370+END_SPACE_DURATION,'translateX(.4em)',0),pose(3800+END_SPACE_DURATION,'translateX(0)'),pose(DURATION,'translateX(0)')])
       const reveal = (selector: string, start: number) => track(find(selector), [
@@ -166,10 +172,11 @@ export default function KineticHeroIdentity() {
         [start + 520, { opacity: 1, transform: 'translateY(0)' }],
         [DURATION, { opacity: 1, transform: 'translateY(0)' }],
       ])
-      // Start the closing sequence with the first UX role, then let each
-      // element fall softly into its settled position.
-      reveal('.kinetic-build', CHANGES[0])
-      reveal('.kinetic-better', CHANGES[0] + 200)
+      // Let the opening word sequence settle before the slogan fades in.
+      track(find('.kinetic-better'), [
+        [0, { opacity: 0 }], [8400, { opacity: 0, easing: 'ease-in-out' }],
+        [10400, { opacity: 1 }], [DURATION, { opacity: 1 }],
+      ])
       reveal('.hero-rule-wrap', CHANGES[0] + 400)
       reveal('.hero-case-studies-button', CHANGES[0] + 600)
       animations[0].onfinish = syncPlayback
@@ -216,8 +223,7 @@ export default function KineticHeroIdentity() {
       </div></div>
       <p className="kinetic-role">Product &amp; Design Leader</p>
       <div className="kinetic-closing">
-        <p className="kinetic-build">I lead product and design teams. I make the work smaller and give people the authority to move it forward.</p>
-        <p className="kinetic-better"><strong>There is always a better way, together we will find it.</strong></p>
+        <p className="kinetic-better">There is always a better way, together we will find it.</p>
         <div className="hero-rule-wrap">
           <hr className="solid-center rule-heading" />
         </div>

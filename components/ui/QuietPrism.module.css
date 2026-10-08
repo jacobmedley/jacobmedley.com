@@ -228,8 +228,7 @@
   background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat;
 }
 
-.featuredFooter > span:last-child {
-  margin-left: auto;
+.featuredTheme {
   color: #18151d;
   font-size: var(--prism-card-detail);
   white-space: nowrap;
@@ -242,6 +241,7 @@
 }
 
 .featuredLink {
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   gap: .9rem;
@@ -439,8 +439,9 @@
     flex-direction: column;
   }
 
-  .featuredFooter > span:last-child {
-    margin-left: 0;
+  .featuredLink { margin-left: 0; }
+
+  .featuredTheme {
     white-space: normal;
   }
 }

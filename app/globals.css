@@ -461,7 +461,7 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 #the-menu.the-menu .btn.hi { border-color: #b2a3b9; color: #463150; }
 #the-menu.the-menu .btn.hi:hover { border-color: #644672; background: #ece9ee; color: #0c080e; }
-#the-menu.the-menu .btn.hi.active { border-color: #463150; color: #e0dae3; background: #644672; }
+#the-menu.the-menu .btn.hi.active { border-color: #463150; color: #fff; background: #644672; }
 
 #the-menu.the-menu .btn.work { border-color: #c1c8d1; color: #5c6672; }
 #the-menu.the-menu .btn.work:hover { border-color: #8391a3; background: #f0f2f4; color: #101114; }
@@ -469,15 +469,15 @@ hr.solid-center.light { border-image: linear-gradient(to left, transparent, #fff
 
 #the-menu.the-menu .btn.results { border-color: #f1d988; color: #7f640a; }
 #the-menu.the-menu .btn.results:hover { border-color: #e3b211; background: #fcf6e2; color: #1b1502; }
-#the-menu.the-menu .btn.results.active { border-color: #9f7d0c; color: #fff; background: #e3b211; }
+#the-menu.the-menu .btn.results.active { border-color: #9f7d0c; color: #fff; background: #806409; }
 
 #the-menu.the-menu .btn.resume { border-color: #afc8ae; color: #426641; }
 #the-menu.the-menu .btn.resume:hover { border-color: #5e915d; background: #fff; color: #0b110b; }
-#the-menu.the-menu .btn.resume.active { border-color: #426641; color: #fff; background: #5e915d; }
+#the-menu.the-menu .btn.resume.active { border-color: #426641; color: #fff; background: #426641; }
 
 #the-menu.the-menu .btn.education { border-color: #bf9999; color: #582323; }
 #the-menu.the-menu .btn.education:hover { border-color: #7e3232; background: #f0e6e6; color: #0f0606; }
-#the-menu.the-menu .btn.education.active { border-color: #582323; color: #e5d6d6; background: #7e3232; }
+#the-menu.the-menu .btn.education.active { border-color: #582323; color: #fff; background: #7e3232; }
 
 /* ── Hero typography ────────────────────────────────────────────── */
 /*
@@ -1969,8 +1969,7 @@ html:is(.motion-paused,.motion-hidden) .fa-arrow-right { translate: none !import
   .modal-full-bleed > .modal-body { padding: 0; }
 }
 #the-menu.the-menu .btn { white-space: normal; overflow-wrap: anywhere; }
-#the-menu.the-menu .btn.results.active { color: #1b1502; }
-#the-menu.the-menu .btn.resume.active { color: #0b110b; }
+#the-menu.the-menu .btn.active, #the-menu.the-menu .btn.active i { color: #fff; }
 @media (max-width: 575px) {
   .modal-title { gap: 8px; padding-right: 8px; }
 }

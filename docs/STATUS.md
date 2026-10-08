@@ -1,5 +1,31 @@
 # Status
 
+## October 8, 2026: five main-site browser refinements
+
+Restored the short featured-card line left of View; white active navigation with
+darker green/gold; removed hero build paragraph; slogan weight300 with a two-second
+fade after the opening sequence; plus rotation reverses with word-width direction.
+B93 applied locally; B88-B92 remain reserved for the private portfolio.
+
+Final build/lint/types/export,288-image/104-reference checks and diff check pass.
+Desktop1280/phone390,normal/reduced motion,actual timeline samples,Experience
+navigation and card open/Escape/focus return verified. Active white contrast is
+4.96:1 minimum across five colors (green6.55:1). No general ADA certification.
+No full regression or cross-browser audit repeated. Detailed evidence and repairs:
+C:/dev/_handoffs/main-refinements-20261008/REVIEW.md.
+
+Seven scoped files changed on codex/main-site-refinements-20261008, based on
+published e0415ec8a7ddbb394c13e0ebbbe30221e9908de0. Local checkpoint follows;
+exact commit is in the external closeout. No push,merge or deployment this pass.
+Hidden preview PID65200 runs at http://localhost:8090/ from out/. Restore only
+this pass's before/ snapshots or revert its checkpoint for rollback.
+
+Private portfolio source/roadmap remains separate. SiteGround sign-in is now
+available; protected release packaging/gate/live checks are still incomplete.
+No hosting settings changed. Genesis STATE fresh; retired Exchange untouched;
+coordinator receipt unverified. This is the last repository content write;
+lock released after commit. Visual review remains.
+
 ## October 8, 2026: outstanding release published and verified
 
 B80-B87 and the Font Awesome documentation are published in application release

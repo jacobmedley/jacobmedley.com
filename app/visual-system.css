@@ -127,7 +127,7 @@
   font-size: var(--hero-cta-size); line-height: 1.4; text-wrap: balance;
 }
 .kinetic-closing p { margin: 0; }
-.kinetic-better strong { font-weight: 700; }
+.kinetic-better { font-weight: 300; }
 .hero-rule-wrap { width: 25%; margin: 0 auto; padding: 0; }
 .hero-rule-wrap .rule-heading { width: 100%; max-width: 100%; margin: 0; }
 .hero-case-studies-link { margin: 0; padding: 0; }

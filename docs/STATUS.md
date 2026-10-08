@@ -1,5 +1,21 @@
 # Status
 
+## October 8, 2026: Amrons castle backlog vision
+
+Jacob's Amrons castle idea is recorded in `docs/ideas.md` as an unscheduled,
+unbranched product vision. It covers a reusable, themable agent visualisation;
+full-screen castle mode and sidebar; improved stats/reporting and layout density;
+Genesis animated branding; tileable forest, fairy/fish refinement, Loki and Thor
+characters, custom names and interactions; Office, Castle, Orcs, Factory and AI
+robot factory themes; onboarding and cross-platform distribution. A seven-stage
+roadmap and open decisions were added. No implementation, preview, deployment or
+copy-register change was made.
+
+Verification: `git diff --check` passed and the new backlog section was reviewed
+in the working tree. Branch: `codex/main-site-refinements-20261008`. The Genesis
+Exchange is retired/read-only, so no shared inbox record was written or claimed.
+The local tree lock is held until checkpoint commit, then released.
+
 ## October 8, 2026: corrected featured themes and slogan break
 
 B94 corrects B93's mistaken generic footer restoration. WorkCard now renders

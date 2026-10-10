@@ -2,6 +2,7 @@
 
 **Status:** B0 through B87 and B93–B95. B80–B87 published October 8, 2026; B93–B94 published October 8, 2026 in fa2c5f1 (B94 corrects B93 footer wording). B95 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
 B60 and B64 are implemented in the local full-site integration, not published.
+B96-B99 are applied locally. B99 records Jacob's clarified AI launch account.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
 part of the record; the latest applicable entry governs.
@@ -3702,3 +3703,41 @@ catalog. Existing case-study narrative, labels, sample messages and caveats rema
 - Study Surface: “The same reading surface used by the Product Framework modal, reused by the AI finding, demonstrations and outcomes.” Behavior: “Informational surfaces have no whole-card action. Controls inside demonstrations retain their own focus and state.”
 - Study Navigation: “Four compact section links stay below the modal header and mark the current section.” Behavior: “Choose a section to move focus to its heading. Scrolling updates the current-section marker.”
 - Response Demonstration: “A segmented state selector, primary replay action and conversation share one Quiet Prism surface.” Behavior: “Choose a state, replay or stop the wait, and open the simulated help routes. Nothing is sent to a real person.”
+
+## B99. AI study: requirements, launch scope and adoption [APPLIED LOCALLY]
+
+Source: Jacob's October 9 firsthand account and follow-up confirming that all user
+requirements were removed, including compliance alerts and nudges when a representative
+might reply incorrectly. Tracking remains the confirmed adopted requirement. This
+direction supersedes B95/B96's vague shipped-subset account and the older restriction
+on narrating leadership decisions for this anonymous case study only. No names,
+employment-history edits, business-condition claims or numerical outcomes are added.
+The launch decision comes from Jacob; observed use comes from the existing record.
+The lesson is his interpretation, not a measured causal effect for each feature.
+
+Canonical replacements, authored before implementation:
+
+- Summary: “Useful technology still has to be usable. I defined the user requirements for an AI assistant, then tracked what happened when they were cut from the launch.”
+- Opening: “The technology was useful. People still struggled to use it.”
+- Launch decision: “Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available.”
+- Requirements introduction: “I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. The demonstrations below show those requirements, all removed from launch.”
+- Finding heading retained: “An answer it should never have given”. Add after the existing finding: “I required a referral to an account manager for this kind of question. That requirement was removed from the launch scope.”
+- Waiting heading: “Requirements for waiting and failure”. Existing specified timings remain unchanged.
+- Scope note: “Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch.”
+- Representative heading: “Requirements for the representative”. Body: “Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope.”
+- Outcome heading: “The launch decision and the result”. Introduction: “I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped.”
+- Requirements table caption: “Requirements and launch scope”. Columns: “Requirement”; “At launch”. Rows: “Waiting feedback, streaming and follow-up questions” / “Removed”; “Help routes and account-manager referral” / “Removed”; “Representative context, references and review controls” / “Removed”; “Compliance alerts and nudges before an incorrect reply” / “Removed”; “Customer usage tracking” / “Adopted”.
+- Delivery heading: “Launch scope”. Body: “The assistant launched without the user requirements. Tracking remained.”
+- Observed use: retain “Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low; representatives cited accuracy and waiting.”
+- Lesson: “My lesson from the failure: removing these requirements left people to manage the wait, judge the answer and find help themselves. The technology's usefulness could not make up for the difficulty of using it.”
+- Closing: “No matter how valuable something is, if it is not usable, it is not used.”
+- Outcome summary: “Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest, and internal adoption stayed low.”
+- Outcome caption/alt: “Launch scope reflects my account of the decisions. Tracking and representative feedback describe use after release; they do not isolate the effect of each removed requirement.”
+- Customer caption/alt: “Reconstructed from user requirements removed from launch. Layout recreated for the portfolio; sample content.”
+- Representative caption/alt: “Reconstructed from user requirements removed from launch. Conversation and reference text are illustrative; the demo shows part of the specified review flow.”
+- Timing caption/alt: “Reconstructed from the timing requirements removed from launch. This replay shows the specified interaction, not measured production performance.”
+
+Apply the same account to the JSON's long-form blocks so it cannot contradict the
+rendered editorial flow. Preserve testing details, timings, qualitative outcomes,
+role, collaboration and synthetic demo messages. Historical copy entries remain as
+history. No deployment is authorized by this edit.

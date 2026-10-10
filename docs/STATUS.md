@@ -1,5 +1,35 @@
 # Status
 
+## October 9, 2026: AI requirements and launch decision reframed
+
+Jacob clarified that all user requirements were removed from launch, including
+compliance alerts and nudges before an incorrect representative reply. Leadership
+prioritized speed within resources and technical capabilities. B99 records this
+firsthand account and supersedes the anonymous AI study's earlier subset wording.
+
+Summary, opening, headings, supplied-requirement descriptions, captions and lesson
+now tell that story. A semantic comparison lists waiting/streaming/follow-up,
+help/referral, representative review/context and compliance/nudges as Removed;
+customer tracking is Adopted. The conclusion explains Jacob's lesson while retaining
+qualitative outcome and per-feature causal limits. Quiet Prism and demo behavior
+remain intact. Canonical JSON updates card, modal and reading page together.
+
+Build/lint/types/export passed; 288 images and 104 active references verified.
+Main-card/modal copy and table inspected; 1204px and 320px widths have no horizontal
+overflow. Sticky Shipped target focuses below navigation. Standalone export includes
+the revision. Browser error log empty; viewport reset. Diff check passed.
+Evidence: docs/reviews/ai-requirements-20261009/verification.md and screenshots.
+Changed files: AIStudyContent.tsx/CSS, ai-chat-study.json, copy-register B99, this
+STATUS and scoped review evidence. No unresolved work in this local copy request.
+
+Branch codex/ai-study-main-20261008; local checkpoint only, no push/merge/deployment.
+Rollback baseline dccfdbe. Preview http://localhost:8090/#work rebuilt and running:
+Python PID 61768, session 63327, serving out/. Previous preview PID 56496 was
+verified by full command and stopped before build. STATUS written last; own lock
+released after checkpoint. Genesis STATE freshly read; retired Exchange untouched.
+Exact-hash handoff C:/dev/_handoffs/ai-requirements-20261009/update.md; coordinator
+receipt unverified. No external workstream edits.
+
 ## October 9, 2026: Quiet Prism reference alignment and Feeral UX roadmap
 
 Jacob asked for an element-by-element breakdown of Product Framework and Design

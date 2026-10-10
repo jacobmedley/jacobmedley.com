@@ -1,14 +1,14 @@
 {
   "title": "How Not to Launch an AI-Powered Product",
   "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
-  "summary": "A launch lesson in usability: I defined how an assistant should handle uncertainty, waiting, and failure, then secured tracking to see whether people kept using it.",
+  "summary": "Useful technology still has to be usable. I defined the user requirements for an AI assistant, then tracked what happened when they were cut from the launch.",
   "role": "Senior individual contributor leading experience research and scoping",
   "collaboration": "Service design and an applied AI specialist.",
-  "outcome": "A subset of requirements shipped. Customer engagement fell after early interest; internal adoption remained low. The record links these observations with speed, friction, and accuracy concerns without isolating a causal effect.",
+  "outcome": "Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest, and internal adoption stayed low.",
   "blocks": [
     {
       "type": "paragraph",
-      "text": "The assistant launched. Customers tried it. Continued use was harder to earn."
+      "text": "The technology was useful. People still struggled to use it."
     },
     {
       "type": "paragraph",
@@ -16,11 +16,11 @@
     },
     {
       "type": "paragraph",
-      "text": "The technology had a job to do. So did the experience around it. People needed an answer they could trust, some indication that their question had been received, and somewhere useful to go when the assistant could not help."
+      "text": "Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available."
     },
     {
       "type": "paragraph",
-      "text": "My lesson from the launch was straightforward: usability belongs in the launch criteria. Putting it behind the technology leaves the remaining work with the person asking."
+      "text": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. The demonstrations below show those requirements, all removed from launch."
     },
     {
       "type": "heading",
@@ -36,7 +36,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The source material belonged in the experience discussion. A neatly presented answer could still be wrong. What the system received, and what it could read from those files, affected the customer long before the sentence appeared."
+      "text": "I required a referral to an account manager for this kind of question. That requirement was removed from the launch scope."
     },
     {
       "type": "asset",
@@ -44,7 +44,7 @@
     },
     {
       "type": "heading",
-      "text": "Ten seconds needed a plan"
+      "text": "Requirements for waiting and failure"
     },
     {
       "type": "paragraph",
@@ -72,15 +72,15 @@
     },
     {
       "type": "paragraph",
-      "text": "Streaming, suggested follow-up questions, and escalation paths were also part of the recommendations. Their presence in a specification does not make them shipped features."
+      "text": "Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch."
     },
     {
       "type": "heading",
-      "text": "The representative had a different job"
+      "text": "Requirements for the representative"
     },
     {
       "type": "paragraph",
-      "text": "An internal representative needed the history of the issue and a summary of what had already been tried. Relevant references belonged near the reply. Language alerts needed to appear while the person could still review what they were about to send."
+      "text": "Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope."
     },
     {
       "type": "paragraph",
@@ -92,11 +92,11 @@
     },
     {
       "type": "heading",
-      "text": "What the tracking said"
+      "text": "The launch decision and the result"
     },
     {
       "type": "paragraph",
-      "text": "A subset of the requirements shipped. I secured tracking on the customer-facing assistant before launch."
+      "text": "I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped."
     },
     {
       "type": "paragraph",
@@ -112,7 +112,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The launch changed how I would frame readiness for this kind of product. The service behavior belongs in the acceptance criteria, including what happens when the system cannot answer. Measurement belongs there too, so the team can distinguish a first visit from continued use."
+      "text": "My lesson from the failure: removing these requirements left people to manage the wait, judge the answer and find help themselves. The technology's usefulness could not make up for the difficulty of using it."
     },
     {
       "type": "paragraph",
@@ -125,26 +125,26 @@
     "P03-A": {
       "id": "P03-A",
       "name": "Customer assistant",
-      "caption": "Reconstructed from documented requirements. Layout recreated for the portfolio; sample content. This is not a record of what shipped.",
-      "alt": "Customer assistant. Reconstructed from documented requirements. Layout recreated for the portfolio; sample content. This is not a record of what shipped."
+      "caption": "Reconstructed from user requirements removed from launch. Layout recreated for the portfolio; sample content.",
+      "alt": "Reconstructed from user requirements removed from launch. Layout recreated for the portfolio; sample content."
     },
     "P03-B": {
       "id": "P03-B",
       "name": "Representative workspace",
-      "caption": "Reconstructed from documented requirements. The representative reviews the suggested reply; conversation and reference text are illustrative.",
-      "alt": "Representative workspace. Reconstructed from documented requirements. The representative reviews the suggested reply; conversation and reference text are illustrative."
+      "caption": "Reconstructed from user requirements removed from launch. Conversation and reference text are illustrative; the demo shows part of the specified review flow.",
+      "alt": "Reconstructed from user requirements removed from launch. Conversation and reference text are illustrative; the demo shows part of the specified review flow."
     },
     "P03-C": {
       "id": "P03-C",
       "name": "Timing demonstration",
-      "caption": "Reconstructed from the documented project specification. This replay is an interaction demonstration, not a production performance measurement.",
-      "alt": "Timing demonstration. Reconstructed from the documented project specification. This replay is an interaction demonstration, not a production performance measurement."
+      "caption": "Reconstructed from the timing requirements removed from launch. This replay shows the specified interaction, not measured production performance.",
+      "alt": "Reconstructed from the timing requirements removed from launch. This replay shows the specified interaction, not measured production performance."
     },
     "P03-D": {
       "id": "P03-D",
       "name": "Requirement and outcome record",
-      "caption": "The record distinguishes specified behavior, the shipped subset, and observed use. It does not isolate a causal effect for each feature.",
-      "alt": "Requirement and outcome record. The record distinguishes specified behavior, the shipped subset, and observed use. It does not isolate a causal effect for each feature."
+      "caption": "Launch scope reflects my account of the decisions. Tracking and representative feedback describe use after release; they do not isolate the effect of each removed requirement.",
+      "alt": "Launch scope reflects my account of the decisions. Tracking and representative feedback describe use after release; they do not isolate the effect of each removed requirement."
     },
     "P03-E": {
       "id": "P03-E",
@@ -154,24 +154,36 @@
     }
   },
   "editorial": {
-    "opening": "The assistant launched. Customers tried it. Continued use was harder to earn.",
+    "opening": "The technology was useful. People still struggled to use it.",
     "context": "I led experience research and scoping for one assistant in two places: the public site and the console used by service and account-management representatives.",
+    "launchDecision": "Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available.",
+    "requirementsIntro": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. The demonstrations below show those requirements, all removed from launch.",
     "finding": [
       "In testing, the assistant returned a specific account balance. It should have referred the question to an account manager.",
-      "I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid."
+      "I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid.",
+      "I required a referral to an account manager for this kind of question. That requirement was removed from the launch scope."
     ],
     "waiting": [
       "I specified what the assistant should do while people waited, and how it should help when it could not answer.",
       "Acknowledge within 0.1 to 0.4 seconds. Give a holding message at three seconds, then thanks and an apology at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help.",
       "These are project requirements, not measured production response times or a universal limit on patience."
     ],
-    "scopeNote": "Streaming, follow-up questions and escalation paths were recommendations. The record does not establish which individual features shipped.",
-    "representative": "Representatives needed the conversation history, a summary of what had been tried, references and language alerts beside the draft. They retained responsibility for the reply.",
+    "scopeNote": "Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch.",
+    "representative": "Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope.",
+    "requirements": [
+      { "requirement": "Waiting feedback, streaming and follow-up questions", "status": "Removed" },
+      { "requirement": "Help routes and account-manager referral", "status": "Removed" },
+      { "requirement": "Representative context, references and review controls", "status": "Removed" },
+      { "requirement": "Compliance alerts and nudges before an incorrect reply", "status": "Removed" },
+      { "requirement": "Customer usage tracking", "status": "Adopted" }
+    ],
+    "delivery": "The assistant launched without the user requirements. Tracking remained.",
     "tracking": [
-      "I secured tracking on the customer-facing assistant before launch. A subset of the requirements shipped.",
+      "I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped.",
       "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low; representatives cited accuracy and waiting.",
       "The record does not isolate each feature’s effect or support a numerical uplift claim."
     ],
-    "closing": "Service behavior belongs in the launch criteria, including the route to help when the assistant cannot answer. Tracking must distinguish a first visit from continued use."
+    "lesson": "My lesson from the failure: removing these requirements left people to manage the wait, judge the answer and find help themselves. The technology's usefulness could not make up for the difficulty of using it.",
+    "closing": "No matter how valuable something is, if it is not usable, it is not used."
   }
 }

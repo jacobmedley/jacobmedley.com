@@ -29,6 +29,13 @@
 .outcomeGrid i { float:right; color:var(--card-ink); font-size:1.6rem; }
 .outcomeGrid p { line-height:1.5; margin-bottom:0; }
 .outcomeGrid hr { margin-block:var(--heading-rhythm); }
+.requirements { width:100%; border-collapse:collapse; margin-block:1.5rem var(--section-rhythm); font-size:.95rem; line-height:1.5; }
+.requirements caption { caption-side:top; text-align:left; color:var(--card-ink); font-weight:500; padding-bottom:.75rem; }
+.requirements :is(th,td) { padding:.8rem .75rem .8rem 0; text-align:left; vertical-align:top; border-bottom:1px solid var(--card-line); }
+.requirements thead th { font-size:.8rem; color:var(--card-ink); font-weight:500; }
+.requirements tbody th { font-weight:400; }
+.requirements :is(th,td):last-child { width:6rem; padding-right:0; white-space:nowrap; }
+.lesson { margin-top:var(--section-rhythm); }
 .closing { max-width:46rem; margin:var(--section-rhythm) auto; font-size:1.15rem; line-height:1.5; }
 .page { max-width:76rem; margin:auto; padding:clamp(1rem,4vw,3rem); container-type:inline-size; }
 .hero { padding-block:3rem; max-width:48rem; margin:auto; }

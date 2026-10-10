@@ -44,7 +44,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
 
   return <article ref={articleRef} className={styles.story}>
     <div className={styles.intro}>
-      <div><p className={styles.lead}>{study.editorial.opening}</p><p>{study.editorial.context}</p></div>
+      <div><p className={styles.lead}>{study.editorial.opening}</p><p>{study.editorial.context}</p><p>{study.editorial.launchDecision}</p></div>
       <dl className={styles.metadata}><div><dt>My role</dt><dd>{study.role}</dd></div><div><dt>Collaboration</dt><dd>{study.collaboration}</dd></div></dl>
     </div>
     <nav className={styles.sectionNav} aria-label="In this case study">{sections.map(([id,label],index) => <a key={id} href={`#ai-${id}`} aria-current={active === id ? 'location' : undefined} onClick={event => {
@@ -54,6 +54,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
       target?.focus({preventScroll:true})
       setActive(id)
     }}><span aria-hidden="true">0{index+1}</span>{label}</a>)}</nav>
+    <p className={styles.sectionCopy}>{study.editorial.requirementsIntro}</p>
 
     <section className={styles.section} aria-labelledby="ai-finding">
       <PrismStudyHeading id="ai-finding" icon="fa-magnifying-glass" level={headingLevel}>An answer it should never have given</PrismStudyHeading>
@@ -73,7 +74,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
     </section>
 
     <section className={styles.section} aria-labelledby="ai-waiting">
-      <PrismStudyHeading id="ai-waiting" icon="fa-stopwatch" level={headingLevel}>Ten seconds needed a plan</PrismStudyHeading>
+      <PrismStudyHeading id="ai-waiting" icon="fa-stopwatch" level={headingLevel}>Requirements for waiting and failure</PrismStudyHeading>
       <div className={styles.split}>
         <div className={styles.sectionCopy}><p>{study.editorial.waiting[0]}</p><p>{study.editorial.waiting[1]}</p><p className={styles.note}>{study.editorial.waiting[2]} {study.editorial.scopeNote}</p></div>
         <CustomerExperience customer={study.assets['P03-A']} timing={study.assets['P03-C']} headingLevel={readingPage ? 'h3' : 'h4'} />
@@ -81,7 +82,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
     </section>
 
     <section className={styles.section} aria-labelledby="ai-review">
-      <PrismStudyHeading id="ai-review" icon="fa-user" level={headingLevel}>The representative had a different job</PrismStudyHeading>
+      <PrismStudyHeading id="ai-review" icon="fa-user" level={headingLevel}>Requirements for the representative</PrismStudyHeading>
       <div className={styles.split}>
         <div className={styles.sectionCopy}><p>{study.editorial.representative}</p></div>
         <RepresentativeExperience asset={study.assets['P03-B']} headingLevel={readingPage ? 'h3' : 'h4'} />
@@ -89,15 +90,21 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
     </section>
 
     <section className={styles.section} aria-labelledby="ai-outcome">
-      <PrismStudyHeading id="ai-outcome" icon="fa-chart-line" level={headingLevel}>What the tracking said</PrismStudyHeading>
+      <PrismStudyHeading id="ai-outcome" icon="fa-chart-line" level={headingLevel}>The launch decision and the result</PrismStudyHeading>
       <p className={styles.sectionCopy}>{study.editorial.tracking[0]}</p>
+      <table className={styles.requirements}>
+        <caption>Requirements and launch scope</caption>
+        <thead><tr><th scope="col">Requirement</th><th scope="col">At launch</th></tr></thead>
+        <tbody>{study.editorial.requirements.map(row => <tr key={row.requirement}><th scope="row">{row.requirement}</th><td>{row.status}</td></tr>)}</tbody>
+      </table>
       <figure className={styles.evidence}>
         <div className={styles.outcomeGrid}>
-          <PrismStudySurface tone="slate"><i className="fa-thin fa-layer-group" aria-hidden="true" /><strong>Delivery</strong><hr className="solid-center" /><p>A subset of requirements shipped.</p></PrismStudySurface>
+          <PrismStudySurface tone="slate"><i className="fa-thin fa-layer-group" aria-hidden="true" /><strong>Launch scope</strong><hr className="solid-center" /><p>{study.editorial.delivery}</p></PrismStudySurface>
           <PrismStudySurface tone="sage"><i className="fa-thin fa-chart-line" aria-hidden="true" /><strong>Observed use</strong><hr className="solid-center" /><p>{study.editorial.tracking[1]}</p></PrismStudySurface>
         </div>
         <figcaption>{study.assets['P03-D'].caption} No numerical uplift is established.</figcaption>
       </figure>
+      <p className={`${styles.sectionCopy} ${styles.lesson}`}>{study.editorial.lesson}</p>
       <p className={styles.closing}>{study.editorial.closing}</p>
     </section>
     {readingPage && <p className={styles.note}><Link href="/#work">Back to case studies →</Link></p>}

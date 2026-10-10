@@ -9,6 +9,7 @@ import AnimatedStudyImage from './AnimatedStudyImage'
 import StudySupportingArt from './StudySupportingArt'
 import ProjectGeometry from './ProjectGeometry'
 import CallCenterDemo from './CallCenterDemo'
+import StudyIntro from './StudyIntro'
 import {
   projects,
   type Project,
@@ -531,7 +532,7 @@ function BlockContent({ block }: { block: ProjectMedia }): ReactNode {
       )
     }
     case 'text':
-      return <p>{withInlineLinks(block.text)}</p>
+      return <p className={block.variant === 'note' ? 'modal-evidence-note' : undefined}>{withInlineLinks(block.text)}</p>
     case 'list':
       return (
         <ul className="fa-ul">
@@ -986,7 +987,7 @@ function StyledListContent({ block }: { block: StyledListBlock }) {
 
   if (!rich) {
     return (
-      <ul className="modal-info-card-grid">
+      <ul className="modal-info-card-grid" data-columns={block.columns}>
         {block.items.map((item, i) => (
           <li key={i} className="modal-info-card modal-prism-surface">
             <span className="modal-info-card-icon" aria-hidden="true">
@@ -1121,7 +1122,10 @@ function ModalContent({ project, aiWorkspace, onWorkspaceChange }: { project: Pr
       </div>
 
       {featured ? (
-        <div className="modal-study-content" style={aiWorkspace ? { paddingTop: '.75rem' } : undefined}>
+        <div className="modal-study-content" style={project.id === 'ai-chat' ? { paddingTop: aiWorkspace ? '.75rem' : 0 } : undefined}>
+          {project.introduction && project.role && <StudyIntro role={project.role} collaboration={project.collaboration}>
+            {project.introduction.map(text => <p key={text}>{withInlineLinks(text)}</p>)}
+          </StudyIntro>}
           {project.heroCards && (
             <div className={`modal-hero-cards featured-work-card-${project.id}`}>
               <div className="modal-section-heading">

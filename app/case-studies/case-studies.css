@@ -98,7 +98,7 @@
 .cs-card-copy { padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
 .cs-card-copy > .cs-badges { margin-bottom: 8px; }
 .cs-card-copy h3 { font-size: 27px; line-height: 1.15; letter-spacing: -.6px; margin-top: 0; font-weight: 500; }
-.cs-card-copy p { font-size: 15px; line-height: 1.6; color: var(--cs-muted); margin-block: 13px 20px; max-width: 480px; }
+.cs-card-copy p { font-size: 15px; line-height: 1.6; color: var(--cs-muted); margin-block: 13px 20px; max-width: 480px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .cs-card-copy .cs-text-link { font-size: 12px; margin-top: auto; }
 .cs-card-copy .cs-arrow { width: 16px; }
 .cs-perspective { padding-block: 78px 85px; margin-top: 75px; text-align: center; }

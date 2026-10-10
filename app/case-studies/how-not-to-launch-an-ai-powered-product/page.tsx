@@ -11,7 +11,7 @@ export default function AIChatStudyPage() {
     <header className={styles.hero}>
       <Link href="/#work">← Case studies</Link>
       <h1>{study.title}</h1>
-      <p>{study.summary}</p>
+      <p>{study.heroSummary}</p>
     </header>
     <AIStudyContent readingPage />
   </main>

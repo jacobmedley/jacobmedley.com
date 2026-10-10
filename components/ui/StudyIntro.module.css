@@ -1,0 +1,16 @@
+.container { container-type: inline-size; margin-bottom: 2.5rem; }
+.intro { display: grid; grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr); gap: 2.5rem; align-items: stretch; }
+.copy { min-width: 0; }
+.copy > :last-child { margin-bottom: 0; }
+.metadata { position: relative; padding-left: 1.5rem; margin: 0; min-width: 0; }
+.metadata::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--modal-rule, #bcaac8) 18%, var(--modal-rule, #bcaac8) 82%, transparent); }
+.metadata > div + div { margin-top: 1.25rem; }
+.metadata dt { font-size: .8rem; font-weight: 600; margin: 0; color: var(--prism-muted, #62586b); }
+.metadata dd { display: grid; grid-template-columns: .65rem minmax(0, 1fr); gap: .5rem; margin: 0; line-height: 1.45; }
+.metadata dd > i { font-size: .65rem; line-height: inherit; padding-top: .3rem; color: var(--prism-muted, #62586b); }
+@container (max-width: 48rem) {
+  .intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .metadata { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+  .metadata > div + div { margin-top: 0; }
+}
+@container (max-width: 30rem) { .metadata { grid-template-columns: 1fr; } }

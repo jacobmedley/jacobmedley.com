@@ -1,0 +1,54 @@
+[
+  {
+    "id": "ai-chat",
+    "introColumns": "658.812px",
+    "navLinks": 5,
+    "overflow": 0,
+    "threeCardColumns": [],
+    "width": 820
+  },
+  {
+    "id": "opfred",
+    "introColumns": "658.812px",
+    "overflow": 0,
+    "threeCardColumns": [
+      "658.812px",
+      "658.812px",
+      "658.812px"
+    ],
+    "width": 820
+  },
+  {
+    "id": "dentalplans",
+    "introColumns": "658.812px",
+    "overflow": 0,
+    "threeCardColumns": [],
+    "width": 820
+  },
+  {
+    "id": "ai-chat",
+    "introColumns": "276px",
+    "navLinks": 5,
+    "overflow": 0,
+    "threeCardColumns": [],
+    "width": 320
+  },
+  {
+    "id": "opfred",
+    "introColumns": "276px",
+    "overflow": 0,
+    "threeCardColumns": [
+      "276px",
+      "276px",
+      "276px"
+    ],
+    "width": 320
+  },
+  {
+    "id": "dentalplans",
+    "introColumns": "276px",
+    "overflow": 0,
+    "threeCardColumns": [],
+    "width": 320
+  }
+]

@@ -4396,3 +4396,62 @@ B101 supporting copy: The design reading connected those findings to the interfa
 Workspace supporting labels: Account status; Reference; Context shown here represents the proposed Salesforce integration; Representative · Sample reply; Find a form or reference. Status messages name the document attached or removed and ask the representative to review again. Sent and escalation messages confirm that the action stays within the sample workspace.
 
 Sample PDF guide checklist: Check before responding. Read the customer request and conversation context. Check the relevant reference and its limits. Refer questions that need verified account information. Both PDFs are labeled Service workspace / Sample document and Demonstration only.
+
+## B102: annotation pass and One Park visual comparison
+
+Status: APPLIED LOCALLY. Build, browser and audit evidence: docs/reviews/annotation-polish-20261010/verification.md. Source: Jacob's October 10 comments 1–27 and typography correction. This supersedes the B101 discovery-card stack and fixed line-height requests. Keep working streaming and its platform engineering effort as already recorded in B101.
+
+Use the following copy. Other modal introductions relocate the existing second and later brief paragraphs without changing their wording; the first paragraph remains the hero setup. Roles describe responsibilities supported by those briefs and contribution labels. No new seniority or unprovided collaborators are inferred. The AI introduction remains sourced from its editorial JSON. Card summaries are deliberately shorter and limited to three displayed lines. Historical research and full case-study paragraphs retain their full text.
+
+Design decisions: use the employment disclosure component and its plus for the reading list at the story end; hide its chevron in this use. Reuse DentalPlans chevron bullets and Quiet Prism fading rules in a shared introduction. Three discovery and research cards use one desktop row and stack when the content container is narrow. Tighten current modal headlines and paragraphs by about 10%, per Jacob's follow-up, instead of the initially requested fixed rem values. Preserve font sizes and responsive reading order.
+
+The static UX review inspected four original One Park images. It supports visible copy, hierarchy, process and CTA changes. It does not establish a conversion lift, verify competitor claims, or prove that terms missing from one crop disappeared from the full site. Homepage actions and trust signals existed before the redesign.
+
+```json
+{
+  "ai": {
+    "title": "How not to design an AI assistant",
+    "summary": "A real-life fable of deadlines and technology getting ahead of the people they were meant to serve.",
+    "heroSummary": "In early 2023, I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building.",
+    "role": "Senior UX designer leading product design, experience research, scoping and user requirements",
+    "theme": "User First"
+  },
+  "projects": {
+    "webmd": {"summary":"WebMD had the audience. DentalPlans had the plans. I joined them in one path from health research to checkout.","role":"Product design, UX strategy, prototyping and front-end implementation"},
+    "dentalplans": {"subtitle":"This is how you scale","summary":"One storefront became five branded properties. A shared platform cut launch time from six weeks to two.","role":"Product ownership, UX/UI design and front-end development","collaboration":"Engineering"},
+    "bumblebeemd": {"subtitle":"Avoiding a sticky situation","summary":"A shared commerce platform gave us more room to shape BumblebeeMD’s brand and experience.","role":"Product design, prototyping and design leadership"},
+    "hydra": {"summary":"One interface. Several interpretations. I built a shared vocabulary and reusable components for product, marketing and engineering.","role":"Design system leadership, systems analysis and UI engineering","collaboration":"Product, marketing and engineering"},
+    "opfred": {"subtitle":"Reading the tea leaves","summary":"Visitor behavior, heat maps and scroll maps shaped a website built to help customers take the next step.","role":"Product design, user research, prototyping and design leadership","introduction":["The redesign brought that work into the website and lead flow. Hydra supplied the interface patterns.","The brand promised a partner invested in helping the customer grow. I wanted that promise to show up in the language, the explanation of the service and the next action."]},
+    "split-test": {"role":"Variant design, implementation and results analysis","collaboration":"Product marketing owned hypotheses and traffic."},
+    "call-center-ux": {"role":"Project leadership and API research","collaboration":"Call-center leadership, engineering and business intelligence"},
+    "marketing-auto": {"role":"Design and development lead","collaboration":"Marketing, business analysis and data teams"},
+    "workshops": {"role":"Workshop design and facilitation"},
+    "roadmap": {"role":"UX roadmap planning"},
+    "personas": {"role":"Persona development and visual design","collaboration":"Business intelligence and product marketing"},
+    "reveal": {"role":"Copy, concept development and visual design","introduction":["The examples trace the same campaign idea across copy and visual executions."]},
+    "viva": {"role":"Brand research, concept development and visual design","collaboration":"Executive leadership and a cross-functional team"},
+    "wrong": {"role":"Design leadership and visual design"}
+  },
+  "financeNote": "Finance attributed the revenue and lead-capture shares to the properties in one measured year. The 47% is a share of that year’s revenue-growth increment. Launch time is per property.",
+  "oneParkResearch": [
+    {"icon":"fa-thin fa-magnifying-glass-chart","label":"Find where to look","body":"I used visitor behavior and device performance to decide where to investigate. The website and lead flow gave me a connected view of the customer’s next step."},
+    {"icon":"fa-thin fa-eye","label":"Evaluate the page","body":"I used a heuristic evaluation to review hierarchy, language and the path to action. Heat maps and scroll maps helped me examine what people clicked and how far they moved through the page."},
+    {"icon":"fa-thin fa-arrow-pointer","label":"Design for a quick read","body":"I worked on the layout for clicking, scrolling and skimming. Shorter copy, visual groupings and clearer actions gave each section a job."}
+  ],
+  "oneParkHome": [
+    {"icon":"fa-thin fa-arrow-pointer","label":"Make the action stand out","body":"The original homepage already offered funding. The revision gave the main action a larger, rounded blue button against the green hero and made the phone number a separate header control."},
+    {"icon":"fa-thin fa-table-columns","label":"Give benefits room","body":"The three benefits kept their icons but moved into separated cards with more space. Sentence-case labels replaced the all-capital treatment, and the funding promise remained near the action."},
+    {"icon":"fa-thin fa-shield-check","label":"Keep reassurance close","body":"Both versions placed trust marks near the funding message. The redesign carried those signals into the new hero, alongside the action and benefit cards."}
+  ],
+  "oneParkProcess": [
+    {"icon":"fa-thin fa-comments","label":"Speak to the customer","body":"“The One Park Advantage. Our Process” became “The One Park Process is Your Advantage.” The heading connected the service to the customer’s benefit and the brand’s promise of partnership."},
+    {"icon":"fa-thin fa-diagram-project","label":"Show the work ahead","body":"Long paragraphs and plain text cards gave way to short labels, icons and a visible sequence. Two contrasting panels showed four steps beside a longer eight-step path, giving readers a comparison they could scan."},
+    {"icon":"fa-thin fa-arrow-right","label":"Finish with an action","body":"The old process module ended in another paragraph. The revised section put “Get Funded” directly below the explanation, giving an interested reader a next step."}
+  ],
+  "comparisonNote": "These screenshots document changes in language, hierarchy and the path to action. No conversion result is attributed to this comparison.",
+  "catalog": "A two-column introduction pairs the story with a role and optional collaboration rail. The fading vertical rule stretches with the taller column. The rail stacks below the story in narrow containers."
+}
+
+```
+B102 follow-up: Jacob requested space below User requirements; use the existing 1rem spacing unit and a selector that overrides the modal heading reset. Catalog labels: Study Introduction; narrative; My role; Collaboration; fading rule; chevron. Reading content with no whole-panel action. Two columns above a 48rem content width. Below that, the rail follows the narrative; below 30rem, its fields stack.
+B102 navigation follow-up: Jacob requested the icon navigation directly below the hero, sticky on scroll. Remove active and hover fills. Darken the active icon and bottom rule. On hover or keyboard focus, thicken the rule with a short upward growth animation; disable animation for reduced motion. Catalog description: Five icon-and-label links sit directly below the hero, stay below the modal header while scrolling, and mark the current section with a darker icon and rule.

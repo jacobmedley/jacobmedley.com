@@ -1,5 +1,50 @@
 # Status
 
+## October 10, 2026: case-study annotations and navigation polish
+
+B102 applied locally. All 27 annotations plus Jacob's later spacing and navigation
+corrections are implemented. AI title is How not to design an AI assistant, with a
+short card hook and separate early-2023 hero setup. Working streaming and its
+platform engineering effort remain explicit. Design reading is last, using the
+employment disclosure and plus. Discovery cards form a desktop row. The navigation
+sits directly under the hero and stays sticky; active icon/rule darken, and hover
+grows the rule without a fill. User requirements has a 16px gap above its cards.
+
+All 15 modal stories share a narrative/role introduction with a fading full-height
+rule, chevron bullets and bold labels. Existing responsibilities and collaborators
+supply the metadata. Modal paragraph and headline leading is tighter, following
+Jacob's correction to the original fixed-rem request. Featured summaries are
+shorter and constrained to three lines; requested headlines are applied. Finance
+attribution and the revenue-growth denominator are one note below the metrics.
+
+One Park has icon cards for research and screenshot-grounded homepage/process
+comparisons. The UX plugin's static review and offline HTML are in .ux/audits/
+usability-20261010-193000.*. Original homepage CTAs are acknowledged; the process
+module gains an action. No conversion lift is inferred. The revised diagram's
+reading order and terms outside the crop remain unverified.
+
+Verification: production build, lint/types, 14-page export, 288 images and 104
+references passed. All 15 introductions checked at 1351px and 390px; AI, One Park
+and DentalPlans also checked at 820px/320px, with no horizontal overflow. All five
+section links, sticky positioning, hover growth, reduced motion, disclosure
+keyboard/pointer operation, 14 article links, workspace Back/focus, finance-note
+placement and standalone AI page checked. Fresh browser error logs empty. Audit
+and index validated using existing Python 3.10/PyYAML 6.0.3; no dependency installed.
+
+Files and evidence: docs/reviews/annotation-polish-20261010/verification.md.
+Changes cover shared StudyIntro, modal/AI components and styles, project/AI copy,
+case-card styles, standalone AI hero, catalog, B102, UX review and this status.
+Branch codex/ai-study-main-20261008. Rollback e667e8044d51100d751ce8a4feaae8449b9fd48c.
+Final local checkpoint hash is recorded in Git and the external update event.
+No push, merge or deployment. Preview http://localhost:3000/#work is running from
+this checkout, Next.js PID 28552 / managed session 26816. No 8090 preview. Temporary
+browser overrides reset, review tab closed, original annotation tab retained.
+Tree lock is released after the checkpoint. No requested implementation remains.
+
+Genesis STATE freshly read at intake, implementation and closeout. Exchange remains
+retired/read-only; unique change events and final update are retained externally
+in C:/dev/_handoffs/annotation-polish-20261010/. No coordinator delivery claimed.
+
 ## October 10, 2026: AI discovery story and service workspace
 
 B101 applied locally. The case study now starts in early 2023 with XD/UX as a

@@ -1,12 +1,12 @@
 {
-  "title": "Designing for the First Wave of Generative AI",
+  "title": "How not to design an AI assistant",
   "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
-  "summary": "Starting in early 2023, I brought user requirements into discovery for a conversational assistant. Emerging research and familiar interaction patterns shaped the public chat and the service workspace.",
-  "role": "Senior UX designer leading experience research and scoping",
+  "summary": "A real-life fable of deadlines and technology getting ahead of the people they were meant to serve.",
+  "role": "Senior UX designer leading product design, experience research, scoping and user requirements",
   "collaboration": "Service design and an applied AI specialist",
   "outcome": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking. Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature.",
   "identity": "AI product design",
-  "theme": "User requirements",
+  "theme": "User First",
   "assets": {
     "P03-A": {
       "id": "P03-A",
@@ -496,5 +496,6 @@
       "type": "paragraph",
       "text": "New technology gives design more to investigate. The job is still to make it useful to the person using it."
     }
-  ]
+  ],
+  "heroSummary": "In early 2023, I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building."
 }

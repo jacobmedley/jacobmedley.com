@@ -29,6 +29,7 @@ export interface StyledListItem {
 
 export interface StyledListBlock {
   type: 'styled-list'
+  columns?: 3
   numbered?: boolean // list-group-numbered (roadmap) vs plain <ul> (reveal/wrong)
   shadow?: boolean // shadow-lg
   items: StyledListItem[]
@@ -156,7 +157,7 @@ export type ProjectMedia =
       // the usual mt-12 dropped since the leading hr supplies the gap)
       sectionDivider?: boolean
     }
-  | { type: 'text'; text: string }
+  | { type: 'text'; text: string; variant?: 'note' }
   | { type: 'list'; items: string[] }
   | {
       type: 'image'
@@ -213,6 +214,9 @@ export interface Project {
   caseStudyTheme?: string // canonical editorial theme for featured case studies
   subtitle?: string // feature-card headline
   summary: string // feature-card summary
+  introduction?: string[]
+  role?: string
+  collaboration?: string
   icon?: string // FA icon for work thumbs
   thumb?: ProjectImage // visual-design thumb background
   cardImage?: ProjectImage // feature-card image
@@ -245,7 +249,7 @@ export const projects: Project[] = [
     disciplines: ['Product', 'UX Research'], title: aiStudy.identity,
     modalTitle: aiStudy.title, subtitle: aiStudy.title, summary: aiStudy.summary,
     caseStudyTheme: aiStudy.theme, icon: 'fa-thin fa-brain',
-    briefHeading: aiStudy.title, brief: { paragraphs: [aiStudy.summary] },
+    briefHeading: aiStudy.title, brief: { paragraphs: [aiStudy.heroSummary] },
     contributions: [{ icon: 'fa-thin fa-cube', label: 'Product' }, { icon: 'fa-thin fa-brain', label: 'UX Research' }],
     media: [],
   },
@@ -259,7 +263,7 @@ export const projects: Project[] = [
     title: 'WebMD',
     subtitle: 'Trust Meets Commerce',
     cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: 'WebMD had the audience and brand equity. DentalPlans had the plans and ecommerce infrastructure. I designed and built the experience that brought them together, from finding a plan through checkout.',
+    summary: "WebMD had the audience. DentalPlans had the plans. I joined them in one path from health research to checkout.",
     visible: true,
     briefHeading: 'From Campaign to Commerce',
     brief: {
@@ -268,10 +272,13 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "When WebMD and DentalPlans.com became part of Internet Brands, we had a new route to customers. People were already visiting WebMD to understand a health or dental concern. We could connect a relevant dental need with a way to act on it.",
-        "This strategy put a dental savings experience in that path. People could move from researching care to comparing plans, finding a dentist, and purchasing."
+        "When WebMD and DentalPlans.com became part of Internet Brands, we had a new route to customers. People were already visiting WebMD to understand a health or dental concern. We could connect a relevant dental need with a way to act on it."
       ]
     },
+    introduction: [
+      "This strategy put a dental savings experience in that path. People could move from researching care to comparing plans, finding a dentist, and purchasing."
+    ],
+    role: "Product design, UX strategy, prototyping and front-end implementation",
     contributions: [
       {
         "icon": "fa-thin fa-pen-ruler",
@@ -486,12 +493,12 @@ export const projects: Project[] = [
     order: 2,
     caseStudyTheme: 'Building for Scale',
     title: 'DentalPlans.com',
-    subtitle: 'From Storefront to Platform',
+    subtitle: "This is how you scale",
     cardImage: {
       src: '/images/work/dpprod-modal/dpprod-hm.png',
       alt: 'DentalPlans product framework'
     },
-    summary: 'What began as one boot-strapped ecommerce site became a proprietary platform the company owned outright. Shared product data, reusable components, promotions, and deployment supported five branded properties and cut launch time from six weeks to two. The value stayed with us. We were building the asset, not renting the code.',
+    summary: "One storefront became five branded properties. A shared platform cut launch time from six weeks to two.",
     modalTitle: 'Product Framework and Design System',
     visible: true,
     briefHeading: 'How Fast Can You Stand Up a Website?',
@@ -501,11 +508,15 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "It started with a small request: “You know WordPress, right? How fast can you stand up a website?”",
-        "The first storefront tested whether customers would buy through a focused brand experience. They did. More sites were now on the table, along with every manual update the first one needed.",
-        "I owned the roadmap for the shared commerce framework that followed. Each release removed a piece of repeated work and left a capability the next property could use."
+        "It started with a small request: “You know WordPress, right? How fast can you stand up a website?”"
       ]
     },
+    introduction: [
+      "The first storefront tested whether customers would buy through a focused brand experience. They did. More sites were now on the table, along with every manual update the first one needed.",
+      "I owned the roadmap for the shared commerce framework that followed. Each release removed a piece of repeated work and left a capability the next property could use."
+    ],
+    role: "Product ownership, UX/UI design and front-end development",
+    collaboration: "Engineering",
     contributions: [
       { icon: 'fa-thin fa-boxes-stacked', label: 'Product Ownership' },
       { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
@@ -513,10 +524,6 @@ export const projects: Project[] = [
       { icon: 'fa-thin fa-laptop-code', label: 'Front-end Development' },
     ],
     media: [
-      {
-        "type": "text",
-        "text": "In one measured year, finance credited the properties with the revenue and lead-capture shares below. Launch time is measured per property."
-      },
       {
         "type": "metric-grid",
         "heading": "What the properties produced",
@@ -551,7 +558,8 @@ export const projects: Project[] = [
       },
       {
         "type": "text",
-        "text": "The growth figure is a share of the company’s revenue-growth increment in that year."
+        "text": "Finance attributed the revenue and lead-capture shares to the properties in one measured year. The 47% is a share of that year’s revenue-growth increment. Launch time is per property.",
+        "variant": "note"
       },
       {
         "type": "progress-diagram",
@@ -898,9 +906,9 @@ export const projects: Project[] = [
     order: 3,
     caseStudyTheme: 'Reuse by Design',
     title: 'BumblebeeMD',
-    subtitle: 'More Room for the Brand',
+    subtitle: "Avoiding a sticky situation",
     cardImage: { src: '/images/work/BMD-HM.png', alt: 'BumblebeeMD brand' },
-    summary: 'The shared platform gave us something valuable: less time rebuilding commerce and more time shaping the brand, refining the interface, and improving the experience. BumblebeeMD used that foundation to create a distinct digital health experience without starting over.',
+    summary: "A shared commerce platform gave us more room to shape BumblebeeMD’s brand and experience.",
     modalTitle: 'BumblebeeMD',
     visible: true,
     briefHeading: 'The Platform Got Out of the Way',
@@ -910,10 +918,13 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "BumblebeeMD needed to feel like its own digital health brand. Reusing the platform did not settle the visual decisions.",
-        "We worked through the homepage, content pages, and the smaller interface details, including buttons, inputs, and icons. Shared commerce patterns gave that work a foundation."
+        "BumblebeeMD needed to feel like its own digital health brand. Reusing the platform did not settle the visual decisions."
       ]
     },
+    introduction: [
+      "We worked through the homepage, content pages, and the smaller interface details, including buttons, inputs, and icons. Shared commerce patterns gave that work a foundation."
+    ],
+    role: "Product design, prototyping and design leadership",
     contributions: [
       {
         "icon": "fa-thin fa-pen-ruler",
@@ -1107,7 +1118,7 @@ export const projects: Project[] = [
     title: 'Hydra',
     subtitle: 'Failure to Communicate',
     cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: 'Product, marketing, and engineering were describing the same interface in different ways. I built Hydra to give them one vocabulary, pairing reusable patterns with front-end components across brands and technology stacks.',
+    summary: "One interface. Several interpretations. I built a shared vocabulary and reusable components for product, marketing and engineering.",
     modalTitle: 'Hydra Design System',
     visible: true,
     briefHeading: 'Three Teams. One Vocabulary.',
@@ -1117,10 +1128,14 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "The adoption constraint mattered. A shared interface could not depend on replacing the applications underneath it.",
-        "I secured executive backing for Hydra and kept the changes in the front end. Product, marketing, and engineering could work from the same patterns across brands and back-end codebases."
+        "The adoption constraint mattered. A shared interface could not depend on replacing the applications underneath it."
       ]
     },
+    introduction: [
+      "I secured executive backing for Hydra and kept the changes in the front end. Product, marketing, and engineering could work from the same patterns across brands and back-end codebases."
+    ],
+    role: "Design system leadership, systems analysis and UI engineering",
+    collaboration: "Product, marketing and engineering",
     contributions: [
       { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
       { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
@@ -1399,12 +1414,12 @@ export const projects: Project[] = [
     order: 5,
     caseStudyTheme: 'Behavior Into Decisions',
     title: 'One Park Financial',
-    subtitle: 'Read the Signals',
+    subtitle: "Reading the tea leaves",
     cardImage: {
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'
     },
-    summary: "I redesigned One Park Financial's corporate website and lead flow using Hydra as the foundation. Visitor behavior, device performance, heat maps, and scroll maps gave each interface decision something concrete to answer.",
+    summary: "Visitor behavior, heat maps and scroll maps shaped a website built to help customers take the next step.",
     visible: true,
     briefHeading: 'The Funnel Was Talking',
     brief: {
@@ -1413,10 +1428,14 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "The work extended beyond the corporate website. I owned the design process and usability-testing practice, and worked across paid search, organic search, and affiliate channels on conversion strategy.",
-        "The redesign brought that work into the website and lead flow. Hydra supplied the interface patterns."
+        "The work extended beyond the corporate website. I owned the design process and usability-testing practice, and worked across paid search, organic search, and affiliate channels on conversion strategy."
       ]
     },
+    introduction: [
+      "The redesign brought that work into the website and lead flow. Hydra supplied the interface patterns.",
+      "The brand promised a partner invested in helping the customer grow. I wanted that promise to show up in the language, the explanation of the service and the next action."
+    ],
+    role: "Product design, user research, prototyping and design leadership",
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'Product Design' },
       { icon: 'fa-thin fa-magnifying-glass-chart', label: 'User Research' },
@@ -1430,8 +1449,25 @@ export const projects: Project[] = [
         "level": 3
       },
       {
-        "type": "text",
-        "text": "I used visitor behavior and device performance to decide where to look, then heat maps and scroll maps to examine the page. The homepage comparison shows the interface before and after that work."
+        "type": "styled-list",
+        "columns": 3,
+        "items": [
+          {
+            "icon": "fa-thin fa-magnifying-glass-chart",
+            "label": "Find where to look",
+            "body": "I used visitor behavior and device performance to decide where to investigate. The website and lead flow gave me a connected view of the customer’s next step."
+          },
+          {
+            "icon": "fa-thin fa-eye",
+            "label": "Evaluate the page",
+            "body": "I used a heuristic evaluation to review hierarchy, language and the path to action. Heat maps and scroll maps helped me examine what people clicked and how far they moved through the page."
+          },
+          {
+            "icon": "fa-thin fa-arrow-pointer",
+            "label": "Design for a quick read",
+            "body": "I worked on the layout for clicking, scrolling and skimming. Shorter copy, visual groupings and clearer actions gave each section a job."
+          }
+        ]
       },
       {
         "type": "split-row",
@@ -1460,6 +1496,27 @@ export const projects: Project[] = [
         "leftSpan": 12,
         "rightSpan": 12,
         "breakpoint": "md"
+      },
+      {
+        "type": "styled-list",
+        "columns": 3,
+        "items": [
+          {
+            "icon": "fa-thin fa-arrow-pointer",
+            "label": "Make the action stand out",
+            "body": "The original homepage already offered funding. The revision gave the main action a larger, rounded blue button against the green hero and made the phone number a separate header control."
+          },
+          {
+            "icon": "fa-thin fa-table-columns",
+            "label": "Give benefits room",
+            "body": "The three benefits kept their icons but moved into separated cards with more space. Sentence-case labels replaced the all-capital treatment, and the funding promise remained near the action."
+          },
+          {
+            "icon": "fa-thin fa-shield-check",
+            "label": "Keep reassurance close",
+            "body": "Both versions placed trust marks near the funding message. The redesign carried those signals into the new hero, alongside the action and benefit cards."
+          }
+        ]
       },
       {
         "type": "heading",
@@ -1573,6 +1630,32 @@ export const projects: Project[] = [
         "rightSpan": 12
       },
       {
+        "type": "styled-list",
+        "columns": 3,
+        "items": [
+          {
+            "icon": "fa-thin fa-comments",
+            "label": "Speak to the customer",
+            "body": "“The One Park Advantage. Our Process” became “The One Park Process is Your Advantage.” The heading connected the service to the customer’s benefit and the brand’s promise of partnership."
+          },
+          {
+            "icon": "fa-thin fa-diagram-project",
+            "label": "Show the work ahead",
+            "body": "Long paragraphs and plain text cards gave way to short labels, icons and a visible sequence. Two contrasting panels showed four steps beside a longer eight-step path, giving readers a comparison they could scan."
+          },
+          {
+            "icon": "fa-thin fa-arrow-right",
+            "label": "Finish with an action",
+            "body": "The old process module ended in another paragraph. The revised section put “Get Funded” directly below the explanation, giving an interested reader a next step."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "variant": "note",
+        "text": "These screenshots document changes in language, hierarchy and the path to action. No conversion result is attributed to this comparison."
+      },
+      {
         "type": "heading",
         "text": "Full Homepage"
       },
@@ -1613,10 +1696,14 @@ export const projects: Project[] = [
         }
       ],
       "paragraphs": [
-        "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results.",
-        "The examples here show the questions we tested and the designs we put in front of customers."
+        "Product marketing owned the hypotheses and traffic. I designed and built the variants, then interpreted the results."
       ]
     },
+    introduction: [
+      "The examples here show the questions we tested and the designs we put in front of customers."
+    ],
+    role: "Variant design, implementation and results analysis",
+    collaboration: "Product marketing owned hypotheses and traffic.",
     contributions: [
       { icon: 'fa-thin fa-flask', label: 'Experimentation' },
       { icon: 'fa-thin fa-chess', label: 'UX Strategy' },
@@ -1784,10 +1871,14 @@ export const projects: Project[] = [
         "alt": "Call center availability API flow diagram"
       },
       "paragraphs": [
-        "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader and researched the platform’s API.",
-        "I worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
+        "Customers were being asked to call when nobody could answer. I raised the gap with the call-center leader and researched the platform’s API."
       ]
     },
+    introduction: [
+      "I worked with engineering and business intelligence on a status feed. The website could then change its message and offer when phone support was unavailable."
+    ],
+    role: "Project leadership and API research",
+    collaboration: "Call-center leadership, engineering and business intelligence",
     contributions: [
       { icon: 'fa-thin fa-clipboard-list-check', label: 'Project Leadership' },
     ],
@@ -1829,10 +1920,14 @@ export const projects: Project[] = [
         "alt": "Animated walkthrough of the marketing automation workflow"
       },
       "paragraphs": [
-        "A campaign spanning several brands needed different content for different audiences and stages. I led its design and development across the touchpoints.",
-        "The work connected marketing, business analysis, and data teams around shared data and reusable content."
+        "A campaign spanning several brands needed different content for different audiences and stages. I led its design and development across the touchpoints."
       ]
     },
+    introduction: [
+      "The work connected marketing, business analysis, and data teams around shared data and reusable content."
+    ],
+    role: "Design and development lead",
+    collaboration: "Marketing, business analysis and data teams",
     contributions: [
       { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
       { icon: 'fa-thin fa-phone-laptop', label: 'Responsive Design' },
@@ -1899,11 +1994,14 @@ export const projects: Project[] = [
         "alt": "Workshop wall covered in sticky notes from a brainstorming session"
       },
       "paragraphs": [
-        "I start with the decision the group needs to make. Then I design the session around the people who can make it.",
-        "The work has included customer journeys, product direction, and conversion-testing plans. I prepare the activities and materials so the group leaves with something the team can use afterward."
+        "I start with the decision the group needs to make. Then I design the session around the people who can make it."
       ]
     },
     briefHeading: "Design the decision before the session",
+    introduction: [
+      "The work has included customer journeys, product direction, and conversion-testing plans. I prepare the activities and materials so the group leaves with something the team can use afterward."
+    ],
+    role: "Workshop design and facilitation",
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Workshop Facilitation' },
     ],
@@ -1959,12 +2057,15 @@ export const projects: Project[] = [
         "alt": "UX roadmap example with project details obscured"
       },
       "paragraphs": [
-        "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start.",
-        "The example shows the structure I used for a UX roadmap at One Park Financial. Project details are obscured.",
-        "The plan has to survive new information. Visible dependencies make it possible to change the sequence when the scope changes."
+        "I use a roadmap to make the next decision visible: who needs the work, what problem it solves, and what has to happen before it can start."
       ]
     },
     briefHeading: 'Are we there yet?',
+    introduction: [
+      "The example shows the structure I used for a UX roadmap at One Park Financial. Project details are obscured.",
+      "The plan has to survive new information. Visible dependencies make it possible to change the sequence when the scope changes."
+    ],
+    role: "UX roadmap planning",
     contributions: [
       { icon: 'fa-thin fa-map', label: 'UX Roadmapping' },
     ],
@@ -2071,11 +2172,15 @@ export const projects: Project[] = [
         "alt": "Frugal Francine persona card with demographics, motivations, preferences, channels, and reasons to buy."
       },
       "paragraphs": [
-        "I worked with business intelligence and product marketing on persona materials for the DentalPlans audience. Frugal Francine represented customers weighing dental-plan choices around cost and value.",
-        "The card brought demographics, motivations, preferences, channels, and reasons to buy into one reference for the team."
+        "I worked with business intelligence and product marketing on persona materials for the DentalPlans audience. Frugal Francine represented customers weighing dental-plan choices around cost and value."
       ]
     },
     briefHeading: "A cost-conscious customer persona",
+    introduction: [
+      "The card brought demographics, motivations, preferences, channels, and reasons to buy into one reference for the team."
+    ],
+    role: "Persona development and visual design",
+    collaboration: "Business intelligence and product marketing",
     contributions: [
       {
         "icon": "fa-thin fa-handshake",
@@ -2109,6 +2214,10 @@ export const projects: Project[] = [
         "For Reveal Clear Aligners, I developed copy and visual concepts around clarity. Each execution needed to make sense on its own while belonging to the same campaign."
       ]
     },
+    introduction: [
+      "The examples trace the same campaign idea across copy and visual executions."
+    ],
+    role: "Copy, concept development and visual design",
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
@@ -2198,10 +2307,14 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "I developed a brand for Medicare and Medicare Supplement plans, working from product and customer research. Executive leadership and a cross-functional team took part in the branding exercises.",
-        "The marks, palettes, and interface treatments shown here are my work. They document the directions explored for the brand."
+        "I developed a brand for Medicare and Medicare Supplement plans, working from product and customer research. Executive leadership and a cross-functional team took part in the branding exercises."
       ]
     },
+    introduction: [
+      "The marks, palettes, and interface treatments shown here are my work. They document the directions explored for the brand."
+    ],
+    role: "Brand research, concept development and visual design",
+    collaboration: "Executive leadership and a cross-functional team",
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Concept Development' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },
@@ -2338,10 +2451,13 @@ export const projects: Project[] = [
         "alt": ""
       },
       "paragraphs": [
-        "The campaign addressed people researching crowns, fillings, and root canals who were concerned about cost. Its job was to introduce dental savings plans as another option.",
-        "“Wrong” was the creative device. The design question was whether a blunt challenge could earn attention without making the person feel blamed."
+        "The campaign addressed people researching crowns, fillings, and root canals who were concerned about cost. Its job was to introduce dental savings plans as another option."
       ]
     },
+    introduction: [
+      "“Wrong” was the creative device. The design question was whether a blunt challenge could earn attention without making the person feel blamed."
+    ],
+    role: "Design leadership and visual design",
     contributions: [
       { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
       { icon: 'fa-thin fa-handshake', label: 'Collaboration' },

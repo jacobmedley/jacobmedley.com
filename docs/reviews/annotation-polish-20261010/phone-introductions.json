@@ -1,0 +1,107 @@
+[
+  {
+    "columns": "346px",
+    "id": "webmd",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "dentalplans",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "bumblebeemd",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "hydra",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "opfred",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "ai-chat",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "split-test",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "call-center-ux",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "marketing-auto",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "workshops",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "roadmap",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "personas",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "wrong",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "reveal",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  },
+  {
+    "columns": "346px",
+    "id": "viva",
+    "overflow": 0,
+    "roleBelow": true,
+    "width": 390
+  }
+]

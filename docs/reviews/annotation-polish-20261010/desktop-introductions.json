@@ -1,0 +1,167 @@
+[
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      65.5625,
+      65.5625
+    ],
+    "id": "webmd",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      127.9375,
+      127.9375
+    ],
+    "id": "dentalplans",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      65.5625,
+      65.5625
+    ],
+    "id": "bumblebeemd",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      127.9375,
+      127.9375
+    ],
+    "id": "hydra",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      102.375,
+      102.375
+    ],
+    "id": "opfred",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      232.84375,
+      232.84375
+    ],
+    "id": "ai-chat",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      151.125,
+      151.125
+    ],
+    "id": "split-test",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      127.9375,
+      127.9375
+    ],
+    "id": "call-center-ux",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      127.9375,
+      127.9375
+    ],
+    "id": "marketing-auto",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      64.78125,
+      64.78125
+    ],
+    "id": "workshops",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      102.375,
+      102.375
+    ],
+    "id": "roadmap",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      127.9375,
+      127.9375
+    ],
+    "id": "personas",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      43.1875,
+      43.1875
+    ],
+    "id": "wrong",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      65.5625,
+      65.5625
+    ],
+    "id": "reveal",
+    "overflow": 0,
+    "role": true
+  },
+  {
+    "columns": "672px 336px",
+    "count": 1,
+    "heights": [
+      151.125,
+      151.125
+    ],
+    "id": "viva",
+    "overflow": 0,
+    "role": true
+  }
+]

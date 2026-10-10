@@ -1,5 +1,54 @@
 # Status
 
+## October 10, 2026: AI discovery story and service workspace
+
+B101 applied locally. The case study now starts in early 2023 with XD/UX as a
+discovery partner and user requirements before technical requirements. Includes
+scattered-source discovery, the sample-statement 150,000 finding, measured QA and
+usability response times (~15 s average, up to 60 s, then ~8–10 s after backend
+work), and Jacob's correction that streaming was enabled after a technical lift.
+Three research papers are quoted and linked; 14 design articles are dated 2023–2024.
+Two supplied 2025 Luke Wroblewski articles were excluded. Launch gaps and adoption
+appear only in the conclusion; blame language removed.
+
+Quiet Prism icon cards, stacked discovery cards, horizontal finding chain,
+feedback split and MoSCoW priorities replace the annotated layouts. Five icon
+navigation links follow the mobile site pattern. A separate service workspace
+opens inside the modal, keeps its top Close, and returns to the saved reading
+position/focus. The story remains mounted to preserve references and replay state.
+
+The sample workspace supports editable/reviewed replies, three scenarios,
+follow-up wording, local review flags, account context, document search/preview,
+attachment/removal, sample send and reset. Two invented PDFs and matching PNG
+previews are bundled. No live AI, Salesforce or customer connection. Native drag
+handlers are implemented; browser automation could not verify the drag gesture.
+The equivalent Attach path passed through sample send.
+
+Final build, lint/types, 14-page export and existing asset checks passed (288
+images, 104 references). Four new sample files match export hashes and return 200.
+PDF rendering and 1351/820/390/320px browser checks completed; tested views have no
+horizontal overflow. Reduced motion, Back/Escape/Close, retained disclosures,
+standalone hero restoration, customer replay/referral, editable reply review,
+search recovery, PDF preview and sample sending checked. Fresh standalone browser
+error log empty. Initial CSS-module build error and hot-reload errors corrected.
+
+Evidence and source notes: docs/reviews/ai-discovery-20261010/.
+Changed: AI narrative/sample JSON; AIStudyContent and AIExperience TSX/CSS;
+new AIServiceWorkspace TSX/CSS; CaseStudyModal; design-system catalog; four sample
+document assets and their binary Git attribute; copy register B101; evidence;
+this status. No unrelated edits.
+
+Branch codex/ai-study-main-20261008. Rollback 88404af1b61e8db93ca36f38f45f5fb0cb6fbf77.
+Local checkpoint only; final hash recorded in Git and the external update event.
+No push, merge or deployment. Dev http://localhost:3000/#work remains running,
+Next.js PID 10920 / managed session 34400, from this checkout. No 8090 preview.
+Tree lock is released after the checkpoint. Preview is open for annotation.
+
+Genesis Exchange remains retired/read-only. Active Genesis STATE freshly read;
+two unique change events and final update are in C:/dev/_handoffs/
+ai-discovery-20261010/. No coordinator delivery claimed. Remaining limitation:
+native drag gesture and non-Chromium/assistive-technology testing are unverified.
+
 ## October 10, 2026: annotation development preview
 
 Started the existing Next.js development site for Jacob's annotations at

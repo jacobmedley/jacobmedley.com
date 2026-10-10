@@ -1,225 +1,500 @@
 {
-  "title": "How Not to Launch an AI-Powered Product",
+  "title": "Designing for the First Wave of Generative AI",
   "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
-  "summary": "Useful technology still has to be usable. I defined the user requirements for an AI assistant, then tracked what happened when they were cut from the launch.",
-  "role": "Senior individual contributor leading experience research and scoping",
-  "collaboration": "Service design and an applied AI specialist.",
-  "outcome": "Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest. The helper slowed agents down, gave wrong information and did not fit their work; internal adoption stayed low.",
-  "blocks": [
-    {
-      "type": "paragraph",
-      "text": "The assistant gave wrong answers, slowed agents down and did not fit the way they worked."
-    },
-    {
-      "type": "paragraph",
-      "text": "We identified accuracy, speed and fit with business and user needs as the requirements for a useful assistant."
-    },
-    {
-      "type": "paragraph",
-      "text": "I led experience research and scoping for one internally built assistant with two deployments. Customers encountered it on the public site. Service and account-management representatives used it inside their working console."
-    },
-    {
-      "type": "paragraph",
-      "text": "Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available."
-    },
-    {
-      "type": "paragraph",
-      "text": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. Those requirements addressed the problems we found in their work. The demonstrations below show the proposed behavior, removed from launch."
-    },
-    {
-      "type": "heading",
-      "text": "An answer it should never have given"
-    },
-    {
-      "type": "paragraph",
-      "text": "In testing, we asked for an account balance. The assistant returned a specific figure with supporting detail. The required response was a referral to an account manager."
-    },
-    {
-      "type": "paragraph",
-      "text": "I traced the answer to a sample account statement in the source documentation. The warehouse contained an example of the precise thing the assistant was not supposed to produce."
-    },
-    {
-      "type": "paragraph",
-      "text": "I required a referral to an account manager for this kind of question. That requirement was removed from the launch scope."
-    },
-    {
-      "type": "asset",
-      "assetId": "P03-E"
-    },
-    {
-      "type": "heading",
-      "text": "Requirements for waiting and failure"
-    },
-    {
-      "type": "paragraph",
-      "text": "This assistant stood in for the opening minutes of a service conversation. It had to remain courteous and helpful, including when it failed."
-    },
-    {
-      "type": "paragraph",
-      "text": "I specified acknowledgment between 0.1 and 0.4 seconds. At three seconds, a holding message. At seven, thanks for waiting and an apology."
-    },
-    {
-      "type": "paragraph",
-      "text": "At ten seconds, or immediately on a stall or critical error, the assistant had to say it could not answer and offer a route to help. A related article, the correct support channel, or an account manager. The person should not have to keep rephrasing a question the system had already lost."
-    },
-    {
-      "type": "paragraph",
-      "text": "Those timings were project requirements. They describe the experience I specified, not a universal limit on human patience or a measured production response time."
-    },
-    {
-      "type": "asset",
-      "assetId": "P03-A"
-    },
-    {
-      "type": "asset",
-      "assetId": "P03-C"
-    },
-    {
-      "type": "paragraph",
-      "text": "Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch."
-    },
-    {
-      "type": "heading",
-      "text": "Connecting user feedback to a business need"
-    },
-    {
-      "type": "paragraph",
-      "text": "My original drafts paired two needs: people needed helpful answers and a way to report a problem; the business needed to understand why an answer had failed them."
-    },
-    {
-      "type": "paragraph",
-      "text": "Give a thumbs-up or thumbs-down, with the option to change the rating. After a thumbs-down, offer an optional explanation. Let the person skip feedback and continue the conversation."
-    },
-    {
-      "type": "paragraph",
-      "text": "The review framework examined the trigger, feedback, guidance and completion of each interaction, alongside the person's context and device. Acceptance criteria also covered error recovery and tracking."
-    },
-    {
-      "type": "paragraph",
-      "text": "Paraphrased from my original user story, review notes and feedback prototype. These drafts document the proposed customer flow, not launch delivery or the representative workspace."
-    },
-    {
-      "type": "heading",
-      "text": "Requirements for the representative"
-    },
-    {
-      "type": "paragraph",
-      "text": "Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope."
-    },
-    {
-      "type": "paragraph",
-      "text": "Those requirements put assistance around the conversation. The representative retained responsibility for the response."
-    },
-    {
-      "type": "asset",
-      "assetId": "P03-B"
-    },
-    {
-      "type": "heading",
-      "text": "The launch decision and the result"
-    },
-    {
-      "type": "paragraph",
-      "text": "I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped."
-    },
-    {
-      "type": "paragraph",
-      "text": "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low. The helper slowed agents down, gave them wrong information and did not fit their workflow."
-    },
-    {
-      "type": "paragraph",
-      "text": "The record does not isolate the effect of each feature, and it supplies no numerical uplift to claim. It does show that initial interest was not enough to sustain use."
-    },
-    {
-      "type": "asset",
-      "assetId": "P03-D"
-    },
-    {
-      "type": "paragraph",
-      "text": "My lesson from the failure: the features had to fit the task. Removing the user requirements left people to manage the wait, judge the answer and work around the assistant. Useful technology added work to the service conversation."
-    },
-    {
-      "type": "paragraph",
-      "text": "No matter how valuable something is, if it is not usable, it is not used."
-    }
-  ],
+  "summary": "Starting in early 2023, I brought user requirements into discovery for a conversational assistant. Emerging research and familiar interaction patterns shaped the public chat and the service workspace.",
+  "role": "Senior UX designer leading experience research and scoping",
+  "collaboration": "Service design and an applied AI specialist",
+  "outcome": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking. Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature.",
   "identity": "AI product design",
-  "theme": "Usability before launch",
+  "theme": "User requirements",
   "assets": {
     "P03-A": {
       "id": "P03-A",
       "name": "Customer assistant",
-      "caption": "Reconstructed from user requirements removed from launch. Layout recreated for the portfolio; sample content.",
-      "alt": "Reconstructed from user requirements removed from launch. Layout recreated for the portfolio; sample content."
+      "caption": "Interactive reconstruction of the proposed customer response states, with sample content.",
+      "alt": "Interactive reconstruction of the proposed customer response states, with sample content."
     },
     "P03-B": {
       "id": "P03-B",
       "name": "Representative workspace",
-      "caption": "Reconstructed from user requirements removed from launch. Conversation and reference text are illustrative; the demo shows part of the specified review flow.",
-      "alt": "Reconstructed from user requirements removed from launch. Conversation and reference text are illustrative; the demo shows part of the specified review flow."
+      "caption": "Interactive reconstruction of the requirements and future concepts, using sample conversations and documents. The original representative screen was not recovered.",
+      "alt": "Interactive reconstruction of the requirements and future concepts, using sample conversations and documents. The original representative screen was not recovered."
     },
     "P03-C": {
       "id": "P03-C",
       "name": "Timing demonstration",
-      "caption": "Reconstructed from the timing requirements removed from launch. This replay shows the specified interaction, not measured production performance.",
-      "alt": "Reconstructed from the timing requirements removed from launch. This replay shows the specified interaction, not measured production performance."
+      "caption": "A replay of the specified feedback states; the measured project response times are documented separately.",
+      "alt": "A replay of the specified feedback states; the measured project response times are documented separately."
     },
     "P03-D": {
       "id": "P03-D",
       "name": "Requirement and outcome record",
-      "caption": "Launch scope reflects my account of the decisions. Tracking and representative feedback describe use after release; they do not isolate the effect of each removed requirement.",
-      "alt": "Launch scope reflects my account of the decisions. Tracking and representative feedback describe use after release; they do not isolate the effect of each removed requirement."
+      "caption": "Project results from Jacob’s account, customer tracking, and representative feedback. No per-feature causal effect or numerical adoption uplift is claimed.",
+      "alt": "Project results from Jacob’s account, customer tracking, and representative feedback. No per-feature causal effect or numerical adoption uplift is claimed."
     },
     "P03-E": {
       "id": "P03-E",
       "name": "Account-balance finding",
-      "caption": "Reconstructed explanation of the testing finding. No original account document or balance is shown.",
-      "alt": "Account-balance finding. Reconstructed explanation of the testing finding. No original account document or balance is shown."
+      "caption": "Reconstructed explanation of the test finding. The 150,000 came from a sample statement, not a verified customer balance. No original account document is shown.",
+      "alt": "Reconstructed explanation of the test finding. The 150,000 came from a sample statement, not a verified customer balance. No original account document is shown."
     }
   },
   "editorial": {
-    "opening": "The assistant gave wrong answers, slowed agents down and did not fit the way they worked.",
-    "needs": "We identified accuracy, speed and fit with business and user needs as the requirements for a useful assistant.",
-    "context": "I led experience research and scoping for one assistant in two places: the public site and the console used by service and account-management representatives.",
-    "launchDecision": "Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available.",
-    "requirementsIntro": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. Those requirements addressed the problems we found in their work. The demonstrations below show the proposed behavior, removed from launch.",
-    "finding": [
-      "In testing, the assistant returned a specific account balance. It should have referred the question to an account manager.",
-      "I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid.",
-      "I required a referral to an account manager for this kind of question. That requirement was removed from the launch scope."
+    "opening": "Usability starts with the system. If the car does not start, we do not go anywhere.",
+    "context": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.",
+    "approach": "XD/UX belonged in discovery, where we could shape the problem and the requirements. I absorbed the emerging research, worked through the source material with an applied AI specialist, and brought familiar interaction patterns into a new kind of interface.",
+    "needs": [
+      {
+        "heading": "Accuracy",
+        "icon": "fa-magnifying-glass",
+        "tone": "gold",
+        "body": "Give people an answer they can trust. Know when the available material cannot support one."
+      },
+      {
+        "heading": "Compliance",
+        "icon": "fa-shield-check",
+        "tone": "plum",
+        "body": "Respect the limits of the service. Route account-specific questions to the person who can answer them."
+      },
+      {
+        "heading": "Speed",
+        "icon": "fa-stopwatch",
+        "tone": "sage",
+        "body": "Keep pace with the conversation. Help new staff learn and experienced staff get through the work."
+      }
     ],
-    "waiting": [
-      "I specified what the assistant should do while people waited, and how it should help when it could not answer.",
-      "Acknowledge within 0.1 to 0.4 seconds. Give a holding message at three seconds, then thanks and an apology at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help.",
-      "These are project requirements, not measured production response times or a universal limit on patience."
-    ],
-    "scopeNote": "Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch.",
-    "originalDrafts": {
-      "heading": "Connecting user feedback to a business need",
-      "intro": "My original drafts paired two needs: people needed helpful answers and a way to report a problem; the business needed to understand why an answer had failed them.",
-      "steps": [
-        { "heading": "Rate the answer", "body": "Give a thumbs-up or thumbs-down, with the option to change the rating." },
-        { "heading": "Explain, if useful", "body": "After a thumbs-down, offer an optional explanation." },
-        { "heading": "Keep asking", "body": "Let the person skip feedback and continue the conversation." }
+    "discovery": {
+      "heading": "Discovery started with the source material",
+      "intro": "User requirements came before technical requirements. A useful answer depended on the whole system: what it could read, how it used that material, and what happened when it could not help.",
+      "cards": [
+        {
+          "heading": "Knowledge was scattered",
+          "icon": "fa-folder-open",
+          "tone": "slate",
+          "body": "Training material lived in PDFs, images, slide decks, Word documents, old scans, and people’s heads. Getting it into a warehouse did not make it fit for answering a customer."
+        },
+        {
+          "heading": "Test what the system thinks it knows",
+          "icon": "fa-magnifying-glass",
+          "tone": "gold",
+          "body": "A balance question exposed the problem. The assistant returned 150,000 from a sample account statement. It had treated an example as the customer’s account information."
+        },
+        {
+          "heading": "Define the acceptable response",
+          "icon": "fa-user",
+          "tone": "plum",
+          "body": "No balance should have been returned. The only acceptable response was to refer the customer to their account representative. I traced the answer to its source and made that boundary a user requirement."
+        }
       ],
-      "review": "The review framework examined the trigger, feedback, guidance and completion of each interaction, alongside the person's context and device. Acceptance criteria also covered error recovery and tracking.",
-      "caption": "Paraphrased from my original user story, review notes and feedback prototype. These drafts document the proposed customer flow, not launch delivery or the representative workspace."
+      "chain": [
+        {
+          "label": "Source of hallucination",
+          "heading": "Sample account statement",
+          "body": "An example in the source warehouse.",
+          "icon": "fa-file-lines"
+        },
+        {
+          "label": "Finding",
+          "heading": "150,000 returned as a balance",
+          "body": "No account value should have been returned.",
+          "icon": "fa-comment"
+        },
+        {
+          "label": "Required response",
+          "heading": "Contact your account representative",
+          "body": "The person with access to verified account information.",
+          "icon": "fa-user"
+        }
+      ]
     },
-    "representative": "Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope.",
-    "requirements": [
-      { "requirement": "Waiting feedback, streaming and follow-up questions", "status": "Removed" },
-      { "requirement": "Help routes and account-manager referral", "status": "Removed" },
-      { "requirement": "Representative context, references and review controls", "status": "Removed" },
-      { "requirement": "Compliance alerts and nudges before an incorrect reply", "status": "Removed" },
-      { "requirement": "Customer usage tracking", "status": "Adopted" }
-    ],
-    "delivery": "The assistant launched without the user requirements. Tracking remained.",
-    "tracking": [
-      "I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped.",
-      "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low. The helper slowed agents down, gave them wrong information and did not fit their workflow.",
-      "The record does not isolate each feature’s effect or support a numerical uplift claim."
-    ],
-    "lesson": "My lesson from the failure: the features had to fit the task. Removing the user requirements left people to manage the wait, judge the answer and work around the assistant. Useful technology added work to the service conversation.",
-    "closing": "No matter how valuable something is, if it is not usable, it is not used."
-  }
+    "research": {
+      "heading": "Learning while the field was moving",
+      "intro": "The research gave us questions to test. Could assistance shorten the work? Could it carry knowledge to a new hire? What would an experienced representative need to trust or reject a suggestion?",
+      "application": "I applied that reading to both experiences: visible system feedback and a route to help for customers; context, references, and review for representatives. Familiar controls still had a job to do. A text box alone could not carry the whole service.",
+      "periodNote": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.",
+      "papers": [
+        {
+          "id": "support",
+          "title": "Generative AI at Work",
+          "authors": "Erik Brynjolfsson, Danielle Li, and Lindsey R. Raymond",
+          "date": "April 2023",
+          "url": "https://arxiv.org/pdf/2304.11771v1",
+          "quote": "who remain responsible for the conversation and are free to ignore its suggestions",
+          "finding": "A staggered rollout across 5,179 support agents found larger productivity gains for newer and lower-skilled workers. The tool offered replies and relevant documentation beside the conversation.",
+          "application": "Design implication: put the reference and editable draft beside the task, with the representative in control.",
+          "limit": "A study of one software-support setting, not a forecast for this project.",
+          "location": "2023 working paper, pp. 2, 8–12, 22"
+        },
+        {
+          "id": "writing",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence",
+          "authors": "Shakked Noy and Whitney Zhang",
+          "date": "March 2023",
+          "url": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1.pdf",
+          "quote": "restructures tasks towards idea-generation and editing and away from rough-drafting",
+          "finding": "The experiment assigned professional writing tasks to 444 participants. It found shorter task times and higher rated output with ChatGPT.",
+          "application": "Design implication: make editing and checking a draft part of the workflow.",
+          "limit": "Bounded writing tasks do not establish safe answers to account questions.",
+          "location": "March 2 working paper, abstract and sections 2.1–2.4"
+        },
+        {
+          "id": "coding",
+          "title": "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+          "authors": "Sida Peng, Eirini Kalliamvakou, Peter Cihon, and Mert Demirer",
+          "date": "February 2023",
+          "url": "https://arxiv.org/pdf/2302.06590",
+          "quote": "this study does not examine the effects of AI on code quality",
+          "finding": "A controlled experiment gave developers a single programming task and measured completion and time.",
+          "application": "Design implication: measure speed and quality separately. A faster answer can still be wrong.",
+          "limit": "The authors caution that benefits may vary across tasks.",
+          "location": "2023 paper, Study Design and Discussion"
+        }
+      ],
+      "articles": [
+        {
+          "title": "AI: First New UI Paradigm in 60 Years",
+          "author": "Jakob Nielsen, NN/g",
+          "date": "June 18, 2023",
+          "url": "https://www.nngroup.com/articles/ai-paradigm/",
+          "note": "Intent changes the interaction; usable controls and visible status still matter."
+        },
+        {
+          "title": "AI Improves Employee Productivity by 66%",
+          "author": "Jakob Nielsen, NN/g",
+          "date": "July 16, 2023",
+          "url": "https://www.nngroup.com/articles/ai-tools-productivity-gains/",
+          "note": "A synthesis of three different task studies. Its headline average is not a project target."
+        },
+        {
+          "title": "AI Tools Raise the Productivity of Customer-Support Agents",
+          "author": "Jakob Nielsen, NN/g",
+          "date": "July 16, 2023",
+          "url": "https://www.nngroup.com/articles/ai-productivity-customer-support/",
+          "note": "A closer reading of the support-agent study and the difference between novice and expert needs."
+        },
+        {
+          "title": "ChatGPT Lifts Business Professionals’ Productivity and Improves Work Quality",
+          "author": "Jakob Nielsen, NN/g",
+          "date": "April 2, 2023",
+          "url": "https://www.nngroup.com/articles/chatgpt-productivity/",
+          "note": "The writing study considered both task time and output quality."
+        },
+        {
+          "title": "New Ways into Web Content",
+          "author": "Luke Wroblewski",
+          "date": "April 10, 2023",
+          "url": "https://www.lukew.com/ff/2008/ask-lukew-new-ways-into-web-content",
+          "note": "Suggested questions, visible sources, and document-specific exploration."
+        },
+        {
+          "title": "Integrated Audio Experiences & Memory",
+          "author": "Luke Wroblewski",
+          "date": "May 9, 2023",
+          "url": "https://www.lukew.com/ff/2017/ask-lukew-integrated-audio-experiences-memory",
+          "note": "Conversation memory and tools suited to the source format."
+        },
+        {
+          "title": "Expanding Conversational User Interfaces",
+          "author": "Luke Wroblewski",
+          "date": "May 15, 2023",
+          "url": "https://www.lukew.com/ff/2018/expanding-conversational-user-interfaces",
+          "note": "Scannable conversation history and actions integrated into replies."
+        },
+        {
+          "title": "Integrated Video Experiences",
+          "author": "Luke Wroblewski",
+          "date": "May 24, 2023",
+          "url": "https://www.lukew.com/ff/2021/ask-lukew-integrated-video-experiences",
+          "note": "References that open at the relevant part of a source."
+        },
+        {
+          "title": "Integrated PDF Experiences",
+          "author": "Luke Wroblewski",
+          "date": "July 27, 2023",
+          "url": "https://www.lukew.com/ff/2029/ask-lukew-integrated-pdf-experiences",
+          "note": "PDF layout and extraction quality can affect the answer before the interface appears."
+        },
+        {
+          "title": "Dynamic Preview Cards",
+          "author": "Luke Wroblewski",
+          "date": "May 31, 2024",
+          "url": "https://www.lukew.com/ff/2067/ask-lukew-dynamic-preview-cards",
+          "note": "Sharing an answer with enough context to understand its destination."
+        },
+        {
+          "title": "Text Generation Differences",
+          "author": "Luke Wroblewski",
+          "date": "June 21, 2024",
+          "url": "https://www.lukew.com/ff/2068/ask-lukew-text-generation-differences",
+          "note": "Changing the model can change the response even with similar instructions."
+        },
+        {
+          "title": "PDF Parsing with Vision Models",
+          "author": "Luke Wroblewski",
+          "date": "June 26, 2024",
+          "url": "https://www.lukew.com/ff/2069/ask-lukew-pdf-parsing-with-vision-models",
+          "note": "A later exploration of extracting meaning from visual pages."
+        },
+        {
+          "title": "Streaming Citations",
+          "author": "Luke Wroblewski",
+          "date": "September 18, 2024",
+          "url": "https://www.lukew.com/ff/2077/ask-lukew-streaming-citations",
+          "note": "Connecting a streamed answer to its sources as it appears."
+        },
+        {
+          "title": "Streaming Inline Images",
+          "author": "Luke Wroblewski",
+          "date": "October 1, 2024",
+          "url": "https://www.lukew.com/ff/2079/ask-lukew-streaming-inline-images",
+          "note": "Using relevant images inside an answer."
+        }
+      ]
+    },
+    "waiting": {
+      "heading": "User requirements: response time and failure",
+      "paragraphs": [
+        "A service conversation cannot stop while the software thinks. During usability testing and QA, responses averaged about 15 seconds and sometimes took up to 60 seconds.",
+        "We measured from the user’s action to the API, then followed the API request and the steps behind it. Working back from the interaction showed where the wait accumulated. Backend changes brought average responses down to roughly 8–10 seconds, at the upper edge of what I considered acceptable for this task.",
+        "Streaming was also a requirement for system feedback. Turning it on took a technical lift on the platform we had adopted. We pushed hard for it and got it working, so people could see an answer arrive instead of waiting for the whole reply."
+      ],
+      "timings": [
+        {
+          "value": "~15 s",
+          "label": "Initial average"
+        },
+        {
+          "value": "60 s",
+          "label": "Longest reported wait"
+        },
+        {
+          "value": "~8–10 s",
+          "label": "Average after backend work"
+        }
+      ],
+      "measurementNote": "Measured during project usability testing and QA, as reported by Jacob. Original logs, sample size, and the test window are not retained in this portfolio.",
+      "requirements": "Alongside that technical work, I specified acknowledgment within 0.1–0.4 seconds, a holding message at three seconds, and an update at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help.",
+      "note": "The replay shows those feedback requirements. Its timer is separate from the measured response times above."
+    },
+    "originalDrafts": {
+      "heading": "Feedback that lets the conversation continue",
+      "intro": "The original customer flow connected two needs. People needed useful answers and a way to flag a problem. The business needed to understand where the answer had failed.",
+      "steps": [
+        {
+          "heading": "Rate the answer",
+          "icon": "fa-thumbs-up",
+          "tone": "sage",
+          "body": "Give a thumbs-up or thumbs-down, with the option to change the rating."
+        },
+        {
+          "heading": "Explain, if useful",
+          "icon": "fa-comment",
+          "tone": "gold",
+          "body": "After a thumbs-down, offer an optional explanation."
+        },
+        {
+          "heading": "Keep asking",
+          "icon": "fa-comments",
+          "tone": "plum",
+          "body": "Let the person skip feedback and continue the conversation."
+        }
+      ],
+      "review": "My review framework followed the trigger, feedback, guidance, and completion of each interaction, in the person’s context and on their device. Acceptance criteria included error recovery and tracking.",
+      "caption": "Editorial paraphrase of the original customer feedback drafts. The cards show the proposed flow."
+    },
+    "representative": {
+      "heading": "An assistant inside the representative’s work",
+      "paragraphs": [
+        "The internal assistant had two jobs: help new staff learn and help experienced staff work faster. Both groups needed accurate, compliant answers without leaving the service conversation.",
+        "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply.",
+        "Document lookup and sharing, an adjacent PDF viewer, suggested wording, compliance warnings, and suspicious-pattern detection formed the future feature set. These added help around the conversation while leaving judgment with the person handling it."
+      ],
+      "priorities": [
+        {
+          "label": "Must have",
+          "heading": "Accuracy, compliance, and speed",
+          "tone": "gold",
+          "icon": "fa-shield-check",
+          "body": "Correct information, appropriate referral, and a response fast enough for the task."
+        },
+        {
+          "label": "Should have",
+          "heading": "Context where the work happens",
+          "tone": "sage",
+          "icon": "fa-layer-group",
+          "body": "Basic Salesforce and account context, follow-up prompts, and an integrated experience."
+        },
+        {
+          "label": "Could have · future",
+          "heading": "Documents and review assistance",
+          "tone": "slate",
+          "icon": "fa-file-lines",
+          "body": "Find and share documents, preview PDFs, drag a form into chat, suggest wording, flag compliance concerns, and detect suspicious patterns."
+        },
+        {
+          "label": "Won’t have in this demo",
+          "heading": "Unreviewed customer messages",
+          "tone": "plum",
+          "icon": "fa-user",
+          "body": "The representative reviews each reply. The reconstruction uses sample content and sends nothing to a real customer."
+        }
+      ],
+      "cta": "Explore the service workspace",
+      "demoNote": "Interactive reconstruction of the requirements and future concepts, using sample conversations and documents. The original representative screen was not recovered."
+    },
+    "conclusion": {
+      "heading": "What the work proved, and what happened next",
+      "delivery": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking.",
+      "gap": "The launch did not include the broader guidance, referral, context, and review experience described here. The future document and alerting concepts remained proposals.",
+      "observed": "Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature.",
+      "lesson": "The technical work mattered. So did the work around it: the source material, the point at which a person could judge an answer, and the route out when the system could not help. Bringing XD/UX into discovery made those system requirements visible while there was still time to act on them.",
+      "closing": "New technology gives design more to investigate. The job is still to make it useful to the person using it."
+    }
+  },
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Usability starts with the system. If the car does not start, we do not go anywhere."
+    },
+    {
+      "type": "paragraph",
+      "text": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives."
+    },
+    {
+      "type": "paragraph",
+      "text": "XD/UX belonged in discovery, where we could shape the problem and the requirements. I absorbed the emerging research, worked through the source material with an applied AI specialist, and brought familiar interaction patterns into a new kind of interface."
+    },
+    {
+      "type": "paragraph",
+      "text": "Accuracy: Give people an answer they can trust. Know when the available material cannot support one."
+    },
+    {
+      "type": "paragraph",
+      "text": "Compliance: Respect the limits of the service. Route account-specific questions to the person who can answer them."
+    },
+    {
+      "type": "paragraph",
+      "text": "Speed: Keep pace with the conversation. Help new staff learn and experienced staff get through the work."
+    },
+    {
+      "type": "heading",
+      "text": "Discovery started with the source material"
+    },
+    {
+      "type": "paragraph",
+      "text": "User requirements came before technical requirements. A useful answer depended on the whole system: what it could read, how it used that material, and what happened when it could not help."
+    },
+    {
+      "type": "paragraph",
+      "text": "Training material lived in PDFs, images, slide decks, Word documents, old scans, and people’s heads. Getting it into a warehouse did not make it fit for answering a customer."
+    },
+    {
+      "type": "paragraph",
+      "text": "A balance question exposed the problem. The assistant returned 150,000 from a sample account statement. It had treated an example as the customer’s account information."
+    },
+    {
+      "type": "paragraph",
+      "text": "No balance should have been returned. The only acceptable response was to refer the customer to their account representative. I traced the answer to its source and made that boundary a user requirement."
+    },
+    {
+      "type": "heading",
+      "text": "Learning while the field was moving"
+    },
+    {
+      "type": "paragraph",
+      "text": "The research gave us questions to test. Could assistance shorten the work? Could it carry knowledge to a new hire? What would an experienced representative need to trust or reject a suggestion?"
+    },
+    {
+      "type": "paragraph",
+      "text": "I applied that reading to both experiences: visible system feedback and a route to help for customers; context, references, and review for representatives. Familiar controls still had a job to do. A text box alone could not carry the whole service."
+    },
+    {
+      "type": "paragraph",
+      "text": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation."
+    },
+    {
+      "type": "heading",
+      "text": "User requirements: response time and failure"
+    },
+    {
+      "type": "paragraph",
+      "text": "A service conversation cannot stop while the software thinks. During usability testing and QA, responses averaged about 15 seconds and sometimes took up to 60 seconds."
+    },
+    {
+      "type": "paragraph",
+      "text": "We measured from the user’s action to the API, then followed the API request and the steps behind it. Working back from the interaction showed where the wait accumulated. Backend changes brought average responses down to roughly 8–10 seconds, at the upper edge of what I considered acceptable for this task."
+    },
+    {
+      "type": "paragraph",
+      "text": "Streaming was also a requirement for system feedback. Turning it on took a technical lift on the platform we had adopted. We pushed hard for it and got it working, so people could see an answer arrive instead of waiting for the whole reply."
+    },
+    {
+      "type": "paragraph",
+      "text": "Measured during project usability testing and QA, as reported by Jacob. Original logs, sample size, and the test window are not retained in this portfolio."
+    },
+    {
+      "type": "paragraph",
+      "text": "Alongside that technical work, I specified acknowledgment within 0.1–0.4 seconds, a holding message at three seconds, and an update at seven. At ten seconds, or immediately after a stall or critical error, offer a route to help."
+    },
+    {
+      "type": "paragraph",
+      "text": "The replay shows those feedback requirements. Its timer is separate from the measured response times above."
+    },
+    {
+      "type": "heading",
+      "text": "Feedback that lets the conversation continue"
+    },
+    {
+      "type": "paragraph",
+      "text": "The original customer flow connected two needs. People needed useful answers and a way to flag a problem. The business needed to understand where the answer had failed."
+    },
+    {
+      "type": "paragraph",
+      "text": "My review framework followed the trigger, feedback, guidance, and completion of each interaction, in the person’s context and on their device. Acceptance criteria included error recovery and tracking."
+    },
+    {
+      "type": "paragraph",
+      "text": "Editorial paraphrase of the original customer feedback drafts. The cards show the proposed flow."
+    },
+    {
+      "type": "heading",
+      "text": "An assistant inside the representative’s work"
+    },
+    {
+      "type": "paragraph",
+      "text": "The internal assistant had two jobs: help new staff learn and help experienced staff work faster. Both groups needed accurate, compliant answers without leaving the service conversation."
+    },
+    {
+      "type": "paragraph",
+      "text": "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply."
+    },
+    {
+      "type": "paragraph",
+      "text": "Document lookup and sharing, an adjacent PDF viewer, suggested wording, compliance warnings, and suspicious-pattern detection formed the future feature set. These added help around the conversation while leaving judgment with the person handling it."
+    },
+    {
+      "type": "heading",
+      "text": "What the work proved, and what happened next"
+    },
+    {
+      "type": "paragraph",
+      "text": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking."
+    },
+    {
+      "type": "paragraph",
+      "text": "The launch did not include the broader guidance, referral, context, and review experience described here. The future document and alerting concepts remained proposals."
+    },
+    {
+      "type": "paragraph",
+      "text": "Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature."
+    },
+    {
+      "type": "paragraph",
+      "text": "The technical work mattered. So did the work around it: the source material, the point at which a person could judge an answer, and the route out when the system could not help. Bringing XD/UX into discovery made those system requirements visible while there was still time to act on them."
+    },
+    {
+      "type": "paragraph",
+      "text": "New technology gives design more to investigate. The job is still to make it useful to the person using it."
+    }
+  ]
 }

@@ -158,8 +158,11 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
   const returnFocusRef = useRef<HTMLElement | null>(null)
   const modalRef = useRef<HTMLDivElement | null>(null)
   const wasOpenRef = useRef(false)
+  const [aiWorkspace, setAiWorkspace] = useState(false)
   const swipeRef = useRef({ pointerId: -1, startY: 0, currentY: 0, startTime: 0 })
   const featured = !!project
+
+  useEffect(() => { setAiWorkspace(false) }, [open, project?.id])
 
   useEffect(() => {
     intentListenerUsers += 1
@@ -297,6 +300,9 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
             if (nestedDialog) {
               event.preventDefault()
               nestedDialog.close()
+            } else if (aiWorkspace) {
+              event.preventDefault()
+              modalRef.current?.querySelector<HTMLButtonElement>('[data-ai-back]')?.click()
             }
           }}
           onOpenAutoFocus={() => {
@@ -339,7 +345,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                       width={58}
                       className="shrink-0"
                     />
-                    <span className="min-w-0 flex-1">{project?.modalTitle ?? project?.title}</span>
+                    <span className="min-w-0 flex-1">{aiWorkspace ? 'Service workspace' : project?.modalTitle ?? project?.title}</span>
                   </h2>
                 </Dialog.Title>
                 <Dialog.Close asChild>
@@ -354,10 +360,10 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
               </div>
 
               <div className="modal-body" tabIndex={0} ref={bindFeaturedBody}>
-                <div className="container">{project && <ModalContent project={project} />}</div>
+                <div className="container">{project && <ModalContent key={project.id} project={project} aiWorkspace={aiWorkspace} onWorkspaceChange={setAiWorkspace} />}</div>
               </div>
 
-              <div className="modal-footer">
+              <div className="modal-footer" style={aiWorkspace ? { display: 'none' } : undefined}>
                 <Dialog.Close asChild>
                   <button type="button" className="btn btn-prime btn-lg rounded-full btn-close-modal">
                     Close
@@ -1057,12 +1063,13 @@ function MetricStat({ metric, index }: { metric: ProjectMetric; index: number })
   )
 }
 
-function ModalContent({ project }: { project: Project }) {
+function ModalContent({ project, aiWorkspace, onWorkspaceChange }: { project: Project; aiWorkspace: boolean; onWorkspaceChange: (open: boolean) => void }) {
   const featured = true
   const originalFeatured = ORIGINAL_FEATURED_IDS.has(project.id)
   return (
     <>
       <div
+        style={aiWorkspace ? { display: 'none' } : undefined}
         className={cn('modal-intro', featured && `modal-featured-hero featured-work-card featured-work-card-${project.id}`)}
         data-motion-root={featured || undefined}
       >
@@ -1114,7 +1121,7 @@ function ModalContent({ project }: { project: Project }) {
       </div>
 
       {featured ? (
-        <div className="modal-study-content">
+        <div className="modal-study-content" style={aiWorkspace ? { paddingTop: '.75rem' } : undefined}>
           {project.heroCards && (
             <div className={`modal-hero-cards featured-work-card-${project.id}`}>
               <div className="modal-section-heading">
@@ -1126,7 +1133,7 @@ function ModalContent({ project }: { project: Project }) {
             </div>
           )}
           <BriefFollowup project={project} />
-          {project.id === 'ai-chat' ? <AIStudyContent /> : renderMedia(project.media, project.contributions)}
+          {project.id === 'ai-chat' ? <AIStudyContent onWorkspaceChange={onWorkspaceChange} /> : renderMedia(project.media, project.contributions)}
         </div>
       ) : renderMedia(project.media, project.contributions)}
     </>

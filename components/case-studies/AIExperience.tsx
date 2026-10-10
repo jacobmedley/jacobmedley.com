@@ -6,7 +6,7 @@ type StudyAsset = { id: string; name: string; caption: string; alt: string }
 import styles from './AIExperience.module.css'
 
 type Stage = 'pending' | 'ack' | 'hold' | 'patience' | 'failure' | 'critical' | 'balance'
-type DialogKind = 'reference' | 'contact' | 'articles' | 'demo'
+type DialogKind = 'contact' | 'articles' | 'demo'
 
 const stages: Record<Exclude<Stage, 'pending'>, { name: string; message: string; time: string }> = {
   ack: { name: 'Question received', message: 'Question received. Thinking.', time: '0.2 s' },
@@ -25,7 +25,6 @@ const rail: { stage: Stage; time: string; label: string }[] = [
 ]
 
 const dialogs: Record<DialogKind, { title: string; text: string }> = {
-  reference: { title: 'Illustrative reference excerpt', text: 'For an account-specific balance question, direct the customer to their account manager. This paraphrases the project requirement. It is not an original policy document or financial guidance.' },
   contact: { title: 'Route to an account manager', text: 'In the proposed experience, this action leads to the correct support channel. This demonstration does not place a call, collect contact details, or contact anyone.' },
   articles: { title: 'Related help', text: 'A production experience would offer relevant, reviewed help articles here. No original article library was supplied, so this demonstration does not invent a list of source documents.' },
   demo: { title: 'About this reconstruction', text: 'Use the response-time controls to replay the documented states. This is a deterministic interface demonstration, not a connected AI assistant. All conversation content is illustrative.' },
@@ -164,51 +163,4 @@ export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { 
     </figure>
     <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef} />
   </div>
-}
-
-const suggested = 'Please contact your account manager to confirm your account balance.'
-const initialDraft = 'Your current balance is...'
-
-export function RepresentativeExperience({ asset, headingLevel = 'h4' }: { asset: StudyAsset; headingLevel?: 'h3' | 'h4' }) {
-  const Heading = headingLevel
-  const [draft, setDraft] = useState(initialDraft)
-  const [sent, setSent] = useState(false)
-  const [status, setStatus] = useState('The example alert is simulated. It is not a compliance certification.')
-  const [dialogKind, setDialogKind] = useState<DialogKind | null>(null)
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const dialogRef = useRef<HTMLDialogElement>(null)
-  const triggerRef = useRef<HTMLButtonElement>(null)
-  const isSuggested = draft.trim() === suggested
-
-  const openReference = (trigger: HTMLButtonElement) => {
-    triggerRef.current = trigger
-    setDialogKind('reference')
-    dialogRef.current?.showModal()
-  }
-
-  return <figure className={styles.figure} aria-label={asset.alt} id="ai-representative-demo">
-    <PrismStudySurface className={`${styles.panel} ${styles.workspace}`} tone="slate">
-      <div className={styles.panelHead}><div><Heading>Review the reply</Heading><p>The representative owns the response.</p></div><span className={styles.chip}>Reconstruction</span></div>
-      <div className={styles.demoBody}>
-        <details className={styles.context}><summary>Conversation context</summary><p>The customer asked about a balance. No verified account data is available in this demonstration.</p><p>Next route: an account manager can confirm details.</p><button type="button" onClick={event => openReference(event.currentTarget)}>View reference</button></details>
-        <p className={styles.customerQuestion}>Can you tell me my account balance?</p>
-        <div className={`${styles.alert} ${isSuggested ? styles.alertReady : ''}`}>
-          <strong>{isSuggested ? 'Suggested wording applied' : 'Account information'}</strong>
-          <p>{isSuggested ? 'Review the referral before adding it to the sample.' : 'The draft starts an account-specific answer. Refer this question to the account manager.'}</p>
-          <button type="button" onClick={() => { setDraft(suggested); setSent(false); setStatus('Suggested wording applied. Nothing has been sent.'); textareaRef.current?.focus({preventScroll:true}) }}>Apply suggested referral</button>
-        </div>
-        <label htmlFor="ai-reply-draft" className={styles.replyTitle}>Draft reply</label>
-        <div className={`${styles.draftBox} ${isSuggested ? styles.ready : ''}`}><textarea ref={textareaRef} id="ai-reply-draft" value={draft} onChange={event => { setDraft(event.target.value); setSent(false); setStatus('The draft needs representative review. Nothing has been sent.') }} spellCheck={false}/></div>
-        <div className={styles.sendRow}>
-          <button type="button" className={styles.primary} disabled={!isSuggested || sent} onClick={() => { if(draft.trim() !== suggested) return; setSent(true); setStatus('Reply added to the sample conversation. No message was sent to a real person.') }}>{sent ? 'Added to sample' : 'Add reply to sample'}</button>
-          <button type="button" onClick={() => { setDraft(initialDraft); setSent(false); setStatus('The example alert is simulated. It is not a compliance certification.') }}>Reset example</button>
-        </div>
-        <p className={styles.smallNote} role="status">{status}</p>
-        {sent && <div className={styles.sentReply}><span>Representative</span><p>{suggested}</p></div>}
-      </div>
-      <div className={styles.panelFoot}>Simulated language alert. The original screen layout was not recovered.</div>
-    </PrismStudySurface>
-    <figcaption>{asset.caption}</figcaption>
-    <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef}/>
-  </figure>
 }

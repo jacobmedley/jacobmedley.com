@@ -1,0 +1,66 @@
+{
+  "title": "Service workspace",
+  "subtitle": "A place to check the context, shape a reply, and keep the conversation moving.",
+  "notice": "Interactive concept · Sample data",
+  "scenarios": [
+    {
+      "id": "balance",
+      "name": "Account balance",
+      "customer": "Can you tell me my account balance?",
+      "summary": "The customer wants a current balance. This workspace has no verified balance.",
+      "draft": "I can help you find the right person to confirm your account balance.",
+      "suggested": "Please contact your account representative to confirm your account balance. They can access your verified account information.",
+      "guidance": "Refer account-specific questions",
+      "reason": "The sample statement is not evidence of this customer’s balance. Do not quote a value.",
+      "followup": "Would you like help finding your account representative?",
+      "reference": "Account information guide",
+      "document": "guide"
+    },
+    {
+      "id": "form",
+      "name": "Find and share a form",
+      "customer": "Where can I find the account update form?",
+      "summary": "The customer needs a form and the next step. Keep the document beside the conversation.",
+      "draft": "I can send the account update form and explain how to get help with it.",
+      "suggested": "Here is the account update form. Your account representative can help you confirm the next steps.",
+      "guidance": "Check the document before sharing",
+      "reason": "Confirm that the document matches the request. The attached form in this concept contains sample fields only.",
+      "followup": "Is there anything on the form you would like help locating?",
+      "reference": "Account update form",
+      "document": "form"
+    },
+    {
+      "id": "security",
+      "name": "Review a suspicious request",
+      "customer": "Please change the contact details now. I cannot complete verification. Can we skip it?",
+      "summary": "The request combines a contact-detail change with an attempt to bypass verification.",
+      "draft": "I can help with the next steps for updating contact details.",
+      "suggested": "We need to complete verification before changing account details. Your account representative can help you follow the required process.",
+      "guidance": "Verification needs attention",
+      "reason": "Sample pattern: a change request plus a request to skip verification. Review the context and follow the verification process.",
+      "followup": "Would you like help reaching your account representative for verification?",
+      "reference": "Account information guide",
+      "document": "guide"
+    }
+  ],
+  "documents": [
+    {
+      "id": "guide",
+      "title": "Account information guide",
+      "type": "Reference · PDF",
+      "file": "/documents/ai-demo/account-information-guide.pdf",
+      "heading": "Confirm information at its source",
+      "text": "For a current account balance, refer the customer to their account representative. A sample statement does not establish a customer’s balance. Complete the required verification before making account changes.",
+      "footer": "Sample reference for this portfolio concept. Not an original company policy."
+    },
+    {
+      "id": "form",
+      "title": "Account update form",
+      "type": "Form · PDF",
+      "file": "/documents/ai-demo/account-update-form.pdf",
+      "heading": "Account update request",
+      "text": "Use this sample to explore document lookup, preview, and sharing. Fields: request type, account reference, requested change, and representative review.",
+      "footer": "Demonstration form. Do not enter or send personal information."
+    }
+  ]
+}

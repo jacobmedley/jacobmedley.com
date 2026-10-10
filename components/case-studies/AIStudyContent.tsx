@@ -13,6 +13,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
   const articleRef = useRef<HTMLElement>(null)
   const [active, setActive] = useState<string>('finding')
   const headingLevel = readingPage ? 'h2' : 'h3'
+  const DraftHeading = readingPage ? 'h3' : 'h4'
   useEffect(() => {
     const article = articleRef.current
     if (!article) return
@@ -44,7 +45,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
 
   return <article ref={articleRef} className={styles.story}>
     <div className={styles.intro}>
-      <div><p className={styles.lead}>{study.editorial.opening}</p><p>{study.editorial.context}</p><p>{study.editorial.launchDecision}</p></div>
+      <div><p className={styles.lead}>{study.editorial.opening}</p><p>{study.editorial.needs}</p><p>{study.editorial.context}</p><p>{study.editorial.launchDecision}</p></div>
       <dl className={styles.metadata}><div><dt>My role</dt><dd>{study.role}</dd></div><div><dt>Collaboration</dt><dd>{study.collaboration}</dd></div></dl>
     </div>
     <nav className={styles.sectionNav} aria-label="In this case study">{sections.map(([id,label],index) => <a key={id} href={`#ai-${id}`} aria-current={active === id ? 'location' : undefined} onClick={event => {
@@ -79,6 +80,16 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
         <div className={styles.sectionCopy}><p>{study.editorial.waiting[0]}</p><p>{study.editorial.waiting[1]}</p><p className={styles.note}>{study.editorial.waiting[2]} {study.editorial.scopeNote}</p></div>
         <CustomerExperience customer={study.assets['P03-A']} timing={study.assets['P03-C']} headingLevel={readingPage ? 'h3' : 'h4'} />
       </div>
+      <figure className={`${styles.evidence} ${styles.draftEvidence}`}>
+        <PrismStudySurface tone="gold">
+          <DraftHeading>{study.editorial.originalDrafts.heading}</DraftHeading>
+          <hr className="solid-center" />
+          <p className={styles.sectionCopy}>{study.editorial.originalDrafts.intro}</p>
+          <ol className={styles.draftSteps}>{study.editorial.originalDrafts.steps.map(step => <li key={step.heading}><strong>{step.heading}</strong><p>{step.body}</p></li>)}</ol>
+          <p className={styles.sectionCopy}>{study.editorial.originalDrafts.review}</p>
+        </PrismStudySurface>
+        <figcaption>{study.editorial.originalDrafts.caption}</figcaption>
+      </figure>
     </section>
 
     <section className={styles.section} aria-labelledby="ai-review">

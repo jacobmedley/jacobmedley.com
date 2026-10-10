@@ -4,11 +4,15 @@
   "summary": "Useful technology still has to be usable. I defined the user requirements for an AI assistant, then tracked what happened when they were cut from the launch.",
   "role": "Senior individual contributor leading experience research and scoping",
   "collaboration": "Service design and an applied AI specialist.",
-  "outcome": "Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest, and internal adoption stayed low.",
+  "outcome": "Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest. The helper slowed agents down, gave wrong information and did not fit their work; internal adoption stayed low.",
   "blocks": [
     {
       "type": "paragraph",
-      "text": "The technology was useful. People still struggled to use it."
+      "text": "The assistant gave wrong answers, slowed agents down and did not fit the way they worked."
+    },
+    {
+      "type": "paragraph",
+      "text": "We identified accuracy, speed and fit with business and user needs as the requirements for a useful assistant."
     },
     {
       "type": "paragraph",
@@ -20,7 +24,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. The demonstrations below show those requirements, all removed from launch."
+      "text": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. Those requirements addressed the problems we found in their work. The demonstrations below show the proposed behavior, removed from launch."
     },
     {
       "type": "heading",
@@ -76,6 +80,26 @@
     },
     {
       "type": "heading",
+      "text": "Connecting user feedback to a business need"
+    },
+    {
+      "type": "paragraph",
+      "text": "My original drafts paired two needs: people needed helpful answers and a way to report a problem; the business needed to understand why an answer had failed them."
+    },
+    {
+      "type": "paragraph",
+      "text": "Give a thumbs-up or thumbs-down, with the option to change the rating. After a thumbs-down, offer an optional explanation. Let the person skip feedback and continue the conversation."
+    },
+    {
+      "type": "paragraph",
+      "text": "The review framework examined the trigger, feedback, guidance and completion of each interaction, alongside the person's context and device. Acceptance criteria also covered error recovery and tracking."
+    },
+    {
+      "type": "paragraph",
+      "text": "Paraphrased from my original user story, review notes and feedback prototype. These drafts document the proposed customer flow, not launch delivery or the representative workspace."
+    },
+    {
+      "type": "heading",
       "text": "Requirements for the representative"
     },
     {
@@ -100,7 +124,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Customers found it and used it. Engagement then fell away, with the decline correlated with response speed and interaction friction. Internal adoption stayed low, with representatives citing accuracy and waiting."
+      "text": "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low. The helper slowed agents down, gave them wrong information and did not fit their workflow."
     },
     {
       "type": "paragraph",
@@ -112,7 +136,7 @@
     },
     {
       "type": "paragraph",
-      "text": "My lesson from the failure: removing these requirements left people to manage the wait, judge the answer and find help themselves. The technology's usefulness could not make up for the difficulty of using it."
+      "text": "My lesson from the failure: the features had to fit the task. Removing the user requirements left people to manage the wait, judge the answer and work around the assistant. Useful technology added work to the service conversation."
     },
     {
       "type": "paragraph",
@@ -154,10 +178,11 @@
     }
   },
   "editorial": {
-    "opening": "The technology was useful. People still struggled to use it.",
+    "opening": "The assistant gave wrong answers, slowed agents down and did not fit the way they worked.",
+    "needs": "We identified accuracy, speed and fit with business and user needs as the requirements for a useful assistant.",
     "context": "I led experience research and scoping for one assistant in two places: the public site and the console used by service and account-management representatives.",
     "launchDecision": "Leadership removed the user requirements from the launch scope, prioritizing speed to market within the resources and technical capabilities available.",
-    "requirementsIntro": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. The demonstrations below show those requirements, all removed from launch.",
+    "requirementsIntro": "I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. Those requirements addressed the problems we found in their work. The demonstrations below show the proposed behavior, removed from launch.",
     "finding": [
       "In testing, the assistant returned a specific account balance. It should have referred the question to an account manager.",
       "I traced the answer to a sample statement in the source warehouse. The source material contained the very answer the assistant was meant to avoid.",
@@ -169,6 +194,17 @@
       "These are project requirements, not measured production response times or a universal limit on patience."
     ],
     "scopeNote": "Waiting messages, help routes, streaming and follow-up questions were part of the user requirements. None reached launch.",
+    "originalDrafts": {
+      "heading": "Connecting user feedback to a business need",
+      "intro": "My original drafts paired two needs: people needed helpful answers and a way to report a problem; the business needed to understand why an answer had failed them.",
+      "steps": [
+        { "heading": "Rate the answer", "body": "Give a thumbs-up or thumbs-down, with the option to change the rating." },
+        { "heading": "Explain, if useful", "body": "After a thumbs-down, offer an optional explanation." },
+        { "heading": "Keep asking", "body": "Let the person skip feedback and continue the conversation." }
+      ],
+      "review": "The review framework examined the trigger, feedback, guidance and completion of each interaction, alongside the person's context and device. Acceptance criteria also covered error recovery and tracking.",
+      "caption": "Paraphrased from my original user story, review notes and feedback prototype. These drafts document the proposed customer flow, not launch delivery or the representative workspace."
+    },
     "representative": "Representatives needed the conversation history, a summary of what had been tried, and references beside the draft. I also specified compliance alerts and nudges when a reply might be incorrect, while the representative could still change it. Leadership removed these requirements, including the review controls, from the launch scope.",
     "requirements": [
       { "requirement": "Waiting feedback, streaming and follow-up questions", "status": "Removed" },
@@ -180,10 +216,10 @@
     "delivery": "The assistant launched without the user requirements. Tracking remained.",
     "tracking": [
       "I secured tracking on the customer-facing assistant before launch. It let us see whether people kept using what we shipped.",
-      "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low; representatives cited accuracy and waiting.",
+      "Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low. The helper slowed agents down, gave them wrong information and did not fit their workflow.",
       "The record does not isolate each feature’s effect or support a numerical uplift claim."
     ],
-    "lesson": "My lesson from the failure: removing these requirements left people to manage the wait, judge the answer and find help themselves. The technology's usefulness could not make up for the difficulty of using it.",
+    "lesson": "My lesson from the failure: the features had to fit the task. Removing the user requirements left people to manage the wait, judge the answer and work around the assistant. Useful technology added work to the service conversation.",
     "closing": "No matter how valuable something is, if it is not usable, it is not used."
   }
 }

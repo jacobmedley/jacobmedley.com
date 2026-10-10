@@ -36,6 +36,13 @@
 .requirements tbody th { font-weight:400; }
 .requirements :is(th,td):last-child { width:6rem; padding-right:0; white-space:nowrap; }
 .lesson { margin-top:var(--section-rhythm); }
+.draftEvidence { margin-top:var(--section-rhythm); }
+.draftEvidence :is(h3,h4) { font-size:clamp(1.15rem,2.2cqi,1.45rem); color:var(--card-ink); font-weight:500; }
+.draftEvidence hr { margin-block:var(--heading-rhythm); }
+.draftSteps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; padding-left:1.25rem; margin-block:1.5rem; }
+.draftSteps li { padding-left:.25rem; }
+.draftSteps strong { font-weight:500; color:var(--card-ink); }
+.draftSteps p { margin:.5rem 0 0; line-height:1.5; }
 .closing { max-width:46rem; margin:var(--section-rhythm) auto; font-size:1.15rem; line-height:1.5; }
 .page { max-width:76rem; margin:auto; padding:clamp(1rem,4vw,3rem); container-type:inline-size; }
 .hero { padding-block:3rem; max-width:48rem; margin:auto; }
@@ -45,6 +52,7 @@
 @container (max-width:52rem) {
  .intro,.split { grid-template-columns:minmax(0,1fr); gap:1.5rem; }
  .metadata { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .draftSteps { grid-template-columns:minmax(0,1fr); gap:1rem; }
 }
 @media(max-width:600px) {
  .sectionNav a { font-size:.7rem; gap:.15rem; padding-inline:.15rem; }

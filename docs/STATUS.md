@@ -1,5 +1,35 @@
 # Status
 
+## October 9, 2026: AI workflow failures and recovered feedback drafts
+
+Jacob clarified the assistant gave wrong answers, slowed agents down and did not
+fit their work; accuracy, speed and fit with business/user needs were identified.
+B100 applies this to the opening, needs, requirements, observed use and lesson in
+canonical AI JSON, including long-form blocks. Added a Quiet Prism editorial
+paraphrase of the original customer-feedback drafts: rate, optionally explain,
+continue asking. User/business need and interaction-review scope are explicit.
+
+All three supplied Figma sections and relevant children inspected with source
+context and screenshots. These are customer-feedback drafts, not recovered waiting
+or representative layouts and not proof of shipped features. Existing demos keep
+reconstruction labels. Original branded/internal content remains outside the public
+repo; no Figma design edits. External source notes: C:/dev/_handoffs/
+ai-original-drafts-20261009/source-review.md.
+
+Build/lint/types/export passed; 288 images and 104 references verified. Modal content
+and 1204/390px layouts inspected with no horizontal overflow; steps become one
+column on mobile. Browser error log empty; viewport reset. JSON and diff checks
+passed. Initial register anchor failed without mutation, then corrected after read.
+Evidence: docs/reviews/ai-original-drafts-20261009/verification.md and screenshots.
+Changed: AI JSON, AIStudyContent.tsx/CSS, copy-register B100, evidence and STATUS.
+No unresolved work in requested local scope. No new full interaction audit.
+
+Branch codex/ai-study-main-20261008; local checkpoint only, no push/merge/deployment.
+Rollback 96534d5. Preview http://localhost:8090/#work, Python PID 66724/session67867,
+serving out/. Previous preview PID61768 verified and stopped before build. STATUS
+written last; own lock released after commit. Genesis STATE freshly read; retired
+Exchange untouched. Exact-hash handoff C:/dev/_handoffs/ai-original-drafts-20261009/
+update.md. Coordinator receipt unverified. No external model or paid fallback.
 ## October 9, 2026: AI requirements and launch decision reframed
 
 Jacob clarified that all user requirements were removed from launch, including

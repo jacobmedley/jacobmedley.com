@@ -3,6 +3,7 @@
 **Status:** B0 through B87 and B93–B95. B80–B87 published October 8, 2026; B93–B94 published October 8, 2026 in fa2c5f1 (B94 corrects B93 footer wording). B95 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
 B60 and B64 are implemented in the local full-site integration, not published.
 B96-B99 are applied locally. B99 records Jacob's clarified AI launch account.
+B100 is applied locally: accuracy, speed, workflow fit and original feedback drafts.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
 part of the record; the latest applicable entry governs.
@@ -3741,3 +3742,31 @@ Apply the same account to the JSON's long-form blocks so it cannot contradict th
 rendered editorial flow. Preserve testing details, timings, qualitative outcomes,
 role, collaboration and synthetic demo messages. Historical copy entries remain as
 history. No deployment is authorized by this edit.
+
+## B100. AI study: accuracy, speed, workflow and original feedback drafts [APPLIED LOCALLY]
+
+Source: Jacob's October 9 clarification that the helper slowed agents down, supplied
+wrong information and did not fit their work. The three needs were accuracy, speed
+and fit with business and user needs. Read-only inspection of his three Figma links
+confirmed a user/business story, interaction-review framework and customer feedback
+prototype. Those designs specify ratings, optional detail after a poor rating,
+continued questioning, error recovery and interaction tracking. They do not prove
+launch delivery or replace the timing/representative reconstructions. Original file
+identifiers, employer names, sample financial text and raw captures stay outside
+the public repository. Only the following anonymous paraphrases are implemented.
+
+- Opening: “The assistant gave wrong answers, slowed agents down and did not fit the way they worked.”
+- Needs: “We identified accuracy, speed and fit with business and user needs as the requirements for a useful assistant.”
+- Requirements introduction: “I specified how the assistant should handle uncertainty, waiting and failure, and what representatives needed before sending a reply. Those requirements addressed the problems we found in their work. The demonstrations below show the proposed behavior, removed from launch.”
+- Observed use: “Customer engagement fell after early interest, alongside response-speed and interaction-friction concerns. Internal adoption stayed low. The helper slowed agents down, gave them wrong information and did not fit their workflow.”
+- Lesson: “My lesson from the failure: the features had to fit the task. Removing the user requirements left people to manage the wait, judge the answer and work around the assistant. Useful technology added work to the service conversation.”
+- Outcome summary: “Leadership removed the user requirements to ship within the available resources and technical capabilities. Tracking reached launch. Customer engagement fell after early interest. The helper slowed agents down, gave wrong information and did not fit their work; internal adoption stayed low.”
+- Original-draft heading: “Connecting user feedback to a business need”.
+- Draft introduction: “My original drafts paired two needs: people needed helpful answers and a way to report a problem; the business needed to understand why an answer had failed them.”
+- Draft steps: “Rate the answer” / “Give a thumbs-up or thumbs-down, with the option to change the rating.”; “Explain, if useful” / “After a thumbs-down, offer an optional explanation.”; “Keep asking” / “Let the person skip feedback and continue the conversation.”
+- Draft review: “The review framework examined the trigger, feedback, guidance and completion of each interaction, alongside the person's context and device. Acceptance criteria also covered error recovery and tracking.”
+- Draft caption: “Paraphrased from my original user story, review notes and feedback prototype. These drafts document the proposed customer flow, not launch delivery or the representative workspace.”
+
+Update both short editorial and long-form JSON copy. Retain B99 launch-scope claims,
+existing title/summary and sample demos; do not infer a new per-feature shipped
+status from the recovered drafts. No Figma design or source asset is modified.

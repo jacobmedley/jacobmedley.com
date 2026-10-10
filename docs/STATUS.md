@@ -1,5 +1,16 @@
 # Status
 
+## October 10, 2026: annotation development preview
+
+Started the existing Next.js development site for Jacob's annotations at
+http://localhost:3000/#work. The checkout was clean at 5a8237b9 and had no
+tree lock before startup. The server reported ready; an HTTP request returned
+200 with the expected page title. Port 3000 is served by Next.js PID 19420.
+No site source, copy, or production deployment changed. The preview was opened
+in the Codex browser panel. The tree lock was claimed for startup and released
+at closeout. Rollback for site content remains 96534d5; stop the confirmed
+development process to end this preview.
+
 ## October 9, 2026: AI workflow failures and recovered feedback drafts
 
 Jacob clarified the assistant gave wrong answers, slowed agents down and did not

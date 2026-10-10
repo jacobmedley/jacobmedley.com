@@ -1,10 +1,11 @@
 'use client'
 
+import Link from 'next/link'
 import study from '@/docs/ai-chat-study.json'
 import { CustomerExperience, RepresentativeExperience } from './AIExperience'
 import styles from './AIStudyContent.module.css'
 
-const sections = [['finding', 'The finding'], ['waiting', 'Waiting and failure'], ['review', 'Human review'], ['outcome', 'What shipped']] as const
+const sections = [['finding', 'Findings'], ['waiting', 'Failure'], ['review', 'Human'], ['outcome', 'Shipped']] as const
 
 export default function AIStudyContent({ readingPage = false }: { readingPage?: boolean }) {
   const Heading = readingPage ? 'h2' : 'h3'
@@ -17,7 +18,7 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
       event.preventDefault()
       const target = event.currentTarget.closest('article')?.querySelector<HTMLElement>(`#ai-${id}`)
       target?.scrollIntoView({block:'start',behavior:'instant'}); target?.focus({preventScroll:true})
-    }}><span aria-hidden="true">0{index+1}</span>{label}<span aria-hidden="true">↗</span></a>)}</nav>
+    }}><span aria-hidden="true">0{index+1}</span>{label}</a>)}</nav>
     <section className={styles.section}>
       <div className={styles.sectionCopy}><span className={styles.number} aria-hidden="true">01</span><Heading id="ai-finding" tabIndex={-1}>An answer it should never have given</Heading>{study.editorial.finding.map(text=><p key={text}>{text}</p>)}</div>
       <figure className={styles.evidence}><ol className={styles.nodes}>
@@ -40,6 +41,6 @@ export default function AIStudyContent({ readingPage = false }: { readingPage?: 
       <figure className={styles.evidence}><div className={styles.outcomeGrid}><div><strong>Delivery</strong><p>A subset of requirements shipped.</p></div><div><strong>Observed use</strong><p>{study.editorial.tracking[1]}</p></div></div><figcaption>{study.assets['P03-D'].caption} No numerical uplift is established.</figcaption></figure>
       <p className={styles.closing}>{study.editorial.closing}</p>
     </section>
-    <p className={styles.note}><a href={readingPage ? '/#work' : `/case-studies/${study.suggestedSlug}/`}>{readingPage ? 'Back to case studies' : 'Open the reading page'} →</a></p>
+    {readingPage && <p className={styles.note}><Link href="/#work">Back to case studies →</Link></p>}
   </article>
 }

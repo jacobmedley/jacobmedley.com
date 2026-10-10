@@ -3686,3 +3686,10 @@ the wait.” No live AI or actual messages. Remove the repeated timing link/figu
 and redundant closing Outcome section; retain evidence once where it belongs.
 The outcome caption retains its causal limit once, followed by: “No numerical
 uplift is established.” Demo figure headings follow the reading-page hierarchy.
+
+## B97. AI modal navigation and link cleanup [APPLIED LOCALLY]
+
+Jacob's October 9 comments authorize compact sticky section navigation:
+01 Findings; 02 Failure; 03 Human; 04 Shipped.
+Remove “Open the reading page →” from the modal. Preserve “Back to case studies”
+on the standalone reading page. No factual story or demo copy changes.

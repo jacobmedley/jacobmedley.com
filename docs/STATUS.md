@@ -1,5 +1,36 @@
 # Status
 
+## October 9, 2026: AI modal Quiet Prism correction
+
+Jacob requested consistent hero-to-story padding and corrections to the AI modal
+style, navigation, hover contrast and reading-page link. B97 registers the four
+short labels. Navigation is compact throughout and sticks at the scrolling body
+edge: 01 Findings, 02 Failure, 03 Human, 04 Shipped. Jump headings have clearance.
+Removed the modal reading-page link; standalone return link remains. Evidence
+uses rules rather than nested tinted cards. Controls use pill shapes; customer
+messages use a pale asymmetric bubble. Primary hover stays dark with white text.
+AI-only visual-system rules remove a later mobile hero margin and align hero and
+story padding; AIStudyContent no longer adds duplicate top/bottom padding.
+
+Verified final npm run build: compile, lint, types, static export, 288 images and
+104 production references pass. git diff --check passes. Browser checks at 588px,
+320px and 390px: sticky nav aligns with body top, jump heading remains below it,
+44px minimum navigation targets at 320px and no body horizontal overflow.
+Hover measured #473354 with white text. Three-second holding response renders;
+10-second state renders. Final hero/story padding both 17.64px at 588px, hero
+margin zero, contiguous boundary, story lead inset 17.625px. No reading link in
+modal and no browser error logs after reload. Temporary viewport reset.
+
+Changed: app/visual-system.css; components/case-studies/AIStudyContent.tsx,
+AIStudyContent.module.css, AIExperience.module.css; docs/copy-register.md and
+this STATUS file. Branch codex/ai-study-main-20261008. Local checkpoint only;
+no push or deployment. Preview runs at http://localhost:8090/#work in managed
+session 56824, rooted in out/. Screenshot evidence and exact commit handoff:
+C:/dev/_handoffs/ai-quiet-prism-20261009/. Rollback baseline a06b985; revert this
+checkpoint and rebuild for runtime rollback. No unresolved failure in this scope.
+Genesis STATE freshly read, retired Exchange untouched, coordinator receipt
+unverified. STATUS written last; own lock released after commit.
+
 ## October 9, 2026: local preview recovered after server stopped
 
 Jacob reported a client-side exception at localhost:8090/#work. Browser console

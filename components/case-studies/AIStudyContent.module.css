@@ -1,19 +1,19 @@
-.story { min-width:0; color:#34313b; padding-block:2rem 3rem; }
+.story { min-width:0; color:#34313b; padding-block:0; }
 .intro,.sectionCopy,.closing,.note { max-width:46rem; margin-inline:auto; line-height:1.65; }
 .intro .lead { font-size:clamp(1.4rem,2.6vw,1.9rem); line-height:1.4; color:#614677; }
 .metadata { display:grid; grid-template-columns:1.2fr 1fr; gap:2rem; padding-block:1rem; margin:0; }
 .metadata dt { font-size:.8rem; color:#614677; margin-bottom:.3rem; }
 .metadata dd { margin:0; font-size:.9rem; line-height:1.5; }
-.sectionNav { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; margin:2rem 0 3rem; }
-.sectionNav a { display:flex; gap:.65rem; align-items:center; border:1px solid #61467735; border-radius:.9rem; padding:.9rem; color:#614677; background:#faf7fd; font-size:.85rem; text-decoration:none; min-height:48px; }
-.sectionNav a:hover { background:#ede4f4; }
-.sectionNav a span:last-child { margin-left:auto; }
+.sectionNav { position:sticky; top:0; z-index:3; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.25rem; margin:1.5rem 0 2rem; padding:.4rem; border-block:1px solid #61467725; background:#faf9fced; backdrop-filter:blur(16px); }
+.sectionNav a { display:flex; gap:.4rem; align-items:center; justify-content:center; border-radius:999px; padding:.6rem .35rem; color:#614677; font-size:.85rem; text-decoration:none; min-height:44px; white-space:nowrap; }
+.sectionNav a:hover { background:#ede4f4; color:#473354; }
+.sectionNav a span { color:#80628f; font-size:.75rem; }
 .section { border-top:1px solid #61467725; padding-top:2.5rem; margin-top:3rem; }
 .sectionCopy { margin-bottom:1.75rem; }
 .number { color:#80628f; font-size:.85rem; }
-.sectionCopy :is(h2,h3) { font-size:clamp(1.5rem,3vw,2rem); line-height:1.25; margin-block:.7rem 1.2rem; font-weight:400; scroll-margin-top:1rem; }
+.sectionCopy :is(h2,h3) { font-size:clamp(1.5rem,3vw,2rem); line-height:1.25; margin-block:.7rem 1.2rem; font-weight:400; scroll-margin-top:5rem; }
 .sectionCopy p { margin:0 0 1rem; }
-.evidence { padding:clamp(1rem,3vw,2rem); margin:0; border:1px solid #61467725; border-radius:1.25rem; background:linear-gradient(135deg,#f3edf8,#fff); }
+.evidence { padding-block:1.25rem; margin:0 auto; max-width:52rem; border-block:1px solid #61467725; }
 .evidence figcaption,.note { font-size:.82rem; line-height:1.6; color:#5c5862; margin-top:1rem; }
 .nodes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; padding:0; margin:0; list-style:none; }
 .nodes li { min-width:0; padding:1rem; border-left:2px solid #ac95bd; }
@@ -30,7 +30,8 @@
 .hero p { line-height:1.65; }
 .story a:focus-visible,.sectionCopy :is(h2,h3):focus-visible { outline:3px solid #385e92; outline-offset:4px; }
 @media(max-width:760px) {
- .sectionNav { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .sectionNav a { font-size:.7rem; gap:.15rem; padding-inline:.15rem; }
+ .sectionNav a span { font-size:.65rem; }
  .metadata,.outcomeGrid { grid-template-columns:1fr; gap:1rem; }
  .nodes { grid-template-columns:1fr; gap:.6rem; }
  .nodes li { padding:.4rem .8rem; }

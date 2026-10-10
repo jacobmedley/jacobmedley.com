@@ -1,7 +1,7 @@
 .figure { margin:0; min-width:0; }
 .figure figcaption { margin:1rem .25rem 0; color:#5b5862; font-size:.8rem; line-height:1.6; }
 .customerSequence { min-width:0; }
-.panel { background:linear-gradient(145deg,#fffefd,#f4eff8); border:1px solid #ad96bf55; border-radius:1.25rem; overflow:hidden; max-width:52rem; margin:auto; }
+.panel { background:#ffffffa6; border:1px solid #ad96bf55; border-radius:1.25rem; overflow:hidden; max-width:52rem; margin:auto; }
 .panelHead { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.2rem 1.5rem; border-bottom:1px solid #61467722; background:#ebe1f2; }
 .panelHead :is(h3,h4) { font-size:1.15rem; line-height:1.3; margin:0; color:#34313b; }
 .panelHead p { font-size:.82rem; line-height:1.5; margin:.35rem 0 0; color:#595260; }
@@ -19,14 +19,15 @@
 .replayRow { display:flex; align-items:center; gap:.8rem; margin-top:.8rem; }
 .replayRow > span { font-size:.75rem; color:#62566d; font-variant-numeric:tabular-nums; }
 .chat { padding-top:1.25rem; }
-.customerQuestion { background:#614677; color:#fff; border-radius:.9rem .9rem .2rem .9rem; padding:.8rem 1rem; margin:0 0 1rem auto; max-width:85%; font-size:.9rem; line-height:1.5; width:fit-content; }
+.customerQuestion { background:#e8e3ec; color:#34313b; border-radius:.9rem .9rem .2rem .9rem; padding:.8rem 1rem; margin:0 0 1rem auto; max-width:85%; font-size:.9rem; line-height:1.5; width:fit-content; }
 .assistantMeta { font-size:.75rem; color:#605668; margin:0 0 .4rem; }
 .assistantMessage { min-height:4.5rem; padding:1rem; border:1px solid #afc9c3; border-radius:.25rem .9rem .9rem; background:#eaf3f0; color:#2b5249; line-height:1.5; font-size:.95rem; }
 .helpActions,.secondaryControls,.sendRow { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; }
 .secondaryControls { padding-top:.6rem; border-top:1px solid #61467720; }
-.customerSequence button,.workspace button,.dialog button { border:1px solid #b9aebe; border-radius:.6rem; background:#fff; color:#473b50; padding:.6rem .8rem; font-size:.8rem; font-weight:500; line-height:1.35; cursor:pointer; min-height:44px; }
+.customerSequence button,.workspace button,.dialog button { border:1px solid #b9aebe; border-radius:999px; background:#fff; color:#473b50; padding:.6rem 1rem; font-size:.8rem; font-weight:500; line-height:1.35; cursor:pointer; min-height:44px; }
 .customerSequence button:hover:not(:disabled),.workspace button:hover:not(:disabled),.dialog button:hover:not(:disabled) { background:#eae1f1; }
 .customerSequence button.primary,.workspace button.primary { background:#614677; border-color:#614677; color:#fff; }
+.customerSequence button.primary:hover:not(:disabled),.workspace button.primary:hover:not(:disabled) { background:#473354; border-color:#473354; color:#fff; }
 .customerSequence button:disabled,.workspace button:disabled { opacity:.55; cursor:default; }
 .customerSequence :is(button,select):focus-visible,.workspace :is(button,textarea,summary):focus-visible,.dialog button:focus-visible { outline:3px solid #385e92; outline-offset:3px; }
 .dots { display:flex; align-items:center; gap:.32rem; min-height:2rem; }

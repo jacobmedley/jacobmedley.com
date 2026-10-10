@@ -1,0 +1,28 @@
+{
+  "baseline": "3539a3d74dc754a6f89e913f58a578b290048643",
+  "baseline_candidates": 42,
+  "candidate_candidates": 39,
+  "new_candidates": [],
+  "baseline_guard_exit": 1,
+  "baseline_guard_findings": [
+    "components/case-studies/AIExperience.module.css:14: .stateRail uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIExperience.module.css:26: .secondaryControls uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.module.css:6: .nav uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.module.css:8: .toolbar uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.module.css:13: .attachments uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.module.css:14: .documentList li uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.module.css:15: .account uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIServiceWorkspace.tsx:75: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIServiceWorkspace.tsx:98: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIStudyContent.module.css:18: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIStudyContent.module.css:23: .reading li uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIStudyContent.module.css:24: .timings uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIStudyContent.module.css:24: .timings uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIStudyContent.module.css:26: .workspaceEntry uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIStudyContent.module.css:26: .workspaceEntry uses a horizontal border; use solid-center or var(--surface-rule)",
+    "components/case-studies/AIStudyContent.module.css:29: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIStudyContent.tsx:121: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIStudyContent.tsx:155: use the Font Awesome Arrow component, not an arrow glyph",
+    "components/case-studies/AIStudyContent.tsx:162: use the Font Awesome Arrow component, not an arrow glyph"
+  ]
+}

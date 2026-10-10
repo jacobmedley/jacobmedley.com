@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import content from '@/docs/ai-service-demo.json'
 import styles from './AIServiceWorkspace.module.css'
+import Arrow from './Arrow'
 
 type Panel = 'conversation' | 'account' | 'documents'
 type SentReply = { text: string; attachments: string[] }
@@ -72,7 +73,7 @@ export default function AIServiceWorkspace({ onBack }: { onBack: () => void }) {
         <div className={styles.customerIdentity}><span aria-hidden="true">SC</span><div><strong>Sample customer</strong><small>Sample account</small></div></div>
         <dl><div><dt>Account status</dt><dd>Verification pending</dd></div><div><dt>Account representative</dt><dd>Available through the service team</dd></div></dl>
         <h5>Conversation summary</h5><p>{scenario.summary}</p>
-        <h5>Reference</h5><button type="button" className={styles.reference} onClick={() => { setDocumentId(scenario.document); selectPanel('documents') }}><i className="fa-thin fa-file-lines" aria-hidden="true" />{scenario.reference}<span aria-hidden="true">→</span></button>
+        <h5>Reference</h5><button type="button" className={styles.reference} onClick={() => { setDocumentId(scenario.document); selectPanel('documents') }}><i className="fa-thin fa-file-lines" aria-hidden="true" />{scenario.reference}<Arrow /></button>
         <p className={styles.small}>Context shown here represents the proposed Salesforce integration.</p>
       </section>
 
@@ -95,7 +96,7 @@ export default function AIServiceWorkspace({ onBack }: { onBack: () => void }) {
         <label htmlFor="ai-document-search" className={styles.small}>Search documents</label><input type="search" id="ai-document-search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Find a form or reference" />
         <ul className={styles.documentList}>{documents.map(doc => <li key={doc.id} draggable onDragStart={event => { event.dataTransfer.setData('application/x-ai-demo-document', doc.id); event.dataTransfer.effectAllowed = 'copy' }}><div><i className="fa-thin fa-file-pdf" aria-hidden="true" /><div><strong>{doc.title}</strong><small>{doc.type}</small></div></div><div className={styles.actions}><button type="button" aria-pressed={documentId === doc.id} onClick={() => setDocumentId(doc.id)}>Preview<span className={styles.srOnly}> {doc.title}</span></button><button type="button" disabled={attachments.includes(doc.id)} onClick={() => attach(doc.id)}>{attachments.includes(doc.id) ? 'Attached' : 'Attach'}<span className={styles.srOnly}> {doc.title}</span></button></div></li>)}</ul>
         {!documents.length && <div className={styles.empty}><p>No documents match your search.</p><button type="button" onClick={() => setQuery('')}>Clear search</button></div>}
-        <div className={styles.preview}><div className={styles.previewHead}><h5>Document preview</h5><a href={selectedDocument.file} target="_blank" rel="noreferrer">Open PDF ↗</a></div>
+        <div className={styles.preview}><div className={styles.previewHead}><h5>Document preview</h5><a href={selectedDocument.file} target="_blank" rel="noreferrer">Open PDF <Arrow external /><span className="sr-only"> (opens in a new tab)</span></a></div>
           {/* eslint-disable-next-line @next/next/no-img-element -- exact preview rendered from the bundled sample PDF */}
           <img src={selectedDocument.file.replace('.pdf', '.png')} alt={`${selectedDocument.title}. ${selectedDocument.text} ${selectedDocument.footer}`} width={612} height={792} />
           <p>{selectedDocument.footer}</p>

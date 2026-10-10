@@ -8,6 +8,7 @@ import { CustomerExperience } from './AIExperience'
 import AIServiceWorkspace from './AIServiceWorkspace'
 import StudyIntro from '@/components/ui/StudyIntro'
 import ExperienceDisclosure from '@/components/ui/ExperienceDisclosure'
+import Arrow from './Arrow'
 import styles from './AIStudyContent.module.css'
 
 const sections = [
@@ -108,7 +109,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <p className={styles.sectionCopy}>{e.discovery.intro}</p>
         <div className={styles.threeCards}>{e.discovery.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} />)}</div>
         <figure className={styles.evidence}>
-          <PrismStudySurface tone="gold"><ol className={styles.nodes}>{e.discovery.chain.map(node => <li key={node.label}><i className={`fa-thin ${node.icon}`} aria-hidden="true" /><span>{node.label}</span><strong>{node.heading}</strong><p>{node.body}</p></li>)}</ol></PrismStudySurface>
+          <PrismStudySurface tone="gold"><ol className={styles.nodes}>{e.discovery.chain.map((node, index) => <li key={node.label}>{index > 0 && <span className={styles.connector}><Arrow /></span>}<i className={`fa-thin ${node.icon}`} aria-hidden="true" /><span>{node.label}</span><strong>{node.heading}</strong><p>{node.body}</p></li>)}</ol></PrismStudySurface>
           <figcaption>{study.assets['P03-E'].caption}</figcaption>
         </figure>
       </section>
@@ -116,11 +117,11 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
       <section className={styles.section} aria-labelledby="ai-research">
         <PrismStudyHeading id="ai-research" icon="fa-book-open" level={headingLevel}>{e.research.heading}</PrismStudyHeading>
         <div className={styles.proseColumns}><p>{e.research.intro}</p><p>{e.research.application}</p></div>
-        <div className={styles.papers}>{e.research.papers.map((paper, index) => <PrismStudySurface key={paper.id} tone={index === 0 ? 'sage' : index === 1 ? 'slate' : 'gold'} className={styles.paper}>
-          <span className={styles.eyebrow}>{paper.date} · Research paper</span>
-          <Subheading><a href={paper.url} target="_blank" rel="noreferrer">{paper.title}<span className={styles.external} aria-hidden="true"> ↗</span></a></Subheading>
-          <p className={styles.note}>{paper.authors}</p>
-          <blockquote><p>“{paper.quote}”</p><cite>{paper.location}</cite></blockquote>
+        <div className={styles.papers} id="ai-research-papers">{e.research.papers.map((paper, index) => <PrismStudySurface key={paper.id} tone={index === 0 ? 'sage' : index === 1 ? 'slate' : 'gold'} className={styles.paper}>
+          <header><span className={styles.eyebrow}>{paper.date} · Research paper</span>
+          <Subheading><a href={paper.url} target="_blank" rel="noreferrer">{paper.title}{' '}<Arrow external /><span className="sr-only"> (opens in a new tab)</span></a></Subheading>
+          <p className={styles.note}>{paper.authors}</p></header>
+          <blockquote><i className="fa-thin fa-quotes" aria-hidden="true" /><div><p>“{paper.quote}”</p><cite>{paper.location}</cite></div></blockquote>
           <p>{paper.finding}</p><p className={styles.implication}>{paper.application}</p><p className={styles.note}>{paper.limit}</p>
         </PrismStudySurface>)}</div>
         <p className={styles.sectionCopy}>The design reading connected those findings to the interface. <a href={e.research.articles[0].url} target="_blank" rel="noreferrer">Jakob Nielsen’s account of intent-based interaction</a> and <a href={e.research.articles[6].url} target="_blank" rel="noreferrer">Luke Wroblewski’s conversational interface explorations</a> helped frame the questions: how to show progress, expose sources, and give people controls around the answer.</p>
@@ -128,23 +129,22 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
 
       <section className={styles.section} aria-labelledby="ai-waiting">
         <PrismStudyHeading id="ai-waiting" icon="fa-stopwatch" level={headingLevel}>{e.waiting.heading}</PrismStudyHeading>
-        <div className={styles.timings}>{e.waiting.timings.map(item => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
+        <div className={styles.timings} id="ai-response-timings">{e.waiting.timings.map(item => <PrismStudySurface key={item.label} tone={item.tone as PrismTone} className={styles.timingCard}><i className={`fa-thin ${item.icon}`} aria-hidden="true" /><div><strong>{item.value}</strong><span>{item.label}</span></div></PrismStudySurface>)}</div>
         <p className={styles.note}>{e.waiting.measurementNote}</p>
         <div className={styles.split}>
           <div className={styles.sectionCopy}>{e.waiting.paragraphs.map(text => <p key={text}>{text}</p>)}<p>{e.waiting.requirements}</p><p className={styles.note}>{e.waiting.note}</p></div>
           <CustomerExperience customer={study.assets['P03-A']} timing={study.assets['P03-C']} headingLevel={subheading} />
         </div>
-        <figure className={`${styles.evidence} ${styles.feedback}`}>
+        <div className={styles.feedback} id="ai-feedback-flow">
           <div><Subheading>{e.originalDrafts.heading}</Subheading><p>{e.originalDrafts.intro}</p><p>{e.originalDrafts.review}</p></div>
           <div className={styles.cardStack}>{e.originalDrafts.steps.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} stacked />)}</div>
-          <figcaption>{e.originalDrafts.caption}</figcaption>
-        </figure>
+        </div>
       </section>
 
       <section className={styles.section} aria-labelledby="ai-review">
         <PrismStudyHeading id="ai-review" icon="fa-user" level={headingLevel}>{e.representative.heading}</PrismStudyHeading>
-        <div className={styles.split}><div className={styles.sectionCopy}>{e.representative.paragraphs.map(text => <p key={text}>{text}</p>)}</div><div className={styles.cardStack}>{e.representative.priorities.map(card => <StudyCard key={card.label} card={card} headingLevel={subheading} stacked />)}</div></div>
-        <div id="ai-workspace-entry" className={styles.workspaceEntry} data-prism-tone="slate"><i className="fa-thin fa-table-columns" aria-hidden="true" /><div><Subheading>Requirements and future concepts</Subheading><p>{e.representative.demoNote}</p></div><button ref={entryRef} type="button" onClick={openWorkspace}>{e.representative.cta}<i className="fa-thin fa-arrow-right" aria-hidden="true" /></button></div>
+        <div className={styles.split}><div className={styles.cardStack} id="ai-representative-context">{e.representative.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} stacked />)}</div><div className={styles.cardStack}>{e.representative.priorities.map(card => <StudyCard key={card.label} card={card} headingLevel={subheading} stacked />)}</div></div>
+        <div id="ai-workspace-entry" className={styles.workspaceEntry} data-prism-tone="slate"><hr className="solid-center" aria-hidden="true" /><i className="fa-thin fa-table-columns" aria-hidden="true" /><div><Subheading>Requirements and future concepts</Subheading><p>{e.representative.demoNote}</p></div><button ref={entryRef} type="button" onClick={openWorkspace}>{e.representative.cta}<Arrow /></button><hr className="solid-center" aria-hidden="true" /></div>
       </section>
 
       <section className={styles.section} aria-labelledby="ai-outcome">
@@ -152,14 +152,14 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <div className={styles.twoCards}><PrismStudySurface tone="sage"><Subheading>Delivered</Subheading><p>{e.conclusion.delivery}</p></PrismStudySurface><PrismStudySurface tone="slate"><Subheading>Observed use</Subheading><p>{e.conclusion.observed}</p></PrismStudySurface></div>
         <p className={styles.sectionCopy}>{e.conclusion.gap}</p><p className={`${styles.sectionCopy} ${styles.lesson}`}>{e.conclusion.lesson}</p><p className={styles.closing}>{e.conclusion.closing}</p>
       </section>
-      {readingPage && <p><Link href="/#work">Back to case studies →</Link></p>}
+      {readingPage && <p><Link href="/#work">Back to case studies <Arrow /></Link></p>}
       <div className={styles.reading} id="ai-design-reading" data-prism-tone="slate">
         <ExperienceDisclosure company="design reading, 2023–2024" header={<header className="resume-experience-header">
           <i className="fa-thin fa-book-open" aria-hidden="true" />
           <div><Subheading>Design reading, 2023–2024</Subheading><span>{e.research.articles.length} articles</span></div>
         </header>}>
           <p>{e.research.periodNote}</p>
-          <ul>{e.research.articles.map(article => <li key={article.url}><a href={article.url} target="_blank" rel="noreferrer">{article.title} ↗</a><span>{article.author} · {article.date}</span><p>{article.note}</p></li>)}</ul>
+          <ul>{e.research.articles.map(article => <li key={article.url}><hr className="solid-center" aria-hidden="true" /><a href={article.url} target="_blank" rel="noreferrer">{article.title}{' '}<Arrow external /><span className="sr-only"> (opens in a new tab)</span></a><span>{article.author} · {article.date}</span><p>{article.note}</p></li>)}</ul>
         </ExperienceDisclosure>
       </div>
     </div>

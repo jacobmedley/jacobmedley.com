@@ -1,5 +1,49 @@
 # Status
 
+## October 10, 2026: nine AI study annotation corrections
+
+B103 applied locally after Jacob resumed the held comments and invoked Human-Centered
+Web Design and Quiet Prism Adherence. Research is three equal-height desktop cards
+with aligned natural content rows and Thin Quotes beside each quotation. Official
+titles, citations and quotes are preserved. Representative prose becomes three small
+icon cards. Feedback prose is vertically centered, its requested caption removed,
+and proposed-draft status remains explicit in the introduction. Customer caption
+leading is 10% tighter. Response timings use three icon cards with unchanged values
+and attribution. Workspace-entry and related decorative separators fade. Bare arrow
+glyphs in the AI story/demos now use the existing Font Awesome Arrow component.
+
+The new verify:ai-presentation gate runs first in npm build, including both existing
+GitHub workflows. It rejects the old source (seven arrow occurrences and twelve
+horizontal-border declarations) and passes the current eight scoped files. Three
+regression tests pass. This is bounded AI-source enforcement, not a whole-site
+visual guarantee. Catalog includes research, timing and fading-rule examples.
+
+Verification: production build/lint/types/14-page export, 288 images/104 references,
+scoped ESLint, standalone typecheck, catalog manifest (58 patterns/194 examples),
+plugin fixtures and diff check pass. Quiet Prism scanner candidates decrease from
+42 to 39, with no new signatures; inherited control/style candidates are reviewed
+in context. At 1351px the three cards are each 624.578125px tall. At 820/390/320px
+they stack without horizontal overflow. Caption leading computes to 1.44. Browser
+confirms the actual FontAwesome7Pro-Thin quotes glyph. Keyboard focus, workspace
+return, Documents navigation, customer help state, 14 reading links, reduced motion,
+320px text-spacing resilience and standalone rendering checked. Fresh post-restart
+browser error log empty; earlier JSON hot-reload errors cleared with fresh loading.
+
+Evidence and files: docs/reviews/ai-nine-comments-20261010/verification.md. Changed
+AI study/demo TSX/CSS, AI JSON, catalog, copy register, guard/tests/package build,
+application contract and evidence. No requested implementation remains. Full screen
+reader, actual 400% browser zoom, forced colors and cross-browser checks unverified.
+
+Branch codex/ai-study-main-20261008. Rollback 3539a3d74dc754a6f89e913f58a578b290048643.
+Final local checkpoint hash is in Git and the external update. No push, merge or
+deployment. Preview http://localhost:3000/#work runs in managed session 84746,
+verified Next.js PID 6624 from this checkout. No 8090 preview. Temporary QA tabs and
+overrides removed; original annotation tab refreshed. Own lock released after commit.
+
+Genesis STATE freshly read at intake and closeout. Exchange remains retired/read-only.
+Unique change and update handoffs retained in C:/dev/_handoffs/ai-nine-comments-20261010/.
+No coordinator delivery claimed. No model dispatch, dependency install or paid fallback.
+
 ## October 10, 2026: case-study annotations and navigation polish
 
 B102 applied locally. All 27 annotations plus Jacob's later spacing and navigation

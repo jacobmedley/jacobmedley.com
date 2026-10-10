@@ -1,0 +1,241 @@
+{
+  "source_version": "3539a3d + nine-comment candidate",
+  "findings": [
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 2,
+      "message": "color #5b5862 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 7,
+      "message": "color #595260 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 10,
+      "message": "color #625a69 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 12,
+      "message": "color #514459 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 13,
+      "message": "color #b6a7c0 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 13,
+      "message": "color #fff needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 20,
+      "message": "color #62566d needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 22,
+      "message": "color #ffffffa8 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 23,
+      "message": "color #605668 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 27,
+      "message": "color #463150 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 27,
+      "message": "color #463150 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 28,
+      "message": "color #463150 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 29,
+      "message": "color #463150 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 29,
+      "message": "color #463150 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 32,
+      "message": "color #385e92 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 34,
+      "message": "color #41695b needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 39,
+      "message": "color #b9aebe needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 39,
+      "message": "color #fffdfb needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 39,
+      "message": "color #16101f33 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 40,
+      "message": "color #20182566 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 1,
+      "message": "color #d5d6dc needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 1,
+      "message": "color #fff needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 5,
+      "message": "color #a6a0ac needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 6,
+      "message": "color #faf9fc needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 9,
+      "message": "color #fff needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 10,
+      "message": "color #f7f8fa needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 11,
+      "message": "color #f3f6f1 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 11,
+      "message": "color #afc1a7 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 13,
+      "message": "color #3f5066 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 13,
+      "message": "color #27374b needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 13,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 14,
+      "message": "color #34313b19 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 3,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 4,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 7,
+      "message": "color #ffffff80 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 7,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 8,
+      "message": "color #faf9fc needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 8,
+      "message": "color #34313b09 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 28,
+      "message": "legacy selector or cascade override needs review"
+    }
+  ],
+  "count": 39,
+  "status": "review-required"
+}

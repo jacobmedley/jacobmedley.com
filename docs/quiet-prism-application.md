@@ -31,6 +31,22 @@ Shared foundations live in `app/site-integration.css` and `app/visual-system.css
 Local modules own layout and domain-specific geometry. They must not redefine a
 new surface palette, radius or heading system because the subject is AI.
 
+## AI presentation guard
+
+Jacob's October 10 follow-up requires Font Awesome arrow icons and fading
+decorative rules. Reuse `components/case-studies/Arrow.tsx` and the shared
+`solid-center` / `--surface-rule` treatment. Do not insert arrow characters in
+JSX, JSON copy or CSS generated content. Horizontal borders belong to the
+explicitly checked control indicators; enclosed surfaces retain their borders.
+
+`npm run verify:ai-presentation` checks AI-prefixed TSX/CSS in
+`components/case-studies` and the two AI JSON sources. `npm run build` runs it
+first, so the existing verification and deployment workflows inherit the gate.
+Its regression fixtures run with `node --test scripts/verify-ai-presentation.test.mjs`.
+This is bounded enforcement of these recurring source defects, not a whole-site
+visual or accessibility guarantee. New shared/global rules still require review
+in the browser. See the B103 evidence and the three study catalog entries.
+
 ## Review gates
 
 1. Read current STATUS, lock, branch, content authorities and this contract.

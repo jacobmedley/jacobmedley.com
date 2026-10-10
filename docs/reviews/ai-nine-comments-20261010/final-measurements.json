@@ -1,0 +1,42 @@
+{
+  "quoteFont": {
+    "fonts": [
+      {
+        "familyName": "Font Awesome 7 Pro Thin",
+        "glyphCount": 1,
+        "isCustomFont": true,
+        "postScriptName": "FontAwesome7Pro-Thin"
+      }
+    ]
+  },
+  "finalMetrics": {
+    "captionFont": "12.8px",
+    "captionLineHeight": "18.432px",
+    "entryBorders": [
+      "0px",
+      "0px"
+    ],
+    "feedback": [
+      {
+        "height": 188.5625,
+        "top": 2291.046875
+      },
+      {
+        "height": 360.75,
+        "top": 2204.953125
+      }
+    ],
+    "navTransition": "0s",
+    "paperHeights": [
+      624.578125,
+      624.578125,
+      624.578125
+    ],
+    "quoteRows": [
+      592.296875,
+      592.296875,
+      592.296875
+    ],
+    "quoteWeight": "100"
+  }
+}

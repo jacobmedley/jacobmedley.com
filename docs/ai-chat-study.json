@@ -120,9 +120,9 @@
           "date": "April 2023",
           "url": "https://arxiv.org/pdf/2304.11771v1",
           "quote": "who remain responsible for the conversation and are free to ignore its suggestions",
-          "finding": "A staggered rollout across 5,179 support agents found larger productivity gains for newer and lower-skilled workers. The tool offered replies and relevant documentation beside the conversation.",
-          "application": "Design implication: put the reference and editable draft beside the task, with the representative in control.",
-          "limit": "A study of one software-support setting, not a forecast for this project.",
+        "finding": "Across 5,179 support agents, newer and lower-skilled workers saw larger productivity gains. Suggested replies and relevant documents appeared beside the conversation.",
+          "application": "Design implication: keep the reference and editable draft beside the task, with the representative in control.",
+          "limit": "The findings concern one software-support setting. They do not predict results for this project.",
           "location": "2023 working paper, pp. 2, 8–12, 22"
         },
         {
@@ -132,9 +132,9 @@
           "date": "March 2023",
           "url": "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1.pdf",
           "quote": "restructures tasks towards idea-generation and editing and away from rough-drafting",
-          "finding": "The experiment assigned professional writing tasks to 444 participants. It found shorter task times and higher rated output with ChatGPT.",
-          "application": "Design implication: make editing and checking a draft part of the workflow.",
-          "limit": "Bounded writing tasks do not establish safe answers to account questions.",
+          "finding": "In an experiment with 444 participants doing professional writing tasks, ChatGPT shortened task times and raised output ratings.",
+          "application": "Design implication: make editing and checking the draft part of the workflow before anyone sends it.",
+          "limit": "These were bounded writing tasks. They do not establish safe answers to account questions.",
           "location": "March 2 working paper, abstract and sections 2.1–2.4"
         },
         {
@@ -144,9 +144,9 @@
           "date": "February 2023",
           "url": "https://arxiv.org/pdf/2302.06590",
           "quote": "this study does not examine the effects of AI on code quality",
-          "finding": "A controlled experiment gave developers a single programming task and measured completion and time.",
-          "application": "Design implication: measure speed and quality separately. A faster answer can still be wrong.",
-          "limit": "The authors caution that benefits may vary across tasks.",
+        "finding": "A controlled experiment assigned developers one programming task, measuring completion and time. The authors caution that benefits may vary across tasks.",
+          "application": "Design implication: measure speed and quality separately. Finishing sooner leaves the question of accuracy open.",
+          "limit": "The experiment did not assess code quality. Completion time alone cannot establish a correct answer.",
           "location": "2023 paper, Study Design and Discussion"
         }
       ],
@@ -261,15 +261,21 @@
       "timings": [
         {
           "value": "~15 s",
-          "label": "Initial average"
+          "label": "Initial average",
+          "icon": "fa-stopwatch",
+          "tone": "slate"
         },
         {
           "value": "60 s",
-          "label": "Longest reported wait"
+          "label": "Longest reported wait",
+          "icon": "fa-hourglass-half",
+          "tone": "gold"
         },
         {
           "value": "~8–10 s",
-          "label": "Average after backend work"
+          "label": "Average after backend work",
+          "icon": "fa-gauge-high",
+          "tone": "sage"
         }
       ],
       "measurementNote": "Measured during project usability testing and QA, as reported by Jacob. Original logs, sample size, and the test window are not retained in this portfolio.",
@@ -278,7 +284,7 @@
     },
     "originalDrafts": {
       "heading": "Feedback that lets the conversation continue",
-      "intro": "The original customer flow connected two needs. People needed useful answers and a way to flag a problem. The business needed to understand where the answer had failed.",
+      "intro": "The original feedback drafts proposed a way to rate an answer, explain a problem and keep asking. People needed useful answers. The business needed to understand where an answer had failed.",
       "steps": [
         {
           "heading": "Rate the answer",
@@ -299,16 +305,10 @@
           "body": "Let the person skip feedback and continue the conversation."
         }
       ],
-      "review": "My review framework followed the trigger, feedback, guidance, and completion of each interaction, in the person’s context and on their device. Acceptance criteria included error recovery and tracking.",
-      "caption": "Editorial paraphrase of the original customer feedback drafts. The cards show the proposed flow."
+      "review": "My review framework followed the trigger, feedback, guidance, and completion of each interaction, in the person’s context and on their device. Acceptance criteria included error recovery and tracking."
     },
     "representative": {
       "heading": "An assistant inside the representative’s work",
-      "paragraphs": [
-        "The internal assistant had two jobs: help new staff learn and help experienced staff work faster. Both groups needed accurate, compliant answers without leaving the service conversation.",
-        "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply.",
-        "Document lookup and sharing, an adjacent PDF viewer, suggested wording, compliance warnings, and suspicious-pattern detection formed the future feature set. These added help around the conversation while leaving judgment with the person handling it."
-      ],
       "priorities": [
         {
           "label": "Must have",
@@ -340,7 +340,27 @@
         }
       ],
       "cta": "Explore the service workspace",
-      "demoNote": "Interactive reconstruction of the requirements and future concepts, using sample conversations and documents. The original representative screen was not recovered."
+      "demoNote": "Interactive reconstruction of the requirements and future concepts, using sample conversations and documents. The original representative screen was not recovered.",
+      "cards": [
+        {
+          "heading": "Learn while serving",
+          "icon": "fa-book-open",
+          "tone": "sage",
+          "body": "New staff needed to learn; experienced staff needed to move faster. Both needed accurate, compliant answers within the service conversation."
+        },
+        {
+          "heading": "Keep the reply in context",
+          "icon": "fa-comments",
+          "tone": "slate",
+          "body": "I scoped account context, a conversation summary, sources and follow-up prompts around the Salesforce workspace. The representative would read, change and send the reply."
+        },
+        {
+          "heading": "Plan the next layer of help",
+          "icon": "fa-file-lines",
+          "tone": "plum",
+          "body": "Future concepts added document lookup and sharing, a PDF viewer, wording suggestions, compliance warnings and suspicious-pattern detection. Judgment stayed with the person handling the conversation."
+        }
+      ]
     },
     "conclusion": {
       "heading": "What the work proved, and what happened next",

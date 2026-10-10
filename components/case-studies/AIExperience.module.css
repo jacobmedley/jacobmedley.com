@@ -1,5 +1,5 @@
 .figure { margin:0; min-width:0; }
-.figure figcaption { margin:1rem .25rem 0; color:#5b5862; font-size:.8rem; line-height:1.6; }
+.figure figcaption { margin:1rem .25rem 0; color:#5b5862; font-size:.8rem; line-height:1.44; }
 .customerSequence { min-width:0; }
 .panel { max-width:none; margin:0; }
 .panelHead { display:flex; align-items:start; justify-content:space-between; flex-wrap:wrap; gap:.6rem; padding-bottom:1rem; margin-bottom:1rem; background:linear-gradient(90deg,transparent,var(--card-line),transparent) center bottom / 100% 1px no-repeat; }
@@ -11,7 +11,7 @@
 .controls { display:flex; gap:.6rem; align-items:center; margin-bottom:.8rem; }
 .controls label { font-size:.8rem; color:#514459; }
 .controls select { flex:1; min-width:0; border:1px solid #b6a7c0; border-radius:.6rem; background:#fff; min-height:44px; padding:.5rem; color:#34313b; font:inherit; font-size:.85rem; }
-.stateRail { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-bottom:1px solid var(--card-line); margin-block:1rem; }
+.stateRail { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; background:var(--surface-rule) center bottom / var(--rule-max-width) 1px no-repeat; margin-block:1rem; }
 .customerSequence .stateRail button { display:flex; flex-direction:column; gap:.15rem; align-items:center; min-width:0; border:0; border-bottom:2px solid transparent; border-radius:0; background:transparent; color:var(--card-ink); padding:.5rem .2rem; }
 .customerSequence .stateRail button[aria-pressed=true] { border-bottom-color:var(--card-ink); background:color-mix(in srgb,var(--card-tint) 55%,white); }
 .stateRail strong { font-size:.9rem; font-weight:600; }
@@ -23,7 +23,7 @@
 .assistantMeta { font-size:.75rem; color:#605668; margin:0 0 .4rem; }
 .assistantMessage { min-height:4.5rem; padding:.5rem 0 .5rem 1rem; border-left:2px solid var(--card-line); color:var(--prism-ink); line-height:1.5; font-size:.95rem; }
 .helpActions,.secondaryControls { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; }
-.secondaryControls { padding-top:1rem; margin-top:1rem; border-top:1px solid var(--card-line); }
+.secondaryControls { padding-top:1rem; margin-top:1rem; background:var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat; }
 .customerSequence button,.dialog button { border:1px solid var(--card-ink,#463150); border-radius:999px; background:transparent; color:var(--card-ink,#463150); padding:.6rem 1rem; font:inherit; font-size:.85rem; line-height:1.35; cursor:pointer; min-height:44px; }
 .customerSequence button:hover:not(:disabled),.dialog button:hover:not(:disabled) { background:var(--card-ink,#463150); color:white; }
 .customerSequence button.primary { background:var(--card-ink,#463150); border-color:var(--card-ink,#463150); color:white; }

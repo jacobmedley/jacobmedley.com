@@ -4455,3 +4455,33 @@ The static UX review inspected four original One Park images. It supports visibl
 ```
 B102 follow-up: Jacob requested space below User requirements; use the existing 1rem spacing unit and a selector that overrides the modal heading reset. Catalog labels: Study Introduction; narrative; My role; Collaboration; fading rule; chevron. Reading content with no whole-panel action. Two columns above a 48rem content width. Below that, the rail follows the narrative; below 30rem, its fields stack.
 B102 navigation follow-up: Jacob requested the icon navigation directly below the hero, sticky on scroll. Remove active and hover fills. Darken the active icon and bottom rule. On hover or keyboard focus, thicken the rule with a short upward growth animation; disable animation for reduced motion. Catalog description: Five icon-and-label links sit directly below the hero, stay below the modal header while scrolling, and mark the current section with a darker icon and rule.
+
+## B103: nine AI study presentation corrections
+
+Status: APPLIED LOCALLY. Jacob resumed all nine comments on October 10 and requested Human-Centered Web Design and Quiet Prism Adherence. Evidence: docs/reviews/ai-nine-comments-20261010/verification.md. No publication authorized.
+
+Keep the three official paper titles, dates, authors, verbatim quotations, locations and URLs. Balance their finding, application and limitation rows with the copy below. Use three equal-height desktop cards with natural-height aligned rows, stacking on narrow screens. Thin Font Awesome Quotes sits to the left of each quote. No fixed text height or truncation.
+
+```json
+{
+  "papers": [
+    {"id":"support","finding":"Across 5,179 support agents, newer and lower-skilled workers saw larger productivity gains. Suggested replies and relevant documents appeared beside the conversation.","application":"Design implication: keep the reference and editable draft beside the task, with the representative in control.","limit":"The findings concern one software-support setting. They do not predict results for this project."},
+    {"id":"writing","finding":"In an experiment with 444 participants doing professional writing tasks, ChatGPT shortened task times and raised output ratings.","application":"Design implication: make editing and checking the draft part of the workflow before anyone sends it.","limit":"These were bounded writing tasks. They do not establish safe answers to account questions."},
+    {"id":"coding","finding":"A controlled experiment assigned developers one programming task, measuring completion and time. The authors caution that benefits may vary across tasks.","application":"Design implication: measure speed and quality separately. Finishing sooner leaves the question of accuracy open.","limit":"The experiment did not assess code quality. Completion time alone cannot establish a correct answer."}
+  ],
+  "representativeCards": [
+    {"heading":"Learn while serving","icon":"fa-book-open","tone":"sage","body":"New staff needed to learn; experienced staff needed to move faster. Both needed accurate, compliant answers within the service conversation."},
+    {"heading":"Keep the reply in context","icon":"fa-comments","tone":"slate","body":"I scoped account context, a conversation summary, sources and follow-up prompts around the Salesforce workspace. The representative would read, change and send the reply."},
+    {"heading":"Plan the next layer of help","icon":"fa-file-lines","tone":"plum","body":"Future concepts added document lookup and sharing, a PDF viewer, wording suggestions, compliance warnings and suspicious-pattern detection. Judgment stayed with the person handling the conversation."}
+  ],
+  "feedbackIntro":"The original feedback drafts proposed a way to rate an answer, explain a problem and keep asking. People needed useful answers. The business needed to understand where an answer had failed.",
+  "externalLinkHint":" (opens in a new tab)",
+  "catalog": {
+    "research":"Three research cards pair an official source with a quotation, finding, design implication and limitation. A Thin Quotes icon sits beside the quotation.",
+    "timing":"Three icon cards show measured response times with a shared attribution immediately below.",
+    "rules":"Decorative horizontal separators use the shared fading rule. Solid control indicators and enclosed card borders keep their separate roles."
+  }
+}
+```
+
+Remove the feedback figure caption. Its proposed-draft status is explicit in the introduction above. Tighten the customer demo caption from 1.6 to 1.44 line height. Vertically center the feedback explanation beside its cards. Preserve timing values, labels, attribution and the distinction between measured performance and replay timings. Use the established fading rule for the workspace entry and other AI decorative separators; replace glyph arrows with the existing Font Awesome Arrow component. A build gate must catch their recurrence in the AI study and its demos.

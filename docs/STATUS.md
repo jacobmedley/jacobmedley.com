@@ -1,5 +1,30 @@
 # Status
 
+## October 9, 2026: local preview recovered after server stopped
+
+Jacob reported a client-side exception at localhost:8090/#work. Browser console
+showed ChunkLoadError for 304.26bb38ed50cfd40c.js. That exact file exists in out/;
+port 8090 had no listener and a direct request was refused. The page could remain
+visible from its earlier load, but its lazy-loaded study script was unavailable.
+Restarted the existing static export on loopback in a managed terminal session,
+PID 42236 (session 14470), from out/. No application-code changes or rebuild.
+The first compound hidden-start command was rejected by execution policy before
+running; separate lock setup and the foreground managed server succeeded.
+
+Verified the failed script now returns HTTP 200. Reloaded the user's tab, opened
+the AI case study and selected the 3-second holding state; its response rendered.
+No new console errors during recovery; the log retains the original two errors.
+Evidence: C:/dev/_handoffs/preview-recovery-20261009/recovered.png.
+Branch codex/ai-study-main-20261008, application baseline d5b3c0f; this checkpoint
+changes docs/STATUS.md only. No push or deployment. Preview is running at
+http://localhost:8090/#work; it still requires a running local server.
+Rollback: stop only the verified preview PID to undo the runtime action; revert
+this documentation checkpoint if required. No unresolved application failure.
+Genesis STATE freshly read; retired Exchange untouched; coordinator receipt
+unverified. Exact checkpoint in C:/dev/_handoffs/preview-recovery-20261009/update.md.
+STATUS written last and own lock released after checkpoint.
+
+
 ## October 8, 2026: AI study refinement and focused UX audit
 
 Jacob requested CSS title case, hidden summaries at the single-column breakpoint,

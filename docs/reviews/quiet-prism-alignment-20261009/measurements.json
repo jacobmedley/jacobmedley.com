@@ -1,0 +1,39 @@
+{
+  "responsive": [
+    {
+      "focus": "ai-finding",
+      "headingTop": 193.828125,
+      "minTargetHeight": 44,
+      "navBottom": 162.1875,
+      "navTop": 106,
+      "overflow": false,
+      "width": 820
+    },
+    {
+      "focus": "ai-finding",
+      "headingTop": 202.265625,
+      "minTargetHeight": 44,
+      "navBottom": 170.265625,
+      "navTop": 114.078125,
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "focus": "ai-finding",
+      "headingTop": 201.78125,
+      "minTargetHeight": 44,
+      "navBottom": 170.1875,
+      "navTop": 114,
+      "overflow": false,
+      "width": 320
+    }
+  ],
+  "aiSurface": {
+    "background": "linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgb(240, 232, 207))",
+    "border": "1px solid color(srgb 0.811765 0.752941 0.580392 / 0.55)",
+    "font": "urw-form, Manrope, sans-serif",
+    "ink": "rgb(52, 49, 59)",
+    "padding": "22px",
+    "radius": "28px"
+  }
+}

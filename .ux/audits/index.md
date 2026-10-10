@@ -3,3 +3,4 @@
 | Date (UTC) | Auditor | Scope | Sev4 | Sev3 | Sev2 | Sev1 | Report |
 |------------|---------|-------|------|------|------|------|--------|
 | 2026-10-08T21:51:35Z | usability | AI study card, reading flow and mobile demonstrations | 0 | 1 | 1 | 1 | [report](usability-20261008-215135.md) |
+| 2026-10-10T03:04:40Z | usability | Quiet Prism reference and AI modal alignment | 0 | 0 | 2 | 1 | [report](usability-20261010-030440.md) |

@@ -185,6 +185,9 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .modal-content[data-project-id='ai-chat'] .modal-featured-hero { margin:0; padding:clamp(1rem, 3vw, 2.5rem); }
 .modal-content[data-project-id='ai-chat'] .modal-study-content { padding:clamp(1rem, 3vw, 2.5rem); }
 .modal-study-content > :first-child { margin-top: 0; }
+.prism-study-heading { scroll-margin-top:5.5rem; }
+.prism-study-heading:focus-visible { outline:3px solid var(--card-ink); outline-offset:4px; }
+.prism-study-heading h2 { min-width:0; margin:0; font-size:clamp(1.15rem,2.2cqi,1.45rem); line-height:1.25; font-weight:500; }
 .modal-data-panel { background: linear-gradient(135deg, color-mix(in srgb, var(--featured-mid, #ddcdec) 38%, white), #ffffffc9 52%, color-mix(in srgb, var(--featured-mid, #ddcdec) 58%, white)); }
 .modal-metric-card, .modal-value-card, .modal-info-card { position: relative; isolation: isolate; }
 .modal-metric-card::after, .modal-value-card::after, .modal-info-card::after {

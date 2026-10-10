@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState, useId } from 'react'
+import { PrismStudySurface } from '@/components/ui/PrismStudy'
 type StudyAsset = { id: string; name: string; caption: string; alt: string }
 import styles from './AIExperience.module.css'
 
@@ -127,7 +128,7 @@ export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { 
 
   return <div className={styles.customerSequence} id="ai-customer-demo">
     <figure className={styles.figure} aria-label={customer.alt}>
-      <div className={styles.panel}>
+      <PrismStudySurface className={styles.panel} tone="plum">
         <div className={styles.panelHead}><div><Heading>Try the response states</Heading><p>Choose a state to see the response, or replay the wait.</p></div><span className={styles.chip}>Reconstruction</span></div>
         <div className={styles.demoBody}>
           <div className={styles.controls}>
@@ -158,7 +159,7 @@ export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { 
           </div>
         </div>
         <div className={styles.panelFoot}>No live AI, account connection, or support contact.</div>
-      </div>
+      </PrismStudySurface>
       <figcaption>{customer.caption} {timing.caption}</figcaption>
     </figure>
     <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef} />
@@ -186,7 +187,7 @@ export function RepresentativeExperience({ asset, headingLevel = 'h4' }: { asset
   }
 
   return <figure className={styles.figure} aria-label={asset.alt} id="ai-representative-demo">
-    <div className={`${styles.panel} ${styles.workspace}`}>
+    <PrismStudySurface className={`${styles.panel} ${styles.workspace}`} tone="slate">
       <div className={styles.panelHead}><div><Heading>Review the reply</Heading><p>The representative owns the response.</p></div><span className={styles.chip}>Reconstruction</span></div>
       <div className={styles.demoBody}>
         <details className={styles.context}><summary>Conversation context</summary><p>The customer asked about a balance. No verified account data is available in this demonstration.</p><p>Next route: an account manager can confirm details.</p><button type="button" onClick={event => openReference(event.currentTarget)}>View reference</button></details>
@@ -206,7 +207,7 @@ export function RepresentativeExperience({ asset, headingLevel = 'h4' }: { asset
         {sent && <div className={styles.sentReply}><span>Representative</span><p>{suggested}</p></div>}
       </div>
       <div className={styles.panelFoot}>Simulated language alert. The original screen layout was not recovered.</div>
-    </div>
+    </PrismStudySurface>
     <figcaption>{asset.caption}</figcaption>
     <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef}/>
   </figure>

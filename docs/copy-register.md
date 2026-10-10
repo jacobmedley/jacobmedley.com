@@ -3693,3 +3693,12 @@ Jacob's October 9 comments authorize compact sticky section navigation:
 01 Findings; 02 Failure; 03 Human; 04 Shipped.
 Remove “Open the reading page →” from the modal. Preserve “Back to case studies”
 on the standalone reading page. No factual story or demo copy changes.
+
+## B98. Quiet Prism AI pattern catalog [APPLIED LOCALLY]
+
+Jacob's October 9 alignment goal adds documentation entries to the live design-system
+catalog. Existing case-study narrative, labels, sample messages and caveats remain.
+
+- Study Surface: “The same reading surface used by the Product Framework modal, reused by the AI finding, demonstrations and outcomes.” Behavior: “Informational surfaces have no whole-card action. Controls inside demonstrations retain their own focus and state.”
+- Study Navigation: “Four compact section links stay below the modal header and mark the current section.” Behavior: “Choose a section to move focus to its heading. Scrolling updates the current-section marker.”
+- Response Demonstration: “A segmented state selector, primary replay action and conversation share one Quiet Prism surface.” Behavior: “Choose a state, replay or stop the wait, and open the simulated help routes. Nothing is sent to a real person.”

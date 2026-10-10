@@ -1,0 +1,31 @@
+/* Both reconstructions use the shared Quiet Prism surface and tone tokens. */
+.wireframe { min-width: 0; color: var(--prism-ink); }
+.wireframe button, .wireframe input, .wireframe textarea, .wireframe select { font: inherit; }
+.wireframe button, .back { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 44px; padding: .65rem 1rem; border: 1px solid var(--card-ink); border-radius: 2rem; background: transparent; color: var(--card-ink); font-size: .875rem; line-height: 1.35; cursor: pointer; }
+.wireframe button:hover:not(:disabled), .back:hover { background: var(--card-tint); }
+.wireframe button:disabled { opacity: .5; cursor: default; }
+/* Checkbox geometry must never inherit full-width text-field sizing. */
+.wireframe :is(input:not([type='checkbox']), textarea, select) { width: 100%; min-width: 0; min-height: 44px; padding: .75rem; border: 1px solid var(--card-line); border-radius: .65rem; background: white; color: var(--prism-ink); }
+.wireframe textarea { resize: vertical; line-height: 1.5; }
+.wireframe :is(button, a, input, textarea, select, summary):focus-visible, .back:focus-visible { outline: 3px solid var(--card-ink); outline-offset: 3px; }
+.wireframe .primary { background: var(--card-ink); color: white; }
+.wireframe .primary:hover:not(:disabled) { background: color-mix(in srgb, var(--card-ink) 85%, black); }
+.header { display: flex; justify-content: space-between; align-items: start; gap: 1.5rem; padding-block: 1.5rem; }
+.header h3 { margin: .5rem 0 var(--heading-copy-gap); font-size: clamp(1.6rem, 3cqi, 2.2rem); line-height: 1.2; color: var(--card-ink); }
+.header p { margin: 0; max-width: 45rem; }
+.header > button { flex-shrink: 0; }
+.eyebrow { color: var(--prism-muted); font-size: .8rem; }
+.surface { min-width: 0; align-self: start; }
+.wireframe .surface > h4 { display: flex; align-items: start; gap: .75rem; margin: 0 0 1.5rem; color: var(--card-ink); font-size: 1.2rem; line-height: 1.3; }
+.surface h4 > i { flex-shrink: 0; line-height: inherit; }
+.wireframe .surface h5 { font-size: 1rem; margin: 1.5rem 0 var(--heading-copy-gap); }
+.wireframe .surface p { font-size: .95rem; }
+.muted { font-size: .8rem; color: var(--prism-muted); }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.message { padding: 1rem; border: 1px solid var(--card-line); border-radius: 1rem; background: color-mix(in srgb, white 72%, var(--card-tint)); min-width: 0; }
+.message > span { display: block; font-size: .8rem; color: var(--card-ink); margin-bottom: .5rem; }
+.message p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.rule { padding-top: 1.25rem; margin-top: 1.25rem; background: var(--surface-rule) center top / var(--rule-max-width) 1px no-repeat; }
+.back { justify-content: flex-start; }
+@container (max-width: 48rem) { .header { flex-wrap: wrap; gap: 1rem; } }
+@container (max-width: 30rem) { .wireframe .surface { padding: 1rem; } }

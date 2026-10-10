@@ -159,11 +159,11 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
   const returnFocusRef = useRef<HTMLElement | null>(null)
   const modalRef = useRef<HTMLDivElement | null>(null)
   const wasOpenRef = useRef(false)
-  const [aiWorkspace, setAiWorkspace] = useState(false)
+  const [aiWorkspace, setAiWorkspace] = useState<'customer' | 'service' | null>(null)
   const swipeRef = useRef({ pointerId: -1, startY: 0, currentY: 0, startTime: 0 })
   const featured = !!project
 
-  useEffect(() => { setAiWorkspace(false) }, [open, project?.id])
+  useEffect(() => { setAiWorkspace(null) }, [open, project?.id])
 
   useEffect(() => {
     intentListenerUsers += 1
@@ -346,7 +346,7 @@ export default function CaseStudyModal({ project, open, onOpenChange }: CaseStud
                       width={58}
                       className="shrink-0"
                     />
-                    <span className="min-w-0 flex-1">{aiWorkspace ? 'Service workspace' : project?.modalTitle ?? project?.title}</span>
+                    <span className="min-w-0 flex-1">{aiWorkspace === 'customer' ? 'Customer experience' : aiWorkspace === 'service' ? 'Service workspace' : project?.modalTitle ?? project?.title}</span>
                   </h2>
                 </Dialog.Title>
                 <Dialog.Close asChild>
@@ -1058,13 +1058,12 @@ function MetricStat({ metric, index }: { metric: ProjectMetric; index: number })
   return (
     <div className="modal-metric-card modal-prism-surface" data-prism-tone={METRIC_TONES[index % METRIC_TONES.length]}>
       <i className={`modal-metric-icon fa-thin ${METRIC_ICONS[index % METRIC_ICONS.length]}`} aria-hidden="true" />
-      <h4 className="result">{metric.value}</h4>
-      <p className="result-label">{metric.label}</p>
+      <div><p className="result-label">{metric.label}</p><h4 className="result">{metric.value}</h4></div>
     </div>
   )
 }
 
-function ModalContent({ project, aiWorkspace, onWorkspaceChange }: { project: Project; aiWorkspace: boolean; onWorkspaceChange: (open: boolean) => void }) {
+function ModalContent({ project, aiWorkspace, onWorkspaceChange }: { project: Project; aiWorkspace: 'customer' | 'service' | null; onWorkspaceChange: (open: 'customer' | 'service' | null) => void }) {
   const featured = true
   const originalFeatured = ORIGINAL_FEATURED_IDS.has(project.id)
   return (

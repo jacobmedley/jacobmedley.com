@@ -4485,3 +4485,23 @@ Keep the three official paper titles, dates, authors, verbatim quotations, locat
 ```
 
 Remove the feedback figure caption. Its proposed-draft status is explicit in the introduction above. Tighten the customer demo caption from 1.6 to 1.44 line height. Vertically center the feedback explanation beside its cards. Preserve timing values, labels, attribution and the distinction between measured performance and replay timings. Use the established fading rule for the workspace entry and other AI decorative separators; replace glyph arrows with the existing Font Awesome Arrow component. A build gate must catch their recurrence in the AI study and its demos.
+
+## B104: eleven AI wireframe and spacing refinements
+
+Status: APPLIED LOCALLY. Jacob's eleven October 10 comments implemented and verified. See docs/reviews/ai-wireframes-20261010/verification.md. No publication authorized.
+
+Keep the approved narrative, sample scenarios, measurements, source caveats and review requirement. Both demos open from a Quiet Prism entry card with icon, content and button. Use a shared wireframe vocabulary: current conversation first, supporting context and source documents beside it, earlier sent replies in a disclosure. On narrow screens, the service navigation selects one panel at a time. Keep actions next to the content they affect.
+
+New interface copy:
+- Customer entry heading: Customer response and recovery
+- Customer entry body: Explore the proposed response states, replay the wait, and try the routes to help. The conversation uses sample content.
+- Customer entry button: Explore the customer experience
+- Customer view title: Customer experience
+- Customer conversation heading: Conversation
+- Customer controls heading: Response states
+- Customer question label: Sample customer
+- Service history disclosure: Earlier sample replies
+- Document disclosure: Document preview
+- Catalog description: Two Quiet Prism wireframes give the current conversation priority, with response controls or context and documents alongside it. Both open from responsive entry cards and return to the reader's place in the study.
+
+Shared presentation decisions: headings immediately before body content receive 8px separation; study card headings receive 10px. Metric labels precede values in source order. Side icons align to the top of their adjacent content. Discovery eyebrows and titles form one tight group. Chain arrows sit in the middle of the gap and point down in a stacked layout. These rules adapt to content width, independent of the annotation viewport.

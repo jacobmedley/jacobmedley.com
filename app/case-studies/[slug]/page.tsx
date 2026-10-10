@@ -43,7 +43,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {section.decision && <div className="cs-decision-callout"><span className="cs-eyebrow">The Decision</span><p>{section.decision}</p></div>}
               {section.points && <ul className="cs-solution-points">{section.points.map((point) => <li key={point}>{point}</li>)}</ul>}
-              {section.id === 'results' && <dl className="cs-results-grid">{study.proof.map((proof) => <div key={proof.value}><dt>{proof.value}</dt><dd>{proof.label}</dd></div>)}</dl>}
+              {section.id === 'results' && <dl className="cs-results-grid">{study.proof.map((proof) => <div key={proof.value}><dt>{proof.label}</dt><dd>{proof.value}</dd></div>)}</dl>}
               {section.takeaway && <blockquote>{section.takeaway}</blockquote>}
             </section>
           ))}

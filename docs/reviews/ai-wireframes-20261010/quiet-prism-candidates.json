@@ -1,0 +1,67 @@
+{
+  "source_version": "B104-final-candidate",
+  "findings": [
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIExperience.module.css",
+      "line": 18,
+      "message": "color #20182566 needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIServiceWorkspace.module.css",
+      "line": 2,
+      "message": "color #faf9fc needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 3,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 4,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 6,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 8,
+      "message": "color #ffffff80 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 8,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 9,
+      "message": "color #faf9fc needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 9,
+      "message": "color #34313b09 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "path": "C:\\dev\\jacobmedley.com\\components\\case-studies\\AIStudyContent.module.css",
+      "line": 29,
+      "message": "legacy selector or cascade override needs review"
+    }
+  ],
+  "count": 10,
+  "status": "review-required"
+}

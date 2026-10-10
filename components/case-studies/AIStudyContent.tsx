@@ -6,6 +6,7 @@ import study from '@/docs/ai-chat-study.json'
 import { PrismStudyHeading, PrismStudySurface, type PrismTone } from '@/components/ui/PrismStudy'
 import { CustomerExperience } from './AIExperience'
 import AIServiceWorkspace from './AIServiceWorkspace'
+import AIDemoEntry from './AIDemoEntry'
 import StudyIntro from '@/components/ui/StudyIntro'
 import ExperienceDisclosure from '@/components/ui/ExperienceDisclosure'
 import Arrow from './Arrow'
@@ -32,12 +33,14 @@ function StudyCard({ card, headingLevel = 'h4', stacked = false }: {
 }
 
 export default function AIStudyContent({ readingPage = false, onWorkspaceChange }: {
-  readingPage?: boolean; onWorkspaceChange?: (open: boolean) => void
+  readingPage?: boolean; onWorkspaceChange?: (open: 'customer' | 'service' | null) => void
 }) {
   const articleRef = useRef<HTMLElement>(null)
   const entryRef = useRef<HTMLButtonElement>(null)
+  const customerEntryRef = useRef<HTMLButtonElement>(null)
+  const returnEntry = useRef<HTMLButtonElement | null>(null)
   const savedScroll = useRef<number | null>(null)
-  const [workspace, setWorkspace] = useState(false)
+  const [workspace, setWorkspace] = useState<'customer' | 'service' | null>(null)
   const [active, setActive] = useState<string>('finding')
   const headingLevel = readingPage ? 'h2' : 'h3'
   const subheading = readingPage ? 'h3' : 'h4'
@@ -49,7 +52,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
     const top = workspace ? 0 : savedScroll.current
     if (root) root.scrollTop = top
     else window.scrollTo({ top, behavior: 'instant' })
-    if (!workspace) entryRef.current?.focus({ preventScroll: true })
+    if (!workspace) returnEntry.current?.focus({ preventScroll: true })
   }, [workspace])
 
   useEffect(() => {
@@ -81,16 +84,18 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
     }
   }, [workspace])
 
-  const openWorkspace = () => {
+  const openWorkspace = (view: 'customer' | 'service') => {
+    returnEntry.current = view === 'customer' ? customerEntryRef.current : entryRef.current
     savedScroll.current = articleRef.current?.closest('.modal-body')?.scrollTop ?? window.scrollY
-    setWorkspace(true)
-    onWorkspaceChange?.(true)
+    setWorkspace(view)
+    onWorkspaceChange?.(view)
   }
-  const closeWorkspace = () => { setWorkspace(false); onWorkspaceChange?.(false) }
+  const closeWorkspace = () => { setWorkspace(null); onWorkspaceChange?.(null) }
 
   return <article ref={articleRef} className={styles.story} data-ai-workspace={workspace || undefined}>
-    {workspace && <AIServiceWorkspace onBack={closeWorkspace} />}
-    <div hidden={workspace}>
+    {workspace === 'service' && <AIServiceWorkspace onBack={closeWorkspace} />}
+    {workspace === 'customer' && <CustomerExperience customer={study.assets['P03-A']} timing={study.assets['P03-C']} headingLevel={subheading} onBack={closeWorkspace} />}
+    <div hidden={!!workspace}>
       <nav className={styles.sectionNav} aria-label="In this case study">{sections.map(([id, label, icon, tone]) => <a key={id} data-prism-tone={tone} href={`#ai-${id}`} aria-current={active === id ? 'location' : undefined} onClick={event => {
         event.preventDefault()
         const target = articleRef.current?.querySelector<HTMLElement>(`#ai-${id}`)
@@ -109,7 +114,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <p className={styles.sectionCopy}>{e.discovery.intro}</p>
         <div className={styles.threeCards}>{e.discovery.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} />)}</div>
         <figure className={styles.evidence}>
-          <PrismStudySurface tone="gold"><ol className={styles.nodes}>{e.discovery.chain.map((node, index) => <li key={node.label}>{index > 0 && <span className={styles.connector}><Arrow /></span>}<i className={`fa-thin ${node.icon}`} aria-hidden="true" /><span>{node.label}</span><strong>{node.heading}</strong><p>{node.body}</p></li>)}</ol></PrismStudySurface>
+          <PrismStudySurface tone="gold"><ol className={styles.nodes}>{e.discovery.chain.map((node, index) => <li key={node.label}>{index > 0 && <span className={styles.connector}><Arrow /></span>}<i className={`fa-thin ${node.icon}`} aria-hidden="true" /><div className={styles.nodeHeading}><span>{node.label}</span><strong>{node.heading}</strong></div><p>{node.body}</p></li>)}</ol></PrismStudySurface>
           <figcaption>{study.assets['P03-E'].caption}</figcaption>
         </figure>
       </section>
@@ -129,12 +134,11 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
 
       <section className={styles.section} aria-labelledby="ai-waiting">
         <PrismStudyHeading id="ai-waiting" icon="fa-stopwatch" level={headingLevel}>{e.waiting.heading}</PrismStudyHeading>
-        <div className={styles.timings} id="ai-response-timings">{e.waiting.timings.map(item => <PrismStudySurface key={item.label} tone={item.tone as PrismTone} className={styles.timingCard}><i className={`fa-thin ${item.icon}`} aria-hidden="true" /><div><strong>{item.value}</strong><span>{item.label}</span></div></PrismStudySurface>)}</div>
+        <div className={styles.timings} id="ai-response-timings">{e.waiting.timings.map(item => <PrismStudySurface key={item.label} tone={item.tone as PrismTone} className={styles.timingCard}><i className={`fa-thin ${item.icon}`} aria-hidden="true" /><div><span>{item.label}</span><strong>{item.value}</strong></div></PrismStudySurface>)}</div>
         <p className={styles.note}>{e.waiting.measurementNote}</p>
-        <div className={styles.split}>
-          <div className={styles.sectionCopy}>{e.waiting.paragraphs.map(text => <p key={text}>{text}</p>)}<p>{e.waiting.requirements}</p><p className={styles.note}>{e.waiting.note}</p></div>
-          <CustomerExperience customer={study.assets['P03-A']} timing={study.assets['P03-C']} headingLevel={subheading} />
-        </div>
+        <div className={styles.proseColumns}><div>{e.waiting.paragraphs.slice(0, 2).map(text => <p key={text}>{text}</p>)}</div><div>{e.waiting.paragraphs.slice(2).map(text => <p key={text}>{text}</p>)}<p>{e.waiting.requirements}</p></div></div>
+        <p className={styles.note}>{e.waiting.note}</p>
+        <AIDemoEntry id="ai-customer-entry" icon="fa-comments" tone="plum" title="Customer response and recovery" body="Explore the proposed response states, replay the wait, and try the routes to help. The conversation uses sample content." action="Explore the customer experience" buttonRef={customerEntryRef} onOpen={() => openWorkspace('customer')} headingLevel={subheading} />
         <div className={styles.feedback} id="ai-feedback-flow">
           <div><Subheading>{e.originalDrafts.heading}</Subheading><p>{e.originalDrafts.intro}</p><p>{e.originalDrafts.review}</p></div>
           <div className={styles.cardStack}>{e.originalDrafts.steps.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} stacked />)}</div>
@@ -144,7 +148,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
       <section className={styles.section} aria-labelledby="ai-review">
         <PrismStudyHeading id="ai-review" icon="fa-user" level={headingLevel}>{e.representative.heading}</PrismStudyHeading>
         <div className={styles.split}><div className={styles.cardStack} id="ai-representative-context">{e.representative.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} stacked />)}</div><div className={styles.cardStack}>{e.representative.priorities.map(card => <StudyCard key={card.label} card={card} headingLevel={subheading} stacked />)}</div></div>
-        <div id="ai-workspace-entry" className={styles.workspaceEntry} data-prism-tone="slate"><hr className="solid-center" aria-hidden="true" /><i className="fa-thin fa-table-columns" aria-hidden="true" /><div><Subheading>Requirements and future concepts</Subheading><p>{e.representative.demoNote}</p></div><button ref={entryRef} type="button" onClick={openWorkspace}>{e.representative.cta}<Arrow /></button><hr className="solid-center" aria-hidden="true" /></div>
+        <AIDemoEntry id="ai-workspace-entry" icon="fa-table-columns" tone="slate" title="Requirements and future concepts" body={e.representative.demoNote} action={e.representative.cta} buttonRef={entryRef} onOpen={() => openWorkspace('service')} headingLevel={subheading} />
       </section>
 
       <section className={styles.section} aria-labelledby="ai-outcome">

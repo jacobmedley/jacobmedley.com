@@ -1,5 +1,37 @@
 # Status
 
+## October 10, 2026: eleven AI wireframe refinements
+
+B104 applied locally using Quiet Prism Adherence and Human-Centered Web Design.
+Both customer and service demos now open through responsive icon/content/action
+cards. Shared wireframe styles give the conversation priority, keep context and
+documents beside it on desktop, and adapt below a 48rem content width. Earlier
+sample replies and PDF preview expand on demand. The checkbox sizing defect is
+fixed without removing the review requirement. Discovery labels are grouped
+tightly, connectors are centered and turn down on mobile, heading/body gaps are
+8px globally and 10px in study cards, metric labels precede values, and side icons
+align at the top of content. Shared modal, career and dedicated result owners
+were updated along with the catalog.
+
+Final production build, lint/types, 14-page export, 288-image/104-reference asset
+check, scoped ESLint, standalone TypeScript, three presentation-guard tests,
+plugin fixtures and catalog validation pass (59 patterns, 196 examples). Scanner
+candidates fell from 39 to 10 with no new signatures. Browser checks cover both
+demos and story at 1351/820/390/320px, 320px text spacing, review/send/attachment
+flows, both Back paths, Escape, exact keyboard scroll restoration, mobile panel
+focus, reduced motion and forced-color selection. All 15 shared modals were
+checked for horizontal overflow. Fresh preview console: no errors.
+
+Evidence and complete changed-file list:
+`docs/reviews/ai-wireframes-20261010/verification.md`. Actual 400% zoom, screen
+readers and other engines remain unverified. No requested implementation remains.
+Branch `codex/ai-study-main-20261008`; checkpoint follows this last repository
+write. Rollback `f884b43bf201c1d38c97dd10180e8fb2ccf69272`. Preview on port 3000,
+Next.js PID 43228, managed session 68552. No deployment. Lock release and final
+commit are recorded in the closeout. The retired Exchange remains read-only;
+unique change/update handoffs are in `C:/dev/_handoffs/ai-wireframes-20261010/`,
+with coordinator receipt unverified.
+
 ## October 10, 2026: nine AI study annotation corrections
 
 B103 applied locally after Jacob resumed the held comments and invoked Human-Centered

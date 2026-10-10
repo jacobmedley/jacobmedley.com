@@ -48,7 +48,7 @@ html.motion-paused :is(.modal, .modal-backdrop, .modal .modal-dialog) {
 .resume-practice-column { position: relative; z-index: 1; min-width: 0; padding: 1.25rem .75rem; }
 .resume-practice-column + .resume-practice-column { background: linear-gradient(90deg, transparent, #94849b55 18%, #94849b55 82%, transparent) center top / 88% 1px no-repeat; }
 .resume-practice-column h3 { display: flex; min-width: 0; align-items: start; gap: .75rem; font-size: clamp(1.25rem, 1.6vw, 1.6rem); line-height: 1.25; margin: 0 0 1.5rem; overflow-wrap: anywhere; word-break: break-word; }
-.resume-practice-column h3 i { flex-shrink: 0; margin-top: .15em; color: #71577e; }
+.resume-practice-column h3 i { flex-shrink: 0; margin-top: 0; color: #71577e; }
 .resume-practice-column .fa-ul { margin: 0; padding: 0; list-style: none; }
 .resume-practice-column .fa-li { display: none; }
 .resume-practice-column li { font-size: 1rem; line-height: 1.65; margin: 0 0 1rem; }

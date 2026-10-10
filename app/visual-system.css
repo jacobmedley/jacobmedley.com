@@ -1,6 +1,7 @@
 /* September 12 system: nested surfaces, theme plaques and finite mechanical motion. */
 :root {
   --rule-max-width: 80%;
+  --heading-copy-gap: .5rem;
   --nested-icon-size: clamp(2rem, 2.1rem + .8vw, 3rem);
   --nested-icon-gap: clamp(1rem, 1.5vw, 1.5rem);
   --hero-name-size: clamp(1.8rem, 1.2rem + 1.856vw, 3.375rem);
@@ -242,12 +243,12 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .modal-metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @container (max-width: 32rem) { .modal-metric-grid { grid-template-columns: minmax(0, 1fr); } }
 .modal-study-content .modal-metric-card {
-  display: flex; flex-direction: column; align-items: flex-start;
-  min-height: 12.9375rem; text-align: left; color: var(--card-ink);
+  display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: start; gap: 1rem;
+  min-height: 0; text-align: left; color: var(--card-ink);
 }
-.modal-metric-icon { position: relative; z-index: 1; align-self: flex-end; min-height: 1.5rem; font-size: 1.4375rem; line-height: 1; color: var(--card-ink); }
+.modal-metric-icon { position: relative; z-index: 1; align-self: start; min-height: 1.5rem; font-size: 1.4375rem; line-height: 1; color: var(--card-ink); }
 .modal-metric-card .result {
-  margin: 1.25rem 0 .6875rem;
+  margin: .5rem 0 0;
   color: var(--card-ink); font-size: clamp(2.625rem, 5cqi, 4rem);
   line-height: 1; letter-spacing: -.04em; font-weight: 300; overflow-wrap: anywhere;
 }
@@ -270,7 +271,7 @@ p, .modal-intro-copy p, .modal-study-content p, .resume-experience-copy p { line
 .modal-narrative-card .fa-ul { margin-left: 1.25rem; }
 .modal-study-content .modal-section-content { padding-inline: 0; }
 
-.modal-info-card-icon { border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--card-ink); }
+.modal-info-card-icon { align-self: start; place-items: start center; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--card-ink); }
 .modal-info-card { align-items: start; }
 .modal-info-card strong { color: var(--card-ink); font-weight: 500; }
 .modal-prism-list { display: grid; gap: .875rem; padding: 0; border: 0; background: none; box-shadow: none; }
@@ -544,7 +545,9 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 .modal-study-content > .row:has(> div > :is(h2,h3,h4,h5,.modal-section-heading)) > div { margin-top: 0; }
 .modal-study-content > :first-child, .modal-study-content > .row:first-child > div { margin-top: 0; }
 .modal-full-bleed .modal-study-content > .row:first-child { margin-top: 0; }
-.modal-study-content :is(h2,h3,h4,h5) { margin-bottom: 0; }
+/* Shared heading-to-copy rhythm, including nested study surfaces. */
+:is(main, .modal-study-content) :is(h2,h3,h4,h5,h6):has(+ :is(p,ul,ol,dl)) { margin-bottom: var(--heading-copy-gap); }
+:is(main, .modal-study-content) :is(h2,h3,h4,h5,h6) + :is(p,ul,ol,dl) { margin-top: 0; }
 @media (min-width: 992px) {
   .modal-theme-thinking .personalization-rays { left: 25%; }
   .modal-theme-thinking .project-geometry-workshops > i, .modal-theme-thinking .project-geometry-split-test > i, .modal-theme-thinking .project-geometry-roadmap > i { left: 25% !important; }
@@ -579,7 +582,7 @@ html:not(.motion-hidden) [data-motion-root]:not(.motion-offscreen) :is(.project-
 
 /* Bare section icons own one inset token; text scales it and mobile removes it. */
 .modal-study-content { --section-icon: 2rem; --section-icon-gap: 1rem; --section-content-inset: calc(var(--section-icon) + var(--section-icon-gap)); }
-.modal-section-heading { gap: var(--section-icon-gap, 1rem); }
+.modal-section-heading { align-items: flex-start; gap: var(--section-icon-gap, 1rem); }
 .modal-section-heading > span { width: var(--section-icon, 2rem); height: var(--section-icon, 2rem); flex-basis: var(--section-icon, 2rem); border: 0; border-radius: 0; background: none; padding: 0; aspect-ratio: auto; }
 .modal-section-heading > span i { font-size: var(--section-icon, 2rem); }
 .modal-section-content { padding-inline: var(--section-content-inset); }

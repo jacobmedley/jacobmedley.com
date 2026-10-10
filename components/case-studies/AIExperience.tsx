@@ -1,9 +1,10 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState, useId } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useId } from 'react'
 import { PrismStudySurface } from '@/components/ui/PrismStudy'
 type StudyAsset = { id: string; name: string; caption: string; alt: string }
 import styles from './AIExperience.module.css'
+import wire from './AIWireframe.module.css'
 
 type Stage = 'pending' | 'ack' | 'hold' | 'patience' | 'failure' | 'critical' | 'balance'
 type DialogKind = 'contact' | 'articles' | 'demo'
@@ -44,8 +45,10 @@ function DemoDialog({ kind, setKind, dialogRef, triggerRef }: {
   </dialog>
 }
 
-export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { customer: StudyAsset; timing: StudyAsset; headingLevel?: 'h3' | 'h4' }) {
+export function CustomerExperience({ customer, timing, headingLevel = 'h4', onBack }: { customer: StudyAsset; timing: StudyAsset; headingLevel?: 'h3' | 'h4'; onBack?: () => void }) {
   const Heading = headingLevel
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  useLayoutEffect(() => { headingRef.current?.focus({ preventScroll: true }) }, [])
   const [stage, setStage] = useState<Stage>('failure')
   const [scenario, setScenario] = useState<'delay' | 'balance'>('delay')
   const [running, setRunning] = useState(false)
@@ -125,40 +128,42 @@ export function CustomerExperience({ customer, timing, headingLevel = 'h4' }: { 
   const state = stage === 'pending' ? null : stages[stage]
   const showHelp = stage === 'failure' || stage === 'critical' || stage === 'balance'
 
-  return <div className={styles.customerSequence} id="ai-customer-demo">
+  return <div className={`${wire.wireframe} ${styles.customerSequence}`} id="ai-customer-demo" data-prism-tone="plum">
+    {onBack && <button className={wire.back} type="button" data-ai-back onClick={onBack}><i className="fa-thin fa-arrow-left" aria-hidden="true" />Back to case study</button>}
+    <header className={wire.header}><div><span className={wire.eyebrow}>Reconstruction</span><h3 ref={headingRef} tabIndex={-1}>Customer experience</h3><p>Choose a state to see the response, or replay the wait.</p></div></header>
     <figure className={styles.figure} aria-label={customer.alt}>
-      <PrismStudySurface className={styles.panel} tone="plum">
-        <div className={styles.panelHead}><div><Heading>Try the response states</Heading><p>Choose a state to see the response, or replay the wait.</p></div><span className={styles.chip}>Reconstruction</span></div>
-        <div className={styles.demoBody}>
-          <div className={styles.controls}>
-            <label htmlFor="ai-scenario">Scenario</label>
-            <select id="ai-scenario" value={scenario} onChange={event => {
-              const value = event.target.value as 'delay' | 'balance'
-              stopRun(); setScenario(value); setStage(value === 'balance' ? 'balance' : 'failure')
-              setElapsed(value === 'balance' ? 'Review state · Referral' : 'Review state · 10 s')
-            }}><option value="delay">Slow response</option><option value="balance">Account-balance request</option></select>
-          </div>
-          <div className={styles.stateRail} role="group" aria-label="Select a response state">{rail.map(item => <button type="button" key={item.stage} aria-pressed={scenario === 'delay' && stage === item.stage} onClick={() => selectStage(item.stage)}><strong>{item.time}</strong><span>{item.label}</span></button>)}</div>
-          <div className={styles.replayRow}>
-            <button type="button" className={styles.primary} disabled={scenario === 'balance'} onClick={runScenario}>{running ? 'Stop replay' : 'Replay 10 seconds'}</button>
-            <span aria-live="off">{elapsed}</span>
-          </div>
-          <div className={styles.chat}>
-            <p className={styles.customerQuestion}>{scenario === 'balance' ? 'What is my account balance?' : 'Where can I find help with my account?'}</p>
-            <p className={styles.assistantMeta}>Assistant · {state?.name ?? 'Question sent'}</p>
-            <div className={styles.assistantMessage} role="status" aria-live="polite" aria-atomic="true">
-              {stage === 'ack' ? <><span className={styles.visuallyHidden}>{state?.message}</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></> : state?.message ?? 'The question has been sent.'}
+      <div className={styles.layout}>
+        <PrismStudySurface className={`${wire.surface} ${styles.conversation}`} tone="plum">
+          <Heading><i className="fa-thin fa-comments" aria-hidden="true" />Conversation</Heading>
+          <div className={wire.message}><span>Sample customer</span><p>{scenario === 'balance' ? 'What is my account balance?' : 'Where can I find help with my account?'}</p></div>
+          <div className={styles.answer}>
+            <i className="fa-thin fa-comment" aria-hidden="true" />
+            <div><p className={styles.assistantMeta}>Assistant · {state?.name ?? 'Question sent'}</p>
+              <div className={styles.assistantMessage} role="status" aria-live="polite" aria-atomic="true">
+                {stage === 'ack' ? <><span className={styles.visuallyHidden}>{state?.message}</span><span className={styles.dots} aria-hidden="true"><i /><i /><i /></span></> : state?.message ?? 'The question has been sent.'}
+              </div>
+              {showHelp && <div className={`${wire.actions} ${styles.helpActions}`}><button type="button" onClick={event => openDialog('contact',event.currentTarget)}>Contact account manager</button><button type="button" onClick={event => openDialog('articles',event.currentTarget)}>Browse help articles</button></div>}
             </div>
-            {showHelp && <div className={styles.helpActions}><button type="button" onClick={event => openDialog('contact',event.currentTarget)}>Contact account manager</button><button type="button" onClick={event => openDialog('articles',event.currentTarget)}>Browse help articles</button></div>}
           </div>
-          <div className={styles.secondaryControls}>
+          <p className={`${wire.rule} ${styles.panelFoot}`}>No live AI, account connection, or support contact.</p>
+        </PrismStudySurface>
+        <PrismStudySurface className={`${wire.surface} ${styles.controls}`} tone="slate">
+          <Heading><i className="fa-thin fa-stopwatch" aria-hidden="true" />Response states</Heading>
+          <label htmlFor="ai-scenario">Scenario</label>
+          <select id="ai-scenario" value={scenario} onChange={event => {
+            const value = event.target.value as 'delay' | 'balance'
+            stopRun(); setScenario(value); setStage(value === 'balance' ? 'balance' : 'failure')
+            setElapsed(value === 'balance' ? 'Review state · Referral' : 'Review state · 10 s')
+          }}><option value="delay">Slow response</option><option value="balance">Account-balance request</option></select>
+          <div className={styles.stateRail} role="group" aria-label="Select a response state">{rail.map(item => <button type="button" key={item.stage} aria-pressed={scenario === 'delay' && stage === item.stage} onClick={() => selectStage(item.stage)}><span>{item.label}</span><strong>{item.time}</strong></button>)}</div>
+          <div className={styles.replayRow}><button type="button" className={wire.primary} disabled={scenario === 'balance'} onClick={runScenario}>{running ? 'Stop replay' : 'Replay 10 seconds'}</button><span aria-live="off">{elapsed}</span></div>
+          <div className={`${wire.actions} ${wire.rule} ${styles.secondaryControls}`}>
             <button type="button" onClick={() => { stopRun(); setScenario('delay'); setStage('critical'); setElapsed('Immediate failure exit') }}>Critical error</button>
             <button type="button" onClick={reset}>Reset</button>
             <button type="button" aria-label="About this conversation demonstration" onClick={event => openDialog('demo',event.currentTarget)}>About this demo</button>
           </div>
-        </div>
-        <div className={styles.panelFoot}>No live AI, account connection, or support contact.</div>
-      </PrismStudySurface>
+        </PrismStudySurface>
+      </div>
       <figcaption>{customer.caption} {timing.caption}</figcaption>
     </figure>
     <DemoDialog kind={dialogKind} setKind={setDialogKind} dialogRef={dialogRef} triggerRef={triggerRef} />

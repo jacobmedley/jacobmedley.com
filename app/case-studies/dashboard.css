@@ -29,10 +29,10 @@ html { scroll-padding-top: var(--cs-scroll-padding, 0px); }
 }
 .cs-stat::before { content: ''; position: absolute; right: -48px; top: -55px; width: 165px; height: 165px; border: 1px solid var(--cs-art-line); border-radius: 50%; opacity: .4; pointer-events: none; }
 .cs-stat:hover { box-shadow: 0 12px 28px #30293614; }
-.cs-stat-top { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 12px; font-size: 14px; line-height: 1.45; letter-spacing: .03em; }
+.cs-stat-top { display: flex; align-items: start; justify-content: space-between; width: 100%; gap: 12px; font-size: 14px; line-height: 1.45; letter-spacing: .03em; }
 .cs-stat-top i { font-size: 23px; }
-.cs-stat > strong { font-size: clamp(42px, 4.4vw, 64px); line-height: 1; letter-spacing: -2.5px; font-weight: 300; margin-block: 20px 11px; white-space: nowrap; }
-.cs-stat-label { font-size: 14px; line-height: 1.45; max-width: 165px; padding-right: 12px; }
+.cs-stat > strong { font-size: clamp(42px, 4.4vw, 64px); line-height: 1; letter-spacing: -2.5px; font-weight: 300; margin-block: 8px 0; white-space: nowrap; }
+.cs-stat-label { margin-top: 16px; font-size: 14px; line-height: 1.45; max-width: 165px; padding-right: 12px; }
 .cs-stat-note { margin-top: 8px; padding-right: 12px; font-size: 14px; line-height: 1.45; }
 .cs-stat > .cs-arrow { position: absolute; right: 18px; bottom: 20px; }
 .cs-index .cs-browse { --cs-browse-sticky-height: 112px; position: relative; }

@@ -1,0 +1,462 @@
+{
+  "functional": {
+    "initialSendDisabled": true,
+    "reviewEnablesSend": true,
+    "editRequiresReview": true,
+    "previewOpen": true,
+    "sent": "Reply sent in this demo. Nothing was sent outside this workspace.",
+    "history": "Earlier sample replies (1)\nRepresentative · Sample reply\n\nSample reply for review.\n\nAccount update form",
+    "emptySearch": true,
+    "serviceReturnFocus": "Explore the service workspace",
+    "replayStatus": "I couldn’t answer that. Your account manager can help.",
+    "balance": "Please contact your account manager to confirm your account balance.",
+    "helpDialog": true,
+    "customerReturnFocus": "Explore the customer experience",
+    "mobileAttachFocus": "ai-panel-conversation",
+    "reducedMotion": "none",
+    "forcedColorMarker": {
+      "color": "rgb(26, 235, 255)",
+      "outline": "2px"
+    },
+    "standaloneTitle": true,
+    "standaloneReturnFocus": "Explore the customer experience",
+    "scrollRestored": {
+      "after": 4241,
+      "anchor": "none",
+      "before": 4255
+    },
+    "keyboardScrollRestored": {
+      "after": 4241,
+      "before": 4241
+    }
+  },
+  "responsive": [
+    {
+      "checkboxWidth": 20,
+      "client": 1128,
+      "labelHeight": 22.796875,
+      "labelWidth": 559.578125,
+      "scroll": 1128,
+      "shownPanels": [
+        "ai-panel-conversation",
+        "ai-panel-account",
+        "ai-panel-documents"
+      ],
+      "view": "service",
+      "width": 1351
+    },
+    {
+      "client": 1128,
+      "scroll": 1128,
+      "view": "customer",
+      "width": 1351
+    },
+    {
+      "arrowTransform": "matrix(1, 0, 0, 1, -10, -8)",
+      "cardGap": "10px",
+      "client": 1128,
+      "entryBorders": "1px",
+      "entryColumns": "40px 635.656px 286.344px",
+      "scroll": 1128,
+      "view": "story",
+      "width": 1351
+    },
+    {
+      "checkboxWidth": 20,
+      "client": 708,
+      "labelHeight": 22.796875,
+      "labelWidth": 580.8125,
+      "scroll": 708,
+      "shownPanels": [
+        "ai-panel-conversation"
+      ],
+      "view": "service",
+      "width": 820
+    },
+    {
+      "client": 708,
+      "scroll": 708,
+      "view": "customer",
+      "width": 820
+    },
+    {
+      "arrowTransform": "matrix(1, 0, 0, 1, -10, -8)",
+      "cardGap": "10px",
+      "client": 708,
+      "entryBorders": "1px",
+      "entryColumns": "40px 552.812px",
+      "scroll": 708,
+      "view": "story",
+      "width": 820
+    },
+    {
+      "checkboxWidth": 20,
+      "client": 378,
+      "labelHeight": 21,
+      "labelWidth": 280,
+      "scroll": 378,
+      "shownPanels": [
+        "ai-panel-conversation"
+      ],
+      "view": "service",
+      "width": 390
+    },
+    {
+      "client": 378,
+      "scroll": 378,
+      "view": "customer",
+      "width": 390
+    },
+    {
+      "arrowTransform": "matrix(0, 1, -1, 0, -10, -8)",
+      "cardGap": "10px",
+      "client": 378,
+      "entryBorders": "1px",
+      "entryColumns": "300px",
+      "scroll": 378,
+      "view": "story",
+      "width": 390
+    },
+    {
+      "checkboxWidth": 20,
+      "client": 308,
+      "labelHeight": 42,
+      "labelWidth": 210,
+      "scroll": 308,
+      "shownPanels": [
+        "ai-panel-conversation"
+      ],
+      "view": "service",
+      "width": 320
+    },
+    {
+      "client": 308,
+      "scroll": 308,
+      "view": "customer",
+      "width": 320
+    },
+    {
+      "arrowTransform": "matrix(0, 1, -1, 0, -10, -8)",
+      "cardGap": "10px",
+      "client": 308,
+      "entryBorders": "1px",
+      "entryColumns": "230px",
+      "scroll": 308,
+      "view": "story",
+      "width": 320
+    }
+  ],
+  "accessible": [
+    {
+      "client": 308,
+      "review": 210,
+      "scroll": 308,
+      "view": "service",
+      "width": 320
+    },
+    {
+      "client": 308,
+      "review": null,
+      "scroll": 308,
+      "view": "customer",
+      "width": 320
+    }
+  ],
+  "sharedCheck": {
+    "headings": [],
+    "metrics": [
+      {
+        "display": "grid",
+        "iconTop": 800.7945556640625,
+        "order": [
+          "of company revenue growth",
+          "47%"
+        ],
+        "textTop": 800.7945556640625
+      },
+      {
+        "display": "grid",
+        "iconTop": 800.7945556640625,
+        "order": [
+          "of overall company revenue",
+          "20%"
+        ],
+        "textTop": 800.7945556640625
+      },
+      {
+        "display": "grid",
+        "iconTop": 991.28515625,
+        "order": [
+          "of total company lead capture",
+          "27%"
+        ],
+        "textTop": 991.28515625
+      },
+      {
+        "display": "grid",
+        "iconTop": 991.28515625,
+        "order": [
+          "weeks to launch a property",
+          "6 to 2"
+        ],
+        "textTop": 991.28515625
+      }
+    ],
+    "overflow": {
+      "client": 1128,
+      "scroll": 1128
+    }
+  },
+  "sharedAudit": [
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "webmd",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "dentalplans",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "bumblebeemd",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "hydra",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "opfred",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 24,
+      "project": "ai-chat",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "split-test",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 2,
+      "project": "call-center-ux",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "marketing-auto",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "workshops",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "roadmap",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "personas",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "wrong",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "reveal",
+      "scroll": 1128,
+      "zeroGaps": []
+    },
+    {
+      "client": 1128,
+      "headingCount": 0,
+      "project": "viva",
+      "scroll": 1128,
+      "zeroGaps": []
+    }
+  ],
+  "careerCheck": {
+    "client": 305,
+    "scroll": 305,
+    "stats": [
+      {
+        "label": 677.171875,
+        "value": 725.765625
+      },
+      {
+        "label": 709.46875,
+        "value": 778.359375
+      },
+      {
+        "label": 934.953125,
+        "value": 1064.734375
+      },
+      {
+        "label": 914.65625,
+        "value": 983.546875
+      }
+    ]
+  },
+  "proofCheck": {
+    "client": 305,
+    "proof": [
+      {
+        "label": "weeks to launch a property",
+        "labelTop": 4941.40625,
+        "value": "6 → 2",
+        "valueTop": 4969.703125
+      },
+      {
+        "label": "properties on one platform",
+        "labelTop": 5052.203125,
+        "value": "5",
+        "valueTop": 5080.5
+      },
+      {
+        "label": "of company revenue growth in one measured year",
+        "labelTop": 5163,
+        "value": "47%",
+        "valueTop": 5211.59375
+      }
+    ],
+    "scroll": 305
+  },
+  "storyMetrics": {
+    "arrows": [
+      {
+        "arrow": {
+          "height": 16,
+          "width": 20,
+          "x": 490.15625,
+          "y": -2563.0625
+        },
+        "node": {
+          "height": 140.75,
+          "width": 312.671875,
+          "x": 514.15625,
+          "y": -2625.4375
+        }
+      },
+      {
+        "arrow": {
+          "height": 16,
+          "width": 20,
+          "x": 834.828125,
+          "y": -2563.0625
+        },
+        "node": {
+          "height": 140.75,
+          "width": 312.65625,
+          "x": 858.828125,
+          "y": -2625.4375
+        }
+      }
+    ],
+    "cardGap": "10px",
+    "deliveredGap": "8px",
+    "entry": [
+      {
+        "height": 32,
+        "width": 40,
+        "x": 169.5,
+        "y": 465.953125
+      },
+      {
+        "height": 78.1875,
+        "width": 635.65625,
+        "x": 229.5,
+        "y": 465.953125
+      },
+      {
+        "height": 51.59375,
+        "width": 286.34375,
+        "x": 885.15625,
+        "y": 465.953125
+      }
+    ],
+    "nodeGroupGap": "3.2px",
+    "timingChildren": [
+      {
+        "height": 16,
+        "text": "Initial average",
+        "width": 81.828125,
+        "x": 225.5,
+        "y": -1340.78125
+      },
+      {
+        "height": 62.390625,
+        "text": "~15 s",
+        "width": 98.140625,
+        "x": 225.5,
+        "y": -1321.78125
+      }
+    ],
+    "timingContentTop": -1345.78125,
+    "timingIconTop": -1345.78125
+  },
+  "chainCheck": [
+    {
+      "arrow": null,
+      "bottom": 417.03125,
+      "centerX": 190,
+      "top": 295.71875
+    },
+    {
+      "arrow": {
+        "centerX": 190,
+        "centerY": 433.03125
+      },
+      "bottom": 570.34375,
+      "centerX": 190,
+      "top": 449.03125
+    },
+    {
+      "arrow": {
+        "centerX": 190,
+        "centerY": 586.34375
+      },
+      "bottom": 743.09375,
+      "centerX": 190,
+      "top": 602.34375
+    }
+  ]
+}

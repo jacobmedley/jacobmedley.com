@@ -17,14 +17,14 @@ export default function CareerStats() {
         <Link data-motion-root data-atmosphere className="cs-stat cs-theme-plum" href="/#resume" aria-label="20+ years in design. Read experience">
           <CornerWaves />
           <span className="cs-stat-top">Experience <i className="fa-thin fa-compass-drafting" aria-hidden="true" /></span>
-          <strong>20+</strong><span className="cs-stat-label">Years in design</span><i className="cs-arrow fa-thin fa-arrow-right" aria-hidden="true" />
+          <span className="cs-stat-label">Years in design</span><strong>20+</strong><i className="cs-arrow fa-thin fa-arrow-right" aria-hidden="true" />
         </Link>
         {metrics.map((metric) => (
           <Link data-motion-root data-atmosphere className={`cs-stat cs-theme-${metric.theme}`} href={`/case-studies/${platform.slug}/`} key={metric.eyebrow}>
             <CornerWaves />
           <span className="cs-stat-top">{metric.eyebrow}<i className={`fa-thin ${metric.icon}`} aria-hidden="true" /></span>
-            <strong>{metric.value}</strong>
             <span className="cs-stat-label">{metric.label}</span>
+            <strong>{metric.value}</strong>
             {'note' in metric ? <span className="cs-stat-note">{metric.note}</span> : null}
             <Arrow />
           </Link>

@@ -4,6 +4,7 @@
 B60 and B64 are implemented in the local full-site integration, not published.
 B96-B99 are applied locally. B99 records Jacob's clarified AI launch account.
 B100 is applied locally: accuracy, speed, workflow fit and original feedback drafts.
+B102-B107 are applied locally. B106 reconciles public employment copy; B107 governs anonymous project attribution.
 B101 is applied locally: discovery narrative, 2023–2024 research, measured timing, enabled streaming, and service-workspace reconstruction. Not deployed.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
@@ -43,9 +44,9 @@ the register will drift.
 | Designed PDF | resume workstream | rebuild after v1r6 |
 | LinkedIn | Jacob, manual | UNMANAGED, not in register |
 
-Current-employer operating figures and their source workbook are private and are
-not carried in this public register. See private reconciliation REC-0064 and
-REC-0065. Do not recover them from repository history for public copy.
+The current public employment wording is recorded in B106. Raw source workbooks,
+personal source details and additional private operating records remain excluded.
+Do not recover them from repository history for public copy.
 
 Title standard: "Product Design" is constant. Seniority varies by target.
 Website brand title: "Product & Design Leader," per Jacob, September 6, 2026.
@@ -90,73 +91,19 @@ run shorter. It must never contradict this.
 
 ## Health-E Commerce
 
-**PUBLICATION HOLD.** Detailed current-employer role dates, team structure,
-staffing, budgets, function-growth details, and operating metrics are private.
-They are intentionally omitted from this public register.
-
-Private provenance: REC-0064 and REC-0065.
-
-The public site now omits the detailed current-employer entry until a
-public-safe version is explicitly approved. Do not reconstruct the removed details
-from repository history.
+Jacob directed restoration from the reconciled records on October 10, 2026.
+The approved titles, dates and narrative are recorded in B106, sourced from the
+current resume master and reconciliation rulings. This supersedes the earlier
+omission for that content. Personal source data remains excluded.
 
 ## Mutual of America Financial Group
 
 **Senior UX Designer**, 2023 to 2025
 Boca Raton, FL
 
-> I led research and scoping for an internally built conversational assistant with
-> two outputs: a Salesforce-integrated helper for service and account management
-> representatives, built with a service designer, and a public assistant on the main
-> website. Handling retirement and financial account data meant security, compliance,
-> and accuracy governed every decision.
->
-> I reviewed emerging research on LLM behavior and conversational patterns and
-> partnered with a data scientist on the model and data layer. That research
-> identified hallucination risk before it was widely understood. Testing confirmed it:
-> asked for an account balance, the system returned a specific figure and supporting
-> detail. The only compliant answer was to refer the customer to their account
-> manager. I traced the cause to a sample account statement sitting in the training
-> documentation.
->
-> I defined the interaction requirements. Conduct came first, since the assistant
-> stood in for the opening minutes of a service conversation. It had to stay
-> courteous, stay useful, and never dead-end a customer. From there: response-time
-> feedback built on the standard anchors, streaming responses, explicit system status
-> and failure states, escalation into a live service channel or the right department,
-> compliance alerting that flagged exposure in what internal users were sending, and
-> account and chat history summaries so the assistant and the agent both opened with
-> context. I specified ingestion quality as well, since the source corpus arrived as
-> mixed PDFs, documents, spreadsheets, presentations, and raster images, and what an
-> assistant knows is settled before any interface question.
->
-> A subset of the requirements shipped. I secured tracking on the customer-facing
-> assistant. The data showed early customer engagement followed by rapid dropoff
-> correlated with response speed and friction, and internal adoption that stayed low,
-> with representatives citing accuracy and wait.
+> I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences.
 
-**Note:** do not characterize leadership decisions, and do not mention the company's
-current business condition. State what was recommended, what shipped, and what the
-data showed.
-
-**Two changes from the proposed amendment, both deliberate:**
-
-1. Streaming stays in the requirements list, where it belongs as something you
-   defined. The proposed line "Streaming was not among them" was cut. Naming one
-   specific unshipped item immediately before the failure data is narration by
-   juxtaposition, and it rebuilds the grievance framing we removed on purpose. You
-   still get full credit for the recommendation. The reader is not told which items
-   were dropped, so no finger is pointed.
-2. "Early responses came back not only inaccurate but edged toward blaming the person
-   asking" was cut. It is vivid, and it is a specific claim about a named financial
-   services employer's product behavior. The hallucination finding in paragraph two
-   already carries the accuracy problem with a documented root cause. Raise the
-   conduct issue verbally if asked.
-
-**ASSISTANT WORDING STANDARD.** One internally built conversational assistant
-with two deployments. Never "two assistants," never "two LLM assistants."
-Correct: "an internally built conversational assistant with two outputs."
-Confirmed by Jacob. Applies to every surface including LinkedIn.
+Public wording governed by B106. Earlier project-specific descriptions are superseded.
 
 ## DentalPlans.com
 
@@ -338,19 +285,9 @@ private wording, figures, and business context are not reproduced here.
 
 Private provenance: REC-0064.
 
-## B3. Mutual of America paragraph three [APPLIED], commit c917fe8
-**File:** `components/sections/ResumeSection.tsx`
+## B3. Employment paragraph revision [SUPERSEDED by B106]
 
-**FIND:** paragraph three of the Mutual of America entry, in full.
-
-**REPLACE WITH:** the two paragraphs in Section A under "Mutual of America Financial Group", beginning `I defined the interaction requirements.` Copy verbatim, strip blockquote markers, preserve JSX structure and className attributes, escape apostrophes as `&apos;`.
-
-**Implementation note:** `ResumeSection.tsx` stores these as plain JS string
-literals rendered via `{p}`, not JSX text nodes, so `&apos;` was translated to
-the file's existing typographic-apostrophe convention (`’`) rather than
-inserted literally. The two paragraphs contained no apostrophes, so this
-didn't end up mattering here, but it applies to any future edit in this file
-that carries the `&apos;` instruction.
+Historical text has been withdrawn from this public record. Use the current Section A description.
 
 ## B4. DentalPlans employment entry [APPLIED], commit c917fe8; sentence corrected by B14, commit f2f0995
 **File:** `components/sections/ResumeSection.tsx`
@@ -564,18 +501,9 @@ public register.
 
 Private provenance: REC-0064.
 
-## B21. Mutual of America, service designer credit [APPLIED]
-**File:** `components/sections/ResumeSection.tsx`
+## B21. Employment collaboration wording [SUPERSEDED by B106]
 
-**Reported before editing, current scoping sentence:**
-
-> I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for customer service and account management, and a customer-facing assistant on the public site.
-
-**FIND** match count 1. **REPLACE WITH:**
-
-> I led research and scoping for an internally built conversational assistant with two outputs: a Salesforce-integrated helper for service and account management representatives, built with a service designer, and a public assistant on the main website.
-
-Credit by function only. No name.
+Historical text has been withdrawn from this public record. Use the current Section A description.
 
 ## B22. "training corpus" becomes "training warehouse" [SKIPPED — content mismatch, 0 occurrences]
 **Files checked:** `components/sections/ResumeSection.tsx`,
@@ -585,7 +513,7 @@ Credit by function only. No name.
 `grep -c "training corpus"` returned **0** in all four files. Per the FAILURE
 POLICY (content mismatch: log the edit ID and actual count, skip, continue),
 no edit was made anywhere. The nearest existing phrases are "training
-documentation" (`ResumeSection.tsx`, Mutual of America paragraph two) and
+documentation" (the historical employment entry) and
 "source corpus" (paragraph three) — neither is a literal match for "training
 corpus," so neither was touched.
 
@@ -2312,13 +2240,7 @@ Retain the separately scoped resume tools list and its historical context.
 
 Retain **Senior UX Designer**, **2023 to 2025**.
 
-I led experience research and scoping for one internally built conversational assistant with two deployments. One served internal representatives through Salesforce, with a service designer on that work. The other lived on the public website. Retirement and financial account information made accuracy, security, and escalation central to the design.
-
-I raised hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.
-
-I wrote requirements for response feedback, system status, failures, human escalation, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. The assistant was taking the opening minutes of a service conversation.
-
-I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.
+I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences.
 
 ### One Park Financial, Coconut Grove, FL
 
@@ -3777,9 +3699,9 @@ status from the recovered drafts. No Figma design or source asset is modified.
 
 Source: Jacob’s 14 October 10 browser annotations and direct narrative request.
 Supersedes B99/B100 in the active AI study: remove blame and launch-scope discussion
-before the conclusion; lead with early-2023 XD/UX discovery and user requirements.
-Jacob directly authorizes early-2023 dating, Salesforce context, and the sample
-150,000 finding here. Employer, colleague, and original customer identifiers remain
+before the conclusion; lead with XD/UX discovery and user requirements.
+B107 supersedes the earlier project timing and vendor-specific workspace wording.
+The sample 150,000 finding remains. Employer, colleague, and original customer identifiers remain
 excluded. One assistant, two deployments remains the terminology.
 
 Correction from Jacob during this task: usability testing and QA measured the user
@@ -3809,8 +3731,8 @@ for compatibility while its title and all rendered copy follow this revision.
 {
   "title": "Designing for the First Wave of Generative AI",
   "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
-  "summary": "Starting in early 2023, I brought user requirements into discovery for a conversational assistant. Emerging research and familiar interaction patterns shaped the public chat and the service workspace.",
-  "role": "Senior UX designer leading experience research and scoping",
+  "summary": "I brought user requirements into discovery for a conversational assistant. Emerging research and familiar interaction patterns shaped the public chat and the service workspace.",
+  "role": "Experience research and scoping",
   "collaboration": "Service design and an applied AI specialist",
   "outcome": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking. Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature.",
   "identity": "AI product design",
@@ -3849,7 +3771,7 @@ for compatibility while its title and all rendered copy follow this revision.
   },
   "editorial": {
     "opening": "Usability starts with the system. If the car does not start, we do not go anywhere.",
-    "context": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.",
+    "context": "I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.",
     "approach": "XD/UX belonged in discovery, where we could shape the problem and the requirements. I absorbed the emerging research, worked through the source material with an applied AI specialist, and brought familiar interaction patterns into a new kind of interface.",
     "needs": [
       {
@@ -3919,7 +3841,7 @@ for compatibility while its title and all rendered copy follow this revision.
       "heading": "Learning while the field was moving",
       "intro": "The research gave us questions to test. Could assistance shorten the work? Could it carry knowledge to a new hire? What would an experienced representative need to trust or reject a suggestion?",
       "application": "I applied that reading to both experiences: visible system feedback and a route to help for customers; context, references, and review for representatives. Familiar controls still had a job to do. A text box alone could not carry the whole service.",
-      "periodNote": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.",
+      "periodNote": "The references below cover research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.",
       "papers": [
         {
           "id": "support",
@@ -4114,7 +4036,7 @@ for compatibility while its title and all rendered copy follow this revision.
       "heading": "An assistant inside the representative’s work",
       "paragraphs": [
         "The internal assistant had two jobs: help new staff learn and help experienced staff work faster. Both groups needed accurate, compliant answers without leaving the service conversation.",
-        "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply.",
+        "I scoped the experience around the service workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply.",
         "Document lookup and sharing, an adjacent PDF viewer, suggested wording, compliance warnings, and suspicious-pattern detection formed the future feature set. These added help around the conversation while leaving judgment with the person handling it."
       ],
       "priorities": [
@@ -4130,7 +4052,7 @@ for compatibility while its title and all rendered copy follow this revision.
           "heading": "Context where the work happens",
           "tone": "sage",
           "icon": "fa-layer-group",
-          "body": "Basic Salesforce and account context, follow-up prompts, and an integrated experience."
+          "body": "Integrated account context, follow-up prompts, and an integrated experience."
         },
         {
           "label": "Could have · future",
@@ -4166,7 +4088,7 @@ for compatibility while its title and all rendered copy follow this revision.
     },
     {
       "type": "paragraph",
-      "text": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives."
+      "text": "I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives."
     },
     {
       "type": "paragraph",
@@ -4218,7 +4140,7 @@ for compatibility while its title and all rendered copy follow this revision.
     },
     {
       "type": "paragraph",
-      "text": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation."
+      "text": "The references below cover research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation."
     },
     {
       "type": "heading",
@@ -4274,7 +4196,7 @@ for compatibility while its title and all rendered copy follow this revision.
     },
     {
       "type": "paragraph",
-      "text": "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply."
+      "text": "I scoped the experience around the service workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply."
     },
     {
       "type": "paragraph",
@@ -4311,7 +4233,7 @@ for compatibility while its title and all rendered copy follow this revision.
 
 ### B101 implementation addendum: service workspace
 
-Status: APPLIED LOCALLY. Browser and build evidence is in docs/reviews/ai-discovery-20261010/verification.md. Native drag gestures remain unverified; the equivalent Attach action passed. This is a frontend reconstruction, not a recovered Salesforce screen. Sample names and documents are invented for the concept. UI actions change local state only. The representative reviews editable replies; changing a draft or attachment clears review. Scenarios cover account referral, document sharing, and suspicious-pattern review. Documents can be searched, previewed, attached by button or drag and drop, removed, and opened as PDFs. Account context, conversation history, suggested wording, follow-up prompts, escalation, send, and reset are interactive. Back restores the case-study reading position; Close retains the outer dialog action.
+Status: APPLIED LOCALLY. Browser and build evidence is in docs/reviews/ai-discovery-20261010/verification.md. Native drag gestures remain unverified; the equivalent Attach action passed. This is a frontend reconstruction, not a recovered service screen. Sample names and documents are invented for the concept. UI actions change local state only. The representative reviews editable replies; changing a draft or attachment clears review. Scenarios cover account referral, document sharing, and suspicious-pattern review. Documents can be searched, previewed, attached by button or drag and drop, removed, and opened as PDFs. Account context, conversation history, suggested wording, follow-up prompts, escalation, send, and reset are interactive. Back restores the case-study reading position; Close retains the outer dialog action.
 
 UI labels: Back to case study; Conversation; Account; Documents; Scenario; Reset workspace; Case context; Sample account; Verification pending; Account representative; Available through the service team; Conversation summary; Review guidance; Apply suggested wording; Mark for review; Review note added; Draft reply; Suggested follow-up; Add follow-up; I reviewed this reply and its attachments; Send sample reply; Reply sent in this demo; Search documents; Preview; Attach; Attached; Remove; Open PDF; No documents match your search; Clear search; Document preview; Drop a document here, or use Attach; No documents attached; Sample customer; Representative; Start a new draft; Reply ready for review; Nothing is sent outside this demo.
 
@@ -4393,7 +4315,7 @@ Canonical demonstration content:
 
 B101 supporting copy: The design reading connected those findings to the interface. Jakob Nielsen’s account of intent-based interaction and Luke Wroblewski’s conversational interface explorations helped frame the questions: how to show progress, expose sources, and give people controls around the answer.
 
-Workspace supporting labels: Account status; Reference; Context shown here represents the proposed Salesforce integration; Representative · Sample reply; Find a form or reference. Status messages name the document attached or removed and ask the representative to review again. Sent and escalation messages confirm that the action stays within the sample workspace.
+Workspace supporting labels: Account status; Reference; Context shown here represents the proposed account integration; Representative · Sample reply; Find a form or reference. Status messages name the document attached or removed and ask the representative to review again. Sent and escalation messages confirm that the action stays within the sample workspace.
 
 Sample PDF guide checklist: Check before responding. Read the customer request and conversation context. Check the relevant reference and its limits. Refer questions that need verified account information. Both PDFs are labeled Service workspace / Sample document and Demonstration only.
 
@@ -4412,8 +4334,8 @@ The static UX review inspected four original One Park images. It supports visibl
   "ai": {
     "title": "How not to design an AI assistant",
     "summary": "A real-life fable of deadlines and technology getting ahead of the people they were meant to serve.",
-    "heroSummary": "In early 2023, I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building.",
-    "role": "Senior UX designer leading product design, experience research, scoping and user requirements",
+    "heroSummary": "I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building.",
+    "role": "Product design, experience research, scoping and user requirements",
     "theme": "User First"
   },
   "projects": {
@@ -4471,7 +4393,7 @@ Keep the three official paper titles, dates, authors, verbatim quotations, locat
   ],
   "representativeCards": [
     {"heading":"Learn while serving","icon":"fa-book-open","tone":"sage","body":"New staff needed to learn; experienced staff needed to move faster. Both needed accurate, compliant answers within the service conversation."},
-    {"heading":"Keep the reply in context","icon":"fa-comments","tone":"slate","body":"I scoped account context, a conversation summary, sources and follow-up prompts around the Salesforce workspace. The representative would read, change and send the reply."},
+    {"heading":"Keep the reply in context","icon":"fa-comments","tone":"slate","body":"I scoped account context, a conversation summary, sources and follow-up prompts around the service workspace. The representative would read, change and send the reply."},
     {"heading":"Plan the next layer of help","icon":"fa-file-lines","tone":"plum","body":"Future concepts added document lookup and sharing, a PDF viewer, wording suggestions, compliance warnings and suspicious-pattern detection. Judgment stayed with the person handling the conversation."}
   ],
   "feedbackIntro":"The original feedback drafts proposed a way to rate an answer, explain a problem and keep asking. People needed useful answers. The business needed to understand where an answer had failed.",
@@ -4542,3 +4464,43 @@ Add this source to Design reading, 2023–2024:
 Source interpretation: NN/g's accordion editing is an observed prompting behavior, not its name for a disclosure control. Luke's May 2023 conversational-interface article separately discusses collapsing earlier exchanges. The July PDF article discusses source-size, extraction and quality filtering. Do not merge these into an invented study or claim a measured project result.
 
 Catalog copy: Three research and design-reading cards pair a source with an insight, design implication and limitation. Source icons sit beside dates; Thin lightbulb and paintbrush-pencil icons distinguish findings from design implications. Pull quotes are omitted.
+
+## B106: public employment descriptions
+
+Status: APPLIED LOCALLY. Jacob explicitly directed use of the existing reconciled records on October 10, 2026, superseding the LinkedIn screenshot and the earlier omission of this employment entry. No deployment authorized. Verification: docs/reviews/public-content-20261010/verification.md.
+
+### Employment description
+
+Mutual of America Financial Group, Boca Raton, FL. Retain Senior UX Designer, 2023 to 2025.
+
+I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences.
+
+This role-level description replaces the detailed project narrative in the public employment entry and retained public editorial copies. Older wording is superseded and must not be restored.
+
+### Current employment restored from reconciled records
+
+Health-E Commerce, New York, NY (Remote).
+- Director of User and Experience Design: Feb 2026 to present.
+- Director of Design: Feb 2025 to Feb 2026.
+
+I joined to restructure creative marketing and build an experience design practice the company had never had. I led four direct reports within a team of seven, with seven contractors. I used systems thinking and UX research to find the problems worth solving, then rebuilt intake, workflow and creative operations around them.
+
+Peak-season reporting showed about 72% more creative output year over year, with a much smaller increase in production hours. This is a directional comparison of delivered work.
+
+When the department split, a new creative director took the creative team and I moved full time to experience design. I defined the role and hired into it, giving interface and experience decisions dedicated owners. The function grew from one designer to two full-time designers and a contractor.
+
+I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs.
+
+Provenance: current resume master v1r9, with REC-0007/0008 for delivered-output framing, REC-0062 for confirmed staffing and REC-0063 for the retired accessibility claim. REC-0061 leaves the source-hours/person reconciliation unresolved; precise hours and derived efficiency percentages are excluded here. No source-row identities, leave details, raw workbook data or retired accessibility claim are restored. No new workbook analysis was performed.
+
+## B107: anonymous project presentation
+
+Status: APPLIED LOCALLY. October 10, 2026. No deployment authorized. Verification: docs/reviews/public-content-20261010/verification.md.
+
+- Role: Product design, experience research, scoping and user requirements.
+- Hero: I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people's work became the test of what we were building.
+- Context: I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.
+- Research period note: The references below cover research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.
+- Replace vendor-specific workspace references with service workspace or integrated account context, as appropriate. The supporting label is: Context shown here represents the proposed account integration.
+
+Research publication dates, measured response times, the sample finding and the approved anonymous narrative remain. Remove project start dates and the exact employment title from the project presentation. Scrub identifying employment/project cross-references from current public editorial records. Git history and previously published copies are outside this local content update.

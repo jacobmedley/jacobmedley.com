@@ -81,13 +81,7 @@ Retain the separately scoped resume tools list and its historical context.
 
 Retain **Senior UX Designer**, **2023 to 2025**.
 
-I led experience research and scoping for one internally built conversational assistant with two deployments. One served internal representatives through Salesforce, with a service designer on that work. The other lived on the public website. Retirement and financial account information made accuracy, security, and escalation central to the design.
-
-I raised hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.
-
-I wrote requirements for response feedback, system status, failures, human escalation, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. The assistant was taking the opening minutes of a service conversation.
-
-I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.
+I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences.
 
 ### One Park Financial, Coconut Grove, FL
 

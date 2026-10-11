@@ -1,0 +1,50 @@
+[
+  {
+    "documentOverflow": false,
+    "entries": [
+      {
+        "client": 642,
+        "open": true,
+        "scroll": 642
+      },
+      {
+        "client": 642,
+        "open": true,
+        "scroll": 642
+      }
+    ],
+    "width": 820
+  },
+  {
+    "documentOverflow": false,
+    "entries": [
+      {
+        "client": 356,
+        "open": true,
+        "scroll": 356
+      },
+      {
+        "client": 356,
+        "open": true,
+        "scroll": 356
+      }
+    ],
+    "width": 390
+  },
+  {
+    "documentOverflow": false,
+    "entries": [
+      {
+        "client": 286,
+        "open": true,
+        "scroll": 286
+      },
+      {
+        "client": 286,
+        "open": true,
+        "scroll": 286
+      }
+    ],
+    "width": 320
+  }
+]

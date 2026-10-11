@@ -1,0 +1,9 @@
+{
+  "anonymous_route_has_no_employer_identifiers": true,
+  "anonymous_copy_has_no_project_start_date": true,
+  "employment_description_has_no_project_incident": true,
+  "restored_employer_in_export": true,
+  "delivered_output_frame": true,
+  "no_disputed_efficiency_percentages": true,
+  "research_sources_retained": true
+}

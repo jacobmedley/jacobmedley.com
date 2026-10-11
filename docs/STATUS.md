@@ -1,5 +1,40 @@
 # Status
 
+## October 10, 2026: public content reconciliation
+
+B106 and B107 applied locally. Health-E Commerce is restored from the current
+resume master and reconciled records, per Jacob's direction to use the documented
+account and disregard the supplied LinkedIn screenshot. Both titles and periods,
+confirmed staffing, function-building narrative and directional 72% delivered
+output comparison are present. Precise hours and derived efficiency ratios remain
+excluded because REC-0061 still records an unresolved source reconciliation.
+The earlier publication hold no longer omits this approved employment summary.
+
+An employment entry now describes the role at a general level. The anonymous
+project presentation omits project-start dates, exact employment title and vendor
+specificity. Retained public editorial copies and identifying historical status
+references were reconciled. Git history and previously published copies remain
+outside this local update. LinkedIn and external resume files were not edited.
+
+Production build/lint/types and 14-page export, standalone TypeScript, scoped
+ESLint, 10-file presentation guard, 288-image/104-reference asset check and catalog
+validation pass (59 patterns, 197 examples, 36 tokens). Seven content checks pass.
+Browser inspection confirms both employment disclosures and no horizontal overflow
+at 820/390/320px. Fresh preview console has no errors after clearing a stale JSON
+hot-reload state through build, verified restart and reload. Full screen-reader,
+actual zoom and other-engine checks were not repeated for these content changes.
+
+Evidence and complete changed-file list:
+`docs/reviews/public-content-20261010/verification.md`. No further site-content
+implementation remains for this request. Branch `codex/ai-study-main-20261008`;
+the local checkpoint follows this last repository write. Baseline and rollback:
+`9ca2e774dc1eef54ae3acd8137d73b3c1df4fd7c`. Preview on port 3000, verified Next.js
+PID 2836, managed session 41396. No push, merge or deployment. Final commit and
+lock release are recorded in the closeout. The retired Exchange remains read-only;
+unique change/update handoffs are in
+`C:/dev/_handoffs/public-content-reconciliation-20261010/`, coordinator receipt
+unverified. The external source-hours reconciliation remains with its owner.
+
 ## October 10, 2026: research-card and entry-action refinements
 
 B105 applied locally using Quiet Prism Adherence and Human-Centered Web Design.
@@ -689,7 +724,7 @@ settled rulings:
   part-time engineer from branded-site launches by other designers and the
   microservices/APIs supplied by internal engineering;
 - the slogan is `There is always a better way, together we will find it.`;
-- the Mutual of America response-time specification is final at
+- the anonymous project's response-time specification is final at
   0.1–0.4 / 3 / 7 / 10 with no remaining confirmation gate;
 - the public copy register, STATUS, and canonical-figures record no longer reproduce
   the publication-boundary material closed by REC-0077 through REC-0083.
@@ -706,7 +741,7 @@ anchors were checked directly against current GitHub file contents after the edi
 No local build or browser run was performed. GitHub Actions Deploy to SiteGround run
 #57 (`36358895432`) completed successfully for commit `a3d94cd`, which contains
 the reconciled application/content source. REC-0060 remains intentionally open
-pending Jacob's later ruling on which additional Mutual of America requirements shipped.
+pending Jacob's later ruling on which additional project requirements shipped.
 
 
 ## September 24, 2026: approved case-study copy for three featured projects

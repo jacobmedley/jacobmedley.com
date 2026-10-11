@@ -2,7 +2,7 @@
   "title": "How not to design an AI assistant",
   "suggestedSlug": "how-not-to-launch-an-ai-powered-product",
   "summary": "A real-life fable of deadlines and technology getting ahead of the people they were meant to serve.",
-  "role": "Senior UX designer leading product design, experience research, scoping and user requirements",
+  "role": "Product design, experience research, scoping and user requirements",
   "collaboration": "Service design and an applied AI specialist",
   "outcome": "The work produced requirements for both experiences, a traced accuracy failure, customer feedback drafts, measured response-time improvements, and working streaming. I also secured customer usage tracking. Customer engagement fell after early interest. Internal adoption stayed low. Representatives reported wrong answers, waiting, and a poor fit with their workflow. Tracking and feedback described the experience; they did not isolate the effect of each feature.",
   "identity": "AI product design",
@@ -41,7 +41,7 @@
   },
   "editorial": {
     "opening": "Usability starts with the system. If the car does not start, we do not go anywhere.",
-    "context": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.",
+    "context": "I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives.",
     "approach": "XD/UX belonged in discovery, where we could shape the problem and the requirements. I absorbed the emerging research, worked through the source material with an applied AI specialist, and brought familiar interaction patterns into a new kind of interface.",
     "needs": [
       {
@@ -111,7 +111,7 @@
       "heading": "Learning while the field was moving",
       "intro": "The research gave us questions to test. Could assistance shorten the work? Could it carry knowledge to a new hire? What would an experienced representative need to trust or reject a suggestion?",
       "application": "I applied that reading to both experiences: visible system feedback and a route to help for customers; context, references, and review for representatives. Familiar controls still had a job to do. A text box alone could not carry the whole service.",
-      "periodNote": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.",
+      "periodNote": "The references below cover research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation.",
       "papers": [
         {
           "id": "support",
@@ -336,7 +336,7 @@
           "heading": "Context where the work happens",
           "tone": "sage",
           "icon": "fa-layer-group",
-          "body": "Basic Salesforce and account context, follow-up prompts, and an integrated experience."
+          "body": "Integrated account context, follow-up prompts, and an integrated experience."
         },
         {
           "label": "Could have · future",
@@ -366,7 +366,7 @@
           "heading": "Keep the reply in context",
           "icon": "fa-comments",
           "tone": "slate",
-          "body": "I scoped account context, a conversation summary, sources and follow-up prompts around the Salesforce workspace. The representative would read, change and send the reply."
+          "body": "I scoped account context, a conversation summary, sources and follow-up prompts around the service workspace. The representative would read, change and send the reply."
         },
         {
           "heading": "Plan the next layer of help",
@@ -392,7 +392,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The project began in early 2023. I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives."
+      "text": "I led experience research and scoping for one conversational assistant in two settings: a public website and the workspace used by service and account-management representatives."
     },
     {
       "type": "paragraph",
@@ -444,7 +444,7 @@
     },
     {
       "type": "paragraph",
-      "text": "The project started in early 2023. The references below follow the research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation."
+      "text": "The references below cover research and design explorations published during 2023 and 2024; later work belongs to the continuing investigation."
     },
     {
       "type": "heading",
@@ -500,7 +500,7 @@
     },
     {
       "type": "paragraph",
-      "text": "I scoped the experience around the Salesforce workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply."
+      "text": "I scoped the experience around the service workspace: basic account context, a summary of the conversation, sources beside the draft, and follow-up prompts. The representative would read, change, and send the reply."
     },
     {
       "type": "paragraph",
@@ -531,5 +531,5 @@
       "text": "New technology gives design more to investigate. The job is still to make it useful to the person using it."
     }
   ],
-  "heroSummary": "In early 2023, I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building."
+  "heroSummary": "I brought user requirements into discovery for a conversational assistant. Accuracy, speed and the fit with people’s work became the test of what we were building."
 }

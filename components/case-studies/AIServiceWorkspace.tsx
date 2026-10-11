@@ -92,7 +92,7 @@ export default function AIServiceWorkspace({ onBack }: { onBack: () => void }) {
         <dl><div><dt>Account status</dt><dd>Verification pending</dd></div><div><dt>Account representative</dt><dd>Available through the service team</dd></div></dl>
         <h5>Conversation summary</h5><p>{scenario.summary}</p>
         <h5>Reference</h5><button type="button" className={styles.reference} onClick={() => { setDocumentId(scenario.document); setPreviewOpen(true); selectPanel('documents') }}><i className="fa-thin fa-file-lines" aria-hidden="true" />{scenario.reference}<Arrow /></button>
-        <p className={styles.small}>Context shown here represents the proposed Salesforce integration.</p>
+        <p className={styles.small}>Context shown here represents the proposed account integration.</p>
       </section>
 
       <section id="ai-panel-documents" tabIndex={-1} className={`modal-prism-surface ${wire.surface} ${styles.documents}`} data-active={panel === 'documents'} aria-labelledby="ai-documents-title">

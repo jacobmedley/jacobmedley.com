@@ -74,7 +74,7 @@ claim should be written until Jacob supplies or confirms the source.
 | Team development | No published block after B59 removed B58 placement | CHANGE | Add B60's four bullets above Expertise. This fills the only material role gap without inventing a mentee result. |
 | Experience heading and chronology | Five named employers, current-to-earlier | KEEP | Conventional scan order and exact employment authority. |
 | Health-E Commerce | Operations, team scope, directional peak-season figures, practice build, Figma governance | KEEP | Strongest current leadership evidence. The visible caveat correctly limits the figures. |
-| Mutual of America | One assistant, two deployments, hallucination root cause, requirements, analytics | KEEP | Precise regulated-product role; avoids claiming another party's decisions. |
+| Employment description | Role-level UX research and interaction requirements | UPDATED | B106 supersedes the earlier project-specific wording. |
 | One Park Financial | Team scope, Hydra mechanism, delivery timing, durable system, testing practice | KEEP | Good artifact-to-operating-result chain. |
 | DentalPlans.com | Manual starting point, shared platform, small build team, attribution mechanism, finance figures | KEEP | The most complete mechanism-and-result story on the page. |
 | Bluegreen Vacations | Four-system integration, 48-resort content structure, team and authoring consequence | KEEP | Period-specific tools create credibility; no performance metric is invented. |

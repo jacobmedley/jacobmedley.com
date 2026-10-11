@@ -46,18 +46,31 @@ type ExperienceEntry = {
   highlighted?: boolean
 }
 
-// B81 website copy; formal roles and dates retain the reconciled records.
+// B81/B106 website copy; formal roles and dates retain the reconciled records.
 const experience: ExperienceEntry[] = [
+  {
+    company: 'Health-E Commerce, New York, NY (Remote)',
+    logo: '/assets/references/hec-icon.svg',
+    tone: 'health',
+    highlighted: true,
+    roles: [
+      { title: 'Director of User and Experience Design', period: 'Feb 2026 to present' },
+      { title: 'Director of Design', period: 'Feb 2025 to Feb 2026' },
+    ],
+    paragraphs: [
+      "I joined to restructure creative marketing and build an experience design practice the company had never had. I led four direct reports within a team of seven, with seven contractors. I used systems thinking and UX research to find the problems worth solving, then rebuilt intake, workflow and creative operations around them.",
+      "Peak-season reporting showed about 72% more creative output year over year, with a much smaller increase in production hours. This is a directional comparison of delivered work.",
+      "When the department split, a new creative director took the creative team and I moved full time to experience design. I defined the role and hired into it, giving interface and experience decisions dedicated owners. The function grew from one designer to two full-time designers and a contractor.",
+      "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs."
+    ],
+  },
   {
     company: 'Mutual of America Financial Group, Boca Raton, FL',
     logo: '/assets/references/moa-icon.svg',
     tone: 'mutual',
     roles: [{ title: 'Senior UX Designer', period: '2023 to 2025' }],
     paragraphs: [
-      "I led experience research and scoping for one internally built conversational assistant with two deployments. One served internal representatives through Salesforce, with a service designer on that work. The other lived on the public website. Retirement and financial account information made accuracy, security, and escalation central to the design.",
-      "I raised hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.",
-      "I wrote requirements for response feedback, system status, failures, human escalation, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. The assistant was taking the opening minutes of a service conversation.",
-      "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped."
+      "I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences."
     ],
   },
   {

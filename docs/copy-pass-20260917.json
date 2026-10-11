@@ -415,16 +415,16 @@
     "id": "H-034",
     "row": 35,
     "action": "Rewrite",
-    "copy": "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated.",
+    "copy": "I joined to restructure creative marketing and build an experience design practice the company had never had. I led four direct reports within a team of seven, with seven contractors. I used systems thinking and UX research to find the problems worth solving, then rebuilt intake, workflow and creative operations around them.\nPeak-season reporting showed about 72% more creative output year over year, with a much smaller increase in production hours. This is a directional comparison of delivered work.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "I joined Health-E Commerce to rebuild creative operations and create an experience design practice. Four direct reports, a team of seven, and seven contractors across creative marketing, design systems, and UX. I redesigned intake and workflow around the problems the team needed to solve.\nDuring comparable peak seasons, creative output rose about 72% on 6.6% more production hours. Output per hour rose about 62%, and output per person about 48%. These are directional comparisons; some monthly output counts were extrapolated."
+        "text": "I joined to restructure creative marketing and build an experience design practice the company had never had. I led four direct reports within a team of seven, with seven contractors. I used systems thinking and UX research to find the problems worth solving, then rebuilt intake, workflow and creative operations around them.\nPeak-season reporting showed about 72% more creative output year over year, with a much smaller increase in production hours. This is a directional comparison of delivered work."
       }
     ]
   },
@@ -432,16 +432,16 @@
     "id": "H-035",
     "row": 36,
     "action": "Rewrite",
-    "copy": "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor.",
+    "copy": "When the department split, a new creative director took the creative team and I moved full time to experience design. I defined the role and hired into it, giving interface and experience decisions dedicated owners. The function grew from one designer to two full-time designers and a contractor.",
     "approval": "Needs revision",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "After the department split, I built the company’s experience design practice. I defined its remit, created the first designer role, and hired into it. The team grew from one direct report to two full-time designers and a contractor."
+        "text": "When the department split, a new creative director took the creative team and I moved full time to experience design. I defined the role and hired into it, giving interface and experience decisions dedicated owners. The function grew from one designer to two full-time designers and a contractor."
       }
     ]
   },
@@ -451,7 +451,7 @@
     "action": "Rewrite",
     "copy": "I owned the company Figma account and contract renewal as product and engineering added seats. A seat and usage audit made the case for treating Figma as a company-wide tool, moving its administration out of design. I own the tooling and research budget and propose the headcount the function needs.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
@@ -466,16 +466,16 @@
     "id": "H-040",
     "row": 41,
     "action": "Rewrite",
-    "copy": "I led experience research and scoping for one internally built conversational assistant with two deployments: an internal helper integrated with Salesforce, designed with a service designer, and a public assistant on the main website. Work with retirement and financial account information made accuracy, security, and escalation central to the design.",
+    "copy": "I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "I led experience research and scoping for one internally built conversational assistant with two deployments: an internal helper integrated with Salesforce, designed with a service designer, and a public assistant on the main website. Work with retirement and financial account information made accuracy, security, and escalation central to the design."
+        "text": "I led UX research and wrote interaction requirements for digital services in a regulated financial-services environment. I worked with design and technical specialists to review workflows, clarify requirements and test proposed experiences."
       }
     ]
   },
@@ -483,16 +483,16 @@
     "id": "H-041",
     "row": 42,
     "action": "Rewrite",
-    "copy": "I flagged hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response in that situation was a referral to an account manager. I traced the answer to a sample account statement in the source documentation.",
+    "copy": "Historical employment wording withdrawn; see B106.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "I flagged hallucination risk during scoping and tested it with a data scientist. Asked for an account balance, the assistant returned a specific figure. The required response in that situation was a referral to an account manager. I traced the answer to a sample account statement in the source documentation."
+        "text": "Historical employment wording withdrawn; see B106."
       }
     ]
   },
@@ -500,16 +500,16 @@
     "id": "H-042",
     "row": 43,
     "action": "Rewrite",
-    "copy": "I wrote requirements for response feedback, system status, failures, escalation to human support, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. Conduct mattered: the assistant was taking the opening minutes of a service conversation.",
+    "copy": "Historical employment wording withdrawn; see B106.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "I wrote requirements for response feedback, system status, failures, escalation to human support, compliance alerts, and account and conversation summaries. I also specified how mixed source documents should be prepared before ingestion. Conduct mattered: the assistant was taking the opening minutes of a service conversation."
+        "text": "Historical employment wording withdrawn; see B106."
       }
     ]
   },
@@ -517,16 +517,16 @@
     "id": "H-043",
     "row": 44,
     "action": "Rewrite",
-    "copy": "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped.",
+    "copy": "Historical employment wording withdrawn; see B106.",
     "approval": "Approved",
-    "status": "Implemented locally",
+    "status": "Superseded by B106",
     "files": [
       "components/sections/ResumeSection.tsx"
     ],
     "implementation": [
       {
         "file": "components/sections/ResumeSection.tsx",
-        "text": "I secured analytics on the public assistant. After release, the record showed early engagement followed by dropoff. Internal representatives cited accuracy and waiting as barriers to use. A subset of the interaction requirements had shipped."
+        "text": "Historical employment wording withdrawn; see B106."
       }
     ]
   },

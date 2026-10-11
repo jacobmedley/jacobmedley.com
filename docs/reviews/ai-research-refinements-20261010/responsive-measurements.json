@@ -1,0 +1,174 @@
+[
+  {
+    "cards": [
+      {
+        "height": 568.078125,
+        "width": 338.65625
+      },
+      {
+        "height": 568.078125,
+        "width": 338.671875
+      },
+      {
+        "height": 568.078125,
+        "width": 338.65625
+      }
+    ],
+    "overflow": [
+      {
+        "class": "modal-study-content",
+        "client": 1128,
+        "id": "",
+        "scroll": 1128
+      },
+      {
+        "class": "AIStudyContent-module__R5mnPW__papers",
+        "client": 1048,
+        "id": "ai-research-papers",
+        "scroll": 1048
+      },
+      {
+        "class": "",
+        "client": 1048,
+        "id": "ai-customer-entry",
+        "scroll": 1048
+      },
+      {
+        "class": "",
+        "client": 1048,
+        "id": "ai-workspace-entry",
+        "scroll": 1048
+      }
+    ],
+    "width": 1351
+  },
+  {
+    "cards": [
+      {
+        "height": 315.078125,
+        "width": 658.8125
+      },
+      {
+        "height": 316.875,
+        "width": 658.8125
+      },
+      {
+        "height": 351.078125,
+        "width": 658.8125
+      }
+    ],
+    "overflow": [
+      {
+        "class": "modal-study-content",
+        "client": 708,
+        "id": "",
+        "scroll": 708
+      },
+      {
+        "class": "AIStudyContent-module__R5mnPW__papers",
+        "client": 659,
+        "id": "ai-research-papers",
+        "scroll": 659
+      },
+      {
+        "class": "",
+        "client": 659,
+        "id": "ai-customer-entry",
+        "scroll": 659
+      },
+      {
+        "class": "",
+        "client": 659,
+        "id": "ai-workspace-entry",
+        "scroll": 659
+      }
+    ],
+    "width": 820
+  },
+  {
+    "cards": [
+      {
+        "height": 435.984375,
+        "width": 346
+      },
+      {
+        "height": 445.703125,
+        "width": 346
+      },
+      {
+        "height": 538.5625,
+        "width": 346
+      }
+    ],
+    "overflow": [
+      {
+        "class": "modal-study-content",
+        "client": 378,
+        "id": "",
+        "scroll": 378
+      },
+      {
+        "class": "AIStudyContent-module__R5mnPW__papers",
+        "client": 346,
+        "id": "ai-research-papers",
+        "scroll": 346
+      },
+      {
+        "class": "",
+        "client": 346,
+        "id": "ai-customer-entry",
+        "scroll": 346
+      },
+      {
+        "class": "",
+        "client": 346,
+        "id": "ai-workspace-entry",
+        "scroll": 346
+      }
+    ],
+    "width": 390
+  },
+  {
+    "cards": [
+      {
+        "height": 539.625,
+        "width": 276
+      },
+      {
+        "height": 527.75,
+        "width": 276
+      },
+      {
+        "height": 714.984375,
+        "width": 276
+      }
+    ],
+    "overflow": [
+      {
+        "class": "modal-study-content",
+        "client": 308,
+        "id": "",
+        "scroll": 308
+      },
+      {
+        "class": "AIStudyContent-module__R5mnPW__papers",
+        "client": 276,
+        "id": "ai-research-papers",
+        "scroll": 276
+      },
+      {
+        "class": "",
+        "client": 276,
+        "id": "ai-customer-entry",
+        "scroll": 276
+      },
+      {
+        "class": "",
+        "client": 276,
+        "id": "ai-workspace-entry",
+        "scroll": 276
+      }
+    ],
+    "width": 320
+  }
+]

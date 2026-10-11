@@ -4505,3 +4505,40 @@ New interface copy:
 - Catalog description: Two Quiet Prism wireframes give the current conversation priority, with response controls or context and documents alongside it. Both open from responsive entry cards and return to the reader's place in the study.
 
 Shared presentation decisions: headings immediately before body content receive 8px separation; study card headings receive 10px. Metric labels precede values in source order. Side icons align to the top of their adjacent content. Discovery eyebrows and titles form one tight group. Chain arrows sit in the middle of the gap and point down in a stacked layout. These rules adapt to content width, independent of the annotation viewport.
+
+## B105: research-card content and icon refinements
+
+Status: APPLIED LOCALLY. Jacob's latest eleven October 10 browser comments implemented and verified. See docs/reviews/ai-research-refinements-20261010/verification.md. No publication authorized.
+
+Center both demo-entry buttons vertically within their desktop row. Replace the response-requirements heading icon with Thin user-check. Across research cards, move the external-source icon to the top right beside the date, put a Thin lightbulb to the left of each finding, and the established Thin paintbrush-pencil to the left of each design implication. Remove every pull quote and its icon. The later explicit removals supersede the earlier quote-left substitution on that same content.
+
+Preserve the first two research sources and their finding/application/limitation text. Replace the coding paper with this sourced synthesis, labeled Design reading rather than Research paper:
+
+```json
+{
+  "id": "sources-and-editing",
+  "title": "Source quality and editable answers",
+  "authors": "Luke Wroblewski; Sarah Gibbons, Tarun Mugunthan, and Jakob Nielsen (NN/g)",
+  "date": "July–September 2023",
+  "kind": "Design reading",
+  "url": "https://www.lukew.com/ff/2029/ask-lukew-integrated-pdf-experiences",
+  "finding": "Luke Wroblewski found that large, poorly parsed PDFs could crowd out useful sources. NN/g observed people repeatedly expanding and shortening answers, then struggling to recover and edit useful passages.",
+  "application": "Design implication: check extracted content, keep sources visible, and let people edit selected passages without regenerating the whole reply.",
+  "limit": "Design exploration and an eight-person usability study; neither establishes results for this project.",
+  "sources": [
+    {"label":"PDF ingestion (LukeW)","url":"https://www.lukew.com/ff/2029/ask-lukew-integrated-pdf-experiences"},
+    {"label":"Accordion editing (NN/g)","url":"https://www.nngroup.com/articles/accordion-editing-apple-picking/"}
+  ]
+}
+```
+
+Add this source to Design reading, 2023–2024:
+- Title: Accordion Editing and Apple Picking: Early Generative-AI User Behaviors
+- Authors: Sarah Gibbons, Tarun Mugunthan, and Jakob Nielsen, NN/g
+- Date: September 24, 2023
+- URL: https://www.nngroup.com/articles/accordion-editing-apple-picking/
+- Note: Repeated expansion and shortening, revisiting earlier answers, and the need for direct editing.
+
+Source interpretation: NN/g's accordion editing is an observed prompting behavior, not its name for a disclosure control. Luke's May 2023 conversational-interface article separately discusses collapsing earlier exchanges. The July PDF article discusses source-size, extraction and quality filtering. Do not merge these into an invented study or claim a measured project result.
+
+Catalog copy: Three research and design-reading cards pair a source with an insight, design implication and limitation. Source icons sit beside dates; Thin lightbulb and paintbrush-pencil icons distinguish findings from design implications. Pull quotes are omitted.

@@ -123,17 +123,22 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <PrismStudyHeading id="ai-research" icon="fa-book-open" level={headingLevel}>{e.research.heading}</PrismStudyHeading>
         <div className={styles.proseColumns}><p>{e.research.intro}</p><p>{e.research.application}</p></div>
         <div className={styles.papers} id="ai-research-papers">{e.research.papers.map((paper, index) => <PrismStudySurface key={paper.id} tone={index === 0 ? 'sage' : index === 1 ? 'slate' : 'gold'} className={styles.paper}>
-          <header><span className={styles.eyebrow}>{paper.date} · Research paper</span>
-          <Subheading><a href={paper.url} target="_blank" rel="noreferrer">{paper.title}{' '}<Arrow external /><span className="sr-only"> (opens in a new tab)</span></a></Subheading>
-          <p className={styles.note}>{paper.authors}</p></header>
-          <blockquote><i className="fa-thin fa-quotes" aria-hidden="true" /><div><p>“{paper.quote}”</p><cite>{paper.location}</cite></div></blockquote>
-          <p>{paper.finding}</p><p className={styles.implication}>{paper.application}</p><p className={styles.note}>{paper.limit}</p>
+          <header>
+            <a className={styles.paperSource} href={paper.url} target="_blank" rel="noreferrer">
+              <span className={styles.paperMeta}><span>{paper.date} · {paper.kind}</span><Arrow external /></span>
+              <Subheading>{paper.title}</Subheading><span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <p className={styles.note}>{paper.authors}</p>
+          </header>
+          <div className={styles.paperPoint}><i className="fa-thin fa-lightbulb" aria-hidden="true" /><p>{paper.finding}</p></div>
+          <div className={`${styles.paperPoint} ${styles.implication}`}><i className="fa-thin fa-paintbrush-pencil" aria-hidden="true" /><p>{paper.application}</p></div>
+          <footer className={styles.note}><p>{paper.limit}</p>{paper.sources && <ul className={styles.paperSources}>{paper.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}<span className="sr-only"> (opens in a new tab)</span></a></li>)}</ul>}</footer>
         </PrismStudySurface>)}</div>
         <p className={styles.sectionCopy}>The design reading connected those findings to the interface. <a href={e.research.articles[0].url} target="_blank" rel="noreferrer">Jakob Nielsen’s account of intent-based interaction</a> and <a href={e.research.articles[6].url} target="_blank" rel="noreferrer">Luke Wroblewski’s conversational interface explorations</a> helped frame the questions: how to show progress, expose sources, and give people controls around the answer.</p>
       </section>
 
       <section className={styles.section} aria-labelledby="ai-waiting">
-        <PrismStudyHeading id="ai-waiting" icon="fa-stopwatch" level={headingLevel}>{e.waiting.heading}</PrismStudyHeading>
+        <PrismStudyHeading id="ai-waiting" icon="fa-user-check" level={headingLevel}>{e.waiting.heading}</PrismStudyHeading>
         <div className={styles.timings} id="ai-response-timings">{e.waiting.timings.map(item => <PrismStudySurface key={item.label} tone={item.tone as PrismTone} className={styles.timingCard}><i className={`fa-thin ${item.icon}`} aria-hidden="true" /><div><span>{item.label}</span><strong>{item.value}</strong></div></PrismStudySurface>)}</div>
         <p className={styles.note}>{e.waiting.measurementNote}</p>
         <div className={styles.proseColumns}><div>{e.waiting.paragraphs.slice(0, 2).map(text => <p key={text}>{text}</p>)}</div><div>{e.waiting.paragraphs.slice(2).map(text => <p key={text}>{text}</p>)}<p>{e.waiting.requirements}</p></div></div>

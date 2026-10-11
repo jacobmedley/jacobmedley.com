@@ -1,5 +1,33 @@
 # Status
 
+## October 10, 2026: research-card and entry-action refinements
+
+B105 applied locally using Quiet Prism Adherence and Human-Centered Web Design.
+Both demo-entry actions center vertically beside their copy. Response requirements
+use Thin user-check. Research source icons sit at the top right beside each date;
+findings have lightbulbs and design implications have paintbrush-pencil icons.
+All pull quotes were removed, superseding the earlier quote-left substitution.
+The third card now connects Luke Wroblewski's PDF ingestion findings with NN/g's
+2023 accordion-editing observations, with both sources and the study limitation.
+The reading list has 15 articles. Existing content-width breakpoints are retained.
+
+Production build/lint/types/14-page export, 288-image/104-reference asset check,
+standalone TypeScript, scoped ESLint, 10-file presentation guard, three guard tests
+and catalog validation pass (59 patterns, 196 examples, 36 tokens). Changed-style
+scanner candidates remain 8 with no new signatures. Browser checks cover aligned
+desktop rows, both centered actions, source icons, real Thin glyphs, 1714/1351/820/
+390/320px layouts, 320px text spacing, visible keyboard focus and a fresh error-free
+preview. Full screen-reader, actual 400% zoom and other-engine checks remain unverified.
+
+Evidence and changed-file list:
+`docs/reviews/ai-research-refinements-20261010/verification.md`. No requested
+implementation remains. Branch `codex/ai-study-main-20261008`; local checkpoint
+follows this last repository write. Rollback `cfe20a50146f274af3667d480053cf1b5512c926`.
+Preview on port 3000: verified Next.js PID 52136, managed session 28355. No deployment.
+Final commit and lock release are recorded in the closeout. The retired Exchange
+remains read-only; unique change/update records are in
+`C:/dev/_handoffs/ai-research-refinements-20261010/`, coordinator receipt unverified.
+
 ## October 10, 2026: eleven AI wireframe refinements
 
 B104 applied locally using Quiet Prism Adherence and Human-Centered Web Design.

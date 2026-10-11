@@ -1,0 +1,35 @@
+[
+  {
+    "selector": "#ai-waiting .fa-user-check",
+    "fonts": [
+      {
+        "familyName": "Font Awesome 7 Pro Thin",
+        "glyphCount": 1,
+        "isCustomFont": true,
+        "postScriptName": "FontAwesome7Pro-Thin"
+      }
+    ]
+  },
+  {
+    "selector": "#ai-research-papers .fa-lightbulb",
+    "fonts": [
+      {
+        "familyName": "Font Awesome 7 Pro Thin",
+        "glyphCount": 1,
+        "isCustomFont": true,
+        "postScriptName": "FontAwesome7Pro-Thin"
+      }
+    ]
+  },
+  {
+    "selector": "#ai-research-papers .fa-paintbrush-pencil",
+    "fonts": [
+      {
+        "familyName": "Font Awesome 7 Pro Thin",
+        "glyphCount": 1,
+        "isCustomFont": true,
+        "postScriptName": "FontAwesome7Pro-Thin"
+      }
+    ]
+  }
+]

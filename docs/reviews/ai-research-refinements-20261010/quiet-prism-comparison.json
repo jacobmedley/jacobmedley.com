@@ -1,0 +1,49 @@
+{
+  "sourceVersion": "cfe20a50146f274af3667d480053cf1b5512c926",
+  "scope": "components/case-studies/AIStudyContent.module.css",
+  "beforeCount": 8,
+  "afterCount": 8,
+  "newSignatures": [],
+  "candidates": [
+    {
+      "rule": "QP03",
+      "line": 3,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP03",
+      "line": 4,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP03",
+      "line": 6,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "line": 8,
+      "message": "color #ffffff80 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "line": 8,
+      "message": "legacy selector or cascade override needs review"
+    },
+    {
+      "rule": "QP01",
+      "line": 9,
+      "message": "color #faf9fc needs token/variant review"
+    },
+    {
+      "rule": "QP01",
+      "line": 9,
+      "message": "color #34313b09 needs token/variant review"
+    },
+    {
+      "rule": "QP03",
+      "line": 29,
+      "message": "legacy selector or cascade override needs review"
+    }
+  ]
+}

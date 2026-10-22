@@ -1,0 +1,42 @@
+{
+  "visibleProjects": 15,
+  "ids": [
+    "ai-chat",
+    "webmd",
+    "dentalplans",
+    "bumblebeemd",
+    "hydra",
+    "opfred",
+    "split-test",
+    "call-center-ux",
+    "marketing-auto",
+    "workshops",
+    "roadmap",
+    "personas",
+    "reveal",
+    "viva",
+    "wrong"
+  ],
+  "checks": [
+    {
+      "name": "All 15 visible projects have titles and unique IDs; six featured cards have subtitles and summaries",
+      "status": "pass"
+    },
+    {
+      "name": "No placeholder text or replacement characters in active project data",
+      "status": "pass"
+    },
+    {
+      "name": "AI facts, source URLs, limitations, attribution and demo wording unchanged",
+      "status": "pass"
+    },
+    {
+      "name": "Project data differs only in requested One Park subtitle",
+      "status": "pass"
+    },
+    {
+      "name": "Anonymous AI study excludes employer and vendor identifiers",
+      "status": "pass"
+    }
+  ]
+}

@@ -4504,3 +4504,17 @@ Status: APPLIED LOCALLY. October 10, 2026. No deployment authorized. Verificatio
 - Replace vendor-specific workspace references with service workspace or integrated account context, as appropriate. The supporting label is: Context shown here represents the proposed account integration.
 
 Research publication dates, measured response times, the sample finding and the approved anonymous narrative remain. Remove project start dates and the exact employment title from the project presentation. Scrub identifying employment/project cross-references from current public editorial records. Git history and previously published copies are outside this local content update.
+
+## B108: release review annotations, October 20, 2026
+
+Status: APPLIED LOCALLY. The initial production build and source checks passed. Browser access recovered for the discovery-flow follow-up, which passed responsive checks at 1351/820/390/320px. Broader post-change visual QA remains incomplete. Requested by Jacob in nine browser comments and two discovery-flow follow-up comments; no publication requested. Evidence: docs/reviews/release-20261020/verification.md.
+
+- One Park Financial subtitle: Reading the Signals.
+- AI study title: When the launch date is put before the user. Apply through the shared study data to its featured card, modal and reading page; retain the existing URL.
+- Discovery-flow follow-up supersedes gap-positioned connectors: use five grid columns, content / arrow / content / arrow / content. Give each arrow a dedicated 2rem column and center it vertically. Stack below the existing 30rem container breakpoint with downward arrows. Apply -.75rem (-12px) top and bottom margins to all three descriptions.
+- Limit research titles to two visible lines at rest. Retain each complete official title in the document and link title; reveal it on hover or keyboard focus.
+- Increase the space above and below AI section separators, and between the main study sections. Scope the rhythm to the AI story rather than changing every page.
+- Use the Thin headset icon for the Agent navigation item and its matching section heading.
+- Shared Study Introduction metadata labels: 18px (1.125rem), with 10px below My role and 8px below Collaboration, at all existing container sizes.
+
+Preserve approved source names, citations, claims, measurements, anonymity and the distinction between actual outcomes and reconstructed demos. Jacob's follow-up confirms annotation 3 targets the discovery chain. Annotation 5 is interpreted as the AI section separators; its supplied region coordinates do not identify a source element. See the review evidence for these mappings.

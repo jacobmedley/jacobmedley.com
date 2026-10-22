@@ -1,0 +1,566 @@
+{
+  "research": [
+    {
+      "dialogOverflow": [
+        {
+          "class": "modal",
+          "client": 1351,
+          "scroll": 1351
+        },
+        {
+          "class": "StudyIntro_intro__xDeM1 study-introduction",
+          "client": 1048,
+          "scroll": 1048
+        },
+        {
+          "class": "AIStudyContent_papers__RrPwy",
+          "client": 1048,
+          "scroll": 1048
+        }
+      ],
+      "documentOverflow": false,
+      "labels": [
+        {
+          "font": "18px",
+          "margin": "10px",
+          "text": "My role"
+        },
+        {
+          "font": "18px",
+          "margin": "8px",
+          "text": "Collaboration"
+        }
+      ],
+      "research": [
+        {
+          "clamp": "",
+          "title": "Generative AI at Work"
+        },
+        {
+          "clamp": "",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence"
+        },
+        {
+          "clamp": "",
+          "title": "Source quality and editable answers"
+        }
+      ],
+      "width": 1351
+    },
+    {
+      "dialogOverflow": [
+        {
+          "class": "modal",
+          "client": 820,
+          "scroll": 820
+        },
+        {
+          "class": "StudyIntro_intro__xDeM1 study-introduction",
+          "client": 659,
+          "scroll": 659
+        },
+        {
+          "class": "AIStudyContent_papers__RrPwy",
+          "client": 659,
+          "scroll": 659
+        }
+      ],
+      "documentOverflow": false,
+      "labels": [
+        {
+          "font": "18px",
+          "margin": "10px",
+          "text": "My role"
+        },
+        {
+          "font": "18px",
+          "margin": "8px",
+          "text": "Collaboration"
+        }
+      ],
+      "research": [
+        {
+          "clamp": "",
+          "title": "Generative AI at Work"
+        },
+        {
+          "clamp": "",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence"
+        },
+        {
+          "clamp": "",
+          "title": "Source quality and editable answers"
+        }
+      ],
+      "width": 820
+    },
+    {
+      "dialogOverflow": [
+        {
+          "class": "modal",
+          "client": 390,
+          "scroll": 390
+        },
+        {
+          "class": "StudyIntro_intro__xDeM1 study-introduction",
+          "client": 346,
+          "scroll": 346
+        },
+        {
+          "class": "AIStudyContent_papers__RrPwy",
+          "client": 346,
+          "scroll": 346
+        }
+      ],
+      "documentOverflow": false,
+      "labels": [
+        {
+          "font": "18px",
+          "margin": "10px",
+          "text": "My role"
+        },
+        {
+          "font": "18px",
+          "margin": "8px",
+          "text": "Collaboration"
+        }
+      ],
+      "research": [
+        {
+          "clamp": "",
+          "title": "Generative AI at Work"
+        },
+        {
+          "clamp": "",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence"
+        },
+        {
+          "clamp": "",
+          "title": "Source quality and editable answers"
+        }
+      ],
+      "width": 390
+    },
+    {
+      "dialogOverflow": [
+        {
+          "class": "modal",
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "class": "StudyIntro_intro__xDeM1 study-introduction",
+          "client": 276,
+          "scroll": 276
+        },
+        {
+          "class": "AIStudyContent_papers__RrPwy",
+          "client": 276,
+          "scroll": 276
+        }
+      ],
+      "documentOverflow": false,
+      "labels": [
+        {
+          "font": "18px",
+          "margin": "10px",
+          "text": "My role"
+        },
+        {
+          "font": "18px",
+          "margin": "8px",
+          "text": "Collaboration"
+        }
+      ],
+      "research": [
+        {
+          "clamp": "",
+          "title": "Generative AI at Work"
+        },
+        {
+          "clamp": "",
+          "title": "Experimental Evidence on the Productivity Effects of Generative Artificial Intelligence"
+        },
+        {
+          "clamp": "",
+          "title": "Source quality and editable answers"
+        }
+      ],
+      "width": 320
+    }
+  ],
+  "introductions": [
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "WebMD",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Product Framework and Design System",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "BumblebeeMD",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Hydra Design System",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "One Park Financial",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "When the launch date is put before the user",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Testing the experience",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "When nobody can take the call",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "One campaign, several audiences",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Getting teams to a shared decision",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Choosing what comes next",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Understanding the people buying the product",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "The Wrong Campaign",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Reveal Aligners",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Viva Medicare",
+      "width": 1351
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "WebMD",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Product Framework and Design System",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "BumblebeeMD",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Hydra Design System",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "One Park Financial",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "When the launch date is put before the user",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Testing the experience",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "When nobody can take the call",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "One campaign, several audiences",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Getting teams to a shared decision",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Choosing what comes next",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Understanding the people buying the product",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "The Wrong Campaign",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Reveal Aligners",
+      "width": 320
+    },
+    {
+      "introCount": 1,
+      "labels": [
+        "18px",
+        "18px"
+      ],
+      "overflow": false,
+      "title": "Viva Medicare",
+      "width": 320
+    }
+  ],
+  "home": [
+    {
+      "brokenImages": 0,
+      "headlines": [
+        "WebMD",
+        "Trust Meets Commerce",
+        "DentalPlans.com",
+        "This is how you scale",
+        "BumblebeeMD",
+        "Avoiding a sticky situation",
+        "Hydra",
+        "Failure to Communicate",
+        "One Park Financial",
+        "Reading the Signals",
+        "AI product design",
+        "When the launch date is put before the user"
+      ],
+      "overflow": false,
+      "width": 1351
+    },
+    {
+      "brokenImages": 0,
+      "headlines": [
+        "WebMD",
+        "Trust Meets Commerce",
+        "DentalPlans.com",
+        "This is how you scale",
+        "BumblebeeMD",
+        "Avoiding a sticky situation",
+        "Hydra",
+        "Failure to Communicate",
+        "One Park Financial",
+        "Reading the Signals",
+        "AI product design",
+        "When the launch date is put before the user"
+      ],
+      "overflow": false,
+      "width": 820
+    },
+    {
+      "brokenImages": 0,
+      "headlines": [
+        "WebMD",
+        "Trust Meets Commerce",
+        "DentalPlans.com",
+        "This is how you scale",
+        "BumblebeeMD",
+        "Avoiding a sticky situation",
+        "Hydra",
+        "Failure to Communicate",
+        "One Park Financial",
+        "Reading the Signals",
+        "AI product design",
+        "When the launch date is put before the user"
+      ],
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "brokenImages": 0,
+      "headlines": [
+        "WebMD",
+        "Trust Meets Commerce",
+        "DentalPlans.com",
+        "This is how you scale",
+        "BumblebeeMD",
+        "Avoiding a sticky situation",
+        "Hydra",
+        "Failure to Communicate",
+        "One Park Financial",
+        "Reading the Signals",
+        "AI product design",
+        "When the launch date is put before the user"
+      ],
+      "overflow": false,
+      "width": 320
+    }
+  ],
+  "keyboardTitleExpansion": true,
+  "replayAndRecovery": true,
+  "reviewedSend": true,
+  "focusReturn": true,
+  "forcedColors": true,
+  "reducedMotion": true,
+  "textSpacing320": true,
+  "actual400PercentZoom": "unverified; browser shortcut did not change CSS viewport"
+}

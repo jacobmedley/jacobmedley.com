@@ -9,7 +9,7 @@ export default function StudyIntro({ children, role, collaboration }: {
       <div className={styles.copy}>{children}</div>
       <dl className={styles.metadata}>
         {([['My role', role], ['Collaboration', collaboration]] as const).map(([label, text]) => text && <div key={label}>
-          <dt>{label}</dt>
+              <dt className={label === 'My role' ? styles.roleLabel : undefined}>{label}</dt>
           <dd><i className="fa-thin fa-angle-right" aria-hidden="true" /><span>{text}</span></dd>
         </div>)}
       </dl>

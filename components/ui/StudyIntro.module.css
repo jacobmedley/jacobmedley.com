@@ -5,7 +5,8 @@
 .metadata { position: relative; padding-left: 1.5rem; margin: 0; min-width: 0; }
 .metadata::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 1px; background: linear-gradient(to bottom, transparent, var(--modal-rule, #bcaac8) 18%, var(--modal-rule, #bcaac8) 82%, transparent); }
 .metadata > div + div { margin-top: 1.25rem; }
-.metadata dt { font-size: .8rem; font-weight: 600; margin: 0; color: var(--prism-muted, #62586b); }
+.metadata dt { font-size: 1.125rem; font-weight: 600; margin: 0 0 .5rem; color: var(--prism-muted, #62586b); }
+.metadata .roleLabel { margin-bottom: .625rem; }
 .metadata dd { display: grid; grid-template-columns: .65rem minmax(0, 1fr); gap: .5rem; margin: 0; line-height: 1.45; }
 .metadata dd > i { font-size: .65rem; line-height: inherit; padding-top: .3rem; color: var(--prism-muted, #62586b); }
 @container (max-width: 48rem) {

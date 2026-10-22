@@ -1414,7 +1414,7 @@ export const projects: Project[] = [
     order: 5,
     caseStudyTheme: 'Behavior Into Decisions',
     title: 'One Park Financial',
-    subtitle: "Reading the tea leaves",
+    subtitle: "Reading the Signals",
     cardImage: {
       src: '/images/work/opf-modal/brief.png',
       alt: 'One Park Financial corporate website'

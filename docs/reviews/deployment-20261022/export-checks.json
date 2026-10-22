@@ -1,0 +1,173 @@
+{
+  "export_root": "C:\\dev\\jacobmedley.com\\out",
+  "pages": 13,
+  "issues": [],
+  "client_routes": [
+    "#animated-image",
+    "#availability-demo",
+    "#brand-palette",
+    "#career-snapshot",
+    "#content-card",
+    "#context-medallion",
+    "#corner-current",
+    "#credential-shard",
+    "#crossing-tide",
+    "#data-bay",
+    "#decision-note",
+    "#demo-entry",
+    "#discipline-pebble",
+    "#evidence-cluster",
+    "#filter-rail",
+    "#focus-halo",
+    "#frost-pane",
+    "#hero-identity",
+    "#icon-grid",
+    "#image-frame",
+    "#image-tile",
+    "#inset-light-edge",
+    "#leadership",
+    "#metric-lens",
+    "#numbered-list",
+    "#outcome-feature",
+    "#outcome-tile",
+    "#page-navigation",
+    "#practice-stack",
+    "#prism-field",
+    "#process-tile",
+    "#project-artwork",
+    "#proof-grid",
+    "#quiet-label",
+    "#reading-sheet",
+    "#reference-panel",
+    "#response-demonstration",
+    "#ribbon-rule",
+    "#role-ledger",
+    "#section-plaque",
+    "#service-workspace",
+    "#signal-tile",
+    "#split-narrative",
+    "#spotlight-split",
+    "#story-cover",
+    "#story-navigation",
+    "#story-slate",
+    "#study-fading-rule",
+    "#study-introduction",
+    "#study-navigation",
+    "#study-research",
+    "#study-surface",
+    "#study-timing",
+    "#supporting-diagram",
+    "#system-diagram",
+    "#tint-edge",
+    "#trail-arrow",
+    "#type-scale",
+    "#value-sheet"
+  ],
+  "client_route_note": "DesignSystemExplorer handles these declared pattern IDs through hashchange. Runtime navigation remains unverified.",
+  "inventory": [
+    {
+      "route": "/404.html",
+      "title": "404: This page could not be found.Jacob Medley, Product & Design Leader",
+      "description": "Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.",
+      "h1": 1,
+      "links": 0,
+      "images": 0
+    },
+    {
+      "route": "/",
+      "title": "Jacob Medley, Product & Design Leader",
+      "description": "Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.",
+      "h1": 1,
+      "links": 17,
+      "images": 34
+    },
+    {
+      "route": "/404/",
+      "title": "404: This page could not be found.Jacob Medley, Product & Design Leader",
+      "description": "Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.",
+      "h1": 1,
+      "links": 0,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/",
+      "title": "Case Studies | Jacob Medley, Product & Design Leader",
+      "description": "These stories follow the decisions behind the work: what I took ownership of, who I worked with, and what changed. Some led to a product. Others changed how the team could work.",
+      "h1": 1,
+      "links": 25,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/a-checkout-decision-with-receipts/",
+      "title": "A checkout decision with receipts | Jacob Medley",
+      "description": "I resolved conflicting checkout requirements and recorded the decision engineering should build. AI compared the sources; I owned the call.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/building-a-design-function/",
+      "title": "Building an experience design practice | Jacob Medley",
+      "description": "I built a design practice alongside a product integration, leaving research, systems, and measurement the team could use again.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/how-not-to-launch-an-ai-powered-product/",
+      "title": "When the launch date is put before the user | Jacob Medley",
+      "description": "A real-life fable of deadlines and technology getting ahead of the people they were meant to serve.",
+      "h1": 1,
+      "links": 36,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/navigation-beyond-opinion/",
+      "title": "How customers look for products | Jacob Medley",
+      "description": "I led customer research into navigation and used the findings to guide category structure and shop-by paths.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/one-customer-journey/",
+      "title": "A shared customer journey | Jacob Medley",
+      "description": "I designed and ran a working session that put the owners of the customer journey in the same room to examine its handoffs.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/one-platform-five-properties/",
+      "title": "One platform. Five properties. | Jacob Medley",
+      "description": "I owned the roadmap for a shared commerce platform. Launching a branded property went from six weeks to two.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/case-studies/tokens-before-pages/",
+      "title": "A shared foundation for a second brand | Jacob Medley",
+      "description": "I defined the brand rules and documented the shared design foundation before the page count grew.",
+      "h1": 1,
+      "links": 14,
+      "images": 0
+    },
+    {
+      "route": "/design-system/",
+      "title": "Quiet Prism Design System | Jacob Medley",
+      "description": "A local reference for the visual primitives and component families used across JacobMedley.com.",
+      "h1": 1,
+      "links": 64,
+      "images": 0
+    },
+    {
+      "route": "/design-system/retained/",
+      "title": "Retained Quiet Prism components",
+      "description": "Jacob Medley leads product and design teams. Explore decisions in commerce, design systems, research, and AI product experiences.",
+      "h1": 1,
+      "links": 0,
+      "images": 1
+    }
+  ]
+}

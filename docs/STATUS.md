@@ -1,5 +1,78 @@
 # Status
 
+## October 22, 2026: release preflight complete
+
+Jacob authorized inclusion and merge of all current pending changes and deployment.
+B108 and the discovery-flow follow-up are included with the 14 existing branch
+commits. No unrelated worktree is included. Fresh production build, lint/types,
+14-route export, three guard tests, 288-image/104-reference validation, 13-HTML
+content/link checks and the 59-pattern/197-example catalog pass. Desktop and
+320px checks cover all 15 shared introductions; home and AI study checks cover
+1351/820/390/320px. Customer recovery, reviewed service sending, modal return
+focus, keyboard title expansion, text spacing, reduced motion and forced colors
+passed. Actual 400% zoom, screen readers and other engines remain unverified.
+
+Evidence: `docs/reviews/deployment-20261022/verification.md`. Original pending
+changes are preserved and ready for the local release checkpoint, merge and push.
+Previous production/rollback: `ee33fe47ab3b385188bdb3446984dd34b8e2ef52`.
+Static preview: http://localhost:8090/#work, managed session 83753, from `out/`.
+Pre-publication homepage and both protected legacy routes return 200. Deployment
+result will follow in the post-publication closeout. Retired Exchange remains
+read-only; unique records in `C:/dev/_handoffs/release-20261022/` have no confirmed
+coordinator receipt. This is the final repository content write before checkpoint.
+
+## October 20, 2026: discovery flow correction
+
+Jacob's follow-up is applied: the discovery diagram uses five grid columns with
+arrows in two dedicated 2rem columns. All three descriptions have -.75rem (-12px)
+top and bottom margins. The existing 30rem container breakpoint stacks the flow
+with downward arrows. Browser checks passed at 1351, 820, 390 and 320px, including
+computed margins, no flow overflow and rendered Font Awesome arrows. TypeScript,
+scoped ESLint and the AI presentation guard passed. Evidence and screenshots:
+docs/reviews/release-20261020/verification.md.
+
+The live Next.js dev preview is running at http://localhost:8090/#work. A stale
+development stylesheet was cleared by reloading the tab. The earlier production
+export predates this follow-up. Broader release QA remains incomplete; nothing
+committed, pushed or published.
+
+## October 20, 2026: annotation edits and release preparation
+
+B108 applied locally: requested headlines, shared intro labels, AI section rhythm,
+research-title clamping, discovery connector spacing and service icon. Region-only
+comments 3 and 5 were mapped to discovery connectors and AI section separators;
+confirm those mappings during visual review.
+
+Production build, lint/types, three presentation-guard tests, 288-image/104-reference
+asset verification and the 59-pattern catalog check passed. Thirteen exported HTML
+files passed static content, metadata and internal-link checks. Existing facts and
+source citations were preserved. Evidence: docs/reviews/release-20261020/verification.md.
+
+Browser inspection captured the baseline, then the browser tool disconnected.
+Post-change responsive, interaction, font, keyboard and accessibility checks are
+incomplete. Release verdict remains incomplete. The updated export is available at
+http://localhost:8090/#work, served from the repository root with out as the target.
+No commit, push, merge or publication. The earlier October 17 preview note below is
+historical and preserved; the export has now been rebuilt.
+
+## October 17, 2026: local visual review preview
+
+Jacob requested a local review link. Source branch remains
+`codex/ai-study-main-20261008` at
+`018f158a996e75f4de80d44d196af0f1e8b2145e`.
+The initially clean tree had no lock. No site source or copy changed.
+The Next.js dev process reported ready on port 3000 but stalled compiling the
+homepage; its owned managed session 16292 was stopped through Ctrl+C.
+The existing production export (out/index.html timestamp October 11, 2026,
+01:26:46 UTC) is served from inside out/ at http://127.0.0.1:8090/.
+Managed session 13569 reports "Accepting connections". Terminal HTTP access is
+restricted and browser navigation timed out, so rendered-page acceptance is not
+claimed. No build or regression tests were rerun for this preview-only request.
+Only this status document changed. Own tree lock is released at closeout.
+No commit, push, merge, deployment, or shared Genesis change was made.
+Rollback/source reference remains the unchanged HEAD above. Review the preview;
+publication and the previously recorded accessibility coverage gaps remain open.
+
 ## October 10, 2026: public content reconciliation
 
 B106 and B107 applied locally. Health-E Commerce is restored from the current

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import study from '@/docs/ai-chat-study.json'
 import { PrismStudyHeading, PrismStudySurface, type PrismTone } from '@/components/ui/PrismStudy'
 import { CustomerExperience } from './AIExperience'
@@ -16,7 +16,7 @@ const sections = [
   ['finding', 'Discovery', 'fa-magnifying-glass', 'gold'],
   ['research', 'Research', 'fa-book-open', 'slate'],
   ['waiting', 'Customer', 'fa-comments', 'plum'],
-  ['review', 'Agent', 'fa-user', 'sage'],
+  ['review', 'Agent', 'fa-headset', 'sage'],
   ['outcome', 'Outcome', 'fa-chart-line', 'gold'],
 ] as const
 const e = study.editorial
@@ -114,7 +114,18 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <p className={styles.sectionCopy}>{e.discovery.intro}</p>
         <div className={styles.threeCards}>{e.discovery.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} />)}</div>
         <figure className={styles.evidence}>
-          <PrismStudySurface tone="gold"><ol className={styles.nodes}>{e.discovery.chain.map((node, index) => <li key={node.label}>{index > 0 && <span className={styles.connector}><Arrow /></span>}<i className={`fa-thin ${node.icon}`} aria-hidden="true" /><div className={styles.nodeHeading}><span>{node.label}</span><strong>{node.heading}</strong></div><p>{node.body}</p></li>)}</ol></PrismStudySurface>
+          <PrismStudySurface tone="gold">
+            <ol className={styles.nodes} role="list">
+              {e.discovery.chain.map((node, index) => <Fragment key={node.label}>
+                {index > 0 && <li className={styles.connector} role="presentation" aria-hidden="true"><Arrow /></li>}
+                <li className={styles.nodeContent}>
+                  <i className={`fa-thin ${node.icon}`} aria-hidden="true" />
+                  <div className={styles.nodeHeading}><span>{node.label}</span><strong>{node.heading}</strong></div>
+                  <p>{node.body}</p>
+                </li>
+              </Fragment>)}
+            </ol>
+          </PrismStudySurface>
           <figcaption>{study.assets['P03-E'].caption}</figcaption>
         </figure>
       </section>
@@ -124,7 +135,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
         <div className={styles.proseColumns}><p>{e.research.intro}</p><p>{e.research.application}</p></div>
         <div className={styles.papers} id="ai-research-papers">{e.research.papers.map((paper, index) => <PrismStudySurface key={paper.id} tone={index === 0 ? 'sage' : index === 1 ? 'slate' : 'gold'} className={styles.paper}>
           <header>
-            <a className={styles.paperSource} href={paper.url} target="_blank" rel="noreferrer">
+            <a className={styles.paperSource} href={paper.url} title={paper.title} target="_blank" rel="noreferrer">
               <span className={styles.paperMeta}><span>{paper.date} · {paper.kind}</span><Arrow external /></span>
               <Subheading>{paper.title}</Subheading><span className="sr-only"> (opens in a new tab)</span>
             </a>
@@ -151,7 +162,7 @@ export default function AIStudyContent({ readingPage = false, onWorkspaceChange 
       </section>
 
       <section className={styles.section} aria-labelledby="ai-review">
-        <PrismStudyHeading id="ai-review" icon="fa-user" level={headingLevel}>{e.representative.heading}</PrismStudyHeading>
+        <PrismStudyHeading id="ai-review" icon="fa-headset" level={headingLevel}>{e.representative.heading}</PrismStudyHeading>
         <div className={styles.split}><div className={styles.cardStack} id="ai-representative-context">{e.representative.cards.map(card => <StudyCard key={card.heading} card={card} headingLevel={subheading} stacked />)}</div><div className={styles.cardStack}>{e.representative.priorities.map(card => <StudyCard key={card.label} card={card} headingLevel={subheading} stacked />)}</div></div>
         <AIDemoEntry id="ai-workspace-entry" icon="fa-table-columns" tone="slate" title="Requirements and future concepts" body={e.representative.demoNote} action={e.representative.cta} buttonRef={entryRef} onOpen={() => openWorkspace('service')} headingLevel={subheading} />
       </section>

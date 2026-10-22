@@ -1,0 +1,82 @@
+{
+  "checks": [
+    {
+      "url": "https://jacobmedley.com/case-studies/how-not-to-launch-an-ai-powered-product/",
+      "status": 200,
+      "lastModified": [
+        "Thu, 22 Oct 2026 04:31:06 GMT"
+      ],
+      "cache": [
+        "MISS"
+      ],
+      "cacheInfo": [
+        "0 NC:000000 UP:"
+      ],
+      "checkedAt": "2026-10-22T00:32:01.4708305-04:00",
+      "titlePresent": true,
+      "hecPresent": false,
+      "updatedOnePark": false,
+      "employerIdentifierInStudy": false
+    },
+    {
+      "url": "https://jacobmedley.com/musings/",
+      "status": 200,
+      "lastModified": null,
+      "cache": [
+        "HIT"
+      ],
+      "cacheInfo": null,
+      "checkedAt": "2026-10-22T00:32:01.6887356-04:00",
+      "titlePresent": false,
+      "hecPresent": false,
+      "updatedOnePark": false,
+      "employerIdentifierInStudy": false
+    },
+    {
+      "url": "https://jacobmedley.com/interaction-design-concepts/response-times/",
+      "status": 200,
+      "lastModified": [
+        "Thu, 18 Jul 2024 02:36:52 GMT"
+      ],
+      "cache": [
+        "MISS"
+      ],
+      "cacheInfo": [
+        "0 NC:000000 UP:"
+      ],
+      "checkedAt": "2026-10-22T00:32:01.8582124-04:00",
+      "titlePresent": false,
+      "hecPresent": false,
+      "updatedOnePark": false,
+      "employerIdentifierInStudy": false
+    },
+    {
+      "url": "https://jacobmedley.com/documents/ai-demo/account-information-guide.pdf",
+      "status": 200,
+      "lastModified": [
+        "Thu, 22 Oct 2026 04:31:06 GMT"
+      ],
+      "cache": null,
+      "cacheInfo": [
+        "DT:1"
+      ],
+      "checkedAt": "2026-10-22T00:32:02.0289659-04:00",
+      "titlePresent": false,
+      "hecPresent": false,
+      "updatedOnePark": false,
+      "employerIdentifierInStudy": false
+    },
+    {
+      "url": "https://jacobmedley.com/",
+      "client": "curl ordinary GET, no cache bypass",
+      "status": 200,
+      "lastModified": "Thu, 22 Oct 2026 04:31:10 GMT",
+      "cache": "MISS",
+      "titlePresent": true,
+      "hecPresent": true,
+      "updatedOnePark": true,
+      "browserVerified": true
+    }
+  ],
+  "diagnostic": "PowerShell Invoke-WebRequest returned 403 for the homepage on two attempts; ordinary curl GET returned 200 with fresh content and MISS, and the Chrome browser loaded and operated the current homepage. Cause of client-dependent response not established; no cache bypass, user-agent spoofing, or server configuration change."
+}

@@ -1,11 +1,11 @@
 # Copy Register
 
-**Status:** B0 through B87 and B93–B95. B80–B87 published October 8, 2026; B93–B94 published October 8, 2026 in fa2c5f1 (B94 corrects B93 footer wording). B95 APPLIED LOCALLY, not deployed. Earlier edits APPLIED unless marked otherwise. B88–B92 are reserved for the separate private portfolio.
-B60 and B64 are implemented in the local full-site integration, not published.
-B96-B99 are applied locally. B99 records Jacob's clarified AI launch account.
-B100 is applied locally: accuracy, speed, workflow fit and original feedback drafts.
-B102-B107 are applied locally. B106 reconciles public employment copy; B107 governs anonymous project attribution.
-B101 is applied locally: discovery narrative, 2023–2024 research, measured timing, enabled streaming, and service-workspace reconstruction. Not deployed.
+**Status:** B0 through B87 and B93–B108 are applied unless superseded or otherwise marked. B95–B108 published October 22, 2026 in db9278a6002c056da1b075dfb3e8711c5fbb2fa3, following Jacob's explicit instruction to include and merge all current changes. Deployment and live checks passed; see docs/reviews/deployment-20261022/verification.md. Earlier local-only or no-publication notes below describe their original checkpoints and are superseded by this release record. B88–B92 remain reserved for the separate private portfolio.
+B80–B87 and B93–B94 were published October 8, 2026; B94 corrects B93 footer wording.
+B60/B64 are included in the delivered full-site source. B99 records the clarified
+launch account; B100/B101 cover discovery, requirements and reconstruction;
+B106 reconciles employment copy and B107 governs anonymous attribution. B108
+records the final release annotations and discovery-flow follow-up.
 B64 promotes the selected B61/B62/B63 wording from lab to production source and
 supersedes B57's dedicated-page deferral. Historical scope notes below remain
 part of the record; the latest applicable entry governs.

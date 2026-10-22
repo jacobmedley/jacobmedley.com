@@ -1,5 +1,31 @@
 # Status
 
+## October 22, 2026: all current changes merged and deployed
+
+Jacob's authorized release is live at `db9278a6002c056da1b075dfb3e8711c5fbb2fa3`.
+Main was fast-forwarded from `ee33fe47ab3b385188bdb3446984dd34b8e2ef52`, the
+production rollback point. Deployment run 39722704770 succeeded in 1m14s.
+B95–B108, including restored employment content and the October 20 follow-up,
+are published. No unrelated worktree was merged or changed.
+
+Fresh build, guards, assets, catalog and export checks passed. Browser coverage
+includes all 15 introductions at desktop/320px, home and AI study at four widths,
+demo recovery and reviewed sending, keyboard focus/return, title expansion,
+text spacing, reduced motion and forced colors. Live Chrome confirms updated
+content, working disclosures/modal, no missing images or console errors and
+390px reflow. Ordinary homepage GET returned 200/MISS with Last-Modified
+October 22, 04:31:10 UTC. Anonymous reading page, both protected legacy routes
+and sample PDF return 200. PowerShell's HTTP client separately returned 403 for
+the homepage; ordinary curl and Chrome succeeded without bypass. Cause unverified.
+
+Evidence: `docs/reviews/deployment-20261022/verification.md` and linked captures.
+Final checkout: main. A documentation-only `[skip ci]` closeout follows this last
+write; no site source changed after deployment. Owned lock is released at
+closeout. Static preview remains http://localhost:8090/, PID 63264, session 83753.
+Actual 400% zoom, screen-reader/other-engine coverage and coordinator receipt
+remain unverified. Retired Exchange is read-only; unique completion records are
+in `C:/dev/_handoffs/release-20261022/`. No requested deployment work remains.
+
 ## October 22, 2026: release preflight complete
 
 Jacob authorized inclusion and merge of all current pending changes and deployment.

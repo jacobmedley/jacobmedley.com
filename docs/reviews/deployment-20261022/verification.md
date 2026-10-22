@@ -75,5 +75,32 @@ coordinator; receipt is unverified. No shared coordinator records were edited.
 
 ## Publication
 
-Preflight complete. Merge, deployment result and live checks will be recorded
-after the authorized push. A build or preview alone is not deployment evidence.
+Published release: `db9278a6002c056da1b075dfb3e8711c5fbb2fa3`.
+The feature branch was checkpointed, then main was fast-forwarded and pushed.
+[Deployment run 39722704770](https://github.com/jacobmedley/jacobmedley.com/actions/runs/39722704770)
+completed successfully; Build and FTP Deploy took 1m14s. The workflow's nonblocking
+notices concern action runtime deprecation and the Ubuntu runner migration.
+
+Ordinary homepage GET returned 200, `X-Proxy-Cache: MISS`, and
+`Last-Modified: Thu, 22 Oct 2026 04:31:10 GMT`, matching the deployment. The new
+AI title, One Park subtitle and restored HEC entry are present. The anonymous
+reading route returns 200 with the new title and no employer/vendor identifiers.
+Both protected legacy routes and the sample guide PDF return 200. No purge was
+needed. See [HTTP evidence](live-http-checks.json).
+
+The PowerShell HTTP client returned 403 for the homepage twice, while ordinary
+curl and Chrome loaded the current page successfully. The client-dependent cause
+was not established. No server setting, cache bypass or user-agent override was
+used. Live Chrome checks passed: new modal title, rendered headset, no broken
+images, HEC and revised employment disclosures, 390px reflow, and no console
+errors. Viewport and media overrides were reset. The live tab is left available.
+
+![Live case study](live-case-study.png)
+
+No site-source changes followed publication. This closeout updates evidence,
+copy-register publication state and STATUS only; its commit uses `[skip ci]`.
+Main is the final checkout. The static preview remains on port 8090, PID 63264,
+managed session 83753. The owned lock is released after the closeout commit.
+Remaining limits are actual 400% zoom, assistive-technology/other-engine coverage,
+the HTTP-client diagnostic above, and unconfirmed coordinator receipt. There is
+no remaining merge or deployment work for this request.

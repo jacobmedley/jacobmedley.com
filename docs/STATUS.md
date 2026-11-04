@@ -1,5 +1,50 @@
 # Status
 
+## November 3, 2026: B109 copy release verified locally; PR CI pending
+
+Jacob authorized the exact packaged hero, section introductions, leadership,
+mentorship, WebMD, DentalPlans and Hydra copy, compatible dependency repairs,
+then normal PR merge and SiteGround deployment after required checks. B109 is
+applied without editorial changes. Historical package status/check claims were
+excluded. All twelve unrelated project records, employment, credentials, target
+metric grids and image references are preserved by structured comparisons.
+
+Work uses the clean isolated checkout C:/dev/jacobmedley-copy-release-20261103,
+branch codex/copy-release-20261103, baseline b5d54e28601ead125b8d77a02bbf58696ef858aa.
+The primary checkout's Figma documentation and quiet-prism-figma-a4e0fdd2 lock
+remain untouched. This session owns only its isolated tree lock. Authenticated
+feature-branch push succeeded; no main update or deployment has occurred.
+
+Next 15.5.29, sharp 0.35.5, compression 1.8.2, source-map-js 1.2.2 and patched
+brace-expansion versions remove all high/critical findings. Seventeen moderate
+development-tooling entries remain below the unchanged high-severity gate.
+Clean npm install, TypeScript, source ESLint, production export, three guard
+tests, 288-image/104-reference validation and 59-pattern catalog checks pass on
+Node 20.20.2. CI retains Ubuntu/Node 20; actual PR CI is the next release gate.
+
+Chromium checks pass at 1440/820/390/320px: approved copy, images/fonts, wrapping,
+overflow, modal keyboard/close/Escape/focus return, normal and reduced motion.
+All 52 final screenshots were visually reviewed. App console and first-party
+resources are clean. Known Adobe/Google telemetry DNS failures also occur on
+the pre-release live site. Use localhost:8090; the icon kit rejects 127.0.0.1.
+Screen readers, actual 400% zoom and other engines remain untested.
+
+Evidence and exact scope: docs/reviews/approved-copy-v2-20261103/verification.md,
+source-checks.json and browser-checks.json. Changes: seven approved copy files,
+package.json/lockfile, this status and that evidence directory. Scoped copy and
+dependency commits follow this last repository-content write. Static preview
+is http://localhost:8090/, PID 63912, managed session 52974, served from out/.
+
+Latest verified pre-release production and rollback reference is db9278a6002c056da1b075dfb3e8711c5fbb2fa3,
+deployment run 39722704770. Ordinary homepage GET is 200/MISS with October 22
+Last-Modified; musings/ and interaction-design-concepts/response-times/ are 200.
+Normal PR verification, permitted merge, deployment and fresh public verification
+remain. dangerous-clean-slate stays false. No protection bypass is authorized.
+
+Fresh canonical Genesis STATE/decision reads confirm the Exchange remains retired
+and read-only. Unique local handoffs are under C:/dev/_handoffs/copy-release-20261103/;
+no shared update, coordinator receipt, Genesis job or routing change is claimed.
+
 ## October 22, 2026: all current changes merged and deployed
 
 Jacob's authorized release is live at `db9278a6002c056da1b075dfb3e8711c5fbb2fa3`.

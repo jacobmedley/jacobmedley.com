@@ -1,6 +1,6 @@
 # Copy Register
 
-**Pending release:** B109 [Approved website and case-study copy] is applied on `codex/copy-release-20261103`. Fresh Node 20 build, source, dependency-audit and browser checks pass. PR verification and publication remain pending. See docs/reviews/approved-copy-v2-20261103/verification.md.
+**Published release:** B109 [Approved website and case-study copy] is live in `b6d194d1c8cc95815f2d59e070e0066d025169a0`, published November 3, 2026 Eastern (November 4 UTC). PR #13 verification and SiteGround deployment run 41772313015 passed. Ordinary public requests and desktop/mobile rendered checks confirm the approved copy. See docs/reviews/approved-copy-v2-20261103/verification.md.
 
 **Status:** B0 through B87 and B93–B108 are applied unless superseded or otherwise marked. B95–B108 published October 22, 2026 in db9278a6002c056da1b075dfb3e8711c5fbb2fa3, following Jacob's explicit instruction to include and merge all current changes. Deployment and live checks passed; see docs/reviews/deployment-20261022/verification.md. Earlier local-only or no-publication notes below describe their original checkpoints and are superseded by this release record. B88–B92 remain reserved for the separate private portfolio.
 B80–B87 and B93–B94 were published October 8, 2026; B94 corrects B93 footer wording.
@@ -4524,7 +4524,7 @@ Preserve approved source names, citations, claims, measurements, anonymity and t
 
 ## B109: Approved website and case-study copy
 
-Status: APPLIED on `codex/copy-release-20261103`. Jacob authorized implementation and publication on November 3, 2026. Fresh local checks pass; NOT YET PUBLISHED. The final hero and leadership refinements supersede the draft paragraphs.
+Status: APPLIED AND PUBLISHED in `b6d194d1c8cc95815f2d59e070e0066d025169a0` through PR #13 and SiteGround deployment run 41772313015. Jacob authorized implementation and publication on November 3, 2026. Fresh local, PR CI and public-site checks passed. The final hero and leadership refinements supersede the draft paragraphs.
 
 Scope: homepage, leadership and mentorship, WebMD, DentalPlans and Hydra. Current themes, headlines, roles, ownership distinctions, metrics and visual evidence remain. Other studies and employment records are unchanged. Authorship is AI-assisted editorial work approved by Jacob. This does not establish unaided authorship.
 

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "home",
+    "url": "https://jacobmedley.com/",
+    "status": "200",
+    "cache": "X-Proxy-Cache: MISS",
+    "lastModified": "Last-Modified: Wed, 04 Nov 2026 04:19:09 GMT",
+    "observedUtc": "2026-11-04T04:19:53.3245982Z"
+  },
+  {
+    "name": "musings",
+    "url": "https://jacobmedley.com/musings/",
+    "status": "200",
+    "cache": "X-Proxy-Cache: HIT",
+    "lastModified": null,
+    "observedUtc": "2026-11-04T04:19:53.7836647Z"
+  },
+  {
+    "name": "legacy",
+    "url": "https://jacobmedley.com/interaction-design-concepts/response-times/",
+    "status": "200",
+    "cache": "X-Proxy-Cache: MISS",
+    "lastModified": "Last-Modified: Thu, 18 Jul 2024 02:36:52 GMT",
+    "observedUtc": "2026-11-04T04:19:54.0743012Z"
+  },
+  {
+    "name": "anonymous",
+    "url": "https://jacobmedley.com/case-studies/how-not-to-launch-an-ai-powered-product/",
+    "status": "200",
+    "cache": "X-Proxy-Cache: MISS",
+    "lastModified": "Last-Modified: Wed, 04 Nov 2026 04:19:06 GMT",
+    "observedUtc": "2026-11-04T04:19:54.4110507Z"
+  },
+  {
+    "name": "guide",
+    "url": "https://jacobmedley.com/documents/ai-demo/account-information-guide.pdf",
+    "status": "200",
+    "cache": null,
+    "lastModified": "Last-Modified: Thu, 22 Oct 2026 04:31:06 GMT",
+    "observedUtc": "2026-11-04T04:19:54.6277285Z"
+  }
+]

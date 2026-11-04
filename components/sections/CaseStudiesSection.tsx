@@ -31,7 +31,7 @@ export default function CaseStudiesSection() {
           />
 
           <div className="work-introduction">
-            <p>Selected work across products, brands, and design systems. Open a project to see the decisions and the work they produced.</p>
+            <p>Selected work in commerce, design systems, and customer experience. Each story shows a decision, the work behind it, and what changed.</p>
           </div>
 
           <div className="featured-work-grid">

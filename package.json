@@ -21,7 +21,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
-    "next": "^15.3.1",
+    "next": "15.5.29",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0"
@@ -29,6 +29,12 @@
   "overrides": {
     "next": {
       "postcss": "^8.5.28"
+    },
+    "serve": {
+      "compression": "1.8.2"
+    },
+    "minimatch@3": {
+      "brace-expansion": "1.1.21"
     }
   },
   "devDependencies": {

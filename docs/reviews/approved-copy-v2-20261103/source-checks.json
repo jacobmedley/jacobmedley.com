@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "All 12 unrelated project records unchanged; target titles, metadata, metric grids and image references preserved.",
+    "Employment, credentials and expertise source unchanged.",
+    "All B109 home, leadership, mentorship and three-study strings match the register exactly; full signature retained.",
+    "Applied copy files match the supplied patch exactly, excluding historical status and verification records."
+  ],
+  "projects": 15,
+  "baseline": "b5d54e28601ead125b8d77a02bbf58696ef858aa"
+}

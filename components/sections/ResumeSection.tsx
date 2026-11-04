@@ -8,12 +8,12 @@ const leadershipLeft = [
   {
     title: "Product judgment",
     icon: 'fa-thin fa-brain',
-    body: "I led experience research for a conversational assistant. Accuracy, uncertainty, and the route to human support were product decisions, with consequences for the person asking the question.",
+    body: "For a conversational assistant, I led experience research into accuracy, uncertainty, and the route to human help. Those requirements mattered to the person relying on the answer.",
   },
   {
     title: "Shared systems",
     icon: 'fa-thin fa-layer-group',
-    body: "I look for work the next project would otherwise repeat. Brand settings, common patterns, and reusable product data give teams a foundation they can use again.",
+    body: "I look for work the next project would otherwise repeat. Common patterns, reusable product data, and brand settings give the next team a place to start.",
   },
 ]
 
@@ -21,16 +21,16 @@ const leadershipRight = [
   {
     title: "Evidence for decisions",
     icon: 'fa-thin fa-chart-line',
-    body: "I use research and experimentation to examine a decision. Business results belong beside that work, with enough context to explain what changed and what was actually measured.",
+    body: "I use research and experiments to examine a decision. When I report a business result, I explain what changed and what the measurement actually describes.",
   },
   {
     title: "People with authority",
     icon: 'fa-thin fa-flask',
-    body: "I make ownership explicit. People should know which decisions they can make and where they need another owner. I stay available without becoming the approval path for every next step.",
+    body: "People should know which decisions they own and when they need another owner. I stay available, without making every next step a request for permission.",
   },
 ]
 
-const designLeadershipIntro = "A customer experience is capped by what the people delivering it can actually do. I follow the problem back through the decisions and dependencies behind it. I set direction and ownership, then work on the conditions the team needs to deliver."
+const designLeadershipIntro = "I follow a customer problem back through the decisions and dependencies behind it. I set the direction and make clear who owns each decision. Then I remove the blockers the team cannot resolve on its own."
 
 type ExperienceRole = {
   title: string
@@ -111,10 +111,9 @@ const experience: ExperienceEntry[] = [
 ]
 
 const mentorship = [
-  "I walk beside junior staff, asking questions until they can name the next step, dependency, or piece they can move now.",
-  "I make authority explicit. People can assess the risk and decide without bringing every next step back for permission.",
-  "I stay available and remove blockers beyond their control.",
-  "We review outcomes together. We change the conditions behind mistakes and understand good results well enough to repeat them."
+  "I work beside junior staff, asking questions until they can name the next step and what it depends on.",
+  "I make their authority clear, so they can assess the risk and decide what to do. I stay available and remove blockers beyond their control.",
+  "We review outcomes together. When something goes wrong, we examine the conditions behind it. When it goes well, we work out what is worth repeating."
 ]
 
 const expertise = [
@@ -206,7 +205,7 @@ export default function ResumeSection() {
               <CornerWaves softened />
               <div className="resume-practice-column">
                 <h3><i className="fa-thin fa-people-group" aria-hidden="true" /> Team Building and Mentorship</h3>
-                <SkillList items={mentorship} />
+                {mentorship.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
               </div>
               <div className="resume-practice-column">
                 <h3><i className="fa-thin fa-bullseye-arrow" aria-hidden="true" /> Expertise</h3>

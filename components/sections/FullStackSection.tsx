@@ -65,7 +65,7 @@ export default function FullStackSection() {
           <div className="row justify-center">
             <div className="col-24 col-lg-16 text-center">
               <p className="display-1 full-stack-intro">
-                Sometimes the next step belongs to a customer. Sometimes a team needs to decide what to build. These examples show how I approach the work, including the visual ideas that grew out of it.
+                A customer needs a next step. A team needs to decide what to build. These examples show how I work through those questions, from research and planning to the visual ideas that reach the page.
               </p>
             </div>
           </div>

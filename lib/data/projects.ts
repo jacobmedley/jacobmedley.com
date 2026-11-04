@@ -254,32 +254,38 @@ export const projects: Project[] = [
     media: [],
   },
   {
-    id: 'webmd',
-    section: 'work',
-    display: 'feature',
-    disciplines: ['Product', 'Conversion Optimization'],
-    order: 1,
-    caseStudyTheme: 'Speed to Market',
-    title: 'WebMD',
-    subtitle: 'Trust Meets Commerce',
-    cardImage: { src: '/images/work/WebMD-HM.png', alt: 'WebMD eCommerce website' },
-    summary: "WebMD had the audience. DentalPlans had the plans. I joined them in one path from health research to checkout.",
-    visible: true,
-    briefHeading: 'From Campaign to Commerce',
-    brief: {
+    "id": "webmd",
+    "section": "work",
+    "display": "feature",
+    "disciplines": [
+      "Product",
+      "Conversion Optimization"
+    ],
+    "order": 1,
+    "caseStudyTheme": "Speed to Market",
+    "title": "WebMD",
+    "subtitle": "Trust Meets Commerce",
+    "cardImage": {
+      "src": "/images/work/WebMD-HM.png",
+      "alt": "WebMD eCommerce website"
+    },
+    "summary": "WebMD brought the audience. DentalPlans brought the plans. I designed and built the path from health research to purchase.",
+    "visible": true,
+    "briefHeading": "From Campaign to Commerce",
+    "brief": {
       "image": {
         "src": "/images/work/webmd-modal/brief-2.png",
         "alt": ""
       },
       "paragraphs": [
-        "When WebMD and DentalPlans.com became part of Internet Brands, we had a new route to customers. People were already visiting WebMD to understand a health or dental concern. We could connect a relevant dental need with a way to act on it."
+        "People came to WebMD with questions about their health. Bringing DentalPlans into that journey gave them a way to act on a dental need: compare savings plans, find a participating dentist, and purchase."
       ]
     },
-    introduction: [
-      "This strategy put a dental savings experience in that path. People could move from researching care to comparing plans, finding a dentist, and purchasing."
+    "introduction": [
+      "When the two businesses became part of Internet Brands, that opportunity became possible. I shaped the experience around the decision a person was ready to make."
     ],
-    role: "Product design, UX strategy, prototyping and front-end implementation",
-    contributions: [
+    "role": "Product design, UX strategy, prototyping, and front-end implementation",
+    "contributions": [
       {
         "icon": "fa-thin fa-pen-ruler",
         "label": "Product Design"
@@ -297,46 +303,19 @@ export const projects: Project[] = [
         "label": "Front-end / Implementation"
       }
     ],
-    media: [
+    "media": [
       {
         "type": "heading",
-        "text": "The Strategy",
-        "level": 3,
-        "icon": "fa-thin fa-lightbulb"
+        "text": "Start with the question",
+        "level": 3
       },
       {
         "type": "text",
-        "text": "The entry point mattered. A person researching a dental need had a different question from someone already choosing a plan. I shaped the journey around the decision they were ready to make."
-      },
-      {
-        "type": "styled-list",
-        "items": [
-          {
-            "icon": "fa-thin fa-magnifying-glass",
-            "label": "Intent",
-            "body": "Start with people already researching a relevant dental need."
-          },
-          {
-            "icon": "fa-thin fa-lightbulb",
-            "label": "Relevance",
-            "body": "Introduce DentalPlans as a solution when it matched what the customer was trying to accomplish."
-          },
-          {
-            "icon": "fa-thin fa-cart-shopping",
-            "label": "Commerce",
-            "body": "Create a clear path from learning to comparing plans, finding a dentist, and purchasing."
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "text": "Recognize Intent",
-        "level": 3,
-        "icon": "fa-thin fa-magnifying-glass"
+        "text": "Someone researching a dental concern had a different question from someone already choosing a plan. The homepage needed to explain dental savings and make their relevance clear before asking for a purchase."
       },
       {
         "type": "text",
-        "text": "The homepage introduced dental savings and gave visitors a way to start looking. It needed to answer a basic question before asking for a purchase: is this relevant to the care I need?"
+        "text": "I designed the route from that first question into plan search. The customer could begin with the care they needed, then examine the options available to them."
       },
       {
         "type": "image-pair",
@@ -351,17 +330,16 @@ export const projects: Project[] = [
       },
       {
         "type": "heading",
-        "text": "Support the Decision",
-        "level": 3,
-        "icon": "fa-thin fa-list-check"
+        "text": "Keep the dentist in the decision",
+        "level": 3
       },
       {
         "type": "text",
-        "text": "Choosing a plan meant answering more than a pricing question. Customers also needed to know which dentists participated."
+        "text": "Price was only part of choosing a plan. Customers also needed to know which dentists participated."
       },
       {
         "type": "text",
-        "text": "Plan search, comparison, and detail pages let people examine their options. Dentist search kept the provider question inside the same journey."
+        "text": "Plan search, comparisons, and detail pages gave them ways to examine their options. Dentist search stayed in the same journey, with a profile for the provider they were considering. Cart and checkout took the selected plan through purchase."
       },
       {
         "type": "heading",
@@ -429,16 +407,6 @@ export const projects: Project[] = [
       },
       {
         "type": "heading",
-        "text": "Move to Action",
-        "level": 3,
-        "icon": "fa-thin fa-cart-shopping"
-      },
-      {
-        "type": "text",
-        "text": "The dentist profile gave people a specific provider to review. Cart and checkout then took the selected plan through purchase."
-      },
-      {
-        "type": "heading",
         "text": "Dentist Details",
         "level": 4
       },
@@ -471,9 +439,8 @@ export const projects: Project[] = [
       },
       {
         "type": "heading",
-        "text": "From design to revenue",
-        "level": 3,
-        "icon": "fa-thin fa-chart-line"
+        "text": "Two weeks to a live site",
+        "level": 3
       },
       {
         "type": "text",
@@ -486,23 +453,26 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'dentalplans',
-    section: 'work',
-    display: 'feature',
-    disciplines: ['Systems', 'Product'],
-    order: 2,
-    caseStudyTheme: 'Building for Scale',
-    title: 'DentalPlans.com',
-    subtitle: "This is how you scale",
-    cardImage: {
-      src: '/images/work/dpprod-modal/dpprod-hm.png',
-      alt: 'DentalPlans product framework'
+    "id": "dentalplans",
+    "section": "work",
+    "display": "feature",
+    "disciplines": [
+      "Systems",
+      "Product"
+    ],
+    "order": 2,
+    "caseStudyTheme": "Building for Scale",
+    "title": "DentalPlans.com",
+    "subtitle": "This is how you scale",
+    "cardImage": {
+      "src": "/images/work/dpprod-modal/dpprod-hm.png",
+      "alt": "DentalPlans product framework"
     },
-    summary: "One storefront became five branded properties. A shared platform cut launch time from six weeks to two.",
-    modalTitle: 'Product Framework and Design System',
-    visible: true,
-    briefHeading: 'How Fast Can You Stand Up a Website?',
-    brief: {
+    "summary": "One storefront became five branded properties. I owned the framework they shared. Launch time fell from six weeks to two, and the company owned the platform.",
+    "modalTitle": "Product Framework and Design System",
+    "visible": true,
+    "briefHeading": "How Fast Can You Stand Up a Website?",
+    "brief": {
       "image": {
         "src": "/images/work/dpprod-modal/brief.png",
         "alt": ""
@@ -511,19 +481,35 @@ export const projects: Project[] = [
         "It started with a small request: “You know WordPress, right? How fast can you stand up a website?”"
       ]
     },
-    introduction: [
-      "The first storefront tested whether customers would buy through a focused brand experience. They did. More sites were now on the table, along with every manual update the first one needed.",
-      "I owned the roadmap for the shared commerce framework that followed. Each release removed a piece of repeated work and left a capability the next property could use."
+    "introduction": [
+      "The first storefront sold. Sale prices were typed in by hand, one product at a time. When leadership asked for another site, the manual work needed attention too.",
+      "I owned the roadmap for the commerce framework that followed. Each release gave the next property something it could reuse."
     ],
-    role: "Product ownership, UX/UI design and front-end development",
-    collaboration: "Engineering",
-    contributions: [
-      { icon: 'fa-thin fa-boxes-stacked', label: 'Product Ownership' },
-      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
-      { icon: 'fa-thin fa-pen-ruler', label: 'UX & UI Design' },
-      { icon: 'fa-thin fa-laptop-code', label: 'Front-end Development' },
+    "role": "Product ownership, UX/UI design, and front-end development",
+    "collaboration": "Engineering",
+    "contributions": [
+      {
+        "icon": "fa-thin fa-boxes-stacked",
+        "label": "Product Ownership"
+      },
+      {
+        "icon": "fa-thin fa-layer-group",
+        "label": "Design Systems"
+      },
+      {
+        "icon": "fa-thin fa-pen-ruler",
+        "label": "UX & UI Design"
+      },
+      {
+        "icon": "fa-thin fa-laptop-code",
+        "label": "Front-end Development"
+      }
     ],
-    media: [
+    "media": [
+      {
+        "type": "text",
+        "text": "Five branded properties ran on the framework. Launch time per property fell from six weeks to two."
+      },
       {
         "type": "metric-grid",
         "heading": "What the properties produced",
@@ -558,8 +544,12 @@ export const projects: Project[] = [
       },
       {
         "type": "text",
-        "text": "Finance attributed the revenue and lead-capture shares to the properties in one measured year. The 47% is a share of that year’s revenue-growth increment. Launch time is per property.",
+        "text": "In one measured year, finance credited those properties with the revenue and lead-capture shares shown here. The 47% is a share of that year's growth increment. Launch time is per property.",
         "variant": "note"
+      },
+      {
+        "type": "text",
+        "text": "The company owned the custom platform. Each launch could reuse capabilities already built, with the brand's identity carried through the experience."
       },
       {
         "type": "progress-diagram",
@@ -747,20 +737,16 @@ export const projects: Project[] = [
         "right": [
           {
             "type": "heading",
-            "text": "Work the next site could reuse",
+            "text": "Let the next site inherit the work",
             "level": 3
           },
           {
-            "type": "list",
-            "items": [
-              "Shared interface patterns and components",
-              "Brand identity kept separate from the application",
-              "Product information, dentist search, and cart services",
-              "Scheduled offers and expiry",
-              "Source attribution across acquisition channels",
-              "Documentation for designers and developers",
-              "Deployment for one property or all of them"
-            ]
+            "type": "text",
+            "text": "The framework grew to include scheduled offers and expiry, source attribution, reusable interface patterns, and deployment for one property or all of them."
+          },
+          {
+            "type": "text",
+            "text": "Source attribution kept the page consistent with the ad that brought someone there. Promotions, copy, and messaging could change by traffic source, down to individual affiliate IDs."
           }
         ]
       },
@@ -781,16 +767,12 @@ export const projects: Project[] = [
         "right": [
           {
             "type": "heading",
-            "text": "Start with one storefront",
+            "text": "Build the next capability when it is needed",
             "level": 3
           },
           {
             "type": "text",
             "text": "We began with a single-product flow. Engineering built the service that passed the product into the existing cart. I designed the storefront with room for other products and brands."
-          },
-          {
-            "type": "text",
-            "text": "The first site sold, and leadership asked for a second. That gave the next release a reason to exist."
           }
         ]
       },
@@ -818,11 +800,7 @@ export const projects: Project[] = [
           },
           {
             "type": "text",
-            "text": "The second site needed its identity to continue into the cart. We added a cart that could take each brand’s treatment and services for shared product information."
-          },
-          {
-            "type": "text",
-            "text": "Common components could be used in landing pages and purchase flows. Testing a variant no longer meant rebuilding every part of it."
+            "text": "The second site needed its identity to continue through checkout. We added a cart that could take each brand's treatment, alongside services for shared product information. Common components gave landing pages and purchase flows a starting point for the next variation."
           }
         ]
       },
@@ -851,11 +829,7 @@ export const projects: Project[] = [
           },
           {
             "type": "text",
-            "text": "Product information moved into shared services. When engineering added or changed data, every property could use it. The interfaces used common patterns to present it."
-          },
-          {
-            "type": "text",
-            "text": "Acquisition work continued alongside the platform: landing pages, content for organic search, and tests across the purchase flow."
+            "text": "As the platform grew, product information moved into shared services. An engineering update could become available to every property. Brand settings stayed separate from the application, so each property could keep its identity."
           }
         ]
       },
@@ -883,7 +857,7 @@ export const projects: Project[] = [
           },
           {
             "type": "text",
-            "text": "I designed and built the dentist-search interface from the existing patterns and components. The platform could take another customer task without needing another set of interface conventions."
+            "text": "Dentist search was another customer task the platform could take on. I designed and built its interface from the existing patterns and components."
           }
         ]
       },
@@ -1109,55 +1083,65 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'hydra',
-    section: 'work',
-    display: 'feature',
-    disciplines: ['Systems', 'Product'],
-    order: 4,
-    caseStudyTheme: 'A Shared Language',
-    title: 'Hydra',
-    subtitle: 'Failure to Communicate',
-    cardImage: { src: '/images/work/hydra/hydra-hm.png', alt: 'Hydra design system' },
-    summary: "One interface. Several interpretations. I built a shared vocabulary and reusable components for product, marketing and engineering.",
-    modalTitle: 'Hydra Design System',
-    visible: true,
-    briefHeading: 'Three Teams. One Vocabulary.',
-    brief: {
+    "id": "hydra",
+    "section": "work",
+    "display": "feature",
+    "disciplines": [
+      "Systems",
+      "Product"
+    ],
+    "order": 4,
+    "caseStudyTheme": "A Shared Language",
+    "title": "Hydra",
+    "subtitle": "Failure to Communicate",
+    "cardImage": {
+      "src": "/images/work/hydra/hydra-hm.png",
+      "alt": "Hydra design system"
+    },
+    "summary": "Product, marketing, and engineering had different names for the same interface. I built Hydra around common patterns the existing applications could adopt.",
+    "modalTitle": "Hydra Design System",
+    "visible": true,
+    "briefHeading": "Three Teams. One Vocabulary.",
+    "brief": {
       "image": {
         "src": "/images/work/hydra/brief.png",
         "alt": ""
       },
       "paragraphs": [
-        "The adoption constraint mattered. A shared interface could not depend on replacing the applications underneath it."
+        "There were eight button treatments across the product. Error messages varied in wording and presentation. The same action could look different from one part of the experience to the next."
       ]
     },
-    introduction: [
-      "I secured executive backing for Hydra and kept the changes in the front end. Product, marketing, and engineering could work from the same patterns across brands and back-end codebases."
+    "introduction": [
+      "Product, marketing, and engineering were also describing the interface in different ways. I built the case for Hydra and secured executive backing. Adoption depended on a practical constraint: the applications underneath it had to remain."
     ],
-    role: "Design system leadership, systems analysis and UI engineering",
-    collaboration: "Product, marketing and engineering",
-    contributions: [
-      { icon: 'fa-thin fa-layer-group', label: 'Design Systems' },
-      { icon: 'fa-thin fa-lightbulb', label: 'Design Leadership' },
-      { icon: 'fa-thin fa-magnifying-glass-chart', label: 'Systems Analysis' },
-      { icon: 'fa-thin fa-laptop-code', label: 'UI Engineering' },
+    "role": "Design system leadership, systems analysis, and UI engineering",
+    "collaboration": "Product, marketing, and engineering",
+    "contributions": [
+      {
+        "icon": "fa-thin fa-layer-group",
+        "label": "Design Systems"
+      },
+      {
+        "icon": "fa-thin fa-lightbulb",
+        "label": "Design Leadership"
+      },
+      {
+        "icon": "fa-thin fa-magnifying-glass-chart",
+        "label": "Systems Analysis"
+      },
+      {
+        "icon": "fa-thin fa-laptop-code",
+        "label": "UI Engineering"
+      }
     ],
-    media: [
+    "media": [
       {
         "type": "split-row",
         "left": [
           {
             "type": "heading",
-            "text": "Eight ways to draw a button",
+            "text": "Eight button treatments",
             "level": 3
-          },
-          {
-            "type": "text",
-            "text": "There were eight button treatments across the product. Error messages had their own variations in copy and presentation. The same action could look different from one part of the experience to the next."
-          },
-          {
-            "type": "text",
-            "text": "Every variant became another thing to design, build, and maintain."
           }
         ],
         "right": [
@@ -1202,12 +1186,16 @@ export const projects: Project[] = [
         "left": [
           {
             "type": "heading",
-            "text": "Give the components names people can share",
+            "text": "Give the teams something they can name",
             "level": 3
           },
           {
             "type": "text",
-            "text": "I defined the interface patterns and a vocabulary designers and engineers could both use. Elements, controls, components, modules, templates, and pages described how the system fit together."
+            "text": "I defined interface patterns and a vocabulary designers and engineers could use together. Elements, controls, components, modules, templates, and pages described how the system fit together."
+          },
+          {
+            "type": "text",
+            "text": "The vocabulary connected the design patterns to their front-end components. Teams could work from the same definitions across products and brands."
           }
         ],
         "right": [
@@ -1254,16 +1242,16 @@ export const projects: Project[] = [
       },
       {
         "type": "heading",
-        "text": "Keep the applications, share the interface",
+        "text": "Keep the applications",
         "level": 3
       },
       {
         "type": "text",
-        "text": "The changes stayed in the front-end markup. Applications could adopt the interface without replacing their functional back-end code."
+        "text": "I kept the changes in the front-end markup. Applications could adopt the interface without replacing their functional back-end code."
       },
       {
         "type": "text",
-        "text": "Variables controlled color, type, and treatment for each brand. Core patterns stayed shared, and applications could take design-system updates independently."
+        "text": "Variables controlled each brand's color, type, and treatment. The core patterns stayed shared, and applications could take design-system updates independently."
       },
       {
         "type": "progress-diagram",
@@ -1394,7 +1382,7 @@ export const projects: Project[] = [
         "right": [
           {
             "type": "text",
-            "text": "Hydra had many heads and one body. The shared patterns served several products and brands."
+            "text": "Hydra had many heads and one body. The name fit a system serving several products and brands."
           }
         ],
         "leftSpan": 8,

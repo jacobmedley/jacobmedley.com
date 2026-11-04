@@ -1,0 +1,466 @@
+{
+  "origin": "http://localhost:8090/",
+  "browser": "Playwright Chromium 1.61.1",
+  "viewports": [
+    {
+      "width": 1440,
+      "overview": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "bodyFont": "16px",
+        "headlineFont": "28.9052px",
+        "fonts": "loaded",
+        "loadedFamilies": [
+          "urw-form",
+          "Font Awesome 7 Pro",
+          "Font Awesome Kit"
+        ],
+        "role": "Product & Design Leader",
+        "signature": "There is always a better way,together we will find it."
+      },
+      "stories": [
+        {
+          "id": "webmd",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 16,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "dentalplans",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 2,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "hydra",
+          "width": 1440,
+          "scrollWidth": 1440,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 6,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "running": 0
+      },
+      "normal": {
+        "matches": false,
+        "running": 26
+      },
+      "errors": [],
+      "failed": [],
+      "externalTelemetry": [
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "stats.g.doubleclick.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ]
+    },
+    {
+      "width": 820,
+      "overview": {
+        "width": 820,
+        "scrollWidth": 820,
+        "bodyFont": "16px",
+        "headlineFont": "23.7794px",
+        "fonts": "loaded",
+        "loadedFamilies": [
+          "urw-form",
+          "Font Awesome 7 Pro",
+          "Font Awesome Kit"
+        ],
+        "role": "Product & Design Leader",
+        "signature": "There is always a better way,together we will find it."
+      },
+      "stories": [
+        {
+          "id": "webmd",
+          "width": 820,
+          "scrollWidth": 820,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 16,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "dentalplans",
+          "width": 820,
+          "scrollWidth": 820,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 2,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "hydra",
+          "width": 820,
+          "scrollWidth": 820,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 6,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "running": 0
+      },
+      "normal": {
+        "matches": false,
+        "running": 26
+      },
+      "errors": [],
+      "failed": [],
+      "externalTelemetry": [
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "stats.g.doubleclick.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "overview": {
+        "width": 390,
+        "scrollWidth": 390,
+        "bodyFont": "16px",
+        "headlineFont": "20.2243px",
+        "fonts": "loaded",
+        "loadedFamilies": [
+          "urw-form",
+          "Font Awesome 7 Pro",
+          "Font Awesome Kit"
+        ],
+        "role": "Product & Design Leader",
+        "signature": "There is always a better way,together we will find it."
+      },
+      "stories": [
+        {
+          "id": "webmd",
+          "width": 390,
+          "scrollWidth": 390,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 16,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "dentalplans",
+          "width": 390,
+          "scrollWidth": 390,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 2,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "hydra",
+          "width": 390,
+          "scrollWidth": 390,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 6,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "running": 0
+      },
+      "normal": {
+        "matches": false,
+        "running": 26
+      },
+      "errors": [],
+      "failed": [],
+      "externalTelemetry": [
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "stats.g.doubleclick.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "overview": {
+        "width": 320,
+        "scrollWidth": 320,
+        "bodyFont": "16px",
+        "headlineFont": "20px",
+        "fonts": "loaded",
+        "loadedFamilies": [
+          "urw-form",
+          "Font Awesome 7 Pro",
+          "Font Awesome Kit"
+        ],
+        "role": "Product & Design Leader",
+        "signature": "There is always a better way,together we will find it."
+      },
+      "stories": [
+        {
+          "id": "webmd",
+          "width": 320,
+          "scrollWidth": 320,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 16,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "dentalplans",
+          "width": 320,
+          "scrollWidth": 320,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 2,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        },
+        {
+          "id": "hydra",
+          "width": 320,
+          "scrollWidth": 320,
+          "bodyOverflow": 0,
+          "focusedInside": true,
+          "broken": [],
+          "images": 6,
+          "clipped": [],
+          "approvedCopy": true,
+          "keyboard": true,
+          "escape": true,
+          "close": true
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "running": 0
+      },
+      "normal": {
+        "matches": false,
+        "running": 26
+      },
+      "errors": [],
+      "failed": [],
+      "externalTelemetry": [
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "stats.g.doubleclick.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "p.typekit.net",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        },
+        {
+          "host": "analytics.google.com",
+          "error": "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "visualReview": "All 52 final captures visually inspected in grouped sheets and selected full-size views; no release defect found",
+  "captures": "C:/dev/_handoffs/copy-release-20261103/shots-localhost",
+  "normalMotion": {
+    "passed": true,
+    "results": [
+      {
+        "width": 1440,
+        "id": "webmd",
+        "normalMotion": true,
+        "focusReturn": true
+      },
+      {
+        "width": 1440,
+        "id": "dentalplans",
+        "normalMotion": true,
+        "focusReturn": true
+      },
+      {
+        "width": 1440,
+        "id": "hydra",
+        "normalMotion": true,
+        "focusReturn": true
+      },
+      {
+        "width": 320,
+        "id": "webmd",
+        "normalMotion": true,
+        "focusReturn": true
+      },
+      {
+        "width": 320,
+        "id": "dentalplans",
+        "normalMotion": true,
+        "focusReturn": true
+      },
+      {
+        "width": 320,
+        "id": "hydra",
+        "normalMotion": true,
+        "focusReturn": true
+      }
+    ]
+  }
+}

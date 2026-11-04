@@ -129,6 +129,10 @@
 }
 .kinetic-closing p { margin: 0; }
 .kinetic-better { font-weight: 300; }
+/* Approved copy hierarchy; the animated identity and type tokens remain. */
+.hero-copy-headline { margin: 0; font-size: max(1.25em, 1.25rem); font-weight: 500; line-height: 1.2; }
+.hero-copy-summary { max-width: 48ch; font-size: var(--text-body, 1.125rem); line-height: 1.5; text-wrap: pretty; }
+.kinetic-better.hero-copy-signature { font-size: var(--text-body, 1.125rem); line-height: 1.5; }
 .hero-rule-wrap { width: 25%; margin: 0 auto; padding: 0; }
 .hero-rule-wrap .rule-heading { width: 100%; max-width: 100%; margin: 0; }
 .hero-case-studies-link { margin: 0; padding: 0; }

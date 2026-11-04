@@ -1,5 +1,9 @@
 # Approved copy release, November 3, 2026
 
+**LIVE:** published commit `b6d194d1c8cc95815f2d59e070e0066d025169a0`.
+Normal PR verification, SiteGround deployment and public-site checks passed.
+The publication section records the workflow and ordinary-response evidence.
+
 ## Authorization and source
 
 Jacob authorized exact implementation of B109, minimum compatible dependency
@@ -58,6 +62,8 @@ from high to moderate after compression was repaired. No category was omitted.
 Affected/fixed ranges were checked against current primary advisories:
 [Next image API](https://github.com/advisories/GHSA-2464-fhr4-w9xw),
 [Next Server Actions](https://github.com/advisories/GHSA-p3m5-59mp-jv5r),
+[Next cache poisoning](https://github.com/advisories/GHSA-4jqv-mc3x-m676),
+[Next cache isolation](https://github.com/advisories/GHSA-mcj8-r9mp-w47p),
 [sharp](https://github.com/advisories/GHSA-wq5f-xc86-pv6w),
 [compression](https://github.com/advisories/GHSA-vc2v-76pw-4v95),
 [source-map-js](https://github.com/advisories/GHSA-68fv-2mgg-jv7q), and brace-expansion
@@ -138,14 +144,57 @@ actual 400% zoom and other browser engines were not tested.
 
 ## Publication and rollback
 
-Pending actual PR CI and normal protected merge. The latest successful deployment
-is `db9278a6002c056da1b075dfb3e8711c5fbb2fa3`, workflow run 39722704770.
-This is the pre-release production rollback reference; main's documentation-only
-baseline is b5d54e2. Ordinary homepage GET returned 200/MISS, Last-Modified
-October 22, 2026 04:31:10 UTC. `/musings/` and
-`/interaction-design-concepts/response-times/` returned 200 before publication.
-`dangerous-clean-slate: false` is unchanged. Publication and fresh public cache
-checks will be recorded after deployment; no live claim is made yet.
+Scoped commits are `5b9ba9c` (approved copy), `6f4b7e4` (dependency repairs), and
+`0cb5332a35243576eb2fe878b52b5863ae78ab48` (fresh acceptance evidence).
+[PR #13](https://github.com/jacobmedley/jacobmedley.com/pull/13) passed its actual
+[verification workflow](https://github.com/jacobmedley/jacobmedley.com/actions/runs/41772073441)
+on that head. Ubuntu used Node 20.20.2 / npm 10.8.2. CI confirmed the build,
+guard tests, assets, catalog and unchanged full-category audit gate.
+
+Remote main and ownership were rechecked, then GitHub's normal merge operation
+accepted the expected PR head. The resulting published commit is
+`b6d194d1c8cc95815f2d59e070e0066d025169a0`.
+[SiteGround deployment run 41772313015](https://github.com/jacobmedley/jacobmedley.com/actions/runs/41772313015)
+succeeded, completing November 4 at 04:19:15 UTC (November 3 Eastern).
+`dangerous-clean-slate: false`, the existing hosting and all workflow checks are
+unchanged. No force push, protection change or bypass was used.
+
+Ordinary public GET requests at 04:19:53–54 UTC used no cache-bypass parameter or
+special cache-control header. The homepage returned **200 / X-Proxy-Cache: MISS**,
+with **Last-Modified: November 4, 2026 04:19:09 GMT**. Its response contained the
+approved headline, hero, case-study introduction, working approach and leadership
+introduction. The cache is current; no purge was needed.
+
+| Public route | HTTP | Cache | Result |
+| --- | --- | --- | --- |
+| `/` | 200 | MISS | Current approved copy and deployment timestamp |
+| `/musings/` | 200 | HIT | Protected legacy WordPress content remains live |
+| `/interaction-design-concepts/response-times/` | 200 | MISS | Known legacy deep URL remains live |
+| `/case-studies/how-not-to-launch-an-ai-powered-product/` | 200 | MISS | Anonymous study remains available |
+| `/documents/ai-demo/account-information-guide.pdf` | 200 | Not supplied | Existing example guide remains available |
+
+Public Chromium checks then passed at 1440 and 390 pixels: exact approved copy,
+all three revised dialogs, keyboard/Escape/Close/focus return, decoded images,
+loaded fonts, no text clipping or horizontal overflow, and normal/reduced motion.
+There were no app errors or failed first-party responses. The same external
+telemetry DNS failures described above remain. Twenty-six public screenshots were
+captured; selected desktop/mobile home, leadership and study views were visually
+inspected. The complete 52-image review refers to the local acceptance set.
+See `live-http-checks.json` and `live-browser-checks.json`; raw captures and headers
+remain outside the repository.
+
+The pre-release production rollback reference is
+`db9278a6002c056da1b075dfb3e8711c5fbb2fa3`, deployment run 39722704770.
+No rollback was needed. A rollback would use a new, reviewed revert through the
+existing pipeline; retain the security repairs rather than rewrite Git history.
+
+The owned static preview (PID 63912, port 8090) was stopped only after verifying
+its full command and isolated repository path. Port 8090 has no listener. Other
+processes and the original checkout's lock are untouched. A documentation-only
+closeout follows the published source; it does not change site code. The isolated
+worktree stays on `codex/copy-release-20261103`, with its lock released at closeout.
+No requested implementation or publication work remains. Screen readers, actual
+400% zoom, other browser engines and coordinator receipt remain unverified.
 
 ## Coordination
 

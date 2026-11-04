@@ -1,5 +1,57 @@
 # Status
 
+## November 3, 2026: B109 approved copy is live
+
+Published commit: b6d194d1c8cc95815f2d59e070e0066d025169a0. PR #13 passed
+actual verification run 41772073441, then merged through GitHub's normal process.
+SiteGround deployment run 41772313015 succeeded November 4 at 04:19:15 UTC
+(November 3 Eastern). All requested implementation and publication is complete.
+
+B109's exact hero, section introductions, leadership, mentorship, WebMD,
+DentalPlans and Hydra copy is published. Product & Design Leader, the full
+signature, employment, credentials, twelve unrelated projects, target metric
+grids and visual evidence are preserved. No editorial rewrite or hosting change
+was added. Copy commit 5b9ba9c and dependency commit 6f4b7e4 remain separate.
+
+Dependency repairs: Next 15.5.29, sharp 0.35.5, compression 1.8.2,
+source-map-js 1.2.2, brace-expansion 1.1.21/5.0.12. Full-category audit has
+zero high/critical and seventeen moderate tooling entries; the existing high
+gate is unchanged. Node 20.20.2 clean install, types, lint, build/static export,
+three guard tests, 288-image/104-reference validation and catalog checks passed
+locally and in actual Ubuntu PR CI.
+
+Local Chromium acceptance passed at 1440/820/390/320px, with all 52 final
+screenshots visually reviewed. Live Chromium checks passed at 1440/390px;
+selected public desktop/mobile captures were also reviewed. Approved copy,
+dialog keyboard/Escape/Close/focus return, wrapping/overflow, images, fonts and
+normal/reduced motion pass. No app errors or failed first-party assets remain.
+Known Adobe/Google telemetry DNS failures persist. Screen readers, actual 400%
+zoom and other browser engines remain untested.
+
+Ordinary public GET at 04:19:53 UTC returned homepage 200/MISS with Last-Modified
+November 4, 2026 04:19:09 GMT and the approved wording. No cache purge was needed.
+musings/, interaction-design-concepts/response-times/, the anonymous study and
+the example PDF all return 200. dangerous-clean-slate remains false. Production
+rollback reference: db9278a6002c056da1b075dfb3e8711c5fbb2fa3, run 39722704770.
+No rollback was performed.
+
+Evidence: docs/reviews/approved-copy-v2-20261103/verification.md plus source,
+local browser, live browser and live HTTP JSON records. Changed paths comprise
+the seven approved copy files, package.json/package-lock.json, this status and
+that evidence directory. The release checkout is
+C:/dev/jacobmedley-copy-release-20261103 on codex/copy-release-20261103. A scoped
+documentation-only closeout follows the published source. The owned preview
+PID 63912 is stopped; port 8090 has no listener. Only this session's isolated
+lock is released at closeout. Original checkout changes and the
+quiet-prism-figma-a4e0fdd2 lock remain untouched.
+
+Fresh canonical Genesis reads confirm unchanged STATE fingerprint
+ae55ec0a74d012d830ed3c742646b8b826a52031bedaedcba79574eb3dcd8f60.
+The retired Exchange remains read-only. Unique local change/update handoffs are
+under C:/dev/_handoffs/copy-release-20261103/; coordinator receipt is unverified.
+No shared-state update, Genesis job, routing change or paid fallback is claimed.
+This status is the last repository-content write before the closeout commit.
+
 ## November 3, 2026: B109 copy release verified locally; PR CI pending
 
 Jacob authorized the exact packaged hero, section introductions, leadership,

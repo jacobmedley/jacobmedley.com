@@ -1,5 +1,7 @@
 # Copy Register
 
+**Pending release:** B109 [Approved website and case-study copy] is applied on `codex/copy-release-20261103`. Fresh Node 20 build, source, dependency-audit and browser checks pass. PR verification and publication remain pending. See docs/reviews/approved-copy-v2-20261103/verification.md.
+
 **Status:** B0 through B87 and B93–B108 are applied unless superseded or otherwise marked. B95–B108 published October 22, 2026 in db9278a6002c056da1b075dfb3e8711c5fbb2fa3, following Jacob's explicit instruction to include and merge all current changes. Deployment and live checks passed; see docs/reviews/deployment-20261022/verification.md. Earlier local-only or no-publication notes below describe their original checkpoints and are superseded by this release record. B88–B92 remain reserved for the separate private portfolio.
 B80–B87 and B93–B94 were published October 8, 2026; B94 corrects B93 footer wording.
 B60/B64 are included in the delivered full-site source. B99 records the clarified
@@ -4518,3 +4520,157 @@ Status: APPLIED LOCALLY. The initial production build and source checks passed. 
 - Shared Study Introduction metadata labels: 18px (1.125rem), with 10px below My role and 8px below Collaboration, at all existing container sizes.
 
 Preserve approved source names, citations, claims, measurements, anonymity and the distinction between actual outcomes and reconstructed demos. Jacob's follow-up confirms annotation 3 targets the discovery chain. Annotation 5 is interpreted as the AI section separators; its supplied region coordinates do not identify a source element. See the review evidence for these mappings.
+
+
+## B109: Approved website and case-study copy
+
+Status: APPLIED on `codex/copy-release-20261103`. Jacob authorized implementation and publication on November 3, 2026. Fresh local checks pass; NOT YET PUBLISHED. The final hero and leadership refinements supersede the draft paragraphs.
+
+Scope: homepage, leadership and mentorship, WebMD, DentalPlans and Hydra. Current themes, headlines, roles, ownership distinctions, metrics and visual evidence remain. Other studies and employment records are unchanged. Authorship is AI-assisted editorial work approved by Jacob. This does not establish unaided authorship.
+
+Verification: docs/reviews/approved-copy-v2-20261103/verification.md. Public text is registered below before source implementation.
+
+```json
+{
+  "home": {
+    "headline": "Simplify for people. Build for growth.",
+    "hero": "Customers should not need to understand a company’s org chart to use a product. I bring teams together to connect products and services, so people can get things done and the business can grow.",
+    "caseIntro": "Selected work in commerce, design systems, and customer experience. Each story shows a decision, the work behind it, and what changed.",
+    "howWork": "A customer needs a next step. A team needs to decide what to build. These examples show how I work through those questions, from research and planning to the visual ideas that reach the page.",
+    "leadIntro": "I follow a customer problem back through the decisions and dependencies behind it. I set the direction and make clear who owns each decision. Then I remove the blockers the team cannot resolve on its own.",
+    "leadership": [
+      "For a conversational assistant, I led experience research into accuracy, uncertainty, and the route to human help. Those requirements mattered to the person relying on the answer.",
+      "I look for work the next project would otherwise repeat. Common patterns, reusable product data, and brand settings give the next team a place to start.",
+      "I use research and experiments to examine a decision. When I report a business result, I explain what changed and what the measurement actually describes.",
+      "People should know which decisions they own and when they need another owner. I stay available, without making every next step a request for permission."
+    ],
+    "mentorship": [
+      "I work beside junior staff, asking questions until they can name the next step and what it depends on.",
+      "I make their authority clear, so they can assess the risk and decide what to do. I stay available and remove blockers beyond their control.",
+      "We review outcomes together. When something goes wrong, we examine the conditions behind it. When it goes well, we work out what is worth repeating."
+    ]
+  },
+  "stories": {
+    "webmd": [
+      "WebMD brought the audience. DentalPlans brought the plans. I designed and built the path from health research to purchase.",
+      "From Campaign to Commerce",
+      "People came to WebMD with questions about their health. Bringing DentalPlans into that journey gave them a way to act on a dental need: compare savings plans, find a participating dentist, and purchase.",
+      "When the two businesses became part of Internet Brands, that opportunity became possible. I shaped the experience around the decision a person was ready to make.",
+      "Product design, UX strategy, prototyping, and front-end implementation",
+      "Product Design",
+      "UX Strategy",
+      "Prototyping",
+      "Front-end / Implementation",
+      "Start with the question",
+      "Someone researching a dental concern had a different question from someone already choosing a plan. The homepage needed to explain dental savings and make their relevance clear before asking for a purchase.",
+      "I designed the route from that first question into plan search. The customer could begin with the care they needed, then examine the options available to them.",
+      "Keep the dentist in the decision",
+      "Price was only part of choosing a plan. Customers also needed to know which dentists participated.",
+      "Plan search, comparisons, and detail pages gave them ways to examine their options. Dentist search stayed in the same journey, with a profile for the provider they were considering. Cart and checkout took the selected plan through purchase.",
+      "Plan Search Results",
+      "Plan Compare",
+      "Plan Details",
+      "Dentist Search Results",
+      "Dentist Details",
+      "Cart",
+      "Two weeks to a live site",
+      "I wireframed and designed the site in two weeks. It was complete and live when the Director of Online Marketing returned.",
+      "The following two weeks covered campaign wrap-up and launch work with the Director of Online Marketing and SVP of Marketing. The site generated revenue from day one."
+    ],
+    "dentalplans": [
+      "One storefront became five branded properties. I owned the framework they shared. Launch time fell from six weeks to two, and the company owned the platform.",
+      "How Fast Can You Stand Up a Website?",
+      "It started with a small request: “You know WordPress, right? How fast can you stand up a website?”",
+      "The first storefront sold. Sale prices were typed in by hand, one product at a time. When leadership asked for another site, the manual work needed attention too.",
+      "I owned the roadmap for the commerce framework that followed. Each release gave the next property something it could reuse.",
+      "Product ownership, UX/UI design, and front-end development",
+      "Engineering",
+      "Product Ownership",
+      "Design Systems",
+      "UX & UI Design",
+      "Front-end Development",
+      "Five branded properties ran on the framework. Launch time per property fell from six weeks to two.",
+      "What the properties produced",
+      "of company revenue growth",
+      "of overall company revenue",
+      "of total company lead capture",
+      "weeks to launch a property",
+      "What changed",
+      "In one measured year, finance credited those properties with the revenue and lead-capture shares shown here. The 47% is a share of that year's growth increment. Launch time is per property.",
+      "The company owned the custom platform. Each launch could reuse capabilities already built, with the brand's identity carried through the experience.",
+      "How the platform fit together",
+      "Partner storefront examples",
+      "Cigna",
+      "Brand Theme",
+      "Aetna",
+      "Brand Theme",
+      "WebMD",
+      "Brand Theme",
+      "Partner storefront",
+      "Brand Theme",
+      "Core Framework",
+      "API Integration",
+      "Component Libraries",
+      "Pattern Library",
+      "CMS",
+      "Pipelines",
+      "Documentation",
+      "Microservices",
+      "Plan Details",
+      "Dentist Search",
+      "Lead Create",
+      "Call Center Status",
+      "Google Maps (API)",
+      "Let the next site inherit the work",
+      "The framework grew to include scheduled offers and expiry, source attribution, reusable interface patterns, and deployment for one property or all of them.",
+      "Source attribution kept the page consistent with the ad that brought someone there. Promotions, copy, and messaging could change by traffic source, down to individual affiliate IDs.",
+      "Build the next capability when it is needed",
+      "We began with a single-product flow. Engineering built the service that passed the product into the existing cart. I designed the storefront with room for other products and brands.",
+      "Carry the brand through checkout",
+      "The second site needed its identity to continue through checkout. We added a cart that could take each brand's treatment, alongside services for shared product information. Common components gave landing pages and purchase flows a starting point for the next variation.",
+      "Let every property inherit the update",
+      "As the platform grew, product information moved into shared services. An engineering update could become available to every property. Brand settings stayed separate from the application, so each property could keep its identity.",
+      "Add dentist search without starting over",
+      "Dentist search was another customer task the platform could take on. I designed and built its interface from the existing patterns and components.",
+      "Who built what",
+      "A part-time engineer and I built and maintained the core framework and its enhancements. Other designers launched the branded properties. Internal engineering built the microservices and APIs the framework connected to."
+    ],
+    "hydra": [
+      "Product, marketing, and engineering had different names for the same interface. I built Hydra around common patterns the existing applications could adopt.",
+      "Three Teams. One Vocabulary.",
+      "There were eight button treatments across the product. Error messages varied in wording and presentation. The same action could look different from one part of the experience to the next.",
+      "Product, marketing, and engineering were also describing the interface in different ways. I built the case for Hydra and secured executive backing. Adoption depended on a practical constraint: the applications underneath it had to remain.",
+      "Design system leadership, systems analysis, and UI engineering",
+      "Product, marketing, and engineering",
+      "Design Systems",
+      "Design Leadership",
+      "Systems Analysis",
+      "UI Engineering",
+      "Eight button treatments",
+      "Give the teams something they can name",
+      "I defined interface patterns and a vocabulary designers and engineers could use together. Elements, controls, components, modules, templates, and pages described how the system fit together.",
+      "The vocabulary connected the design patterns to their front-end components. Teams could work from the same definitions across products and brands.",
+      "Nomenclature",
+      "Keep the applications",
+      "I kept the changes in the front-end markup. Applications could adopt the interface without replacing their functional back-end code.",
+      "Variables controlled each brand's color, type, and treatment. The core patterns stayed shared, and applications could take design-system updates independently.",
+      "The System Framework",
+      "Consistent UX/UI",
+      "App One",
+      "App Two",
+      "Main Website",
+      "Sub Website",
+      "Main Brand",
+      "Sub Brand",
+      "Design System",
+      "C#",
+      "PHP",
+      "UI Elements",
+      "What the system left behind",
+      "Work that had taken two sprints could land in one. The product later ran for about a year without a dedicated design resource.",
+      "Why Hydra?",
+      "Hydra had many heads and one body. The name fit a system serving several products and brands."
+    ]
+  }
+}
+```

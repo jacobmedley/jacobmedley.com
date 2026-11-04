@@ -223,7 +223,9 @@ export default function KineticHeroIdentity() {
       </div></div>
       <p className="kinetic-role">Product &amp; Design Leader</p>
       <div className="kinetic-closing">
-        <p className="kinetic-better">There is always a better way,<br />together we will find it.</p>
+        <h2 className="hero-copy-headline">Simplify for people. Build for growth.</h2>
+        <p className="hero-copy-summary">Customers should not need to understand a company’s org chart to use a product. I bring teams together to connect products and services, so people can get things done and the business can grow.</p>
+        <p className="kinetic-better hero-copy-signature">There is always a better way,<br />together we will find it.</p>
         <div className="hero-rule-wrap">
           <hr className="solid-center rule-heading" />
         </div>
